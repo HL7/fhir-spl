@@ -1,0 +1,5 @@
+== Suppressed Messages ==
+
+# US-Core warning doesn't apply since we are not dependent on US-Core
+US FHIR Usage rules require that all profiles on Organization derive from the core US profile
+

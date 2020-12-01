@@ -1,0 +1,780 @@
+{
+	"resourceType": "StructureDefinition",
+	"id": "EstablishmentRegistrationLogicalModel",
+	"url": "http://fda.gov/fhir/spltofhir/StructureDefinition/EstablishmentRegistrationLogicalModel",
+	"name": "EstablishmentRegistrationLogicalModel",
+	"title": "FDA Establishment Registration",
+	"purpose": "Describe an Establishment when registering them with FDA.",
+	"publisher": "IBM",
+	"status": "draft",
+	"date": "2020-08-20T14:01:48-06:00",
+	"kind": "logical",
+	"abstract": false,
+	"baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+	"type": "Registrant",
+	"derivation": "specialization",
+	"differential": {
+		"element": [
+			{
+				"id": "Registrant",
+				"path": "Registrant",
+				"definition": "An organization that wants to registers Establishment organizations.",
+				"min": 1,
+				"max": "1",
+				"base": {
+					"path": "Element",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.transactionId",
+				"path": "Registrant.transactionId",
+				"short": "Registrant Transaction ID",
+				"definition": "An identifier for the transaction that create/updated these establishments",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.transactionId",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.transactionEffectiveTime",
+				"path": "Registrant.transactionEffectiveTime",
+				"short": "Transaction Effective Time",
+				"definition": "The time when this request transaction was created.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.transactionEffectiveTime",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishmentRequestId",
+				"path": "Registrant.establishmentRequestId",
+				"short": "The identifier for the establishment request",
+				"definition": "This is the identifier for the establishment request",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishmentRequestId",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishmentRequestVersion",
+				"path": "Registrant.establishmentRequestVersion",
+				"short": "Request Version Number",
+				"definition": "A version of the establishment information.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishmentRequestVersion",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.registrantDUNS",
+				"path": "Registrant.registrantDUNS",
+				"short": "Registrant DUNS Number",
+				"definition": "The DUNS number for the registrant organization.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Registrant.registrantDUNS",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.name",
+				"path": "Registrant.name",
+				"short": "Registrant Name",
+				"definition": "The Registrant organization's name",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.contactParty",
+				"path": "Registrant.contactParty",
+				"short": "Registrant Contact Party",
+				"definition": "The person to contact about this establishment request.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Registrant.contactParty",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.contactParty.name",
+				"path": "Registrant.contactParty.name",
+				"short": "Registrant Contact Party Name",
+				"definition": "The name of the registrant's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.contactParty.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.contactParty.address",
+				"path": "Registrant.contactParty.address",
+				"short": "Registrant Contact Party Address",
+				"definition": "The address for the registrant's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Address"
+					}
+				],
+				"base": {
+					"path": "Registrant.contactParty.address",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.contactParty.telecom",
+				"path": "Registrant.contactParty.telecom",
+				"short": "Registrant Contact Party Telephone",
+				"definition": "The telephone number for the registrant's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.contactParty.telecom",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.contactParty.email",
+				"path": "Registrant.contactParty.email",
+				"short": "Registrant Contact Party Email Address",
+				"definition": "The email address for the registrant's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.contactParty.email",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment",
+				"path": "Registrant.establishment",
+				"short": "Establishment",
+				"definition": "The Establishment information that is being registered.",
+				"min": 1,
+				"max": "*",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.DUNSidentifier",
+				"path": "Registrant.establishment.DUNSidentifier",
+				"short": "Registrant DUNS Number",
+				"definition": "The DUNS number for the establishment organization.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.DUNSidentifier",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.FEIidentifier",
+				"path": "Registrant.establishment.FEIidentifier",
+				"short": "Registrant FEI Number",
+				"definition": "The FEI number for the establishment organization.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.FEIidentifier",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.name",
+				"path": "Registrant.establishment.name",
+				"short": "Establishment Name",
+				"definition": "The Establishment organization's name",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.address",
+				"path": "Registrant.establishment.address",
+				"short": "Establishment Address",
+				"definition": "The address for the establishment organization.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Address"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.address",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.contactParty",
+				"path": "Registrant.establishment.contactParty",
+				"short": "Establishment Contact Party",
+				"definition": "The person to contact about this establishment organization's details.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.contactParty",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.contactParty.name",
+				"path": "Registrant.establishment.contactParty.name",
+				"short": "Establishment Contact Party Name",
+				"definition": "The name of the establishment's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.contactParty.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.contactParty.address",
+				"path": "Registrant.establishment.contactParty.address",
+				"short": "Establishment Contact Party Address",
+				"definition": "The address for the establishment's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Address"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.contactParty.address",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.contactParty.telecom",
+				"path": "Registrant.establishment.contactParty.telecom",
+				"short": "Establishment Contact Party Telephone",
+				"definition": "The telephone number for the establishment's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.contactParty.telecom",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.contactParty.email",
+				"path": "Registrant.establishment.contactParty.email",
+				"short": "Establishment Contact Party Email Address",
+				"definition": "The email address for the establishment's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.contactParty.email",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.usAgent",
+				"path": "Registrant.establishment.usAgent",
+				"short": "Establishment US Agent",
+				"definition": "If the establishment is not located in the US, this is an organization that acts on their behalf.",
+				"min": 0,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.usAgent",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.usAgent.identifier",
+				"path": "Registrant.establishment.usAgent.identifier",
+				"short": "Establishment US Agent Identifier",
+				"definition": "The DUNS identifier for the organization acting as the establishment's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.usAgent.identifier",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.usAgent.name",
+				"path": "Registrant.establishment.usAgent.name",
+				"short": "Establishment US Agent Name",
+				"definition": "The name of the organization acting as the establishment's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.usAgent.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.usAgent.telecom",
+				"path": "Registrant.establishment.usAgent.telecom",
+				"short": "Establishment US Agent Telephone Number",
+				"definition": "The telephone number for the organization acting as the establishment's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.usAgent.telecom",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.usAgent.email",
+				"path": "Registrant.establishment.usAgent.email",
+				"short": "Establishment US Agent Email Address",
+				"definition": "The email address for the organization acting as the establishment's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.usAgent.email",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.importer",
+				"path": "Registrant.establishment.importer",
+				"short": "Establishment Importer",
+				"definition": "If the establishment is not located in the US, this is an organization that imports product on their behalf.",
+				"min": 0,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.importer",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.importer.identifier",
+				"path": "Registrant.establishment.importer.identifier",
+				"short": "Establishment Importer Identifier",
+				"definition": "The DUNS identifier for the organization acting as the establishment's importer.",
+				"min": 1,
+				"max": "*",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.importer.identifier",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.importer.name",
+				"path": "Registrant.establishment.importer.name",
+				"short": "Establishment Importer Name",
+				"definition": "The name of the organization acting as the establishment's importer.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.importer.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.importer.telecom",
+				"path": "Registrant.establishment.importer.telecom",
+				"short": "Establishment Importer Telephone Number",
+				"definition": "The telephone number for the organization acting as the establishment's importer.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.importer.telecom",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.importer.email",
+				"path": "Registrant.establishment.importer.email",
+				"short": "Establishment Importer Email Address",
+				"definition": "The email address for the organization acting as the establishment's importer.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.importer.email",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.businessOperation",
+				"path": "Registrant.establishment.businessOperation",
+				"short": "Establishment Business Operations",
+				"definition": "Various business operations that the establishment organization performs.",
+				"min": 1,
+				"max": "*",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.businessOperation",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.businessOperation.code",
+				"path": "Registrant.establishment.businessOperation.code",
+				"short": "Business Operation Type",
+				"definition": "A code representing the specific business operation that the establishment organization can perform.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "CodeableConcept"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.businessOperation.code",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Registrant.establishment.businessOperation.qualifier",
+				"path": "Registrant.establishment.businessOperation.qualifier",
+				"short": "Business Operation Qualifier",
+				"definition": "A code that gives more information about the business operation that the establishment organization can perform.",
+				"min": 0,
+				"max": "*",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "CodeableConcept"
+					}
+				],
+				"base": {
+					"path": "Registrant.establishment.businessOperation.qualifier",
+					"min": 0,
+					"max": "1"
+				}
+			}
+		]
+	}
+}

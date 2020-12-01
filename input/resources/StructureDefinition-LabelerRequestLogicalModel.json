@@ -1,0 +1,494 @@
+{
+	"resourceType": "StructureDefinition",
+	"id": "LabelerRequestLogicalModel",
+	"url": "http://fda.gov/fhir/spltofhir/StructureDefinition/LabelerRequestLogicalModel",
+	"name": "LabelerRequestLogicalModel",
+	"title": "FDA SPL Labeler Request",
+	"purpose": "Describe a Labeler when requesting a FDA labeler identifier.",
+	"publisher": "IBM",
+	"status": "draft",
+	"date": "2020-08-20T14:01:48-06:00",
+	"kind": "logical",
+	"abstract": false,
+	"baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+	"type": "Labeler",
+	"derivation": "specialization",
+	"differential": {
+		"element": [
+			{
+				"id": "Labeler",
+				"path": "Labeler",
+				"definition": "An organization that wants to submit FDA Structured Product Label documents.",
+				"min": 1,
+				"max": "1",
+				"base": {
+					"path": "Element",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.transactionId",
+				"path": "Labeler.transactionId",
+				"short": "Labeler Transaction ID",
+				"definition": "An identifier for the transaction that create/updated this Labeler",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Labeler.transactionId",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.transactionEffectiveTime",
+				"path": "Labeler.transactionEffectiveTime",
+				"short": "Transaction Effective Time",
+				"definition": "The time when this request transaction was created.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Labeler.transactionEffectiveTime",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.labelerRequestId",
+				"path": "Labeler.labelerRequestId",
+				"short": "The identifier for the labeler request",
+				"definition": "This is the identifier for the labeler request",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Labeler.labelerRequestId",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.labelerRequestVersion",
+				"path": "Labeler.labelerRequestVersion",
+				"short": "Request Version Number",
+				"definition": "A version of the labeler information.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Labeler.labelerRequestVersion",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.labelerDUNS",
+				"path": "Labeler.labelerDUNS",
+				"short": "Labeler DUNS Number",
+				"definition": "The DUNS number for the labeler organization.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Labeler.labelerDUNS",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.labelerCode",
+				"path": "Labeler.labelerCode",
+				"short": "Labeler NDC/NHRIC Code",
+				"definition": "The NDC/NHRIC code for the labeler organization.",
+				"min": 0,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Labeler.labelerCode",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.name",
+				"path": "Labeler.name",
+				"short": "Labeler Name",
+				"definition": "The Labeler organization's name",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Labeler.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.address",
+				"path": "Labeler.address",
+				"short": "Labeler Address",
+				"definition": "The labeler organization's address",
+				"min": 0,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Address"
+					}
+				],
+				"base": {
+					"path": "Labeler.address",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.contactParty",
+				"path": "Labeler.contactParty",
+				"short": "Labeler Contact Party",
+				"definition": "The person to contact about this labeler request.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Labeler.contactParty",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.contactParty.name",
+				"path": "Labeler.contactParty.name",
+				"short": "Labeler Contact Party Name",
+				"definition": "The name of the labeler's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Labeler.contactParty.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.contactParty.address",
+				"path": "Labeler.contactParty.address",
+				"short": "Labeler Contact Party Address",
+				"definition": "The address for the labeler's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Address"
+					}
+				],
+				"base": {
+					"path": "Labeler.contactParty.address",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.contactParty.telecom",
+				"path": "Labeler.contactParty.telecom",
+				"short": "Labeler Contact Party Telephone",
+				"definition": "The telephone number for the labeler's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Labeler.contactParty.telecom",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.contactParty.email",
+				"path": "Labeler.contactParty.email",
+				"short": "Labeler Contact Party Email Address",
+				"definition": "The email address for the labeler's contact person.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Labeler.contactParty.email",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.usAgent",
+				"path": "Labeler.usAgent",
+				"short": "Labeler US Agent",
+				"definition": "If the labeler is not located in the US, this is an organization that acts on their behalf.",
+				"min": 0,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Labeler.usAgent",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.usAgent.identifier",
+				"path": "Labeler.usAgent.identifier",
+				"short": "Labeler US Agent Identifier",
+				"definition": "The DUNS identifier for the organization acting as the labeler's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "Identifier"
+					}
+				],
+				"base": {
+					"path": "Labeler.usAgent.identifier",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.usAgent.name",
+				"path": "Labeler.usAgent.name",
+				"short": "Labeler US Agent Name",
+				"definition": "The name of the organization acting as the labeler's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "string"
+					}
+				],
+				"base": {
+					"path": "Labeler.usAgent.name",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.usAgent.telecom",
+				"path": "Labeler.usAgent.telecom",
+				"short": "Labeler US Agent Telephone Number",
+				"definition": "The telephone number for the organization acting as the labeler's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Labeler.usAgent.telecom",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.usAgent.email",
+				"path": "Labeler.usAgent.email",
+				"short": "Labeler US Agent Email Address",
+				"definition": "The email address for the organization acting as the labeler's US agent.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "ContactPoint"
+					}
+				],
+				"base": {
+					"path": "Labeler.usAgent.email",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.businessOperation",
+				"path": "Labeler.businessOperation",
+				"short": "Labeler Business Operations",
+				"definition": "Various business operations that the labeler organization performs.",
+				"min": 1,
+				"max": "*",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "BackboneElement"
+					}
+				],
+				"base": {
+					"path": "Labeler.businessOperation",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.businessOperation.code",
+				"path": "Labeler.businessOperation.code",
+				"short": "Business Operation Type",
+				"definition": "A code representing the specific business operation that the labeler organization can perform.",
+				"min": 1,
+				"max": "1",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "CodeableConcept"
+					}
+				],
+				"base": {
+					"path": "Labeler.businessOperation.code",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "Labeler.businessOperation.qualifier",
+				"path": "Labeler.businessOperation.qualifier",
+				"short": "Business Operation Qualifier",
+				"definition": "A code that gives more information about the business operation that the labeler organization can perform.",
+				"min": 0,
+				"max": "2",
+				"mustSupport": true,
+				"mapping": [
+
+				],
+				"type": [
+					{
+						"code": "CodeableConcept"
+					}
+				],
+				"base": {
+					"path": "Labeler.businessOperation.qualifier",
+					"min": 0,
+					"max": "1"
+				}
+			}
+		]
+	}
+}

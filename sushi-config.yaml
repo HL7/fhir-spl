@@ -1,0 +1,39 @@
+id: hl7.fhir.us.spl
+canonical: http://hl7.org/fhir/us/spl
+name: fhir-spl
+title: SPL Mapping FHIR Implementation Guide
+description: A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2020+
+releaseLabel: Build CI
+publisher:
+  name: Biomedical Research and Regulatory WG
+  url: http://www.hl7.org/Special/committees/rcrim/index.cfm
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+
+pages:
+  index.md:
+    title: SPL Mapping Implementation Guide Home Page
+  usecases.md:
+    title: Use Cases and Overview
+  specification.md:
+    title: Formal Specification
+  downloads.md:
+    title: Downloads
+  credits.md:
+    title: Credits
+
+menu:
+  Table of Contents: toc.html
+  Specification:
+    Home Page: index.html
+    Use Cases and Overview: usecases.html
+    Formal Specification: specification.html
+    Downloads: downloads.html
+    Credits: credits.html
+  Artifacts: artifacts.html
+  Base Specs:
+    FHIR R4 Spec: new-tab {{site.data.fhir.path}}
+
