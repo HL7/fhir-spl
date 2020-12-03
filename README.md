@@ -1,6 +1,6 @@
 # SPL to FHIR
 
-This FHIR Implementation Guide serves as a repository for all of the FHIR profiles that are created for the IBM FDA SPL FHIR project.  These profiles allow for mappings from the FDA Structured Product Labelling specification to FHIR resources.
+This FHIR Implementation Guide serves as a repository for all of the FHIR profiles that are created for the SPL FHIR project.  These profiles allow for mappings from the FDA Structured Product Labelling specification to FHIR resources.
 
 # Building the SPL to FHIR IGuide
 

@@ -1,7 +1,7 @@
 {
 	"resourceType": "StructureDefinition",
 	"id": "GDUFAFacilityIdentificationLogicalModel",
-	"url": "http://fda.gov/fhir/spltofhir/StructureDefinition/GDUFAFacilityIdentificationLogicalModel",
+	"url": "http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationLogicalModel",
 	"name": "GDUFAFacilityIdentificationLogicalModel",
 	"title": "FDA GDUFA Facility Identification",
 	"purpose": "Describe a GDUFA Facility when identifying them with FDA.",
@@ -35,9 +35,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -57,9 +54,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -79,9 +73,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -101,9 +92,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -123,9 +111,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -145,9 +130,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -167,9 +149,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -189,9 +168,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -211,9 +187,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -233,9 +206,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -255,9 +225,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -277,9 +244,6 @@
 				"min": 1,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -299,9 +263,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -321,9 +282,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -343,9 +301,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -365,9 +320,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -387,9 +339,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -409,9 +358,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -431,9 +377,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -453,9 +396,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -475,9 +415,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -497,9 +434,6 @@
 				"min": 1,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -519,9 +453,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "CodeableConcept"
@@ -541,9 +472,6 @@
 				"min": 0,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "CodeableConcept"

@@ -21,7 +21,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry[USAgent].resource only USAgentOrganization
 * entry[USAgentAffiliation].resource only LabelerAffiliation
 * entry[BusinessOperation].resource only LabelerBusinessOperation
-* obeys USAgentAndAffiliation
+// * obeys USAgentAndAffiliation
 
 Invariant: USAgentAndAffiliation
 Description: "resource of type USAgent exists if and only if resource of type LabelerAffiliation exists"

@@ -1,9 +1,9 @@
 {
 	"resourceType": "StructureDefinition",
 	"id": "LabelerRequestLogicalModel",
-	"url": "http://fda.gov/fhir/spltofhir/StructureDefinition/LabelerRequestLogicalModel",
+	"url": "http://hl7.org/fhir/us/spl/StructureDefinition/LabelerRequestLogicalModel",
 	"name": "LabelerRequestLogicalModel",
-	"title": "FDA SPL Labeler Request",
+	"title": "FDA Labeler Request",
 	"purpose": "Describe a Labeler when requesting a FDA labeler identifier.",
 	"publisher": "IBM",
 	"status": "draft",
@@ -35,9 +35,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -57,9 +54,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -79,9 +73,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -101,9 +92,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -123,9 +111,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -145,9 +130,6 @@
 				"min": 0,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -167,9 +149,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -189,9 +168,6 @@
 				"min": 0,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -211,9 +187,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -233,9 +206,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -255,9 +225,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -277,9 +244,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -299,9 +263,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -321,9 +282,6 @@
 				"min": 0,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -343,9 +301,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -365,9 +320,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -387,9 +339,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -409,9 +358,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -431,9 +377,6 @@
 				"min": 1,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -453,9 +396,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "CodeableConcept"
@@ -475,9 +415,6 @@
 				"min": 0,
 				"max": "2",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "CodeableConcept"

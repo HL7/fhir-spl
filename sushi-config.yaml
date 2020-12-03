@@ -1,6 +1,6 @@
 id: hl7.fhir.us.spl
 canonical: http://hl7.org/fhir/us/spl
-name: fhir-spl
+name: FHIR_SPL
 title: SPL Mapping FHIR Implementation Guide
 description: A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.
 status: draft

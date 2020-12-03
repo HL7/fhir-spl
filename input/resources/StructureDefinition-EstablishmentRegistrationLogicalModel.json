@@ -1,7 +1,7 @@
 {
 	"resourceType": "StructureDefinition",
 	"id": "EstablishmentRegistrationLogicalModel",
-	"url": "http://fda.gov/fhir/spltofhir/StructureDefinition/EstablishmentRegistrationLogicalModel",
+	"url": "http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationLogicalModel",
 	"name": "EstablishmentRegistrationLogicalModel",
 	"title": "FDA Establishment Registration",
 	"purpose": "Describe an Establishment when registering them with FDA.",
@@ -35,9 +35,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -57,9 +54,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -79,9 +73,7 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
+				
 				"type": [
 					{
 						"code": "string"
@@ -101,9 +93,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -123,9 +112,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -145,9 +131,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -167,9 +150,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -189,9 +169,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -211,9 +188,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -233,9 +207,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -255,9 +226,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -277,9 +245,6 @@
 				"min": 1,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -299,9 +264,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -321,9 +283,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -343,9 +302,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -365,9 +321,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -387,9 +340,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -409,9 +359,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -431,9 +378,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Address"
@@ -453,9 +397,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -475,9 +416,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -497,9 +435,6 @@
 				"min": 0,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -519,9 +454,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -541,9 +473,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -563,9 +492,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -585,9 +511,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -607,9 +530,6 @@
 				"min": 0,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -629,9 +549,6 @@
 				"min": 1,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "Identifier"
@@ -651,9 +568,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "string"
@@ -673,9 +587,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -695,9 +606,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "ContactPoint"
@@ -717,9 +625,6 @@
 				"min": 1,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "BackboneElement"
@@ -739,9 +644,6 @@
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "CodeableConcept"
@@ -761,9 +663,6 @@
 				"min": 0,
 				"max": "*",
 				"mustSupport": true,
-				"mapping": [
-
-				],
 				"type": [
 					{
 						"code": "CodeableConcept"
