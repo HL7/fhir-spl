@@ -6,20 +6,20 @@
 	"title": "FDA Establishment Registration Logical Model",
 	"description": "A logical model that represents an FDA Establishment Registration transaction.",
 	"purpose": "Describe an Establishment when registering them with FDA.",
-	"publisher": "IBM",
+	"publisher": "HL7",
 	"status": "draft",
 	"date": "2020-08-20T14:01:48-06:00",
 	"kind": "logical",
 	"abstract": false,
 	"baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
-	"type": "Registrant",
+	"type": "EstablishmentRegistration",
 	"derivation": "specialization",
 	"differential": {
 		"element": [
 			{
-				"id": "Registrant",
-				"path": "Registrant",
-				"definition": "An organization that wants to registers Establishment organizations.",
+				"id": "EstablishmentRegistration",
+				"path": "EstablishmentRegistration",
+				"definition": "A transaction to register a set of Establishment organizations.",
 				"min": 1,
 				"max": "1",
 				"base": {
@@ -29,10 +29,10 @@
 				}
 			},
 			{
-				"id": "Registrant.transactionId",
-				"path": "Registrant.transactionId",
-				"short": "Registrant Transaction ID",
-				"definition": "An identifier for the transaction that create/updated these establishments",
+				"id": "EstablishmentRegistration.transactionId",
+				"path": "EstablishmentRegistration.transactionId",
+				"short": "Establishment Registration Transaction ID",
+				"definition": "A unique identifier for the transaction that create/updated these establishments",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -42,16 +42,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.transactionId",
+					"path": "EstablishmentRegistration.transactionId",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.transactionEffectiveTime",
-				"path": "Registrant.transactionEffectiveTime",
+				"id": "EstablishmentRegistration.transactionEffectiveTime",
+				"path": "EstablishmentRegistration.transactionEffectiveTime",
 				"short": "Transaction Effective Time",
-				"definition": "The time when this request transaction was created.",
+				"definition": "The time when this registration transaction was created.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -61,16 +61,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.transactionEffectiveTime",
+					"path": "EstablishmentRegistration.transactionEffectiveTime",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishmentRequestId",
-				"path": "Registrant.establishmentRequestId",
-				"short": "The identifier for the establishment request",
-				"definition": "This is the identifier for the establishment request",
+				"id": "EstablishmentRegistration.requestId",
+				"path": "EstablishmentRegistration.requestId",
+				"short": "Establishment Registration Request Identifier",
+				"definition": "A unique identifier of a specific group of Establishment Registration transactions.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -81,16 +81,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishmentRequestId",
+					"path": "EstablishmentRegistration.requestId",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishmentRequestVersion",
-				"path": "Registrant.establishmentRequestVersion",
-				"short": "Request Version Number",
-				"definition": "A version of the establishment information.",
+				"id": "EstablishmentRegistration.requestVersion",
+				"path": "EstablishmentRegistration.requestVersion",
+				"short": "Establishment Registration Request Version Number",
+				"definition": "A string identifying a specific version of the Establishment Registration transaction.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -100,16 +100,28 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishmentRequestVersion",
+					"path": "EstablishmentRegistration.requestVersion",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.registrantDUNS",
-				"path": "Registrant.registrantDUNS",
+				"id": "EstablishmentRegistration.registrant",
+				"path": "EstablishmentRegistration.registrant",
+				"definition": "An organization that wants to registers Establishment organizations.",
+				"min": 1,
+				"max": "1",
+				"base": {
+					"path": "EstablishmentRegistration.registrant",
+					"min": 0,
+					"max": "1"
+				}
+			},
+			{
+				"id": "EstablishmentRegistration.registrant.dunsIdentifier",
+				"path": "EstablishmentRegistration.registrant.dunsIdentifier",
 				"short": "Registrant DUNS Number",
-				"definition": "The DUNS number for the registrant organization.",
+				"definition": "The Dun & Bradstreet number assigned to the registrant organization.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -119,14 +131,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.registrantDUNS",
+					"path": "EstablishmentRegistration.registrant.dunsIdentifier",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.name",
-				"path": "Registrant.name",
+				"id": "EstablishmentRegistration.registrant.name",
+				"path": "EstablishmentRegistration.registrant.name",
 				"short": "Registrant Name",
 				"definition": "The Registrant organization's name",
 				"min": 1,
@@ -138,16 +150,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.name",
+					"path": "EstablishmentRegistration.registrant.name",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.contactParty",
-				"path": "Registrant.contactParty",
+				"id": "EstablishmentRegistration.registrant.contactParty",
+				"path": "EstablishmentRegistration.registrant.contactParty",
 				"short": "Registrant Contact Party",
-				"definition": "The person to contact about this establishment request.",
+				"definition": "The person to contact about the establishment registration information.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -157,14 +169,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.contactParty",
+					"path": "EstablishmentRegistration.registrant.contactParty",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.contactParty.name",
-				"path": "Registrant.contactParty.name",
+				"id": "EstablishmentRegistration.registrant.contactParty.name",
+				"path": "EstablishmentRegistration.registrant.contactParty.name",
 				"short": "Registrant Contact Party Name",
 				"definition": "The name of the registrant's contact person.",
 				"min": 1,
@@ -176,14 +188,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.contactParty.name",
+					"path": "EstablishmentRegistration.registrant.contactParty.name",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.contactParty.address",
-				"path": "Registrant.contactParty.address",
+				"id": "EstablishmentRegistration.registrant.contactParty.address",
+				"path": "EstablishmentRegistration.registrant.contactParty.address",
 				"short": "Registrant Contact Party Address",
 				"definition": "The address for the registrant's contact person.",
 				"min": 1,
@@ -195,14 +207,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.contactParty.address",
+					"path": "EstablishmentRegistration.registrant.contactParty.address",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.contactParty.telecom",
-				"path": "Registrant.contactParty.telecom",
+				"id": "EstablishmentRegistration.registrant.contactParty.telecom",
+				"path": "EstablishmentRegistration.registrant.contactParty.telecom",
 				"short": "Registrant Contact Party Telephone",
 				"definition": "The telephone number for the registrant's contact person.",
 				"min": 1,
@@ -214,14 +226,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.contactParty.telecom",
+					"path": "EstablishmentRegistration.registrant.contactParty.telecom",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.contactParty.email",
-				"path": "Registrant.contactParty.email",
+				"id": "EstablishmentRegistration.registrant.contactParty.email",
+				"path": "EstablishmentRegistration.registrant.contactParty.email",
 				"short": "Registrant Contact Party Email Address",
 				"definition": "The email address for the registrant's contact person.",
 				"min": 1,
@@ -233,14 +245,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.contactParty.email",
+					"path": "EstablishmentRegistration.registrant.contactParty.email",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment",
-				"path": "Registrant.establishment",
+				"id": "EstablishmentRegistration.registrant.establishment",
+				"path": "EstablishmentRegistration.registrant.establishment",
 				"short": "Establishment",
 				"definition": "The Establishment information that is being registered.",
 				"min": 1,
@@ -252,16 +264,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment",
+					"path": "EstablishmentRegistration.registrant.establishment",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.dunsIdentifier",
-				"path": "Registrant.establishment.dunsIdentifier",
+				"id": "EstablishmentRegistration.registrant.establishment.dunsIdentifier",
+				"path": "EstablishmentRegistration.registrant.establishment.dunsIdentifier",
 				"short": "Registrant DUNS Number",
-				"definition": "The DUNS number for the establishment organization.",
+				"definition": "The Dun & Bradstreet number assigned to the establishment organization.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -271,16 +283,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.dunsIdentifier",
+					"path": "EstablishmentRegistration.registrant.establishment.dunsIdentifier",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.feiIdentifier",
-				"path": "Registrant.establishment.feiIdentifier",
+				"id": "EstablishmentRegistration.registrant.establishment.feiIdentifier",
+				"path": "EstablishmentRegistration.registrant.establishment.feiIdentifier",
 				"short": "Registrant FEI Number",
-				"definition": "The FEI number for the establishment organization.",
+				"definition": "The FDA Establishment Identifier assigned to the establishment organization.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -290,14 +302,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.feiIdentifier",
+					"path": "EstablishmentRegistration.registrant.establishment.feiIdentifier",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.name",
-				"path": "Registrant.establishment.name",
+				"id": "EstablishmentRegistration.registrant.establishment.name",
+				"path": "EstablishmentRegistration.registrant.establishment.name",
 				"short": "Establishment Name",
 				"definition": "The Establishment organization's name",
 				"min": 1,
@@ -309,14 +321,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.name",
+					"path": "EstablishmentRegistration.registrant.establishment.name",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.address",
-				"path": "Registrant.establishment.address",
+				"id": "EstablishmentRegistration.registrant.establishment.address",
+				"path": "EstablishmentRegistration.registrant.establishment.address",
 				"short": "Establishment Address",
 				"definition": "The address for the establishment organization.",
 				"min": 1,
@@ -328,14 +340,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.address",
+					"path": "EstablishmentRegistration.registrant.establishment.address",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.contactParty",
-				"path": "Registrant.establishment.contactParty",
+				"id": "EstablishmentRegistration.registrant.establishment.contactParty",
+				"path": "EstablishmentRegistration.registrant.establishment.contactParty",
 				"short": "Establishment Contact Party",
 				"definition": "The person to contact about this establishment organization's details.",
 				"min": 1,
@@ -347,14 +359,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.contactParty",
+					"path": "EstablishmentRegistration.registrant.establishment.contactParty",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.contactParty.name",
-				"path": "Registrant.establishment.contactParty.name",
+				"id": "EstablishmentRegistration.registrant.establishment.contactParty.name",
+				"path": "EstablishmentRegistration.registrant.establishment.contactParty.name",
 				"short": "Establishment Contact Party Name",
 				"definition": "The name of the establishment's contact person.",
 				"min": 1,
@@ -366,14 +378,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.contactParty.name",
+					"path": "EstablishmentRegistration.registrant.establishment.contactParty.name",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.contactParty.address",
-				"path": "Registrant.establishment.contactParty.address",
+				"id": "EstablishmentRegistration.registrant.establishment.contactParty.address",
+				"path": "EstablishmentRegistration.registrant.establishment.contactParty.address",
 				"short": "Establishment Contact Party Address",
 				"definition": "The address for the establishment's contact person.",
 				"min": 1,
@@ -385,14 +397,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.contactParty.address",
+					"path": "EstablishmentRegistration.registrant.establishment.contactParty.address",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.contactParty.telecom",
-				"path": "Registrant.establishment.contactParty.telecom",
+				"id": "EstablishmentRegistration.registrant.establishment.contactParty.telecom",
+				"path": "EstablishmentRegistration.registrant.establishment.contactParty.telecom",
 				"short": "Establishment Contact Party Telephone",
 				"definition": "The telephone number for the establishment's contact person.",
 				"min": 1,
@@ -404,14 +416,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.contactParty.telecom",
+					"path": "EstablishmentRegistration.registrant.establishment.contactParty.telecom",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.contactParty.email",
-				"path": "Registrant.establishment.contactParty.email",
+				"id": "EstablishmentRegistration.registrant.establishment.contactParty.email",
+				"path": "EstablishmentRegistration.registrant.establishment.contactParty.email",
 				"short": "Establishment Contact Party Email Address",
 				"definition": "The email address for the establishment's contact person.",
 				"min": 1,
@@ -423,14 +435,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.contactParty.email",
+					"path": "EstablishmentRegistration.registrant.establishment.contactParty.email",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.usAgent",
-				"path": "Registrant.establishment.usAgent",
+				"id": "EstablishmentRegistration.registrant.establishment.usAgent",
+				"path": "EstablishmentRegistration.registrant.establishment.usAgent",
 				"short": "Establishment US Agent",
 				"definition": "If the establishment is not located in the US, this is an organization that acts on their behalf.",
 				"min": 0,
@@ -442,16 +454,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.usAgent",
+					"path": "EstablishmentRegistration.registrant.establishment.usAgent",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.usAgent.identifier",
-				"path": "Registrant.establishment.usAgent.identifier",
+				"id": "EstablishmentRegistration.registrant.establishment.usAgent.identifier",
+				"path": "EstablishmentRegistration.registrant.establishment.usAgent.identifier",
 				"short": "Establishment US Agent Identifier",
-				"definition": "The DUNS identifier for the organization acting as the establishment's US agent.",
+				"definition": "The Dun & Bradstreet number assigned to the organization acting as the establishment's US agent.",
 				"min": 1,
 				"max": "1",
 				"mustSupport": true,
@@ -461,14 +473,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.usAgent.identifier",
+					"path": "EstablishmentRegistration.registrant.establishment.usAgent.identifier",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.usAgent.name",
-				"path": "Registrant.establishment.usAgent.name",
+				"id": "EstablishmentRegistration.registrant.establishment.usAgent.name",
+				"path": "EstablishmentRegistration.registrant.establishment.usAgent.name",
 				"short": "Establishment US Agent Name",
 				"definition": "The name of the organization acting as the establishment's US agent.",
 				"min": 1,
@@ -480,14 +492,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.usAgent.name",
+					"path": "EstablishmentRegistration.registrant.establishment.usAgent.name",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.usAgent.telecom",
-				"path": "Registrant.establishment.usAgent.telecom",
+				"id": "EstablishmentRegistration.registrant.establishment.usAgent.telecom",
+				"path": "EstablishmentRegistration.registrant.establishment.usAgent.telecom",
 				"short": "Establishment US Agent Telephone Number",
 				"definition": "The telephone number for the organization acting as the establishment's US agent.",
 				"min": 1,
@@ -499,14 +511,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.usAgent.telecom",
+					"path": "EstablishmentRegistration.registrant.establishment.usAgent.telecom",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.usAgent.email",
-				"path": "Registrant.establishment.usAgent.email",
+				"id": "EstablishmentRegistration.registrant.establishment.usAgent.email",
+				"path": "EstablishmentRegistration.registrant.establishment.usAgent.email",
 				"short": "Establishment US Agent Email Address",
 				"definition": "The email address for the organization acting as the establishment's US agent.",
 				"min": 1,
@@ -518,14 +530,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.usAgent.email",
+					"path": "EstablishmentRegistration.registrant.establishment.usAgent.email",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.importer",
-				"path": "Registrant.establishment.importer",
+				"id": "EstablishmentRegistration.registrant.establishment.importer",
+				"path": "EstablishmentRegistration.registrant.establishment.importer",
 				"short": "Establishment Importer",
 				"definition": "If the establishment is not located in the US, this is an organization that imports product on their behalf.",
 				"min": 0,
@@ -537,16 +549,16 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.importer",
+					"path": "EstablishmentRegistration.registrant.establishment.importer",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.importer.identifier",
-				"path": "Registrant.establishment.importer.identifier",
+				"id": "EstablishmentRegistration.registrant.establishment.importer.identifier",
+				"path": "EstablishmentRegistration.registrant.establishment.importer.identifier",
 				"short": "Establishment Importer Identifier",
-				"definition": "The DUNS identifier for the organization acting as the establishment's importer.",
+				"definition": "The Dun & Bradstreet number assigned to the organization acting as the establishment's importer.",
 				"min": 1,
 				"max": "*",
 				"mustSupport": true,
@@ -556,14 +568,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.importer.identifier",
+					"path": "EstablishmentRegistration.registrant.establishment.importer.identifier",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.importer.name",
-				"path": "Registrant.establishment.importer.name",
+				"id": "EstablishmentRegistration.registrant.establishment.importer.name",
+				"path": "EstablishmentRegistration.registrant.establishment.importer.name",
 				"short": "Establishment Importer Name",
 				"definition": "The name of the organization acting as the establishment's importer.",
 				"min": 1,
@@ -575,14 +587,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.importer.name",
+					"path": "EstablishmentRegistration.registrant.establishment.importer.name",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.importer.telecom",
-				"path": "Registrant.establishment.importer.telecom",
+				"id": "EstablishmentRegistration.registrant.establishment.importer.telecom",
+				"path": "EstablishmentRegistration.registrant.establishment.importer.telecom",
 				"short": "Establishment Importer Telephone Number",
 				"definition": "The telephone number for the organization acting as the establishment's importer.",
 				"min": 1,
@@ -594,14 +606,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.importer.telecom",
+					"path": "EstablishmentRegistration.registrant.establishment.importer.telecom",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.importer.email",
-				"path": "Registrant.establishment.importer.email",
+				"id": "EstablishmentRegistration.registrant.establishment.importer.email",
+				"path": "EstablishmentRegistration.registrant.establishment.importer.email",
 				"short": "Establishment Importer Email Address",
 				"definition": "The email address for the organization acting as the establishment's importer.",
 				"min": 1,
@@ -613,14 +625,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.importer.email",
+					"path": "EstablishmentRegistration.registrant.establishment.importer.email",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.businessOperation",
-				"path": "Registrant.establishment.businessOperation",
+				"id": "EstablishmentRegistration.registrant.establishment.businessOperation",
+				"path": "EstablishmentRegistration.registrant.establishment.businessOperation",
 				"short": "Establishment Business Operations",
 				"definition": "Various business operations that the establishment organization performs.",
 				"min": 1,
@@ -632,14 +644,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.businessOperation",
+					"path": "EstablishmentRegistration.registrant.establishment.businessOperation",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.businessOperation.code",
-				"path": "Registrant.establishment.businessOperation.code",
+				"id": "EstablishmentRegistration.registrant.establishment.businessOperation.code",
+				"path": "EstablishmentRegistration.registrant.establishment.businessOperation.code",
 				"short": "Business Operation Type",
 				"definition": "A code representing the specific business operation that the establishment organization can perform.",
 				"min": 1,
@@ -651,14 +663,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.businessOperation.code",
+					"path": "EstablishmentRegistration.registrant.establishment.businessOperation.code",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.establishment.businessOperation.qualifier",
-				"path": "Registrant.establishment.businessOperation.qualifier",
+				"id": "EstablishmentRegistration.registrant.establishment.businessOperation.qualifier",
+				"path": "EstablishmentRegistration.registrant.establishment.businessOperation.qualifier",
 				"short": "Business Operation Qualifier",
 				"definition": "A code that gives more information about the business operation that the establishment organization can perform.",
 				"min": 0,
@@ -670,7 +682,7 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.establishment.businessOperation.qualifier",
+					"path": "EstablishmentRegistration.registrant.establishment.businessOperation.qualifier",
 					"min": 0,
 					"max": "1"
 				}
