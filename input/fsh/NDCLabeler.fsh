@@ -38,8 +38,8 @@ Description: "A profile for the data elements required to request an ID for a ND
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS and NDCCode 0..1 MS
-* identifier[DUNSNumber].system = "http://example.org/ORGANIZATION_DUNS_NUMBER"
-* identifier[NDCCode].system = "http://example.org/FDA_NDCNHRIC_CODE"
+* identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier[NDCCode].system = "urn:oid:2.16.840.1.113883.6.69"
 * name 1..1 MS
 * address 1..1 MS
 * address.line 1..2 MS
@@ -94,7 +94,7 @@ Description: "A profile that associates a labeler to its US Agent."
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(USAgentOrganization)
 * code 1..1 MS
-* code = http://example.org/FDA_ORGANIZATION_ROLES#USAgent "United States Agent" (exactly)
+* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73330 "Foreign Facility's United States Agent" (exactly)
 
 Profile: LabelerBusinessOperation
 Parent: HealthcareService
@@ -103,10 +103,13 @@ Description: "A profile that associates a labeler to the set of business operati
 * providedBy 1..1 MS
 * providedBy only Reference(LabelerOrganization)
 * type 1..1 MS
+* type from BusinessOperations (required)
 * serviceProvisionCode 1..1 MS
+* serviceProvisionCode from BusinessOperationQualifiers (required)
 
 Instance: NationalPharmaIndia
 InstanceOf: LabelerOrganization
+Description: "An example of a Labeler Organization."
 * id = "a30accef-f437-4136-808c-9ed4ada5fcf8"
 * identifier[DUNSNumber].value = "999999999"
 * identifier[NDCCode].value = "55555"
@@ -127,6 +130,7 @@ InstanceOf: LabelerOrganization
 
 Instance: NationalPharmaIndiaUSAgent
 InstanceOf: USAgentOrganization
+Description: "An example of a US Agent Organization."
 * identifier[DUNSNumber].value = "888888888"
 * name = "National Pharma of India Inc. US Agent"
 * telecom[Phone].value = "+1-908-999-1212;ext=444"
@@ -134,17 +138,20 @@ InstanceOf: USAgentOrganization
 
 Instance: NationalPharmaIndiaAffiliation
 InstanceOf: LabelerAffiliation
+Description: "An example of the linkage between a Labeler and a US Agent"
 * organization = Reference(NationalPharmaIndia)
 * participatingOrganization = Reference(NationalPharmaIndiaUSAgent)
 
 Instance: NationalPharmaIndiaOperation
 InstanceOf: LabelerBusinessOperation
+Description: "An example of a Labeler's business operations."
 * providedBy = Reference(NationalPharmaIndia)
-* type = http://example.org/NCI_BUSINESS_OPERATION_CODES#C43360 "manufacture"
-* serviceProvisionCode = http://example.org/NCI_BUSINESS_OPERATION_QUALIFIERS#C106643 "Manufactures human prescription drug products"
+* type = $NCI-T#C43360 "manufacture"
+* serviceProvisionCode = $NCI-T#C106643 "Manufactures human prescription drug products"
 
 Instance: NationalPharmaIndiaRequest
 InstanceOf: LabelerRequestBundle
+Description: "An example of a Bundle containing a set of Labeler Code Request resources."
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:50606941-3e5d-465c-b4e0-0f5a19eb41d4"
 * timestamp = "2002-08-11T01:01:01.111+06:00"

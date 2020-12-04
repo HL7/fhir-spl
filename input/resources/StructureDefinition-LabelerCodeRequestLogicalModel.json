@@ -1,9 +1,9 @@
 {
 	"resourceType": "StructureDefinition",
-	"id": "LabelerRequestLogicalModel",
-	"url": "http://hl7.org/fhir/us/spl/StructureDefinition/LabelerRequestLogicalModel",
-	"name": "LabelerRequestLogicalModel",
-	"title": "FDA Labeler Request",
+	"id": "LabelerCodeRequestLogicalModel",
+	"url": "http://hl7.org/fhir/us/spl/StructureDefinition/LabelerCodeRequestLogicalModel",
+	"name": "LabelerCodeRequestLogicalModel",
+	"title": "FDA Labeler CodeRequest",
 	"purpose": "Describe a Labeler when requesting a FDA labeler identifier.",
 	"publisher": "IBM",
 	"status": "draft",

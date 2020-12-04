@@ -256,8 +256,8 @@
 				}
 			},
 			{
-				"id": "Registrant.gdufaFacilty.DUNSidentifier",
-				"path": "Registrant.gdufaFacilty.DUNSidentifier",
+				"id": "Registrant.gdufaFacilty.dunsIdentifier",
+				"path": "Registrant.gdufaFacilty.dunsIdentifier",
 				"short": "GDUFA Facility DUNS Number",
 				"definition": "The DUNS number for the GDUFA Facility organization.",
 				"min": 1,
@@ -269,14 +269,14 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.gdufaFacilty.DUNSidentifier",
+					"path": "Registrant.gdufaFacilty.dunsIdentifier",
 					"min": 0,
 					"max": "1"
 				}
 			},
 			{
-				"id": "Registrant.gdufaFacilty.FEIidentifier",
-				"path": "Registrant.gdufaFacilty.FEIidentifier",
+				"id": "Registrant.gdufaFacilty.feiIdentifier",
+				"path": "Registrant.gdufaFacilty.feiIdentifier",
 				"short": "GDUFA Facility FEI Number",
 				"definition": "The FEI number for the GDUFA Facility organization.",
 				"min": 1,
@@ -288,7 +288,7 @@
 					}
 				],
 				"base": {
-					"path": "Registrant.gdufaFacilty.FEIidentifier",
+					"path": "Registrant.gdufaFacilty.feiIdentifier",
 					"min": 0,
 					"max": "1"
 				}

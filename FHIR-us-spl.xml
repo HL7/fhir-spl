@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/spl/2022Jan" ciUrl="https://build.fhir.org/ig/HL7/spl" defaultVersion="current" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-spl" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/us/spl"><version code="current" url="https://build.fhir.org/ig/HL7/spl"/>
+<version code="0.1.0" url="http://hl7.org/fhir/us/spl/2022Jan"/>
+<version code="0.1" deprecated="true"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="ValueSet/valueset-businessOperationQualifiers" key="ValueSet-valueset-businessOperationQualifiers" name="BusinessOperationQualifiers"/>
+<artifact id="ValueSet/valueset-businessOperations" key="ValueSet-valueset-businessOperations" name="BusinessOperations"/>
+<artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration"/>
+<artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="FDA GDUFA Facility Identification"/>
+<artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler CodeRequest"/>
+<artifact id="StructureDefinition/LabelerAffiliation" key="StructureDefinition-LabelerAffiliation" name="LabelerAffiliation"/>
+<artifact id="StructureDefinition/LabelerBusinessOperation" key="StructureDefinition-LabelerBusinessOperation" name="LabelerBusinessOperation"/>
+<artifact id="StructureDefinition/LabelerOrganization" key="StructureDefinition-LabelerOrganization" name="LabelerOrganization"/>
+<artifact id="StructureDefinition/LabelerRequestBundle" key="StructureDefinition-LabelerRequestBundle" name="LabelerRequestBundle"/>
+<artifact id="Organization/a30accef-f437-4136-808c-9ed4ada5fcf8" key="Organization-a30accef-f437-4136-808c-9ed4ada5fcf8" name="NationalPharmaIndia"/>
+<artifact id="OrganizationAffiliation/NationalPharmaIndiaAffiliation" key="OrganizationAffiliation-NationalPharmaIndiaAffiliation" name="NationalPharmaIndiaAffiliation"/>
+<artifact id="HealthcareService/NationalPharmaIndiaOperation" key="HealthcareService-NationalPharmaIndiaOperation" name="NationalPharmaIndiaOperation"/>
+<artifact id="Bundle/NationalPharmaIndiaRequest" key="Bundle-NationalPharmaIndiaRequest" name="NationalPharmaIndiaRequest"/>
+<artifact id="Organization/NationalPharmaIndiaUSAgent" key="Organization-NationalPharmaIndiaUSAgent" name="NationalPharmaIndiaUSAgent"/>
+<artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page deprecated="true" key="profiles" name="(profiles)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="credits" name="Credits"/>
+<page key="downloads" name="Downloads"/>
+<page key="specification" name="Formal Specification"/>
+<page key="index" name="SPL Mapping Implementation Guide Home Page"/>
+<page key="toc" name="Table of Contents"/>
+<page key="usecases" name="Use Cases and Overview"/>
+</specification>
