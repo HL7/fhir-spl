@@ -7,9 +7,9 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="ValueSet/valueset-businessOperationQualifiers" key="ValueSet-valueset-businessOperationQualifiers" name="BusinessOperationQualifiers"/>
 <artifact id="ValueSet/valueset-businessOperations" key="ValueSet-valueset-businessOperations" name="BusinessOperations"/>
-<artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration"/>
-<artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="FDA GDUFA Facility Identification"/>
-<artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler CodeRequest"/>
+<artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration Logical Model"/>
+<artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
+<artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="GDUFA Facility Identification Logical Model"/>
 <artifact id="StructureDefinition/LabelerAffiliation" key="StructureDefinition-LabelerAffiliation" name="LabelerAffiliation"/>
 <artifact id="StructureDefinition/LabelerBusinessOperation" key="StructureDefinition-LabelerBusinessOperation" name="LabelerBusinessOperation"/>
 <artifact id="StructureDefinition/LabelerOrganization" key="StructureDefinition-LabelerOrganization" name="LabelerOrganization"/>
