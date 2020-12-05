@@ -1,7 +1,6 @@
 Profile: LabelerRequestBundle
 Parent: Bundle
-Description: "A profile that represents the Bundle that contains all of the resources for a Labeler NDC/NHRIC Code Request."
-
+Description: "A profile that represents the Bundle that contains all of the resources for a Labeler NDC Code Request."
 * identifier 1..1 MS
 * type 1..1 MS
 * type = #collection (exactly)
@@ -15,23 +14,16 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a NDC/NHRIC Code Request."
+* entry ^slicing.description = "The specific bundle entries that are needed for a NDC Code Request."
 * entry contains Labeler 1..1 MS and USAgent 0..1 MS and USAgentAffiliation 0..1 MS and BusinessOperation 1..* MS
 * entry[Labeler].resource only LabelerOrganization
 * entry[USAgent].resource only USAgentOrganization
-* entry[USAgentAffiliation].resource only LabelerAffiliation
+* entry[USAgentAffiliation].resource only USAgentAffiliation
 * entry[BusinessOperation].resource only LabelerBusinessOperation
-// * obeys USAgentAndAffiliation
-
-Invariant: USAgentAndAffiliation
-Description: "resource of type USAgent exists if and only if resource of type LabelerAffiliation exists"
-Severity: #error
-Expression: "(Bundle.entry.exists(resource.conformsTo(USAgentOrganization)) implies Bundle.entry.exists(resource.conformsTo(LabelerAffiliation))) and (Bundle.entry.exists(resource.conformsTo(LabelerAffiliation)) implies Bundle.entry.exists(resource.conformsTo(USAgentOrganization)))"
 
 Profile: LabelerOrganization
 Parent: Organization
-Description: "A profile for the data elements required to request an ID for a NDC/NHRIC Labeler organization."
-
+Description: "A profile for the data elements required to identify a NDC Labeler organization."
 * identifier 1..* MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -64,49 +56,6 @@ Description: "A profile for the data elements required to request an ID for a ND
 * contact.telecom[Phone].system = #phone
 * contact.telecom[Email].system = #email
 
-Profile: USAgentOrganization
-Parent: Organization
-Description: "A profile for the data elements required for an organization fulfilling the role of a US Agent for a labeler."
-
-* identifier 1..* MS
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Require specific types of identifiers."
-* identifier contains DUNSNumber 1..1 MS
-* identifier[DUNSNumber].system = "http://example.org/ORGANIZATION_DUNS_NUMBER"
-* name 1..1 MS
-* telecom 2..* MS
-* telecom ^slicing.discriminator.type = #value
-* telecom ^slicing.discriminator.path = "system"
-* telecom ^slicing.rules = #open
-* telecom ^slicing.description = "Require a telephone number and an email address."
-* telecom contains Phone 1..1 MS and Email 1..1 MS
-* telecom[Phone].system = #phone
-* telecom[Email].system = #email
-
-Profile: LabelerAffiliation
-Parent: OrganizationAffiliation
-Description: "A profile that associates a labeler to its US Agent."
-
-* organization 1..1 MS
-* organization only Reference(LabelerOrganization)
-* participatingOrganization 1..1 MS
-* participatingOrganization only Reference(USAgentOrganization)
-* code 1..1 MS
-* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73330 "Foreign Facility's United States Agent" (exactly)
-
-Profile: LabelerBusinessOperation
-Parent: HealthcareService
-Description: "A profile that associates a labeler to the set of business operations that it can perform."
-
-* providedBy 1..1 MS
-* providedBy only Reference(LabelerOrganization)
-* type 1..1 MS
-* type from BusinessOperations (required)
-* serviceProvisionCode 1..1 MS
-* serviceProvisionCode from BusinessOperationQualifiers (required)
-
 Instance: NationalPharmaIndia
 InstanceOf: LabelerOrganization
 Description: "An example of a Labeler Organization."
@@ -137,7 +86,7 @@ Description: "An example of a US Agent Organization."
 * telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: NationalPharmaIndiaAffiliation
-InstanceOf: LabelerAffiliation
+InstanceOf: USAgentAffiliation
 Description: "An example of the linkage between a Labeler and a US Agent"
 * organization = Reference(NationalPharmaIndia)
 * participatingOrganization = Reference(NationalPharmaIndiaUSAgent)
@@ -163,3 +112,13 @@ Description: "An example of a Bundle containing a set of Labeler Code Request re
 * entry[USAgentAffiliation].fullUrl = "http://example.org/NationalPharmaIndiaAffiliation"
 * entry[BusinessOperation].resource = NationalPharmaIndiaOperation
 * entry[BusinessOperation].fullUrl = "http://example.org/NationalPharmaIndiaOperation"
+
+Profile: LabelerBusinessOperation
+Parent: HealthcareService
+Description: "A profile that associates a Labeler to the set of business operations that it can perform."
+* providedBy 1..1 MS
+* providedBy only Reference(LabelerOrganization)
+* type 1..1 MS
+* type from LabelerBusinessOperations (required)
+* serviceProvisionCode 1..1 MS
+* serviceProvisionCode from BusinessOperationQualifiers (required)

@@ -6,12 +6,24 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="ValueSet/valueset-businessOperationQualifiers" key="ValueSet-valueset-businessOperationQualifiers" name="BusinessOperationQualifiers"/>
-<artifact id="ValueSet/valueset-businessOperations" key="ValueSet-valueset-businessOperations" name="BusinessOperations"/>
+<artifact id="StructureDefinition/EstablishmentAffiliation" key="StructureDefinition-EstablishmentAffiliation" name="EstablishmentAffiliation"/>
+<artifact id="StructureDefinition/EstablishmentBusinessOperation" key="StructureDefinition-EstablishmentBusinessOperation" name="EstablishmentBusinessOperation"/>
+<artifact id="ValueSet/valueset-establishmentBusinessOperations" key="ValueSet-valueset-establishmentBusinessOperations" name="EstablishmentBusinessOperations"/>
+<artifact id="StructureDefinition/EstablishmentOrganization" key="StructureDefinition-EstablishmentOrganization" name="EstablishmentOrganization"/>
+<artifact id="StructureDefinition/EstablishmentRequestBundle" key="StructureDefinition-EstablishmentRequestBundle" name="EstablishmentRequestBundle"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
 <artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="GDUFA Facility Identification Logical Model"/>
-<artifact id="StructureDefinition/LabelerAffiliation" key="StructureDefinition-LabelerAffiliation" name="LabelerAffiliation"/>
+<artifact id="StructureDefinition/GDUFAFacilityAffiliation" key="StructureDefinition-GDUFAFacilityAffiliation" name="GDUFAFacilityAffiliation"/>
+<artifact id="StructureDefinition/GDUFAFacilityBusinessOperation" key="StructureDefinition-GDUFAFacilityBusinessOperation" name="GDUFAFacilityBusinessOperation"/>
+<artifact id="ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers" key="ValueSet-valueset-gdufaFacilityBusinessOperationQualifiers" name="GDUFAFacilityBusinessOperationQualifiers"/>
+<artifact id="ValueSet/valueset-gdufaFacilityBusinessOperations" key="ValueSet-valueset-gdufaFacilityBusinessOperations" name="GDUFAFacilityBusinessOperations"/>
+<artifact id="StructureDefinition/GDUFAFacilityOrganization" key="StructureDefinition-GDUFAFacilityOrganization" name="GDUFAFacilityOrganization"/>
+<artifact id="StructureDefinition/GDUFAFacilityRequestBundle" key="StructureDefinition-GDUFAFacilityRequestBundle" name="GDUFAFacilityRequestBundle"/>
+<artifact id="StructureDefinition/ImporterAffiliation" key="StructureDefinition-ImporterAffiliation" name="ImporterAffiliation"/>
+<artifact id="StructureDefinition/ImporterOrganization" key="StructureDefinition-ImporterOrganization" name="ImporterOrganization"/>
 <artifact id="StructureDefinition/LabelerBusinessOperation" key="StructureDefinition-LabelerBusinessOperation" name="LabelerBusinessOperation"/>
+<artifact id="ValueSet/valueset-labelerBusinessOperations" key="ValueSet-valueset-labelerBusinessOperations" name="LabelerBusinessOperations"/>
 <artifact id="StructureDefinition/LabelerOrganization" key="StructureDefinition-LabelerOrganization" name="LabelerOrganization"/>
 <artifact id="StructureDefinition/LabelerRequestBundle" key="StructureDefinition-LabelerRequestBundle" name="LabelerRequestBundle"/>
 <artifact id="Organization/a30accef-f437-4136-808c-9ed4ada5fcf8" key="Organization-a30accef-f437-4136-808c-9ed4ada5fcf8" name="NationalPharmaIndia"/>
@@ -19,6 +31,9 @@
 <artifact id="HealthcareService/NationalPharmaIndiaOperation" key="HealthcareService-NationalPharmaIndiaOperation" name="NationalPharmaIndiaOperation"/>
 <artifact id="Bundle/NationalPharmaIndiaRequest" key="Bundle-NationalPharmaIndiaRequest" name="NationalPharmaIndiaRequest"/>
 <artifact id="Organization/NationalPharmaIndiaUSAgent" key="Organization-NationalPharmaIndiaUSAgent" name="NationalPharmaIndiaUSAgent"/>
+<artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
+<artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
+<artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

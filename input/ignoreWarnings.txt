@@ -7,7 +7,7 @@ US FHIR Usage rules require that all profiles on Organization derive from the co
 Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
 Unknown System specified, so Concepts and Filters can''t be checked
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperations because the value set or code system is not known to the validator]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-labelerBusinessOperations because the value set or code system is not known to the validator]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperationQualifiers because the value set or code system is not known to the validator]
 
 The code C25391 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl

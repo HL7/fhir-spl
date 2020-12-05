@@ -1,7 +1,7 @@
 Alias: $NCI-T = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 
-ValueSet: BusinessOperations
-Id: valueset-businessOperations
+ValueSet: LabelerBusinessOperations
+Id: valueset-labelerBusinessOperations
 Description: "The set of business operations that can be specified for a labelling facility."
 * $NCI-T#C25391 "ANALYSIS"
 * $NCI-T#C101509 "API/FDF ANALYTICAL TESTING"
@@ -26,9 +26,40 @@ Description: "The set of business operations that can be specified for a labelli
 * $NCI-T#C125710 "TRANSFILL"
 * $NCI-T#C118411 "WHOLESALE DRUG DISTRIBUTOR"
 
+ValueSet: EstablishmentBusinessOperations
+Id: valueset-establishmentBusinessOperations
+Description: "The set of business operations that can be specified for an establishment."
+* $NCI-T#C25391 "ANALYSIS"
+* $NCI-T#C82401 "API MANUFACTURE"
+* $NCI-T#C112113 "HUMAN DRUG COMPOUNDING OUTSOURCING FACILITY"
+* $NCI-T#C84732 "LABEL"
+* $NCI-T#C43360 "MANUFACTURE"
+* $NCI-T#C84635 "MEDICATED ANIMAL FEED MANUFACTURE"
+* $NCI-T#C122061 "OUTSOURCING ANIMAL DRUG COMPOUNDING"
+* $NCI-T#C84731 "PACK"
+* $NCI-T#C84386 "PARTICLE SIZE REDUCTION"
+* $NCI-T#C91403 "POSITRON EMISSION TOMOGRAPHY DRUG PRODUCTION"
+* $NCI-T#C73607 "RELABEL"
+* $NCI-T#C73606 "REPACK"
+* $NCI-T#C70827 "SALVAGE"
+* $NCI-T#C175317 "SIP FOREIGN SELLER"
+* $NCI-T#C125710 "TRANSFILL"
+
+ValueSet: GDUFAFacilityBusinessOperations
+Id: valueset-gdufaFacilityBusinessOperations
+Description: "The set of business operations that can be specified for a GDUFA facility."
+* $NCI-T#C101509 "API/FDF ANALYTICAL TESTING"
+* $NCI-T#C82401 "API MANUFACTURE"
+* $NCI-T#C101511 "CLINICAL BIOEQUIVALENCE OR BIOAVAILABILITY STUDY"
+* $NCI-T#C101510 "FDF MANUFACTURE"
+* $NCI-T#C101512 "IN VITRO BIOEQUIVALENCE OR BIOANALYTICAL TESTING"
+* $NCI-T#C84731 "PACK"
+* $NCI-T#C91403 "POSITRON EMISSION TOMOGRAPHY DRUG PRODUCTION"
+* $NCI-T#C73606 "REPACK"
+
 ValueSet: BusinessOperationQualifiers
 Id: valueset-businessOperationQualifiers
-Description: "Codes that give further information about a labelling facility's business operation."
+Description: "Codes that give further information about an organization's business operation."
 * $NCI-T#C112092 "Compounding from bulk ingredient"
 * $NCI-T#C112094 "Compounding sterile products"
 * $NCI-T#C132491 "Contract manufacturing"
@@ -50,3 +81,15 @@ Description: "Codes that give further information about a labelling facility's b
 * $NCI-T#C112095 "Not compounding sterile products"
 * $NCI-T#C126091 "Transfills Medical Gas"
 * $NCI-T#C123274 "Warehouses human prescription drug products"
+
+ValueSet: GDUFAFacilityBusinessOperationQualifiers
+Id: valueset-gdufaFacilityBusinessOperationQualifiers
+Description: "Codes that give further information about a GUDFA facility's business operation."
+* $NCI-T#C132491 "Contract manufacturing"
+* $NCI-T#C101886 "Manufactures Non-Generics"
+
+CodeSystem: OrganizationAffiliationCodes
+Id: codesystem-organizationAffiliationCodes
+Description: "Codes that identify the relationship between two organizations."
+* #ESTABLISHMENT "Registrant to Establishment"
+* #GDUFA "Registrant to GDUFA Facility"
