@@ -59,6 +59,8 @@ The code C123274 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS
 
 # Validation information messages
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/OperationDefinition
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerRequestBundle
@@ -67,9 +69,9 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organi
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentOrganization
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentOrganization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerAffiliation
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentAffiliation
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerAffiliation - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentAffiliation - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerBusinessOperation
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/HealthcareService
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerBusinessOperation - listed in meta

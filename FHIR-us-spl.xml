@@ -32,6 +32,7 @@
 <artifact id="Bundle/NationalPharmaIndiaRequest" key="Bundle-NationalPharmaIndiaRequest" name="NationalPharmaIndiaRequest"/>
 <artifact id="Organization/NationalPharmaIndiaUSAgent" key="Organization-NationalPharmaIndiaUSAgent" name="NationalPharmaIndiaUSAgent"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
+<artifact id="OperationDefinition/processOrganizationBundle" key="OperationDefinition-processOrganizationBundle" name="ProcessOrganizationOperation"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>
