@@ -293,7 +293,7 @@
 				"path": "EstablishmentRegistration.registrant.establishment.feiIdentifier",
 				"short": "Registrant FEI Number",
 				"definition": "The FDA Establishment Identifier assigned to the establishment organization.",
-				"min": 1,
+				"min": 0,
 				"max": "1",
 				"mustSupport": true,
 				"type": [

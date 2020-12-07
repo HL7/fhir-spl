@@ -1,0 +1,47 @@
+@startuml
+class EstablishmentRegistration {
+	string transactionId
+	dateTime transactionEffectiveTime
+	string requestId
+	string requestVersion
+}
+EstablishmentRegistration o-- Registrant
+class Registrant {
+	Identifier dunsIdentifier
+	string name
+}
+Registrant *-- ContactParty
+class ContactParty {
+	string name
+	Address address
+	ContactPoint telecom
+	ContactPoint email
+}
+Registrant o-- "1..*" Establishment
+class Establishment {
+	Identifier dunsIdentifier
+	Identifier feiIdentifier 0..1
+	string name
+	Address address
+}
+Establishment *-- ContactParty
+Establishment *-- "0..1" USAgent
+class USAgent {
+	Identifier dunsIdentifier
+	string name
+	ContactPoint telecom
+	ContactPoint email
+}
+Establishment *-- "0..1" Importer
+class Importer {
+	Identifier dunsIdentifier
+	string name
+	ContactPoint telecom
+	ContactPoint email
+}
+Establishment *-- "1..*" BusinessOperation
+class BusinessOperation {
+	CodeableConcept code
+	CodeableConcept qualifier 0..*
+}
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+class GDUFAFacilityIdentification {
+	string transactionId
+	dateTime transactionEffectiveTime
+	string requestId
+	string requestVersion
+}
+GDUFAFacilityIdentification o-- Registrant
+class Registrant {
+	Identifier dunsIdentifier
+	string name
+}
+Registrant *-- ContactParty
+class ContactParty {
+	string name
+	Address address
+	ContactPoint telecom
+	ContactPoint email
+}
+Registrant o-- "1..*" GDUFAFacility
+class GDUFAFacility {
+	Identifier dunsIdentifier
+	Identifier feiIdentifier 0..1
+	string name
+	Address address
+}
+GDUFAFacility *-- ContactParty
+GDUFAFacility *-- "1..*" BusinessOperation
+class BusinessOperation {
+	CodeableConcept code
+	CodeableConcept qualifier 0..*
+}
+@enduml
