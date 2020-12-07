@@ -1,0 +1,34 @@
+@startuml
+class LabelerCodeRequest {
+	string transactionId
+	dateTime transactionEffectiveTime
+	string requestId
+	string requestVersion
+}
+LabelerCodeRequest o-- Labeler
+class Labeler {
+	Identifier dunsIdentifier
+	Identifier labelerCode 0..1
+	string name
+	Address address 0..1
+}
+Labeler *-- ContactParty
+class ContactParty {
+	string name
+	Address address
+	ContactPoint telecom
+	ContactPoint email
+}
+Labeler *-- "0..1" USAgent
+class USAgent {
+	Identifier dunsIdentifier
+	string name
+	ContactPoint telecom
+	ContactPoint email
+}
+Labeler *-- "1..*" BusinessOperation
+class BusinessOperation {
+	CodeableConcept code
+	CodeableConcept qualifier 0..2
+}
+@enduml

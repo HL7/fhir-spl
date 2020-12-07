@@ -57,7 +57,7 @@
 				"mustSupport": true,
 				"type": [
 					{
-						"code": "string"
+						"code": "dateTime"
 					}
 				],
 				"base": {
