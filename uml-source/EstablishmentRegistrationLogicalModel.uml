@@ -1,13 +1,13 @@
 @startuml
 class EstablishmentRegistration {
-	string transactionId
-	dateTime transactionEffectiveTime
+	string operationId
+	dateTime operationEffectiveTime
 	string requestId
 	string requestVersion
 }
 EstablishmentRegistration o-- Registrant
 class Registrant {
-	Identifier dunsIdentifier
+	string dunsNumber
 	string name
 }
 Registrant *-- ContactParty
@@ -19,22 +19,22 @@ class ContactParty {
 }
 Registrant o-- "1..*" Establishment
 class Establishment {
-	Identifier dunsIdentifier
-	Identifier feiIdentifier 0..1
+	string dunsNumber
+	string feiNumber 0..1
 	string name
 	Address address
 }
 Establishment *-- ContactParty
 Establishment *-- "0..1" USAgent
 class USAgent {
-	Identifier dunsIdentifier
+	string dunsNumber
 	string name
 	ContactPoint telecom
 	ContactPoint email
 }
 Establishment *-- "0..1" Importer
 class Importer {
-	Identifier dunsIdentifier
+	string dunsNumber
 	string name
 	ContactPoint telecom
 	ContactPoint email

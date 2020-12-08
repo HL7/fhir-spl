@@ -2,8 +2,8 @@
 The following UML diagram shows the data elements for an Establishment Registration operation.  More details about the data elements can be found in the definition tables below.
 
 Each request has a set of elements that identify the request:
-* transaction ID
-* transaction date/time
+* operation ID
+* operation date/time
 * request ID
 * request version
 

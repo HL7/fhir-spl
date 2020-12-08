@@ -1,13 +1,13 @@
 @startuml
 class GDUFAFacilityIdentification {
-	string transactionId
-	dateTime transactionEffectiveTime
+	string operationId
+	dateTime operationEffectiveTime
 	string requestId
 	string requestVersion
 }
 GDUFAFacilityIdentification o-- Registrant
 class Registrant {
-	Identifier dunsIdentifier
+	string dunsNumber
 	string name
 }
 Registrant *-- ContactParty
@@ -19,8 +19,8 @@ class ContactParty {
 }
 Registrant o-- "1..*" GDUFAFacility
 class GDUFAFacility {
-	Identifier dunsIdentifier
-	Identifier feiIdentifier 0..1
+	string dunsNumber
+	string feiNumber
 	string name
 	Address address
 }
