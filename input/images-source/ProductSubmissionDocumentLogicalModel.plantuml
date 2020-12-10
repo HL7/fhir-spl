@@ -1,0 +1,43 @@
+@startuml
+class ProductSubmissionDocument {
+	string identifier
+	date splVersoin
+	string submissionIdentifier
+	string versionNumber
+	CodeableConcept type
+	string title 0..1
+}
+ProductSubmissionDocument *-- Labeler
+class Labeler {
+	string dunsNumber
+	string name
+}
+Labeler *-- "0..1" Registrant
+class Registrant {
+	string dunsNumber
+	string name
+}
+Registrant *-- "0..*" Establishment
+class Establishment {
+	string dunsNumber
+	string name
+}
+Establishment *-- "1..*" BusinessOperation
+class BusinessOperation {
+	CodeableConcept code
+	CodeableConcept qualifier 0..*
+	CodeableConcept productNDC 0..1
+}
+ProductSubmissionDocument *-- "1..*" Section
+class Section {
+	string identifier
+	dateTime effectiveTime 0..1
+	CodeableConcept type
+	string title 0..1
+	xhtml text 0..1
+	xhtml highlights 0..1
+	Attachment image 0..*
+	MedicinalProduct product 0..1
+}
+Section *-- "0..*" Section
+@enduml
