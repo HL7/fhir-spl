@@ -1,3 +1,3 @@
 #!/bin/bash
-java -jar plantuml.jar -checkmetadata uml-source/* -o ../input/images
+java -jar template/scripts/plantuml.jar -checkmetadata input/images-source/* -o ../images
 ./_genonce.sh

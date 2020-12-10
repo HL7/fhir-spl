@@ -13,6 +13,7 @@
 <artifact id="StructureDefinition/EstablishmentRequestBundle" key="StructureDefinition-EstablishmentRequestBundle" name="EstablishmentRequestBundle"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
+<artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="FDA Product Submission Document Logical Model"/>
 <artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="GDUFA Facility Identification Logical Model"/>
 <artifact id="StructureDefinition/GDUFAFacilityAffiliation" key="StructureDefinition-GDUFAFacilityAffiliation" name="GDUFAFacilityAffiliation"/>
 <artifact id="StructureDefinition/GDUFAFacilityBusinessOperation" key="StructureDefinition-GDUFAFacilityBusinessOperation" name="GDUFAFacilityBusinessOperation"/>
