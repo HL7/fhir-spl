@@ -9,4 +9,4 @@ Each request has a set of elements that identify the request:
 
 It then has the information about the Registrant, i.e the organization that is identifying the facilities, and then one-to-many sets of GDUFA Facility information along with a set of Business Operations for the facility.
 
-![UML Diagram](GDUFAFacilityIdentificationLogicalModel.png)
+{% include GDUFAFacilityIdentificationLogicalModel.svg %}
