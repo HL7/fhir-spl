@@ -9,4 +9,4 @@ Each request has a set of elements that identify the request:
 
 It then has the information about the Registrant, i.e the organization that is registering the establishments, and then one-to-many sets of Establishment information along with an optional US Agent and Importer (if the Establishment is not located in the US) and a set of Business Operations for the Establishment.
 
-{% include EstablishmentRegistrationLogicalModel.svg %}
+![UML Diagram](EstablishmentRegistrationLogicalModel.png)
