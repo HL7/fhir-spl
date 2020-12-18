@@ -1,11 +1,18 @@
 @startuml
 class ProductSubmissionDocument {
 	string identifier
-	date splVersoin
+	date splVersion
 	string submissionIdentifier
-	string versionNumber
+	positiveInt versionNumber
 	CodeableConcept type
 	string title 0..1
+}
+ProductSubmissionDocument o-- RelatedDocument
+class RelatedDocument {
+	string identifier
+	string submissionIdentifier
+	positiveInt versionNumber
+	CodeableConcept type
 }
 ProductSubmissionDocument *-- Labeler
 class Labeler {

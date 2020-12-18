@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/spl/2022Jan" ciUrl="https://build.fhir.org/ig/HL7/spl" defaultVersion="current" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-spl" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/us/spl"><version code="current" url="https://build.fhir.org/ig/HL7/spl"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/spl/2022Jan" ciUrl="https://build.fhir.org/ig/HL7/spl" defaultVersion="0.1.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-spl" url="http://hl7.org/fhir/us/spl">
+<version code="current" url="https://build.fhir.org/ig/HL7/spl"/>
 <version code="0.1.0" url="http://hl7.org/fhir/us/spl/2022Jan"/>
-<version code="0.1" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
