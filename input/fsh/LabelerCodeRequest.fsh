@@ -1,4 +1,4 @@
-Profile: LabelerRequestBundle
+Profile: LabelerCodeRequestBundle
 Parent: Bundle
 Description: "A profile that represents the Bundle that contains all of the resources for a Labeler NDC Code Request."
 * identifier 1..1 MS
@@ -99,7 +99,7 @@ Description: "An example of a Labeler's business operations."
 * serviceProvisionCode = $NCI-T#C106643 "Manufactures human prescription drug products"
 
 Instance: NationalPharmaIndiaRequest
-InstanceOf: LabelerRequestBundle
+InstanceOf: LabelerCodeRequestBundle
 Description: "An example of a Bundle containing a set of Labeler Code Request resources."
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:50606941-3e5d-465c-b4e0-0f5a19eb41d4"

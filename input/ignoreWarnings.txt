@@ -63,7 +63,7 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSy
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/OperationDefinition
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerRequestBundle
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerCodeRequestBundle
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization - listed in meta

@@ -37,3 +37,42 @@ menu:
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
 
+groups:
+  EstablishmentRegistration:
+    name: FDA Establishment Registration
+    description: Artifacts associated with the Estabishment Registration use cases
+    resources:
+      - StructureDefinition/EstablishmentRequestBundle
+      - StructureDefinition/EstablishmentOrganization
+      - StructureDefinition/EstablishmentAffiliation
+      - StructureDefinition/EstablishmentBusinessOperation
+  LabelerRequest:
+    name: FDA Labeler Code Request
+    description: Artifacts associated with the Labeler Code Request use cases
+    resources:
+      - StructureDefinition/LabelerCodeRequestBundle
+      - StructureDefinition/LabelerOrganization
+      - StructureDefinition/LabelerBusinessOperation
+  GDUFAFacility:
+    name: GDUFA Facility Identification
+    description: Artifacts associated with the GDUFA Facility Identification use cases
+    resources:
+      - StructureDefinition/GDUFAFacilityRequestBundle
+      - StructureDefinition/GDUFAFacilityOrganization
+      - StructureDefinition/GDUFAFacilityAffiliation
+      - StructureDefinition/GDUFAFacilityBusinessOperation
+  GeneralOrganization:
+    name: General Organization Structures
+    description: Artifacts that are used in any of the Organization use cases
+    resources:
+      - StructureDefinition/RegistrantOrganization
+      - StructureDefinition/USAgentOrganization
+      - StructureDefinition/USAgentAffiliation
+      - StructureDefinition/ImporterOrganization
+      - StructureDefinition/ImporterAffiliation
+  ProductSubmission:
+    name: Product Submission Document
+    description: Artifacts associated with the submission of a product document
+    resources:
+      - StructureDefinition/ProductSubmissionDocument
+ 
