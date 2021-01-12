@@ -15,11 +15,12 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a NDC Code Request."
-* entry contains Labeler 1..1 MS and USAgent 0..1 MS and USAgentAffiliation 0..1 MS and BusinessOperation 1..* MS
+* entry contains Labeler 1..1 MS and USAgent 0..1 MS and USAgentAffiliation 0..1 MS and BusinessOperation 1..* MS and SourceSPL 0..1 MS
 * entry[Labeler].resource only LabelerOrganization
 * entry[USAgent].resource only USAgentOrganization
 * entry[USAgentAffiliation].resource only USAgentAffiliation
 * entry[BusinessOperation].resource only LabelerBusinessOperation
+* entry[SourceSPL].resource only SPLDocumentReference
 
 Profile: LabelerOrganization
 Parent: Organization
@@ -55,6 +56,16 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contact.telecom contains Phone 1..1 MS and Email 1..1 MS
 * contact.telecom[Phone].system = #phone
 * contact.telecom[Email].system = #email
+
+Profile: LabelerBusinessOperation
+Parent: HealthcareService
+Description: "A profile that associates a Labeler to the set of business operations that it can perform."
+* providedBy 1..1 MS
+* providedBy only Reference(LabelerOrganization)
+* type 1..1 MS
+* type from LabelerBusinessOperations (required)
+* serviceProvisionCode 1..1 MS
+* serviceProvisionCode from BusinessOperationQualifiers (required)
 
 Instance: NationalPharmaIndia
 InstanceOf: LabelerOrganization
@@ -112,13 +123,3 @@ Description: "An example of a Bundle containing a set of Labeler Code Request re
 * entry[USAgentAffiliation].fullUrl = "http://example.org/NationalPharmaIndiaAffiliation"
 * entry[BusinessOperation].resource = NationalPharmaIndiaOperation
 * entry[BusinessOperation].fullUrl = "http://example.org/NationalPharmaIndiaOperation"
-
-Profile: LabelerBusinessOperation
-Parent: HealthcareService
-Description: "A profile that associates a Labeler to the set of business operations that it can perform."
-* providedBy 1..1 MS
-* providedBy only Reference(LabelerOrganization)
-* type 1..1 MS
-* type from LabelerBusinessOperations (required)
-* serviceProvisionCode 1..1 MS
-* serviceProvisionCode from BusinessOperationQualifiers (required)

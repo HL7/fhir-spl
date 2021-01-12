@@ -36,6 +36,7 @@
 <artifact id="OperationDefinition/processOrganizationBundle" key="OperationDefinition-processOrganizationBundle" name="ProcessOrganizationOperation"/>
 <artifact id="StructureDefinition/ProductSubmissionDocument" key="StructureDefinition-ProductSubmissionDocument" name="ProductSubmissionDocument"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
+<artifact id="StructureDefinition/SPLDocumentReference" key="StructureDefinition-SPLDocumentReference" name="SPLDocumentReference"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>
 <page key="NA" name="(NA)"/>

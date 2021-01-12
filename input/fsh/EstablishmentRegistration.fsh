@@ -15,7 +15,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Establishment Registration Request."
-* entry contains Registrant 1..1 MS and Establishment 1..* MS and EstablishmentAffiliation 1..* MS and USAgent 0..* MS and USAgentAffiliation 0..* MS and Importer 0..* MS and ImporterAffiliation 0..* MS and BusinessOperation 1..* MS
+* entry contains Registrant 1..1 MS and Establishment 1..* MS and EstablishmentAffiliation 1..* MS and USAgent 0..* MS and USAgentAffiliation 0..* MS and Importer 0..* MS and ImporterAffiliation 0..* MS and BusinessOperation 1..* MS and SourceSPL 0..1 MS
 * entry[Registrant].resource only RegistrantOrganization
 * entry[Establishment].resource only EstablishmentOrganization
 * entry[EstablishmentAffiliation].resource only EstablishmentAffiliation
@@ -24,6 +24,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry[Importer].resource only ImporterOrganization
 * entry[ImporterAffiliation].resource only ImporterAffiliation
 * entry[BusinessOperation].resource only EstablishmentBusinessOperation
+* entry[SourceSPL].resource only SPLDocumentReference
 
 Profile: EstablishmentOrganization
 Parent: Organization

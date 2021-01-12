@@ -15,11 +15,12 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a GDUFA Facility Identification Request."
-* entry contains Registrant 1..1 MS and GDUFAFacility 1..* MS and GDUFAFacilityAffiliation 1..* MS and BusinessOperation 1..* MS
+* entry contains Registrant 1..1 MS and GDUFAFacility 1..* MS and GDUFAFacilityAffiliation 1..* MS and BusinessOperation 1..* MS and SourceSPL 0..1 MS
 * entry[Registrant].resource only RegistrantOrganization
 * entry[GDUFAFacility].resource only GDUFAFacilityOrganization
 * entry[GDUFAFacilityAffiliation].resource only GDUFAFacilityAffiliation
 * entry[BusinessOperation].resource only GDUFAFacilityBusinessOperation
+* entry[SourceSPL].resource only SPLDocumentReference
 
 Profile: GDUFAFacilityOrganization
 Parent: Organization
