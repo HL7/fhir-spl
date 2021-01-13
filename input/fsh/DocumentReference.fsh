@@ -1,6 +1,8 @@
 Profile: SPLDocumentReference
 Parent: DocumentReference
 Description: "A profile that represents the SPL document that was either created by or was the source for the Organization FHIR Bundle."
+
+* extension contains VersionNumber named versionNumber 0..1 MS
 * masterIdentifier 1..1 MS
 * identifier 1..* MS
 * status = #current (exactly)
