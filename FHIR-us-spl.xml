@@ -27,17 +27,19 @@
 <artifact id="ValueSet/valueset-labelerBusinessOperations" key="ValueSet-valueset-labelerBusinessOperations" name="LabelerBusinessOperations"/>
 <artifact id="StructureDefinition/LabelerCodeRequestBundle" key="StructureDefinition-LabelerCodeRequestBundle" name="LabelerCodeRequestBundle"/>
 <artifact id="StructureDefinition/LabelerOrganization" key="StructureDefinition-LabelerOrganization" name="LabelerOrganization"/>
-<artifact id="Organization/a30accef-f437-4136-808c-9ed4ada5fcf8" key="Organization-a30accef-f437-4136-808c-9ed4ada5fcf8" name="NationalPharmaIndia"/>
+<artifact id="ValueSet/valueset-labelerRequestMethod" key="ValueSet-valueset-labelerRequestMethod" name="LabelerRequestMethod"/>
+<artifact id="Organization/NationalPharmaIndia" key="Organization-NationalPharmaIndia" name="NationalPharmaIndia"/>
 <artifact id="OrganizationAffiliation/NationalPharmaIndiaAffiliation" key="OrganizationAffiliation-NationalPharmaIndiaAffiliation" name="NationalPharmaIndiaAffiliation"/>
 <artifact id="HealthcareService/NationalPharmaIndiaOperation" key="HealthcareService-NationalPharmaIndiaOperation" name="NationalPharmaIndiaOperation"/>
 <artifact id="Bundle/NationalPharmaIndiaRequest" key="Bundle-NationalPharmaIndiaRequest" name="NationalPharmaIndiaRequest"/>
-<artifact id="Organization/NationalPharmaIndiaUSAgent" key="Organization-NationalPharmaIndiaUSAgent" name="NationalPharmaIndiaUSAgent"/>
+<artifact id="Organization/usagent" key="Organization-usagent" name="NationalPharmaIndiaUSAgent"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
 <artifact id="OperationDefinition/processOrganizationBundle" key="OperationDefinition-processOrganizationBundle" name="ProcessOrganizationOperation"/>
 <artifact id="StructureDefinition/ProductSubmissionDocument" key="StructureDefinition-ProductSubmissionDocument" name="ProductSubmissionDocument"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
 <artifact id="ValueSet/splDocumentCodes" key="ValueSet-splDocumentCodes" name="SPL Document Codes"/>
 <artifact id="ValueSet/splSectionCodes" key="ValueSet-splSectionCodes" name="SPL Section Codes"/>
+<artifact id="StructureDefinition/splDocumentDate" key="StructureDefinition-splDocumentDate" name="SPLDocumentDate"/>
 <artifact id="StructureDefinition/SPLDocumentReference" key="StructureDefinition-SPLDocumentReference" name="SPLDocumentReference"/>
 <artifact id="StructureDefinition/sectionEffectiveTime" key="StructureDefinition-sectionEffectiveTime" name="SectionEffectiveTime"/>
 <artifact id="StructureDefinition/sectionIdentifier" key="StructureDefinition-sectionIdentifier" name="SectionIdentifier"/>

@@ -38,6 +38,26 @@ menu:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
 
 groups:
+  LogicalModel:
+    name: Logical Models
+    description: Logical models that show the data elements for each use case
+    resources:
+      - StructureDefinition/LabelerCodeRequestLogicalModel
+      - StructureDefinition/EstablishmentRegistrationLogicalModel
+      - StructureDefinition/GDUFAFacilityIdentificationLogicalModel
+      - StructureDefinition/ProductSubmissionDocumentLogicalModel
+  Operations:
+    name: Operations
+    description: Defined operations for the use cases
+    resources:
+      - OperationDefinition/processOrganizationBundle
+  LabelerRequest:
+    name: FDA Labeler Code Request
+    description: Artifacts associated with the Labeler Code Request use cases
+    resources:
+      - StructureDefinition/LabelerCodeRequestBundle
+      - StructureDefinition/LabelerOrganization
+      - StructureDefinition/LabelerBusinessOperation
   EstablishmentRegistration:
     name: FDA Establishment Registration
     description: Artifacts associated with the Estabishment Registration use cases
@@ -46,13 +66,6 @@ groups:
       - StructureDefinition/EstablishmentOrganization
       - StructureDefinition/EstablishmentAffiliation
       - StructureDefinition/EstablishmentBusinessOperation
-  LabelerRequest:
-    name: FDA Labeler Code Request
-    description: Artifacts associated with the Labeler Code Request use cases
-    resources:
-      - StructureDefinition/LabelerCodeRequestBundle
-      - StructureDefinition/LabelerOrganization
-      - StructureDefinition/LabelerBusinessOperation
   GDUFAFacility:
     name: GDUFA Facility Identification
     description: Artifacts associated with the GDUFA Facility Identification use cases
@@ -74,5 +87,4 @@ groups:
     name: Product Submission Document
     description: Artifacts associated with the submission of a product document
     resources:
-      - StructureDefinition/ProductSubmissionDocument
- 
+      - StructureDefinition/ProductSubmissionDocument 
