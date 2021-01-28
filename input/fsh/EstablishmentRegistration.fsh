@@ -46,7 +46,7 @@ Description: "A profile that associates an registrant to the establishments it i
 Profile: EstablishmentOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify an organization that is registered as an Establishment."
-* contained ^slicing.discriminator.type = #type
+* contained ^slicing.discriminator.type = #profile
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
 * contained ^slicing.description = "The specific resources that are needed for a Establishment organization."
@@ -130,73 +130,89 @@ Description: "A profile that associates an establishment to the set of business 
 * serviceProvisionCode 1..1 MS
 * serviceProvisionCode from BusinessOperationQualifiers (required)
 
-Instance: DenmarServicesRegistrant
+Instance: ExampleRegistrant
 InstanceOf: RegistrantOrganization
 Description: "An example of a Registrant Organization."
-* identifier[DUNSNumber].value = "100682066"
-* name = "DENMAR SERVICES INC"
+* identifier[DUNSNumber].value = "111111111"
+* name = "REGISTRANT SERVICES INC"
 * type = SPLOrganizationTypes#Registrant
 * contact.name.text = "Charles Smith"
 * contact.telecom[Phone].value = "+703-362-1280"
 * contact.telecom[Email].value = "charles@anywhere.com"
-* contact.address.line = "605 SW B AVE STE 2"
-* contact.address.city = "LAWTON"
-* contact.address.state = "OK"
-* contact.address.postalCode = "73501"
+* contact.address.line = "123 IVY LANE ROAD"
+* contact.address.city = "SMITH FALLS"
+* contact.address.state = "MD"
+* contact.address.postalCode = "12345"
 * contact.address.country = "USA"
 
-Instance: EditorialExpertsEstablishmentAffiliation
+Instance: ExampleEstablishmentAffiliation
 InstanceOf: EstablishmentAffiliation
 Description: "An example of an affiliation between a registrant and an establishment."
-* organization = Reference(DenmarServicesRegistrant)
-* participatingOrganization = Reference(EditorialExpertsEstablishment)
+* organization = Reference(ExampleRegistrant)
+* participatingOrganization = Reference(ExampleEstablishment)
 
-Instance: EditorialExpertsEstablishment
+Instance: ExampleEstablishment
 InstanceOf: EstablishmentOrganization
 Description: "An example of an Establishment Organization."
-* contained[BusinessOperation] = EditorialExpertsOperation
+* contained[BusinessOperation] = ExampleEstablishmentOperation
 * contained[BusinessOperation].providedBy.reference = "#"
-* identifier[DUNSNumber].value = "084919489"
+* identifier[DUNSNumber].value = "222222222"
 * type = SPLOrganizationTypes#Establishment
-* name = "EDITORIAL EXPERTS, INC."
-* address.line = "6301 IVY LN STE 250"
-* address.city = "GREENBELT"
-* address.state = "MD"
-* address.postalCode = "20770"
+* name = "EXAMPLE ESTABLISHMENT INC."
+* address.line = "111 SOUTH PARK STREET"
+* address.city = "YAKIMA"
+* address.state = "WA"
+* address.postalCode = "23456"
 * address.country = "USA"
 * contact.name.text = "Charles Smith"
 * contact.telecom[Phone].value = "+703-362-1280"
 * contact.telecom[Email].value = "charles@anywhere.com"
-* contact.address.line = "605 SW B AVE STE 2"
-* contact.address.city = "LAWTON"
-* contact.address.state = "OK"
-* contact.address.postalCode = "73501"
+* contact.address.line = "123 IVY LANE ROAD"
+* contact.address.city = "SMITH FALLS"
+* contact.address.state = "MD"
+* contact.address.postalCode = "12345"
 * contact.address.country = "USA"
 
-Instance: EditorialExpertsOperation
+Instance: ExampleEstablishmentOperation
 InstanceOf: EstablishmentBusinessOperation
 Description: "An example of a Establishment's business operations."
-* providedBy = Reference(EditorialExpertsEstablishment)
+* providedBy = Reference(ExampleEstablishment)
 * type = $NCI-T#C43360 "manufacture"
 * serviceProvisionCode = $NCI-T#C131708 "manufactures human over-the-counter drug products produced under a monograph"
 
-Instance: DenmarServicesRegistration
+Instance: ExampleImporter
+InstanceOf: ImporterOrganization
+Description: "An example of an Importer Organization."
+* identifier[DUNSNumber].value = "888888888"
+* type = SPLOrganizationTypes#Importer
+* name = "Example Importer"
+* telecom[Phone].value = "+1-908-999-1212;ext=444"
+* telecom[Email].value = "jdoe_2@npoiinc.net"
+
+Instance: ExampleImporterAffiliation
+InstanceOf: ImporterAffiliation
+Description: "An example of the linkage between an Establishment and an Importer"
+* organization = Reference(ExampleEstablishment)
+* participatingOrganization = Reference(ExampleImporter)
+
+Instance: ExampleEstablishmentRegistration
 InstanceOf: EstablishmentRegistrationBundle
 Description: "An example of a Bundle containing a set of Establishment Registration resources."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
-* entry[Registrant].resource = DenmarServicesRegistrant
+* entry[Registrant].resource = ExampleRegistrant
 * entry[Registrant].request.method = #POST
 * entry[Registrant].request.url = "Organization"
-* entry[Registrant].fullUrl = "http://example.org/Organization/DenmarServicesRegistrant"
-* entry[EstablishmentAffiliation].resource = EditorialExpertsEstablishmentAffiliation
+* entry[Registrant].fullUrl = "http://example.org/Organization/ExampleRegistrant"
+* entry[EstablishmentAffiliation].resource = ExampleEstablishmentAffiliation
 * entry[EstablishmentAffiliation].request.method = #POST
 * entry[EstablishmentAffiliation].request.url = "OrganizationAffiliation"
-* entry[EstablishmentAffiliation].fullUrl = "http://example.org/OrganizationAffiliation/EditorialExpertsEstablishmentAffiliation"
-* entry[Establishment].resource = EditorialExpertsEstablishment
+* entry[EstablishmentAffiliation].fullUrl = "http://example.org/OrganizationAffiliation/ExampleEstablishmentAffiliation"
+* entry[Establishment].resource = ExampleEstablishment
 * entry[Establishment].request.method = #POST
 * entry[Establishment].request.url = "Organization"
-* entry[Establishment].fullUrl = "http://example.org/Organization/EditorialExpertsEstablishment"
+* entry[Establishment].fullUrl = "http://example.org/Organization/ExampleEstablishment"
 * entry[3].request.method = #DELETE
 * entry[3].request.url = "Organization?identifier=urn:oid:1.3.6.1.4.1.519.1|112343211"
 * entry[4].request.method = #DELETE
-* entry[4].request.url = "OrganizationAffiliation?organization.identifier=urn:oid:1.3.6.1.4.1.519.1|112343211"
+* entry[4].request.url = "OrganizationAffiliation?organization.identifier=urn:oid:1.3.6.1.4.1.519.1|111111111&participatingOrganization.identifier=urn:oid:1.3.6.1.4.1.519.1|112343211"
+

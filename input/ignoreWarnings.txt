@@ -86,5 +86,7 @@ Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentBusinessOperation
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentBusinessOperation - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/ImporterOrganization
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/ImporterAffiliation
 
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationBundle

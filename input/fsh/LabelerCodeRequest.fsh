@@ -48,6 +48,7 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * identifier contains DUNSNumber 1..1 MS and NDCCode 0..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
 * identifier[NDCCode].system = "urn:oid:2.16.840.1.113883.6.69"
+* type = SPLOrganizationTypes#Labeler
 * name 1..1 MS
 * address 1..1 MS
 * address.line 1..2 MS
@@ -94,6 +95,7 @@ Description: "An example of a Labeler Organization."
 * contained[BusinessOperation].providedBy.reference = "#"
 * identifier[DUNSNumber].value = "999999999"
 * identifier[NDCCode].value = "55555"
+* type = SPLOrganizationTypes#Labeler
 * name = "National Pharma of India Inc."
 * address.line = "Plot 102 Village Ave"
 * address.city = "RangareddyDistrict"
@@ -113,6 +115,7 @@ Instance: NationalPharmaIndiaUSAgent
 InstanceOf: USAgentOrganization
 Description: "An example of a US Agent Organization."
 * identifier[DUNSNumber].value = "888888888"
+* type = SPLOrganizationTypes#USAgent
 * name = "National Pharma of India Inc. US Agent"
 * telecom[Phone].value = "+1-908-999-1212;ext=444"
 * telecom[Email].value = "jdoe_2@npoiinc.net"

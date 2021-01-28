@@ -97,6 +97,7 @@ Description: "Codes that identify the relationship between two organizations."
 CodeSystem: SPLOrganizationTypes
 Id: codesystem-splOrganizationTypes
 Description: "Codes that identify the types of organizations involved in a SPL submission."
+* #Labeler "An organization that submits product labels."
 * #Registrant "An organization that registers other organizations."
 * #Establishment "An organization that provides operations in the manufacturing of a product."
 * #USAgent "An organization that acts on the behalf of a Labeler or Establishment in the US."
