@@ -6,11 +6,17 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="ValueSet/valueset-businessOperationQualifiers" key="ValueSet-valueset-businessOperationQualifiers" name="BusinessOperationQualifiers"/>
+<artifact id="Organization/DenmarServicesRegistrant" key="Organization-DenmarServicesRegistrant" name="DenmarServicesRegistrant"/>
+<artifact id="Bundle/DenmarServicesRegistration" key="Bundle-DenmarServicesRegistration" name="DenmarServicesRegistration"/>
+<artifact id="Organization/EditorialExpertsEstablishment" key="Organization-EditorialExpertsEstablishment" name="EditorialExpertsEstablishment"/>
+<artifact id="OrganizationAffiliation/EditorialExpertsEstablishmentAffiliation" key="OrganizationAffiliation-EditorialExpertsEstablishmentAffiliation" name="EditorialExpertsEstablishmentAffiliation"/>
+<artifact id="HealthcareService/EditorialExpertsOperation" key="HealthcareService-EditorialExpertsOperation" name="EditorialExpertsOperation"/>
 <artifact id="StructureDefinition/EstablishmentAffiliation" key="StructureDefinition-EstablishmentAffiliation" name="EstablishmentAffiliation"/>
 <artifact id="StructureDefinition/EstablishmentBusinessOperation" key="StructureDefinition-EstablishmentBusinessOperation" name="EstablishmentBusinessOperation"/>
 <artifact id="ValueSet/valueset-establishmentBusinessOperations" key="ValueSet-valueset-establishmentBusinessOperations" name="EstablishmentBusinessOperations"/>
 <artifact id="StructureDefinition/EstablishmentOrganization" key="StructureDefinition-EstablishmentOrganization" name="EstablishmentOrganization"/>
 <artifact id="StructureDefinition/EstablishmentRequestBundle" key="StructureDefinition-EstablishmentRequestBundle" name="EstablishmentRequestBundle"/>
+<artifact id="ValueSet/valueset-establishmentRequestMethod" key="ValueSet-valueset-establishmentRequestMethod" name="EstablishmentRequestMethod"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
 <artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="FDA Product Submission Document Logical Model"/>
@@ -32,15 +38,17 @@
 <artifact id="OrganizationAffiliation/NationalPharmaIndiaAffiliation" key="OrganizationAffiliation-NationalPharmaIndiaAffiliation" name="NationalPharmaIndiaAffiliation"/>
 <artifact id="HealthcareService/NationalPharmaIndiaOperation" key="HealthcareService-NationalPharmaIndiaOperation" name="NationalPharmaIndiaOperation"/>
 <artifact id="Bundle/NationalPharmaIndiaRequest" key="Bundle-NationalPharmaIndiaRequest" name="NationalPharmaIndiaRequest"/>
-<artifact id="Organization/usagent" key="Organization-usagent" name="NationalPharmaIndiaUSAgent"/>
+<artifact id="Organization/NationalPharmaIndiaUSAgent" key="Organization-NationalPharmaIndiaUSAgent" name="NationalPharmaIndiaUSAgent"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
 <artifact id="OperationDefinition/processOrganizationBundle" key="OperationDefinition-processOrganizationBundle" name="ProcessOrganizationOperation"/>
 <artifact id="StructureDefinition/ProductSubmissionDocument" key="StructureDefinition-ProductSubmissionDocument" name="ProductSubmissionDocument"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
+<artifact id="ValueSet/valueset-registrantRequestMethod" key="ValueSet-valueset-registrantRequestMethod" name="RegistrantRequestMethod"/>
 <artifact id="ValueSet/splDocumentCodes" key="ValueSet-splDocumentCodes" name="SPL Document Codes"/>
 <artifact id="ValueSet/splSectionCodes" key="ValueSet-splSectionCodes" name="SPL Section Codes"/>
 <artifact id="StructureDefinition/splDocumentDate" key="StructureDefinition-splDocumentDate" name="SPLDocumentDate"/>
 <artifact id="StructureDefinition/SPLDocumentReference" key="StructureDefinition-SPLDocumentReference" name="SPLDocumentReference"/>
+<artifact id="CodeSystem/codesystem-splOrganizationTypes" key="CodeSystem-codesystem-splOrganizationTypes" name="SPLOrganizationTypes"/>
 <artifact id="StructureDefinition/sectionEffectiveTime" key="StructureDefinition-sectionEffectiveTime" name="SectionEffectiveTime"/>
 <artifact id="StructureDefinition/sectionIdentifier" key="StructureDefinition-sectionIdentifier" name="SectionIdentifier"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>

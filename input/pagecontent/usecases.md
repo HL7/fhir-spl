@@ -14,17 +14,17 @@
 * List which SPL documents are in-scope
 
 #### NDC/NHRIC Labeler Request/Inactivation
-* Refer to Labeler Logical Model
+<a href="StructureDefinition-LabelerCodeRequestLogicalModel.html">Labeler Code Request Logical Model</a>
 
 #### Establishment Registration/No-Change/Inactivation
-* Refer to Establishment Logical Model
+<a href="StructureDefinition-EstablishmentRegistrationLogicalModel.html">Establishment Registration Logical Model</a>
 	
 #### GDUFA Facility Identification
-* Refer to GDUFA Facility Logical Model
+<a href="StructureDefinition-GDUFAFacilityIdentificationLogicalModel.html">GDUFA Facility Identification Logical Model</a>
 	
 #### Product Submission
 * List the different SPL Document Types for this use case
-* Refer to Product Submission Logical Model
+<a href="StructureDefinition-ProductSubmissionDocumentLogicalModel.html">Product Submission Document Logical Model</a>
 
 ### Business Requirements
 * Explain how we are proposing a dual-submission architecture
