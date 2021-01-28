@@ -1,4 +1,4 @@
-Profile: EstablishmentRequestBundle
+Profile: EstablishmentRegistrationBundle
 Parent: Bundle
 Description: "A profile that represents the Bundle that contains all of the resources for an Estabishment Registration Request."
 * type 1..1 MS
@@ -27,18 +27,11 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry[SourceSPL].resource only SPLDocumentReference
 * entry[SourceSPL].request.method = http://hl7.org/fhir/http-verb#POST (exactly)
 
-ValueSet: RegistrantRequestMethod
-Id: valueset-registrantRequestMethod
-Description: "Only PUTs and POSTs are allowed when submitting a Registrant Organization."
-* http://hl7.org/fhir/http-verb#POST
-* http://hl7.org/fhir/http-verb#PUT
-
 ValueSet: EstablishmentRequestMethod
 Id: valueset-establishmentRequestMethod
-Description: "Only PUTs and POSTs are allowed when submitting a Establishment Organization."
+Description: "Only PUTs, POSTs, and DELETEs are allowed when submitting a Establishment Organization."
 * http://hl7.org/fhir/http-verb#POST
 * http://hl7.org/fhir/http-verb#PUT
-* http://hl7.org/fhir/http-verb#DELETE
 
 Profile: EstablishmentAffiliation
 Parent: OrganizationAffiliation
@@ -188,7 +181,7 @@ Description: "An example of a Establishment's business operations."
 * serviceProvisionCode = $NCI-T#C131708 "manufactures human over-the-counter drug products produced under a monograph"
 
 Instance: DenmarServicesRegistration
-InstanceOf: EstablishmentRequestBundle
+InstanceOf: EstablishmentRegistrationBundle
 Description: "An example of a Bundle containing a set of Establishment Registration resources."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
 * entry[Registrant].resource = DenmarServicesRegistrant
@@ -205,3 +198,5 @@ Description: "An example of a Bundle containing a set of Establishment Registrat
 * entry[Establishment].fullUrl = "http://example.org/Organization/EditorialExpertsEstablishment"
 * entry[3].request.method = #DELETE
 * entry[3].request.url = "Organization?identifier=urn:oid:1.3.6.1.4.1.519.1|112343211"
+* entry[4].request.method = #DELETE
+* entry[4].request.url = "OrganizationAffiliation?organization.identifier=urn:oid:1.3.6.1.4.1.519.1|112343211"

@@ -62,7 +62,7 @@ groups:
     name: FDA Establishment Registration
     description: Artifacts associated with the Estabishment Registration use cases
     resources:
-      - StructureDefinition/EstablishmentRequestBundle
+      - StructureDefinition/EstablishmentRegistrationBundle
       - StructureDefinition/EstablishmentOrganization
       - StructureDefinition/EstablishmentAffiliation
       - StructureDefinition/EstablishmentBusinessOperation
@@ -70,7 +70,7 @@ groups:
     name: GDUFA Facility Identification
     description: Artifacts associated with the GDUFA Facility Identification use cases
     resources:
-      - StructureDefinition/GDUFAFacilityRequestBundle
+      - StructureDefinition/GDUFAFacilityIdentificationBundle
       - StructureDefinition/GDUFAFacilityOrganization
       - StructureDefinition/GDUFAFacilityAffiliation
       - StructureDefinition/GDUFAFacilityBusinessOperation

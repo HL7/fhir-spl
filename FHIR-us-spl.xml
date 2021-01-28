@@ -15,7 +15,7 @@
 <artifact id="StructureDefinition/EstablishmentBusinessOperation" key="StructureDefinition-EstablishmentBusinessOperation" name="EstablishmentBusinessOperation"/>
 <artifact id="ValueSet/valueset-establishmentBusinessOperations" key="ValueSet-valueset-establishmentBusinessOperations" name="EstablishmentBusinessOperations"/>
 <artifact id="StructureDefinition/EstablishmentOrganization" key="StructureDefinition-EstablishmentOrganization" name="EstablishmentOrganization"/>
-<artifact id="StructureDefinition/EstablishmentRequestBundle" key="StructureDefinition-EstablishmentRequestBundle" name="EstablishmentRequestBundle"/>
+<artifact id="StructureDefinition/EstablishmentRegistrationBundle" key="StructureDefinition-EstablishmentRegistrationBundle" name="EstablishmentRegistrationBundle"/>
 <artifact id="ValueSet/valueset-establishmentRequestMethod" key="ValueSet-valueset-establishmentRequestMethod" name="EstablishmentRequestMethod"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
@@ -25,8 +25,9 @@
 <artifact id="StructureDefinition/GDUFAFacilityBusinessOperation" key="StructureDefinition-GDUFAFacilityBusinessOperation" name="GDUFAFacilityBusinessOperation"/>
 <artifact id="ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers" key="ValueSet-valueset-gdufaFacilityBusinessOperationQualifiers" name="GDUFAFacilityBusinessOperationQualifiers"/>
 <artifact id="ValueSet/valueset-gdufaFacilityBusinessOperations" key="ValueSet-valueset-gdufaFacilityBusinessOperations" name="GDUFAFacilityBusinessOperations"/>
+<artifact id="StructureDefinition/GDUFAFacilityIdentificationBundle" key="StructureDefinition-GDUFAFacilityIdentificationBundle" name="GDUFAFacilityIdentificationBundle"/>
 <artifact id="StructureDefinition/GDUFAFacilityOrganization" key="StructureDefinition-GDUFAFacilityOrganization" name="GDUFAFacilityOrganization"/>
-<artifact id="StructureDefinition/GDUFAFacilityRequestBundle" key="StructureDefinition-GDUFAFacilityRequestBundle" name="GDUFAFacilityRequestBundle"/>
+<artifact id="ValueSet/valueset-gdufaFacilityRequestMethod" key="ValueSet-valueset-gdufaFacilityRequestMethod" name="GDUFAFacilityRequestMethod"/>
 <artifact id="StructureDefinition/ImporterAffiliation" key="StructureDefinition-ImporterAffiliation" name="ImporterAffiliation"/>
 <artifact id="StructureDefinition/ImporterOrganization" key="StructureDefinition-ImporterOrganization" name="ImporterOrganization"/>
 <artifact id="StructureDefinition/LabelerBusinessOperation" key="StructureDefinition-LabelerBusinessOperation" name="LabelerBusinessOperation"/>

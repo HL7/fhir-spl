@@ -27,6 +27,14 @@ Description: "A profile for the data elements required to identify an organizati
 * contact.telecom[Phone].system = #phone
 * contact.telecom[Email].system = #email
 
+ValueSet: RegistrantRequestMethod
+Id: valueset-registrantRequestMethod
+Description: "Only PUTs, POSTs, and DELETEs are allowed when submitting a Establishment Organization."
+* http://hl7.org/fhir/http-verb#POST
+* http://hl7.org/fhir/http-verb#PUT
+* http://hl7.org/fhir/http-verb#DELETE
+
+
 Profile: USAgentOrganization
 Parent: Organization
 Description: "A profile for the data elements required for an organization fulfilling the role of a US Agent for another organization."

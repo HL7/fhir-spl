@@ -10,6 +10,7 @@ Unknown System specified, so Concepts and Filters can''t be checked
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-labelerBusinessOperations because the value set or code system is not known to the validator]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperationQualifiers because the value set or code system is not known to the validator]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-establishmentBusinessOperations because the value set or code system is not known to the validator]
 
 The code C25391 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 The code C101509 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
@@ -76,3 +77,14 @@ Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerBusinessOperation
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/HealthcareService
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerBusinessOperation - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationBundle
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentAffiliation
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentAffiliation - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentBusinessOperation
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentBusinessOperation - listed in meta
+
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationBundle
