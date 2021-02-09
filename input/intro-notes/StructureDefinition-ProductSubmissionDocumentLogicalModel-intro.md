@@ -17,4 +17,4 @@ The body of the document is broken into sections (which can have sub-sections) w
 
 It also has human readable text (or a set of human readable highlights).  One of the sections may also have detailed information about the submitted product.
 
-![UML Diagram](ProductSubmissionDocumentLogicalModel.png)
+<div>{%include ProductSubmissionDocumentLogicalModel.svg%}</div>

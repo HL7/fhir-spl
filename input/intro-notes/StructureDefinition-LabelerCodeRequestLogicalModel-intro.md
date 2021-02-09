@@ -9,4 +9,4 @@ Each request has a set of elements that identify the request:
 
 It then carries the content of the request which is a Labeler with an optional US Agent (if the Labeler is not located in the US) and a set of Business Operations.
 
-![UML Diagram](LabelerCodeRequestLogicalModel.png)
+<div>{%include LabelerCodeRequestLogicalModel.svg%}</div>
