@@ -6,17 +6,19 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="ValueSet/valueset-businessOperationQualifiers" key="ValueSet-valueset-businessOperationQualifiers" name="BusinessOperationQualifiers"/>
-<artifact id="Organization/DenmarServicesRegistrant" key="Organization-DenmarServicesRegistrant" name="DenmarServicesRegistrant"/>
-<artifact id="Bundle/DenmarServicesRegistration" key="Bundle-DenmarServicesRegistration" name="DenmarServicesRegistration"/>
-<artifact id="Organization/EditorialExpertsEstablishment" key="Organization-EditorialExpertsEstablishment" name="EditorialExpertsEstablishment"/>
-<artifact id="OrganizationAffiliation/EditorialExpertsEstablishmentAffiliation" key="OrganizationAffiliation-EditorialExpertsEstablishmentAffiliation" name="EditorialExpertsEstablishmentAffiliation"/>
-<artifact id="HealthcareService/EditorialExpertsOperation" key="HealthcareService-EditorialExpertsOperation" name="EditorialExpertsOperation"/>
 <artifact id="StructureDefinition/EstablishmentAffiliation" key="StructureDefinition-EstablishmentAffiliation" name="EstablishmentAffiliation"/>
 <artifact id="StructureDefinition/EstablishmentBusinessOperation" key="StructureDefinition-EstablishmentBusinessOperation" name="EstablishmentBusinessOperation"/>
 <artifact id="ValueSet/valueset-establishmentBusinessOperations" key="ValueSet-valueset-establishmentBusinessOperations" name="EstablishmentBusinessOperations"/>
 <artifact id="StructureDefinition/EstablishmentOrganization" key="StructureDefinition-EstablishmentOrganization" name="EstablishmentOrganization"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationBundle" key="StructureDefinition-EstablishmentRegistrationBundle" name="EstablishmentRegistrationBundle"/>
 <artifact id="ValueSet/valueset-establishmentRequestMethod" key="ValueSet-valueset-establishmentRequestMethod" name="EstablishmentRequestMethod"/>
+<artifact id="Organization/ExampleEstablishment" key="Organization-ExampleEstablishment" name="ExampleEstablishment"/>
+<artifact id="OrganizationAffiliation/ExampleEstablishmentAffiliation" key="OrganizationAffiliation-ExampleEstablishmentAffiliation" name="ExampleEstablishmentAffiliation"/>
+<artifact id="HealthcareService/ExampleEstablishmentOperation" key="HealthcareService-ExampleEstablishmentOperation" name="ExampleEstablishmentOperation"/>
+<artifact id="Bundle/ExampleEstablishmentRegistration" key="Bundle-ExampleEstablishmentRegistration" name="ExampleEstablishmentRegistration"/>
+<artifact id="Organization/ExampleImporter" key="Organization-ExampleImporter" name="ExampleImporter"/>
+<artifact id="OrganizationAffiliation/ExampleImporterAffiliation" key="OrganizationAffiliation-ExampleImporterAffiliation" name="ExampleImporterAffiliation"/>
+<artifact id="Organization/ExampleRegistrant" key="Organization-ExampleRegistrant" name="ExampleRegistrant"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
 <artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="FDA Product Submission Document Logical Model"/>

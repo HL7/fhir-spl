@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<type value="transaction"/>
+	<timestamp value="2021-01-22T09:43:23.106-07:00"/>
+	<entry>
+		<resource>
+			<Organization>
+				<contained>
+					<Organization>
+						<id value="usagent"/>
+						<identifier>
+							<system value="urn:oid:1.3.6.1.4.1.519.1"/>
+							<value value="888888888"/>
+						</identifier>
+						<name value="National Pharma of India Inc. US Agent"/>
+						<telecom>
+							<system value="phone"/>
+							<value value="+1-908-999-1212;ext=444"/>
+						</telecom>
+						<telecom>
+							<system value="email"/>
+							<value value="jdoe_2@npoiinc.net"/>
+						</telecom>
+					</Organization>
+				</contained>
+				<contained>
+					<OrganizationAffiliation>
+						<organization>
+							<reference value="#"/>
+						</organization>
+						<participatingOrganization>
+							<reference value="#usagent"/>
+						</participatingOrganization>
+						<code>
+							<coding>
+								<system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+								<code value="C73330"/>
+								<display value="united states agent"/>
+							</coding>
+						</code>
+					</OrganizationAffiliation>
+				</contained>
+				<contained>
+					<HealthcareService>
+						<providedBy>
+							<reference value="#"/>
+						</providedBy>
+						<type>
+							<coding>
+								<system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+								<code value="C43360"/>
+								<display value="manufacture"/>
+							</coding>
+						</type>
+						<serviceProvisionCode>
+							<coding>
+								<system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+								<code value="C106643"/>
+								<display value="Manufactures human prescription drug products"/>
+							</coding>
+						</serviceProvisionCode>
+					</HealthcareService>
+				</contained>
+				<identifier>
+					<system value="urn:oid:1.3.6.1.4.1.519.1"/>
+					<value value="999999999"/>
+				</identifier>
+				<identifier>
+					<system value="urn:oid:2.16.840.1.113883.6.69"/>
+					<value value="55555"/>
+				</identifier>
+				<name value="National Pharma of India Inc."/>
+				<address>
+					<line value="Plot 102 Village Ave"/>
+					<city value="RangareddyDistrict"/>
+					<state value="Telangana"/>
+					<postalCode value="500002"/>
+					<country value="IND"/>
+				</address>
+				<contact>
+					<name>
+						<text value="Mr. John Doe_1"/>
+					</name>
+					<telecom>
+						<system value="phone"/>
+						<value value="+9-140-11112222;ext=3333"/>
+					</telecom>
+					<telecom>
+						<system value="email"/>
+						<value value="jdoe_1@npoiinc.net"/>
+					</telecom>
+					<address>
+						<line value="Plot 101 First Street"/>
+						<city value="Hyderabad"/>
+						<state value="Telangana"/>
+						<postalCode value="500001"/>
+						<country value="IND"/>
+					</address>
+				</contact>
+			</Organization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="http://fda.gov/fhir/Organization?identifier=urn:oid:1.3.6.1.4.1.519.1|999999999"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<DocumentReference>
+				<extension url="http://hl7.org/fhir/us/spl/StructureDefinition/versionNumber">
+					<valueString value="7"/>
+				</extension>
+				<extension url="http://hl7.org/fhir/us/spl/StructureDefinition/splDocumentDate">
+					<valueDate value="2020-08-11"/>
+				</extension>
+				<masterIdentifier>
+					<system value="urn:ietf:rfc:3986"/>
+					<value value="50606941-3e5d-465c-b4e0-0f5a19eb41d4"/>
+				</masterIdentifier>
+				<identifier>
+					<system value="urn:ietf:rfc:3986"/>
+					<value value="a30accef-f437-4136-808c-9ed4ada5fcf8"/>
+				</identifier>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="51726-8"/>
+						<display value="NDC/NHRIC LABELER CODE REQUEST"/>
+					</coding>
+				</type>
+				<date value="2021-01-22T09:43:23.106-07:00"/>
+				<content>
+					<attachment>
+						<data value="PD94bWwtc3R5bGVzaGVldCBocmVmPSJodHRwOi8vd3d3LmFjY2Vzc2RhdGEuZmRhLmdvdi9zcGwvc3R5bGVzaGVldC9zcGwueHNsIiB0eXBlPSJ0ZXh0L3hzbCI/Pjxkb2N1bWVudCB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6c2NoZW1hTG9jYXRpb249InVybjpobDctb3JnOnYzIC4uL3NwbC1zY2hlbWFzL0xhYmVsZXJDb2RlUmVxdWVzdC54c2QiIHhtbG5zPSJ1cm46aGw3LW9yZzp2MyI+ICAgICAgPGlkIHJvb3Q9IjUwNjA2OTQxLTNlNWQtNDY1Yy1iNGUwLTBmNWExOWViNDFkNCIvPiAgIDxjb2RlIGNvZGU9IjUxNzI2LTgiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjYuMSIgZGlzcGxheU5hbWU9Ik5EQy9OSFJJQyBMQUJFTEVSIENPREUgUkVRVUVTVCIvPiAgIDxlZmZlY3RpdmVUaW1lIHZhbHVlPSIyMDIwMDgxMSIvPiAgIDxzZXRJZCByb290PSJhMzBhY2NlZi1mNDM3LTQxMzYtODA4Yy05ZWQ0YWRhNWZjZjgiLz4gICA8dmVyc2lvbk51bWJlciB2YWx1ZT0iNyIvPiAgIDxhdXRob3I+ICAgICAgPHRpbWUvPiAgICAgIDxhc3NpZ25lZEVudGl0eT4gICAgICAgICA8cmVwcmVzZW50ZWRPcmdhbml6YXRpb24+ICAgICAgICAgICAgPGlkIHJvb3Q9IjEuMy42LjEuNC4xLjUxOS4xIiBleHRlbnNpb249Ijk5OTk5OTk5OSIvPiAgICAgICAgICAgIDxpZCByb290PSIyLjE2Ljg0MC4xLjExMzg4My42LjY5IiBleHRlbnNpb249IjU1NTU1Ii8+ICAgICAgICAgICAgPG5hbWU+TmF0aW9uYWwgUGhhcm1hIG9mIEluZGlhIEluYy48L25hbWU+ICAgICAgICAgICAgPGNvbnRhY3RQYXJ0eT4gICAgICAgICAgICAgICA8YWRkcj4gICAgICAgICAgICAgICAgICA8c3RyZWV0QWRkcmVzc0xpbmU+UGxvdCAxMDEgRmlyc3QgU3RyZWV0PC9zdHJlZXRBZGRyZXNzTGluZT4gICAgICAgICAgICAgICAgICA8Y2l0eT5IeWRlcmFiYWQ8L2NpdHk+ICAgICAgICAgICAgICAgICAgPHN0YXRlPlRlbGFuZ2FuYTwvc3RhdGU+ICAgICAgICAgICAgICAgICAgPHBvc3RhbENvZGU+NTAwMDAxPC9wb3N0YWxDb2RlPiAgICAgICAgICAgICAgICAgIDxjb3VudHJ5PklORDwvY291bnRyeT4gICAgICAgICAgICAgICA8L2FkZHI+ICAgICAgICAgICAgICAgPHRlbGVjb20gdmFsdWU9InRlbDorOS0xNDAtMTExMTIyMjI7ZXh0PTMzMzMiLz4gICAgICAgICAgICAgICA8dGVsZWNvbSB2YWx1ZT0ibWFpbHRvOmpkb2VfMUBucG9paW5jLm5ldCIvPiAgICAgICAgICAgICAgIDxjb250YWN0UGVyc29uPiAgICAgICAgICAgICAgICAgIDxuYW1lPk1yLiBKb2huIERvZV8xPC9uYW1lPiAgICAgICAgICAgICAgIDwvY29udGFjdFBlcnNvbj4gICAgICAgICAgICA8L2NvbnRhY3RQYXJ0eT4gICAgICAgICAgICA8YXNzaWduZWRFbnRpdHk+ICAgICAgICAgICAgICAgPGFzc2lnbmVkT3JnYW5pemF0aW9uPiAgICAgICAgICAgICAgICAgIDxhc3NpZ25lZEVudGl0eT4gICAgICAgICAgICAgICAgICAgICA8YXNzaWduZWRPcmdhbml6YXRpb24+ICAgICAgICAgICAgICAgICAgICAgICAgPGlkIHJvb3Q9IjEuMy42LjEuNC4xLjUxOS4xIiBleHRlbnNpb249Ijk5OTk5OTk5OSIvPiAgICAgICAgICAgICAgICAgICAgICAgIDxuYW1lPk5hdGlvbmFsIFBoYXJtYSBvZiBJbmRpYSBJbmMuPC9uYW1lPiAgICAgICAgICAgICAgICAgICAgICAgIDxhZGRyPiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzdHJlZXRBZGRyZXNzTGluZT5QbG90IDEwMiBWaWxsYWdlIEF2ZTwvc3RyZWV0QWRkcmVzc0xpbmU+ICAgICAgICAgICAgICAgICAgICAgICAgICAgPGNpdHk+UmFuZ2FyZWRkeURpc3RyaWN0PC9jaXR5PiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzdGF0ZT5UZWxhbmdhbmE8L3N0YXRlPiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwb3N0YWxDb2RlPjUwMDAwMjwvcG9zdGFsQ29kZT4gICAgICAgICAgICAgICAgICAgICAgICAgICA8Y291bnRyeT5JTkQ8L2NvdW50cnk+ICAgICAgICAgICAgICAgICAgICAgICAgPC9hZGRyPiAgICAgICAgICAgICAgICAgICAgICAgIDxhc3NpZ25lZEVudGl0eT4gICAgICAgICAgICAgICAgICAgICAgICAgICA8YXNzaWduZWRPcmdhbml6YXRpb24+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGlkIHJvb3Q9IjEuMy42LjEuNC4xLjUxOS4xIiBleHRlbnNpb249Ijg4ODg4ODg4OCIvPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxuYW1lPk5hdGlvbmFsIFBoYXJtYSBvZiBJbmRpYSBJbmMuIFVTIEFnZW50PC9uYW1lPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZWxlY29tIHZhbHVlPSJ0ZWw6KzEtOTA4LTk5OS0xMjEyO2V4dD00NDQiLz4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGVsZWNvbSB2YWx1ZT0ibWFpbHRvOmpkb2VfMkBucG9paW5jLm5ldCIvPiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvYXNzaWduZWRPcmdhbml6YXRpb24+ICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBlcmZvcm1hbmNlPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxhY3REZWZpbml0aW9uPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxjb2RlIGNvZGU9IkM3MzMzMCIgZGlzcGxheU5hbWU9InVuaXRlZCBzdGF0ZXMgYWdlbnQiIGNvZGVTeXN0ZW09IjIuMTYuODQwLjEuMTEzODgzLjMuMjYuMS4xIi8+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9hY3REZWZpbml0aW9uPiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvcGVyZm9ybWFuY2U+ICAgICAgICAgICAgICAgICAgICAgICAgPC9hc3NpZ25lZEVudGl0eT4gICAgICAgICAgICAgICAgICAgICA8L2Fzc2lnbmVkT3JnYW5pemF0aW9uPiAgICAgICAgICAgICAgICAgICAgIDxwZXJmb3JtYW5jZT4gICAgICAgICAgICAgICAgICAgICAgICA8YWN0RGVmaW5pdGlvbj4gICAgICAgICAgICAgICAgICAgICAgICAgICA8Y29kZSBjb2RlPSJDNDMzNjAiIGRpc3BsYXlOYW1lPSJtYW51ZmFjdHVyZSIgY29kZVN5c3RlbT0iMi4xNi44NDAuMS4xMTM4ODMuMy4yNi4xLjEiLz4gICAgICAgICAgICAgICAgICAgICAgICAgICA8c3ViamVjdE9mPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxhcHByb3ZhbD4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Y29kZSBjb2RlPSJDMTA2NjQzIiBkaXNwbGF5TmFtZT0iTWFudWZhY3R1cmVzIGh1bWFuIHByZXNjcmlwdGlvbiBkcnVnIHByb2R1Y3RzIiBjb2RlU3lzdGVtPSIyLjE2Ljg0MC4xLjExMzg4My4zLjI2LjEuMSIvPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvYXBwcm92YWw+ICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zdWJqZWN0T2Y+ICAgICAgICAgICAgICAgICAgICAgICAgPC9hY3REZWZpbml0aW9uPiAgICAgICAgICAgICAgICAgICAgIDwvcGVyZm9ybWFuY2U+ICAgICAgICAgICAgICAgICAgPC9hc3NpZ25lZEVudGl0eT4gICAgICAgICAgICAgICA8L2Fzc2lnbmVkT3JnYW5pemF0aW9uPiAgICAgICAgICAgIDwvYXNzaWduZWRFbnRpdHk+ICAgICAgICAgPC9yZXByZXNlbnRlZE9yZ2FuaXphdGlvbj4gICAgICA8L2Fzc2lnbmVkRW50aXR5PiAgIDwvYXV0aG9yPiAgIDxjb21wb25lbnQ+ICAgICAgPHN0cnVjdHVyZWRCb2R5Lz4gICA8L2NvbXBvbmVudD48L2RvY3VtZW50Pg=="/>
+					</attachment>
+				</content>
+			</DocumentReference>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="http://fda.gov/fhir/DocumentReference"/>
+		</request>
+	</entry>
+</Bundle>

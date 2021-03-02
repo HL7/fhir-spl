@@ -3,6 +3,7 @@ Primary authors:
 
 * Jean Duteau (Duteau Design Inc/IBM)
 * Charles Yaghmour (Samvit Solutions/IBM)
+* Bill Friggle (Samvit Solutions/IBM)
 * Cheston Gayda (IBM)
 * Vikas Sinha (IBM)
 * Shayan Hobbi (IBM)

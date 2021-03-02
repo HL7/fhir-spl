@@ -2,7 +2,7 @@
 This FHIR Implementation Guide is focused on supporting the FDA implementation of the HL7 SPL standard using FHIR.  We will be proposing a sample architecture that supports dual submissions of SPL documents via the existing SPL standard and using FHIR resources.
 
 #### Discussion of the four use cases we are addressing
-For this first phase of the project, we are concentrating our SPL mapping and processing on the handling of Medicinal Products and the Organization transactions that are required to support the submission of Medicinal Product SPL documents.  We have defined four specific use cases that we will develop and document in the HL7 FHIR Implementation Guide.  The use cases and the corresponding SPL Document Types are:
+The first phase of the project focuses on SPL-to-FHIR and FHIR-to-SPL data element mapping and processing related to Medicinal Products and Establishment/Facility Registration.  The scope includes the four use cases listed below along with their corresponding SPL document types:
 
 1. UC01 - Request an NDC Labeler Code
 	* 51726-8 NDC Labeler Code Request
@@ -22,7 +22,6 @@ For this first phase of the project, we are concentrating our SPL mapping and pr
 	* 75031-5 Human Compounded Drug Label
 	* 34390-5 Human OTC Drug Label
 	* 34391-3 Human Prescription Drug Label
-	* Human Prescription Drug Label with Highlights
 	* 53408-1 Licensed Minimally Manipulated Cells Label
 	* 53406-5 Licensed Vaccine Bulk Intermediate Label
 	* 53405-7 Non-Standardized Allergenic Label
@@ -31,7 +30,12 @@ For this first phase of the project, we are concentrating our SPL mapping and pr
 	* 53404-0 Vaccine Label
 	* 86445-4 Blanket No Changes Certification of Product Listing
 
-At the end of this phase, we will have developed mappings for all of the SPL Document Header, all text Sections, and for all drug product elements of the Principal Display Panel section.  The following product elements are out-of-scope for this phase: Products intended for Animals, Dietary Supplements, Medical Food Products, Device Products, and Cosmetic Products.
+At the end of this phase, this guide will have captured the following:
+
+* SPL-to-FHIR and FHIR-to-SPL data elements mappings for the SPL document types listed above
+* FHIR profiles that correspond to the SPL document types listed above
+
+**NOTE:** The following product elements are out-of-scope for this phase: Products intended for Animals, Dietary Supplements, Medical Food Products, Device Products, and Cosmetic Products.
 
 ### Content and organization
 The implementation guide is organized into the following sections:
