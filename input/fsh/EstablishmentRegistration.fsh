@@ -2,36 +2,22 @@ Profile: EstablishmentRegistrationBundle
 Parent: Bundle
 Description: "A profile that represents the Bundle that contains all of the resources for an Estabishment Registration Request."
 * type 1..1 MS
-* type = #transaction (exactly)
+* type = #message (exactly)
 * timestamp 1..1 MS
-* entry 2..*
-* entry.resource 0..1 MS
+* entry 3..*
+* entry.resource 1..1 MS
+* entry.fullUrl 1..1 MS
 * entry.search 0..0
-* entry.request 1..1
+* entry.request 0..0
 * entry.response 0..0
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Establishment Registration Request."
-* entry contains Registrant 1..1 MS and Establishment 0..* MS and EstablishmentAffiliation 0..* MS and SourceSPL 0..1 MS
-* entry[Registrant].resource 1..1
+* entry contains Message 1..1 MS and Registrant 1..1 MS and Establishment 0..* MS
+* entry[Message].resource only OrganizationMessage
 * entry[Registrant].resource only RegistrantOrganization
-* entry[Registrant].request.method from RegistrantRequestMethod (required)
-* entry[Establishment].resource 1..1
 * entry[Establishment].resource only EstablishmentOrganization
-* entry[Establishment].request.method from EstablishmentRequestMethod (required)
-* entry[EstablishmentAffiliation].resource 1..1
-* entry[EstablishmentAffiliation].resource only EstablishmentAffiliation
-* entry[EstablishmentAffiliation].request.method from RegistrantRequestMethod (required)
-* entry[SourceSPL].resource 1..1
-* entry[SourceSPL].resource only SPLDocumentReference
-* entry[SourceSPL].request.method = http://hl7.org/fhir/http-verb#POST (exactly)
-
-ValueSet: EstablishmentRequestMethod
-Id: valueset-establishmentRequestMethod
-Description: "Only PUTs, POSTs, and DELETEs are allowed when submitting a Establishment Organization."
-* http://hl7.org/fhir/http-verb#POST
-* http://hl7.org/fhir/http-verb#PUT
 
 Profile: EstablishmentAffiliation
 Parent: OrganizationAffiliation
@@ -157,8 +143,8 @@ Description: "An example of an Establishment Organization."
 * contained[BusinessOperation] = ExampleEstablishmentOperation
 * contained[BusinessOperation].providedBy.reference = "#"
 * identifier[DUNSNumber].value = "222222222"
-* type = SPLOrganizationTypes#Establishment
 * name = "EXAMPLE ESTABLISHMENT INC."
+* type = SPLOrganizationTypes#Establishment
 * address.line = "111 SOUTH PARK STREET"
 * address.city = "YAKIMA"
 * address.state = "WA"
@@ -195,24 +181,20 @@ Description: "An example of the linkage between an Establishment and an Importer
 * organization = Reference(ExampleEstablishment)
 * participatingOrganization = Reference(ExampleImporter)
 
+Instance: EstablishmentRegistrationMessage
+InstanceOf: OrganizationMessage
+* eventCoding = http://loinc.org#51725-0
+* source.endpoint = "http://example.org/"
+* focus[0] = Reference(ExampleRegistrant)
+* focus[1] = Reference(ExampleEstablishment)
+
 Instance: ExampleEstablishmentRegistration
 InstanceOf: EstablishmentRegistrationBundle
 Description: "An example of a Bundle containing a set of Establishment Registration resources."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
+* entry[Message].resource = EstablishmentRegistrationMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/EstablishmentRegistrationMessage"
 * entry[Registrant].resource = ExampleRegistrant
-* entry[Registrant].request.method = #POST
-* entry[Registrant].request.url = "Organization"
 * entry[Registrant].fullUrl = "http://example.org/Organization/ExampleRegistrant"
-* entry[EstablishmentAffiliation].resource = ExampleEstablishmentAffiliation
-* entry[EstablishmentAffiliation].request.method = #POST
-* entry[EstablishmentAffiliation].request.url = "OrganizationAffiliation"
-* entry[EstablishmentAffiliation].fullUrl = "http://example.org/OrganizationAffiliation/ExampleEstablishmentAffiliation"
 * entry[Establishment].resource = ExampleEstablishment
-* entry[Establishment].request.method = #POST
-* entry[Establishment].request.url = "Organization"
 * entry[Establishment].fullUrl = "http://example.org/Organization/ExampleEstablishment"
-* entry[3].request.method = #DELETE
-* entry[3].request.url = "Organization?identifier=urn:oid:1.3.6.1.4.1.519.1|112343211"
-* entry[4].request.method = #DELETE
-* entry[4].request.url = "OrganizationAffiliation?organization.identifier=urn:oid:1.3.6.1.4.1.519.1|111111111&participatingOrganization.identifier=urn:oid:1.3.6.1.4.1.519.1|112343211"
-

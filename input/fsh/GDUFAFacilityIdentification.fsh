@@ -2,37 +2,22 @@ Profile: GDUFAFacilityIdentificationBundle
 Parent: Bundle
 Description: "A profile that represents the Bundle that contains all of the resources for a GDUFA Facility Identification Request."
 * type 1..1 MS
-* type = #transaction (exactly)
+* type = #message (exactly)
 * timestamp 1..1 MS
-* entry 2..*
-* entry.resource 0..1 MS
+* entry 3..*
+* entry.resource 1..1 MS
+* entry.fullUrl 1..1 MS
 * entry.search 0..0
-* entry.request 1..1
+* entry.request 0..0
 * entry.response 0..0
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a GDUFA Facility Identification Request."
-* entry contains Registrant 1..1 MS and GDUFAFacility 0..* MS and GDUFAFacilityAffiliation 0..* MS and SourceSPL 0..1 MS
-* entry[Registrant].resource 1..1
+* entry contains Message 1..1 MS and Registrant 1..1 MS and GDUFAFacility 0..* MS
+* entry[Message].resource only OrganizationMessage
 * entry[Registrant].resource only RegistrantOrganization
-* entry[Registrant].request.method from RegistrantRequestMethod (required)
-* entry[GDUFAFacility].resource 0..1
 * entry[GDUFAFacility].resource only GDUFAFacilityOrganization
-* entry[GDUFAFacility].request.method from GDUFAFacilityRequestMethod (required)
-* entry[GDUFAFacilityAffiliation].resource 1..1
-* entry[GDUFAFacilityAffiliation].resource only GDUFAFacilityAffiliation
-* entry[GDUFAFacilityAffiliation].request.method from RegistrantRequestMethod (required)
-* entry[SourceSPL].resource 1..1
-* entry[SourceSPL].resource only SPLDocumentReference
-* entry[SourceSPL].request.method = http://hl7.org/fhir/http-verb#POST (exactly)
-
-ValueSet: GDUFAFacilityRequestMethod
-Id: valueset-gdufaFacilityRequestMethod
-Description: "Only PUTs and POSTs are allowed when submitting a Establishment Organization."
-* http://hl7.org/fhir/http-verb#POST
-* http://hl7.org/fhir/http-verb#PUT
-
 
 Profile: GDUFAFacilityOrganization
 Parent: Organization
@@ -42,7 +27,7 @@ Description: "A profile for the data elements required to identify an organizati
 * contained ^slicing.rules = #closed
 * contained ^slicing.description = "The specific resources that are needed for a GDUFA Facility organization."
 * contained contains BusinessOperation 1..* MS
-* contained[BusinessOperation] only EstablishmentBusinessOperation
+* contained[BusinessOperation] only GDUFAFacilityBusinessOperation
 * identifier 1..* MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -95,3 +80,51 @@ Description: "A profile that associates an establishment to the set of business 
 * type from GDUFAFacilityBusinessOperations (required)
 * serviceProvisionCode 1..1 MS
 * serviceProvisionCode from GDUFAFacilityBusinessOperationQualifiers (required)
+
+Instance: ExampleGDUFAFacility
+InstanceOf: GDUFAFacilityOrganization
+Description: "An example of an GDUFA Facility Organization."
+* contained[BusinessOperation] = ExampleGDUFAFacilityOperation
+* contained[BusinessOperation].providedBy.reference = "#"
+* identifier[DUNSNumber].value = "222222222"
+* name = "EXAMPLE GDUFA FACILITY INC."
+* type = SPLOrganizationTypes#GenericDrugUseFacility
+* address.line = "111 SOUTH PARK STREET"
+* address.city = "YAKIMA"
+* address.state = "WA"
+* address.postalCode = "23456"
+* address.country = "USA"
+* contact.name.text = "Charles Smith"
+* contact.telecom[Phone].value = "+703-362-1280"
+* contact.telecom[Email].value = "charles@anywhere.com"
+* contact.address.line = "123 IVY LANE ROAD"
+* contact.address.city = "SMITH FALLS"
+* contact.address.state = "MD"
+* contact.address.postalCode = "12345"
+* contact.address.country = "USA"
+
+Instance: ExampleGDUFAFacilityOperation
+InstanceOf: GDUFAFacilityBusinessOperation
+Description: "An example of a GDUFA Facility's business operations."
+* providedBy = Reference(ExampleGDUFAFacility)
+* type = $NCI-T#C82401 "API Manufacture"
+* serviceProvisionCode = $NCI-T#C101886 "manufactures non-generics"
+
+Instance: GDUFAFacilityIdentificationMessage
+InstanceOf: OrganizationMessage
+* eventCoding = http://loinc.org#72090-4
+* source.endpoint = "http://example.org/"
+* focus[0] = Reference(ExampleRegistrant)
+* focus[1] = Reference(ExampleGDUFAFacility)
+
+Instance: ExampleGDUFAFacilityIdentification
+InstanceOf: GDUFAFacilityIdentificationBundle
+Description: "An example of a Bundle containing a set of GDUFA Facility Identification resources."
+* timestamp = "2002-08-11T01:01:01.111+06:00"
+* entry[Message].resource = GDUFAFacilityIdentificationMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/GDUFAFacilityIdentificationMessage"
+* entry[Registrant].resource = ExampleRegistrant
+* entry[Registrant].fullUrl = "http://example.org/Organization/ExampleRegistrant"
+* entry[GDUFAFacility].resource = ExampleGDUFAFacility
+* entry[GDUFAFacility].fullUrl = "http://example.org/Organization/ExampleGDUFAFacility"
+

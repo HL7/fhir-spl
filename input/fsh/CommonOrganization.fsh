@@ -1,3 +1,11 @@
+Profile: OrganizationMessage
+Parent: MessageHeader
+Description: "A profile that indicates what type of request is being made."
+* event[x] MS
+* event[x] only Coding
+* source MS
+* source.endpoint MS
+
 Profile: RegistrantOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify an organization that registers organizations and facilities."
@@ -26,14 +34,6 @@ Description: "A profile for the data elements required to identify an organizati
 * contact.telecom contains Phone 1..1 MS and Email 1..1 MS
 * contact.telecom[Phone].system = #phone
 * contact.telecom[Email].system = #email
-
-ValueSet: RegistrantRequestMethod
-Id: valueset-registrantRequestMethod
-Description: "Only PUTs, POSTs, and DELETEs are allowed when submitting a Establishment Organization."
-* http://hl7.org/fhir/http-verb#POST
-* http://hl7.org/fhir/http-verb#PUT
-* http://hl7.org/fhir/http-verb#DELETE
-
 
 Profile: USAgentOrganization
 Parent: Organization

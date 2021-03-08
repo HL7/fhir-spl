@@ -2,32 +2,24 @@ Profile: LabelerCodeRequestBundle
 Parent: Bundle
 Description: "A profile that represents the Bundle that contains all of the resources for a Labeler NDC Code Request."
 * type 1..1 MS
-* type = #transaction (exactly)
+* type = #message (exactly)
 * timestamp 1..1 MS
 * entry 1..2
-* entry.resource 0..1 MS
+* entry.resource 1..1 MS
+* entry.fullUrl 1..1 MS
 * entry.search 0..0
-* entry.request 1..1
+* entry.request 0..0
 * entry.response 0..0
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a NDC Code Request."
-* entry contains Labeler 0..1 MS and LabelerDelete 0..1 MS and SourceSPL 0..1 MS
+* entry contains Message 1..1 MS
+* entry[Message].resource 1..1
+* entry[Message].resource only OrganizationMessage
+* entry contains Labeler 1..1 MS
 * entry[Labeler].resource 1..1
 * entry[Labeler].resource only LabelerOrganization
-* entry[Labeler].request.method from LabelerRequestMethod (required)
-* entry[LabelerDelete].resource 0..0
-* entry[LabelerDelete].request.method = http://hl7.org/fhir/http-verb#DELETE (exactly)
-* entry[SourceSPL].resource 1..1
-* entry[SourceSPL].resource only SPLDocumentReference
-* entry[SourceSPL].request.method = http://hl7.org/fhir/http-verb#POST (exactly)
-
-ValueSet: LabelerRequestMethod
-Id: valueset-labelerRequestMethod
-Description: "Only PUTs and POSTs are allowed when submitting a Labeler Organization."
-* http://hl7.org/fhir/http-verb#POST
-* http://hl7.org/fhir/http-verb#PUT
 
 Profile: LabelerOrganization
 Parent: Organization
@@ -133,10 +125,17 @@ Description: "An example of a Labeler's business operations."
 * type = $NCI-T#C43360 "manufacture"
 * serviceProvisionCode = $NCI-T#C106643 "Manufactures human prescription drug products"
 
+Instance: LabelerCodeRequestMessage
+InstanceOf: OrganizationMessage
+* eventCoding = http://loinc.org#51726-8
+* source.endpoint = "http://example.org/"
+* focus[0] = Reference(NationalPharmaIndia)
+
 Instance: NationalPharmaIndiaRequest
 InstanceOf: LabelerCodeRequestBundle
 Description: "An example of a Bundle containing a set of Labeler Code Request resources."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
+* entry[Message].resource = LabelerCodeRequestMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerCodeRequestMessage"
 * entry[Labeler].resource = NationalPharmaIndia
-* entry[Labeler].request.method = #POST
-* entry[Labeler].request.url = "Organization"
+* entry[Labeler].fullUrl = "http://example.org/Organization/NationalPharmaIndia"
