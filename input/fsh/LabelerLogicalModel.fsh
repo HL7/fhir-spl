@@ -77,7 +77,7 @@ Usage: #definition
 
 * differential.element[7].id = "LabelerCodeRequest.labeler.labelerCode"
 * differential.element[7].path = "LabelerCodeRequest.labeler.labelerCode"
-* differential.element[7].short = "Labeler DUNS Number"
+* differential.element[7].short = "NDC Labeler Code"
 * differential.element[7].definition = "The NDC Labeler code assigned by the FDA to Labeler organization."
 * differential.element[7].min = 0
 * differential.element[7].max = "1"
