@@ -57,7 +57,7 @@ The full set of profiles defined in this implementation guide can be found by fo
 	- Provenance.recorded = Conversion DateTime
 	- Provenance.activity = Submission Type, CREATE/UPDATE as appropriate
 	- Provenance.agent.type = assembler
-	- Provenance.agent.who.display = SPL FHIR POC II Software
+	- Provenance.agent.who.display = name of source software that is doing the transformation
 	- Provenance.entity.role = source
 	- SPL transformed to FHIR:
 		- Provenance.target = FHIR document Bundle
@@ -93,7 +93,7 @@ The Product submission operation is executed by POSTing a FHIR Bundle to the [ba
 	- Provenance.recorded = Conversion DateTime
 	- Provenance.activity = Submission Type, CREATE/UPDATE/DELETE as appropriate
 	- Provenance.agent.type = assembler
-	- Provenance.agent.who.display = SPL FHIR POC II Software
+	- Provenance.agent.who.display = name of software that is doing the transformation
 	- Provenance.entity.role = source
 	- SPL transformed to FHIR:
 		- Provenance.target = stored Organization resources
