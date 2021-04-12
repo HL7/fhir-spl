@@ -127,6 +127,7 @@ Description: "An example of a Labeler's business operations."
 
 Instance: LabelerCodeRequestMessage
 InstanceOf: OrganizationMessage
+Description: "An example of a message header for a Labeler Code Request"
 * eventCoding = http://loinc.org#51726-8
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(NationalPharmaIndia)

@@ -50,7 +50,7 @@ groups:
     name: Operations
     description: Defined operations for the use cases
     resources:
-      - OperationDefinition/processOrganizationBundle
+      - StructureDefinition/OrganizationMessage
   LabelerRequest:
     name: FDA Labeler Code Request
     description: Artifacts associated with the Labeler Code Request use cases
@@ -88,3 +88,9 @@ groups:
     description: Artifacts associated with the submission of a product document
     resources:
       - StructureDefinition/ProductSubmissionDocument 
+  DualSubmission:
+    name: Dual Submission Tracking
+    description: Artifacts needed for tracking dual submissions of SPL documents and FHIR Bundles
+    resources:
+      - StructureDefinition/SPLDocumentReference
+      - StructureDefinition/DualSubmissionProvenance

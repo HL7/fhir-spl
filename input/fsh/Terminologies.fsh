@@ -1,4 +1,24 @@
+Alias: $LOINC = http://loinc.org
 Alias: $NCI-T = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+
+CodeSystem: FHIRSpecificSPLMessageTypes
+Id: codesystem-splFHIRMessageTypes
+Description: "Codes that are unique to the FHIR SPL Submissions."
+* #01 "Establishment Inactivation"
+* #02 "GDUFA Facility Inactivation"
+
+ValueSet: SPLFHIRMessageTypes
+Id: valueset-splFHIRMessageTypes
+Description: "The set of message types that are allowed as a FHIR submission."
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
+* $LOINC#51725-0 "ESTABLISHMENT REGISTRATION"
+* FHIRSpecificSPLMessageTypes#01 "Establishment Inactivation"
+* $LOINC#53411-5 "OUT OF BUSINESS NOTIFICATION"
+* $LOINC#53410-7 "NO CHANGE NOTIFICATION"
+* $LOINC#51726-8 "NDC/NHRIC LABELER CODE REQUEST"
+* $LOINC#69968-6 "NDC LABELER CODE INACTIVATION"
+* $LOINC#72090-4 "IDENTIFICATION OF CBER-REGULATED GENERIC DRUG FACILITY"
+* FHIRSpecificSPLMessageTypes#02 "GDUFA Facility Inactivation"
 
 ValueSet: LabelerBusinessOperations
 Id: valueset-labelerBusinessOperations

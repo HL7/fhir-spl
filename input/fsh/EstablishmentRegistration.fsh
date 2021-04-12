@@ -4,7 +4,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * type 1..1 MS
 * type = #message (exactly)
 * timestamp 1..1 MS
-* entry 3..*
+* entry 2..*
 * entry.resource 1..1 MS
 * entry.fullUrl 1..1 MS
 * entry.search 0..0
@@ -183,6 +183,7 @@ Description: "An example of the linkage between an Establishment and an Importer
 
 Instance: EstablishmentRegistrationMessage
 InstanceOf: OrganizationMessage
+Description: "An example of an Establishment Registration message"
 * eventCoding = http://loinc.org#51725-0
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(ExampleRegistrant)

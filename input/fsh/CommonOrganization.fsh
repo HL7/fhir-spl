@@ -3,8 +3,11 @@ Parent: MessageHeader
 Description: "A profile that indicates what type of request is being made."
 * event[x] MS
 * event[x] only Coding
+* eventCoding from SPLFHIRMessageTypes (required)
 * source MS
 * source.endpoint MS
+* focus 1..* MS
+* focus only Reference(RegistrantOrganization or LabelerOrganization or EstablishmentOrganization or GDUFAFacilityOrganization)
 
 Profile: RegistrantOrganization
 Parent: Organization

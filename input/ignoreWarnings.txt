@@ -3,6 +3,7 @@
 # US-Core warning doesn't apply since we are not dependent on US-Core
 US FHIR Usage rules require that all profiles on Organization derive from the core US profile
 US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile
+US FHIR Usage rules require that all profiles on Provenance derive from the core US profile
 
 # External Terminologies that aren't known by the validator
 Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
@@ -11,6 +12,8 @@ Error from server: Unable to provide support for code system http://ncicb.nci.ni
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-labelerBusinessOperations because the value set or code system is not known to the validator]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperationQualifiers because the value set or code system is not known to the validator]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-establishmentBusinessOperations because the value set or code system is not known to the validator]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperations because the value set or code system is not known to the validator]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers because the value set or code system is not known to the validator]
 
 The code C25391 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 The code C101509 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
@@ -62,7 +65,6 @@ The code C123274 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS
 # Validation information messages
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/OperationDefinition
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerCodeRequestBundle
@@ -88,5 +90,15 @@ Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentBusinessOperation - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/ImporterOrganization
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/ImporterAffiliation
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OrganizationMessage
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OrganizationMessage - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/MessageHeader
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationBundle
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationBundle - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityBusinessOperation
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityBusinessOperation - listed in meta
+
 
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationBundle

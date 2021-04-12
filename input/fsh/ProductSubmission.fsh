@@ -44,6 +44,11 @@ Id: sectionIdentifier
 Description: "Providing an identifier for a section."
 * value[x] only Identifier
 
+Extension: SectionEffectiveTime
+Id: sectionEffectiveTime
+Description: "Providing an effective time for a section."
+* value[x] only dateTime or Period
+ 
 ValueSet: SPLSectionCodes
 Id: splSectionCodes
 Title: "SPL Section Codes"

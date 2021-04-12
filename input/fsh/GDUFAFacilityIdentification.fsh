@@ -4,7 +4,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * type 1..1 MS
 * type = #message (exactly)
 * timestamp 1..1 MS
-* entry 3..*
+* entry 2..*
 * entry.resource 1..1 MS
 * entry.fullUrl 1..1 MS
 * entry.search 0..0
@@ -112,6 +112,7 @@ Description: "An example of a GDUFA Facility's business operations."
 
 Instance: GDUFAFacilityIdentificationMessage
 InstanceOf: OrganizationMessage
+Description: "An example of a GDUFA Facility Identification message"
 * eventCoding = http://loinc.org#72090-4
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(ExampleRegistrant)
