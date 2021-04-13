@@ -6,7 +6,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * timestamp 1..1 MS
 * entry 2..*
 * entry.resource 1..1 MS
-* entry.fullUrl 1..1 MS
+* entry.fullUrl 0..0
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
