@@ -6,7 +6,6 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * timestamp 1..1 MS
 * entry 2..*
 * entry.resource 1..1 MS
-* entry.fullUrl 0..0
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
@@ -16,18 +15,23 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.description = "The specific bundle entries that are needed for a Establishment Registration Request."
 * entry contains Message 1..1 MS and Registrant 1..1 MS and Establishment 0..* MS
 * entry[Message].resource only OrganizationMessage
-* entry[Registrant].resource only RegistrantOrganization
+* entry[Registrant].resource only EstablishmentRegistrantOrganization
 * entry[Establishment].resource only EstablishmentOrganization
 
 Profile: EstablishmentAffiliation
 Parent: OrganizationAffiliation
 Description: "A profile that associates an registrant to the establishments it is registering."
 * organization 1..1 MS
-* organization only Reference(RegistrantOrganization)
+* organization only Reference(EstablishmentRegistrantOrganization)
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(EstablishmentOrganization)
 * code 1..1 MS
 * code = http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationAffiliationCodes#ESTABLISHMENT (exactly)
+
+Profile: EstablishmentRegistrantOrganization
+Parent: RegistrantOrganization
+Description: "A specialization of the RegistrantOrganization profile that fixes the type to EstablishmentRegistrant"
+* type = SPLOrganizationTypes#EstablishmentRegistrant (exactly)
 
 Profile: EstablishmentOrganization
 Parent: Organization
@@ -104,7 +108,7 @@ Description: "A profile that associates an organization to its import organizati
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(ImporterOrganization)
 * code 1..1 MS
-* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73599 "Import" (exactly)
+* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73599 "Import"
 
 Profile: EstablishmentBusinessOperation
 Parent: HealthcareService
@@ -116,12 +120,12 @@ Description: "A profile that associates an establishment to the set of business 
 * serviceProvisionCode 1..1 MS
 * serviceProvisionCode from BusinessOperationQualifiers (required)
 
-Instance: ExampleRegistrant
-InstanceOf: RegistrantOrganization
+Instance: ExampleEstablishmentRegistrant
+InstanceOf: EstablishmentRegistrantOrganization
 Description: "An example of a Registrant Organization."
 * identifier[DUNSNumber].value = "111111111"
 * name = "REGISTRANT SERVICES INC"
-* type = SPLOrganizationTypes#Registrant
+* type = SPLOrganizationTypes#EstablishmentRegistrant
 * contact.name.text = "Charles Smith"
 * contact.telecom[Phone].value = "+703-362-1280"
 * contact.telecom[Email].value = "charles@anywhere.com"
@@ -134,7 +138,7 @@ Description: "An example of a Registrant Organization."
 Instance: ExampleEstablishmentAffiliation
 InstanceOf: EstablishmentAffiliation
 Description: "An example of an affiliation between a registrant and an establishment."
-* organization = Reference(ExampleRegistrant)
+* organization = Reference(ExampleEstablishmentRegistrant)
 * participatingOrganization = Reference(ExampleEstablishment)
 
 Instance: ExampleEstablishment
@@ -186,7 +190,7 @@ InstanceOf: OrganizationMessage
 Description: "An example of an Establishment Registration message"
 * eventCoding = http://loinc.org#51725-0
 * source.endpoint = "http://example.org/"
-* focus[0] = Reference(ExampleRegistrant)
+* focus[0] = Reference(ExampleEstablishmentRegistrant)
 * focus[1] = Reference(ExampleEstablishment)
 
 Instance: ExampleEstablishmentRegistration
@@ -195,7 +199,7 @@ Description: "An example of a Bundle containing a set of Establishment Registrat
 * timestamp = "2002-08-11T01:01:01.111+06:00"
 * entry[Message].resource = EstablishmentRegistrationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/EstablishmentRegistrationMessage"
-* entry[Registrant].resource = ExampleRegistrant
-* entry[Registrant].fullUrl = "http://example.org/Organization/ExampleRegistrant"
+* entry[Registrant].resource = ExampleEstablishmentRegistrant
+* entry[Registrant].fullUrl = "http://example.org/Organization/ExampleEstablishmentRegistrant"
 * entry[Establishment].resource = ExampleEstablishment
 * entry[Establishment].fullUrl = "http://example.org/Organization/ExampleEstablishment"

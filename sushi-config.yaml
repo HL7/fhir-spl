@@ -63,6 +63,7 @@ groups:
     description: Artifacts associated with the Estabishment Registration use cases
     resources:
       - StructureDefinition/EstablishmentRegistrationBundle
+      - StructureDefinition/EstablishmentRegistrant
       - StructureDefinition/EstablishmentOrganization
       - StructureDefinition/EstablishmentAffiliation
       - StructureDefinition/EstablishmentBusinessOperation
@@ -71,6 +72,7 @@ groups:
     description: Artifacts associated with the GDUFA Facility Identification use cases
     resources:
       - StructureDefinition/GDUFAFacilityIdentificationBundle
+      - StructureDefinition/GDUFAFacilityRegistrant
       - StructureDefinition/GDUFAFacilityOrganization
       - StructureDefinition/GDUFAFacilityAffiliation
       - StructureDefinition/GDUFAFacilityBusinessOperation

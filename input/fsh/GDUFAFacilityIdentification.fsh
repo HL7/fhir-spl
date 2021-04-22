@@ -6,7 +6,6 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * timestamp 1..1 MS
 * entry 2..*
 * entry.resource 1..1 MS
-* entry.fullUrl 0..0
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
@@ -16,8 +15,13 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.description = "The specific bundle entries that are needed for a GDUFA Facility Identification Request."
 * entry contains Message 1..1 MS and Registrant 1..1 MS and GDUFAFacility 0..* MS
 * entry[Message].resource only OrganizationMessage
-* entry[Registrant].resource only RegistrantOrganization
+* entry[Registrant].resource only GDUFARegistrantOrganization
 * entry[GDUFAFacility].resource only GDUFAFacilityOrganization
+
+Profile: GDUFARegistrantOrganization
+Parent: RegistrantOrganization
+Description: "A specialization of the RegistrantOrganization profile that fixes the type to GDUFARegistrant."
+* type = SPLOrganizationTypes#GDUFARegistrant
 
 Profile: GDUFAFacilityOrganization
 Parent: Organization
@@ -65,11 +69,11 @@ Profile: GDUFAFacilityAffiliation
 Parent: OrganizationAffiliation
 Description: "A profile that associates a GDUFA facility to its registrant."
 * organization 1..1 MS
-* organization only Reference(RegistrantOrganization)
+* organization only Reference(GDUFARegistrantOrganization)
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(GDUFAFacilityOrganization)
 * code 1..1 MS
-* code = http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationAffiliationCodes#GDUFA (exactly)
+* code = http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationAffiliationCodes#GDUFA
 
 Profile: GDUFAFacilityBusinessOperation
 Parent: HealthcareService
@@ -80,6 +84,27 @@ Description: "A profile that associates an establishment to the set of business 
 * type from GDUFAFacilityBusinessOperations (required)
 * serviceProvisionCode 1..1 MS
 * serviceProvisionCode from GDUFAFacilityBusinessOperationQualifiers (required)
+
+Instance: ExampleGDUFARegistrant
+InstanceOf: GDUFARegistrantOrganization
+Description: "An example of a Registrant Organization."
+* identifier[DUNSNumber].value = "111111111"
+* name = "REGISTRANT SERVICES INC"
+* type = SPLOrganizationTypes#GDUFARegistrant
+* contact.name.text = "Charles Smith"
+* contact.telecom[Phone].value = "+703-362-1280"
+* contact.telecom[Email].value = "charles@anywhere.com"
+* contact.address.line = "123 IVY LANE ROAD"
+* contact.address.city = "SMITH FALLS"
+* contact.address.state = "MD"
+* contact.address.postalCode = "12345"
+* contact.address.country = "USA"
+
+Instance: ExampleGDUFAFacilityAffiliation
+InstanceOf: GDUFAFacilityAffiliation
+Description: "An example of an affiliation between a registrant and a GDUFA facility."
+* organization = Reference(ExampleGDUFARegistrant)
+* participatingOrganization = Reference(ExampleGDUFAFacility)
 
 Instance: ExampleGDUFAFacility
 InstanceOf: GDUFAFacilityOrganization
@@ -115,7 +140,7 @@ InstanceOf: OrganizationMessage
 Description: "An example of a GDUFA Facility Identification message"
 * eventCoding = http://loinc.org#72090-4
 * source.endpoint = "http://example.org/"
-* focus[0] = Reference(ExampleRegistrant)
+* focus[0] = Reference(ExampleGDUFARegistrant)
 * focus[1] = Reference(ExampleGDUFAFacility)
 
 Instance: ExampleGDUFAFacilityIdentification
@@ -124,8 +149,8 @@ Description: "An example of a Bundle containing a set of GDUFA Facility Identifi
 * timestamp = "2002-08-11T01:01:01.111+06:00"
 * entry[Message].resource = GDUFAFacilityIdentificationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/GDUFAFacilityIdentificationMessage"
-* entry[Registrant].resource = ExampleRegistrant
-* entry[Registrant].fullUrl = "http://example.org/Organization/ExampleRegistrant"
+* entry[Registrant].resource = ExampleGDUFARegistrant
+* entry[Registrant].fullUrl = "http://example.org/Organization/ExampleGDUFARegistrant"
 * entry[GDUFAFacility].resource = ExampleGDUFAFacility
 * entry[GDUFAFacility].fullUrl = "http://example.org/Organization/ExampleGDUFAFacility"
 

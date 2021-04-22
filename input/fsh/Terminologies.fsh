@@ -118,8 +118,15 @@ CodeSystem: SPLOrganizationTypes
 Id: codesystem-splOrganizationTypes
 Description: "Codes that identify the types of organizations involved in a SPL submission."
 * #Labeler "An organization that submits product labels."
-* #Registrant "An organization that registers other organizations."
+* #EstablishmentRegistrant "An organization that registers establishment organizations."
 * #Establishment "An organization that provides operations in the manufacturing of a product."
 * #USAgent "An organization that acts on the behalf of a Labeler or Establishment in the US."
 * #Importer "An organization that imports products."
+* #GDUFARegistrant "An organization that registers generic druge use facility organizations."
 * #GenericDrugUseFacility "An organization that produces generic drug products."
+
+ValueSet: SPLRegistrantOrganizationTypes
+Id: valueset-splRegistrantOrganizationTypes
+Description: "Codes that are specifically used for Registration Organizations."
+* SPLOrganizationTypes#EstablishmentRegistrant
+* SPLOrganizationTypes#GDUFARegistrant

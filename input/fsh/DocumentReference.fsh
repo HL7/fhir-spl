@@ -1,7 +1,6 @@
 Profile: SPLDocumentReference
 Parent: DocumentReference
 Description: "A profile that represents the SPL document that was either created by or was the source for the Organization FHIR Bundle."
-
 * extension contains VersionNumber named versionNumber 0..1 MS and SPLDocumentDate named splDocumentDate 0..1 MS
 * masterIdentifier 1..1 MS
 * identifier 1..* MS
@@ -21,7 +20,6 @@ Description: "Adding a SPL creation date to the document reference."
 Profile: DualSubmissionProvenance
 Parent: Provenance
 Description: "A profile that links changes made to a FHIR system either via a converted SPL document or that are sent to a SPL system"
-
 * target MS
 * target only Reference(SPLDocumentReference or ProductSubmissionDocument or RegistrantOrganization or LabelerOrganization or EstablishmentOrganization or GDUFAFacilityOrganization)
 * occurred[x] 1..1 MS
@@ -35,3 +33,29 @@ Description: "A profile that links changes made to a FHIR system either via a co
 * entity.role MS
 * entity.role = #source
 * entity.what only Reference(SPLDocumentReference or ProductSubmissionDocument or RegistrantOrganization or LabelerOrganization or EstablishmentOrganization or GDUFAFacilityOrganization)
+
+Instance: ExampleSPLDocumentReference
+InstanceOf: SPLDocumentReference
+Description: "An example of an SPL document that will be attached to a FHIR Provenance."
+* extension[versionNumber].valueString = "7"
+* extension[splDocumentDate].valueDate = "2020-04-21"
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:uuid:af87107d-11d1-46ae-9ffb-f2ba572d7ff9"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:7ad19579-7b2f-4c0a-931c-4ba25f73b296"
+* status = #current
+* type = $LOINC#51725-0
+* date = "2021-04-21T14:28:00.00+06:00"
+* content.attachment.contentType = #application/xml
+* content.attachment.data = "PHNhbXBsZT48L3NhbXBsZT4="
+
+Instance: ExampleSPLtoFHIRProvenance
+InstanceOf: DualSubmissionProvenance
+Description: "A Provenance record that associates a set of FHIR Organizations with a generated SPL document."
+* target = Reference(ExampleSPLDocumentReference)
+* occurredDateTime = "2021-04-21"
+* recorded = "2021-04-21T14:28:00.00+06:00"
+* activity.coding[0] = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE
+* activity.coding[1] = $LOINC#51725-0
+* agent.who.display = "SPL To FHIR Converter Program"
+* entity.what = Reference(NationalPharmaIndia)

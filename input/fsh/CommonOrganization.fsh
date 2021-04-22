@@ -12,6 +12,7 @@ Description: "A profile that indicates what type of request is being made."
 Profile: RegistrantOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify an organization that registers organizations and facilities."
+* ^abstract = true
 * identifier 1..* MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -19,7 +20,7 @@ Description: "A profile for the data elements required to identify an organizati
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
-* type = SPLOrganizationTypes#Registrant
+* type from SPLRegistrantOrganizationTypes (required)
 * name 1..1 MS
 * contact 1..1 MS
 * contact.name 1..1 MS
