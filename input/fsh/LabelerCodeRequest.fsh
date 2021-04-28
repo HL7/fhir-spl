@@ -131,11 +131,27 @@ Description: "An example of a message header for a Labeler Code Request"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(NationalPharmaIndia)
 
-Instance: NationalPharmaIndiaRequest
+Instance: SampleLabelerCodeRequestBundle
 InstanceOf: LabelerCodeRequestBundle
 Description: "An example of a Bundle containing a set of Labeler Code Request resources."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
 * entry[Message].resource = LabelerCodeRequestMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerCodeRequestMessage"
+* entry[Labeler].resource = NationalPharmaIndia
+* entry[Labeler].fullUrl = "http://example.org/Organization/NationalPharmaIndia"
+
+Instance: LabelerInactivationMessage
+InstanceOf: OrganizationMessage
+Description: "An example of a message header for a Labeler Inactivation"
+* eventCoding = http://loinc.org#69968-6
+* source.endpoint = "http://example.org/"
+* focus[0] = Reference(NationalPharmaIndia)
+
+Instance: SampleLabelerInactivationBundle
+InstanceOf: LabelerCodeRequestBundle
+Description: "An example of a Bundle containing a set of Labeler Code Request resources."
+* timestamp = "2002-08-11T01:01:01.111+06:00"
+* entry[Message].resource = LabelerInactivationMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerInactivationMessage"
 * entry[Labeler].resource = NationalPharmaIndia
 * entry[Labeler].fullUrl = "http://example.org/Organization/NationalPharmaIndia"
