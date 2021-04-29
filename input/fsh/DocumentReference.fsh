@@ -49,13 +49,48 @@ Description: "An example of an SPL document that will be attached to a FHIR Prov
 * content.attachment.contentType = #application/xml
 * content.attachment.data = "PHNhbXBsZT48L3NhbXBsZT4="
 
-Instance: ExampleSPLtoFHIRProvenance
+Instance: ExampleLabelerFHIRtoSPLProvenance
 InstanceOf: DualSubmissionProvenance
-Description: "A Provenance record that associates a set of FHIR Organizations with a generated SPL document."
+Description: "A Provenance record that associates a set of FHIR Labeler Organizations with a generated SPL document."
+* target = Reference(ExampleSPLDocumentReference)
+* occurredDateTime = "2021-04-21"
+* recorded = "2021-04-21T14:28:00.00+06:00"
+* activity.coding[0] = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE
+* activity.coding[1] = $LOINC#51726-8
+* agent.who.display = "SPL To FHIR Converter Program"
+* entity.what = Reference(NationalPharmaIndia)
+
+Instance: ExampleLabelerSPLtoFHIRProvenance
+InstanceOf: DualSubmissionProvenance
+Description: "A Provenance record that associates a set of FHIR Labeler Organizations with a submitted SPL document."
+* target = Reference(NationalPharmaIndia)
+* occurredDateTime = "2021-04-21"
+* recorded = "2021-04-21T14:28:00.00+06:00"
+* activity.coding[0] = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE
+* activity.coding[1] = $LOINC#51726-8
+* agent.who.display = "SPL To FHIR Converter Program"
+* entity.what = Reference(ExampleSPLDocumentReference)
+
+Instance: ExampleEstablishmentFHIRtoSPLProvenance
+InstanceOf: DualSubmissionProvenance
+Description: "A Provenance record that associates a set of FHIR Registrant and Establishment Organizations with a generated SPL document."
 * target = Reference(ExampleSPLDocumentReference)
 * occurredDateTime = "2021-04-21"
 * recorded = "2021-04-21T14:28:00.00+06:00"
 * activity.coding[0] = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE
 * activity.coding[1] = $LOINC#51725-0
 * agent.who.display = "SPL To FHIR Converter Program"
-* entity.what = Reference(NationalPharmaIndia)
+* entity[0].what = Reference(ExampleEstablishmentRegistrant)
+* entity[1].what = Reference(ExampleEstablishment)
+
+Instance: ExampleEstablishmentSPLtoFHIRProvenance
+InstanceOf: DualSubmissionProvenance
+Description: "A Provenance record that associates a set of FHIR Registrant and Establishment Organizations with a submitted SPL document."
+* target[0] = Reference(ExampleEstablishmentRegistrant)
+* target[1] = Reference(ExampleEstablishment)
+* occurredDateTime = "2021-04-21"
+* recorded = "2021-04-21T14:28:00.00+06:00"
+* activity.coding[0] = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE
+* activity.coding[1] = $LOINC#51725-0
+* agent.who.display = "SPL To FHIR Converter Program"
+* entity.what = Reference(ExampleSPLDocumentReference)
