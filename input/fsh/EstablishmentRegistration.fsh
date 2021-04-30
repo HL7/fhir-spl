@@ -4,7 +4,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * type 1..1 MS
 * type = #message (exactly)
 * timestamp 1..1 MS
-* entry 2..*
+* entry 3..*
 * entry.resource 1..1 MS
 * entry.search 0..0
 * entry.request 0..0

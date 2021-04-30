@@ -4,7 +4,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * type 1..1 MS
 * type = #message (exactly)
 * timestamp 1..1 MS
-* entry 2..*
+* entry 3..*
 * entry.resource 1..1 MS
 * entry.search 0..0
 * entry.request 0..0
@@ -13,10 +13,64 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a GDUFA Facility Identification Request."
-* entry contains Message 1..1 MS and Registrant 1..1 MS and GDUFAFacility 0..* MS
-* entry[Message].resource only OrganizationMessage
+* entry contains Message 1..1 MS and Registrant 1..1 MS and GDUFAFacility 1..* MS
+* entry[Message].resource only GDUFAFacilityIdentificationMessage
 * entry[Registrant].resource only GDUFARegistrantOrganization
 * entry[GDUFAFacility].resource only GDUFAFacilityOrganization
+
+Profile: GDUFAFacilityIdentificationMessage
+Parent: OrganizationMessage
+Description: "A profile of a GDUFA Facility Identification message"
+* eventCoding = http://loinc.org#72090-4
+* source.endpoint = "http://example.org/"
+* focus ^slicing.discriminator.type = #profile
+* focus ^slicing.discriminator.path = "$this.resolve()"
+* focus ^slicing.rules = #open
+* focus contains Registrant 1..1 MS and GDUFAFacility 1..* MS
+* focus[Registrant] only Reference(GDUFARegistrantOrganization)
+* focus[GDUFAFacility] only Reference(GDUFAFacilityOrganization)
+
+Profile: GDUFAFacilityInactivationBundle
+Parent: Bundle
+Description: "A profile that represents the Bundle that contains all of the resources for an GDUFA Facility Inactivation Request."
+* type 1..1 MS
+* type = #message (exactly)
+* timestamp 1..1 MS
+* entry 3..*
+* entry.resource 1..1 MS
+* entry.search 0..0
+* entry.request 0..0
+* entry.response 0..0
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a GDUFA Facility Inactivation Request."
+* entry contains Message 1..1 MS and Registrant 1..1 MS and GDUFAFacility 1..* MS
+* entry[Message].resource only GDUFAFacilityInactivationMessage
+* entry[Registrant].resource only IdentifiedGDUFARegistrant
+* entry[GDUFAFacility].resource only IdentifiedGDUFAFacility
+
+Profile: GDUFAFacilityInactivationMessage
+Parent: OrganizationMessage
+Description: "A profile of an GDUFA Facility Inactivation message"
+* eventCoding = FHIRSpecificSPLMessageTypes#02
+* source.endpoint = "http://example.org/"
+* focus ^slicing.discriminator.type = #profile
+* focus ^slicing.discriminator.path = "$this.resolve()"
+* focus ^slicing.rules = #open
+* focus contains Registrant 1..1 MS and GDUFAFacility 1..* MS
+* focus[Registrant] only Reference(IdentifiedGDUFARegistrant)
+* focus[GDUFAFacility] only Reference(IdentifiedGDUFAFacility)
+
+Profile: IdentifiedGDUFARegistrant
+Parent: IdentifiedOrganization
+Description: "A profile for an identified GDUFA facility registrant."
+* type = SPLOrganizationTypes#GDUFARegistrant
+
+Profile: IdentifiedGDUFAFacility
+Parent: IdentifiedOrganization
+Description: "A profile for an identified GDUFA facility."
+* type = SPLOrganizationTypes#GenericDrugUseFacility
 
 Profile: GDUFARegistrantOrganization
 Parent: RegistrantOrganization
@@ -100,11 +154,25 @@ Description: "An example of a Registrant Organization."
 * contact.address.postalCode = "12345"
 * contact.address.country = "USA"
 
+Instance: SampleIdentifiedGDUFARegistrant
+InstanceOf: IdentifiedGDUFARegistrant
+Description: "An example of a Identified Registrant Organization."
+* identifier[DUNSNumber].value = "111111111"
+* name = "REGISTRANT SERVICES INC"
+* type = SPLOrganizationTypes#GDUFARegistrant
+
 Instance: ExampleGDUFAFacilityAffiliation
 InstanceOf: GDUFAFacilityAffiliation
 Description: "An example of an affiliation between a registrant and a GDUFA facility."
 * organization = Reference(ExampleGDUFARegistrant)
 * participatingOrganization = Reference(ExampleGDUFAFacility)
+
+Instance: SampleIdentifiedGDUFAFacility
+InstanceOf: IdentifiedGDUFAFacility
+Description: "An example of an Identified GDUFA Facility Organization."
+* identifier[DUNSNumber].value = "222222222"
+* name = "EXAMPLE GDUFA FACILITY INC."
+* type = SPLOrganizationTypes#GenericDrugUseFacility
 
 Instance: ExampleGDUFAFacility
 InstanceOf: GDUFAFacilityOrganization
@@ -135,8 +203,8 @@ Description: "An example of a GDUFA Facility's business operations."
 * type = $NCI-T#C82401 "API Manufacture"
 * serviceProvisionCode = $NCI-T#C101886 "manufactures non-generics"
 
-Instance: GDUFAFacilityIdentificationMessage
-InstanceOf: OrganizationMessage
+Instance: SampleGDUFAFacilityIdentificationMessage
+InstanceOf: GDUFAFacilityIdentificationMessage
 Description: "An example of a GDUFA Facility Identification message"
 * eventCoding = http://loinc.org#72090-4
 * source.endpoint = "http://example.org/"
@@ -145,12 +213,31 @@ Description: "An example of a GDUFA Facility Identification message"
 
 Instance: ExampleGDUFAFacilityIdentification
 InstanceOf: GDUFAFacilityIdentificationBundle
-Description: "An example of a Bundle containing a set of GDUFA Facility Identification resources."
+Description: "An example of a Bundle containing a set of GDUFA Facility resources to identify."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
-* entry[Message].resource = GDUFAFacilityIdentificationMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/GDUFAFacilityIdentificationMessage"
+* entry[Message].resource = SampleGDUFAFacilityIdentificationMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityIdentificationMessage"
 * entry[Registrant].resource = ExampleGDUFARegistrant
 * entry[Registrant].fullUrl = "http://example.org/Organization/ExampleGDUFARegistrant"
 * entry[GDUFAFacility].resource = ExampleGDUFAFacility
 * entry[GDUFAFacility].fullUrl = "http://example.org/Organization/ExampleGDUFAFacility"
+
+Instance: SampleGDUFAFacilityInactivationMessage
+InstanceOf: GDUFAFacilityInactivationMessage
+Description: "An example of a GDUFA Facility Identification message"
+* eventCoding = FHIRSpecificSPLMessageTypes#02
+* source.endpoint = "http://example.org/"
+* focus[0] = Reference(SampleIdentifiedGDUFARegistrant)
+* focus[1] = Reference(SampleIdentifiedGDUFAFacility)
+
+Instance: ExampleGDUFAFacilityInactivation
+InstanceOf: GDUFAFacilityInactivationBundle
+Description: "An example of a Bundle containing a set of GDUFA Facility resources to inactivate."
+* timestamp = "2002-08-11T01:01:01.111+06:00"
+* entry[Message].resource = SampleGDUFAFacilityInactivationMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityInactivationMessage"
+* entry[Registrant].resource = SampleIdentifiedGDUFARegistrant
+* entry[Registrant].fullUrl = "http://example.org/Organization/SampleIdentifiedGDUFARegistrant"
+* entry[GDUFAFacility].resource = SampleIdentifiedGDUFAFacility
+* entry[GDUFAFacility].fullUrl = "http://example.org/Organization/SampleIdentifiedGDUFAFacility"
 

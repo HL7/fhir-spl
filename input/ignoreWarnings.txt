@@ -110,13 +110,23 @@ Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/MessageHeader
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OrganizationMessage
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OrganizationMessage - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationMessage
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationMessage - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationMessage
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationMessage - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationBundle
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationBundle - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationBundle
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationBundle - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFARegistrantOrganization
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFARegistrantOrganization - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityAffiliation
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFARegistrant
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFARegistrant - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFAFacility
+Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFAFacility - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityBusinessOperation
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityBusinessOperation - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/DualSubmissionProvenance
@@ -124,9 +134,13 @@ Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition
 
 # Matches against abstract profiles
 Found multiple matching profiles for Organization/ExampleEstablishmentRegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization
+Found multiple matching profiles for Organization/ExampleEstablishmentRegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
 Found multiple matching profiles for Organization/ExampleEstablishment among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
+Found multiple matching profiles for Organization/ExampleEstablishment among choices: http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
 Found multiple matching profiles for Organization/ExampleGDUFARegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization
+Found multiple matching profiles for Organization/ExampleGDUFARegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
 Found multiple matching profiles for Organization/ExampleGDUFAFacility among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
+Found multiple matching profiles for Organization/ExampleGDUFAFacility among choices: http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
 Details for Organization/ExampleEstablishmentRegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization
 Details for Organization/ExampleEstablishmentRegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
 Details for Organization/ExampleEstablishmentRegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
