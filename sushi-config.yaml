@@ -52,19 +52,28 @@ groups:
     resources:
       - StructureDefinition/OrganizationMessage
   LabelerRequest:
-    name: FDA Labeler Code Request
-    description: Artifacts associated with the Labeler Code Request use cases
+    name: FDA Labeler Organizations
+    description: Artifacts associated with the Labeler Organization use cases
     resources:
       - StructureDefinition/LabelerCodeRequestBundle
+      - StructureDefinition/LabelerInactivationBundle
+      - StructureDefinition/LabelerCodeRequestMessage
+      - StructureDefinition/LabelerInactivationMessage
       - StructureDefinition/LabelerOrganization
+      - StructureDefinition/IdentifiedLabeler
       - StructureDefinition/LabelerBusinessOperation
   EstablishmentRegistration:
-    name: FDA Establishment Registration
-    description: Artifacts associated with the Estabishment Registration use cases
+    name: FDA Establishment Organizations
+    description: Artifacts associated with the Estabishment Organization use cases
     resources:
       - StructureDefinition/EstablishmentRegistrationBundle
+      - StructureDefinition/EstablishmentInactivationBundle
+      - StructureDefinition/EstablishmentRegistrationMessage
+      - StructureDefinition/EstablishmentInactivationMessage
       - StructureDefinition/EstablishmentRegistrantOrganization
       - StructureDefinition/EstablishmentOrganization
+      - StructureDefinition/IdentifiedEstablishmentRegistrant
+      - StructureDefinition/IdentifiedEstablishment
       - StructureDefinition/EstablishmentAffiliation
       - StructureDefinition/EstablishmentBusinessOperation
   GDUFAFacility:
@@ -81,6 +90,7 @@ groups:
     description: Artifacts that are used in any of the Organization use cases
     resources:
       - StructureDefinition/RegistrantOrganization
+      - StructureDefinition/IdentifiedOrganization
       - StructureDefinition/USAgentOrganization
       - StructureDefinition/USAgentAffiliation
       - StructureDefinition/ImporterOrganization

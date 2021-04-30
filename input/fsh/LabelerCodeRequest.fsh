@@ -4,7 +4,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * type 1..1 MS
 * type = #message (exactly)
 * timestamp 1..1 MS
-* entry 1..2
+* entry 2..2
 * entry.resource 1..1 MS
 * entry.search 0..0
 * entry.request 0..0
@@ -12,13 +12,50 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a NDC Code Request."
-* entry contains Message 1..1 MS
+* entry ^slicing.description = "The specific bundle entries that are needed for a NDC Labeler Code Request."
+* entry contains Message 1..1 MS and Labeler 1..1 MS
 * entry[Message].resource 1..1
-* entry[Message].resource only OrganizationMessage
-* entry contains Labeler 1..1 MS
+* entry[Message].resource only LabelerCodeRequestMessage
 * entry[Labeler].resource 1..1
 * entry[Labeler].resource only LabelerOrganization
+
+Profile: LabelerCodeRequestMessage
+Parent: OrganizationMessage
+Description: "An example of a message header for a Labeler Code Request"
+* eventCoding = http://loinc.org#51726-8
+* focus only Reference(LabelerOrganization)
+
+Profile: LabelerInactivationBundle
+Parent: Bundle
+Description: "A profile that represents the Bundle that contains all of the resources for a Labeler Inactivation."
+* type 1..1 MS
+* type = #message (exactly)
+* timestamp 1..1 MS
+* entry 2..2
+* entry.resource 1..1 MS
+* entry.search 0..0
+* entry.request 0..0
+* entry.response 0..0
+* entry ^slicing.discriminator.type = #type
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Labeler Inactivation."
+* entry contains Message 1..1 MS and Labeler 1..1 MS
+* entry[Message].resource 1..1
+* entry[Message].resource only LabelerInactivationMessage
+* entry[Labeler].resource 1..1
+* entry[Labeler].resource only IdentifiedLabeler
+
+Profile: LabelerInactivationMessage
+Parent: OrganizationMessage
+Description: "A profile for the Labeler Inactivation Message."
+* eventCoding = http://loinc.org#69968-6
+* focus only Reference(IdentifiedOrganization)
+
+Profile: IdentifiedLabeler
+Parent: IdentifiedOrganization
+Description: "A profile for an identified labeler."
+* type = SPLOrganizationTypes#Labeler
 
 Profile: LabelerOrganization
 Parent: Organization
@@ -124,8 +161,8 @@ Description: "An example of a Labeler's business operations."
 * type = $NCI-T#C43360 "manufacture"
 * serviceProvisionCode = $NCI-T#C106643 "Manufactures human prescription drug products"
 
-Instance: LabelerCodeRequestMessage
-InstanceOf: OrganizationMessage
+Instance: SampleLabelerCodeRequestMessage
+InstanceOf: LabelerCodeRequestMessage
 Description: "An example of a message header for a Labeler Code Request"
 * eventCoding = http://loinc.org#51726-8
 * source.endpoint = "http://example.org/"
@@ -133,25 +170,32 @@ Description: "An example of a message header for a Labeler Code Request"
 
 Instance: SampleLabelerCodeRequestBundle
 InstanceOf: LabelerCodeRequestBundle
-Description: "An example of a Bundle containing a set of Labeler Code Request resources."
+Description: "An example of a Bundle containing a Labeler Code Request resource to register."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
-* entry[Message].resource = LabelerCodeRequestMessage
+* entry[Message].resource = SampleLabelerCodeRequestMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerCodeRequestMessage"
 * entry[Labeler].resource = NationalPharmaIndia
 * entry[Labeler].fullUrl = "http://example.org/Organization/NationalPharmaIndia"
 
-Instance: LabelerInactivationMessage
-InstanceOf: OrganizationMessage
+Instance: SampleLabelerInactivationMessage
+InstanceOf: LabelerInactivationMessage
 Description: "An example of a message header for a Labeler Inactivation"
 * eventCoding = http://loinc.org#69968-6
 * source.endpoint = "http://example.org/"
-* focus[0] = Reference(NationalPharmaIndia)
+* focus[0] = Reference(IdentifiedLabelerOrganization)
+
+Instance: IdentifiedLabelerOrganization
+InstanceOf: IdentifiedLabeler
+Description: "A sample Labeler organizaiton that just has the DUNS number and name."
+* identifier[DUNSNumber].value = "999999999"
+* type = SPLOrganizationTypes#Labeler
+* name = "National Pharma of India Inc."
 
 Instance: SampleLabelerInactivationBundle
-InstanceOf: LabelerCodeRequestBundle
-Description: "An example of a Bundle containing a set of Labeler Code Request resources."
+InstanceOf: LabelerInactivationBundle
+Description: "An example of a Bundle containing a Labeler Code Request resource to inactivate."
 * timestamp = "2002-08-11T01:01:01.111+06:00"
-* entry[Message].resource = LabelerInactivationMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerInactivationMessage"
-* entry[Labeler].resource = NationalPharmaIndia
-* entry[Labeler].fullUrl = "http://example.org/Organization/NationalPharmaIndia"
+* entry[Message].resource = SampleLabelerInactivationMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleLabelerInactivationMessage"
+* entry[Labeler].resource = IdentifiedLabelerOrganization
+* entry[Labeler].fullUrl = "http://example.org/Organization/IdentifiedLabelerOrganization"

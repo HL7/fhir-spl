@@ -131,3 +131,12 @@ Id: valueset-splRegistrantOrganizationTypes
 Description: "Codes that are specifically used for Registration Organizations."
 * SPLOrganizationTypes#EstablishmentRegistrant
 * SPLOrganizationTypes#GDUFARegistrant
+
+ValueSet: TopLevelOrganizationTypes
+Id: valueset-splTopLevelOrganizationTypes
+Description: "Codes that identify organizations that are considered top-level"
+* SPLOrganizationTypes#Labeler
+* SPLOrganizationTypes#EstablishmentRegistrant 
+* SPLOrganizationTypes#Establishment 
+* SPLOrganizationTypes#GDUFARegistrant 
+* SPLOrganizationTypes#GenericDrugUseFacility 

@@ -7,7 +7,21 @@ Description: "A profile that indicates what type of request is being made."
 * source MS
 * source.endpoint MS
 * focus 1..* MS
-* focus only Reference(RegistrantOrganization or LabelerOrganization or EstablishmentOrganization or GDUFAFacilityOrganization)
+* focus only Reference(IdentifiedOrganization or RegistrantOrganization or LabelerOrganization or EstablishmentOrganization or GDUFAFacilityOrganization)
+
+Profile: IdentifiedOrganization
+Parent: Organization
+Description: "A profile on Organization that specifies a name and an identifier used to identify rather than specify the organization."
+* ^abstract = true
+* identifier 1..* MS
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Require specific types of identifiers."
+* identifier contains DUNSNumber 1..1 MS
+* identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* type from TopLevelOrganizationTypes (required)
+* name 1..1 MS
 
 Profile: RegistrantOrganization
 Parent: Organization
