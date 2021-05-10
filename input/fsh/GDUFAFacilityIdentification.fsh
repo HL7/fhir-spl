@@ -22,7 +22,6 @@ Profile: GDUFAFacilityIdentificationMessage
 Parent: OrganizationMessage
 Description: "A profile of a GDUFA Facility Identification message"
 * eventCoding = http://loinc.org#72090-4
-* source.endpoint = "http://example.org/"
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
 * focus ^slicing.rules = #open

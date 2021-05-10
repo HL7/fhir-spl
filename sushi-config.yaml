@@ -51,14 +51,17 @@ groups:
     description: Defined operations for the use cases
     resources:
       - StructureDefinition/OrganizationMessage
+      - StructureDefinition/LabelerCodeRequestMessage
+      - StructureDefinition/LabelerInactivationMessage
+      - StructureDefinition/EstablishmentRegistrationMessage
+      - StructureDefinition/EstablishmentInactivationMessage
+      - StructureDefinition/OutOfBusinessMessage
   LabelerRequest:
     name: FDA Labeler Organizations
     description: Artifacts associated with the Labeler Organization use cases
     resources:
       - StructureDefinition/LabelerCodeRequestBundle
       - StructureDefinition/LabelerInactivationBundle
-      - StructureDefinition/LabelerCodeRequestMessage
-      - StructureDefinition/LabelerInactivationMessage
       - StructureDefinition/LabelerOrganization
       - StructureDefinition/IdentifiedLabeler
       - StructureDefinition/LabelerBusinessOperation
@@ -68,8 +71,6 @@ groups:
     resources:
       - StructureDefinition/EstablishmentRegistrationBundle
       - StructureDefinition/EstablishmentInactivationBundle
-      - StructureDefinition/EstablishmentRegistrationMessage
-      - StructureDefinition/EstablishmentInactivationMessage
       - StructureDefinition/EstablishmentRegistrantOrganization
       - StructureDefinition/EstablishmentOrganization
       - StructureDefinition/IdentifiedEstablishmentRegistrant

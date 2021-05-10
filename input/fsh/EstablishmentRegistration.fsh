@@ -22,7 +22,6 @@ Profile: EstablishmentRegistrationMessage
 Parent: OrganizationMessage
 Description: "A profile of an Establishment Registration message"
 * eventCoding = http://loinc.org#51725-0
-* source.endpoint = "http://example.org/"
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
 * focus ^slicing.rules = #open
