@@ -76,6 +76,7 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * identifier contains DUNSNumber 1..1 MS and NDCCode 0..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
 * identifier[NDCCode].system = "urn:oid:2.16.840.1.113883.6.69"
+* type 1..1 MS
 * type = SPLOrganizationTypes#Labeler
 * name 1..1 MS
 * address 1..1 MS

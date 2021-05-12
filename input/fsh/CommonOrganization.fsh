@@ -51,6 +51,7 @@ Description: "A profile on Organization that specifies a name and an identifier 
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* type 1..1 MS
 * type from TopLevelOrganizationTypes (required)
 * name 1..1 MS
 
@@ -65,6 +66,7 @@ Description: "A profile for the data elements required to identify an organizati
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* type 1..1 MS
 * type from SPLRegistrantOrganizationTypes (required)
 * name 1..1 MS
 * contact 1..1 MS
@@ -94,6 +96,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* type 1..1 MS
 * type = SPLOrganizationTypes#USAgent
 * name 1..1 MS
 * telecom 2..* MS
