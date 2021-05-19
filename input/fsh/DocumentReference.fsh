@@ -34,6 +34,18 @@ Description: "A profile that links changes made to a FHIR system either via a co
 * entity.role = #source
 * entity.what only Reference(SPLDocumentReference or ProductSubmissionDocument or RegistrantOrganization or LabelerOrganization or EstablishmentOrganization or GDUFAFacilityOrganization)
 
+Instance: ProvenanceActivitySearchParameter
+InstanceOf: SearchParameter
+Usage: #definition
+* url = "http://hl7.org/fhir/us/spl/SearchParameter/ProvenanceActivitySearchParameter"
+* name = "activity"
+* status = #active
+* description = "A search parameter to allow searching for Provenance records by activity type."
+* code = #activity
+* base = #Provenance
+* type = #token
+* expression = "Provenance.activity"
+
 Instance: ExampleSPLDocumentReference
 InstanceOf: SPLDocumentReference
 Description: "An example of an SPL document that will be attached to a FHIR Provenance."
