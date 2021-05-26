@@ -35,6 +35,7 @@ Description: "A profile that indicates what type of request is being made."
 * event[x] MS
 * event[x] only Coding
 * eventCoding from SPLFHIRMessageTypes (required)
+* eventCoding.display 1..1 MS
 * source MS
 * source.endpoint MS
 * focus 1..* MS
@@ -121,7 +122,7 @@ Description: "A profile that associates an organization to its US Agent."
 Instance: SamplOutOfBusinessMessage
 InstanceOf: OutOfBusinessMessage
 Description: "An example of a message header for an Out of Business notification"
-* eventCoding = $LOINC#53411-5
+* eventCoding = $LOINC#53411-5 "FDA product label Out of business notification"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedEstablishmentRegistrant)
 

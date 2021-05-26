@@ -243,7 +243,7 @@ Description: "An example of the linkage between an Establishment and an Importer
 Instance: SampleEstablishmentRegistrationMessage
 InstanceOf: EstablishmentRegistrationMessage
 Description: "An example of an Establishment Registration message"
-* eventCoding = http://loinc.org#51725-0
+* eventCoding = http://loinc.org#51725-0  "FDA product label Establishment registration"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(ExampleEstablishmentRegistrant)
 * focus[1] = Reference(ExampleEstablishment)
@@ -261,8 +261,8 @@ Description: "An example of a Bundle containing a set of Establishment Registrat
 
 Instance: SampleEstablishmentInactivationMessage
 InstanceOf: EstablishmentInactivationMessage
-Description: "An example of a message header for a Labeler Inactivation"
-* eventCoding = FHIRSpecificSPLMessageTypes#01
+Description: "An example of a message header for a Establishment Inactivation"
+* eventCoding = FHIRSpecificSPLMessageTypes#01 "Establishment inactivation"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedEstablishmentRegistrant)
 * focus[1] = Reference(SampleIdentifiedEstablishment)

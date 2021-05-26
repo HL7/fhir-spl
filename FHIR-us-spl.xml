@@ -81,6 +81,7 @@
 <artifact id="StructureDefinition/splDocumentDate" key="StructureDefinition-splDocumentDate" name="SPLDocumentDate"/>
 <artifact id="StructureDefinition/SPLDocumentReference" key="StructureDefinition-SPLDocumentReference" name="SPLDocumentReference"/>
 <artifact id="ValueSet/valueset-splFHIRMessageTypes" key="ValueSet-valueset-splFHIRMessageTypes" name="SPLFHIRMessageTypes"/>
+<artifact id="ValueSet/valueset-splGenericFacilityMessageTypes" key="ValueSet-valueset-splGenericFacilityMessageTypes" name="SPLGenericFacilityMessageTypes"/>
 <artifact id="CodeSystem/codesystem-splOrganizationTypes" key="CodeSystem-codesystem-splOrganizationTypes" name="SPLOrganizationTypes"/>
 <artifact id="ValueSet/valueset-splRegistrantOrganizationTypes" key="ValueSet-valueset-splRegistrantOrganizationTypes" name="SPLRegistrantOrganizationTypes"/>
 <artifact id="MessageHeader/SamplOutOfBusinessMessage" key="MessageHeader-SamplOutOfBusinessMessage" name="SamplOutOfBusinessMessage"/>

@@ -165,7 +165,7 @@ Description: "An example of a Labeler's business operations."
 Instance: SampleLabelerCodeRequestMessage
 InstanceOf: LabelerCodeRequestMessage
 Description: "An example of a message header for a Labeler Code Request"
-* eventCoding = http://loinc.org#51726-8
+* eventCoding = http://loinc.org#51726-8 "FDA product label NDC labeler code request"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(NationalPharmaIndia)
 
@@ -181,7 +181,7 @@ Description: "An example of a Bundle containing a Labeler Code Request resource 
 Instance: SampleLabelerInactivationMessage
 InstanceOf: LabelerInactivationMessage
 Description: "An example of a message header for a Labeler Inactivation"
-* eventCoding = http://loinc.org#69968-6
+* eventCoding = http://loinc.org#69968-6 "FDA product label NDC labeler code inactivation"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(IdentifiedLabelerOrganization)
 

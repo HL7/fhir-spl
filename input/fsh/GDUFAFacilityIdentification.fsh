@@ -21,7 +21,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 Profile: GDUFAFacilityIdentificationMessage
 Parent: OrganizationMessage
 Description: "A profile of a GDUFA Facility Identification message"
-* eventCoding = http://loinc.org#72090-4
+* eventCoding from SPLGenericFacilityMessageTypes
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
 * focus ^slicing.rules = #open
@@ -85,12 +85,12 @@ Description: "A profile for the data elements required to identify an organizati
 * contained ^slicing.description = "The specific resources that are needed for a GDUFA Facility organization."
 * contained contains BusinessOperation 1..* MS
 * contained[BusinessOperation] only GDUFAFacilityBusinessOperation
-* identifier 1..* MS
+* identifier 2..* MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Require specific types of identifiers."
-* identifier contains DUNSNumber 1..1 MS and FEINumber 0..1 MS
+* identifier contains DUNSNumber 1..1 MS and FEINumber 1..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
 * identifier[FEINumber].system = "urn:oid:2.16.840.1.113883.4.82"
 * type 1..1 MS
@@ -206,7 +206,7 @@ Description: "An example of a GDUFA Facility's business operations."
 Instance: SampleGDUFAFacilityIdentificationMessage
 InstanceOf: GDUFAFacilityIdentificationMessage
 Description: "An example of a GDUFA Facility Identification message"
-* eventCoding = http://loinc.org#72090-4
+* eventCoding = http://loinc.org#72090-4 "FDA product label Identification of CBER-regulated generic drug facility"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(ExampleGDUFARegistrant)
 * focus[1] = Reference(ExampleGDUFAFacility)
@@ -225,7 +225,7 @@ Description: "An example of a Bundle containing a set of GDUFA Facility resource
 Instance: SampleGDUFAFacilityInactivationMessage
 InstanceOf: GDUFAFacilityInactivationMessage
 Description: "An example of a GDUFA Facility Identification message"
-* eventCoding = FHIRSpecificSPLMessageTypes#02
+* eventCoding = FHIRSpecificSPLMessageTypes#02 "GDUFA Facility inactivation"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedGDUFARegistrant)
 * focus[1] = Reference(SampleIdentifiedGDUFAFacility)

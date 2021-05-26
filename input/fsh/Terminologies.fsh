@@ -20,6 +20,14 @@ Description: "The set of message types that are allowed as a FHIR submission."
 * $LOINC#72090-4 "IDENTIFICATION OF CBER-REGULATED GENERIC DRUG FACILITY"
 * FHIRSpecificSPLMessageTypes#02 "GDUFA Facility Inactivation"
 
+ValueSet: SPLGenericFacilityMessageTypes
+Id: valueset-splGenericFacilityMessageTypes
+Description: "The set of message types that are allowed as a Generic User Fee Facility submission."
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
+* $LOINC#71743-9 "GENERIC DRUG FACILITY IDENTIFICATION SUBMISSION"
+* $LOINC#72090-4 "IDENTIFICATION OF CBER-REGULATED GENERIC DRUG FACILITY"
+
+
 ValueSet: LabelerBusinessOperations
 Id: valueset-labelerBusinessOperations
 Description: "The set of business operations that can be specified for a labelling facility."
