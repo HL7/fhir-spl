@@ -50,7 +50,7 @@ Profile: LabelerInactivationMessage
 Parent: OrganizationMessage
 Description: "A profile for the Labeler Inactivation Message."
 * eventCoding = http://loinc.org#69968-6
-* focus only Reference(IdentifiedOrganization)
+* focus only Reference(IdentifiedLabeler)
 
 Profile: IdentifiedLabeler
 Parent: IdentifiedOrganization
