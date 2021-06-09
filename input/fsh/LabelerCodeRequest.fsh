@@ -60,6 +60,7 @@ Description: "A profile for an identified labeler."
 Profile: LabelerOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify a NDC Labeler organization."
+* obeys spl-5.1.4.1
 * contained ^slicing.discriminator.type = #type
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
@@ -75,7 +76,11 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS and NDCCode 0..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier[DUNSNumber] obeys spl-2.1.5.2
 * identifier[NDCCode].system = "urn:oid:2.16.840.1.113883.6.69"
+* identifier[NDCCode] obeys spl-5.1.2.8
+* identifier[NDCCode] obeys spl-5.1.2.9
+* identifier[NDCCode] obeys spl-5.1.2.10
 * type 1..1 MS
 * type = SPLOrganizationTypes#Labeler
 * name 1..1 MS
@@ -102,15 +107,52 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contact.telecom[Phone].system = #phone
 * contact.telecom[Email].system = #email
 
+Invariant: spl-2.1.5.2
+Description: "DUNS number is 9 digits"
+Expression: "value.length() = 9"
+Severity: #error
+
+Invariant: spl-5.1.2.8
+Description: "NDC Labeler code is 4 or 5 digits"
+Expression: "value.length() = 4 or value.length() = 5"
+Severity: #error
+
+Invariant: spl-5.1.2.9
+Description: "If NDC Labeler code is 5 digits, it does not start with a '0'"
+Expression: "value.length() = 4 or value.startsWith('0').not()"
+Severity: #error
+
+Invariant: spl-5.1.2.10
+Description: "NDC Labeler code is not one of 0000,0001,1500,1800,1900"
+Expression: "value != '0000' or value != '0001' or value != '1500' or value != '1800' or value != '1900'"
+Severity: #error
+
+Invariant: spl-5.1.4.1
+Description: "If country is USA, then US agent is not allowed"
+Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
+Severity: #error
+
 Profile: LabelerBusinessOperation
 Parent: HealthcareService
 Description: "A profile that associates a Labeler to the set of business operations that it can perform."
+* obeys spl-5.1.5.6
+* obeys spl-5.1.5.7
 * providedBy 1..1 MS
 * providedBy only Reference(LabelerOrganization)
 * type 1..1 MS
 * type from LabelerBusinessOperations (required)
-* serviceProvisionCode 1..1 MS
+* serviceProvisionCode 0..1 MS
 * serviceProvisionCode from BusinessOperationQualifiers (required)
+
+Invariant: spl-5.1.5.6
+Description: "Each business operation code is mentioned only once."
+Expression: "type.isDistinct()"
+Severity: #error
+
+Invariant: spl-5.1.5.7
+Description: "Qualifier is mandatory unless operation is analysis (C25391) or API manufacture (C82401)"
+Expression: "type.coding.code = 'C25391' or type.coding.code = 'C82401' or serviceProvisionCode.count() > 0"
+Severity: #error
 
 Instance: NationalPharmaIndia
 InstanceOf: LabelerOrganization

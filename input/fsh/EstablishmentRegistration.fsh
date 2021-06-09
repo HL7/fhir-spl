@@ -89,6 +89,9 @@ Description: "A specialization of the RegistrantOrganization profile that fixes 
 Profile: EstablishmentOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify an organization that is registered as an Establishment."
+* obeys spl-6.1.4.1
+* obeys spl-6.1.4.3
+* obeys spl-6.1.5.3
 * contained ^slicing.discriminator.type = #profile
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
@@ -106,7 +109,9 @@ Description: "A profile for the data elements required to identify an organizati
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS and FEINumber 0..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier[DUNSNumber] obeys spl-2.1.5.2
 * identifier[FEINumber].system = "urn:oid:2.16.840.1.113883.4.82"
+* identifier[FEINumber] obeys spl-6.1.3.7
 * type 1..1 MS
 * type = SPLOrganizationTypes#Establishment
 * name 1..1 MS
@@ -133,6 +138,26 @@ Description: "A profile for the data elements required to identify an organizati
 * contact.telecom[Phone].system = #phone
 * contact.telecom[Email].system = #email
 
+Invariant: spl-6.1.3.7
+Description: "FEI number is 7 or 10 digits"
+Expression: "value.length() = 7 or value.length() = 10"
+Severity: #error
+
+Invariant: spl-6.1.4.1
+Description: "If country is USA, then US agent is not allowed."
+Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
+Severity: #error
+
+Invariant: spl-6.1.4.3
+Description: "If country is not USA, then US agent is mandatory."
+Expression: "address.country = 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 1" 
+Severity: #error
+
+Invariant: spl-6.1.5.3
+Description: "If country is USA, then import business is not allowed."
+Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'Importer').count() = 0" 
+Severity: #error
+
 Profile: ImporterOrganization
 Parent: Organization
 Description: "A profile for the data elements required for an organization fulfilling the role of an importer for another organization."
@@ -143,6 +168,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier[DUNSNumber] obeys spl-2.1.5.2
 * type 1..1 MS
 * type = SPLOrganizationTypes#Importer
 * name 1..1 MS

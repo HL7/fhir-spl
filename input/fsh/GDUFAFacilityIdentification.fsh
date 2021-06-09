@@ -92,7 +92,9 @@ Description: "A profile for the data elements required to identify an organizati
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS and FEINumber 1..1 MS
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier[DUNSNumber] obeys spl-2.1.5.2
 * identifier[FEINumber].system = "urn:oid:2.16.840.1.113883.4.82"
+* identifier[FEINumber] obeys spl-6.1.3.7
 * type 1..1 MS
 * type = SPLOrganizationTypes#GenericDrugUseFacility
 * name 1..1 MS
@@ -132,6 +134,7 @@ Description: "A profile that associates a GDUFA facility to its registrant."
 Profile: GDUFAFacilityBusinessOperation
 Parent: HealthcareService
 Description: "A profile that associates an establishment to the set of business operations that it can perform."
+* obeys spl-5.1.5.6
 * providedBy 1..1 MS
 * providedBy only Reference(GDUFAFacilityOrganization)
 * type 1..1 MS
@@ -180,6 +183,7 @@ Description: "An example of an GDUFA Facility Organization."
 * contained[BusinessOperation] = ExampleGDUFAFacilityOperation
 * contained[BusinessOperation].providedBy.reference = "#"
 * identifier[DUNSNumber].value = "222222222"
+* identifier[FEINumber].value = "1234567"
 * name = "EXAMPLE GDUFA FACILITY INC."
 * type = SPLOrganizationTypes#GenericDrugUseFacility
 * address.line = "111 SOUTH PARK STREET"
