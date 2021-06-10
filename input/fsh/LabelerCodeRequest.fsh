@@ -91,13 +91,14 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contact.address 1..1 MS
 * contact.address only SPLAddress
 * contact.telecom 2..* MS
-* contact.telecom only SPLContactPoint
 * contact.telecom ^slicing.discriminator.type = #value
 * contact.telecom ^slicing.discriminator.path = "system"
 * contact.telecom ^slicing.rules = #open
 * contact.telecom ^slicing.description = "Require a telephone number and an email address."
 * contact.telecom contains Phone 1..1 MS and Email 1..1 MS
+* contact.telecom[Phone] only SPLContactPoint
 * contact.telecom[Phone].system = #phone
+* contact.telecom[Email] only SPLContactPoint
 * contact.telecom[Email].system = #email
 
 Invariant: spl-2.1.5.2

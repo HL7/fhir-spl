@@ -122,13 +122,14 @@ Description: "A profile for the data elements required to identify an organizati
 * contact.address 1..1 MS
 * contact.address only SPLAddress
 * contact.telecom 2..* MS
-* contact.telecom only SPLContactPoint
 * contact.telecom ^slicing.discriminator.type = #value
 * contact.telecom ^slicing.discriminator.path = "system"
 * contact.telecom ^slicing.rules = #open
 * contact.telecom ^slicing.description = "Require a telephone number and an email address."
 * contact.telecom contains Phone 1..1 MS and Email 1..1 MS
+* contact.telecom[Phone] only SPLContactPoint
 * contact.telecom[Phone].system = #phone
+* contact.telecom[Email] only SPLContactPoint
 * contact.telecom[Email].system = #email
 
 Invariant: spl-6.1.3.7
@@ -166,13 +167,14 @@ Description: "A profile for the data elements required for an organization fulfi
 * type = SPLOrganizationTypes#Importer
 * name 1..1 MS
 * telecom 2..* MS
-* telecom only SPLContactPoint
 * telecom ^slicing.discriminator.type = #value
 * telecom ^slicing.discriminator.path = "system"
 * telecom ^slicing.rules = #open
 * telecom ^slicing.description = "Require a telephone number and an email address."
 * telecom contains Phone 1..1 MS and Email 1..1 MS
+* telecom[Phone] only SPLContactPoint
 * telecom[Phone].system = #phone
+* telecom[Email] only SPLContactPoint
 * telecom[Email].system = #email
 
 Profile: ImporterAffiliation
