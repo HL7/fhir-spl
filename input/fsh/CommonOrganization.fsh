@@ -133,7 +133,7 @@ Description: "Constraints on the Address datatype dealing with US addresses."
 
 Invariant: spl-2.1.6.4
 Description: "If the country is USA, then the state and postal code exist"
-Expression: "country = 'USA' implies (state.exists() and postalCode.exists())"
+Expression: "country = 'USA' implies (state.exists() and state.length() = 2 and postalCode.exists())"
 Severity: #error
 
 Invariant: spl-2.1.6.5
