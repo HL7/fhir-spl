@@ -1,14 +1,7 @@
 Profile: EstablishmentRegistrationBundle
-Parent: Bundle
+Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for an Estabishment Registration Request."
-* type 1..1 MS
-* type = #message (exactly)
-* timestamp 1..1 MS
 * entry 3..*
-* entry.resource 1..1 MS
-* entry.search 0..0
-* entry.request 0..0
-* entry.response 0..0
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -30,16 +23,9 @@ Description: "A profile of an Establishment Registration message"
 * focus[Establishment] only Reference(EstablishmentOrganization)
 
 Profile: EstablishmentInactivationBundle
-Parent: Bundle
+Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for an Estabishment Inactivation Request."
-* type 1..1 MS
-* type = #message (exactly)
-* timestamp 1..1 MS
 * entry 2..*
-* entry.resource 1..1 MS
-* entry.search 0..0
-* entry.request 0..0
-* entry.response 0..0
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -273,7 +259,7 @@ Description: "An example of an Establishment Registration message"
 Instance: ExampleEstablishmentRegistration
 InstanceOf: EstablishmentRegistrationBundle
 Description: "An example of a Bundle containing a set of Establishment Registration resources to register."
-* timestamp = "2002-08-11T01:01:01.111+06:00"
+* timestamp = "2021-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleEstablishmentRegistrationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/EstablishmentRegistrationMessage"
 * entry[Registrant].resource = ExampleEstablishmentRegistrant
@@ -306,7 +292,7 @@ Description: "A sample Establishment organizaiton that just has the DUNS number 
 Instance: SampleEstablishmentInactivationBundle
 InstanceOf: EstablishmentInactivationBundle
 Description: "An example of a Bundle containing a set of Establishment resources to inactivate."
-* timestamp = "2002-08-11T01:01:01.111+06:00"
+* timestamp = "2021-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleEstablishmentInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleEstablishmentInactivationMessage"
 * entry[Registrant].resource = SampleIdentifiedEstablishmentRegistrant

@@ -70,6 +70,7 @@
 <artifact id="HealthcareService/NationalPharmaIndiaOperation" key="HealthcareService-NationalPharmaIndiaOperation" name="NationalPharmaIndiaOperation"/>
 <artifact id="Organization/NationalPharmaIndiaUSAgent" key="Organization-NationalPharmaIndiaUSAgent" name="NationalPharmaIndiaUSAgent"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
+<artifact id="StructureDefinition/OrganizationBundle" key="StructureDefinition-OrganizationBundle" name="OrganizationBundle"/>
 <artifact id="StructureDefinition/OrganizationMessage" key="StructureDefinition-OrganizationMessage" name="OrganizationMessage"/>
 <artifact id="StructureDefinition/OutOfBusinessBundle" key="StructureDefinition-OutOfBusinessBundle" name="OutOfBusinessBundle"/>
 <artifact id="StructureDefinition/OutOfBusinessMessage" key="StructureDefinition-OutOfBusinessMessage" name="OutOfBusinessMessage"/>
@@ -78,6 +79,8 @@
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
 <artifact id="ValueSet/splDocumentCodes" key="ValueSet-splDocumentCodes" name="SPL Document Codes"/>
 <artifact id="ValueSet/splSectionCodes" key="ValueSet-splSectionCodes" name="SPL Section Codes"/>
+<artifact id="StructureDefinition/SPLAddress" key="StructureDefinition-SPLAddress" name="SPLAddress"/>
+<artifact id="StructureDefinition/SPLContactPoint" key="StructureDefinition-SPLContactPoint" name="SPLContactPoint"/>
 <artifact id="StructureDefinition/splDocumentDate" key="StructureDefinition-splDocumentDate" name="SPLDocumentDate"/>
 <artifact id="StructureDefinition/SPLDocumentReference" key="StructureDefinition-SPLDocumentReference" name="SPLDocumentReference"/>
 <artifact id="ValueSet/valueset-splFHIRMessageTypes" key="ValueSet-valueset-splFHIRMessageTypes" name="SPLFHIRMessageTypes"/>

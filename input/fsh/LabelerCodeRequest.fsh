@@ -1,14 +1,7 @@
 Profile: LabelerCodeRequestBundle
-Parent: Bundle
+Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for a Labeler NDC Code Request."
-* type 1..1 MS
-* type = #message (exactly)
-* timestamp 1..1 MS
 * entry 2..2
-* entry.resource 1..1 MS
-* entry.search 0..0
-* entry.request 0..0
-* entry.response 0..0
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -26,16 +19,9 @@ Description: "An example of a message header for a Labeler Code Request"
 * focus only Reference(LabelerOrganization)
 
 Profile: LabelerInactivationBundle
-Parent: Bundle
+Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for a Labeler Inactivation."
-* type 1..1 MS
-* type = #message (exactly)
-* timestamp 1..1 MS
 * entry 2..2
-* entry.resource 1..1 MS
-* entry.search 0..0
-* entry.request 0..0
-* entry.response 0..0
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -226,7 +212,7 @@ Description: "An example of a message header for a Labeler Code Request"
 Instance: SampleLabelerCodeRequestBundle
 InstanceOf: LabelerCodeRequestBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to register."
-* timestamp = "2002-08-11T01:01:01.111+06:00"
+* timestamp = "2021-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleLabelerCodeRequestMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerCodeRequestMessage"
 * entry[Labeler].resource = NationalPharmaIndia
@@ -249,7 +235,7 @@ Description: "A sample Labeler organizaiton that just has the DUNS number and na
 Instance: SampleLabelerInactivationBundle
 InstanceOf: LabelerInactivationBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to inactivate."
-* timestamp = "2002-08-11T01:01:01.111+06:00"
+* timestamp = "2021-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleLabelerInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleLabelerInactivationMessage"
 * entry[Labeler].resource = IdentifiedLabelerOrganization

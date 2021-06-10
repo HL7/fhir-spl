@@ -1,14 +1,7 @@
 Profile: GDUFAFacilityIdentificationBundle
-Parent: Bundle
+Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for a GDUFA Facility Identification Request."
-* type 1..1 MS
-* type = #message (exactly)
-* timestamp 1..1 MS
 * entry 3..*
-* entry.resource 1..1 MS
-* entry.search 0..0
-* entry.request 0..0
-* entry.response 0..0
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -30,16 +23,9 @@ Description: "A profile of a GDUFA Facility Identification message"
 * focus[GDUFAFacility] only Reference(GDUFAFacilityOrganization)
 
 Profile: GDUFAFacilityInactivationBundle
-Parent: Bundle
+Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for an GDUFA Facility Inactivation Request."
-* type 1..1 MS
-* type = #message (exactly)
-* timestamp 1..1 MS
 * entry 3..*
-* entry.resource 1..1 MS
-* entry.search 0..0
-* entry.request 0..0
-* entry.response 0..0
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -212,7 +198,7 @@ Description: "An example of a GDUFA Facility Identification message"
 Instance: ExampleGDUFAFacilityIdentification
 InstanceOf: GDUFAFacilityIdentificationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to identify."
-* timestamp = "2002-08-11T01:01:01.111+06:00"
+* timestamp = "2021-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityIdentificationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityIdentificationMessage"
 * entry[Registrant].resource = ExampleGDUFARegistrant
@@ -231,7 +217,7 @@ Description: "An example of a GDUFA Facility Identification message"
 Instance: ExampleGDUFAFacilityInactivation
 InstanceOf: GDUFAFacilityInactivationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to inactivate."
-* timestamp = "2002-08-11T01:01:01.111+06:00"
+* timestamp = "2021-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityInactivationMessage"
 * entry[Registrant].resource = SampleIdentifiedGDUFARegistrant
