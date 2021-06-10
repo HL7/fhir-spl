@@ -75,12 +75,9 @@ Description: "A profile for the data elements required to identify an organizati
 * contact 1..1 MS
 * contact.name 1..1 MS
 * contact.address 1..1 MS
-* contact.address.line 1..2 MS
-* contact.address.city 1..1 MS
-* contact.address.state 0..1 MS
-* contact.address.postalCode 1..1 MS
-* contact.address.country 1..1 MS
+* contact.address only SPLAddress
 * contact.telecom 2..* MS
+* contact.telecom only SPLContactPoint
 * contact.telecom ^slicing.discriminator.type = #value
 * contact.telecom ^slicing.discriminator.path = "system"
 * contact.telecom ^slicing.rules = #open
@@ -104,6 +101,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * type = SPLOrganizationTypes#USAgent
 * name 1..1 MS
 * telecom 2..* MS
+* telecom only SPLContactPoint
 * telecom ^slicing.discriminator.type = #value
 * telecom ^slicing.discriminator.path = "system"
 * telecom ^slicing.rules = #open
@@ -121,6 +119,45 @@ Description: "A profile that associates an organization to its US Agent."
 * participatingOrganization only Reference(USAgentOrganization)
 * code 1..1 MS
 * code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73330 "Foreign Facility's United States Agent" (exactly)
+
+Profile: SPLAddress
+Parent: Address
+Description: "Constraints on the Address datatype dealing with US addresses."
+* obeys spl-2.1.6.4
+* obeys spl-2.1.6.5
+* line 1..2
+* city 1..1 MS
+* state 0..1 MS
+* postalCode 1..1 MS
+* country 1..1 MS
+
+Invariant: spl-2.1.6.4
+Description: "If the country is USA, then the state and postal code exist"
+Expression: "country = 'USA' implies (state.exists() and postalCode.exists())"
+Severity: #error
+
+Invariant: spl-2.1.6.5
+Description: "If the country is USA, then the postal code is 5 digits with an optional dash and 4 numbers"
+Expression: "country = 'USA' implies postalCode.matches('^[0-9]{5}(-[0-9]{4})?$')"
+Severity: #error
+
+Profile: SPLContactPoint
+Parent: ContactPoint
+Description: "Constraints on the ContactPoint dealing with proper formatting"
+* obeys spl-2.1.7.x
+* obeys spl-2.1.7.11
+* system 1..1 MS
+* value 1..1 MS
+
+Invariant: spl-2.1.7.x
+Description: "Telephone and fax numbers are formatted properly"
+Expression: "(system = 'phone' or system = 'fax') implies value.matches('^\\\\+[0-9]{1,3}-[0-9]{1,3}-[0-9]{3,4}-[0-9]{4}(;ext=[0-9]+)?$')"
+Severity: #error
+
+Invariant: spl-2.1.7.11
+Description: "Emails are formatted properly"
+Expression: "system = 'email' implies value.matches('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\\\\.[a-zA-Z0-9-]+)*$')"
+Severity: #error
 
 Instance: SamplOutOfBusinessMessage
 InstanceOf: OutOfBusinessMessage

@@ -85,20 +85,13 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * type = SPLOrganizationTypes#Labeler
 * name 1..1 MS
 * address 1..1 MS
-* address.line 1..2 MS
-* address.city 1..1 MS
-* address.state 0..1 MS
-* address.postalCode 1..1 MS
-* address.country 1..1 MS
+* address only SPLAddress
 * contact 1..1 MS
 * contact.name 1..1 MS
 * contact.address 1..1 MS
-* contact.address.line 1..2 MS
-* contact.address.city 1..1 MS
-* contact.address.state 0..1 MS
-* contact.address.postalCode 1..1 MS
-* contact.address.country 1..1 MS
+* contact.address only SPLAddress
 * contact.telecom 2..* MS
+* contact.telecom only SPLContactPoint
 * contact.telecom ^slicing.discriminator.type = #value
 * contact.telecom ^slicing.discriminator.path = "system"
 * contact.telecom ^slicing.rules = #open
@@ -137,6 +130,9 @@ Parent: HealthcareService
 Description: "A profile that associates a Labeler to the set of business operations that it can perform."
 * obeys spl-5.1.5.6
 * obeys spl-5.1.5.7
+* obeys spl-5.1.5.11
+* obeys spl-5.1.5.12
+* obeys spl-5.1.5.13
 * providedBy 1..1 MS
 * providedBy only Reference(LabelerOrganization)
 * type 1..1 MS
@@ -152,6 +148,21 @@ Severity: #error
 Invariant: spl-5.1.5.7
 Description: "Qualifier is mandatory unless operation is analysis (C25391) or API manufacture (C82401)"
 Expression: "type.coding.code = 'C25391' or type.coding.code = 'C82401' or serviceProvisionCode.count() > 0"
+Severity: #error
+
+Invariant: spl-5.1.5.11
+Description: "If operation is C43360, then qualifier is C106643, C131710, C131708, and/or C131709"
+Expression: "type.coding.where(code = 'C43360').exists() implies serviceProvisionCode.coding.select(code in ('C106643' | 'C131710' | 'C131708' | 'C131709')).allTrue()"
+Severity: #error
+
+Invariant: spl-5.1.5.12
+Description: "If operation is C73608, then qualifier is C111077 and/or C111078"
+Expression: "type.coding.where(code = 'C73608').exists() implies serviceProvisionCode.coding.select(code in ('C111077' | 'C111078')).allTrue()"
+Severity: #error
+
+Invariant: spl-5.1.5.13
+Description: "If operation is C112113, then qualifier is C112087, C112091, C112092, C112093, C112094 and/or C112095"
+Expression: "type.coding.where(code = 'C112113').exists() implies serviceProvisionCode.coding.select(code in ('C112087' | 'C112091' | 'C112092' | 'C112093' | 'C112094' | 'C112095')).allTrue()"
 Severity: #error
 
 Instance: NationalPharmaIndia
@@ -174,7 +185,7 @@ Description: "An example of a Labeler Organization."
 * address.postalCode = "500002"
 * address.country = "IND"
 * contact.name.text = "Mr. John Doe_1"
-* contact.telecom[Phone].value = "+9-140-11112222;ext=3333"
+* contact.telecom[Phone].value = "+9-140-1111-2222"
 * contact.telecom[Email].value = "jdoe_1@npoiinc.net"
 * contact.address.line = "Plot 101 First Street"
 * contact.address.city = "RangareddyDistrict"
@@ -188,7 +199,7 @@ Description: "An example of a US Agent Organization."
 * identifier[DUNSNumber].value = "888888888"
 * type = SPLOrganizationTypes#USAgent
 * name = "National Pharma of India Inc. US Agent"
-* telecom[Phone].value = "+1-908-999-1212;ext=444"
+* telecom[Phone].value = "+1-908-999-1212"
 * telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: NationalPharmaIndiaAffiliation

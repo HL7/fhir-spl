@@ -116,20 +116,13 @@ Description: "A profile for the data elements required to identify an organizati
 * type = SPLOrganizationTypes#Establishment
 * name 1..1 MS
 * address 1..1 MS
-* address.line 1..2 MS
-* address.city 1..1 MS
-* address.state 0..1 MS
-* address.postalCode 1..1 MS
-* address.country 1..1 MS
+* address only SPLAddress
 * contact 1..1 MS
 * contact.name 1..1 MS
 * contact.address 1..1 MS
-* contact.address.line 1..2 MS
-* contact.address.city 1..1 MS
-* contact.address.state 0..1 MS
-* contact.address.postalCode 1..1 MS
-* contact.address.country 1..1 MS
+* contact.address only SPLAddress
 * contact.telecom 2..* MS
+* contact.telecom only SPLContactPoint
 * contact.telecom ^slicing.discriminator.type = #value
 * contact.telecom ^slicing.discriminator.path = "system"
 * contact.telecom ^slicing.rules = #open
@@ -173,6 +166,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * type = SPLOrganizationTypes#Importer
 * name 1..1 MS
 * telecom 2..* MS
+* telecom only SPLContactPoint
 * telecom ^slicing.discriminator.type = #value
 * telecom ^slicing.discriminator.path = "system"
 * telecom ^slicing.rules = #open
@@ -208,7 +202,7 @@ Description: "An example of a Registrant Organization."
 * name = "REGISTRANT SERVICES INC"
 * type = SPLOrganizationTypes#EstablishmentRegistrant
 * contact.name.text = "Charles Smith"
-* contact.telecom[Phone].value = "+703-362-1280"
+* contact.telecom[Phone].value = "+1-703-362-1280;ext=1234"
 * contact.telecom[Email].value = "charles@anywhere.com"
 * contact.address.line = "123 IVY LANE ROAD"
 * contact.address.city = "SMITH FALLS"
@@ -236,7 +230,7 @@ Description: "An example of an Establishment Organization."
 * address.postalCode = "23456"
 * address.country = "USA"
 * contact.name.text = "Charles Smith"
-* contact.telecom[Phone].value = "+703-362-1280"
+* contact.telecom[Phone].value = "+011-703-362-1280"
 * contact.telecom[Email].value = "charles@anywhere.com"
 * contact.address.line = "123 IVY LANE ROAD"
 * contact.address.city = "SMITH FALLS"
