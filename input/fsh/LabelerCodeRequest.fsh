@@ -87,24 +87,19 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contact.telecom[Email] only SPLContactPoint
 * contact.telecom[Email].system = #email
 
-Invariant: spl-2.1.5.2
-Description: "DUNS number is 9 digits"
-Expression: "value.length() = 9"
-Severity: #error
-
 Invariant: spl-5.1.2.8
 Description: "NDC Labeler code is 4 or 5 digits"
-Expression: "value.length() = 4 or value.length() = 5"
+Expression: "system = 'urn:oid:2.16.840.1.113883.6.69' implies (value.length() = 4 or value.length() = 5)"
 Severity: #error
 
 Invariant: spl-5.1.2.9
 Description: "If NDC Labeler code is 5 digits, it does not start with a '0'"
-Expression: "value.length() = 4 or value.startsWith('0').not()"
+Expression: "system = 'urn:oid:2.16.840.1.113883.6.69' implies (value.length() = 4 or value.startsWith('0').not())"
 Severity: #error
 
 Invariant: spl-5.1.2.10
 Description: "NDC Labeler code is not one of 0000,0001,1500,1800,1900"
-Expression: "value != '0000' or value != '0001' or value != '1500' or value != '1800' or value != '1900'"
+Expression: "system = 'urn:oid:2.16.840.1.113883.6.69' implies (value in ('0000'|'0001'|'1500'|'1800'|'1900')).not()"
 Severity: #error
 
 Invariant: spl-5.1.4.1

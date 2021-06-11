@@ -120,22 +120,22 @@ Description: "A profile for the data elements required to identify an organizati
 
 Invariant: spl-6.1.3.7
 Description: "FEI number is 7 or 10 digits"
-Expression: "value.length() = 7 or value.length() = 10"
+Expression: "system = 'urn:oid:2.16.840.1.113883.4.82' implies (value.length() = 7 or value.length() = 10)"
 Severity: #error
 
 Invariant: spl-6.1.4.1
 Description: "If country is USA, then US agent is not allowed."
-Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
+Expression: "address.country = 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
 Severity: #error
 
 Invariant: spl-6.1.4.3
 Description: "If country is not USA, then US agent is mandatory."
-Expression: "address.country = 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 1" 
+Expression: "address.country != 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 1" 
 Severity: #error
 
 Invariant: spl-6.1.5.3
 Description: "If country is USA, then import business is not allowed."
-Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'Importer').count() = 0" 
+Expression: "address.country = 'USA' implies contained.Organization.where(type.coding.code = 'Importer').count() = 0" 
 Severity: #error
 
 Profile: ImporterOrganization
@@ -176,12 +176,26 @@ Description: "A profile that associates an organization to its import organizati
 Profile: EstablishmentBusinessOperation
 Parent: HealthcareService
 Description: "A profile that associates an establishment to the set of business operations that it can perform."
+* obeys spl-6.1.6.8
+* obeys spl-6.1.7.1-5-6-7
 * providedBy 1..1 MS
 * providedBy only Reference(EstablishmentOrganization)
 * type 1..1 MS
 * type from EstablishmentBusinessOperations (required)
 * serviceProvisionCode 1..1 MS
 * serviceProvisionCode from BusinessOperationQualifiers (required)
+
+Invariant: spl-6.1.6.8
+Description: "If operation is C125710, then qualifier is C126091"
+Expression: "type.coding.where(code = 'C125710').exists() implies serviceProvisionCode.coding.select(code = 'C126091').allTrue()"
+Severity: #error
+
+Invariant: spl-6.1.7.1-5-6-7
+Description: "If operation is C112113, then specific qualifiers need to exist"
+Expression: "type.coding.where(code = 'C112113').exists() implies 
+	(serviceProvisionCode.coding.where(code = 'C112087') xor serviceProvisionCode.coding.where(code = 'C112091')) and
+	(serviceProvisionCode.coding.where(code = 'C112092') xor serviceProvisionCode.coding.where(code = 'C112093'))"
+Severity: #error
 
 Instance: ExampleEstablishmentRegistrant
 InstanceOf: EstablishmentRegistrantOrganization

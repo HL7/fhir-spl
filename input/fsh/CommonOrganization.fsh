@@ -2,6 +2,7 @@ Profile: OrganizationBundle
 Parent: Bundle
 Description: "A profile that provides the minimum set of information about a Bundle using for Organization messages."
 * obeys spl-X.1.1.2
+* obeys spl-2.1.3.11
 * type 1..1 MS
 * type = #message (exactly)
 * timestamp 1..1 MS
@@ -9,6 +10,11 @@ Description: "A profile that provides the minimum set of information about a Bun
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
+
+Invariant: spl-2.1.3.11
+Description: "There is an effective time with at least the precision of day."
+Expression: "timestamp.toString().length() >= 10"
+Severity: #error
 
 Invariant: spl-X.1.1.2
 Description: "The effective time year is equal to the current year"
@@ -42,6 +48,12 @@ Description: "A profile on Organization that specifies a name and an identifier 
 * type 1..1 MS
 * type from TopLevelOrganizationTypes (required)
 * name 1..1 MS
+
+Invariant: spl-2.1.5.2
+Description: "DUNS number is 9 digits"
+Expression: "system = 'urn:oid:1.3.6.1.4.1.519.1' implies value.length() = 9"
+Severity: #error
+
 
 Profile: RegistrantOrganization
 Parent: Organization
