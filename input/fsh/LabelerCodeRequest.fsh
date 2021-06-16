@@ -47,6 +47,7 @@ Profile: LabelerOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify a NDC Labeler organization."
 * obeys spl-5.1.4.1
+* obeys spl-5.1.5.6
 * contained ^slicing.discriminator.type = #type
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
@@ -107,10 +108,14 @@ Description: "If country is USA, then US agent is not allowed"
 Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
 Severity: #error
 
+Invariant: spl-5.1.5.6
+Description: "Each business operation code is mentioned only once."
+Expression: "contained.HealthcareService.type().isDistinct()"
+Severity: #error
+
 Profile: LabelerBusinessOperation
 Parent: HealthcareService
 Description: "A profile that associates a Labeler to the set of business operations that it can perform."
-* obeys spl-5.1.5.6
 * obeys spl-5.1.5.7
 * obeys spl-5.1.5.11
 * obeys spl-5.1.5.12
@@ -121,11 +126,6 @@ Description: "A profile that associates a Labeler to the set of business operati
 * type from LabelerBusinessOperations (required)
 * serviceProvisionCode 0..1 MS
 * serviceProvisionCode from BusinessOperationQualifiers (required)
-
-Invariant: spl-5.1.5.6
-Description: "Each business operation code is mentioned only once."
-Expression: "type.isDistinct()"
-Severity: #error
 
 Invariant: spl-5.1.5.7
 Description: "Qualifier is mandatory unless operation is analysis (C25391) or API manufacture (C82401)"

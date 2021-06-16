@@ -65,6 +65,7 @@ Description: "A specialization of the RegistrantOrganization profile that fixes 
 Profile: GDUFAFacilityOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify an organization that is identified as a GDUFA Facility."
+* obeys spl-13.1.4.7
 * contained ^slicing.discriminator.type = #type
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
@@ -101,6 +102,11 @@ Description: "A profile for the data elements required to identify an organizati
 * contact.telecom[Email] only SPLContactPoint
 * contact.telecom[Email].system = #email
 
+Invariant: spl-13.1.4.7
+Description: "Each business operation code and qualifier is mentioned only once."
+Expression: "contained.BusinessOperation.type.isDistinct() and contained.BusinessOperation.serviceProvisionCode.isDistinct()"
+Severity: #error
+
 Profile: GDUFAFacilityAffiliation
 Parent: OrganizationAffiliation
 Description: "A profile that associates a GDUFA facility to its registrant."
@@ -114,13 +120,18 @@ Description: "A profile that associates a GDUFA facility to its registrant."
 Profile: GDUFAFacilityBusinessOperation
 Parent: HealthcareService
 Description: "A profile that associates an establishment to the set of business operations that it can perform."
-* obeys spl-5.1.5.6
+* obeys spl-13.1.5.6
 * providedBy 1..1 MS
 * providedBy only Reference(GDUFAFacilityOrganization)
 * type 1..1 MS
 * type from GDUFAFacilityBusinessOperations (required)
 * serviceProvisionCode 1..1 MS
 * serviceProvisionCode from GDUFAFacilityBusinessOperationQualifiers (required)
+
+Invariant: spl-13.1.5.6
+Description: "If operation is C132491, then qualifier is C101510 or C84731"
+Expression: "type.coding.where(code = 'C132481').exists() implies serviceProvisionCode.coding.select(code in ('C101510' | 'C84731')).allTrue()"
+Severity: #error
 
 Instance: ExampleGDUFARegistrant
 InstanceOf: GDUFARegistrantOrganization

@@ -130,6 +130,7 @@ Description: "Constraints on the Address datatype dealing with US addresses."
 * state 0..1 MS
 * postalCode 1..1 MS
 * country 1..1 MS
+* country ^short = "Country can either be the ISO 3-letter country code or the full country name matching the code."
 
 Invariant: spl-2.1.6.4
 Description: "If the country is USA, then the state and postal code exist"

@@ -78,6 +78,7 @@ Description: "A profile for the data elements required to identify an organizati
 * obeys spl-6.1.4.1
 * obeys spl-6.1.4.3
 * obeys spl-6.1.5.3
+* obeys spl-5.1.5.6
 * contained ^slicing.discriminator.type = #profile
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
@@ -178,6 +179,9 @@ Parent: HealthcareService
 Description: "A profile that associates an establishment to the set of business operations that it can perform."
 * obeys spl-6.1.6.8
 * obeys spl-6.1.7.1-5-6-7
+* obeys spl-6.1.7.9
+* obeys spl-6.1.7.10
+* obeys spl-6.1.7.11
 * providedBy 1..1 MS
 * providedBy only Reference(EstablishmentOrganization)
 * type 1..1 MS
@@ -195,6 +199,21 @@ Description: "If operation is C112113, then specific qualifiers need to exist"
 Expression: "type.coding.where(code = 'C112113').exists() implies 
 	(serviceProvisionCode.coding.where(code = 'C112087') xor serviceProvisionCode.coding.where(code = 'C112091')) and
 	(serviceProvisionCode.coding.where(code = 'C112092') xor serviceProvisionCode.coding.where(code = 'C112093'))"
+Severity: #error
+
+Invariant: spl-6.1.7.9
+Description: "If qualifier is C112093, then C112094 and C112095 should not be included"
+Expression: "serviceProvisionCode.coding.where(code = 'C112093').exists() implies serviceProvisionCode.coding.where(code in ('C112094'|'C112095')).count() = 0"
+Severity: #error
+
+Invariant: spl-6.1.7.10
+Description: "If qualifier is a compounding qualifier, the operation is C112113"
+Expression: "serviceProvisionCode.coding.where(code in ('C112087'|'C112091'|'C112092'|'C112093'|'C112094'|'C112095')).exists() implies type.coding.where(code = 'C112113').count() = 1"
+Severity: #error
+
+Invariant: spl-6.1.7.11
+Description: "There are one or more qualifiers unless the operation is C25391, C82401, or C84635"
+Expression: "type.coding.where(code in ('C25391'|'C82401'|'C84635')).count() = 1 xor serviceProvisionCode.count() > 0"
 Severity: #error
 
 Instance: ExampleEstablishmentRegistrant
