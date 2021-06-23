@@ -46,22 +46,34 @@ groups:
       - StructureDefinition/EstablishmentRegistrationLogicalModel
       - StructureDefinition/GDUFAFacilityIdentificationLogicalModel
       - StructureDefinition/ProductSubmissionDocumentLogicalModel
-  Operations:
-    name: Operations
-    description: Defined operations for the use cases
+  OperationBundles:
+    name: Operation Bundles
+    description: Bundle profiles that are used in the various use case operations
+    resources:
+      - StructureDefinition/OrganizationBundle
+      - StructureDefinition/LabelerCodeRequestBundle
+      - StructureDefinition/LabelerInactivationBundle
+      - StructureDefinition/EstablishmentRegistrationBundle
+      - StructureDefinition/EstablishmentInactivationBundle
+      - StructureDefinition/GDUFAFacilityIdentificationBundle
+      - StructureDefinition/GDUFAFacilityInactivationBundle
+      - StructureDefinition/OutOfBusinessBundle
+  OperationMessages:
+    name: Operation Message
+    description: MessageHeader profiles that are used in the various use case operations
     resources:
       - StructureDefinition/OrganizationMessage
       - StructureDefinition/LabelerCodeRequestMessage
       - StructureDefinition/LabelerInactivationMessage
       - StructureDefinition/EstablishmentRegistrationMessage
       - StructureDefinition/EstablishmentInactivationMessage
+      - StructureDefinition/GDUFAFacilityIdentificationMessage
+      - StructureDefinition/GDUFAFacilityInactivationMessage
       - StructureDefinition/OutOfBusinessMessage
   LabelerRequest:
     name: FDA Labeler Organizations
     description: Artifacts associated with the Labeler Organization use cases
     resources:
-      - StructureDefinition/LabelerCodeRequestBundle
-      - StructureDefinition/LabelerInactivationBundle
       - StructureDefinition/LabelerOrganization
       - StructureDefinition/IdentifiedLabeler
       - StructureDefinition/LabelerBusinessOperation
@@ -69,8 +81,6 @@ groups:
     name: FDA Establishment Organizations
     description: Artifacts associated with the Estabishment Organization use cases
     resources:
-      - StructureDefinition/EstablishmentRegistrationBundle
-      - StructureDefinition/EstablishmentInactivationBundle
       - StructureDefinition/EstablishmentRegistrantOrganization
       - StructureDefinition/EstablishmentOrganization
       - StructureDefinition/IdentifiedEstablishmentRegistrant
@@ -81,8 +91,6 @@ groups:
     name: GDUFA Facility Identification
     description: Artifacts associated with the GDUFA Facility Identification use cases
     resources:
-      - StructureDefinition/GDUFAFacilityIdentificationBundle
-      - StructureDefinition/GDUFAFacilityInactivationBundle
       - StructureDefinition/GDUFARegistrantOrganization
       - StructureDefinition/GDUFAFacilityOrganization
       - StructureDefinition/IdentifiedGDUFARegistrant
@@ -99,14 +107,20 @@ groups:
       - StructureDefinition/USAgentAffiliation
       - StructureDefinition/ImporterOrganization
       - StructureDefinition/ImporterAffiliation
+      - StructureDefinition/SPLAddress
+      - StructureDefinition/SPLContactPoint
   ProductSubmission:
     name: Product Submission Document
     description: Artifacts associated with the submission of a product document
     resources:
-      - StructureDefinition/ProductSubmissionDocument 
+      - StructureDefinition/ProductSubmissionDocument
+      - StructureDefinition/sectionEffectiveTime
+      - StructureDefinition/sectionIdentifier
+      - StructureDefinition/versionNumber
   DualSubmission:
     name: Dual Submission Tracking
     description: Artifacts needed for tracking dual submissions of SPL documents and FHIR Bundles
     resources:
       - StructureDefinition/SPLDocumentReference
       - StructureDefinition/DualSubmissionProvenance
+      - StructureDefinition/splDocumentDate

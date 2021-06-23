@@ -39,7 +39,6 @@ Profile: EstablishmentInactivationMessage
 Parent: OrganizationMessage
 Description: "A profile of an Establishment Inactivation message"
 * eventCoding = FHIRSpecificSPLMessageTypes#01
-* source.endpoint = "http://example.org/"
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
 * focus ^slicing.rules = #open
@@ -50,12 +49,12 @@ Description: "A profile of an Establishment Inactivation message"
 Profile: IdentifiedEstablishmentRegistrant
 Parent: IdentifiedOrganization
 Description: "A profile for an identified establishment registrant."
-* type = SPLOrganizationTypes#EstablishmentRegistrant
+* type = OrganizationTypes#EstablishmentRegistrant
 
 Profile: IdentifiedEstablishment
 Parent: IdentifiedOrganization
 Description: "A profile for an identified establishment."
-* type = SPLOrganizationTypes#Establishment
+* type = OrganizationTypes#Establishment
 
 Profile: EstablishmentAffiliation
 Parent: OrganizationAffiliation
@@ -65,12 +64,12 @@ Description: "A profile that associates an registrant to the establishments it i
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(EstablishmentOrganization)
 * code 1..1 MS
-* code = http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationAffiliationCodes#ESTABLISHMENT (exactly)
+* code = OrganizationAffiliationCodes#ESTABLISHMENT (exactly)
 
 Profile: EstablishmentRegistrantOrganization
 Parent: RegistrantOrganization
 Description: "A specialization of the RegistrantOrganization profile that fixes the type to EstablishmentRegistrant"
-* type = SPLOrganizationTypes#EstablishmentRegistrant (exactly)
+* type = OrganizationTypes#EstablishmentRegistrant (exactly)
 
 Profile: EstablishmentOrganization
 Parent: Organization
@@ -100,7 +99,7 @@ Description: "A profile for the data elements required to identify an organizati
 * identifier[FEINumber].system = "urn:oid:2.16.840.1.113883.4.82"
 * identifier[FEINumber] obeys spl-6.1.3.7
 * type 1..1 MS
-* type = SPLOrganizationTypes#Establishment
+* type = OrganizationTypes#Establishment
 * name 1..1 MS
 * address 1..1 MS
 * address only SPLAddress
@@ -151,7 +150,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
 * identifier[DUNSNumber] obeys spl-2.1.5.2
 * type 1..1 MS
-* type = SPLOrganizationTypes#Importer
+* type = OrganizationTypes#Importer
 * name 1..1 MS
 * telecom 2..* MS
 * telecom ^slicing.discriminator.type = #value
@@ -221,7 +220,7 @@ InstanceOf: EstablishmentRegistrantOrganization
 Description: "An example of a Registrant Organization."
 * identifier[DUNSNumber].value = "111111111"
 * name = "REGISTRANT SERVICES INC"
-* type = SPLOrganizationTypes#EstablishmentRegistrant
+* type = OrganizationTypes#EstablishmentRegistrant
 * contact.name.text = "Charles Smith"
 * contact.telecom[Phone].value = "+1-703-362-1280;ext=1234"
 * contact.telecom[Email].value = "charles@anywhere.com"
@@ -244,7 +243,7 @@ Description: "An example of an Establishment Organization."
 * contained[BusinessOperation].providedBy.reference = "#"
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE ESTABLISHMENT INC."
-* type = SPLOrganizationTypes#Establishment
+* type = OrganizationTypes#Establishment
 * address.line = "111 SOUTH PARK STREET"
 * address.city = "YAKIMA"
 * address.state = "WA"
@@ -270,7 +269,7 @@ Instance: ExampleImporter
 InstanceOf: ImporterOrganization
 Description: "An example of an Importer Organization."
 * identifier[DUNSNumber].value = "888888888"
-* type = SPLOrganizationTypes#Importer
+* type = OrganizationTypes#Importer
 * name = "Example Importer"
 * telecom[Phone].value = "+1-908-999-1212;ext=444"
 * telecom[Email].value = "jdoe_2@npoiinc.net"
@@ -313,14 +312,14 @@ InstanceOf: IdentifiedEstablishmentRegistrant
 Description: "A sample Establishment Registrant organization that just has the DUNS number and name."
 * identifier[DUNSNumber].value = "111111111"
 * name = "REGISTRANT SERVICES INC"
-* type = SPLOrganizationTypes#EstablishmentRegistrant
+* type = OrganizationTypes#EstablishmentRegistrant
 
 Instance: SampleIdentifiedEstablishment
 InstanceOf: IdentifiedEstablishment
 Description: "A sample Establishment organizaiton that just has the DUNS number and name."
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE ESTABLISHMENT INC."
-* type = SPLOrganizationTypes#Establishment
+* type = OrganizationTypes#Establishment
 
 Instance: SampleEstablishmentInactivationBundle
 InstanceOf: EstablishmentInactivationBundle

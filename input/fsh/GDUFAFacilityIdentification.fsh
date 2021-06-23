@@ -14,7 +14,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 Profile: GDUFAFacilityIdentificationMessage
 Parent: OrganizationMessage
 Description: "A profile of a GDUFA Facility Identification message"
-* eventCoding from SPLGenericFacilityMessageTypes
+* eventCoding from GenericFacilityMessageTypes
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
 * focus ^slicing.rules = #open
@@ -50,17 +50,17 @@ Description: "A profile of an GDUFA Facility Inactivation message"
 Profile: IdentifiedGDUFARegistrant
 Parent: IdentifiedOrganization
 Description: "A profile for an identified GDUFA facility registrant."
-* type = SPLOrganizationTypes#GDUFARegistrant
+* type = OrganizationTypes#GDUFARegistrant
 
 Profile: IdentifiedGDUFAFacility
 Parent: IdentifiedOrganization
 Description: "A profile for an identified GDUFA facility."
-* type = SPLOrganizationTypes#GenericDrugUseFacility
+* type = OrganizationTypes#GenericDrugUseFacility
 
 Profile: GDUFARegistrantOrganization
 Parent: RegistrantOrganization
 Description: "A specialization of the RegistrantOrganization profile that fixes the type to GDUFARegistrant."
-* type = SPLOrganizationTypes#GDUFARegistrant
+* type = OrganizationTypes#GDUFARegistrant
 
 Profile: GDUFAFacilityOrganization
 Parent: Organization
@@ -83,7 +83,7 @@ Description: "A profile for the data elements required to identify an organizati
 * identifier[FEINumber].system = "urn:oid:2.16.840.1.113883.4.82"
 * identifier[FEINumber] obeys spl-6.1.3.7
 * type 1..1 MS
-* type = SPLOrganizationTypes#GenericDrugUseFacility
+* type = OrganizationTypes#GenericDrugUseFacility
 * name 1..1 MS
 * address 1..1 MS
 * address only SPLAddress
@@ -115,7 +115,7 @@ Description: "A profile that associates a GDUFA facility to its registrant."
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(GDUFAFacilityOrganization)
 * code 1..1 MS
-* code = http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationAffiliationCodes#GDUFA
+* code = OrganizationAffiliationCodes#GDUFA
 
 Profile: GDUFAFacilityBusinessOperation
 Parent: HealthcareService
@@ -138,7 +138,7 @@ InstanceOf: GDUFARegistrantOrganization
 Description: "An example of a Registrant Organization."
 * identifier[DUNSNumber].value = "111111111"
 * name = "REGISTRANT SERVICES INC"
-* type = SPLOrganizationTypes#GDUFARegistrant
+* type = OrganizationTypes#GDUFARegistrant
 * contact.name.text = "Charles Smith"
 * contact.telecom[Phone].value = "+1-703-362-1280"
 * contact.telecom[Email].value = "charles@anywhere.com"
@@ -153,7 +153,7 @@ InstanceOf: IdentifiedGDUFARegistrant
 Description: "An example of a Identified Registrant Organization."
 * identifier[DUNSNumber].value = "111111111"
 * name = "REGISTRANT SERVICES INC"
-* type = SPLOrganizationTypes#GDUFARegistrant
+* type = OrganizationTypes#GDUFARegistrant
 
 Instance: ExampleGDUFAFacilityAffiliation
 InstanceOf: GDUFAFacilityAffiliation
@@ -166,7 +166,7 @@ InstanceOf: IdentifiedGDUFAFacility
 Description: "An example of an Identified GDUFA Facility Organization."
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE GDUFA FACILITY INC."
-* type = SPLOrganizationTypes#GenericDrugUseFacility
+* type = OrganizationTypes#GenericDrugUseFacility
 
 Instance: ExampleGDUFAFacility
 InstanceOf: GDUFAFacilityOrganization
@@ -176,7 +176,7 @@ Description: "An example of an GDUFA Facility Organization."
 * identifier[DUNSNumber].value = "222222222"
 * identifier[FEINumber].value = "1234567"
 * name = "EXAMPLE GDUFA FACILITY INC."
-* type = SPLOrganizationTypes#GenericDrugUseFacility
+* type = OrganizationTypes#GenericDrugUseFacility
 * address.line = "111 SOUTH PARK STREET"
 * address.city = "YAKIMA"
 * address.state = "WA"

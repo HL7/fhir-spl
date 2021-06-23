@@ -4,7 +4,7 @@ Description: "A profile that represents a document that is required for Product 
 
 * extension contains VersionNumber named versionNumber 1..1 MS
 * type MS
-* type from SPLSectionCodes (required)
+* type from SPLDocumentCodes (required)
 * title MS
 * identifier 1..1 MS
 * author 1..1 MS

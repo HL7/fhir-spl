@@ -1,12 +1,14 @@
 Profile: OrganizationBundle
 Parent: Bundle
 Description: "A profile that provides the minimum set of information about a Bundle using for Organization messages."
+* ^abstract = true
 * obeys spl-X.1.1.2
 * obeys spl-2.1.3.11
 * type 1..1 MS
 * type = #message (exactly)
 * timestamp 1..1 MS
 * entry.resource 1..1 MS
+* entry.fullUrl 1..1 MS
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
@@ -23,10 +25,11 @@ Severity: #error
 
 Profile: OrganizationMessage
 Parent: MessageHeader
-Description: "A profile that indicates what type of request is being made."
+Description: "An abstract profile that indicates what type of request is being made."
+* ^abstract = true
 * event[x] MS
 * event[x] only Coding
-* eventCoding from SPLFHIRMessageTypes (required)
+* eventCoding from OrganizationSubmissionMessageTypes (required)
 * eventCoding.display 1..1 MS
 * source MS
 * source.endpoint MS
@@ -68,7 +71,7 @@ Description: "A profile for the data elements required to identify an organizati
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
 * identifier[DUNSNumber] obeys spl-2.1.5.2
 * type 1..1 MS
-* type from SPLRegistrantOrganizationTypes (required)
+* type from RegistrantOrganizationTypes (required)
 * name 1..1 MS
 * contact 1..1 MS
 * contact.name 1..1 MS
@@ -97,7 +100,7 @@ Description: "A profile for the data elements required for an organization fulfi
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
 * identifier[DUNSNumber] obeys spl-2.1.5.2
 * type 1..1 MS
-* type = SPLOrganizationTypes#USAgent
+* type = OrganizationTypes#USAgent
 * name 1..1 MS
 * telecom 2..* MS
 * telecom ^slicing.discriminator.type = #value
@@ -122,7 +125,7 @@ Description: "A profile that associates an organization to its US Agent."
 
 Profile: SPLAddress
 Parent: Address
-Description: "Constraints on the Address datatype dealing with US addresses."
+Description: "SPL-specific Constraints on the Address datatype dealing with US addresses."
 * obeys spl-2.1.6.4
 * obeys spl-2.1.6.5
 * line 1..2
@@ -144,7 +147,7 @@ Severity: #error
 
 Profile: SPLContactPoint
 Parent: ContactPoint
-Description: "Constraints on the ContactPoint dealing with proper formatting"
+Description: "SPL-specific Constraints on the ContactPoint dealing with proper formatting"
 * obeys spl-2.1.7.x
 * obeys spl-2.1.7.11
 * system 1..1 MS

@@ -41,7 +41,7 @@ Description: "A profile for the Labeler Inactivation Message."
 Profile: IdentifiedLabeler
 Parent: IdentifiedOrganization
 Description: "A profile for an identified labeler."
-* type = SPLOrganizationTypes#Labeler
+* type = OrganizationTypes#Labeler
 
 Profile: LabelerOrganization
 Parent: Organization
@@ -69,7 +69,7 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * identifier[NDCCode] obeys spl-5.1.2.9
 * identifier[NDCCode] obeys spl-5.1.2.10
 * type 1..1 MS
-* type = SPLOrganizationTypes#Labeler
+* type = OrganizationTypes#Labeler
 * name 1..1 MS
 * address 1..1 MS
 * address only SPLAddress
@@ -147,19 +147,19 @@ Description: "If operation is C112113, then qualifier is C112087, C112091, C1120
 Expression: "type.coding.where(code = 'C112113').exists() implies serviceProvisionCode.coding.select(code in ('C112087' | 'C112091' | 'C112092' | 'C112093' | 'C112094' | 'C112095')).allTrue()"
 Severity: #error
 
-Instance: NationalPharmaIndia
+Instance: SampleLabelerOrganization
 InstanceOf: LabelerOrganization
 Description: "An example of a Labeler Organization."
-* contained[USAgentAffiliation] = NationalPharmaIndiaAffiliation
+* contained[USAgentAffiliation] = SampleLabelerUSAgentAffiliation
 * contained[USAgentAffiliation].organization.reference = "#"
 * contained[USAgentAffiliation].participatingOrganization.reference = "#usagent"
-* contained[USAgent] = NationalPharmaIndiaUSAgent
+* contained[USAgent] = SampleLabelerUSAgent
 * contained[USAgent].id = "usagent"
-* contained[BusinessOperation] = NationalPharmaIndiaOperation
+* contained[BusinessOperation] = SampleLabelerBusinessOperation
 * contained[BusinessOperation].providedBy.reference = "#"
 * identifier[DUNSNumber].value = "999999999"
 * identifier[NDCCode].value = "55555"
-* type = SPLOrganizationTypes#Labeler
+* type = OrganizationTypes#Labeler
 * name = "National Pharma of India Inc."
 * address.line = "Plot 102 Village Ave"
 * address.city = "RangareddyDistrict"
@@ -175,25 +175,25 @@ Description: "An example of a Labeler Organization."
 * contact.address.postalCode = "500001"
 * contact.address.country = "IND"
 
-Instance: NationalPharmaIndiaUSAgent
+Instance: SampleLabelerUSAgent
 InstanceOf: USAgentOrganization
 Description: "An example of a US Agent Organization."
 * identifier[DUNSNumber].value = "888888888"
-* type = SPLOrganizationTypes#USAgent
+* type = OrganizationTypes#USAgent
 * name = "National Pharma of India Inc. US Agent"
 * telecom[Phone].value = "+1-908-999-1212"
 * telecom[Email].value = "jdoe_2@npoiinc.net"
 
-Instance: NationalPharmaIndiaAffiliation
+Instance: SampleLabelerUSAgentAffiliation
 InstanceOf: USAgentAffiliation
 Description: "An example of the linkage between a Labeler and a US Agent"
-* organization = Reference(NationalPharmaIndia)
-* participatingOrganization = Reference(NationalPharmaIndiaUSAgent)
+* organization = Reference(SampleLabelerOrganization)
+* participatingOrganization = Reference(SampleLabelerUSAgent)
 
-Instance: NationalPharmaIndiaOperation
+Instance: SampleLabelerBusinessOperation
 InstanceOf: LabelerBusinessOperation
 Description: "An example of a Labeler's business operations."
-* providedBy = Reference(NationalPharmaIndia)
+* providedBy = Reference(SampleLabelerOrganization)
 * type = $NCI-T#C43360 "manufacture"
 * serviceProvisionCode = $NCI-T#C106643 "Manufactures human prescription drug products"
 
@@ -202,7 +202,7 @@ InstanceOf: LabelerCodeRequestMessage
 Description: "An example of a message header for a Labeler Code Request"
 * eventCoding = http://loinc.org#51726-8 "FDA product label NDC labeler code request"
 * source.endpoint = "http://example.org/"
-* focus[0] = Reference(NationalPharmaIndia)
+* focus[0] = Reference(SampleLabelerOrganization)
 
 Instance: SampleLabelerCodeRequestBundle
 InstanceOf: LabelerCodeRequestBundle
@@ -210,8 +210,8 @@ Description: "An example of a Bundle containing a Labeler Code Request resource 
 * timestamp = "2021-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleLabelerCodeRequestMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerCodeRequestMessage"
-* entry[Labeler].resource = NationalPharmaIndia
-* entry[Labeler].fullUrl = "http://example.org/Organization/NationalPharmaIndia"
+* entry[Labeler].resource = SampleLabelerOrganization
+* entry[Labeler].fullUrl = "http://example.org/Organization/SampleLabelerOrganization"
 
 Instance: SampleLabelerInactivationMessage
 InstanceOf: LabelerInactivationMessage
@@ -224,7 +224,7 @@ Instance: IdentifiedLabelerOrganization
 InstanceOf: IdentifiedLabeler
 Description: "A sample Labeler organizaiton that just has the DUNS number and name."
 * identifier[DUNSNumber].value = "999999999"
-* type = SPLOrganizationTypes#Labeler
+* type = OrganizationTypes#Labeler
 * name = "National Pharma of India Inc."
 
 Instance: SampleLabelerInactivationBundle

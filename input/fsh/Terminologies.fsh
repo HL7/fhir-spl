@@ -2,14 +2,14 @@ Alias: $LOINC = http://loinc.org
 Alias: $NCI-T = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 
 CodeSystem: FHIRSpecificSPLMessageTypes
-Id: codesystem-splFHIRMessageTypes
-Description: "Codes that are unique to the FHIR SPL Submissions."
+Id: codesystem-fhirMessageTypes
+Description: "Codes that are unique to the FHIR organization submissions, i.e. these are not current SPL submission types."
 * #01 "Establishment Inactivation"
 * #02 "GDUFA Facility Inactivation"
 
-ValueSet: SPLFHIRMessageTypes
-Id: valueset-splFHIRMessageTypes
-Description: "The set of message types that are allowed as a FHIR submission."
+ValueSet: OrganizationSubmissionMessageTypes
+Id: valueset-organizationSubmissionMessageTypes
+Description: "The set of message types that are allowed as a FHIR organization submission."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * $LOINC#51725-0 "ESTABLISHMENT REGISTRATION"
 * FHIRSpecificSPLMessageTypes#01 "Establishment Inactivation"
@@ -20,8 +20,8 @@ Description: "The set of message types that are allowed as a FHIR submission."
 * $LOINC#72090-4 "IDENTIFICATION OF CBER-REGULATED GENERIC DRUG FACILITY"
 * FHIRSpecificSPLMessageTypes#02 "GDUFA Facility Inactivation"
 
-ValueSet: SPLGenericFacilityMessageTypes
-Id: valueset-splGenericFacilityMessageTypes
+ValueSet: GenericFacilityMessageTypes
+Id: valueset-genericFacilityMessageTypes
 Description: "The set of message types that are allowed as a Generic User Fee Facility submission."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * $LOINC#71743-9 "GENERIC DRUG FACILITY IDENTIFICATION SUBMISSION"
@@ -122,8 +122,8 @@ Description: "Codes that identify the relationship between two organizations."
 * #ESTABLISHMENT "Registrant to Establishment"
 * #GDUFA "Registrant to GDUFA Facility"
 
-CodeSystem: SPLOrganizationTypes
-Id: codesystem-splOrganizationTypes
+CodeSystem: OrganizationTypes
+Id: codesystem-organizationTypes
 Description: "Codes that identify the types of organizations involved in a SPL submission."
 * #Labeler "An organization that submits product labels."
 * #EstablishmentRegistrant "An organization that registers establishment organizations."
@@ -133,17 +133,17 @@ Description: "Codes that identify the types of organizations involved in a SPL s
 * #GDUFARegistrant "An organization that registers generic druge use facility organizations."
 * #GenericDrugUseFacility "An organization that produces generic drug products."
 
-ValueSet: SPLRegistrantOrganizationTypes
-Id: valueset-splRegistrantOrganizationTypes
+ValueSet: RegistrantOrganizationTypes
+Id: valueset-registrantOrganizationTypes
 Description: "Codes that are specifically used for Registration Organizations."
-* SPLOrganizationTypes#EstablishmentRegistrant
-* SPLOrganizationTypes#GDUFARegistrant
+* OrganizationTypes#EstablishmentRegistrant
+* OrganizationTypes#GDUFARegistrant
 
 ValueSet: TopLevelOrganizationTypes
-Id: valueset-splTopLevelOrganizationTypes
+Id: valueset-topLevelOrganizationTypes
 Description: "Codes that identify organizations that are considered top-level"
-* SPLOrganizationTypes#Labeler
-* SPLOrganizationTypes#EstablishmentRegistrant 
-* SPLOrganizationTypes#Establishment 
-* SPLOrganizationTypes#GDUFARegistrant 
-* SPLOrganizationTypes#GenericDrugUseFacility 
+* OrganizationTypes#Labeler
+* OrganizationTypes#EstablishmentRegistrant 
+* OrganizationTypes#Establishment 
+* OrganizationTypes#GDUFARegistrant 
+* OrganizationTypes#GenericDrugUseFacility 
