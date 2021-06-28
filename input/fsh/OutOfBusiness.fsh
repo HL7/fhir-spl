@@ -25,7 +25,7 @@ Description: "A profile of an Establishment Registration message"
 Instance: SamplOutOfBusinessMessage
 InstanceOf: OutOfBusinessMessage
 Description: "An example of a message header for an Out of Business notification"
-* eventCoding = $LOINC#53411-5 "FDA product label Out of business notification"
+* eventCoding = $LOINC#53411-5 "Out of business notification"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedEstablishmentRegistrant)
 

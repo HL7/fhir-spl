@@ -41,6 +41,8 @@ Parent: Organization
 Description: "A profile on Organization that specifies a name and an identifier used to identify rather than specify the organization."
 * ^abstract = true
 * identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -63,6 +65,8 @@ Parent: Organization
 Description: "A profile for the data elements required to identify an organization that registers organizations and facilities."
 * ^abstract = true
 * identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -92,6 +96,8 @@ Profile: USAgentOrganization
 Parent: Organization
 Description: "A profile for the data elements required for an organization fulfilling the role of a US Agent for another organization."
 * identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open

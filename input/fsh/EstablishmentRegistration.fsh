@@ -89,6 +89,8 @@ Description: "A profile for the data elements required to identify an organizati
 * contained[ImporterAffiliation] only ImporterAffiliation
 * contained[Importer] only ImporterOrganization
 * identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -142,6 +144,8 @@ Profile: ImporterOrganization
 Parent: Organization
 Description: "A profile for the data elements required for an organization fulfilling the role of an importer for another organization."
 * identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -283,7 +287,7 @@ Description: "An example of the linkage between an Establishment and an Importer
 Instance: SampleEstablishmentRegistrationMessage
 InstanceOf: EstablishmentRegistrationMessage
 Description: "An example of an Establishment Registration message"
-* eventCoding = http://loinc.org#51725-0  "FDA product label Establishment registration"
+* eventCoding = http://loinc.org#51725-0  "Establishment registration"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(ExampleEstablishmentRegistrant)
 * focus[1] = Reference(ExampleEstablishment)

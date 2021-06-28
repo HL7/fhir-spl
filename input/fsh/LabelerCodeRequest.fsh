@@ -57,6 +57,8 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contained[USAgentAffiliation] only USAgentAffiliation
 * contained[USAgent] only USAgentOrganization
 * identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -200,7 +202,7 @@ Description: "An example of a Labeler's business operations."
 Instance: SampleLabelerCodeRequestMessage
 InstanceOf: LabelerCodeRequestMessage
 Description: "An example of a message header for a Labeler Code Request"
-* eventCoding = http://loinc.org#51726-8 "FDA product label NDC labeler code request"
+* eventCoding = http://loinc.org#51726-8 "NDC labeler code request"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(SampleLabelerOrganization)
 
@@ -216,7 +218,7 @@ Description: "An example of a Bundle containing a Labeler Code Request resource 
 Instance: SampleLabelerInactivationMessage
 InstanceOf: LabelerInactivationMessage
 Description: "An example of a message header for a Labeler Inactivation"
-* eventCoding = http://loinc.org#69968-6 "FDA product label NDC labeler code inactivation"
+* eventCoding = http://loinc.org#69968-6 "NDC labeler code inactivation"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(IdentifiedLabelerOrganization)
 

@@ -73,6 +73,8 @@ Description: "A profile for the data elements required to identify an organizati
 * contained contains BusinessOperation 1..* MS
 * contained[BusinessOperation] only GDUFAFacilityBusinessOperation
 * identifier 2..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -201,7 +203,7 @@ Description: "An example of a GDUFA Facility's business operations."
 Instance: SampleGDUFAFacilityIdentificationMessage
 InstanceOf: GDUFAFacilityIdentificationMessage
 Description: "An example of a GDUFA Facility Identification message"
-* eventCoding = http://loinc.org#72090-4 "FDA product label Identification of CBER-regulated generic drug facility"
+* eventCoding = http://loinc.org#72090-4 "Identification of CBER-regulated generic drug facility"
 * source.endpoint = "http://example.org/"
 * focus[0] = Reference(ExampleGDUFARegistrant)
 * focus[1] = Reference(ExampleGDUFAFacility)
