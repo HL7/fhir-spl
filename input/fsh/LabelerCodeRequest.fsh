@@ -56,16 +56,8 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contained[BusinessOperation] only LabelerBusinessOperation
 * contained[USAgentAffiliation] only USAgentAffiliation
 * contained[USAgent] only USAgentOrganization
-* identifier 1..* MS
-* identifier.system 1..1 MS
-* identifier.value 1..1 MS
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Require specific types of identifiers."
-* identifier contains DUNSNumber 1..1 MS and NDCCode 0..1 MS
-* identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
-* identifier[DUNSNumber] obeys spl-2.1.5.2
+* insert DUNSNumber
+* identifier contains NDCCode 0..1 MS
 * identifier[NDCCode].system = "urn:oid:2.16.840.1.113883.6.69"
 * identifier[NDCCode] obeys spl-5.1.2.8
 * identifier[NDCCode] obeys spl-5.1.2.9
@@ -79,16 +71,7 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contact.name 1..1 MS
 * contact.address 1..1 MS
 * contact.address only SPLAddress
-* contact.telecom 2..* MS
-* contact.telecom ^slicing.discriminator.type = #value
-* contact.telecom ^slicing.discriminator.path = "system"
-* contact.telecom ^slicing.rules = #open
-* contact.telecom ^slicing.description = "Require a telephone number and an email address."
-* contact.telecom contains Phone 1..1 MS and Email 1..1 MS
-* contact.telecom[Phone] only SPLContactPoint
-* contact.telecom[Phone].system = #phone
-* contact.telecom[Email] only SPLContactPoint
-* contact.telecom[Email].system = #email
+* insert ContactPhoneNumberAndEmail
 
 Invariant: spl-5.1.2.8
 Description: "NDC Labeler code is 4 or 5 digits"
