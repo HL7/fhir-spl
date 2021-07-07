@@ -1,6 +1,7 @@
 Profile: EstablishmentRegistrationBundle
 Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for an Estabishment Registration Request."
+* obeys spl-6.1.3.4-13.1.3.3
 * entry 3..*
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"

@@ -1,6 +1,7 @@
 Profile: GDUFAFacilityIdentificationBundle
 Parent: OrganizationBundle
 Description: "A profile that represents the Bundle that contains all of the resources for a GDUFA Facility Identification Request."
+* obeys spl-6.1.3.4-13.1.3.3
 * entry 3..*
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
@@ -34,6 +35,11 @@ Description: "A profile that represents the Bundle that contains all of the reso
 * entry[Message].resource only GDUFAFacilityInactivationMessage
 * entry[Registrant].resource only IdentifiedGDUFARegistrant
 * entry[GDUFAFacility].resource only IdentifiedGDUFAFacility
+
+Invariant: spl-6.1.3.4-13.1.3.3
+Description: "DUNS number is not associated with another facility in the same file."
+Expression: "entry.Organization.identifier.where(system="urn:oid:1.3.6.1.4.1.519.1").isDistinct()"
+Severity: #error
 
 Profile: GDUFAFacilityInactivationMessage
 Parent: OrganizationMessage
