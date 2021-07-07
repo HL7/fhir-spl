@@ -38,7 +38,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 
 Invariant: spl-6.1.3.4-13.1.3.3
 Description: "DUNS number is not associated with another facility in the same file."
-Expression: "entry.Organization.identifier.where(system="urn:oid:1.3.6.1.4.1.519.1").isDistinct()"
+Expression: "entry.Organization.identifier.where(system='urn:oid:1.3.6.1.4.1.519.1').isDistinct()"
 Severity: #error
 
 Profile: GDUFAFacilityInactivationMessage
