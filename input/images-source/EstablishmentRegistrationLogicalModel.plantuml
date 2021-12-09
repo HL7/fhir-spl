@@ -32,7 +32,7 @@ class USAgent {
 	ContactPoint telecom
 	ContactPoint email
 }
-Establishment *-- "0..1" Importer
+Establishment *-- "0..*" Importer
 class Importer {
 	string dunsNumber
 	string name

@@ -83,7 +83,7 @@ Description: "A profile for the data elements required to identify an organizati
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
 * contained ^slicing.description = "The specific resources that are needed for a Establishment organization."
-* contained contains BusinessOperation 1..* MS and USAgentAffiliation 0..1 MS and USAgent 0..1 MS and ImporterAffiliation 0..1 MS and Importer 0..1 MS
+* contained contains BusinessOperation 1..* MS and USAgentAffiliation 0..1 MS and USAgent 0..1 MS and ImporterAffiliation 0..* MS and Importer 0..* MS
 * contained[BusinessOperation] only EstablishmentBusinessOperation
 * contained[USAgentAffiliation] only USAgentAffiliation
 * contained[USAgent] only USAgentOrganization
@@ -211,6 +211,11 @@ InstanceOf: EstablishmentOrganization
 Description: "An example of an Establishment Organization."
 * contained[BusinessOperation] = ExampleEstablishmentOperation
 * contained[BusinessOperation].providedBy.reference = "#"
+* contained[ImporterAffiliation] = ExampleImporterAffiliation
+* contained[ImporterAffiliation].organization.reference = "#"
+* contained[ImporterAffiliation].participatingOrganization.reference = "#importer"
+* contained[Importer] = ExampleImporter
+* contained[Importer].id = "importer"
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE ESTABLISHMENT INC."
 * type = OrganizationTypes#Establishment

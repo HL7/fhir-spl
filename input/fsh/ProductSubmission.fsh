@@ -23,7 +23,7 @@ Description: "A profile that represents a document that is required for Product 
 * section ^slicing.description = "Slice based on the different sections that are needed in a SPL document."
 * section contains ProductSection 0..1 and LabelDisplay 0..1 and OtherSections 0..*
 * section[ProductSection].entry 0..1 MS
-* section[ProductSection].entry only Reference(MedicinalProduct)
+* section[ProductSection].entry only Reference(MedicinalProductDefinition)
 * section[ProductSection].code = http://loinc.org#48780-1 (exactly)
 * section[ProductSection].title 0..0
 * section[ProductSection].text 0..1
@@ -54,11 +54,11 @@ Id: splSectionCodes
 Title: "SPL Section Codes"
 Description: "Section Codes for SPL Product Submission documents"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* include codes from system http://loinc.org where SYSTEM = "^FDA package insert"
+* include codes from system http://loinc.org where SYSTEM  = "FDA package insert"
 
 ValueSet: SPLDocumentCodes
 Id: splDocumentCodes
 Title: "SPL Document Codes"
 Description: "Document Codes for SPL Product Submission documents"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* include codes from system http://loinc.org where SYSTEM = "^FDA product label"
+* include codes from system http://loinc.org where SYSTEM = "FDA product label"

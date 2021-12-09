@@ -5,7 +5,7 @@ title: SPL Mapping FHIR Implementation Guide
 description: A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.
 status: draft
 version: 0.1.0
-fhirVersion: 4.0.1
+fhirVersion: 4.1.0
 copyrightYear: 2020+
 releaseLabel: Build CI
 publisher:

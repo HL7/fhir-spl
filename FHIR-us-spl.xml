@@ -37,6 +37,7 @@
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="FDA Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
 <artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="FDA Product Submission Document Logical Model"/>
+<artifact id="StructureDefinition/SubmittedProductLogicalModel" key="StructureDefinition-SubmittedProductLogicalModel" name="FDA Submitted Product Logical Model"/>
 <artifact id="CodeSystem/codesystem-fhirMessageTypes" key="CodeSystem-codesystem-fhirMessageTypes" name="FHIRSpecificSPLMessageTypes"/>
 <artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="GDUFA Facility Identification Logical Model"/>
 <artifact id="StructureDefinition/GDUFAFacilityAffiliation" key="StructureDefinition-GDUFAFacilityAffiliation" name="GDUFAFacilityAffiliation"/>

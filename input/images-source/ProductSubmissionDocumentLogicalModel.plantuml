@@ -18,12 +18,12 @@ class Labeler {
 	string dunsNumber
 	string name
 }
-Labeler *-- "0..1" Registrant
+Establishment *-- "1..1" Registrant
 class Registrant {
 	string dunsNumber
 	string name
 }
-Registrant *-- "0..*" Establishment
+ProductSubmissionDocument *-- "0..*" Establishment
 class Establishment {
 	string dunsNumber
 	string name

@@ -316,7 +316,7 @@ Usage: #definition
 * differential.element[33].min = 0
 * differential.element[33].max = "*"
 * differential.element[33].mustSupport = true
-* differential.element[33].type.code = #MedicinalProduct
+* differential.element[33].type.code = #SubmittedProduct
 
 * differential.element[34].id = "ProductSubmissionDocument.section.subsection"
 * differential.element[34].path = "ProductSubmissionDocument.section.subsection"

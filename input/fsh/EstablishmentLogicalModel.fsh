@@ -269,7 +269,7 @@ Usage: #definition
 * differential.element[28].short = "Establishment Importer"
 * differential.element[28].definition = "An organization that is importing product on the behalf of a Establishment that is not located in the US."
 * differential.element[28].min = 0
-* differential.element[28].max = "1"
+* differential.element[28].max = "*"
 * differential.element[28].mustSupport = true
 * differential.element[28].type.code = #BackboneElement
 
