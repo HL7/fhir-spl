@@ -1,169 +1,19 @@
 == Suppressed Messages ==
 
-# US-Core warning doesn't apply since we are not dependent on US-Core
-US FHIR Usage rules require that all profiles on Organization derive from the core US profile
-US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile
-US FHIR Usage rules require that all profiles on Provenance derive from the core US profile
-
 # External Terminologies that aren't known by the validator
 Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
 Unknown System specified, so Concepts and Filters can''t be checked
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-labelerBusinessOperations because the value set or code system is not known to the validator]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperationQualifiers because the value set or code system is not known to the validator]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-establishmentBusinessOperations because the value set or code system is not known to the validator]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperations because the value set or code system is not known to the validator]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers because the value set or code system is not known to the validator]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/ValueSet/c80-doc-typecodes because the value set or code system is not known to the validator]
-
-The code C25391 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C101509 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C82401 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C101511 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C73608 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C101510 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C112113 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C73599 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C101512 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C84732 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C43360 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C84635 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C122061 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C84731 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C84386 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C91403 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C73607 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C73606 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C70827 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C175317 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C118412 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C125710 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C73330 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C118411 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-
-The code C112092 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C112094 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C132491 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C170729 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C111077 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C111078 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C112087 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C114889 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C114891 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C114892 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C131710 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C131708 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C131709 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C106643 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C101886 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C114890 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C112091 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C112093 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C112095 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C126091 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-The code C123274 is not valid in the system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-
-# Validation information messages
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerCodeRequestBundle
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerInactivationBundle
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerCodeRequestMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerCodeRequestMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerInactivationMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerInactivationMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedLabeler
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedLabeler - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentOrganization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentOrganization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentAffiliation
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/USAgentAffiliation - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerBusinessOperation
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/HealthcareService
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/LabelerBusinessOperation - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationBundle
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentInactivationBundle
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrationMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentInactivationMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentInactivationMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrantOrganization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentRegistrantOrganization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedEstablishmentRegistrant
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedEstablishmentRegistrant - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedEstablishment
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedEstablishment - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentAffiliation
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentAffiliation - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentBusinessOperation
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentBusinessOperation - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/ImporterOrganization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/ImporterAffiliation
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/MessageHeader
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OrganizationMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OrganizationMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationBundle
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityIdentificationBundle - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationBundle
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityInactivationBundle - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFARegistrantOrganization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFARegistrantOrganization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityAffiliation
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFARegistrant
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFARegistrant - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFAFacility
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedGDUFAFacility - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityBusinessOperation
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityBusinessOperation - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/DualSubmissionProvenance
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/SPLDocumentReference
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OutOfBusinessBundle
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OutOfBusinessMessage
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/OutOfBusinessMessage - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
-
-# Matches against abstract profiles
-Found multiple matching profiles for Organization/ExampleEstablishmentRegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization
-Found multiple matching profiles for Organization/ExampleEstablishmentRegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
-Found multiple matching profiles for Organization/ExampleEstablishment among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
-Found multiple matching profiles for Organization/ExampleEstablishment among choices: http://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
-Found multiple matching profiles for Organization/ExampleGDUFARegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization
-Found multiple matching profiles for Organization/ExampleGDUFARegistrant among choices: http://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
-Found multiple matching profiles for Organization/ExampleGDUFAFacility among choices: http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
-Found multiple matching profiles for Organization/ExampleGDUFAFacility among choices: http://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization, http://hl7.org/fhir/us/spl/StructureDefinition/IdentifiedOrganization
-Details for Organization/ExampleEstablishmentRegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization
-Details for Organization/ExampleEstablishmentRegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
-Details for Organization/ExampleEstablishmentRegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
-Details for Organization/ExampleEstablishment matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization
-Details for Organization/ExampleEstablishment matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
-Details for Organization/ExampleEstablishment matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
-Details for Organization/ExampleEstablishment matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization
-Details for Organization/ExampleGDUFARegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization
-Details for Organization/ExampleGDUFARegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
-Details for Organization/ExampleGDUFARegistrant matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/GDUFAFacilityOrganization
-Details for Organization/ExampleGDUFAFacility matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization
-Details for Organization/ExampleGDUFAFacility matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/EstablishmentOrganization
-Details for Organization/ExampleGDUFAFacility matching against Profilehttp://hl7.org/fhir/us/spl/StructureDefinition/RegistrantOrganization
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-establishmentBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperationQualifiers because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-labelerBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
 
 # Allow for different display names from LOINC for FDA purposes
-The display "Establishment registration" is not a valid display for the code {http://loinc.org}51725-0 - should be one of ["FDA product label Establishment registration","FDA label Establishment reg"] (from http://tx.fhir.org/r4) for 'http://loinc.org#51725-0'
-The display "Identification of CBER-regulated generic drug facility" is not a valid display for the code {http://loinc.org}72090-4 - should be one of ["FDA product label Identification of CBER-regulated generic drug facility","FDA label ID of CBER-reg GDF"] (from http://tx.fhir.org/r4) for 'http://loinc.org#72090-4'
-The display "NDC labeler code request" is not a valid display for the code {http://loinc.org}51726-8 - should be one of [FDA product label NDC labeler code request, FDA label NDC labeler code request, FDA 药品标签 National Drug Code, NDC, 国家药品验证号, 国家药品代码, 美国国家药品代码, 全国药品代码, NDC labeler code, NDC 标识者识别代码, NDC 厂家号, NDC 贴签厂商代码请求, NDC 标签号申请 叙述, 叙述性文字, 报告, 报告型, 文字叙述, 文本叙述型, 文本描述, 文本描述型 监管类文档, Documentazione normativa Etichetta di prodotto della Food and Drug Administ, Описательный] (from http://tx.fhir.org/r4) for 'http://loinc.org#51726-8'
-The display "NDC labeler code inactivation" is not a valid display for the code {http://loinc.org}69968-6 - should be one of [FDA product label NDC labeler code inactivation, FDA label NDC labeler code inactivation, FDA 药品标签 National Drug Code, NDC, 国家药品验证号, 国家药品代码, 美国国家药品代码, 全国药品代码, NDC labeler code, NDC 标识者识别代码, NDC 厂家号, NDC 贴签厂商代码注销 叙述, 叙述性文字, 报告, 报告型, 文字叙述, 文本叙述型, 文本描述, 文本描述型 监管类文档, Documentazione normativa Etichetta di prodotto della Food and Drug Administ, Описательный] (from http://tx.fhir.org/r4) for 'http://loinc.org#69968-6'
-The display "Out of business notification" is not a valid display for the code {http://loinc.org}53411-5 - should be one of [FDA product label Out of business notification, FDA label Out of bus notif, FDA 药品标签 停业通知（通告、告示、通知书、通报、布告）, 歇业通知, 停产通知, 关门通知, 倒闭通知, 失业通知, 破产通知 叙述, 叙述性文字, 报告, 报告型, 文字叙述, 文本叙述型, 文本描述, 文本描述型 监管类文档, Documentazione normativa Etichetta di prodotto della Food and Drug Administ, Описательный] (from http://tx.fhir.org/r4) for 'http://loinc.org#53411-5'
+The display "Establishment registration" is not a valid display for the code {http://loinc.org}51725-0 - should be one of ['FDA product label Establishment registration', 'FDA label Establishment reg', 'FDA 药品标签 企业（机构、设施、工厂注销、团体、大型机关）注册（登记）' (zh-CN), '机构注册' (zh-CN), '工厂注册' (zh-CN), '团体注册 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#51725-0'
+The display "Identification of CBER-regulated generic drug facility" is not a valid display for the code {http://loinc.org}72090-4 - should be one of ['FDA product label Identification of CBER-regulated generic drug facility', 'FDA label ID of CBER-reg GDF', 'CBER 所监管的非专利药品设施的标识' (zh-CN), 'Center for Biologics Evaluation &amp' (zh-CN), 'Research' (zh-CN), 'CBER' (zh-CN), '生物制品评价与研究中心' (zh-CN), 'CBER 所管理的普通药品设施的标识' (zh-CN), 'CBER 所管辖的普通药品设施的标识' (zh-CN), 'CBER 所监管的普药设施的标识' (zh-CN), 'CBER 所监管的普通药品设施的鉴定 FDA 药品标签 参考文件' (zh-CN), '参考文档' (zh-CN), '引用文件' (zh-CN), '引用文档' (zh-CN), '文件.参考' (zh-CN), '文件.引用' (zh-CN), '文档.引用 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 毒品 毒品' (zh-CN), '麻醉药' (zh-CN), '麻醉品' (zh-CN), '麻药' (zh-CN), '兴奋剂' (zh-CN), '药品 毒品类 药品类 药物 药物类 鉴定' (zh-CN), '识别' (zh-CN), '验明' (zh-CN), '身份证明' (zh-CN), '确认' (zh-CN), '认出' (zh-CN), '核实' (zh-CN), '认同' (zh-CN), '身份证件' (zh-CN), 'Documentazione di riferimento Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Наркотик Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#72090-4'
+The display "NDC labeler code request" is not a valid display for the code {http://loinc.org}51726-8 - should be one of ['FDA product label NDC labeler code request', 'FDA label NDC labeler code request', 'FDA 药品标签 National Drug Code' (zh-CN), 'NDC' (zh-CN), '国家药品验证号' (zh-CN), '国家药品代码' (zh-CN), '美国国家药品代码' (zh-CN), '全国药品代码' (zh-CN), 'NDC labeler code' (zh-CN), 'NDC 标识者识别代码' (zh-CN), 'NDC 厂家号' (zh-CN), 'NDC 贴签厂商代码请求' (zh-CN), 'NDC 标签号申请 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#51726-8'
+The display "NDC labeler code inactivation" is not a valid display for the code {http://loinc.org}69968-6 - should be one of ['FDA product label NDC labeler code inactivation', 'FDA label NDC labeler code inactivation', 'FDA 药品标签 National Drug Code' (zh-CN), 'NDC' (zh-CN), '国家药品验证号' (zh-CN), '国家药品代码' (zh-CN), '美国国家药品代码' (zh-CN), '全国药品代码' (zh-CN), 'NDC labeler code' (zh-CN), 'NDC 标识者识别代码' (zh-CN), 'NDC 厂家号' (zh-CN), 'NDC 贴签厂商代码注销 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#69968-6'
+The display "Out of business notification" is not a valid display for the code {http://loinc.org}53411-5 - should be one of ['FDA product label Out of business notification', 'FDA label Out of bus notif', 'FDA 药品标签 停业通知（通告、告示、通知书、通报、布告）' (zh-CN), '歇业通知' (zh-CN), '停产通知' (zh-CN), '关门通知' (zh-CN), '倒闭通知' (zh-CN), '失业通知' (zh-CN), '破产通知 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#53411-5'
 
