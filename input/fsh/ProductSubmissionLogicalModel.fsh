@@ -1,8 +1,10 @@
 Logical: ProductSubmissionDocumentLogicalModel
 Parent: Element
 Id: ProductSubmissionDocumentLogicalModel
+Title: "Product Submission Document"
+Description: "A document that contains information about a product being submitted for approval to the FDA."
 * ^type = "ProductSubmissionDocument"
-* . ^definition = "A document that contains information about a product being submitted for approval to the FDA."
+
 * identifier 1..1 string "Document Identifier" "A unique identifier of this specific Product Submission document."
 * splVersion 1..1 date "Document SPL Version" "A date reference to the SPL version being used for this document."
 * submissionIdentifier 1..1 string "Submission Identifier" "A unique identifier of the submission that remains constant across all versions/revisions of this document."

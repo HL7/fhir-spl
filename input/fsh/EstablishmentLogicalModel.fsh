@@ -1,8 +1,9 @@
 Logical: EstablishmentRegistrationLogicalModelLogicalModel
 Parent: Element
 Id: EstablishmentRegistrationLogicalModel
-* ^type = "EstablishmentRegistration"
-* . ^definition = "An operation to register Establishment organizations."
+Description: "An operation to register Establishment organizations."
+Title: "Establishment Registration"
+
 * operationId 1..1 string "Operation Identifier" "A unique identifier of an instance of a Establishment Registration operation."
 * operationEffectiveTime 1..1 dateTime "Operation Effective Time" "The time when this request operation was created."
 * requestId 1..1 string "Request Identifier" "A unique identifier of a specific group of Establishment Registration operations."

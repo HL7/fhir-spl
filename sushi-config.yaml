@@ -5,7 +5,7 @@ title: SPL Mapping FHIR Implementation Guide
 description: A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.
 status: draft
 version: 0.1.0
-fhirVersion: 4.1.0
+fhirVersion: 4.3.0-snapshot1
 copyrightYear: 2020+
 releaseLabel: Build CI
 publisher:
@@ -46,6 +46,7 @@ groups:
       - StructureDefinition/EstablishmentRegistrationLogicalModel
       - StructureDefinition/GDUFAFacilityIdentificationLogicalModel
       - StructureDefinition/ProductSubmissionDocumentLogicalModel
+      - StructureDefinition/SubmittedProductLogicalModel
   OperationBundles:
     name: Operation Bundles
     description: Bundle profiles that are used in the various use case operations

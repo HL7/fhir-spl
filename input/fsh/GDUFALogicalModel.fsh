@@ -1,8 +1,9 @@
 Logical: GDUFAFacilityIdentificationLogicalModel
 Parent: Element
 Id: GDUFAFacilityIdentificationLogicalModel
-* ^type = "GDUFAFacilityIdentification"
-* . ^definition = "An operation to provide details about a GDUFA Facility."
+Description: "An operation to provide details about a GDUFA Facility."
+Title: "GDUFA Facility Identification"
+
 * operationId 1..1 string "Operation Identifier" "A unique identifier of an instance of a GDUFA Facility Identification operation."
 * operationEffectiveTime 1..1 dateTime "Operation Effective Time" "The time when this request operation was created."
 * requestId 1..1 string "Request Identifier" "A unique identifier of a specific group of GDUFA Facilty Identification operations."
