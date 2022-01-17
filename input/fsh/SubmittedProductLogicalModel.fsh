@@ -27,7 +27,7 @@ Title: "Submitted Product"
 * ingredient.strengthReference.unii 1..1 CodeableConcept "Reference Ingredient Code" "The UNII that identifies the reference ingredient."
 * ingredient.strengthReference.name 1..1 string "Reference Ingredient Name" "The name of the reference ingredient."
 
-* packaging 0..* BackboneElement "Product Packaging" "Information about the various packaging of the product."
+* packaging 0..1 BackboneElement "Product Packaging" "Information about the various packaging of the product."
 * packaging.quantity 1..1 Quantity "Amount of product in the package."
 * packaging.type 1..1 CodeableConcept "Packaging Type" "The type of the packaging."
 * packaging.code 0..1 CodeableConcept "Packaging Identifier" "The NDC package code that corresponds to this packaging."

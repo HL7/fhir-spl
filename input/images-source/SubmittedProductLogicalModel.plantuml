@@ -1,5 +1,68 @@
 @startuml
 class SubmittedProduct {
-	string identifier
+	string ndc 0..1
+  string proprietaryName
+  string proprietaryNameSuffix 0..1
+  string nonProprietaryName 0..1
+  string form 0..1
+  string sourceProductNDC 0..1
+  Identifier productIdentifier 0..*
+  string deaSchedule 0..1
+  string route 0..*
+  Period marketingStatusPeriod
 }
+
+SubmittedProduct *-- "0..*" Ingredient
+class Ingredient {
+  code type
+  string unii
+  string name
+  Ratio strength 0..1
+}
+Ingredient o-- "0..2" ActiveMoiety
+class ActiveMoiety {
+  string unii
+  string name
+}
+Ingredient o-- ReferenceStrength
+class ReferenceStrength {
+  string unii
+  string name
+}
+SubmittedProduct *-- "0..1" Packaging
+class Packaging {
+  Quantity quantity
+  string type
+  ndcPackageCode 0..1
+  boolean isSample
+  string combinationProductType
+  Period marketingStatusPeriod
+}
+Packaging *-- "0..1" Packaging
+Packaging o-- "0..*" Characteristic
+SubmittedProduct o-- "0..*" Characteristic
+class Characteristic {
+  string type
+  Any value
+}
+Characteristic *-- "0..1" Image
+class Image {
+  string title
+  url reference
+}
+
+SubmittedProduct *-- "0..*" PartProduct
+class PartProduct {
+  Quantity quantity
+}
+PartProduct *-- SubmittedProduct
+
+SubmittedProduct *-- "0..1" Marketing
+class Marketing {
+  string applicationNumber 0..1
+  string category 0..1
+  dateTime approvalDate 0..1
+}
+
+
 @enduml

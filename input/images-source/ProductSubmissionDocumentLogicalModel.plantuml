@@ -41,7 +41,7 @@ class Section {
 	string title 0..1
 	xhtml text 0..1
 	xhtml highlights 0..1
-	MedicinalProduct product 0..*
+	SubmittedProduct product 0..*
 }
 Section *-- "0..*" Image
 class Image {

@@ -38,5 +38,5 @@ Description: "A document that contains information about a product being submitt
 * section.image.name 1..1 string "Image Title" "Title of the image."
 * section.image.reference 1..1 url "Image Reference" "Reference, either local or remote, to the image data."
 * section.product 0..* http://hl7.org/fhir/us/spl/StructureDefinition/SubmittedProductLogicalModel "Section Product Information" "The complete definition of a product being submitted in this document."
-* section.subsection 0..* BackboneElement "Section sub-sections" "Sub-groupings of the content contained in a section."
+* section.subsection 0..* BackboneElement "subsection"
 * section.subsection ^contentReference = "http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocumentLogicalModel#ProductSubmissionDocument.section"
