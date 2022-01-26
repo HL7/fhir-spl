@@ -7,7 +7,7 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="ValueSet/valueset-businessOperationQualifiers" key="ValueSet-valueset-businessOperationQualifiers" name="BusinessOperationQualifiers"/>
 <artifact id="StructureDefinition/DualSubmissionProvenance" key="StructureDefinition-DualSubmissionProvenance" name="DualSubmissionProvenance"/>
-<artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="Establishment Registration"/>
+<artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/EstablishmentAffiliation" key="StructureDefinition-EstablishmentAffiliation" name="EstablishmentAffiliation"/>
 <artifact id="StructureDefinition/EstablishmentBusinessOperation" key="StructureDefinition-EstablishmentBusinessOperation" name="EstablishmentBusinessOperation"/>
 <artifact id="ValueSet/valueset-establishmentBusinessOperations" key="ValueSet-valueset-establishmentBusinessOperations" name="EstablishmentBusinessOperations"/>
@@ -35,9 +35,8 @@
 <artifact id="Provenance/ExampleLabelerFHIRtoSPLProvenance" key="Provenance-ExampleLabelerFHIRtoSPLProvenance" name="ExampleLabelerFHIRtoSPLProvenance"/>
 <artifact id="Provenance/ExampleLabelerSPLtoFHIRProvenance" key="Provenance-ExampleLabelerSPLtoFHIRProvenance" name="ExampleLabelerSPLtoFHIRProvenance"/>
 <artifact id="DocumentReference/ExampleSPLDocumentReference" key="DocumentReference-ExampleSPLDocumentReference" name="ExampleSPLDocumentReference"/>
-<artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="FDA Labeler Code Request Logical Model"/>
 <artifact id="CodeSystem/codesystem-fhirMessageTypes" key="CodeSystem-codesystem-fhirMessageTypes" name="FHIRSpecificSPLMessageTypes"/>
-<artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="GDUFA Facility Identification"/>
+<artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="GDUFA Facility Identification Logical Model"/>
 <artifact id="StructureDefinition/GDUFAFacilityAffiliation" key="StructureDefinition-GDUFAFacilityAffiliation" name="GDUFAFacilityAffiliation"/>
 <artifact id="StructureDefinition/GDUFAFacilityBusinessOperation" key="StructureDefinition-GDUFAFacilityBusinessOperation" name="GDUFAFacilityBusinessOperation"/>
 <artifact id="ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers" key="ValueSet-valueset-gdufaFacilityBusinessOperationQualifiers" name="GDUFAFacilityBusinessOperationQualifiers"/>
@@ -65,6 +64,7 @@
 <artifact id="StructureDefinition/LabelerInactivationBundle" key="StructureDefinition-LabelerInactivationBundle" name="LabelerInactivationBundle"/>
 <artifact id="StructureDefinition/LabelerInactivationMessage" key="StructureDefinition-LabelerInactivationMessage" name="LabelerInactivationMessage"/>
 <artifact id="StructureDefinition/LabelerOrganization" key="StructureDefinition-LabelerOrganization" name="LabelerOrganization"/>
+<artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
 <artifact id="StructureDefinition/OrganizationBundle" key="StructureDefinition-OrganizationBundle" name="OrganizationBundle"/>
 <artifact id="StructureDefinition/OrganizationMessage" key="StructureDefinition-OrganizationMessage" name="OrganizationMessage"/>
@@ -72,7 +72,8 @@
 <artifact id="CodeSystem/codesystem-organizationTypes" key="CodeSystem-codesystem-organizationTypes" name="OrganizationTypes"/>
 <artifact id="StructureDefinition/OutOfBusinessBundle" key="StructureDefinition-OutOfBusinessBundle" name="OutOfBusinessBundle"/>
 <artifact id="StructureDefinition/OutOfBusinessMessage" key="StructureDefinition-OutOfBusinessMessage" name="OutOfBusinessMessage"/>
-<artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="Product Submission Document"/>
+<artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="Product Submission Document Logical Model"/>
+<artifact id="StructureDefinition/ProductSubmissionBundle" key="StructureDefinition-ProductSubmissionBundle" name="ProductSubmissionBundle"/>
 <artifact id="StructureDefinition/ProductSubmissionDocument" key="StructureDefinition-ProductSubmissionDocument" name="ProductSubmissionDocument"/>
 <artifact id="SearchParameter/ProvenanceActivitySearchParameter" key="SearchParameter-ProvenanceActivitySearchParameter" name="ProvenanceActivitySearchParameter"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
@@ -104,7 +105,7 @@
 <artifact id="Bundle/SampleOutOfBusinessNotificationBundle" key="Bundle-SampleOutOfBusinessNotificationBundle" name="SampleOutOfBusinessNotificationBundle"/>
 <artifact id="StructureDefinition/sectionEffectiveTime" key="StructureDefinition-sectionEffectiveTime" name="SectionEffectiveTime"/>
 <artifact id="StructureDefinition/sectionIdentifier" key="StructureDefinition-sectionIdentifier" name="SectionIdentifier"/>
-<artifact id="StructureDefinition/SubmittedProductLogicalModel" key="StructureDefinition-SubmittedProductLogicalModel" name="Submitted Product"/>
+<artifact id="StructureDefinition/SubmittedProductLogicalModel" key="StructureDefinition-SubmittedProductLogicalModel" name="Submitted Product Logical Model"/>
 <artifact id="ValueSet/valueset-topLevelOrganizationTypes" key="ValueSet-valueset-topLevelOrganizationTypes" name="TopLevelOrganizationTypes"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>

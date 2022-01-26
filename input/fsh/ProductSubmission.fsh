@@ -1,3 +1,21 @@
+Profile: ProductSubmissionBundle
+Parent: Bundle
+Description: "A profile that represents the Bundle that contains the Product Submission document."
+* identifier 1..1 MS
+* type MS
+* type = #document
+* timestamp 1..1 MS
+* entry 2..*
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Product Submission document."
+* entry contains Composition 1..1 MS and Labeler 1..1 MS and Product 0..* MS
+* entry[Composition].resource only ProductSubmissionDocument
+* entry[Labeler].resource only IdentifiedLabeler
+* entry[Product].resource only MedicinalProductDefinition
+
+
 Profile: ProductSubmissionDocument
 Parent: Composition
 Description: "A profile that represents a document that is required for Product Submission to the FDA."
@@ -8,7 +26,7 @@ Description: "A profile that represents a document that is required for Product 
 * title MS
 * identifier 1..1 MS
 * author 1..1 MS
-* author only Reference(LabelerOrganization)
+* author only Reference(IdentifiedLabeler)
 * section 1..* MS
 * section.extension contains SectionIdentifier named sectionID 0..1 MS and SectionEffectiveTime named sectionTime 0..1 MS
 * section.code 1..1 MS

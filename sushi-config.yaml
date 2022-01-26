@@ -114,6 +114,7 @@ groups:
     name: Product Submission Document
     description: Artifacts associated with the submission of a product document
     resources:
+      - StructureDefinition/ProductSubmissionBundle
       - StructureDefinition/ProductSubmissionDocument
       - StructureDefinition/sectionEffectiveTime
       - StructureDefinition/sectionIdentifier
