@@ -2,7 +2,7 @@ Logical: GDUFAFacilityIdentificationLogicalModel
 Parent: Element
 Id: GDUFAFacilityIdentificationLogicalModel
 Description: "An operation to provide details about a GDUFA Facility."
-Title: "GDUFA Facility Identification"
+Title: "GDUFA Facility Identification Logical Model"
 
 * operationId 1..1 string "Operation Identifier" "A unique identifier of an instance of a GDUFA Facility Identification operation."
 * operationEffectiveTime 1..1 dateTime "Operation Effective Time" "The time when this request operation was created."

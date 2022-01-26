@@ -1,7 +1,7 @@
 Logical: LabelerCodeRequestLogicalModel
 Parent: Element
 Id: LabelerCodeRequestLogicalModel
-Title: "FDA Labeler Code Request Logical Model"
+Title: "NDC Labeler Code Request Logical Model"
 Description: "An operation to request a NDC Labeler code for a registrant or private Labeler organization."
 
 * operationId 1..1 string "Operation Identifier" "A unique identifier of an instance of a Labeler Code Request operation."

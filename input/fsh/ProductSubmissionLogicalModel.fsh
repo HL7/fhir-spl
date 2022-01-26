@@ -1,7 +1,7 @@
 Logical: ProductSubmissionDocumentLogicalModel
 Parent: Element
 Id: ProductSubmissionDocumentLogicalModel
-Title: "Product Submission Document"
+Title: "Product Submission Document Logical Model"
 Description: "A document that contains information about a product being submitted for approval to the FDA."
 * ^type = "ProductSubmissionDocument"
 

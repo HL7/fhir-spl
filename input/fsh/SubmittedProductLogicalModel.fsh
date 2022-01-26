@@ -2,7 +2,7 @@ Logical: SubmittedProductLogicalModel
 Parent: Element
 Id: SubmittedProductLogicalModel
 Description: "Details about the product that is submitted to the FDA."
-Title: "Submitted Product"
+Title: "Submitted Product Logical Model"
 * ^type = "SubmittedProduct"
 
 * ndcCode 0..1 CodeableConcept "NDC Code" "The NDC Code that uniquely identifies this product."
