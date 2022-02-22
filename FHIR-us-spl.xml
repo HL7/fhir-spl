@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/spl/2022Jan" ciUrl="https://build.fhir.org/ig/HL7/spl" defaultVersion="0.1.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-spl" url="http://hl7.org/fhir/us/spl">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/spl/2023Jan" ciUrl="https://build.fhir.org/ig/HL7/spl" defaultVersion="0.1.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-spl" url="http://hl7.org/fhir/us/spl">
 <version code="current" url="https://build.fhir.org/ig/HL7/spl"/>
-<version code="0.1.0" url="http://hl7.org/fhir/us/spl/2022Jan"/>
+<version code="0.1.0" url="http://hl7.org/fhir/us/spl/2023Jan"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -105,7 +105,14 @@
 <artifact id="Bundle/SampleOutOfBusinessNotificationBundle" key="Bundle-SampleOutOfBusinessNotificationBundle" name="SampleOutOfBusinessNotificationBundle"/>
 <artifact id="StructureDefinition/sectionEffectiveTime" key="StructureDefinition-sectionEffectiveTime" name="SectionEffectiveTime"/>
 <artifact id="StructureDefinition/sectionIdentifier" key="StructureDefinition-sectionIdentifier" name="SectionIdentifier"/>
-<artifact id="StructureDefinition/SubmittedProductLogicalModel" key="StructureDefinition-SubmittedProductLogicalModel" name="Submitted Product Logical Model"/>
+<artifact id="StructureDefinition/SubmittedMedicationLogicalModel" key="StructureDefinition-SubmittedMedicationLogicalModel" name="Submitted Medication Logical Model"/>
+<artifact id="StructureDefinition/SubmittedMedicinalPackaging" key="StructureDefinition-SubmittedMedicinalPackaging" name="SubmittedMedicinalPackaging"/>
+<artifact id="StructureDefinition/SubmittedMedicinalProduct" key="StructureDefinition-SubmittedMedicinalProduct" name="SubmittedMedicinalProduct"/>
+<artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SubmittedMedicinalProductCharacteristicTypes"/>
+<artifact id="StructureDefinition/SubmittedMedicinalProductIngredients" key="StructureDefinition-SubmittedMedicinalProductIngredients" name="SubmittedMedicinalProductIngredients"/>
+<artifact id="StructureDefinition/SubmittedMedicinalProductMarketing" key="StructureDefinition-SubmittedMedicinalProductMarketing" name="SubmittedMedicinalProductMarketing"/>
+<artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="SubmittedMedicinalProductNameTypes"/>
+<artifact id="StructureDefinition/SubstanceMoiety" key="StructureDefinition-SubstanceMoiety" name="SubstanceMoiety"/>
 <artifact id="ValueSet/valueset-topLevelOrganizationTypes" key="ValueSet-valueset-topLevelOrganizationTypes" name="TopLevelOrganizationTypes"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>

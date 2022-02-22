@@ -4,6 +4,7 @@ Alias: $NCI-T = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 CodeSystem: FHIRSpecificSPLMessageTypes
 Id: codesystem-fhirMessageTypes
 Description: "Codes that are unique to the FHIR organization submissions, i.e. these are not current SPL submission types."
+* ^caseSensitive = true
 * #01 "Establishment Inactivation"
 * #02 "GDUFA Facility Inactivation"
 
@@ -119,12 +120,14 @@ Description: "Codes that give further information about a GUDFA facility's busin
 CodeSystem: OrganizationAffiliationCodes
 Id: codesystem-organizationAffiliationCodes
 Description: "Codes that identify the relationship between two organizations."
+* ^caseSensitive = true
 * #ESTABLISHMENT "Registrant to Establishment"
 * #GDUFA "Registrant to GDUFA Facility"
 
 CodeSystem: OrganizationTypes
 Id: codesystem-organizationTypes
 Description: "Codes that identify the types of organizations involved in a SPL submission."
+* ^caseSensitive = true
 * #Labeler "An organization that submits product labels."
 * #EstablishmentRegistrant "An organization that registers establishment organizations."
 * #Establishment "An organization that provides operations in the manufacturing of a product."

@@ -13,7 +13,7 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * entry contains Composition 1..1 MS and Labeler 1..1 MS and Product 0..* MS
 * entry[Composition].resource only ProductSubmissionDocument
 * entry[Labeler].resource only IdentifiedLabeler
-* entry[Product].resource only MedicinalProductDefinition
+* entry[Product].resource only SubmittedMedicinalProduct
 
 
 Profile: ProductSubmissionDocument
@@ -41,7 +41,7 @@ Description: "A profile that represents a document that is required for Product 
 * section ^slicing.description = "Slice based on the different sections that are needed in a SPL document."
 * section contains ProductSection 0..1 and LabelDisplay 0..1 and OtherSections 0..*
 * section[ProductSection].entry 0..1 MS
-* section[ProductSection].entry only Reference(MedicinalProductDefinition)
+* section[ProductSection].entry only Reference(SubmittedMedicinalProduct)
 * section[ProductSection].code = http://loinc.org#48780-1 (exactly)
 * section[ProductSection].title 0..0
 * section[ProductSection].text 0..1

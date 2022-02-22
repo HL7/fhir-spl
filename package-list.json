@@ -14,11 +14,11 @@
     {
       "version": "0.1.0",
       "desc": "First public ballot",
-      "path": "http://hl7.org/fhir/us/spl/2022Jan",
-	  "date": "2022Jan",
+      "path": "http://hl7.org/fhir/us/spl/2023Jan",
+	    "date": "2023Jan",
       "status": "ballot",
-	  "sequence": "STU 1",
-      "fhirversion": "4.0.1"
+	    "sequence": "STU 1",
+      "fhirversion": "4.6.0"
     }
   ],
   "category": "Pharmaceutical"

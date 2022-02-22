@@ -46,7 +46,7 @@ groups:
       - StructureDefinition/EstablishmentRegistrationLogicalModel
       - StructureDefinition/GDUFAFacilityIdentificationLogicalModel
       - StructureDefinition/ProductSubmissionDocumentLogicalModel
-      - StructureDefinition/SubmittedProductLogicalModel
+      - StructureDefinition/SubmittedMedicationLogicalModel
   OperationBundles:
     name: Operation Bundles
     description: Bundle profiles that are used in the various use case operations
