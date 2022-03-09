@@ -1,5 +1,5 @@
 @startuml
-class SubmittedProduct {
+class SubmittedMedication {
 	string ndc 0..1
   string proprietaryName
   string proprietaryNameSuffix 0..1
@@ -12,7 +12,7 @@ class SubmittedProduct {
   Period marketingStatusPeriod
 }
 
-SubmittedProduct *-- "0..*" Ingredient
+SubmittedMedication *-- "0..*" Ingredient
 class Ingredient {
   code type
   string unii
@@ -29,7 +29,7 @@ class ReferenceStrength {
   string unii
   string name
 }
-SubmittedProduct *-- "0..1" Packaging
+SubmittedMedication *-- "0..1" Packaging
 class Packaging {
   Quantity quantity
   string type
@@ -40,7 +40,7 @@ class Packaging {
 }
 Packaging *-- "0..1" Packaging
 Packaging o-- "0..*" Characteristic
-SubmittedProduct o-- "0..*" Characteristic
+SubmittedMedication o-- "0..*" Characteristic
 class Characteristic {
   string type
   Any value
@@ -51,13 +51,13 @@ class Image {
   url reference
 }
 
-SubmittedProduct *-- "0..*" PartProduct
+SubmittedMedication *-- "0..*" PartProduct
 class PartProduct {
   Quantity quantity
 }
-PartProduct *-- SubmittedProduct
+PartProduct *-- SubmittedMedication
 
-SubmittedProduct *-- "0..1" Marketing
+SubmittedMedication *-- "0..1" Marketing
 class Marketing {
   string applicationNumber 0..1
   string category 0..1

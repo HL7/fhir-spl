@@ -109,12 +109,12 @@ Description: "FEI number is 7 or 10 digits"
 Expression: "system = 'urn:oid:2.16.840.1.113883.4.82' implies (value.length() = 7 or value.length() = 10)"
 Severity: #error
 
-Invariant: spl-6.1.4.1
+Invariant: spl-6.1.4.3
 Description: "If country is USA, then US agent is not allowed."
 Expression: "address.country = 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
 Severity: #error
 
-Invariant: spl-6.1.4.3
+Invariant: spl-6.1.4.1
 Description: "If country is not USA, then US agent is mandatory."
 Expression: "address.country != 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 1" 
 Severity: #error
