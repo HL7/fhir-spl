@@ -54,8 +54,9 @@ Description: "Details around the marketing of a submitted medicinal product."
 * subject 1..1 MS
 * subject only Reference(SubmittedMedicinalProduct)
 * type 0..1 MS
-* status 1..1 MS
-* statusDate 1..1 MS
+* region 0..* MS
+* status MS
+* statusDate MS
 
 Profile: SubmittedMedicinalPackaging
 Parent: PackagedProductDefinition
@@ -80,6 +81,7 @@ Description: "Details around the packaging of submitted medicinal products."
 Profile: SubmittedMedicinalProductIngredients
 Parent: Ingredient
 Description: "Details around the ingredients of a submitted medicinal product."
+* status = #active (exactly)
 * for 1..1 MS
 * for only Reference(MedicinalProductDefinition)
 * role 1..1 MS
@@ -115,3 +117,8 @@ Description: "Codes that identify the relationship between two organizations."
 ValueSet: SubmittedMedicinalProductCharacteristicTypes
 Id: valueset-SubmittedMedicinalProductCharacteristicTypes
 Description: "Codes that identify the types of characteristics allowed for Submitted Medicinal Product."
+* urn:oid:2.16.840.1.113883.1.11.19255#SPLCOLOR
+* urn:oid:2.16.840.1.113883.1.11.19255#SPLIMPRINT
+* urn:oid:2.16.840.1.113883.1.11.19255#SPLSCORE
+* urn:oid:2.16.840.1.113883.1.11.19255#SPLSHAPE
+* urn:oid:2.16.840.1.113883.1.11.19255#SPLSIZE

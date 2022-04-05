@@ -155,7 +155,7 @@ Description: "A profile that associates an establishment to the set of business 
 * providedBy only Reference(EstablishmentOrganization)
 * type 1..1 MS
 * type from EstablishmentBusinessOperations (required)
-* serviceProvisionCode 1..1 MS
+* serviceProvisionCode 0..* MS
 * serviceProvisionCode from BusinessOperationQualifiers (required)
 
 Invariant: spl-6.1.6.8

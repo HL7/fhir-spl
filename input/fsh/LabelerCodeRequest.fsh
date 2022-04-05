@@ -109,7 +109,7 @@ Description: "A profile that associates a Labeler to the set of business operati
 * providedBy only Reference(LabelerOrganization)
 * type 1..1 MS
 * type from LabelerBusinessOperations (required)
-* serviceProvisionCode 0..1 MS
+* serviceProvisionCode 0..* MS
 * serviceProvisionCode from BusinessOperationQualifiers (required)
 
 Invariant: spl-5.1.5.7

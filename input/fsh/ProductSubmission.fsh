@@ -6,7 +6,7 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * type = #document
 * timestamp 1..1 MS
 * entry 2..*
-* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Product Submission document."
@@ -28,29 +28,42 @@ Description: "A profile that represents a document that is required for Product 
 * author 1..1 MS
 * author only Reference(IdentifiedLabeler)
 * section 1..* MS
-* section.extension contains SectionIdentifier named sectionID 0..1 MS and SectionEffectiveTime named sectionTime 0..1 MS
-* section.code 1..1 MS
-* section.code from SPLSectionCodes (required)
-* section.title MS
-* section.text MS
-* section.entry MS
-* section.section MS
+  * extension contains SectionIdentifier named sectionID 0..1 MS and SectionEffectiveTime named sectionTime 0..1 MS
+  * code 1..1 MS
+  * code from SPLSectionCodes (required)
+  * title MS
+  * text MS
+  * entry MS
+  * section MS
+    * extension contains SectionIdentifier named sectionID 0..1 MS and SectionEffectiveTime named sectionTime 0..1 MS
+    * code 1..1 MS
+    * code from SPLSectionCodes (required)
+    * title MS
+    * text MS
+    * entry MS
+    * section ^contentReference = "#Composition.section.section"
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section ^slicing.description = "Slice based on the different sections that are needed in a SPL document."
-* section contains ProductSection 0..1 and LabelDisplay 0..1 and OtherSections 0..*
-* section[ProductSection].entry 0..1 MS
-* section[ProductSection].entry only Reference(SubmittedMedicinalProduct)
-* section[ProductSection].code = http://loinc.org#48780-1 (exactly)
+* section contains ProductSection 0..1 and LabelDisplay 0..1
+* section[ProductSection].entry 0..* MS
+* section[ProductSection].entry ^slicing.discriminator.type = #profile
+* section[ProductSection].entry ^slicing.discriminator.path = "$this"
+* section[ProductSection].entry ^slicing.rules = #open
+* section[ProductSection].entry ^slicing.description = "Slice based on the resources that go into a product submission."
+* section[ProductSection].entry contains ProductDefinition 0..1 MS and Ingredient 0..* MS and Packaging 0..* MS and Marketing 0..* MS
+* section[ProductSection].entry[ProductDefinition] only Reference(SubmittedMedicinalProduct)
+* section[ProductSection].entry[Ingredient] only Reference(SubmittedMedicinalProductIngredients)
+* section[ProductSection].entry[Packaging] only Reference(SubmittedMedicinalPackaging)
+* section[ProductSection].entry[Marketing] only Reference(SubmittedMedicinalProductMarketing)
+* section[ProductSection].code = http://loinc.org#48780-1
 * section[ProductSection].title 0..0
 * section[ProductSection].text 0..1
 * section[LabelDisplay].entry 0..0
-* section[LabelDisplay].code = http://loinc.org#51945-4 (exactly)
+* section[LabelDisplay].code = http://loinc.org#51945-4
 * section[LabelDisplay].text 1..1
 * section[LabelDisplay].entry 0..0
-* section[OtherSections].text 1..1
-* section[OtherSections].entry 0..0
 
 Extension: VersionNumber
 Id: versionNumber
@@ -72,11 +85,12 @@ Id: splSectionCodes
 Title: "SPL Section Codes"
 Description: "Section Codes for SPL Product Submission documents"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* include codes from system http://loinc.org where SYSTEM  = "FDA package insert"
+* include codes from system http://loinc.org where SYSTEM = "^FDA package insert"
+* include codes from system http://loinc.org where SYSTEM = "^FDA package label" and COMPONENT regex "^Package label.*$"
 
 ValueSet: SPLDocumentCodes
 Id: splDocumentCodes
 Title: "SPL Document Codes"
 Description: "Document Codes for SPL Product Submission documents"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* include codes from system http://loinc.org where SYSTEM = "FDA product label"
+* include codes from system http://loinc.org where SYSTEM = "^FDA product label"

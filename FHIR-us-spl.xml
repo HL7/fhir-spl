@@ -5,6 +5,23 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Organization/AidarexPharmaceuticals" key="Organization-AidarexPharmaceuticals" name="AidarexPharmaceuticals"/>
+<artifact id="PackagedProductDefinition/Allopurinol100Tablets" key="PackagedProductDefinition-Allopurinol100Tablets" name="Allopurinol100Tablets"/>
+<artifact id="PackagedProductDefinition/Allopurinol30Tablets" key="PackagedProductDefinition-Allopurinol30Tablets" name="Allopurinol30Tablets"/>
+<artifact id="PackagedProductDefinition/Allopurinol60Tablets" key="PackagedProductDefinition-Allopurinol60Tablets" name="Allopurinol60Tablets"/>
+<artifact id="PackagedProductDefinition/Allopurinol90Tablets" key="PackagedProductDefinition-Allopurinol90Tablets" name="Allopurinol90Tablets"/>
+<artifact id="RegulatedAuthorization/AllopurinolMarketing" key="RegulatedAuthorization-AllopurinolMarketing" name="AllopurinolMarketing"/>
+<artifact id="SubstanceDefinition/AllopurinolMoiety" key="SubstanceDefinition-AllopurinolMoiety" name="AllopurinolMoiety"/>
+<artifact id="Bundle/AllopurinolTabletLabelBundle" key="Bundle-AllopurinolTabletLabelBundle" name="AllopurinolTabletLabelBundle"/>
+<artifact id="Composition/AllopurinolTabletLabelComposition" key="Composition-AllopurinolTabletLabelComposition" name="AllopurinolTabletLabelComposition"/>
+<artifact id="Ingredient/AllopurinolUSPActiveIngredient" key="Ingredient-AllopurinolUSPActiveIngredient" name="AllopurinolUSPActiveIngredient"/>
+<artifact id="MedicinalProductDefinition/AllopurinolUSPDefinition" key="MedicinalProductDefinition-AllopurinolUSPDefinition" name="AllopurinolUSPDefinition"/>
+<artifact id="Ingredient/AllopurinolUSPIngredient1" key="Ingredient-AllopurinolUSPIngredient1" name="AllopurinolUSPIngredient1"/>
+<artifact id="Ingredient/AllopurinolUSPIngredient2" key="Ingredient-AllopurinolUSPIngredient2" name="AllopurinolUSPIngredient2"/>
+<artifact id="Ingredient/AllopurinolUSPIngredient3" key="Ingredient-AllopurinolUSPIngredient3" name="AllopurinolUSPIngredient3"/>
+<artifact id="Ingredient/AllopurinolUSPIngredient4" key="Ingredient-AllopurinolUSPIngredient4" name="AllopurinolUSPIngredient4"/>
+<artifact id="Ingredient/AllopurinolUSPIngredient5" key="Ingredient-AllopurinolUSPIngredient5" name="AllopurinolUSPIngredient5"/>
+<artifact id="Ingredient/AllopurinolUSPIngredient6" key="Ingredient-AllopurinolUSPIngredient6" name="AllopurinolUSPIngredient6"/>
 <artifact id="ValueSet/valueset-businessOperationQualifiers" key="ValueSet-valueset-businessOperationQualifiers" name="BusinessOperationQualifiers"/>
 <artifact id="StructureDefinition/DualSubmissionProvenance" key="StructureDefinition-DualSubmissionProvenance" name="DualSubmissionProvenance"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="Establishment Registration Logical Model"/>

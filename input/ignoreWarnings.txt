@@ -2,18 +2,52 @@
 
 # External Terminologies that aren't known by the validator
 Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
+Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+Code System URI 'urn:oid:2.16.840.1.113883.1.11.19255' is unknown so the code cannot be validated
+
 Unknown System specified, so Concepts and Filters can''t be checked
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.1.11.19255
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-establishmentBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperationQualifiers because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-labelerBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.113883.1.11.19255' is unknown so the code cannot be validated]
+ValueSet http://evs.nci.nih.gov/valueset/FDA/C54456 not found by validator
+ValueSet http://evs.nci.nih.gov/valueset/FDA/C54455 not found by validator
+ValueSet http://hl7.org/fhir/ValueSet/combined-dose-form not found by validator
 
 # Allow for different display names from LOINC for FDA purposes
-The display "Establishment registration" is not a valid display for the code {http://loinc.org}51725-0 - should be one of ['FDA product label Establishment registration', 'FDA label Establishment reg', 'FDA 药品标签 企业（机构、设施、工厂注销、团体、大型机关）注册（登记）' (zh-CN), '机构注册' (zh-CN), '工厂注册' (zh-CN), '团体注册 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#51725-0'
-The display "Identification of CBER-regulated generic drug facility" is not a valid display for the code {http://loinc.org}72090-4 - should be one of ['FDA product label Identification of CBER-regulated generic drug facility', 'FDA label ID of CBER-reg GDF', 'CBER 所监管的非专利药品设施的标识' (zh-CN), 'Center for Biologics Evaluation &amp' (zh-CN), 'Research' (zh-CN), 'CBER' (zh-CN), '生物制品评价与研究中心' (zh-CN), 'CBER 所管理的普通药品设施的标识' (zh-CN), 'CBER 所管辖的普通药品设施的标识' (zh-CN), 'CBER 所监管的普药设施的标识' (zh-CN), 'CBER 所监管的普通药品设施的鉴定 FDA 药品标签 参考文件' (zh-CN), '参考文档' (zh-CN), '引用文件' (zh-CN), '引用文档' (zh-CN), '文件.参考' (zh-CN), '文件.引用' (zh-CN), '文档.引用 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 毒品 毒品' (zh-CN), '麻醉药' (zh-CN), '麻醉品' (zh-CN), '麻药' (zh-CN), '兴奋剂' (zh-CN), '药品 毒品类 药品类 药物 药物类 鉴定' (zh-CN), '识别' (zh-CN), '验明' (zh-CN), '身份证明' (zh-CN), '确认' (zh-CN), '认出' (zh-CN), '核实' (zh-CN), '认同' (zh-CN), '身份证件' (zh-CN), 'Documentazione di riferimento Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Наркотик Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#72090-4'
-The display "NDC labeler code request" is not a valid display for the code {http://loinc.org}51726-8 - should be one of ['FDA product label NDC labeler code request', 'FDA label NDC labeler code request', 'FDA 药品标签 National Drug Code' (zh-CN), 'NDC' (zh-CN), '国家药品验证号' (zh-CN), '国家药品代码' (zh-CN), '美国国家药品代码' (zh-CN), '全国药品代码' (zh-CN), 'NDC labeler code' (zh-CN), 'NDC 标识者识别代码' (zh-CN), 'NDC 厂家号' (zh-CN), 'NDC 贴签厂商代码请求' (zh-CN), 'NDC 标签号申请 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#51726-8'
-The display "NDC labeler code inactivation" is not a valid display for the code {http://loinc.org}69968-6 - should be one of ['FDA product label NDC labeler code inactivation', 'FDA label NDC labeler code inactivation', 'FDA 药品标签 National Drug Code' (zh-CN), 'NDC' (zh-CN), '国家药品验证号' (zh-CN), '国家药品代码' (zh-CN), '美国国家药品代码' (zh-CN), '全国药品代码' (zh-CN), 'NDC labeler code' (zh-CN), 'NDC 标识者识别代码' (zh-CN), 'NDC 厂家号' (zh-CN), 'NDC 贴签厂商代码注销 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#69968-6'
-The display "Out of business notification" is not a valid display for the code {http://loinc.org}53411-5 - should be one of ['FDA product label Out of business notification', 'FDA label Out of bus notif', 'FDA 药品标签 停业通知（通告、告示、通知书、通报、布告）' (zh-CN), '歇业通知' (zh-CN), '停产通知' (zh-CN), '关门通知' (zh-CN), '倒闭通知' (zh-CN), '失业通知' (zh-CN), '破产通知 叙述' (zh-CN), '叙述性文字' (zh-CN), '报告' (zh-CN), '报告型' (zh-CN), '文字叙述' (zh-CN), '文本叙述型' (zh-CN), '文本描述' (zh-CN), '文本描述型 监管类文档' (zh-CN), 'Documentazione normativa Etichetta di prodotto della Food and Drug Administ' (it-IT), 'Описательный' (ru-RU)] (from http://tx.fhir.org/r4) for 'http://loinc.org#53411-5'
+The display "Establishment registration" is not a valid display for the code {http://loinc.org}51725-0%
+The display "Identification of CBER-regulated generic drug facility" is not a valid display for the code {http://loinc.org}72090-4%
+The display "NDC labeler code request" is not a valid display for the code {http://loinc.org}51726-8%
+The display "NDC labeler code inactivation" is not a valid display for the code {http://loinc.org}69968-6%
+The display "Out of business notification" is not a valid display for the code {http://loinc.org}53411-5%
+The display "HUMAN PRESCRIPTION DRUG LABEL" is not a valid display for the code {http://loinc.org}34391-3%
+The display "DESCRIPTION SECTION" is not a valid display for the code {http://loinc.org}34089-3%
+The display "CLINICAL PHARMCOLOGY SECTION" is not a valid display for the code {http://loinc.org}34090-1%
+The display "INDICATIONS &amp; USAGE SECTION" is not a valid display for the code {http://loinc.org}34067-9%
+The display "CONTRAINDICATIONS SECTION" is not a valid display for the code {http://loinc.org}34070-3%
+The display "WARNINGS SECTION" is not a valid display for the code {http://loinc.org}34071-1%
+The display "PRECAUTIONS SECTION" is not a valid display for the code {http://loinc.org}42232-9%
+The display "GENERAL PRECAUTIONS SECTION" is not a valid display for the code {http://loinc.org}34072-9%
+The display "INFORMATION FOR PATIENTS SECTION" is not a valid display for the code {http://loinc.org}34076-0%
+The display "LABORATORY TESTS SECTION" is not a valid display for the code {http://loinc.org}34075-2%
+The display "DRUG INTERACTIONS SECTION" is not a valid display for the code {http://loinc.org}34073-7%
+The display "DRUG &amp; OR LABORATORY TEST INTERACTIONS SECTION" is not a valid display for the code {http://loinc.org}34074-5%
+The display "PREGNANCY SECTION" is not a valid display for the code {http://loinc.org}42228-7%
+The display "NURSING MOTHERS SECTION" is not a valid display for the code {http://loinc.org}34080-2%
+The display "PEDIATRIC USE SECTION" is not a valid display for the code {http://loinc.org}34081-0%
+The display "SPL LISTING DATA ELEMENTS SECTION" is not a valid display for the code {http://loinc.org}48780-1%
+The display "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL" is not a valid display for the code {http://loinc.org}51945-4%
+The display "ADVERSE REACTIONS SECTION" is not a valid display for the code {http://loinc.org}34084-4%
+The display "SPL UNCLASSIFIED SECTION" is not a valid display for the code {http://loinc.org}42229-5%
+The display "OVERDOSAGE SECTION" is not a valid display for the code {http://loinc.org}34088-5%
+The display "DOSAGE &amp; ADMINISTRATION SECTION" is not a valid display for the code {http://loinc.org}34068-7%
+The display "HOW SUPPLIED SECTION" is not a valid display for the code {http://loinc.org}34069-5%
 
+
+# Open slice so there are slices that don't match the slice definitions
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocument
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionBundle

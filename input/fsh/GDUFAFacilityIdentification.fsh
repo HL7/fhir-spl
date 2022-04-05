@@ -116,7 +116,7 @@ Description: "A profile that associates an establishment to the set of business 
 * providedBy only Reference(GDUFAFacilityOrganization)
 * type 1..1 MS
 * type from GDUFAFacilityBusinessOperations (required)
-* serviceProvisionCode 1..1 MS
+* serviceProvisionCode 0..* MS
 * serviceProvisionCode from GDUFAFacilityBusinessOperationQualifiers (required)
 
 Invariant: spl-13.1.5.6
