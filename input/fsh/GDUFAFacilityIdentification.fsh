@@ -120,8 +120,8 @@ Description: "A profile that associates an establishment to the set of business 
 * serviceProvisionCode from GDUFAFacilityBusinessOperationQualifiers (required)
 
 Invariant: spl-13.1.5.6
-Description: "If operation is C132491, then qualifier is C101510 or C84731"
-Expression: "type.coding.where(code = 'C132481').exists() implies serviceProvisionCode.coding.select(code in ('C101510' | 'C84731')).allTrue()"
+Description: "If qualifier is C132491, then type is C101510 or C84731"
+Expression: "serviceProvisionCode.coding.where(code = 'C132481').exists() implies type.coding.select(code in ('C101510' | 'C84731')).allTrue()"
 Severity: #error
 
 Instance: ExampleGDUFARegistrant

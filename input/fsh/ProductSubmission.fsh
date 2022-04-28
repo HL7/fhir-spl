@@ -10,10 +10,14 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Product Submission document."
-* entry contains Composition 1..1 MS and Labeler 1..1 MS and Product 0..* MS
+* entry contains Composition 1..1 MS and Labeler 1..1 MS and Product 0..* MS and Marketing 0..* MS and Packaging 0..* MS and Ingredient 0..* MS and Substance 0..* MS
 * entry[Composition].resource only ProductSubmissionDocument
 * entry[Labeler].resource only IdentifiedLabeler
 * entry[Product].resource only SubmittedMedicinalProduct
+* entry[Ingredient].resource only SubmittedMedicinalProductIngredient
+* entry[Marketing].resource only SubmittedMedicinalProductMarketing
+* entry[Packaging].resource only SubmittedMedicinalPackaging
+* entry[Substance].resource only SubmittedIngredientDefinition
 
 
 Profile: ProductSubmissionDocument
@@ -34,7 +38,7 @@ Description: "A profile that represents a document that is required for Product 
   * title MS
   * text MS
   * entry MS
-  * section MS
+  * section 0..* MS
     * extension contains SectionIdentifier named sectionID 0..1 MS and SectionEffectiveTime named sectionTime 0..1 MS
     * code 1..1 MS
     * code from SPLSectionCodes (required)
@@ -46,16 +50,13 @@ Description: "A profile that represents a document that is required for Product 
 * section ^slicing.rules = #open
 * section ^slicing.description = "Slice based on the different sections that are needed in a SPL document."
 * section contains ProductSection 0..1 and LabelDisplay 0..1
-* section[ProductSection].entry 0..* MS
-* section[ProductSection].entry ^slicing.discriminator.type = #profile
-* section[ProductSection].entry ^slicing.discriminator.path = "$this"
+* section[ProductSection].entry 1..* MS
+* section[ProductSection].entry ^slicing.discriminator.type = #type
+* section[ProductSection].entry ^slicing.discriminator.path = "$this.resolve()"
 * section[ProductSection].entry ^slicing.rules = #open
 * section[ProductSection].entry ^slicing.description = "Slice based on the resources that go into a product submission."
-* section[ProductSection].entry contains ProductDefinition 0..1 MS and Ingredient 0..* MS and Packaging 0..* MS and Marketing 0..* MS
+* section[ProductSection].entry contains ProductDefinition 1..1 MS
 * section[ProductSection].entry[ProductDefinition] only Reference(SubmittedMedicinalProduct)
-* section[ProductSection].entry[Ingredient] only Reference(SubmittedMedicinalProductIngredients)
-* section[ProductSection].entry[Packaging] only Reference(SubmittedMedicinalPackaging)
-* section[ProductSection].entry[Marketing] only Reference(SubmittedMedicinalProductMarketing)
 * section[ProductSection].code = http://loinc.org#48780-1
 * section[ProductSection].title 0..0
 * section[ProductSection].text 0..1

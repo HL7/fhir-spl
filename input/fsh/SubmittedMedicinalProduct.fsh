@@ -78,7 +78,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * package.containedItem.amount 1..1 MS
 * package.package 0..* MS
 
-Profile: SubmittedMedicinalProductIngredients
+Profile: SubmittedMedicinalProductIngredient
 Parent: Ingredient
 Description: "Details around the ingredients of a submitted medicinal product."
 * status = #active (exactly)
@@ -87,7 +87,7 @@ Description: "Details around the ingredients of a submitted medicinal product."
 * role 1..1 MS
 * substance 1..1 MS
 * substance.code 1..1 MS
-* substance.code.reference only Reference(SubstanceMoiety)
+* substance.code.reference only Reference(SubmittedIngredientDefinition)
 * substance.strength 0..1 MS
 * substance.strength.presentation[x] 1..1 MS
 * substance.strength.presentation[x] only Ratio
@@ -96,7 +96,7 @@ Description: "Details around the ingredients of a submitted medicinal product."
 * substance.strength.referenceStrength.strength[x] 1..1 MS
 * substance.strength.referenceStrength.strength[x] only Ratio
 
-Profile: SubstanceMoiety
+Profile: SubmittedIngredientDefinition
 Parent: SubstanceDefinition
 Description: "Used to represent an substance's active moiety."
 * identifier 1..* MS

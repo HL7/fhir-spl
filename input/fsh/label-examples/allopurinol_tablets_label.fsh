@@ -12,14 +12,14 @@ Description: "A bundle containing all of the information for the Allopurinol Tab
   * fullUrl = "http://example.org/Organization/AidarexPharmaceuticals"
   * resource = AidarexPharmaceuticals
 * entry[+]
-  * fullUrl = "http://example.org/MedicinalProductDefinition/AllopurinolUSP"
+  * fullUrl = "http://example.org/MedicinalProductDefinition/AllopurinolUSPDefinition"
   * resource = AllopurinolUSPDefinition
 * entry[+]
   * fullUrl = "http://example.org/Ingredient/AllopurinolUSPActiveIngredient"
   * resource = AllopurinolUSPActiveIngredient
 * entry[+]
-  * fullUrl = "http://example.org/SubstanceDefinition/AllopurinolMoiety"
-  * resource = AllopurinolMoiety
+  * fullUrl = "http://example.org/SubstanceDefinition/AllopurinolIngredientDefinition"
+  * resource = AllopurinolIngredientDefinition
 * entry[+]
   * fullUrl = "http://example.org/Ingredient/AllopurinolUSPIngredient1"
   * resource = AllopurinolUSPIngredient1
@@ -460,18 +460,6 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   </div>"""
 * section[ProductSection]
   * entry[0] = Reference(AllopurinolUSPDefinition)
-  * entry[+] = Reference(AllopurinolUSPActiveIngredient)
-  * entry[+] = Reference(AllopurinolUSPIngredient1)
-  * entry[+] = Reference(AllopurinolUSPIngredient2)
-  * entry[+] = Reference(AllopurinolUSPIngredient3)
-  * entry[+] = Reference(AllopurinolUSPIngredient4)
-  * entry[+] = Reference(AllopurinolUSPIngredient5)
-  * entry[+] = Reference(AllopurinolUSPIngredient6)
-  * entry[+] = Reference(Allopurinol100Tablets)
-  * entry[+] = Reference(Allopurinol30Tablets)
-  * entry[+] = Reference(Allopurinol60Tablets)
-  * entry[+] = Reference(Allopurinol90Tablets)
-  * entry[+] = Reference(AllopurinolMarketing)
   * code = http://loinc.org#48780-1 "SPL LISTING DATA ELEMENTS SECTION"
   * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
   * extension[sectionID].valueIdentifier.value = "urn:uuid:24f6db00-e00b-4a3d-aa17-5ee56ac2708d"
@@ -511,15 +499,15 @@ Description: "Structured information for the Allopurinol Tablet USP Label"
 * characteristic[=].valueQuantity = 10 'mm' "mm"
 
 Instance: AllopurinolUSPActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredients
+InstanceOf: SubmittedMedicinalProductIngredient
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(AllopurinolMoiety)
+* substance.code.reference = Reference(AllopurinolIngredientDefinition)
 * substance.strength.presentationRatio.numerator = 100 'mg' "mg"
 * substance.strength.presentationRatio.denominator.value = 1
 
-Instance: AllopurinolMoiety
-InstanceOf: SubstanceMoiety
+Instance: AllopurinolIngredientDefinition
+InstanceOf: SubmittedIngredientDefinition
 * identifier.system = "http://fdasis.nlm.nih.gov"
 * identifier.value = "63CZ7GJN5I"
 * moiety.identifier.system = "http://fdasis.nlm.nih.gov"
@@ -528,32 +516,32 @@ InstanceOf: SubstanceMoiety
 * name.name = "ALLOPURINOL"
 
 Instance: AllopurinolUSPIngredient1
-InstanceOf: SubmittedMedicinalProductIngredients
+InstanceOf: SubmittedMedicinalProductIngredient
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#M28OL1HH48 "CROSCARMELLOSE SODIUM"
 Instance: AllopurinolUSPIngredient2
-InstanceOf: SubmittedMedicinalProductIngredients
+InstanceOf: SubmittedMedicinalProductIngredient
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#EWQ57Q8I5X "LACTOSE MONOHYDRATE"
 Instance: AllopurinolUSPIngredient3
-InstanceOf: SubmittedMedicinalProductIngredients
+InstanceOf: SubmittedMedicinalProductIngredient
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#70097M6I30 "MAGNESIUM STEARATE"
 Instance: AllopurinolUSPIngredient4
-InstanceOf: SubmittedMedicinalProductIngredients
+InstanceOf: SubmittedMedicinalProductIngredient
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#OP1R32D61U "CELLULOSE, MICROCRYSTALLINE"
 Instance: AllopurinolUSPIngredient5
-InstanceOf: SubmittedMedicinalProductIngredients
+InstanceOf: SubmittedMedicinalProductIngredient
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#O8232NY3SJ "STARCH, CORN"
 Instance: AllopurinolUSPIngredient6
-InstanceOf: SubmittedMedicinalProductIngredients
+InstanceOf: SubmittedMedicinalProductIngredient
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#368GB5141J "SODIUM LAURYL SULFATE"
