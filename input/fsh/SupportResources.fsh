@@ -38,7 +38,7 @@ Instance: ProvenanceActivitySearchParameter
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/spl/SearchParameter/ProvenanceActivitySearchParameter"
-* name = "activity"
+* name = "Activity"
 * status = #active
 * description = "A search parameter to allow searching for Provenance records by activity type."
 * code = #activity

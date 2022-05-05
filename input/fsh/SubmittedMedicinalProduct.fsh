@@ -35,7 +35,9 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * crossReference.type 1..1 MS
 * crossReference.type = $NCI-T#C64637 (exactly)
 * crossReference.product 1..1 MS
-* crossReference.product from http://hl7.org/fhir/sid/ndc
+* crossReference.product from AllNDCProducts
+* crossReference.product.concept 1..1 MS
+* crossReference.product.reference 0..0
 * route 0..* MS
 * route from http://evs.nci.nih.gov/valueset/FDA/C54455 (required)
 * marketingStatus 0..1 MS
@@ -83,7 +85,7 @@ Parent: Ingredient
 Description: "Details around the ingredients of a submitted medicinal product."
 * status = #active (exactly)
 * for 1..1 MS
-* for only Reference(MedicinalProductDefinition)
+* for only Reference(SubmittedMedicinalProduct)
 * role 1..1 MS
 * substance 1..1 MS
 * substance.code 1..1 MS
@@ -93,6 +95,8 @@ Description: "Details around the ingredients of a submitted medicinal product."
 * substance.strength.presentation[x] only Ratio
 * substance.strength.referenceStrength 0..1 MS
 * substance.strength.referenceStrength.substance 1..1 MS
+* substance.strength.referenceStrength.substance.concept 1..1 MS
+* substance.strength.referenceStrength.substance.reference 0..0
 * substance.strength.referenceStrength.strength[x] 1..1 MS
 * substance.strength.referenceStrength.strength[x] only Ratio
 
@@ -122,3 +126,8 @@ Description: "Codes that identify the types of characteristics allowed for Submi
 * urn:oid:2.16.840.1.113883.1.11.19255#SPLSCORE
 * urn:oid:2.16.840.1.113883.1.11.19255#SPLSHAPE
 * urn:oid:2.16.840.1.113883.1.11.19255#SPLSIZE
+
+ValueSet: AllNDCProducts
+Id: valueset-AllNDCProducts
+Description: "A value set that is all of the NDC codesystem, i.e. all NDC products"
+* include codes from system http://hl7.org/fhir/sid/ndc

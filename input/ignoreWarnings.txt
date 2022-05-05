@@ -50,4 +50,6 @@ The display "HOW SUPPLIED SECTION" is not a valid display for the code {http://l
 
 # Open slice so there are slices that don't match the slice definitions
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocument
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionBundle
+
+# References between resources that are valid
+%isn't reachable by traversing forwards from first Bundle entry, and isn't a resource type that is typically used that way - check this is not missed somewhere

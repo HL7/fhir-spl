@@ -10,6 +10,11 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Product Submission document."
+* entry.fullUrl 1..1 MS
+* entry.resource 1..1 MS
+* entry.search 0..0
+* entry.request 0..0
+* entry.response 0..0
 * entry contains Composition 1..1 MS and Labeler 1..1 MS and Product 0..* MS and Marketing 0..* MS and Packaging 0..* MS and Ingredient 0..* MS and Substance 0..* MS
 * entry[Composition].resource only ProductSubmissionDocument
 * entry[Labeler].resource only IdentifiedLabeler
@@ -32,14 +37,14 @@ Description: "A profile that represents a document that is required for Product 
 * author 1..1 MS
 * author only Reference(IdentifiedLabeler)
 * section 1..* MS
-  * extension contains SectionIdentifier named sectionID 0..1 MS and SectionEffectiveTime named sectionTime 0..1 MS
+  * extension contains SectionEffectiveTime named sectionTime 0..1 MS
   * code 1..1 MS
   * code from SPLSectionCodes (required)
   * title MS
   * text MS
   * entry MS
   * section 0..* MS
-    * extension contains SectionIdentifier named sectionID 0..1 MS and SectionEffectiveTime named sectionTime 0..1 MS
+    * extension contains SectionEffectiveTime named sectionTime 0..1 MS
     * code 1..1 MS
     * code from SPLSectionCodes (required)
     * title MS
@@ -69,11 +74,6 @@ Extension: VersionNumber
 Id: versionNumber
 Description: "Adding a version number to documents."
 * value[x] only string
-
-Extension: SectionIdentifier
-Id: sectionIdentifier
-Description: "Providing an identifier for a section."
-* value[x] only Identifier
 
 Extension: SectionEffectiveTime
 Id: sectionEffectiveTime

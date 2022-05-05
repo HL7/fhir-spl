@@ -74,10 +74,9 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * author = Reference(AidarexPharmaceuticals)
 * title = "Allopurinol<br/>Tablets USP<br/>Revised: February 2015<br/>Rx only        <br/>"
 * section[0]
+  * id = "80fb3156-ba84-4cf6-b0f7-66c4dddc3fc3"
   * code = http://loinc.org#34089-3 "DESCRIPTION SECTION"
   * title = "DESCRIPTION"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:80fb3156-ba84-4cf6-b0f7-66c4dddc3fc3"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -90,8 +89,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#34090-1 "CLINICAL PHARMCOLOGY SECTION"
   * title = "CLINICAL PHARMACOLOGY"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:59e4d2bd-f4b7-450e-b818-8fa84cebe058"
+  * id = "59e4d2bd-f4b7-450e-b818-8fa84cebe058"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -103,7 +101,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
                   <p>Allopurinol is approximately 90% absorbed from the gastrointestinal tract. Peak plasma levels generally occur at 1.5 hours and 4.5 hours for allopurinol and oxipurinol, respectively, and after a single oral dose of 300 mg allopurinol, maximum plasma levels of about 3 mcg/mL of allopurinol and 6.5 mcg/mL of oxipurinol are produced.</p>
                   <p>Approximately 20% of the ingested allopurinol is excreted in the feces. Because of its rapid oxidation to oxipurinol and a renal clearance rate approximately that of the glomerular filtration rate, allopurinol has a plasma half-life of about 1-2 hours. Oxipurinol, however, has a longer plasma half-life (approximately 15 hours), and therefore effective xanthine oxidase inhibition is maintained over a 24-hour period with single daily doses of allopurinol. Whereas allopurinol is cleared essentially by glomerular filtration, oxipurinol is reabsorbed in the kidney tubules in a manner similar to the reabsorption of uric acid.</p>
                   <p>The clearance of oxipurinol is increased by uricosuric drugs, and as a consequence, the addition of a uricosuric agent reduces to some degree the inhibition of xanthine oxidase by oxipurinol and increases to some degree the urinary excretion of uric acid. In practice, the net effect of such combined therapy may be useful in some patients in achieving minimum serum uric acid levels provided the total urinary uric acid load does not exceed the competence of the patient’s renal function.</p>
-                  <p>Hyperuricemia may be primary, as in gout, or secondary to diseases such as acute and chronic leukemia, polycythemia vera, multiple myeloma, and psoriasis. It may occur with the use of diuretic agents, during renal dialysis, in the presence of renal damage, during starvation or reducing diets, and in the treatment of neoplastic disease where rapid resolution of tissue masses may occur. Asymptomatic hyperuricemia is not an indication for allopurinol treatment (see <a href="#LINK_8d8866aa-96fb-4067-91f5-d0afb15fd181">INDICATIONS AND USAGE</a>).</p>
+                  <p>Hyperuricemia may be primary, as in gout, or secondary to diseases such as acute and chronic leukemia, polycythemia vera, multiple myeloma, and psoriasis. It may occur with the use of diuretic agents, during renal dialysis, in the presence of renal damage, during starvation or reducing diets, and in the treatment of neoplastic disease where rapid resolution of tissue masses may occur. Asymptomatic hyperuricemia is not an indication for allopurinol treatment (see <a href="#8d8866aa-96fb-4067-91f5-d0afb15fd181">INDICATIONS AND USAGE</a>).</p>
                   <p>Gout is a metabolic disorder which is characterized by hyperuricemia and resultant deposition of monosodium urate in the tissues, particularly the joints and kidneys. The etiology of this hyperuricemia is the overproduction of uric acid in relation to the patient’s ability to excrete it. If progressive deposition of urates is to be arrested or reversed, it is necessary to reduce the serum uric acid level below the saturation point to suppress urate precipitation.</p>
                   <p>Administration of allopurinol generally results in a fall in both serum and urinary uric acid within two to three days. The degree of this decrease can be manipulated almost at will since it is dose-dependent. A week or more of treatment with allopurinol may be required before its full effects are manifested; likewise, uric acid may return to pretreatment levels slowly (usually after a period of seven to ten days following cessation of therapy). This reflects primarily the accumulation and slow clearance of oxipurinol. In some patients a dramatic fall in urinary uric acid excretion may not occur, particularly in those with severe tophaceous gout. It has been postulated that this may be due to the mobilization of urate from tissue deposits as the serum uric acid level begins to fall.</p>
                   <p>Allopurinol’s action differs from that of uricosuric agents, which lower the serum uric acid level by increasing urinary excretion of uric acid. Allopurinol reduces both the serum and urinary uric acid levels by inhibiting the formation of uric acid. The use of allopurinol to block the formation of urates avoids the hazard of increased renal excretion of uric acid posed by uricosuric drugs.</p>
@@ -113,13 +111,12 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#34067-9 "INDICATIONS &amp; USAGE SECTION"
   * title = "INDICATIONS AND USAGE"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:6acdac7d-4f8c-43fc-b343-af915819a9fc"
+  * id = "6acdac7d-4f8c-43fc-b343-af915819a9fc"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
                   <p>THIS IS NOT AN INNOCUOUS DRUG. IT IS NOT RECOMMENDED FOR THE TREATMENT OF ASYMPTOMATIC HYPERURICEMIA.</p>
-                  <p>Allopurinol reduces serum and urinary uric acid concentrations. Its use should be individualized for each patient and requires an understanding of its mode of action and pharmacokinetics (see <a href="#LINK_a40ab137-2a6b-479b-96b1-36b0fc4c67c3">CLINICAL PHARMACOLOGY</a>, <a href="#LINK_7398b442-5023-4297-aa01-5a130fe3c96c">CONTRAINDICATIONS</a>, <a href="#LINK_b7a6bbd9-20c6-438b-a363-5b2d8e482eef">WARNINGS</a> and <a href="#LINK_fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a>).</p>
+                  <p>Allopurinol reduces serum and urinary uric acid concentrations. Its use should be individualized for each patient and requires an understanding of its mode of action and pharmacokinetics (see <a href="#a40ab137-2a6b-479b-96b1-36b0fc4c67c3">CLINICAL PHARMACOLOGY</a>, <a href="#7398b442-5023-4297-aa01-5a130fe3c96c">CONTRAINDICATIONS</a>, <a href="#b7a6bbd9-20c6-438b-a363-5b2d8e482eef">WARNINGS</a> and <a href="#fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a>).</p>
                   <p>Allopurinol is indicated in:<br/>
                   </p>
                   <ol style="list-style-type: decimal">
@@ -137,8 +134,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#34070-3 "CONTRAINDICATIONS SECTION"
   * title = "CONTRAINDICATIONS"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:b35d50ec-5df6-4b2b-89bb-945cf7f820a0"
+  * id = "b35d50ec-5df6-4b2b-89bb-945cf7f820a0"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -147,13 +143,12 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#34071-1 "WARNINGS SECTION"
   * title = "WARNINGS"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:06d28263-017c-459e-8ee3-7ba3ce78281b"
+  * id = "06d28263-017c-459e-8ee3-7ba3ce78281b"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
                   <p>ALLOPURINOL SHOULD BE DISCONTINUED AT THE FIRST APPEARANCE OF SKIN RASH OR OTHER SIGNS WHICH MAY INDICATE AN ALLERGIC REACTION. In some instances a skin rash may be followed by more severe hypersensitivity reactions such as exfoliative, urticarial and purpuric lesions as well as Stevens-Johnson Syndrome (erythema multiforme exudativum) and/or generalized vasculitis, irreversible hepatotoxicity and on rare occasions, death.</p>
-                  <p>In patients receiving mercaptopurine or azathioprine, the concomitant administration of 300 to 600 mg of allopurinol per day will require a reduction in dose to approximately one-third to one-fourth of the usual dose of mercaptopurine or azathioprine. Subsequent adjustment of doses of mercaptopurine or azathioprine should be made on the basis of therapeutic response and the appearance of toxic effects (see <a href="#LINK_a40ab137-2a6b-479b-96b1-36b0fc4c67c3">CLINICAL PHARMACOLOGY</a>).</p>
+                  <p>In patients receiving mercaptopurine or azathioprine, the concomitant administration of 300 to 600 mg of allopurinol per day will require a reduction in dose to approximately one-third to one-fourth of the usual dose of mercaptopurine or azathioprine. Subsequent adjustment of doses of mercaptopurine or azathioprine should be made on the basis of therapeutic response and the appearance of toxic effects (see <a href="#a40ab137-2a6b-479b-96b1-36b0fc4c67c3">CLINICAL PHARMACOLOGY</a>).</p>
                   <p>A few cases of reversible clinical hepatotoxicity have been noted in patients taking allopurinol, and in some patients asymptomatic rises in serum alkaline phosphatase or serum transaminase have been observed. If anorexia, weight loss or pruritus develop in patients on allopurinol, evaluation of liver function should be part of their diagnostic workup. In patients with pre-existing liver disease, periodic liver function tests are recommended during the early stages of therapy.</p>
                   <p>Due to the occasional occurrence of drowsiness, patients should be alerted to the need for due precaution when engaging in activities where alertness is mandatory.</p>
                   <p>The occurrence of hypersensitivity reactions to allopurinol may be increased in patients with decreased renal function receiving thiazides and allopurinol concurrently. For this reason, in this clinical setting, such combinations should be administered with caution and patients should be observed closely.</p>
@@ -161,14 +156,12 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#42232-9 "PRECAUTIONS SECTION"
   * title = "PRECAUTIONS"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:b35d50ec-5df6-4b2b-89bb-945cf7f820a0"
+  * id = "6cbcf459-599d-4cc1-b5a2-087718fe5ab3"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * section[0]
     * code = http://loinc.org#34072-9 "GENERAL PRECAUTIONS SECTION"
     * title = "General"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:608f0f5d-3f16-4e92-a477-9910493e4a71"
+    * id = "608f0f5d-3f16-4e92-a477-9910493e4a71"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -182,8 +175,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * section[+]
     * code = http://loinc.org#34076-0 "INFORMATION FOR PATIENTS SECTION"
     * title = "Information for Patients"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:7835c074-c780-4280-8c90-396974a9d2ca"
+    * id = "7835c074-c780-4280-8c90-396974a9d2ca"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -192,25 +184,23 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * section[+]
     * code = http://loinc.org#34075-2 "LABORATORY TESTS SECTION"
     * title = "Laboratory Tests"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:a4a68c8a-f98c-484e-b549-bb49400d689d"
+    * id = "a4a68c8a-f98c-484e-b549-bb49400d689d"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
                         <p>The correct dosage and schedule for maintaining the serum uric acid within the normal range is best determined by using the serum uric acid level as an index.</p>
-                        <p>In patients with pre-existing liver disease, periodic liver function tests are recommended during the early stages of therapy (see <a href="#LINK_b7a6bbd9-20c6-438b-a363-5b2d8e482eef">WARNINGS</a>).</p>
+                        <p>In patients with pre-existing liver disease, periodic liver function tests are recommended during the early stages of therapy (see <a href="#b7a6bbd9-20c6-438b-a363-5b2d8e482eef">WARNINGS</a>).</p>
                         <p>Allopurinol and its primary active metabolite oxipurinol are eliminated by the kidneys; therefore, changes in renal function have a profound effect on dosage. In patients with decreased renal function or who have concurrent illnesses which can affect renal function such as hypertension and diabetes mellitus, periodic laboratory parameters of renal function, particularly BUN and serum creatinine or creatinine clearance, should be performed and the patient’s allopurinol dosage reassessed.</p>
                         <p>The prothrombin time should be reassessed periodically in the patients receiving dicumarol who are given allopurinol.</p>
     </div>"""
   * section[+]
     * code = http://loinc.org#34073-7 "DRUG INTERACTIONS SECTION"
     * title = "Drug Interactions"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:e5d01bfc-239f-4e4a-9dd8-cbc7b6536cfd"
+    * id = "e5d01bfc-239f-4e4a-9dd8-cbc7b6536cfd"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>In patients receiving mercaptopurine or azathioprine, the concomitant administration of 300-600 mg of allopurinol per day will require a reduction in dose to approximately one-third to one-fourth of the usual dose of mercaptopurine or azathioprine. Subsequent adjustment of doses of mercaptopurine or azathioprine should be made on the basis of therapeutic response and the appearance of toxic effects (see <a href="#LINK_a40ab137-2a6b-479b-96b1-36b0fc4c67c3">CLINICAL PHARMACOLOGY</a>).</p>
+                        <p>In patients receiving mercaptopurine or azathioprine, the concomitant administration of 300-600 mg of allopurinol per day will require a reduction in dose to approximately one-third to one-fourth of the usual dose of mercaptopurine or azathioprine. Subsequent adjustment of doses of mercaptopurine or azathioprine should be made on the basis of therapeutic response and the appearance of toxic effects (see <a href="#a40ab137-2a6b-479b-96b1-36b0fc4c67c3">CLINICAL PHARMACOLOGY</a>).</p>
                         <p>It has been reported that allopurinol prolongs the half-life of the anticoagulant, dicumarol. The clinical basis of this drug interaction has not been established but should be noted when allopurinol is given to patients already on dicumarol therapy.</p>
                         <p>Since the excretion of oxipurinol is similar to that of urate, uricosuric agents, which increase the excretion of urate, are also likely to increase the excretion of oxipurinol and thus lower the degree of inhibition of xanthine oxidase. The concomitant administration of uricosuric agents and allopurinol has been associated with a decrease in the excretion of oxypurines (hypoxanthine and xanthine) and an increase in urinary uric acid excretion compared with that observed with allopurinol alone. Although clinical evidence to date has not demonstrated renal precipitation of oxypurines in patients either on allopurinol alone or in combination with uricosuric agents, the possibility should be kept in mind.</p>
                         <p>The reports that the concomitant use of allopurinol and thiazide diuretics may contribute to the enhancement of allopurinol toxicity in some patients have been reviewed in an attempt to establish a cause-and-effect relationship and a mechanism of causation. Review of these case reports indicates that the patients were mainly receiving thiazide diuretics for hypertension and that tests to rule out decreased renal function secondary to hypertensive nephropathy were not often performed. In those patients in whom renal insufficiency was documented, however, the recommendation to lower the dose of allopurinol was not followed. Although a causal mechanism and a cause-and-effect relationship have not been established, current evidence suggests that renal function should be monitored in patients on thiazide diuretics and allopurinol even in the absence of renal failure, and dosage levels should be even more conservatively adjusted in those patients on such combined therapy if diminished renal function is detected.</p>
@@ -223,8 +213,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * section[+]
     * code = http://loinc.org#34074-5 "DRUG &amp; OR LABORATORY TEST INTERACTIONS SECTION"
     * title = "Drug/Laboratory Interactions"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:9dd437d2-18f7-4b7a-b923-a8bb059819bb"
+    * id = "9dd437d2-18f7-4b7a-b923-a8bb059819bb"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -233,8 +222,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * section[+]
     * code = http://loinc.org#42228-7 "PREGNANCY SECTION"
     * title = "Pregnancy"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:79c16c6d-b609-47ae-a496-d81856897d29"
+    * id = "79c16c6d-b609-47ae-a496-d81856897d29"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -247,8 +235,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * section[+]
     * code = http://loinc.org#34080-2 "NURSING MOTHERS SECTION"
     * title = "Nursing Mothers"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:8c94cb61-06ed-4113-9f18-642df0258487"
+    * id = "8c94cb61-06ed-4113-9f18-642df0258487"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -257,29 +244,26 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * section[+]
     * code = http://loinc.org#34081-0 "PEDIATRIC USE SECTION"
     * title = "Pediatric Use"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:14d06afe-0771-4f4e-be98-85a293055584"
+    * id = "14d06afe-0771-4f4e-be98-85a293055584"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
-                        <p>Allopurinol is rarely indicated for use in children with the exception of those with hyperuricemia secondary to malignancy or to certain rare inborn errors of purine metabolism (see <a href="#LINK_8d8866aa-96fb-4067-91f5-d0afb15fd181">INDICATIONS AND USAGE</a> and <a href="#LINK_cc20ed18-39c1-4e48-a1a6-025ee34e655b">DOSAGE AND ADMINISTRATION</a>).</p>
+                        <p>Allopurinol is rarely indicated for use in children with the exception of those with hyperuricemia secondary to malignancy or to certain rare inborn errors of purine metabolism (see <a href="#8d8866aa-96fb-4067-91f5-d0afb15fd181">INDICATIONS AND USAGE</a> and <a href="#cc20ed18-39c1-4e48-a1a6-025ee34e655b">DOSAGE AND ADMINISTRATION</a>).</p>
     </div>"""
 * section[+]
   * code = http://loinc.org#34084-4 "ADVERSE REACTIONS SECTION"
   * title = "ADVERSE REACTIONS"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:044a080a-fae6-40fb-8bc8-c2da0de26ed5"
+  * id = "044a080a-fae6-40fb-8bc8-c2da0de26ed5"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
-                  <p>Data upon which the following estimates of incidence of adverse reactions are made are derived from experiences reported in the literature, unpublished clinical trials and voluntary reports since marketing of allopurinol began. Past experience suggested that the most frequent event following the initiation of allopurinol treatment was an increase in acute attacks of gout (average 6% in early studies). An analysis of current usage suggests that the incidence of acute gouty attacks has diminished to less than 1%. The explanation for this decrease has not been determined but may be due in part to initiating therapy more gradually (see <a href="#LINK_fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a> and <a href="#LINK_cc20ed18-39c1-4e48-a1a6-025ee34e655b">DOSAGE AND ADMINISTRATION</a>).</p>
-                  <p>The most frequent adverse reaction to allopurinol is skin rash. Skin reactions can be severe and sometimes fatal. Therefore, treatment with allopurinol should be discontinued immediately if a rash develops (see <a href="#LINK_b7a6bbd9-20c6-438b-a363-5b2d8e482eef">WARNINGS</a>). Some patients with the most severe reaction also had fever, chills, arthralgias, cholestatic jaundice, eosinophilia and mild leukocytosis or leukopenia. Among 55 patients with gout treated with allopurinol for 3 to 34 months (average greater than 1 year) and followed prospectively, Rundles observed that 3% of patients developed a type of drug reaction which was predominantly a pruritic maculopapular skin eruption, sometimes scaly or exfoliative. However, with current usage, skin reactions have been observed less frequently than 1%. The explanation for this decrease is not obvious. The incidence of skin rash may be increased in the presence of renal insufficiency. The frequency of skin rash among patients receiving ampicillin or amoxicillin concurrently with allopurinol has been reported to be increased (see <a href="#LINK_fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a>).</p>
+                  <p>Data upon which the following estimates of incidence of adverse reactions are made are derived from experiences reported in the literature, unpublished clinical trials and voluntary reports since marketing of allopurinol began. Past experience suggested that the most frequent event following the initiation of allopurinol treatment was an increase in acute attacks of gout (average 6% in early studies). An analysis of current usage suggests that the incidence of acute gouty attacks has diminished to less than 1%. The explanation for this decrease has not been determined but may be due in part to initiating therapy more gradually (see <a href="#fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a> and <a href="#cc20ed18-39c1-4e48-a1a6-025ee34e655b">DOSAGE AND ADMINISTRATION</a>).</p>
+                  <p>The most frequent adverse reaction to allopurinol is skin rash. Skin reactions can be severe and sometimes fatal. Therefore, treatment with allopurinol should be discontinued immediately if a rash develops (see <a href="#b7a6bbd9-20c6-438b-a363-5b2d8e482eef">WARNINGS</a>). Some patients with the most severe reaction also had fever, chills, arthralgias, cholestatic jaundice, eosinophilia and mild leukocytosis or leukopenia. Among 55 patients with gout treated with allopurinol for 3 to 34 months (average greater than 1 year) and followed prospectively, Rundles observed that 3% of patients developed a type of drug reaction which was predominantly a pruritic maculopapular skin eruption, sometimes scaly or exfoliative. However, with current usage, skin reactions have been observed less frequently than 1%. The explanation for this decrease is not obvious. The incidence of skin rash may be increased in the presence of renal insufficiency. The frequency of skin rash among patients receiving ampicillin or amoxicillin concurrently with allopurinol has been reported to be increased (see <a href="#fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a>).</p>
   </div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "Most Common Reactions*<br/>Probably Causally Related"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:7293d495-3de6-4a5d-bf8f-22f8c8ea5530"
+    * id = "7293d495-3de6-4a5d-bf8f-22f8c8ea5530"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -289,13 +273,12 @@ Description: "Header information for the Allopurinol Tablet USP Label"
                            <span style="font-style: italic">Metabolic and Nutritional:</span> acute attacks of gout</p>
                         <p>
                            <span style="font-style: italic">Skin and Appendages:</span> rash, maculopapular rash</p>
-                        <p>*Early clinical studies and incidence rates from early clinical experience with allopurinol suggested that these adverse reactions were found to occur at a rate of greater than 1%. The most frequent event observed was acute attacks of gout following the initiation of therapy. Analyses of current usage suggest that the incidence of these adverse reactions is now less than 1%. The explanation for this decrease has not been determined, but it may be due to following recommended usage (see <a href="#LINK_73b1aa92-bc75-499e-8562-0312c7817392">ADVERSE REACTIONS</a> introduction, <a href="#LINK_8d8866aa-96fb-4067-91f5-d0afb15fd181">INDICATIONS AND USAGE</a>, <a href="#LINK_fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a> and <a href="#LINK_cc20ed18-39c1-4e48-a1a6-025ee34e655b">DOSAGE AND ADMINISTRATION</a>).</p>
+                        <p>*Early clinical studies and incidence rates from early clinical experience with allopurinol suggested that these adverse reactions were found to occur at a rate of greater than 1%. The most frequent event observed was acute attacks of gout following the initiation of therapy. Analyses of current usage suggest that the incidence of these adverse reactions is now less than 1%. The explanation for this decrease has not been determined, but it may be due to following recommended usage (see <a href="#73b1aa92-bc75-499e-8562-0312c7817392">ADVERSE REACTIONS</a> introduction, <a href="#8d8866aa-96fb-4067-91f5-d0afb15fd181">INDICATIONS AND USAGE</a>, <a href="#fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a> and <a href="#cc20ed18-39c1-4e48-a1a6-025ee34e655b">DOSAGE AND ADMINISTRATION</a>).</p>
     </div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "Incidence Less Than 1%<br/>Probably Causally Related"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:08cbbce9-2b10-46df-9cf7-3a25c2c09e43"
+    * id = "08cbbce9-2b10-46df-9cf7-3a25c2c09e43"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -318,13 +301,12 @@ Description: "Header information for the Allopurinol Tablet USP Label"
                         <p>
                            <span style="font-style: italic">Special Senses: </span>taste loss/perversion</p>
                         <p>
-                           <span style="font-style: italic">Urogenital:</span> renal failure, uremia (see <a href="#LINK_fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a>)</p>
+                           <span style="font-style: italic">Urogenital:</span> renal failure, uremia (see <a href="#fa054c2f-7ce9-4749-b24a-579278b7044e">PRECAUTIONS</a>)</p>
     </div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "Incidence Less Than 1%<br/>Causal Relationship Unknown"
-    * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-    * extension[sectionID].valueIdentifier.value = "urn:uuid:2db4d0d4-af2d-499e-9d83-7c37e3454b2b"
+    * id = "2db4d0d4-af2d-499e-9d83-7c37e3454b2b"
     * extension[sectionTime].valueDateTime = "2015-02-01"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -395,8 +377,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#34088-5 "OVERDOSAGE SECTION"
   * title = "OVERDOSAGE"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:e1fd78ab-2564-468e-a7ca-02c94076fbe6"
+  * id = "e1fd78ab-2564-468e-a7ca-02c94076fbe6"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -408,8 +389,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#34068-7 "DOSAGE &amp; ADMINISTRATION SECTION"
   * title = "DOSAGE AND ADMINISTRATION"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:cca9f179-7891-430a-b366-adb8d90b3686"
+  * id = "cca9f179-7891-430a-b366-adb8d90b3686"
   * extension[sectionTime].valueDateTime = "2015-02-01"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -427,8 +407,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[+]
   * code = http://loinc.org#34069-5 "HOW SUPPLIED SECTION"
   * title = "HOW SUPPLIED"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:a04a47d7-9c28-4464-b445-5751711779c9"
+  * id = "a04a47d7-9c28-4464-b445-5751711779c9"
   * extension[sectionTime].valueDateTime = "2017-02-24"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
@@ -461,14 +440,12 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * section[ProductSection]
   * entry[0] = Reference(AllopurinolUSPDefinition)
   * code = http://loinc.org#48780-1 "SPL LISTING DATA ELEMENTS SECTION"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:24f6db00-e00b-4a3d-aa17-5ee56ac2708d"
+  * id = "24f6db00-e00b-4a3d-aa17-5ee56ac2708"
   * extension[sectionTime].valueDateTime = "2017-02-24"
 * section[LabelDisplay]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * title = "PRINCIPAL DISPLAY PANEL"
-  * extension[sectionID].valueIdentifier.system = "urn:ietf:rfc:3986"
-  * extension[sectionID].valueIdentifier.value = "urn:uuid:b56a6c49-58a7-4c93-96cc-5556182a98bd"
+  * id = "b56a6c49-58a7-4c93-96cc-5556182a98bd"
   * extension[sectionTime].valueDateTime = "2017-02-24"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><img alt="Image Description" src="allopurinol-usp-3.jpg"/><caption>SPL Image</caption></div>"""
@@ -500,6 +477,7 @@ Description: "Structured information for the Allopurinol Tablet USP Label"
 
 Instance: AllopurinolUSPActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
+Description: "Active Ingredient Strength for Allupurinol USP"
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
 * substance.code.reference = Reference(AllopurinolIngredientDefinition)
@@ -508,6 +486,7 @@ InstanceOf: SubmittedMedicinalProductIngredient
 
 Instance: AllopurinolIngredientDefinition
 InstanceOf: SubmittedIngredientDefinition
+Description: "Active Ingredient Information for Allupurinol USP"
 * identifier.system = "http://fdasis.nlm.nih.gov"
 * identifier.value = "63CZ7GJN5I"
 * moiety.identifier.system = "http://fdasis.nlm.nih.gov"
@@ -517,37 +496,44 @@ InstanceOf: SubmittedIngredientDefinition
 
 Instance: AllopurinolUSPIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
+Description: "Inactive Ingredient #1 for Allopurinol USP"
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#M28OL1HH48 "CROSCARMELLOSE SODIUM"
 Instance: AllopurinolUSPIngredient2
 InstanceOf: SubmittedMedicinalProductIngredient
+Description: "Inactive Ingredient #2 for Allopurinol USP"
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#EWQ57Q8I5X "LACTOSE MONOHYDRATE"
 Instance: AllopurinolUSPIngredient3
 InstanceOf: SubmittedMedicinalProductIngredient
+Description: "Inactive Ingredient #3 for Allopurinol USP"
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#70097M6I30 "MAGNESIUM STEARATE"
 Instance: AllopurinolUSPIngredient4
 InstanceOf: SubmittedMedicinalProductIngredient
+Description: "Inactive Ingredient #4 for Allopurinol USP"
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#OP1R32D61U "CELLULOSE, MICROCRYSTALLINE"
 Instance: AllopurinolUSPIngredient5
 InstanceOf: SubmittedMedicinalProductIngredient
+Description: "Inactive Ingredient #5 for Allopurinol USP"
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#O8232NY3SJ "STARCH, CORN"
 Instance: AllopurinolUSPIngredient6
 InstanceOf: SubmittedMedicinalProductIngredient
+Description: "Inactive Ingredient #6 for Allopurinol USP"
 * for = Reference(AllopurinolUSPDefinition)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#368GB5141J "SODIUM LAURYL SULFATE"
 
 Instance: Allopurinol100Tablets
 InstanceOf: SubmittedMedicinalPackaging
+Description: "100 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
@@ -560,6 +546,7 @@ InstanceOf: SubmittedMedicinalPackaging
 
 Instance: Allopurinol30Tablets
 InstanceOf: SubmittedMedicinalPackaging
+Description: "30 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
@@ -572,6 +559,7 @@ InstanceOf: SubmittedMedicinalPackaging
 
 Instance: Allopurinol60Tablets
 InstanceOf: SubmittedMedicinalPackaging
+Description: "60 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
@@ -584,6 +572,7 @@ InstanceOf: SubmittedMedicinalPackaging
 
 Instance: Allopurinol90Tablets
 InstanceOf: SubmittedMedicinalPackaging
+Description: "90 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
@@ -596,6 +585,7 @@ InstanceOf: SubmittedMedicinalPackaging
 
 Instance: AllopurinolMarketing
 InstanceOf: SubmittedMedicinalProductMarketing
+Description: "Marketing information for Allopurinol USP"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
 * identifier.value = "NDA018832"
 * subject = Reference(AllopurinolUSPDefinition)

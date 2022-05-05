@@ -6,6 +6,7 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="Organization/AidarexPharmaceuticals" key="Organization-AidarexPharmaceuticals" name="AidarexPharmaceuticals"/>
+<artifact id="ValueSet/valueset-AllNDCProducts" key="ValueSet-valueset-AllNDCProducts" name="AllNDCProducts"/>
 <artifact id="PackagedProductDefinition/Allopurinol100Tablets" key="PackagedProductDefinition-Allopurinol100Tablets" name="Allopurinol100Tablets"/>
 <artifact id="PackagedProductDefinition/Allopurinol30Tablets" key="PackagedProductDefinition-Allopurinol30Tablets" name="Allopurinol30Tablets"/>
 <artifact id="PackagedProductDefinition/Allopurinol60Tablets" key="PackagedProductDefinition-Allopurinol60Tablets" name="Allopurinol60Tablets"/>
@@ -121,7 +122,6 @@
 <artifact id="OrganizationAffiliation/SampleLabelerUSAgentAffiliation" key="OrganizationAffiliation-SampleLabelerUSAgentAffiliation" name="SampleLabelerUSAgentAffiliation"/>
 <artifact id="Bundle/SampleOutOfBusinessNotificationBundle" key="Bundle-SampleOutOfBusinessNotificationBundle" name="SampleOutOfBusinessNotificationBundle"/>
 <artifact id="StructureDefinition/sectionEffectiveTime" key="StructureDefinition-sectionEffectiveTime" name="SectionEffectiveTime"/>
-<artifact id="StructureDefinition/sectionIdentifier" key="StructureDefinition-sectionIdentifier" name="SectionIdentifier"/>
 <artifact id="StructureDefinition/SubmittedMedicationLogicalModel" key="StructureDefinition-SubmittedMedicationLogicalModel" name="Submitted Medication Logical Model"/>
 <artifact id="StructureDefinition/SubmittedIngredientDefinition" key="StructureDefinition-SubmittedIngredientDefinition" name="SubmittedIngredientDefinition"/>
 <artifact id="StructureDefinition/SubmittedMedicinalPackaging" key="StructureDefinition-SubmittedMedicinalPackaging" name="SubmittedMedicinalPackaging"/>
