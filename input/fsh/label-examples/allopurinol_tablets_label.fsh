@@ -6,53 +6,37 @@ Description: "A bundle containing all of the information for the Allopurinol Tab
 * type = #document
 * timestamp = "2017-02-24T00:00:00.0000Z"
 * entry[0]
-  * fullUrl = "urn:uuid:c9a01871-bbf8-4b31-9b9b-9fa8c0997b29"
-  * resource = AllopurinolTabletLabelComposition
+  * insert bundleEntry(Composition, AllopurinolTabletLabelComposition)
 * entry[+]
-  * fullUrl = "http://example.org/Organization/AidarexPharmaceuticals"
-  * resource = AidarexPharmaceuticals
+  * insert bundleEntry(Organization, AidarexPharmaceuticals)
 * entry[+]
-  * fullUrl = "http://example.org/MedicinalProductDefinition/AllopurinolUSPDefinition"
-  * resource = AllopurinolUSPDefinition
+  * insert bundleEntry(MedicinalProductDefinition, AllopurinolUSPDefinition)
 * entry[+]
-  * fullUrl = "http://example.org/Ingredient/AllopurinolUSPActiveIngredient"
-  * resource = AllopurinolUSPActiveIngredient
+  * insert bundleEntry(Ingredient, AllopurinolUSPActiveIngredient)
 * entry[+]
-  * fullUrl = "http://example.org/SubstanceDefinition/AllopurinolIngredientDefinition"
-  * resource = AllopurinolIngredientDefinition
+  * insert bundleEntry(SubstanceDefinition, AllopurinolIngredientDefinition)
 * entry[+]
-  * fullUrl = "http://example.org/Ingredient/AllopurinolUSPIngredient1"
-  * resource = AllopurinolUSPIngredient1
+  * insert bundleEntry(Ingredient, AllopurinolUSPIngredient1)
 * entry[+]
-  * fullUrl = "http://example.org/Ingredient/AllopurinolUSPIngredient2"
-  * resource = AllopurinolUSPIngredient2
+  * insert bundleEntry(Ingredient, AllopurinolUSPIngredient2)
 * entry[+]
-  * fullUrl = "http://example.org/Ingredient/AllopurinolUSPIngredient3"
-  * resource = AllopurinolUSPIngredient3
+  * insert bundleEntry(Ingredient, AllopurinolUSPIngredient3)
 * entry[+]
-  * fullUrl = "http://example.org/Ingredient/AllopurinolUSPIngredient4"
-  * resource = AllopurinolUSPIngredient4
+  * insert bundleEntry(Ingredient, AllopurinolUSPIngredient4)
 * entry[+]
-  * fullUrl = "http://example.org/Ingredient/AllopurinolUSPIngredient5"
-  * resource = AllopurinolUSPIngredient5
+  * insert bundleEntry(Ingredient, AllopurinolUSPIngredient5)
 * entry[+]
-  * fullUrl = "http://example.org/Ingredient/AllopurinolUSPIngredient6"
-  * resource = AllopurinolUSPIngredient6
+  * insert bundleEntry(Ingredient, AllopurinolUSPIngredient6)
 * entry[+]
-  * fullUrl = "http://example.org/PackagedProductDefinition/Allopurinol100Tablets"
-  * resource = Allopurinol100Tablets
+  * insert bundleEntry(PackagedProductDefinition, Allopurinol100Tablets)
 * entry[+]
-  * fullUrl = "http://example.org/PackagedProductDefinition/Allopurinol30Tablets"
-  * resource = Allopurinol30Tablets
+  * insert bundleEntry(PackagedProductDefinition, Allopurinol30Tablets)
 * entry[+]
-  * fullUrl = "http://example.org/PackagedProductDefinition/Allopurinol60Tablets"
-  * resource = Allopurinol60Tablets
+  * insert bundleEntry(PackagedProductDefinition, Allopurinol60Tablets)
 * entry[+]
-  * fullUrl = "http://example.org/PackagedProductDefinition/Allopurinol90Tablets"
-  * resource = Allopurinol90Tablets
+  * insert bundleEntry(PackagedProductDefinition, Allopurinol90Tablets)
 * entry[+]
-  * fullUrl = "http://example.org/RegulatedAuthorization/AllopurinolMarketing"
-  * resource = AllopurinolMarketing
+  * insert bundleEntry(RegulatedAuthorization, AllopurinolMarketing)
 
 Instance: AidarexPharmaceuticals
 InstanceOf: IdentifiedLabeler
