@@ -65,10 +65,12 @@ Description: "A profile that represents a document that is required for Product 
 * section[ProductSection].code = http://loinc.org#48780-1
 * section[ProductSection].title 0..0
 * section[ProductSection].text 0..1
+* section[ProductSection].section 0..0
 * section[LabelDisplay].entry 0..0
 * section[LabelDisplay].code = http://loinc.org#51945-4
 * section[LabelDisplay].text 1..1
 * section[LabelDisplay].entry 0..0
+* section[LabelDisplay].section 0..0
 
 Extension: VersionNumber
 Id: versionNumber
