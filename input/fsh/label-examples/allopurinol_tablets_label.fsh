@@ -523,7 +523,8 @@ Description: "100 Tablets Bottle of Allopurinol USP"
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-00"
-* package.quantity.value = 100
+* package.containedItem.amount = 100 '1'
+* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
@@ -536,7 +537,8 @@ Description: "30 Tablets Bottle of Allopurinol USP"
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-30"
-* package.quantity.value = 30
+* package.containedItem.amount = 30 '1'
+* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
@@ -548,8 +550,9 @@ Description: "60 Tablets Bottle of Allopurinol USP"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "53217-187-30"
-* package.quantity.value = 60
+* package.identifier.value = "53217-187-60"
+* package.containedItem.amount = 60 '1'
+* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
@@ -561,8 +564,9 @@ Description: "90 Tablets Bottle of Allopurinol USP"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "53217-187-30"
-* package.quantity.value = 90
+* package.identifier.value = "53217-187-90"
+* package.containedItem.amount = 90 '1'
+* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
