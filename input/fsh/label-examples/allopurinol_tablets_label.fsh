@@ -432,7 +432,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * id = "b56a6c49-58a7-4c93-96cc-5556182a98bd"
   * extension[sectionTime].valueDateTime = "2017-02-24"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><img alt="Image Description" src="allopurinol-usp-3.jpg"/><caption>SPL Image</caption></div>"""
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><img alt="Image Description" src="allopurinol-usp-3.jpg"/><div>SPL Image</div></div>"""
 
 Instance: AllopurinolUSPDefinition
 InstanceOf: SubmittedMedicinalProduct
