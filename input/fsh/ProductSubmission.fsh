@@ -37,14 +37,14 @@ Description: "A profile that represents a document that is required for Product 
 * author 1..1 MS
 * author only Reference(IdentifiedLabeler)
 * section 1..* MS
-  * extension contains SectionEffectiveTime named sectionTime 0..1 MS
+  * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionHighlights named highlights 0..1 MS
   * code 1..1 MS
   * code from SPLSectionCodes (required)
   * title MS
   * text MS
   * entry MS
   * section 0..* MS
-    * extension contains SectionEffectiveTime named sectionTime 0..1 MS
+    * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionHighlights named highlights 0..1 MS
     * code 1..1 MS
     * code from SPLSectionCodes (required)
     * title MS
@@ -54,14 +54,9 @@ Description: "A profile that represents a document that is required for Product 
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section ^slicing.description = "Slice based on the different sections that are needed in a SPL document."
-* section contains ProductSection 0..1 and LabelDisplay 0..1
+* section contains ProductSection 0..1 and LabelDisplay 0..*
 * section[ProductSection].entry 1..* MS
-* section[ProductSection].entry ^slicing.discriminator.type = #type
-* section[ProductSection].entry ^slicing.discriminator.path = "$this.resolve()"
-* section[ProductSection].entry ^slicing.rules = #open
-* section[ProductSection].entry ^slicing.description = "Slice based on the resources that go into a product submission."
-* section[ProductSection].entry contains ProductDefinition 1..1 MS
-* section[ProductSection].entry[ProductDefinition] only Reference(SubmittedMedicinalProduct)
+* section[ProductSection].entry only Reference(SubmittedMedicinalProduct)
 * section[ProductSection].code = http://loinc.org#48780-1
 * section[ProductSection].title 0..0
 * section[ProductSection].text 0..1
@@ -82,6 +77,11 @@ Id: sectionEffectiveTime
 Description: "Providing an effective time for a section."
 * value[x] only dateTime or Period
  
+Extension: SectionHighlights
+Id: sectionHighlights
+Description: "Provide markdown text that is highlights of a section."
+* value[x] only string
+
 ValueSet: SPLSectionCodes
 Id: splSectionCodes
 Title: "SPL Section Codes"
