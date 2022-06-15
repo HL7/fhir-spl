@@ -118,6 +118,7 @@ groups:
       - StructureDefinition/ProductSubmissionDocument
       - StructureDefinition/sectionEffectiveTime
       - StructureDefinition/versionNumber
+      - StructureDefinition/sectionHighlights
   DualSubmission:
     name: Dual Submission Tracking
     description: Artifacts needed for tracking dual submissions of SPL documents and FHIR Bundles
@@ -125,3 +126,119 @@ groups:
       - StructureDefinition/SPLDocumentReference
       - StructureDefinition/DualSubmissionProvenance
       - StructureDefinition/splDocumentDate
+  AllopurinolLabel:
+    name: Allopurinol Label
+    description: Example Instances associated with the label for Allopurinol USP
+    resources:
+      - Bundle/AllopurinolTabletLabelBundle
+      - Composition/AllopurinolTabletLabelComposition
+      - MedicinalProductDefinition/AllopurinolUSPDefinition
+      - PackagedProductDefinition/Allopurinol30Tablets
+      - PackagedProductDefinition/Allopurinol60Tablets
+      - PackagedProductDefinition/Allopurinol90Tablets
+      - PackagedProductDefinition/Allopurinol100Tablets
+      - Ingredient/AllopurinolUSPActiveIngredient
+      - SubstanceDefinition/AllopurinolIngredientDefinition
+      - Ingredient/AllopurinolUSPIngredient1
+      - Ingredient/AllopurinolUSPIngredient2
+      - Ingredient/AllopurinolUSPIngredient3
+      - Ingredient/AllopurinolUSPIngredient4
+      - Ingredient/AllopurinolUSPIngredient5
+      - Ingredient/AllopurinolUSPIngredient6
+      - RegulatedAuthorization/AllopurinolMarketing
+      - Organization/AidarexPharmaceuticals
+  EnbrelLabel:
+    name: Enbrel Label
+    description: Example Instances associated with the label for Enbrel
+    resources:
+      - Bundle/EnbrelSyringeLabelBundle
+      - Composition/EnbrelSyringeLabelComposition
+      - Organization/ImmunexCorporation
+      - MedicinalProductDefinition/Enbrel010Definition
+      - PackagedProductDefinition/Enbrel010Package
+      - Ingredient/Enbrel010ActiveIngredient
+      - SubstanceDefinition/Enbrel010IngredientDefinition
+      - Ingredient/Enbrel010Ingredient1
+      - Ingredient/Enbrel010Ingredient2
+      - Ingredient/Enbrel010Ingredient3
+      - RegulatedAuthorization/Enbrel010Marketing
+      - MedicinalProductDefinition/Enbrel021Definition
+      - PackagedProductDefinition/Enbrel021Package
+      - Ingredient/Enbrel021ActiveIngredient
+      - SubstanceDefinition/Enbrel021IngredientDefinition
+      - Ingredient/Enbrel021Ingredient1
+      - Ingredient/Enbrel021Ingredient2
+      - Ingredient/Enbrel021Ingredient3
+      - RegulatedAuthorization/Enbrel021Marketing
+      - MedicinalProductDefinition/Enbrel032Definition
+      - PackagedProductDefinition/Enbrel032Package
+      - Ingredient/Enbrel032ActiveIngredient
+      - SubstanceDefinition/Enbrel032IngredientDefinition
+      - Ingredient/Enbrel032Ingredient1
+      - Ingredient/Enbrel032Ingredient2
+      - Ingredient/Enbrel032Ingredient3
+      - RegulatedAuthorization/Enbrel032Marketing
+      - MedicinalProductDefinition/Enbrel044Definition
+      - PackagedProductDefinition/Enbrel044Package
+      - Ingredient/Enbrel044ActiveIngredient
+      - SubstanceDefinition/Enbrel044IngredientDefinition
+      - Ingredient/Enbrel044Ingredient1
+      - Ingredient/Enbrel044Ingredient2
+      - Ingredient/Enbrel044Ingredient3
+      - RegulatedAuthorization/Enbrel044Marketing
+      - MedicinalProductDefinition/Enbrel055Definition
+      - PackagedProductDefinition/Enbrel055Package
+      - Ingredient/Enbrel055ActiveIngredient
+      - SubstanceDefinition/Enbrel055IngredientDefinition
+      - Ingredient/Enbrel055Ingredient1
+      - Ingredient/Enbrel055Ingredient2
+      - Ingredient/Enbrel055Ingredient3
+      - RegulatedAuthorization/Enbrel055Marketing
+      - MedicinalProductDefinition/Enbrel435Definition
+      - PackagedProductDefinition/Enbrel435Package
+      - Ingredient/Enbrel435ActiveIngredient
+      - SubstanceDefinition/Enbrel435IngredientDefinition
+      - Ingredient/Enbrel435Ingredient1
+      - Ingredient/Enbrel435Ingredient2
+      - Ingredient/Enbrel435Ingredient3
+      - RegulatedAuthorization/Enbrel435Marketing
+      - MedicinalProductDefinition/Enbrel446Definition
+      - PackagedProductDefinition/Enbrel446Package
+      - Ingredient/Enbrel446ActiveIngredient
+      - SubstanceDefinition/Enbrel446IngredientDefinition
+      - Ingredient/Enbrel446Ingredient1
+      - Ingredient/Enbrel446Ingredient2
+      - Ingredient/Enbrel446Ingredient3
+      - RegulatedAuthorization/Enbrel446Marketing
+      - MedicinalProductDefinition/Enbrel455Definition
+      - PackagedProductDefinition/Enbrel455Package
+      - Ingredient/Enbrel455ActiveIngredient
+      - SubstanceDefinition/Enbrel455IngredientDefinition
+      - Ingredient/Enbrel455Ingredient1
+      - Ingredient/Enbrel455Ingredient2
+      - Ingredient/Enbrel455Ingredient3
+      - RegulatedAuthorization/Enbrel455Marketing
+      - MedicinalProductDefinition/Enbrel456Definition
+      - PackagedProductDefinition/Enbrel456Package
+      - Ingredient/Enbrel456ActiveIngredient
+      - SubstanceDefinition/Enbrel456IngredientDefinition
+      - Ingredient/Enbrel456Ingredient1
+      - Ingredient/Enbrel456Ingredient2
+      - Ingredient/Enbrel456Ingredient3
+      - RegulatedAuthorization/Enbrel456Marketing
+      - MedicinalProductDefinition/Enbrel425Definition
+      - PackagedProductDefinition/Enbrel425Package
+      - RegulatedAuthorization/Enbrel425Marketing
+      - MedicinalProductDefinition/Enbrel425Part1Definition
+      - PackagedProductDefinition/Enbrel425Part1Package
+      - RegulatedAuthorization/Enbrel425Part1Marketing
+      - MedicinalProductDefinition/Enbrel425Part2Definition
+      - PackagedProductDefinition/Enbrel425Part2Package
+      - RegulatedAuthorization/Enbrel425Part2Marketing
+      - Ingredient/Enbrel425Part1ActiveIngredient
+      - SubstanceDefinition/Enbrel425Part1IngredientDefinition
+      - Ingredient/Enbrel425Part1Ingredient1
+      - Ingredient/Enbrel425Part1Ingredient2
+      - Ingredient/Enbrel425Part1Ingredient3
+      - Ingredient/Enbrel425Part2Ingredient1
+      - Ingredient/Enbrel425Part2Ingredient2
