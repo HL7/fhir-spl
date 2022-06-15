@@ -70,6 +70,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * package 1..1 MS
 * package.identifier 1..* MS
 * package.type 1..1 MS
+* package.quantity 0..1 MS
 * package.property 0..* MS
 * package.property.type 1..1 MS
 * package.property.value[x] 1..1 MS
