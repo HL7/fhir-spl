@@ -12,25 +12,195 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel435Definition)
 * entry[+]
+  * insert bundleEntry(Ingredient, Enbrel435ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel435IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel435Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel435Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel435Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel435Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel435Marketing)
+* entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel445Definition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel445ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel445IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel445Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel445Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel445Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel445Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel445Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel425Definition)
 * entry[+]
+  * insert bundleEntry(MedicinalProductDefinition, Enbrel425Part1Definition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel425Part1ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel425Part1IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel425Part1Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel425Part1Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel425Part1Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel425Part1Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel425Part1Marketing)
+* entry[+]
+  * insert bundleEntry(MedicinalProductDefinition, Enbrel425Part2Definition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel425Part2Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel425Part2Ingredient2)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel425Part2Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel425Part2Marketing)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel425Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel425Marketing)
+* entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel455Definition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel455ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel455IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel455Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel455Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel455Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel455Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel455Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel456Definition)
 * entry[+]
+  * insert bundleEntry(Ingredient, Enbrel456ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel456IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel456Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel456Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel456Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel456Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel456Marketing)
+* entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel446Definition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel446ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel446IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel446Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel446Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel446Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel446Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel446Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel021Definition)
 * entry[+]
+  * insert bundleEntry(Ingredient, Enbrel021ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel021IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel021Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel021Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel021Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel021Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel021Marketing)
+* entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel032Definition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel032ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel032IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel032Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel032Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel032Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel032Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel032Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel010Definition)
 * entry[+]
+  * insert bundleEntry(Ingredient, Enbrel010ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel010IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel010Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel010Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel010Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel010Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel010Marketing)
+* entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel044Definition)
 * entry[+]
+  * insert bundleEntry(Ingredient, Enbrel044ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel044IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel044Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel044Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel044Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel044Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel044Marketing)
+* entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel055Definition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel055ActiveIngredient)
+* entry[+]
+  * insert bundleEntry(SubstanceDefinition, Enbrel055IngredientDefinition)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel055Ingredient1)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel055Ingredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel055Ingredient3)
+* entry[+]
+  * insert bundleEntry(PackagedProductDefinition, Enbrel055Package)
+* entry[+]
+  * insert bundleEntry(RegulatedAuthorization, Enbrel055Marketing)
 
 Instance: ImmunexCorporation
 InstanceOf: IdentifiedLabeler
