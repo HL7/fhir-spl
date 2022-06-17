@@ -44,6 +44,11 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * marketingStatus.dateRange 1..1 MS
 * specialMeasures 0..* MS
 * specialMeasures from http://evs.nci.nih.gov/valueset/FDA/C54459 (required)
+* operation 0..* MS
+* operation.type.concept 1..1 MS
+* operation.type.concept from http://evs.nci.nih.gov/valueset/FDA/C73600 (required)
+* operation.organization 1..1 MS
+* operation.organization only Reference(IdentifiedEstablishment)
 * characteristic 0..* MS
 * characteristic.type 1..1 MS
 * characteristic.type from SubmittedMedicinalProductCharacteristicTypes (required)

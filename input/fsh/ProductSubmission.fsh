@@ -6,7 +6,7 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * type = #document
 * timestamp 1..1 MS
 * entry 2..*
-* entry ^slicing.discriminator.type = #type
+* entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Product Submission document."

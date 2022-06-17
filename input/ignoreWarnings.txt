@@ -16,6 +16,7 @@ Error from server: Unable to provide support for code system urn:oid:2.16.840.1.
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.113883.1.11.19255' is unknown so the code cannot be validated]
 ValueSet http://evs.nci.nih.gov/valueset/FDA/C54456 not found by validator
 ValueSet http://evs.nci.nih.gov/valueset/FDA/C54455 not found by validator
+ValueSet http://evs.nci.nih.gov/valueset/FDA/C73600 not found by validator
 ValueSet http://hl7.org/fhir/ValueSet/combined-dose-form not found by validator
 
 # Allow for different display names from LOINC for FDA purposes
