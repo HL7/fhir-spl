@@ -374,7 +374,7 @@ Description: "Lantus Vial Packaging"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "0088-5021-01"
 * package.type = $NCI-T#C43169 "PACKAGE"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * package.package.type = $NCI-T#C43209 "VIAL, GLASS"
 * package.package.quantity = 1
@@ -399,7 +399,7 @@ Description: "Lantus Syringe Packaging"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "0088-5020-01"
 * package.type = $NCI-T#C43169 "PACKAGE"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "0088-5020-04"

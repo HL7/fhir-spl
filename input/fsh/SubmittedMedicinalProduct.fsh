@@ -111,7 +111,7 @@ Description: "Used to represent an substance's active moiety."
 * identifier 1..* MS
 * name 1..1 MS
 * name.name 1..1 MS
-* moiety 1..1 MS
+* moiety 1..2 MS
 * moiety.identifier 1..1 MS
 * moiety.name 1..1 MS
 
@@ -123,14 +123,21 @@ Description: "Codes that identify the relationship between two organizations."
 * #PROPRIETARY "Proprietary Name"
 * #NONPROPRIETARY "Generic Name (Non-Proprietary)"
 
+CodeSystem: SubmittedMedicinalProductCharacteristicTypes
+Id: codesystem-characteristicTypes
+Description: "Codes that were specified in the SPL guide for characteristic types."
+* ^caseSensitive = false
+* #SPLCOLOR "Color"
+* #SPLIMPRINT "Imprint"
+* #SPLSCORE "Score"
+* #SPLSHAPE "Shape"
+* #SPLSIZE "Size"
+* #SPLCMBPRDTP "Combination Product Type"
+
 ValueSet: SubmittedMedicinalProductCharacteristicTypes
 Id: valueset-SubmittedMedicinalProductCharacteristicTypes
 Description: "Codes that identify the types of characteristics allowed for Submitted Medicinal Product."
-* urn:oid:2.16.840.1.113883.1.11.19255#SPLCOLOR
-* urn:oid:2.16.840.1.113883.1.11.19255#SPLIMPRINT
-* urn:oid:2.16.840.1.113883.1.11.19255#SPLSCORE
-* urn:oid:2.16.840.1.113883.1.11.19255#SPLSHAPE
-* urn:oid:2.16.840.1.113883.1.11.19255#SPLSIZE
+* include codes from system SubmittedMedicinalProductCharacteristicTypes
 
 ValueSet: AllNDCProducts
 Id: valueset-AllNDCProducts

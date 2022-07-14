@@ -864,13 +864,13 @@ Description: "4 1mL Syringes of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-435-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-435-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-435
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-435
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel435Marketing
@@ -949,13 +949,13 @@ Description: "4 1mL autoinjectors of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-445-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-445-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-445
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-445
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel445Marketing
@@ -1059,7 +1059,7 @@ Description: "1 vial of Enbrel powder"
 * package.containedItem.amount = 1 'mL' "mL"
 * package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-424
 * package.type = $NCI-T#C43226 "VIAL"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 
 Instance: Enbrel425Part2Ingredient1
@@ -1088,7 +1088,7 @@ Description: "1 syringe of sterile bacteriostatic water"
 * package.containedItem.amount = 1 'mL' "mL"
 * package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-910
 * package.type = $NCI-T#C43202 "SYRINGE"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 
 Instance: Enbrel425Package
@@ -1203,13 +1203,13 @@ Description: "4 0.5mL syringes of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-455-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-455-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 0.5 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-455
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-455
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel455Marketing
@@ -1288,13 +1288,13 @@ Description: "4 1mL cartridges of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-456-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-456-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-456
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-456
 * package.package.type = $NCI-T#C43183 "CARTRIDGE"
 
 Instance: Enbrel456Marketing
@@ -1373,13 +1373,13 @@ Description: "4 1mL autoinjectors of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-446-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-446-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-446
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-446
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel446Marketing
@@ -1458,13 +1458,13 @@ Description: "4 1mL Syringes of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-021-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-021-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-021
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-021
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel021Marketing
@@ -1543,13 +1543,13 @@ Description: "4 1mL autoinjectors of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-032-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-032-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-032
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-032
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel032Marketing
@@ -1628,13 +1628,13 @@ Description: "4 0.5mL syringes of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-010-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-010-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 0.5 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-010
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-010
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel010Marketing
@@ -1713,13 +1713,13 @@ Description: "4 1mL cartridges of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-044-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-044-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-044
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-044
 * package.package.type = $NCI-T#C43183 "CARTRIDGE"
 
 Instance: Enbrel044Marketing
@@ -1798,13 +1798,13 @@ Description: "4 0.5mL syringes of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-055-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = urn:oid:2.16.840.1.113883.1.11.19255#SPLCMBPRDTP
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-055-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 0.5 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-055
+* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-055
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel055Marketing

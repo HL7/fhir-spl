@@ -255,6 +255,7 @@
 <artifact id="StructureDefinition/SubmittedMedicinalPackaging" key="StructureDefinition-SubmittedMedicinalPackaging" name="SubmittedMedicinalPackaging"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProduct" key="StructureDefinition-SubmittedMedicinalProduct" name="SubmittedMedicinalProduct"/>
 <artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SubmittedMedicinalProductCharacteristicTypes"/>
+<artifact id="CodeSystem/codesystem-characteristicTypes" key="CodeSystem-codesystem-characteristicTypes" name="SubmittedMedicinalProductCharacteristicTypes"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProductIngredient" key="StructureDefinition-SubmittedMedicinalProductIngredient" name="SubmittedMedicinalProductIngredient"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProductMarketing" key="StructureDefinition-SubmittedMedicinalProductMarketing" name="SubmittedMedicinalProductMarketing"/>
 <artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="SubmittedMedicinalProductNameTypes"/>
