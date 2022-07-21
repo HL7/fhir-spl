@@ -258,8 +258,16 @@ groups:
       - Composition/LantusInjectionLabelComposition
       - MedicinalProductDefinition/LantusVialDefinition
       - MedicinalProductDefinition/LantusSyringeDefinition
-      - PackagedProductDefinition/LantusVialPackage
       - PackagedProductDefinition/LantusSyringePackage
+      - PackagedProductDefinition/LantusVialPackage
+      - Ingredient/LantusSyringeActiveIngredient
+      - SubstanceDefinition/LantusSyringeIngredientDefinition
+      - Ingredient/LantusSyringeIngredient1
+      - Ingredient/LantusSyringeIngredient2
+      - Ingredient/LantusSyringeIngredient3
+      - Ingredient/LantusSyringeIngredient4
+      - Ingredient/LantusSyringeIngredient5
+      - Ingredient/LantusSyringeIngredient6
       - Ingredient/LantusVialActiveIngredient
       - SubstanceDefinition/LantusVialIngredientDefinition
       - Ingredient/LantusVialIngredient1
@@ -269,14 +277,6 @@ groups:
       - Ingredient/LantusVialIngredient5
       - Ingredient/LantusVialIngredient6
       - Ingredient/LantusVialIngredient7
-      - Ingredient/LantusSyringeActiveIngredient
-      - SubstanceDefinition/LantusSyringeIngredientDefinition
-      - Ingredient/LantusSyringeIngredient1
-      - Ingredient/LantusSyringeIngredient2
-      - Ingredient/LantusSyringeIngredient3
-      - Ingredient/LantusSyringeIngredient4
-      - Ingredient/LantusSyringeIngredient5
-      - Ingredient/LantusSyringeIngredient6
       - RegulatedAuthorization/LantusVialMarketing
       - RegulatedAuthorization/LantusSyringeMarketing
       - Organization/SanofiAventisUS
