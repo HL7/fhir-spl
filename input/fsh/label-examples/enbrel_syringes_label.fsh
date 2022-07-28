@@ -228,7 +228,8 @@ Description: "Header information for the Enbrel Syringe Labels"
   * title = "WARNING: SERIOUS INFECTIONS and MALIGNANCIES"
   * id = "1f13be11-112a-48e5-bbf8-072311d5c3dd"
   * extension[sectionTime].valueDateTime = "2021-12-13"
-  * extension[highlights].valueString = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.status = #additional
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="highlights">
                         <p>WARNING: SERIOUS INFECTIONS and MALIGNANCIES</p>
                         <p>
                            <span>See full prescribing information for complete boxed warning.</span>
@@ -258,13 +259,13 @@ Description: "Header information for the Enbrel Syringe Labels"
                               <span style="font-weight: bold">Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF-blockers, including Enbrel. (<a href="#S5.3">5.3</a>)</span>
                            </li>
                         </ul>
-  </div>"""
+  </div></div>"""
   * section[0]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "0fbda1ce-5bd2-482b-afd8-b780f227be23"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>
                            <span style="font-weight: bold">SERIOUS INFECTIONS</span>
                         </p>
@@ -294,27 +295,28 @@ Description: "Header information for the Enbrel Syringe Labels"
                         <p>
                            <span style="font-weight: bold">Patients should be closely monitored for the development of signs and symptoms of infection during and after treatment with Enbrel, including the possible development of tuberculosis in patients who tested negative for latent tuberculosis infection prior to initiating therapy.</span>
                         </p>
-  </div>"""
+  </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "b49a8497-5580-4d1b-a3bf-c7bd55a910c8"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>
                            <span style="font-weight: bold">MALIGNANCIES</span>
                         </p>
                         <p>
                            <span style="font-weight: bold">Lymphoma and other malignancies, some fatal, have been reported in children and adolescent patients treated with TNF-blockers, including Enbrel.    </span>
                         </p>
-   </div>"""
+   </div></div>"""
 
 * section[+]
   * code = http://loinc.org#34067-9 "INDICATIONS &amp; USAGE SECTION"
   * title = "1 INDICATIONS AND USAGE"
   * id = "c854ce8a-aea8-4403-917d-8d2c9bebf6ad"
   * extension[sectionTime].valueDateTime = "2021-12-13"
-  * extension[highlights].valueString = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.status = #additional
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="highlights">
                         <p>Enbrel is a tumor necrosis factor (TNF) blocker indicated for the treatment of:</p>
                         <ul>
                            <li> Rheumatoid Arthritis (RA) (<a href="#S1.1">1.1</a>)</li>
@@ -323,59 +325,60 @@ Description: "Header information for the Enbrel Syringe Labels"
                            <li> Ankylosing Spondylitis (AS) (<a href="#S1.4">1.4</a>)</li>
                            <li> Plaque Psoriasis (PsO) in patients 4 years or older (<a href="#S1.5">1.5</a>)</li>
                         </ul>
-  </div>"""
+  </div></div>"""
   * section[0]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "1.1 Rheumatoid Arthritis"
     * id = "5c3f71af-246f-4d3f-b7b7-347b3264e21a"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms, inducing major clinical response, inhibiting the progression of structural damage, and improving physical function in patients with moderately to severely active rheumatoid arthritis (RA).  Enbrel can be initiated in combination with methotrexate (MTX) or used alone.</p>
-     </div>"""
+     </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "1.2	Polyarticular Juvenile Idiopathic Arthritis"
     * id = "d0eab55f-8f21-4828-95dc-a59686da130f"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms of moderately to severely active polyarticular juvenile idiopathic arthritis (JIA) in patients ages 2 and older.</p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "1.3	Psoriatic Arthritis"
     * id = "26f6fbd0-80ba-466b-9682-6740277d81a3"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms, inhibiting the progression of structural damage of active arthritis, and improving physical function in patients with psoriatic arthritis (PsA).  Enbrel can be used with or without methotrexate.</p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "1.4	Ankylosing Spondylitis"
     * id = "9bca3f1c-7745-485f-8178-97c907ca4d60"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms in patients with active ankylosing spondylitis (AS).</p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "1.5	Plaque Psoriasis"
     * id = "3ec2451e-8e5f-4e29-9503-edf9fad19b12"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for the treatment of patients 4 years or older with chronic moderate to severe plaque psoriasis (PsO) who are candidates for systemic therapy or phototherapy.</p>
-    </div>"""
+    </div></div>"""
 	
 * section[+]
   * code = http://loinc.org#34068-7 "DOSAGE &amp; ADMINISTRATION SECTION"
   * title = "2 DOSAGE AND ADMINISTRATION"
   * id = "eba5422e-c30e-4fb0-baa4-dcfc08ac5c6b"
   * extension[sectionTime].valueDateTime = "2021-12-13"
-  * extension[highlights].valueString = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.status = #additional
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="highlights">
                         <p>Enbrel is administered by subcutaneous injection.</p>
                         <table width="100%">
                            <col width="50%" align="left" valign="top"/>
@@ -406,18 +409,16 @@ Description: "Header information for the Enbrel Syringe Labels"
                               </tr>
                            </tbody>
                         </table>
-  </div>"""  
-  * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  </div><div style="narrative">
                   <p>Administration of one 50 mg Enbrel single<span style="font-weight: bold">-</span>dose prefilled syringe, one single<span style="font-weight: bold">-</span>dose prefilled Enbrel SureClick autoinjector, or one Enbrel Mini single<span style="font-weight: bold">-</span>dose prefilled cartridge (for use with the AutoTouch reusable autoinjector only), provides a dose equivalent to two 25 mg Enbrel single-dose prefilled syringes, two 25 mg single<span style="font-weight: bold">-</span>dose vials, or two multiple-dose vials of lyophilized Enbrel, when multiple<span style="font-weight: bold">-</span>dose vials are reconstituted and administered as recommended.</p>
-  </div>"""
+  </div></div>"""
   * section[0]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "2.1 Adult Patients"
     * id = "ded84416-f6db-4705-85d4-b3ae59e6a1a1"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is administered by subcutaneous injection.</p>
                         <table width="75%" id="table1">
                            <h2>Table 1. Dosing and Administration for Adult Patients</h2>
@@ -444,37 +445,37 @@ Description: "Header information for the Enbrel Syringe Labels"
                            </tbody>
                         </table>
                         <p>See the Enbrel (etanercept) "Instructions for Use" insert for detailed information on injection site selection and dose administration <span style="font-style: italic">[see <a href="#S2.3">Dosage and Administration (2.3)</a> and <a href="#S17">Patient Counseling Information (17)</a>]</span>.</p>
-     </div>"""
+     </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "5ba9967a-f2ae-43bd-916b-471cf7736400"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                               <p>
                                  <span style="text-decoration: underline">Adult Rheumatoid Arthritis, Ankylosing Spondylitis, and Psoriatic Arthritis Patients</span>
                               </p>
                               <p>Methotrexate, glucocorticoids, salicylates, nonsteroidal anti-inflammatory drugs (NSAIDs), or analgesics may be continued during treatment with Enbrel.</p>
                               <p>Based on a study of 50 mg Enbrel twice weekly in patients with RA that suggested higher incidence of adverse reactions but similar American College of Rheumatology (ACR) response rates, doses higher than 50 mg per week are not recommended. </p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "58b2c4bd-8011-42e8-b5e9-73bd7921dd64"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                               <p>
                                  <span style="text-decoration: underline">Adult Plaque Psoriasis Patients</span>
                               </p>
                               <p>In addition to the 50 mg twice weekly recommended starting dose, starting doses of 25 mg or 50 mg per week were shown to be efficacious.  The proportion of responders was related to Enbrel dosage <span style="font-style: italic">[see <a href="#S14.5">Clinical Studies (14.5)</a>]</span>.</p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "2.2	Pediatric Patients"
     * id = "c0e3dab3-d501-4b1f-80e6-1b9278c298e0"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is administered by subcutaneous injection.</p>
                         <table width="75%" id="table2">
                            <h2>Table 2. Dosing and Administration for Pediatric Patients (PsO or JIA)</h2>
@@ -500,49 +501,49 @@ Description: "Header information for the Enbrel Syringe Labels"
                         <p>To achieve pediatric doses other than 25 mg or 50 mg, use Enbrel solution in a single-dose vial or reconstituted lyophilized powder in a multiple-dose vial.</p>
                         <p>Doses of Enbrel higher than those described in Table 2 have not been studied in pediatric patients.</p>
                         <p>In JIA patients, glucocorticoids, NSAIDs, or analgesics may be continued during treatment with Enbrel.</p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "2.3	Preparation of Enbrel"
     * id = "6ed6ef73-2259-406c-ab29-8e52a365efb4"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is intended for use under the guidance and supervision of a physician.  Patients may self-inject when deemed appropriate and if they receive medical follow-up, as necessary.  Patients should not self-administer until they receive proper training in how to prepare and administer the correct dose.  Administer injections subcutaneously in the thigh, abdomen or outer area of the upper arm.</p>
                         <p>The following components contain dry natural rubber (a derivative of latex), which may cause allergic reactions in individuals sensitive to latex: the needle cover of the prefilled syringe, the needle cover within the white cap of the SureClick autoinjector, and the needle cover within the purple cap of the Enbrel Mini cartridge <span style="font-style: italic">[see <a href="#S5.7">Warnings and Precautions (5.7)</a>]</span>.</p>
                         <p>The Enbrel (etanercept) "Instructions for Use" insert for each presentation contains more detailed instructions on injection site selection and the preparation of Enbrel.</p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "a6cfa417-7da4-4033-b16c-b55964cd0028"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                               <p>
                                  <span style="text-decoration: underline">Preparation of Enbrel Single-dose Prefilled Syringe </span>
                               </p>
                               <p>For a more comfortable injection, leave Enbrel prefilled syringes at room temperature for about 15 to 30 minutes before injecting.  DO NOT remove the needle cover while allowing the prefilled syringe to reach room temperature.</p>
                               <p>Inspect visually for particulate matter and discoloration prior to administration.  There may be small white particles of protein in the solution.  This is not unusual for proteinaceous solutions.  The solution should not be used if discolored or cloudy, or if foreign particulate matter is present.</p>
                               <p>When using the Enbrel single-dose prefilled syringe, check to see if the amount of liquid in the prefilled syringe falls between the two purple fill level indicator lines on the syringe.  If the syringe does not have the right amount of liquid, DO NOT USE THAT SYRINGE.</p>
-    </div>"""
+    </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "1544bfbe-da9b-4995-a866-5c8d4b988de2"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                               <p>
                                  <span style="text-decoration: underline">Preparation of Enbrel Single-dose Prefilled SureClick Autoinjector</span>
                               </p>
                               <p>Leave the autoinjector at room temperature for at least 30 minutes before injecting.  DO NOT remove the needle cover while allowing the prefilled syringe to reach room temperature.</p>
                               <p>Inspect visually for particulate matter and discoloration prior to administration.  There may be small white particles of protein in the solution.  This is not unusual for proteinaceous solutions.  The solution should not be used if discolored or cloudy, or if foreign particulate matter is present.</p>
-     </div>"""
+     </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "377d662b-bc9d-4f79-855e-9aad42217fd8"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                               <p>
                                  <span style="text-decoration: underline">Preparation of Enbrel Single-dose Vial</span>
                               </p>
@@ -555,13 +556,13 @@ Description: "Header information for the Enbrel Syringe Labels"
                                  <li>An injection needle with Luer-Lock connection, sterile, 27-gauge, length ½ inch. </li>
                               </ul>
                               <p>Two vials may be required to administer the total prescribed dose.  Use the same syringe for each vial.  The vial does not contain preservatives; therefore discard unused portions.</p>
-      </div>"""
+      </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "9c13df44-c30b-419e-a8c5-7cc517300760"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                               <p>
                                  <span style="text-decoration: underline">Preparation of Enbrel Lyophilized Powder in a Multiple-dose Vial</span>
                               </p>
@@ -572,30 +573,30 @@ Description: "Header information for the Enbrel Syringe Labels"
                               <p>Generally, dissolution of Enbrel takes less than 10 minutes.  Do not use the solution if discolored or cloudy, or if particulate matter remains.</p>
                               <p>Withdraw the correct dose of reconstituted solution into the syringe.  Some foam or bubbles may remain in the vial.  Remove the syringe from the vial adapter or remove the 25-gauge needle from the syringe.  Attach a 27-gauge needle to inject Enbrel.</p>
                               <p>The contents of one vial of Enbrel solution should not be mixed with, or transferred into, the contents of another vial of Enbrel.  No other medications should be added to solutions containing Enbrel, and do not reconstitute Enbrel with other diluents.  Do not filter reconstituted solution during preparation or administration.</p>
-      </div>"""
+      </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "78f727b0-99d3-4bd3-94dc-e0f4f5e75106"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                              <p>
                                  <span style="text-decoration: underline">Preparation of Enbrel Mini<sup>®</sup> single-dose prefilled cartridge using the AutoTouch<sup>®</sup> reusable autoinjector </span>
                               </p>
                               <p>Leave Enbrel Mini single-dose prefilled cartridge at room temperature for at least 30 minutes before injecting.  DO NOT remove the purple cap while allowing the cartridge to reach room temperature.</p>
                               <p>Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration.  There may be small white particles of protein in the solution.  This is not unusual for proteinaceous solutions.  The solution should not be used if discolored or cloudy, or if foreign particulate matter is present.</p>
                               <p>To use AutoTouch reusable autoinjector, open the door by pushing the door button and inserting Enbrel Mini single-dose prefilled cartridge into AutoTouch.  When inserted correctly, Enbrel Mini single-dose prefilled cartridge will slide freely and completely into the door.  Close the door and AutoTouch reusable autoinjector is ready for injection.</p>
-      </div>"""
+      </div></div>"""
   * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "7829c7f6-24ba-474f-8199-5a3cdc9c91f3"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * title = "2.4 Monitoring to Assess Safety"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Prior to initiating Enbrel and periodically during therapy, patients should be evaluated for active tuberculosis and tested for latent infection <span style="font-style: italic">[see <a href="#S5.1">Warnings and Precautions (5.1)</a>].</span>
                         </p>
-      </div>"""
+      </div></div>"""
 
 * section[ProductSection]
   * entry[0] = Reference(Enbrel435Definition)
@@ -617,7 +618,7 @@ Description: "Header information for the Enbrel Syringe Labels"
   * id = "5aad37da-10b5-4d22-ac4c-dfe752757194"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
   <p>
      <span style="font-weight: bold">PRINCIPAL DISPLAY PANEL</span>
      <br/>Contains 4 Single-Dose Prefilled Syringes<br/>NDC 58406-455-04<br/>Enbrel<sup>®</sup>
@@ -626,13 +627,13 @@ Description: "Header information for the Enbrel Syringe Labels"
   <p>
       <img src="enbrel-200.jpg" alt="PRINCIPAL DISPLAY PANEL Contains 4 Single-Dose Prefilled Syringes NDC 58406-455-04 Enbrel® etanercept 25 mg/0.5 mL Single-Dose Prefilled Syringe 25 mg/0.5 mL Attention: Not for use in pediatric patients under 31 kg (68 pounds). For Subcutaneous Use Only Sterile Solution – No Preservative Refrigerate at 2° to 8°C (36° to 46°F). DO NOT FREEZE. Carton contents (4 single-dose prefilled syringes, 1 package insert with attached Medication Guide) are intended to be dispensed as a unit. ATTENTION: Enclosed Medication Guide is required for each patient. This Product Contains Dry Natural Rubber. AMGEN® Rx Only Manufactured by Immunex Corporation, Thousand Oaks, CA 91320"/>
   </p>
-  </div>"""
+  </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * id = "9839b414-3008-4ea7-8d12-4511913cfdd1"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>
                      <span style="font-weight: bold">PRINCIPAL DISPLAY PANEL</span>
                      <br/>Contains 4 Single-Dose Prefilled Syringes<br/>NDC 58406-435-04<br/>Enbrel<sup>®</sup>
@@ -665,13 +666,13 @@ Description: "Header information for the Enbrel Syringe Labels"
                   <p>
                      <img src="enbrel-204.jpg" alt="PRINCIPAL DISPLAY PANEL Contains 4 Single-Dose Prefilled Autoinjectors NDC 58406-445-04 Enbrel® etanercept SureClick® Autoinjector 50 mg/mL Single-Dose Prefilled Autoinjector 50 mg/mL Attention: Not for use in pediatric patients under 63 kg (138 pounds). For Subcutaneous Use Only Sterile Solution – No Preservative Refrigerate at 2° to 8°C (36° to 46°F). DO NOT FREEZE. Carton Contents (4 prefilled SureClick® Autoinjectors, 1 package insert with attached Medication Guide) are intended to be dispensed as a unit. ATTENTION: Enclosed Medication Guide is required for each patient. This Product Contains Dry Natural Rubber. AMGEN® Rx Only Manufactured by Immunex Corporation, Thousand Oaks, CA 91320-1799"/>
                   </p>
-  </div>"""
+  </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * id = "849d1cc6-8e97-4f71-a569-356ee0513d7d"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>
                      <span style="font-weight: bold">PRINCIPAL DISPLAY PANEL</span>
                      <br/>Contains 4 Single-Dose Prefilled Autoinjectors<br/>NDC 58406-032-04<br/>Enbrel<sup>®</sup>
@@ -680,13 +681,13 @@ Description: "Header information for the Enbrel Syringe Labels"
                   <p>
                      <img src="enbrel-205.jpg" alt="PRINCIPAL DISPLAY PANEL Contains 4 Single-Dose Prefilled Autoinjectors NDC 58406-032-04 Enbrel® etanercept SureClick® Autoinjector 50 mg/mL Single-Dose Prefilled Autoinjector 50 mg/mL Attention: Not for use in pediatric patients under 63 kg (138 pounds). For Subcutaneous Use Only Sterile Solution – No Preservative Refrigerate at 2° to 8°C (36° to 46°F). DO NOT FREEZE. Carton Contents (4 prefilled SureClick® Autoinjectors, 1 package insert with attached Medication Guide) are intended to be dispensed as a unit. ATTENTION: Enclosed Medication Guide is required for each patient. This Product Contains Dry Natural Rubber. AMGEN® Rx Only Manufactured by Immunex Corporation, Thousand Oaks, CA 91320-1799"/>
                   </p>
-   </div>"""
+   </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * id = "5ef1d7e8-8a75-488f-8aa4-8b07147cd05a"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>
                      <span style="font-weight: bold">PRINCIPAL DISPLAY PANEL</span>
                      <br/>Contains 4 Multi-Dose Trays<br/>NDC 58406-425-34<br/>AMGEN<sup>®</sup>
@@ -696,13 +697,13 @@ Description: "Header information for the Enbrel Syringe Labels"
                   <p>
                      <img src="enbrel-206.jpg" alt="PRINCIPAL DISPLAY PANEL Contains 4 Multi-Dose Trays NDC 58406-425-34 AMGEN® Enbrel® etanercept 25 mg/vial Multiple-Dose Vial See package insert for full prescribing information and instructions for preparation and administration. 25 mg/vial Each vial contains a sterile lyophilized preparation of 25 mg etanercept (a recombinant CHO cell-derived product), 40 mg mannitol, 10 mg sucrose, and 1.2 mg tromethamine. Specific activitiy: approximately 1.7 x 106 U/mg. No U.S. standard of potency. Volume after reconstitution with 1 mL diluent is 1 mL. Before and after reconstitution refrigerate at 2° to 8°C (36° to 46°F). DO NOT FREEZE. For Subcutaneous Use Only AMGEN® Manufactured by Immunex Corporation, Thousand Oaks, CA 91320 Contains diluent syringes (Made in Germany) U.S. License No. 1132 ©2013, 2016 Immunex Corporation Patent: http://pat.amgen.com/enbrel/"/>
                   </p>
-  </div>"""
+  </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * id = "99ddc7b5-fd9f-4a0a-aecf-ed6a172228a1"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>
                      <span style="font-weight: bold">PRINCIPAL DISPLAY PANEL</span>
                      <br/>Contains 4 Single-dose prefilled cartridges<br/>NDC 58406-456-04<br/>Enbrel<sup>®</sup>
@@ -711,14 +712,14 @@ Description: "Header information for the Enbrel Syringe Labels"
                   <p>
                      <img src="enbrel-207.jpg" alt="PRINCIPAL DISPLAY PANEL Contains 4 Single-dose prefilled cartridges NDC 58406-456-04 Enbrel® etanercept 50 mg/mL Enbrel Mini™ prefilled cartridge 50 mg/mL Single-dose prefilled cartridge For use with AutoTouch™ reusuable autoinjector only Attention: Not for use in pediatric patient under 138 lbs. For Subcutaneous Use Only Sterile Solution – No Preservative Refrigerate at 2°C to 8°C (36° to 46°F). DO NOT FREEZE. DO NOT SHAKE. Carton contents (4 prefilled cartridges, 1 package insert with attached Medication Guide) are intended to be dispensed as a unit. ATTENTION: Enclosed Medication Guide is required for each patient. This Product Contains Dry Natural Rubber. Do not Reuse CAUTION, See package insert for full prescribing information and Instructions for Use Rx Only AMGEN®"/>
                   </p>
-  </div>"""
+  </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * title = "PRINCIPAL DISPLAY PANEL - 50 mg/mL Cartridge Carton"
   * id = "65d217b8-bb8e-482c-bd4b-92cbccbf9353"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>Contains 4 Single-dose prefilled cartridges</p>
                   <p>NDC 58406-044-04</p>
                   <p>Enbrel<sup>®</sup>
@@ -739,13 +740,13 @@ Description: "Header information for the Enbrel Syringe Labels"
                   <p>AMGEN<sup>®</sup>
                   </p>
                   <img src="enbrel-208.jpg" alt="PRINCIPAL DISPLAY PANEL - 50 mg/mL Cartridge Carton"/>
-  </div>"""
+  </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * id = "aecc3744-b9ab-4a65-a054-4f68f62cae38"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>
                      <span style="font-weight: bold">PRINCIPAL DISPLAY PANEL</span>
                      <br/>Contains 4 Single-dose prefilled Autoinjectors<br/>NDC 58406-446-04<br/>Enbrel<sup>®</sup>
@@ -775,14 +776,14 @@ Description: "Header information for the Enbrel Syringe Labels"
                   <p>
                      <img src="enbrel-210.jpg" alt="PRINCIPAL DISPLAY PANEL NDC 58406-470-01 AMGEN® AutoTouch® reusable autoinjector For use with Enbrel Mini® (etanercept) For use with Enbrel Mini® (etanercept) single-dose prefilled cartridge Contains 1 AutoTouch® reusable autoinjector For Subcutaneous Use Only Store at room temperature. IP52 – This package will resisit drops of water and dust. Do Not Use if Package is Damaged Type BF Applied Part Exp: Expiry Date Follow instructions for use Rx Only"/>
                   </p>
-  </div>"""
+  </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * title = "PRINCIPAL DISPLAY PANEL - 25 mg Vial Carton"
   * id = "b3f3ad88-9024-43ab-b2b7-5bcab852540b"
   * extension[sectionTime].valueDateTime = "2021-12-13"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>4 Single-Dose Vials, each vial is 25 mg/0.5mL</p>
                   <p>NDC 58406-055-04</p>
                   <p>AMGEN<sup>®</sup>
@@ -795,7 +796,7 @@ Description: "Header information for the Enbrel Syringe Labels"
                   <p>U.S. License No. 1132<br/> Manufactured by Immunex Corporation<br/> Thousand Oaks, CA 91320-1799 U.S.A.<br/> © 2019 Immunex Corporation</p>
                   <p>Rx Only</p>
                   <img src="enbrel-211.jpg" alt="PRINCIPAL DISPLAY PANEL - 25 mg Vial Carton"/>
-  </div>"""
+  </div></div>"""
 
 Instance: Enbrel435Definition
 InstanceOf: SubmittedMedicinalProduct

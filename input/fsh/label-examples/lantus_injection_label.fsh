@@ -101,27 +101,28 @@ Description: "Header information for the Lantus Injection Label"
   * code = http://loinc.org#34067-9 "INDICATIONS &amp; USAGE SECTION"
   * title = "1 INDICATIONS AND USAGE"
   * extension[sectionTime].valueDateTime = "2021-01-27"
-  * extension[highlights].valueString = """<div xmlns="http://www.w3.org/1999/xhtml">
-    <p>LANTUS is a long-acting human insulin analog indicated to improve glycemic control in adults and pediatric patients with type 1 diabetes mellitus and in adults with type 2 diabetes mellitus. (<a href="#S1">1</a>)</p>
-    <p>
-        <span style="text-decoration: underline">Limitations of Use</span>
-    </p>
-    <p>Not recommended for treating diabetic ketoacidosis. (<a href="#S1">1</a>)</p>
-    </div>"""
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  <div style="highlights">
+  <p>LANTUS is a long-acting human insulin analog indicated to improve glycemic control in adults and pediatric patients with type 1 diabetes mellitus and in adults with type 2 diabetes mellitus. (<a href="#S1">1</a>)</p>
+  <p>
+      <span style="text-decoration: underline">Limitations of Use</span>
+  </p>
+  <p>Not recommended for treating diabetic ketoacidosis. (<a href="#S1">1</a>)</p>
+  </div>
+  <div style="narrative">
     <p>LANTUS is indicated to improve glycemic control in adults and pediatric patients with type 1 diabetes mellitus and in adults with type 2 diabetes mellitus.</p>
-  </div>"""
+  </div></div>"""
   * section[0]
     * id = "0230cfa8-ff67-4666-ba57-bbad268ac6fe"
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * text.status = #additional
-    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+    * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                        <p>
                            <span style="text-decoration: underline">Limitations of Use</span>
                         </p>
                         <p>LANTUS is not recommended for the treatment of diabetic ketoacidosis.</p>
-     </div>"""
+     </div></div>"""
 * section[ProductSection]
   * entry[0] = Reference(LantusSyringeDefinition)
   * entry[1] = Reference(LantusVialDefinition)
@@ -134,7 +135,7 @@ Description: "Header information for the Lantus Injection Label"
   * id = "ff673a31-f676-444c-a009-8d4a2645fd19"
   * extension[sectionTime].valueDateTime = "2021-01-27"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>NDC 0088-5021-01<br/>                     Rx only</p>
                   <p>                     Lantus<sup>®</sup>
                      <br/>                     insulin glargine<br/>injection</p>
@@ -146,14 +147,14 @@ Description: "Header information for the Lantus Injection Label"
                   <p>                     novaplus <sub>™</sub>
                   </p>
                   <img src="lantusnova-20.jpg" alt="PRINCIPAL DISPLAY PANEL - 10 mL Vial Package"/>
-  </div>"""
+  </div></div>"""
 * section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * title = "PRINCIPAL DISPLAY PANEL - 3 mL Syringe Package"
   * id = "8ce1b409-6067-4c9d-8e21-bdb6df850c24"
   * extension[sectionTime].valueDateTime = "2021-01-27"
   * text.status = #additional
-  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
+  * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                   <p>NDC 0088-5020-05<br/>                     Rx only</p>
                   <p>                     Lantus<sup>®</sup> SoloStar<sup>®</sup>
                      <br/>insulin glargine injection <br/>   For Single Patient Use Only  <br/> 100 units/mL (U-100)<br/> Five 3 mL Prefilled Pens</p>
@@ -161,7 +162,7 @@ Description: "Header information for the Lantus Injection Label"
                   <p>                     novaplus <sub>™</sub>
                   </p>
                   <img src="lantusnova-21.jpg" alt="PRINCIPAL DISPLAY PANEL - 3 mL Syringe Package"/>
-  </div>"""
+  </div></div>"""
 
 Instance: LantusVialDefinition
 InstanceOf: SubmittedMedicinalProduct
