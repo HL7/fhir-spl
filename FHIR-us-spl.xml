@@ -269,8 +269,9 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
-<page key="specification" name="Formal Specification"/>
+<page key="organization" name="Organziation-Based Use Cases"/>
+<page key="transforms" name="SPL / FHIR Transforms"/>
 <page key="index" name="SPL Mapping Implementation Guide Home Page"/>
+<page key="druglabel" name="Submit a Drug Label"/>
 <page key="toc" name="Table of Contents"/>
-<page key="usecases" name="Use Cases and Overview"/>
 </specification>

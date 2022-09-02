@@ -16,10 +16,12 @@ jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 pages:
   index.md:
     title: SPL Mapping Implementation Guide Home Page
-  usecases.md:
-    title: Use Cases and Overview
-  specification.md:
-    title: Formal Specification
+  organization.md:
+    title: Organziation-Based Use Cases
+  druglabel.md:
+    title: Submit a Drug Label
+  transforms.md:
+    title: SPL / FHIR Transforms
   downloads.md:
     title: Downloads
   credits.md:
@@ -27,15 +29,15 @@ pages:
 
 menu:
   Table of Contents: toc.html
-  Specification:
-    Home Page: index.html
-    Use Cases and Overview: usecases.html
-    Formal Specification: specification.html
+  Home Page: index.html
+  Use Cases:
+    Organization-Based Submissions: organization.html
+    Drug Label Submission: druglabel.html
+  Transforms: transforms.html
+  Artifacts: artifacts.html
+  Appendix:
     Downloads: downloads.html
     Credits: credits.html
-  Artifacts: artifacts.html
-  Base Specs:
-    FHIR R4 Spec: new-tab {{site.data.fhir.path}}
 
 groups:
   LogicalModel:
