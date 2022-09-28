@@ -206,6 +206,8 @@
 <artifact id="SubstanceDefinition/LantusVialIngredientDefinition" key="SubstanceDefinition-LantusVialIngredientDefinition" name="LantusVialIngredientDefinition"/>
 <artifact id="RegulatedAuthorization/LantusVialMarketing" key="RegulatedAuthorization-LantusVialMarketing" name="LantusVialMarketing"/>
 <artifact id="PackagedProductDefinition/LantusVialPackage" key="PackagedProductDefinition-LantusVialPackage" name="LantusVialPackage"/>
+<artifact id="StructureDefinition/itemMarketingStatusDates" key="StructureDefinition-itemMarketingStatusDates" name="Manufactured Item Marketing Status Date Range"/>
+<artifact id="StructureDefinition/manufacturedItemReference" key="StructureDefinition-manufacturedItemReference" name="Manufactured Item Reference"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
 <artifact id="StructureDefinition/OrganizationBundle" key="StructureDefinition-OrganizationBundle" name="OrganizationBundle"/>
@@ -252,6 +254,7 @@
 <artifact id="StructureDefinition/sectionHighlights" key="StructureDefinition-sectionHighlights" name="SectionHighlights"/>
 <artifact id="StructureDefinition/SubmittedMedicationLogicalModel" key="StructureDefinition-SubmittedMedicationLogicalModel" name="Submitted Medication Logical Model"/>
 <artifact id="StructureDefinition/SubmittedIngredientDefinition" key="StructureDefinition-SubmittedIngredientDefinition" name="SubmittedIngredientDefinition"/>
+<artifact id="StructureDefinition/SubmittedManufacturedItem" key="StructureDefinition-SubmittedManufacturedItem" name="SubmittedManufacturedItem"/>
 <artifact id="StructureDefinition/SubmittedMedicinalPackaging" key="StructureDefinition-SubmittedMedicinalPackaging" name="SubmittedMedicinalPackaging"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProduct" key="StructureDefinition-SubmittedMedicinalProduct" name="SubmittedMedicinalProduct"/>
 <artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SubmittedMedicinalProductCharacteristicTypes"/>

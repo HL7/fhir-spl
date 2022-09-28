@@ -1,6 +1,6 @@
 ### Drug Label Use Cases
 
-This page details the following use cases that all use profiles based on the Organization resource:
+This page details the following use cases that all use profiles based on the Medicinal Product Definition resources:
 
 1. UC04 - Submit a Drug or Biologic Label
 	* 53409-9 Bulk Ingredient

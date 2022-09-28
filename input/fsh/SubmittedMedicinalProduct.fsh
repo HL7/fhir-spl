@@ -60,10 +60,18 @@ Description: "Details around the marketing of a submitted medicinal product."
 * identifier 1..* MS
 * subject 1..1 MS
 * subject only Reference(SubmittedMedicinalProduct)
+* subject.extension contains ManufacturedItemReference named itemReference 0..1 MS
 * type 0..1 MS
 * region 0..* MS
 * status MS
 * statusDate MS
+
+Extension: ManufacturedItemReference
+Id: manufacturedItemReference
+Title: "Manufactured Item Reference"
+Description: "A reference to a manufactured item currently used in authorizations."
+* value[x] 1..1 MS
+* value[x] only Reference(SubmittedManufacturedItem)
 
 Profile: SubmittedMedicinalPackaging
 Parent: PackagedProductDefinition
@@ -81,9 +89,23 @@ Description: "Details around the packaging of submitted medicinal products."
 * package.property.value[x] 1..1 MS
 * package.containedItem 0..* MS
 * package.containedItem.item 1..1 MS
-* package.containedItem.item only Reference(SubmittedMedicinalPackaging)
+* package.containedItem.item only Reference(SubmittedManufacturedItem)
 * package.containedItem.amount 1..1 MS
 * package.package 0..* MS
+
+Profile: SubmittedManufacturedItem
+Parent: ManufacturedItemDefinition
+Description: "Details around the actual item, i.e tablet, solution, etc. that is packaged as part of the medicinal product."
+* status MS
+* manufacturedDoseForm MS
+* extension contains ItemMarketingStatusDates named marketingStatusDates 0..1 MS
+
+Extension: ItemMarketingStatusDates
+Id: itemMarketingStatusDates
+Title: "Manufactured Item Marketing Status Date Range"
+Description: "Used to indicate the date range of the marketing status of a manufactured item.  This is being added in R5."
+* value[x] 1..1 MS
+* value[x] only Period
 
 Profile: SubmittedMedicinalProductIngredient
 Parent: Ingredient
