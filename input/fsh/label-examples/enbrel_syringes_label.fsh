@@ -12,15 +12,17 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel435Definition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel435ActiveIngredient)
+  * insert bundleEntry(ManufacturedItemDefintion, Enbrel50mgSolution)
 * entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel435IngredientDefinition)
+  * insert bundleEntry(Ingredient, Enbrel50mgSolutionActiveIngredient)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel435Ingredient1)
+  * insert bundleEntry(SubstanceDefinition, EnbrelIngredientDefinition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel435Ingredient2)
+  * insert bundleEntry(Ingredient, Enbrel50mgSolutionIngredient1)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel435Ingredient3)
+  * insert bundleEntry(Ingredient, Enbrel50mgSolutionIngredient2)
+* entry[+]
+  * insert bundleEntry(Ingredient, Enbrel50mgSolutionIngredient3)
 * entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel435Package)
 * entry[+]
@@ -28,47 +30,27 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel445Definition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel445ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel445IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel445Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel445Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel445Ingredient3)
-* entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel445Package)
 * entry[+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel445Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel425Definition)
 * entry[+]
-  * insert bundleEntry(MedicinalProductDefinition, Enbrel425Part1Definition)
+  * insert bundleEntry(ManufacturedItemDefinition, EnbrelPowder)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel425Part1ActiveIngredient)
+  * insert bundleEntry(Ingredient, EnbrelPowderActiveIngredient)
 * entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel425Part1IngredientDefinition)
+  * insert bundleEntry(Ingredient, EnbrelPowderIngredient1)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel425Part1Ingredient1)
+  * insert bundleEntry(Ingredient, EnbrelPowderIngredient2)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel425Part1Ingredient2)
+  * insert bundleEntry(Ingredient, EnbrelPowderIngredient3)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel425Part1Ingredient3)
+  * insert bundleEntry(ManufacturedItemDefinition, EnbrelSterileSolution)
 * entry[+]
-  * insert bundleEntry(PackagedProductDefinition, Enbrel425Part1Package)
+  * insert bundleEntry(Ingredient, EnbrelSterileSolutionIngredient1)
 * entry[+]
-  * insert bundleEntry(RegulatedAuthorization, Enbrel425Part1Marketing)
-* entry[+]
-  * insert bundleEntry(MedicinalProductDefinition, Enbrel425Part2Definition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel425Part2Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel425Part2Ingredient2)
-* entry[+]
-  * insert bundleEntry(PackagedProductDefinition, Enbrel425Part2Package)
-* entry[+]
-  * insert bundleEntry(RegulatedAuthorization, Enbrel425Part2Marketing)
+  * insert bundleEntry(Ingredient, EnbrelSterileSolutionIngredient2)
 * entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel425Package)
 * entry[+]
@@ -76,15 +58,15 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel455Definition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel455ActiveIngredient)
+  * insert bundleEntry(ManufacturedItemDefinition, Enbrel25mgSolution)
 * entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel455IngredientDefinition)
+  * insert bundleEntry(Ingredient, Enbrel25mgSolutionActiveIngredient)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel455Ingredient1)
+  * insert bundleEntry(Ingredient, Enbrel25mgSolutionIngredient1)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel455Ingredient2)
+  * insert bundleEntry(Ingredient, Enbrel25mgSolutionIngredient2)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel455Ingredient3)
+  * insert bundleEntry(Ingredient, Enbrel25mgSolutionIngredient3)
 * entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel455Package)
 * entry[+]
@@ -92,31 +74,11 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel456Definition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel456ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel456IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel456Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel456Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel456Ingredient3)
-* entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel456Package)
 * entry[+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel456Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel446Definition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel446ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel446IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel446Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel446Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel446Ingredient3)
 * entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel446Package)
 * entry[+]
@@ -124,31 +86,11 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel021Definition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel021ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel021IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel021Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel021Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel021Ingredient3)
-* entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel021Package)
 * entry[+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel021Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel032Definition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel032ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel032IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel032Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel032Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel032Ingredient3)
 * entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel032Package)
 * entry[+]
@@ -156,47 +98,17 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel010Definition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel010ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel010IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel010Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel010Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel010Ingredient3)
-* entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel010Package)
 * entry[+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel010Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel044Definition)
 * entry[+]
-  * insert bundleEntry(Ingredient, Enbrel044ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel044IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel044Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel044Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel044Ingredient3)
-* entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel044Package)
 * entry[+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel044Marketing)
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel055Definition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel055ActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, Enbrel055IngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel055Ingredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel055Ingredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, Enbrel055Ingredient3)
 * entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel055Package)
 * entry[+]
@@ -207,8 +119,7 @@ InstanceOf: IdentifiedLabeler
 Description: "Immunex Corporation - labeller for Enbrel"
 * type = OrganizationTypes#Labeler
 * name = "Immunex Corporation"
-* identifier.system = "urn:oid:1.3.6.1.4.1.519.1"
-* identifier.value = "028134799"
+* identifier[DUNSNumber].value = "028134799"
 
 Instance: EnbrelSyringeLabelComposition
 InstanceOf: ProductSubmissionDocument
@@ -801,27 +712,28 @@ Description: "Header information for the Enbrel Syringe Labels"
 Instance: Enbrel435Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 435 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-435"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-435"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2005-10-06"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
-Instance: Enbrel435ActiveIngredient
+Instance: Enbrel50mgSolution
+InstanceOf: SubmittedManufacturedItem
+* status = #active
+* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+
+Instance: Enbrel50mgSolutionActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 435"
-* for = Reference(Enbrel435Definition)
+Description: "Active Ingredient Strength for Enbrel"
+* for = Reference(Enbrel50mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel435IngredientDefinition)
+* substance.code.reference = Reference(EnbrelIngredientDefinition)
 * substance.strength.presentationRatio.numerator = 50 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
-Instance: Enbrel435IngredientDefinition
+Instance: EnbrelIngredientDefinition
 InstanceOf: SubmittedIngredientDefinition
 Description: "Active Ingredient Information for Enbrel"
 * identifier.system = "http://fdasis.nlm.nih.gov"
@@ -831,26 +743,26 @@ Description: "Active Ingredient Information for Enbrel"
 * moiety.name = "ETANERCEPT"
 * name.name = "ETANERCEPT"
 
-Instance: Enbrel435Ingredient1
+Instance: Enbrel50mgSolutionIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 435"
-* for = Reference(Enbrel435Definition)
+Description: "Inactive Ingredient #1 for Enbrel Solution"
+* for = Reference(Enbrel50mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
 * substance.strength.presentationRatio.numerator = 0.025 'mmol' "mmol"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel435Ingredient2
+Instance: Enbrel50mgSolutionIngredient2
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 435"
-* for = Reference(Enbrel435Definition)
+Description: "Inactive Ingredient #2 for Enbrel Solution"
+* for = Reference(Enbrel50mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
 * substance.strength.presentationRatio.numerator = 0.12 'mmol' "mmol"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel435Ingredient3
+Instance: Enbrel50mgSolutionIngredient3
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 435"
-* for = Reference(Enbrel435Definition)
+Description: "Inactive Ingredient #3 for Enbrel Solution"
+* for = Reference(Enbrel50mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
 * substance.strength.presentationRatio.numerator = 10 'mg' "mg"
@@ -871,7 +783,7 @@ Description: "4 1mL Syringes of Enbrel"
 * package.package.identifier.value = "58406-435-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-435
+* package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel435Marketing
@@ -886,60 +798,13 @@ Description: "Marketing information for Enbrel 435"
 Instance: Enbrel445Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 445 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-445"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
+* identifier[NDCCode].value = "58406-445"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel445ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 445"
-* for = Reference(Enbrel445Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel445IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 50 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: Enbrel445IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel445Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 445"
-* for = Reference(Enbrel445Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.025 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel445Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 445"
-* for = Reference(Enbrel445Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.12 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel445Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 445"
-* for = Reference(Enbrel445Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 10 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
 Instance: Enbrel445Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -956,7 +821,7 @@ Description: "4 1mL autoinjectors of Enbrel"
 * package.package.identifier.value = "58406-445-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-445
+* package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel445Marketing
@@ -971,126 +836,73 @@ Description: "Marketing information for Enbrel 445"
 Instance: Enbrel425Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 425 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-425"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
+* identifier[NDCCode].value = "58406-425"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C47916 "KIT"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
-Instance: Enbrel425Part1Definition
-InstanceOf: SubmittedMedicinalProduct
-Description: "Structured information for the Enbrel 425 Part 1"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-424"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42957 "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
-* marketingStatus.dateRange.start = "2003-01-02"
+Instance: EnbrelPowder
+InstanceOf: SubmittedManufacturedItem
+* status = #active
+* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42957 "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION"
 
-Instance: Enbrel425Part2Definition
-InstanceOf: SubmittedMedicinalProduct
-Description: "Structured information for the Enbrel 425 Part 2"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-910"
-* name[0].productName = "Sterile Bacteriostatic Water"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "Sterile Bacteriostatic Water"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
-* marketingStatus.dateRange.start = "2003-01-02"
-
-Instance: Enbrel425Part1ActiveIngredient
+Instance: EnbrelPowderActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 425 Part 1"
-* for = Reference(Enbrel425Part1Definition)
+Description: "Active Ingredient Strength for Enbrel Powder"
+* for = Reference(EnbrelPowder)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel425Part1IngredientDefinition)
+* substance.code.reference = Reference(EnbrelIngredientDefinition)
 * substance.strength.presentationRatio.numerator = 25 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
-Instance: Enbrel425Part1IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel425Part1Ingredient1
+Instance: EnbrelPowderIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 425 Part 1"
-* for = Reference(Enbrel425Part1Definition)
+Description: "Inactive Ingredient #1 for Enbrel Powder"
+* for = Reference(EnbrelPowder)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#3OWL53L36A "MANNITOL"
 * substance.strength.presentationRatio.numerator = 40 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel425Part1Ingredient2
+Instance: EnbrelPowderIngredient2
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 425 Part 2"
-* for = Reference(Enbrel425Part1Definition)
+Description: "Inactive Ingredient #2 for Enbrel Powder"
+* for = Reference(EnbrelPowder)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
 * substance.strength.presentationRatio.numerator = 10 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel425Part1Ingredient3
+Instance: EnbrelPowderIngredient3
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 425 Part 3"
-* for = Reference(Enbrel425Part1Definition)
+Description: "Inactive Ingredient #3 for Enbrel Powder"
+* for = Reference(EnbrelPowder)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#023C2WHX2V "TROMETHAMINE"
 * substance.strength.presentationRatio.numerator = 1.2 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
-Instance: Enbrel425Part1Package
-InstanceOf: SubmittedMedicinalPackaging
-Description: "1 vial of Enbrel powder"
-* packageFor = Reference(Enbrel425Part1Definition)
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "58406-424-01"
-* package.containedItem.amount = 1 'mL' "mL"
-* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-424
-* package.type = $NCI-T#C43226 "VIAL"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
+Instance: EnbrelSterileSolution
+InstanceOf: SubmittedManufacturedItem
+* status = #active
+* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
 
-Instance: Enbrel425Part2Ingredient1
+Instance: EnbrelSterileSolutionIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 425 Part 2"
-* for = Reference(Enbrel425Part1Definition)
+Description: "Inactive Ingredient #1 for Enbrel Sterile Solution"
+* for = Reference(EnbrelSterileSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#LKG8494WBH "BENZYL ALCOHOL"
 * substance.strength.presentationRatio.numerator = 9.93 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel425Part2Ingredient2
+Instance: EnbrelSterileSolutionIngredient2
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 425 Part 2"
-* for = Reference(Enbrel425Part1Definition)
+Description: "Inactive Ingredient #2 for Enbrel Sterile Solution"
+* for = Reference(EnbrelSterileSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#059QF0KO0R "WATER"
 * substance.strength.presentationRatio.numerator = 1 'mL' "mL"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: Enbrel425Part2Package
-InstanceOf: SubmittedMedicinalPackaging
-Description: "1 syringe of sterile bacteriostatic water"
-* packageFor = Reference(Enbrel425Part2Definition)
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "58406-910-01"
-* package.containedItem.amount = 1 'mL' "mL"
-* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-910
-* package.type = $NCI-T#C43202 "SYRINGE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 
 Instance: Enbrel425Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1105,10 +917,22 @@ Description: "4 25mg kits of Enbrel"
 * package.package.identifier.value = "58406-425-41"
 * package.package.quantity = 4
 * package.package.type = $NCI-T#C43197 "KIT"
-* package.package.containedItem[0].amount = 1 'mL' "mL"
-* package.package.containedItem[0].item.reference = Reference(Enbrel425Part1Package)
-* package.package.containedItem[1].amount = 1 'mL' "mL"
-* package.package.containedItem[1].item.reference = Reference(Enbrel425Part2Package)
+* package.package.package[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
+* package.package.package[0].identifier.value = "58406-424-01"
+* package.package.package[0].containedItem.amount = 1 'mL' "mL"
+* package.package.package[0].containedItem.item.reference = Reference(EnbrelPowder)
+* package.package.package[0].type = $NCI-T#C43226 "VIAL"
+* package.package.package[0].quantity = 1
+* package.package.package[0].property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* package.package.package[0].property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
+* package.package.package[1].identifier.system = "http://hl7.org/fhir/sid/ndc"
+* package.package.package[1].identifier.value = "58406-910-01"
+* package.package.package[1].containedItem.amount = 1 'mL' "mL"
+* package.package.package[1].containedItem.item.reference = Reference(EnbrelSterileSolution)
+* package.package.package[1].type = $NCI-T#C43202 "SYRINGE"
+* package.package.package[1].quantity = 1
+* package.package.package[1].property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* package.package.package[1].property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 
 Instance: Enbrel425Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
@@ -1119,77 +943,50 @@ Description: "Marketing information for Enbrel 425"
 * type = $NCI-T#C73594 "BLA"
 * region = urn:iso:std:iso:3166#USA
 
-Instance: Enbrel425Part1Marketing
-InstanceOf: SubmittedMedicinalProductMarketing
-Description: "Marketing information for Enbrel 425 Part 1"
-* identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
-* subject = Reference(Enbrel425Part1Definition)
-* type = $NCI-T#C73594 "BLA"
-* region = urn:iso:std:iso:3166#USA
-
-Instance: Enbrel425Part2Marketing
-InstanceOf: SubmittedMedicinalProductMarketing
-Description: "Marketing information for Enbrel 425 Part 2"
-* identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
-* subject = Reference(Enbrel425Part2Definition)
-* type = $NCI-T#C73594 "BLA"
-* region = urn:iso:std:iso:3166#USA
-
 Instance: Enbrel455Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 455 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-455"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-455"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
-Instance: Enbrel455ActiveIngredient
+Instance: Enbrel25mgSolution
+InstanceOf: SubmittedManufacturedItem
+* status = #active
+* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+
+Instance: Enbrel25mgSolutionActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 455"
-* for = Reference(Enbrel455Definition)
+Description: "Active Ingredient Strength for Enbrel"
+* for = Reference(Enbrel25mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel455IngredientDefinition)
+* substance.code.reference = Reference(EnbrelIngredientDefinition)
 * substance.strength.presentationRatio.numerator = 25 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
 
-Instance: Enbrel455IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel455Ingredient1
+Instance: Enbrel25mgSolutionIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 455"
-* for = Reference(Enbrel455Definition)
+Description: "Inactive Ingredient #1 for Enbrel 25mg Solution"
+* for = Reference(Enbrel25mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
 * substance.strength.presentationRatio.numerator = 0.013 'mmol' "mmol"
 * substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-Instance: Enbrel455Ingredient2
+Instance: Enbrel25mgSolutionIngredient2
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 455"
-* for = Reference(Enbrel455Definition)
+Description: "Inactive Ingredient #2 for Enbrel 25mg Solution"
+* for = Reference(Enbrel25mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
 * substance.strength.presentationRatio.numerator = 0.06 'mmol' "mmol"
 * substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-Instance: Enbrel455Ingredient3
+Instance: Enbrel25mgSolutionIngredient3
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 455"
-* for = Reference(Enbrel455Definition)
+Description: "Inactive Ingredient #3 for Enbrel 25mg Solution"
+* for = Reference(Enbrel25mgSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
 * substance.strength.presentationRatio.numerator = 5 'mg' "mg"
@@ -1210,7 +1007,7 @@ Description: "4 0.5mL syringes of Enbrel"
 * package.package.identifier.value = "58406-455-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 0.5 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-455
+* package.package.containedItem.item.reference = Reference(Enbrel25mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel455Marketing
@@ -1225,60 +1022,12 @@ Description: "Marketing information for Enbrel 455"
 Instance: Enbrel456Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 456 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-456"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-456"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2017-09-29"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel456ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 456"
-* for = Reference(Enbrel456Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel456IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 50 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: Enbrel456IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel456Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 456"
-* for = Reference(Enbrel456Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.025 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel456Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 456"
-* for = Reference(Enbrel456Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.12 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel456Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 456"
-* for = Reference(Enbrel456Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 10 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
 Instance: Enbrel456Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1295,7 +1044,7 @@ Description: "4 1mL cartridges of Enbrel"
 * package.package.identifier.value = "58406-456-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-456
+* package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43183 "CARTRIDGE"
 
 Instance: Enbrel456Marketing
@@ -1310,60 +1059,12 @@ Description: "Marketing information for Enbrel 456"
 Instance: Enbrel446Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 446 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-446"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-446"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2017-10-20"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel446ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 446"
-* for = Reference(Enbrel446Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel446IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 50 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: Enbrel446IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel446Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 446"
-* for = Reference(Enbrel446Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.025 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel446Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 446"
-* for = Reference(Enbrel446Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.12 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel446Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 446"
-* for = Reference(Enbrel446Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 10 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
 Instance: Enbrel446Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1380,7 +1081,7 @@ Description: "4 1mL autoinjectors of Enbrel"
 * package.package.identifier.value = "58406-446-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-446
+* package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel446Marketing
@@ -1395,60 +1096,12 @@ Description: "Marketing information for Enbrel 446"
 Instance: Enbrel021Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 021 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-021"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-021"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel021ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 021"
-* for = Reference(Enbrel021Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel021IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 50 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: Enbrel021IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel021Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 021"
-* for = Reference(Enbrel021Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.025 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel021Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 021"
-* for = Reference(Enbrel021Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.12 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel021Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 021"
-* for = Reference(Enbrel021Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 10 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
 Instance: Enbrel021Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1465,7 +1118,7 @@ Description: "4 1mL Syringes of Enbrel"
 * package.package.identifier.value = "58406-021-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-021
+* package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel021Marketing
@@ -1480,60 +1133,12 @@ Description: "Marketing information for Enbrel 021"
 Instance: Enbrel032Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 032 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-032"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-032"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel032ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 032"
-* for = Reference(Enbrel032Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel032IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 50 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: Enbrel032IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel032Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 032"
-* for = Reference(Enbrel032Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.025 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel032Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 032"
-* for = Reference(Enbrel032Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.12 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel032Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 032"
-* for = Reference(Enbrel032Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 10 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
 Instance: Enbrel032Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1550,7 +1155,7 @@ Description: "4 1mL autoinjectors of Enbrel"
 * package.package.identifier.value = "58406-032-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-032
+* package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel032Marketing
@@ -1565,60 +1170,12 @@ Description: "Marketing information for Enbrel 032"
 Instance: Enbrel010Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 010 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-010"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-010"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel010ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 010"
-* for = Reference(Enbrel010Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel010IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 25 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-
-Instance: Enbrel010IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel010Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 010"
-* for = Reference(Enbrel010Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.013 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-Instance: Enbrel010Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 010"
-* for = Reference(Enbrel010Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.06 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-Instance: Enbrel010Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 010"
-* for = Reference(Enbrel010Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 5 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
 
 Instance: Enbrel010Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1635,7 +1192,7 @@ Description: "4 0.5mL syringes of Enbrel"
 * package.package.identifier.value = "58406-010-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 0.5 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-010
+* package.package.containedItem.item.reference = Reference(Enbrel25mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel010Marketing
@@ -1650,60 +1207,12 @@ Description: "Marketing information for Enbrel 010"
 Instance: Enbrel044Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 044 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-044"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-044"
+* name[Proprietary].productName = "ENBREL"
+* name[Proprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel044ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 044"
-* for = Reference(Enbrel044Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel044IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 50 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: Enbrel044IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel044Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 044"
-* for = Reference(Enbrel044Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.025 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel044Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 044"
-* for = Reference(Enbrel044Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.12 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: Enbrel044Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 044"
-* for = Reference(Enbrel044Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 10 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
 Instance: Enbrel044Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1720,7 +1229,7 @@ Description: "4 1mL cartridges of Enbrel"
 * package.package.identifier.value = "58406-044-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 1 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-044
+* package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43183 "CARTRIDGE"
 
 Instance: Enbrel044Marketing
@@ -1735,60 +1244,12 @@ Description: "Marketing information for Enbrel 044"
 Instance: Enbrel055Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 055 Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "58406-055"
-* name[0].productName = "ENBREL"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "etanercept"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* identifier[NDCCode].value = "58406-055"
+* name[Proprietary].productName = "ENBREL"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2020-03-05"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-
-Instance: Enbrel055ActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Enbrel 055"
-* for = Reference(Enbrel055Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(Enbrel055IngredientDefinition)
-* substance.strength.presentationRatio.numerator = 25 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-
-Instance: Enbrel055IngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "OP401G7OJC"
-* moiety.name = "ETANERCEPT"
-* name.name = "ETANERCEPT"
-
-Instance: Enbrel055Ingredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Enbrel 055"
-* for = Reference(Enbrel055Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#F7LTH1E20Y "ARGININE HYDROCHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.013 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-Instance: Enbrel055Ingredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Enbrel 055"
-* for = Reference(Enbrel055Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#451W47IQ8X "SODIUM CHLORIDE"
-* substance.strength.presentationRatio.numerator = 0.06 'mmol' "mmol"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
-Instance: Enbrel055Ingredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Enbrel 055"
-* for = Reference(Enbrel055Definition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#C151H8M554 "SUCROSE"
-* substance.strength.presentationRatio.numerator = 5 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 0.5 'mL' "mL"
 
 Instance: Enbrel055Package
 InstanceOf: SubmittedMedicinalPackaging
@@ -1805,7 +1266,7 @@ Description: "4 0.5mL syringes of Enbrel"
 * package.package.identifier.value = "58406-055-01"
 * package.package.quantity = 4
 * package.package.containedItem.amount = 0.5 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#58406-055
+* package.package.containedItem.item.reference = Reference(Enbrel25mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel055Marketing

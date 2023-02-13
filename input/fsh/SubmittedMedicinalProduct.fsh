@@ -29,8 +29,6 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * name[Proprietary].namePart contains Suffix 0..1
 * name[Proprietary].namePart[Suffix].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SFX
 * name[NonProprietary].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm 1..1 MS
-* combinedPharmaceuticalDoseForm from http://evs.nci.nih.gov/valueset/FDA/C54456 (required)
 * crossReference 0..1 MS
 * crossReference.type 1..1 MS
 * crossReference.type = $NCI-T#C64637 (exactly)
@@ -49,10 +47,6 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * operation.type.concept from http://evs.nci.nih.gov/valueset/FDA/C73600 (required)
 * operation.organization 1..1 MS
 * operation.organization only Reference(IdentifiedEstablishment)
-* characteristic 0..* MS
-* characteristic.type 1..1 MS
-* characteristic.type from SubmittedMedicinalProductCharacteristicTypes (required)
-* characteristic.value[x] 1..1 MS
 
 Profile: SubmittedMedicinalProductMarketing
 Parent: RegulatedAuthorization
@@ -97,8 +91,13 @@ Profile: SubmittedManufacturedItem
 Parent: ManufacturedItemDefinition
 Description: "Details around the actual item, i.e tablet, solution, etc. that is packaged as part of the medicinal product."
 * status MS
-* manufacturedDoseForm MS
+* manufacturedDoseForm 1..1 MS
+* manufacturedDoseForm from http://evs.nci.nih.gov/valueset/FDA/C54456 (required)
 * extension contains ItemMarketingStatusDates named marketingStatusDates 0..1 MS
+* property 0..* MS
+* property.type 1..1 MS
+* property.type from SubmittedMedicinalProductCharacteristicTypes (required)
+* property.value[x] 1..1 MS
 
 Extension: ItemMarketingStatusDates
 Id: itemMarketingStatusDates
@@ -112,7 +111,7 @@ Parent: Ingredient
 Description: "Details around the ingredients of a submitted medicinal product."
 * status = #active (exactly)
 * for 1..1 MS
-* for only Reference(SubmittedMedicinalProduct)
+* for only Reference(SubmittedManufacturedItem)
 * role 1..1 MS
 * substance 1..1 MS
 * substance.code 1..1 MS
@@ -159,9 +158,13 @@ Description: "Codes that were specified in the SPL guide for characteristic type
 ValueSet: SubmittedMedicinalProductCharacteristicTypes
 Id: valueset-SubmittedMedicinalProductCharacteristicTypes
 Description: "Codes that identify the types of characteristics allowed for Submitted Medicinal Product."
+Title: "SPL Product Characteristic Types"
+* ^experimental = false
 * include codes from system SubmittedMedicinalProductCharacteristicTypes
 
 ValueSet: AllNDCProducts
 Id: valueset-AllNDCProducts
 Description: "A value set that is all of the NDC codesystem, i.e. all NDC products"
+Title: "All NDC Products"
+* ^experimental = false
 * include codes from system http://hl7.org/fhir/sid/ndc

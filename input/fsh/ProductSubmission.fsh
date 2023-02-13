@@ -87,6 +87,7 @@ Id: splSectionCodes
 Title: "SPL Section Codes"
 Description: "Section Codes for SPL Product Submission documents"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* ^experimental = false
 * include codes from system http://loinc.org where SYSTEM = "^FDA package insert"
 * include codes from system http://loinc.org where SYSTEM = "^FDA package label" and COMPONENT regex "^Package label.*$"
 
@@ -95,4 +96,5 @@ Id: splDocumentCodes
 Title: "SPL Document Codes"
 Description: "Document Codes for SPL Product Submission documents"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* ^experimental = false
 * include codes from system http://loinc.org where SYSTEM = "^FDA product label"

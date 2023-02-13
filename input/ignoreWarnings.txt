@@ -1,23 +1,18 @@
 == Suppressed Messages ==
 
 # External Terminologies that aren't known by the validator
-Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
 Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
-Code System URI 'urn:oid:2.16.840.1.113883.1.11.19255' is unknown so the code cannot be validated
+Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
+[Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
+Unknown System 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' specified, so Concepts and Filters can't be checked (Details: Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated)
 
-Unknown System specified, so Concepts and Filters can''t be checked
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.1.11.19255
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-establishmentBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-businessOperationQualifiers because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-labelerBusinessOperations because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers because the value set or a code system it depends on is not known to the validator, Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/spl/ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.113883.1.11.19255' is unknown so the code cannot be validated]
 ValueSet http://evs.nci.nih.gov/valueset/FDA/C54456 not found by validator
 ValueSet http://evs.nci.nih.gov/valueset/FDA/C54455 not found by validator
 ValueSet http://evs.nci.nih.gov/valueset/FDA/C73600 not found by validator
-ValueSet http://hl7.org/fhir/ValueSet/combined-dose-form not found by validator
+
+ValueSet http://hl7.org/fhir/ValueSet/product-characteristic-codes not found by validator
+
 
 # Allow for different display names from LOINC for FDA purposes
 The display "Establishment registration" is not a valid display for the code {http://loinc.org}51725-0%
@@ -47,10 +42,20 @@ The display "SPL UNCLASSIFIED SECTION" is not a valid display for the code {http
 The display "OVERDOSAGE SECTION" is not a valid display for the code {http://loinc.org}34088-5%
 The display "DOSAGE &amp; ADMINISTRATION SECTION" is not a valid display for the code {http://loinc.org}34068-7%
 The display "HOW SUPPLIED SECTION" is not a valid display for the code {http://loinc.org}34069-5%
+The display "BOXED WARNING SECTION" is not a valid display for the code {http://loinc.org}34066-1%
 
 
 # Open slice so there are slices that don't match the slice definitions
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocument
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocument|0.1.0
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionBundle|0.1.0
 
-# References between resources that are valid
-%isn't reachable by traversing forwards from first Bundle entry, and isn't a resource type that is typically used that way - check this is not missed somewhere
+# SPL Title strings can contain HTML tags
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+# We need to have backward references be allowed.
+%isn't reachable by traversing forwards from the Composition. Only Provenance is approved to be used this way (R4 section 3.3.1)
+
+# SPL does not use any of the US Core profiles
+US FHIR Usage rules require that all profiles on Provenance derive from the core US profile.
+US FHIR Usage rules require that all profiles on Organization derive from the core US profile.
+US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile.

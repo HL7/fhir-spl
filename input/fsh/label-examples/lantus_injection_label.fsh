@@ -18,39 +18,25 @@ Description: "A bundle containing all of the information for the Lantus Injectio
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, LantusVialDefinition)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialActiveIngredient)
+  * insert bundleEntry(ManufacturedItemDefinition, LantusSolution)
 * entry[+]
-  * insert bundleEntry(SubstanceDefinition, LantusVialIngredientDefinition)
+  * insert bundleEntry(Ingredient, LantusActiveIngredient)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialIngredient1)
+  * insert bundleEntry(SubstanceDefinition, LantusIngredientDefinition)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialIngredient2)
+  * insert bundleEntry(Ingredient, LantusIngredient1)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialIngredient3)
+  * insert bundleEntry(Ingredient, LantusIngredient2)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialIngredient4)
+  * insert bundleEntry(Ingredient, LantusIngredient3)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialIngredient5)
+  * insert bundleEntry(Ingredient, LantusIngredient4)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialIngredient6)
+  * insert bundleEntry(Ingredient, LantusIngredient5)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusVialIngredient7)
+  * insert bundleEntry(Ingredient, LantusIngredient6)
 * entry[+]
-  * insert bundleEntry(Ingredient, LantusSyringeActiveIngredient)
-* entry[+]
-  * insert bundleEntry(SubstanceDefinition, LantusSyringeIngredientDefinition)
-* entry[+]
-  * insert bundleEntry(Ingredient, LantusSyringeIngredient1)
-* entry[+]
-  * insert bundleEntry(Ingredient, LantusSyringeIngredient2)
-* entry[+]
-  * insert bundleEntry(Ingredient, LantusSyringeIngredient3)
-* entry[+]
-  * insert bundleEntry(Ingredient, LantusSyringeIngredient4)
-* entry[+]
-  * insert bundleEntry(Ingredient, LantusSyringeIngredient5)
-* entry[+]
-  * insert bundleEntry(Ingredient, LantusSyringeIngredient6)
+  * insert bundleEntry(Ingredient, LantusIngredient7)
 * entry[+]
   * insert bundleEntry(PackagedProductDefinition, LantusVialPackage)
 * entry[+]
@@ -65,24 +51,21 @@ InstanceOf: IdentifiedLabeler
 Description: "Sanifo-Aventis US - labeller for Lantus Injection"
 * type = OrganizationTypes#Labeler
 * name = "sanofi-aventis U.S. LLC"
-* identifier.system = "urn:oid:1.3.6.1.4.1.519.1"
-* identifier.value = "783243835"
+* identifier[DUNSNumber].value = "783243835"
 
 Instance: SanofiAventisDeutschland
 InstanceOf: IdentifiedEstablishment
 Description: "Sanifo-Aventis Deutschland - establishment for Lantus Injection"
 * type = OrganizationTypes#Establishment
 * name = "Sanofi-Aventis Deutschland GmbH"
-* identifier.system = "urn:oid:1.3.6.1.4.1.519.1"
-* identifier.value = "313218430"
+* identifier[DUNSNumber].value = "313218430"
 
 Instance: SanofiAventisSRL
 InstanceOf: IdentifiedEstablishment
 Description: "Sanifo-Aventis SRL - establishment for Lantus Injection"
 * type = OrganizationTypes#Establishment
 * name = "Sanofi S.r.l."
-* identifier.system = "urn:oid:1.3.6.1.4.1.519.1"
-* identifier.value = "338454274"
+* identifier[DUNSNumber].value = "338454274"
 
 Instance: LantusInjectionLabelComposition
 InstanceOf: ProductSubmissionDocument
@@ -167,13 +150,9 @@ Description: "Header information for the Lantus Injection Label"
 Instance: LantusVialDefinition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Lantus Vial product"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "0088-5021"
-* name[0].productName = "Lantus"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "insulin glargine"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42945 "INJECTION, SOLUTION"
+* identifier[NDCCode].value = "0088-5021"
+* name[Proprietary].productName = "Lantus"
+* name[Proprietary].productName = "insulin glargine"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
@@ -208,13 +187,9 @@ Description: "Structured information for the Lantus Vial product"
 Instance: LantusSyringeDefinition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Lantus Syringe product"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "0088-5020"
-* name[0].productName = "Lantus Solostar"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "insulin glargine"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42945 "INJECTION, SOLUTION"
+* identifier[NDCCode].value = "0088-5020"
+* name[Proprietary].productName = "Lantus Solostar"
+* name[NonProprietary].productName = "insulin glargine"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
@@ -234,18 +209,23 @@ Description: "Structured information for the Lantus Syringe product"
   * type.concept = http://ncimeta.nci.nih.gov#C84731 "PACK"
   * organization = Reference(SanofiAventisDeutschland)
 
-Instance: LantusVialActiveIngredient
+Instance: LantusSolution
+InstanceOf: SubmittedManufacturedItem
+* status = #active
+* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42945 "INJECTION, SOLUTION"
+
+Instance: LantusActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Lantus Vial"
-* for = Reference(LantusVialDefinition)
+Description: "Active Ingredient Strength for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
 * substance.code.reference = Reference(LantusVialIngredientDefinition)
 * substance.strength.presentationRatio.numerator = 100 '[iU]' "iU"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 
-Instance: LantusVialIngredientDefinition
+Instance: LantusIngredientDefinition
 InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Lantus Vial"
+Description: "Active Ingredient Information for Lantus"
 * identifier.system = "http://fdasis.nlm.nih.gov"
 * identifier.value = "2ZM8CX04RZ"
 * moiety.identifier.system = "http://fdasis.nlm.nih.gov"
@@ -253,116 +233,54 @@ Description: "Active Ingredient Information for Lantus Vial"
 * moiety.name = "INSULIN GLARGINE"
 * name.name = "INSULIN GLARGINE"
 
-Instance: LantusVialIngredient1
+Instance: LantusIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Lantus Vial"
-* for = Reference(LantusVialDefinition)
+Description: "Inactive Ingredient #1 for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#J41CSQ7QDS "ZINC"
 * substance.strength.presentationRatio.numerator = 30 'ug' "ug"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: LantusVialIngredient2
+Instance: LantusIngredient2
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Lantus Vial"
-* for = Reference(LantusVialDefinition)
+Description: "Inactive Ingredient #2 for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#GGO4Y809LO "METACRESOL"
 * substance.strength.presentationRatio.numerator = 2.7 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: LantusVialIngredient3
+Instance: LantusIngredient3
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Lantus Vial"
-* for = Reference(LantusVialDefinition)
+Description: "Inactive Ingredient #3 for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#PDC6A3C0OX "GLYCERIN"
 * substance.strength.presentationRatio.numerator = 20 'mg' "mg"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: LantusVialIngredient4
+Instance: LantusIngredient4
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #4 for Lantus Vial"
-* for = Reference(LantusVialDefinition)
+Description: "Inactive Ingredient #4 for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#7T1F30V5YH "POLYSORBATE 20"
 * substance.strength.presentationRatio.numerator = 20 'ug' "ug"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: LantusVialIngredient5
+Instance: LantusIngredient5
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #5 for Lantus Vial"
-* for = Reference(LantusVialDefinition)
+Description: "Inactive Ingredient #5 for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#059QF0KO0R "WATER"
-Instance: LantusVialIngredient6
+Instance: LantusIngredient6
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #6 for Lantus Vial"
-* for = Reference(LantusVialDefinition)
+Description: "Inactive Ingredient #6 for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#QTT17582CB "HYDROCHLORIC ACID"
-Instance: LantusVialIngredient7
+Instance: LantusIngredient7
 InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #7 for Lantus Vial"
-* for = Reference(LantusVialDefinition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#55X04QC32I "SODIUM HYDROXIDE"
-
-Instance: LantusSyringeActiveIngredient
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Active Ingredient Strength for Lantus Syringe"
-* for = Reference(LantusVialDefinition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(LantusSyringeIngredientDefinition)
-* substance.strength.presentationRatio.numerator = 100 '[iU]' "iU"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-
-Instance: LantusSyringeIngredientDefinition
-InstanceOf: SubmittedIngredientDefinition
-Description: "Active Ingredient Information for Lantus Syringe"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "2ZM8CX04RZ"
-* moiety.identifier.system = "http://fdasis.nlm.nih.gov"
-* moiety.identifier.value = "2ZM8CX04RZ"
-* moiety.name = "INSULIN GLARGINE"
-* name.name = "INSULIN GLARGINE"
-
-Instance: LantusSyringeIngredient1
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #1 for Lantus Syringe"
-* for = Reference(LantusSyringeDefinition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#J41CSQ7QDS "ZINC"
-* substance.strength.presentationRatio.numerator = 30 'ug' "ug"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: LantusSyringeIngredient2
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #2 for Lantus Syringe"
-* for = Reference(LantusSyringeDefinition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#GGO4Y809LO "METACRESOL"
-* substance.strength.presentationRatio.numerator = 2.7 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: LantusSyringeIngredient3
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #3 for Lantus Syringe"
-* for = Reference(LantusSyringeDefinition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#PDC6A3C0OX "GLYCERIN"
-* substance.strength.presentationRatio.numerator = 20 'mg' "mg"
-* substance.strength.presentationRatio.denominator = 1 'mL' "mL"
-Instance: LantusSyringeIngredient4
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #4 for Lantus Syringe"
-* for = Reference(LantusSyringeDefinition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#059QF0KO0R "WATER"
-Instance: LantusSyringeIngredient5
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #5 for Lantus Syringe"
-* for = Reference(LantusSyringeDefinition)
-* role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
-* substance.code.concept = http://fdasis.nlm.nih.gov#QTT17582CB "HYDROCHLORIC ACID"
-Instance: LantusSyringeIngredient6
-InstanceOf: SubmittedMedicinalProductIngredient
-Description: "Inactive Ingredient #6 for Lantus Syringe"
-* for = Reference(LantusSyringeDefinition)
+Description: "Inactive Ingredient #7 for Lantus"
+* for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#55X04QC32I "SODIUM HYDROXIDE"
 
@@ -380,7 +298,7 @@ Description: "Lantus Vial Packaging"
 * package.package.type = $NCI-T#C43209 "VIAL, GLASS"
 * package.package.quantity = 1
 * package.package.containedItem.amount = 10 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#0088-5021
+* package.package.containedItem.item.reference = Reference(LantusSolution)
 
 Instance: LantusVialMarketing
 InstanceOf: SubmittedMedicinalProductMarketing
@@ -407,7 +325,7 @@ Description: "Lantus Syringe Packaging"
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 * package.package.quantity = 5
 * package.package.containedItem.amount = 3 'mL' "mL"
-* package.package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#0088-5020
+* package.package.containedItem.item.reference = Reference(LantusSolution)
 
 Instance: LantusSyringeMarketing
 InstanceOf: SubmittedMedicinalProductMarketing

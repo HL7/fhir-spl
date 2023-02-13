@@ -12,6 +12,8 @@ Description: "A bundle containing all of the information for the Allopurinol Tab
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, AllopurinolUSPDefinition)
 * entry[+]
+  * insert bundleEntry(ManufacturedItemDefinition, AllopurinolTablet)
+* entry[+]
   * insert bundleEntry(Ingredient, AllopurinolUSPActiveIngredient)
 * entry[+]
   * insert bundleEntry(SubstanceDefinition, AllopurinolIngredientDefinition)
@@ -43,8 +45,7 @@ InstanceOf: IdentifiedLabeler
 Description: "Aidarex Pharmaceuticals - labeller for Allopurinol Tablets USP"
 * type = OrganizationTypes#Labeler
 * name = "Aidarex Pharmaceuticals LLC"
-* identifier.system = "urn:oid:1.3.6.1.4.1.519.1"
-* identifier.value = "801503249"
+* identifier[DUNSNumber].value = "801503249"
 
 Instance: AllopurinolTabletLabelComposition
 InstanceOf: ProductSubmissionDocument
@@ -457,32 +458,33 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 Instance: AllopurinolUSPDefinition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Allopurinol Tablet USP Label"
-* identifier.system = "http://hl7.org/fhir/sid/ndc"
-* identifier.value = "53217-187"
-* name[0].productName = "Allopurinol"
-* name[0].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[1].productName = "Allopurinol"
-* name[1].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42998 "TABLET"
+* identifier[NDCCode].value = "53217-187"
+* name[Proprietary].productName = "Allopurinol"
+* name[NonProprietary].productName = "Allopurinol"
 * crossReference.product.concept = http://hl7.org/fhir/sid/ndc#0591-5543
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * route = $NCI-T#C38288 "ORAL"
-* characteristic[0].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
-* characteristic[=].valueCodeableConcept = $NCI-T#C48325 "WHITE"
-* characteristic[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMPRINT
-* characteristic[=].valueCodeableConcept.text = "DAN;DAN;5543"
-* characteristic[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSCORE
-* characteristic[=].valueQuantity.value = 2
-* characteristic[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSHAPE
-* characteristic[=].valueCodeableConcept = $NCI-T#C48348 "ROUND"
-* characteristic[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSIZE
-* characteristic[=].valueQuantity = 10 'mm' "mm"
+
+Instance: AllopurinolTablet
+InstanceOf: SubmittedManufacturedItem
+* status = #active
+* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42998 "TABLET"
+* property[0].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
+* property[=].valueCodeableConcept = $NCI-T#C48325 "WHITE"
+* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMPRINT
+* property[=].valueCodeableConcept.text = "DAN;DAN;5543"
+* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSCORE
+* property[=].valueQuantity.value = 2
+* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSHAPE
+* property[=].valueCodeableConcept = $NCI-T#C48348 "ROUND"
+* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSIZE
+* property[=].valueQuantity = 10 'mm' "mm"
 
 Instance: AllopurinolUSPActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Active Ingredient Strength for Allupurinol USP"
-* for = Reference(AllopurinolUSPDefinition)
+* for = Reference(AllopurinolTablet)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
 * substance.code.reference = Reference(AllopurinolIngredientDefinition)
 * substance.strength.presentationRatio.numerator = 100 'mg' "mg"
@@ -501,37 +503,37 @@ Description: "Active Ingredient Information for Allupurinol USP"
 Instance: AllopurinolUSPIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Inactive Ingredient #1 for Allopurinol USP"
-* for = Reference(AllopurinolUSPDefinition)
+* for = Reference(AllopurinolTablet)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#M28OL1HH48 "CROSCARMELLOSE SODIUM"
 Instance: AllopurinolUSPIngredient2
 InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Inactive Ingredient #2 for Allopurinol USP"
-* for = Reference(AllopurinolUSPDefinition)
+* for = Reference(AllopurinolTablet)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#EWQ57Q8I5X "LACTOSE MONOHYDRATE"
 Instance: AllopurinolUSPIngredient3
 InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Inactive Ingredient #3 for Allopurinol USP"
-* for = Reference(AllopurinolUSPDefinition)
+* for = Reference(AllopurinolTablet)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#70097M6I30 "MAGNESIUM STEARATE"
 Instance: AllopurinolUSPIngredient4
 InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Inactive Ingredient #4 for Allopurinol USP"
-* for = Reference(AllopurinolUSPDefinition)
+* for = Reference(AllopurinolTablet)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#OP1R32D61U "CELLULOSE, MICROCRYSTALLINE"
 Instance: AllopurinolUSPIngredient5
 InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Inactive Ingredient #5 for Allopurinol USP"
-* for = Reference(AllopurinolUSPDefinition)
+* for = Reference(AllopurinolTablet)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#O8232NY3SJ "STARCH, CORN"
 Instance: AllopurinolUSPIngredient6
 InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Inactive Ingredient #6 for Allopurinol USP"
-* for = Reference(AllopurinolUSPDefinition)
+* for = Reference(AllopurinolTablet)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#IACT
 * substance.code.concept = http://fdasis.nlm.nih.gov#368GB5141J "SODIUM LAURYL SULFATE"
 
@@ -544,7 +546,7 @@ Description: "100 Tablets Bottle of Allopurinol USP"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-00"
 * package.containedItem.amount = 100 '1'
-* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
+* package.containedItem.item.reference = Reference(AllopurinolTablet)
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
@@ -558,7 +560,7 @@ Description: "30 Tablets Bottle of Allopurinol USP"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-30"
 * package.containedItem.amount = 30 '1'
-* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
+* package.containedItem.item.reference = Reference(AllopurinolTablet)
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
@@ -572,7 +574,7 @@ Description: "60 Tablets Bottle of Allopurinol USP"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-60"
 * package.containedItem.amount = 60 '1'
-* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
+* package.containedItem.item.reference = Reference(AllopurinolTablet)
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
@@ -586,7 +588,7 @@ Description: "90 Tablets Bottle of Allopurinol USP"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-90"
 * package.containedItem.amount = 90 '1'
-* package.containedItem.item.concept = http://hl7.org/fhir/sid/ndc#53217-187
+* package.containedItem.item.reference = Reference(AllopurinolTablet)
 * package.type = $NCI-T#C43169 "BOTTLE"
 * package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"

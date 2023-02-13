@@ -139,6 +139,7 @@ groups:
       - PackagedProductDefinition/Allopurinol60Tablets
       - PackagedProductDefinition/Allopurinol90Tablets
       - PackagedProductDefinition/Allopurinol100Tablets
+      - ManufacturedItemDefinition/AllopurinolTablet
       - Ingredient/AllopurinolUSPActiveIngredient
       - SubstanceDefinition/AllopurinolIngredientDefinition
       - Ingredient/AllopurinolUSPIngredient1
@@ -158,100 +159,56 @@ groups:
       - Organization/ImmunexCorporation
       - MedicinalProductDefinition/Enbrel010Definition
       - PackagedProductDefinition/Enbrel010Package
-      - Ingredient/Enbrel010ActiveIngredient
-      - SubstanceDefinition/Enbrel010IngredientDefinition
-      - Ingredient/Enbrel010Ingredient1
-      - Ingredient/Enbrel010Ingredient2
-      - Ingredient/Enbrel010Ingredient3
       - RegulatedAuthorization/Enbrel010Marketing
       - MedicinalProductDefinition/Enbrel021Definition
       - PackagedProductDefinition/Enbrel021Package
-      - Ingredient/Enbrel021ActiveIngredient
-      - SubstanceDefinition/Enbrel021IngredientDefinition
-      - Ingredient/Enbrel021Ingredient1
-      - Ingredient/Enbrel021Ingredient2
-      - Ingredient/Enbrel021Ingredient3
       - RegulatedAuthorization/Enbrel021Marketing
       - MedicinalProductDefinition/Enbrel032Definition
       - PackagedProductDefinition/Enbrel032Package
-      - Ingredient/Enbrel032ActiveIngredient
-      - SubstanceDefinition/Enbrel032IngredientDefinition
-      - Ingredient/Enbrel032Ingredient1
-      - Ingredient/Enbrel032Ingredient2
-      - Ingredient/Enbrel032Ingredient3
       - RegulatedAuthorization/Enbrel032Marketing
       - MedicinalProductDefinition/Enbrel044Definition
       - PackagedProductDefinition/Enbrel044Package
-      - Ingredient/Enbrel044ActiveIngredient
-      - SubstanceDefinition/Enbrel044IngredientDefinition
-      - Ingredient/Enbrel044Ingredient1
-      - Ingredient/Enbrel044Ingredient2
-      - Ingredient/Enbrel044Ingredient3
       - RegulatedAuthorization/Enbrel044Marketing
       - MedicinalProductDefinition/Enbrel055Definition
       - PackagedProductDefinition/Enbrel055Package
-      - Ingredient/Enbrel055ActiveIngredient
-      - SubstanceDefinition/Enbrel055IngredientDefinition
-      - Ingredient/Enbrel055Ingredient1
-      - Ingredient/Enbrel055Ingredient2
-      - Ingredient/Enbrel055Ingredient3
       - RegulatedAuthorization/Enbrel055Marketing
       - MedicinalProductDefinition/Enbrel435Definition
       - PackagedProductDefinition/Enbrel435Package
-      - Ingredient/Enbrel435ActiveIngredient
-      - SubstanceDefinition/Enbrel435IngredientDefinition
-      - Ingredient/Enbrel435Ingredient1
-      - Ingredient/Enbrel435Ingredient2
-      - Ingredient/Enbrel435Ingredient3
       - RegulatedAuthorization/Enbrel435Marketing
       - MedicinalProductDefinition/Enbrel445Definition
       - PackagedProductDefinition/Enbrel445Package
-      - Ingredient/Enbrel445ActiveIngredient
-      - SubstanceDefinition/Enbrel445IngredientDefinition
-      - Ingredient/Enbrel445Ingredient1
-      - Ingredient/Enbrel445Ingredient2
-      - Ingredient/Enbrel445Ingredient3
       - RegulatedAuthorization/Enbrel445Marketing
       - MedicinalProductDefinition/Enbrel446Definition
       - PackagedProductDefinition/Enbrel446Package
-      - Ingredient/Enbrel446ActiveIngredient
-      - SubstanceDefinition/Enbrel446IngredientDefinition
-      - Ingredient/Enbrel446Ingredient1
-      - Ingredient/Enbrel446Ingredient2
-      - Ingredient/Enbrel446Ingredient3
       - RegulatedAuthorization/Enbrel446Marketing
       - MedicinalProductDefinition/Enbrel455Definition
       - PackagedProductDefinition/Enbrel455Package
-      - Ingredient/Enbrel455ActiveIngredient
-      - SubstanceDefinition/Enbrel455IngredientDefinition
-      - Ingredient/Enbrel455Ingredient1
-      - Ingredient/Enbrel455Ingredient2
-      - Ingredient/Enbrel455Ingredient3
       - RegulatedAuthorization/Enbrel455Marketing
       - MedicinalProductDefinition/Enbrel456Definition
       - PackagedProductDefinition/Enbrel456Package
-      - Ingredient/Enbrel456ActiveIngredient
-      - SubstanceDefinition/Enbrel456IngredientDefinition
-      - Ingredient/Enbrel456Ingredient1
-      - Ingredient/Enbrel456Ingredient2
-      - Ingredient/Enbrel456Ingredient3
       - RegulatedAuthorization/Enbrel456Marketing
       - MedicinalProductDefinition/Enbrel425Definition
       - PackagedProductDefinition/Enbrel425Package
       - RegulatedAuthorization/Enbrel425Marketing
-      - MedicinalProductDefinition/Enbrel425Part1Definition
-      - PackagedProductDefinition/Enbrel425Part1Package
-      - RegulatedAuthorization/Enbrel425Part1Marketing
-      - MedicinalProductDefinition/Enbrel425Part2Definition
-      - PackagedProductDefinition/Enbrel425Part2Package
-      - RegulatedAuthorization/Enbrel425Part2Marketing
-      - Ingredient/Enbrel425Part1ActiveIngredient
-      - SubstanceDefinition/Enbrel425Part1IngredientDefinition
-      - Ingredient/Enbrel425Part1Ingredient1
-      - Ingredient/Enbrel425Part1Ingredient2
-      - Ingredient/Enbrel425Part1Ingredient3
-      - Ingredient/Enbrel425Part2Ingredient1
-      - Ingredient/Enbrel425Part2Ingredient2
+      - ManufacturedItemDefinition/Enbrel50mgSolution
+      - Ingredient/Enbrel50mgSolutionActiveIngredient
+      - SubstanceDefinition/EnbrelIngredientDefinition
+      - Ingredient/Enbrel50mgSolutionIngredient1
+      - Ingredient/Enbrel50mgSolutionIngredient2
+      - Ingredient/Enbrel50mgSolutionIngredient3
+      - ManufacturedItemDefinition/Enbrel25mgSolution
+      - Ingredient/Enbrel25mgSolutionActiveIngredient
+      - Ingredient/Enbrel25mgSolutionIngredient1
+      - Ingredient/Enbrel25mgSolutionIngredient2
+      - Ingredient/Enbrel25mgSolutionIngredient3
+      - ManufacturedItemDefinition/EnbrelPowder
+      - Ingredient/EnbrelPowderActiveIngredient
+      - Ingredient/EnbrelPowderIngredient1
+      - Ingredient/EnbrelPowderIngredient2
+      - Ingredient/EnbrelPowderIngredient3
+      - ManufacturedItemDefinition/EnbrelSterileSolution
+      - Ingredient/EnbrelSterileSolutionIngredient1
+      - Ingredient/EnbrelSterileSolutionIngredient2
   LantusLabel:
     name: Lantus Label
     description: Example Instances associated with the label for Lantus
@@ -262,23 +219,16 @@ groups:
       - MedicinalProductDefinition/LantusSyringeDefinition
       - PackagedProductDefinition/LantusSyringePackage
       - PackagedProductDefinition/LantusVialPackage
-      - Ingredient/LantusSyringeActiveIngredient
-      - SubstanceDefinition/LantusSyringeIngredientDefinition
-      - Ingredient/LantusSyringeIngredient1
-      - Ingredient/LantusSyringeIngredient2
-      - Ingredient/LantusSyringeIngredient3
-      - Ingredient/LantusSyringeIngredient4
-      - Ingredient/LantusSyringeIngredient5
-      - Ingredient/LantusSyringeIngredient6
-      - Ingredient/LantusVialActiveIngredient
-      - SubstanceDefinition/LantusVialIngredientDefinition
-      - Ingredient/LantusVialIngredient1
-      - Ingredient/LantusVialIngredient2
-      - Ingredient/LantusVialIngredient3
-      - Ingredient/LantusVialIngredient4
-      - Ingredient/LantusVialIngredient5
-      - Ingredient/LantusVialIngredient6
-      - Ingredient/LantusVialIngredient7
+      - ManufacturedItemDefinition/LantusSolution
+      - Ingredient/LantusActiveIngredient
+      - SubstanceDefinition/LantusIngredientDefinition
+      - Ingredient/LantusIngredient1
+      - Ingredient/LantusIngredient2
+      - Ingredient/LantusIngredient3
+      - Ingredient/LantusIngredient4
+      - Ingredient/LantusIngredient5
+      - Ingredient/LantusIngredient6
+      - Ingredient/LantusIngredient7
       - RegulatedAuthorization/LantusVialMarketing
       - RegulatedAuthorization/LantusSyringeMarketing
       - Organization/SanofiAventisUS
