@@ -219,7 +219,7 @@ InstanceOf: SubmittedMedicinalProductIngredient
 Description: "Active Ingredient Strength for Lantus"
 * for = Reference(LantusSolution)
 * role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#ACTIB
-* substance.code.reference = Reference(LantusVialIngredientDefinition)
+* substance.code.reference = Reference(LantusIngredientDefinition)
 * substance.strength.presentationRatio.numerator = 100 '[iU]' "iU"
 * substance.strength.presentationRatio.denominator = 1 'mL' "mL"
 

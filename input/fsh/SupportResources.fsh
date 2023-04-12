@@ -4,7 +4,7 @@ Description: "A profile that represents the SPL document that was either created
 * extension contains VersionNumber named versionNumber 0..1 MS and SPLDocumentDate named splDocumentDate 0..1 MS
 * masterIdentifier 1..1 MS
 * identifier 1..* MS
-* status = #current (exactly)
+* status = #current
 * type 1..1 MS
 * date 1..1 MS
 * content MS

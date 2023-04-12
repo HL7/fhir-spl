@@ -190,6 +190,12 @@ groups:
       - MedicinalProductDefinition/Enbrel425Definition
       - PackagedProductDefinition/Enbrel425Package
       - RegulatedAuthorization/Enbrel425Marketing
+      - MedicinalProductDefinition/Enbrel425Part1Definition
+      - PackagedProductDefinition/Enbrel425Part1Package
+      - RegulatedAuthorization/Enbrel425Part1Marketing
+      - MedicinalProductDefinition/Enbrel425Part2Definition
+      - PackagedProductDefinition/Enbrel425Part2Package
+      - RegulatedAuthorization/Enbrel425Part2Marketing
       - ManufacturedItemDefinition/Enbrel50mgSolution
       - Ingredient/Enbrel50mgSolutionActiveIngredient
       - SubstanceDefinition/EnbrelIngredientDefinition

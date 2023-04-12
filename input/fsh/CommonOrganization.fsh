@@ -42,7 +42,7 @@ Description: "A profile that provides the minimum set of information about a Bun
 * obeys spl-X.1.1.2
 * obeys spl-2.1.3.11
 * type 1..1 MS
-* type = #message (exactly)
+* type = #message
 * timestamp 1..1 MS
 * entry.resource 1..1 MS
 * entry.fullUrl 1..1 MS

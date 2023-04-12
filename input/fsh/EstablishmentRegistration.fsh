@@ -65,12 +65,12 @@ Description: "A profile that associates an registrant to the establishments it i
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(EstablishmentOrganization)
 * code 1..1 MS
-* code = OrganizationAffiliationCodes#ESTABLISHMENT (exactly)
+* code = OrganizationAffiliationCodes#ESTABLISHMENT
 
 Profile: EstablishmentRegistrantOrganization
 Parent: RegistrantOrganization
 Description: "A specialization of the RegistrantOrganization profile that fixes the type to EstablishmentRegistrant"
-* type = OrganizationTypes#EstablishmentRegistrant (exactly)
+* type = OrganizationTypes#EstablishmentRegistrant
 
 Profile: EstablishmentOrganization
 Parent: Organization

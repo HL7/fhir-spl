@@ -31,7 +31,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * name[NonProprietary].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
 * crossReference 0..1 MS
 * crossReference.type 1..1 MS
-* crossReference.type = $NCI-T#C64637 (exactly)
+* crossReference.type = $NCI-T#C64637
 * crossReference.product 1..1 MS
 * crossReference.product from AllNDCProducts
 * crossReference.product.concept 1..1 MS
@@ -109,7 +109,7 @@ Description: "Used to indicate the date range of the marketing status of a manuf
 Profile: SubmittedMedicinalProductIngredient
 Parent: Ingredient
 Description: "Details around the ingredients of a submitted medicinal product."
-* status = #active (exactly)
+* status = #active
 * for 1..1 MS
 * for only Reference(SubmittedManufacturedItem)
 * role 1..1 MS
@@ -139,15 +139,19 @@ Description: "Used to represent an substance's active moiety."
 
 CodeSystem: SubmittedMedicinalProductNameTypes
 Id: codesystem-submittedMedicinalProductNameTypes
-Description: "Codes that identify the relationship between two organizations."
+Title: "Medicinal Product Name Types"
+Description: "Codes that types of names for a medicinal product."
 * ^caseSensitive = true
+* ^experimental = false
 * #PROPRIETARY "Proprietary Name"
 * #NONPROPRIETARY "Generic Name (Non-Proprietary)"
 
 CodeSystem: SubmittedMedicinalProductCharacteristicTypes
 Id: codesystem-characteristicTypes
+Title: "SPL Product Characteristic Types"
 Description: "Codes that were specified in the SPL guide for characteristic types."
 * ^caseSensitive = false
+* ^experimental = false
 * #SPLCOLOR "Color"
 * #SPLIMPRINT "Imprint"
 * #SPLSCORE "Score"

@@ -49,6 +49,12 @@
 <artifact id="MedicinalProductDefinition/Enbrel425Definition" key="MedicinalProductDefinition-Enbrel425Definition" name="Enbrel425Definition"/>
 <artifact id="RegulatedAuthorization/Enbrel425Marketing" key="RegulatedAuthorization-Enbrel425Marketing" name="Enbrel425Marketing"/>
 <artifact id="PackagedProductDefinition/Enbrel425Package" key="PackagedProductDefinition-Enbrel425Package" name="Enbrel425Package"/>
+<artifact id="MedicinalProductDefinition/Enbrel425Part1Definition" key="MedicinalProductDefinition-Enbrel425Part1Definition" name="Enbrel425Part1Definition"/>
+<artifact id="RegulatedAuthorization/Enbrel425Part1Marketing" key="RegulatedAuthorization-Enbrel425Part1Marketing" name="Enbrel425Part1Marketing"/>
+<artifact id="PackagedProductDefinition/Enbrel425Part1Package" key="PackagedProductDefinition-Enbrel425Part1Package" name="Enbrel425Part1Package"/>
+<artifact id="MedicinalProductDefinition/Enbrel425Part2Definition" key="MedicinalProductDefinition-Enbrel425Part2Definition" name="Enbrel425Part2Definition"/>
+<artifact id="RegulatedAuthorization/Enbrel425Part2Marketing" key="RegulatedAuthorization-Enbrel425Part2Marketing" name="Enbrel425Part2Marketing"/>
+<artifact id="PackagedProductDefinition/Enbrel425Part2Package" key="PackagedProductDefinition-Enbrel425Part2Package" name="Enbrel425Part2Package"/>
 <artifact id="MedicinalProductDefinition/Enbrel435Definition" key="MedicinalProductDefinition-Enbrel435Definition" name="Enbrel435Definition"/>
 <artifact id="RegulatedAuthorization/Enbrel435Marketing" key="RegulatedAuthorization-Enbrel435Marketing" name="Enbrel435Marketing"/>
 <artifact id="PackagedProductDefinition/Enbrel435Package" key="PackagedProductDefinition-Enbrel435Package" name="Enbrel435Package"/>
@@ -108,7 +114,7 @@
 <artifact id="Provenance/ExampleLabelerFHIRtoSPLProvenance" key="Provenance-ExampleLabelerFHIRtoSPLProvenance" name="ExampleLabelerFHIRtoSPLProvenance"/>
 <artifact id="Provenance/ExampleLabelerSPLtoFHIRProvenance" key="Provenance-ExampleLabelerSPLtoFHIRProvenance" name="ExampleLabelerSPLtoFHIRProvenance"/>
 <artifact id="DocumentReference/ExampleSPLDocumentReference" key="DocumentReference-ExampleSPLDocumentReference" name="ExampleSPLDocumentReference"/>
-<artifact id="CodeSystem/codesystem-fhirMessageTypes" key="CodeSystem-codesystem-fhirMessageTypes" name="FHIRSpecificSPLMessageTypes"/>
+<artifact id="CodeSystem/codesystem-fhirMessageTypes" key="CodeSystem-codesystem-fhirMessageTypes" name="FHIR Specific SPL Message Types"/>
 <artifact id="ValueSet/valueset-gdufaFacilityBusinessOperationQualifiers" key="ValueSet-valueset-gdufaFacilityBusinessOperationQualifiers" name="GDUFA Facility Business Operation Qualifiers"/>
 <artifact id="ValueSet/valueset-gdufaFacilityBusinessOperations" key="ValueSet-valueset-gdufaFacilityBusinessOperations" name="GDUFA Facility Business Operations"/>
 <artifact id="StructureDefinition/GDUFAFacilityIdentificationLogicalModel" key="StructureDefinition-GDUFAFacilityIdentificationLogicalModel" name="GDUFA Facility Identification Logical Model"/>
@@ -158,11 +164,11 @@
 <artifact id="PackagedProductDefinition/LantusVialPackage" key="PackagedProductDefinition-LantusVialPackage" name="LantusVialPackage"/>
 <artifact id="StructureDefinition/itemMarketingStatusDates" key="StructureDefinition-itemMarketingStatusDates" name="Manufactured Item Marketing Status Date Range"/>
 <artifact id="StructureDefinition/manufacturedItemReference" key="StructureDefinition-manufacturedItemReference" name="Manufactured Item Reference"/>
+<artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="Medicinal Product Name Types"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
-<artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="OrganizationAffiliationCodes"/>
+<artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="Organization Relationship Types"/>
 <artifact id="StructureDefinition/OrganizationBundle" key="StructureDefinition-OrganizationBundle" name="OrganizationBundle"/>
 <artifact id="StructureDefinition/OrganizationMessage" key="StructureDefinition-OrganizationMessage" name="OrganizationMessage"/>
-<artifact id="CodeSystem/codesystem-organizationTypes" key="CodeSystem-codesystem-organizationTypes" name="OrganizationTypes"/>
 <artifact id="ValueSet/valueset-organizationSubmissionMessageTypes" key="ValueSet-valueset-organizationSubmissionMessageTypes" name="Organzation Submission Message Types"/>
 <artifact id="StructureDefinition/OutOfBusinessBundle" key="StructureDefinition-OutOfBusinessBundle" name="OutOfBusinessBundle"/>
 <artifact id="StructureDefinition/OutOfBusinessMessage" key="StructureDefinition-OutOfBusinessMessage" name="OutOfBusinessMessage"/>
@@ -173,7 +179,9 @@
 <artifact id="ValueSet/valueset-registrantOrganizationTypes" key="ValueSet-valueset-registrantOrganizationTypes" name="Registrant Organization Types"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
 <artifact id="ValueSet/splDocumentCodes" key="ValueSet-splDocumentCodes" name="SPL Document Codes"/>
+<artifact id="CodeSystem/codesystem-organizationTypes" key="CodeSystem-codesystem-organizationTypes" name="SPL Organization Types"/>
 <artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SPL Product Characteristic Types"/>
+<artifact id="CodeSystem/codesystem-characteristicTypes" key="CodeSystem-codesystem-characteristicTypes" name="SPL Product Characteristic Types"/>
 <artifact id="ValueSet/splSectionCodes" key="ValueSet-splSectionCodes" name="SPL Section Codes"/>
 <artifact id="StructureDefinition/SPLAddress" key="StructureDefinition-SPLAddress" name="SPLAddress"/>
 <artifact id="StructureDefinition/SPLContactPoint" key="StructureDefinition-SPLContactPoint" name="SPLContactPoint"/>
@@ -208,10 +216,8 @@
 <artifact id="StructureDefinition/SubmittedManufacturedItem" key="StructureDefinition-SubmittedManufacturedItem" name="SubmittedManufacturedItem"/>
 <artifact id="StructureDefinition/SubmittedMedicinalPackaging" key="StructureDefinition-SubmittedMedicinalPackaging" name="SubmittedMedicinalPackaging"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProduct" key="StructureDefinition-SubmittedMedicinalProduct" name="SubmittedMedicinalProduct"/>
-<artifact id="CodeSystem/codesystem-characteristicTypes" key="CodeSystem-codesystem-characteristicTypes" name="SubmittedMedicinalProductCharacteristicTypes"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProductIngredient" key="StructureDefinition-SubmittedMedicinalProductIngredient" name="SubmittedMedicinalProductIngredient"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProductMarketing" key="StructureDefinition-SubmittedMedicinalProductMarketing" name="SubmittedMedicinalProductMarketing"/>
-<artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="SubmittedMedicinalProductNameTypes"/>
 <artifact id="ValueSet/valueset-topLevelOrganizationTypes" key="ValueSet-valueset-topLevelOrganizationTypes" name="Top-Level Organization Types"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>
