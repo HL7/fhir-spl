@@ -141,17 +141,6 @@ Description: "Header information for the Enbrel Syringe Labels"
 * identifier.value = "urn:uuid:a002b40c-097d-47a5-957f-7a7b1807af7f"
 * status = #final
 * type = http://loinc.org#34391-3 "HUMAN PRESCRIPTION DRUG LABEL"
-* subject[0] = Reference(Enbrel435Definition)
-* subject[+] = Reference(Enbrel445Definition)
-* subject[+] = Reference(Enbrel425Definition)
-* subject[+] = Reference(Enbrel455Definition)
-* subject[+] = Reference(Enbrel456Definition)
-* subject[+] = Reference(Enbrel446Definition)
-* subject[+] = Reference(Enbrel021Definition)
-* subject[+] = Reference(Enbrel032Definition)
-* subject[+] = Reference(Enbrel010Definition)
-* subject[+] = Reference(Enbrel044Definition)
-* subject[+] = Reference(Enbrel055Definition)
 * date = "2021-12-13"
 * author = Reference(ImmunexCorporation)
 * title = """These highlights do not include all the information needed to use ENBREL safely and effectively.  See full prescribing information for ENBREL.  <br/>

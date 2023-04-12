@@ -55,7 +55,6 @@ Description: "Header information for the Allopurinol Tablet USP Label"
 * identifier.value = "urn:uuid:c9a01871-bbf8-4b31-9b9b-9fa8c0997b29"
 * status = #final
 * type = http://loinc.org#34391-3 "HUMAN PRESCRIPTION DRUG LABEL"
-* subject[0] = Reference(AllopurinolUSPDefinition)
 * date = "2017-02-04"
 * author = Reference(AidarexPharmaceuticals)
 * title = "Allopurinol<br/>Tablets USP<br/>Revised: February 2015<br/>Rx only        <br/>"
