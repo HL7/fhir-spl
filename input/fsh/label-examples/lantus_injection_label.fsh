@@ -75,6 +75,8 @@ Description: "Header information for the Lantus Injection Label"
 * identifier.value = "urn:uuid:6328c99d-d75f-43ef-b19e-7e71f91e57f6"
 * status = #final
 * type = http://loinc.org#34391-3 "HUMAN PRESCRIPTION DRUG LABEL"
+* subject[0] = Reference(LantusSyringeDefinition)
+* subject[1] = Reference(LantusVialDefinition)
 * date = "2021-01-27"
 * author = Reference(SanofiAventisUS)
 * title = "These highlights do not include all the information needed to use LANTUS safely and effectively. See full prescribing information for LANTUS. <br/>
