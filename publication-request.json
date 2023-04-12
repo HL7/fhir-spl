@@ -1,0 +1,8 @@
+{
+  "package-id" : "hl7.fhir.us.spl",
+  "version" : "0.1.0",
+  "path" : "http://hl7.org/fhir/us/spl",
+  "status" : "draft",
+  "sequence" : "STU1",
+  "desc" : "This is the first published ballot of the SPL guide."
+}
