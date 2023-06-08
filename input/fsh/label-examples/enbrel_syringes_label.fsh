@@ -344,7 +344,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is administered by subcutaneous injection.</p>
                         <table width="75%" id="table1">
-                           <h2>Table 1. Dosing and Administration for Adult Patients</h2>
+                           <caption>Table 1. Dosing and Administration for Adult Patients</caption>
                            <col width="45%" align="left" valign="top"/>
                            <col width="55%" align="left" valign="top"/>
                            <thead>
@@ -401,7 +401,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is administered by subcutaneous injection.</p>
                         <table width="75%" id="table2">
-                           <h2>Table 2. Dosing and Administration for Pediatric Patients (PsO or JIA)</h2>
+                           <caption>Table 2. Dosing and Administration for Pediatric Patients (PsO or JIA)</caption>
                            <col width="45%" align="left" valign="top"/>
                            <col width="55%" align="left" valign="top"/>
                            <thead>

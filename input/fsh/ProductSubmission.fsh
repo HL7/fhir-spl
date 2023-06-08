@@ -15,11 +15,15 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
-* entry contains Composition 1..1 MS and Labeler 1..1 MS and Product 0..* MS and Marketing 0..* MS and Packaging 0..* MS and Ingredient 0..* MS and Substance 0..* MS and Item 0..* MS
+* entry contains Composition 1..1 MS and Labeler 1..1 MS and Registrant 0..1 MS and Establishment 0..* MS and Product 0..* MS and Marketing 0..* MS and Packaging 0..* MS and Ingredient 0..* MS and Substance 0..* MS and Item 0..* MS
 * entry[Composition].resource 1..1 MS
 * entry[Composition].resource only ProductSubmissionDocument
 * entry[Labeler].resource 1..1 MS
 * entry[Labeler].resource only IdentifiedLabeler
+* entry[Registrant].resource 1..1 MS
+* entry[Registrant].resource only IdentifiedRegistrant
+* entry[Establishment].resource 1..1 MS
+* entry[Establishment].resource only IdentifiedEstablishment
 * entry[Product].resource 1..1 MS
 * entry[Product].resource only SubmittedMedicinalProduct
 * entry[Ingredient].resource 1..1 MS
