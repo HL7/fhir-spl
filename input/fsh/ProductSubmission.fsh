@@ -21,7 +21,7 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * entry[Labeler].resource 1..1 MS
 * entry[Labeler].resource only IdentifiedLabeler
 * entry[Registrant].resource 1..1 MS
-* entry[Registrant].resource only IdentifiedRegistrant
+* entry[Registrant].resource only IdentifiedEstablishmentRegistrant
 * entry[Establishment].resource 1..1 MS
 * entry[Establishment].resource only IdentifiedEstablishment
 * entry[Product].resource 1..1 MS
