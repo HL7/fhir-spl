@@ -120,7 +120,7 @@ groups:
       - StructureDefinition/ProductSubmissionDocument
       - StructureDefinition/sectionEffectiveTime
       - StructureDefinition/versionNumber
-      - StructureDefinition/sectionHighlights
+      - StructureDefinition/sectionLinkId
   DualSubmission:
     name: Dual Submission Tracking
     description: Artifacts needed for tracking dual submissions of SPL documents and FHIR Bundles
@@ -240,3 +240,6 @@ groups:
       - Organization/SanofiAventisUS
       - Organization/SanofiAventisDeutschland
       - Organization/SanofiAventisSRL
+
+parameters:
+  display-warnings: true

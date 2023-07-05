@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/fhir-spl" url="http://hl7.org/fhir/us/spl">
-<version code="current" url=""/>
-<version code="0.1.0" url="http://hl7.org/fhir/us/spl"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="https://build.fhir.org/ig/HL7/fhir-spl/" defaultVersion="current" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/fhir-spl" url="http://hl7.org/fhir/us/spl">
+<version code="current" url="https://build.fhir.org/ig/HL7/fhir-spl/"/>
+<version code="0.1.0" url="http://hl7.org/fhir/us/spl/STU1-ballot"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -210,7 +210,7 @@
 <artifact id="Organization/SanofiAventisSRL" key="Organization-SanofiAventisSRL" name="SanofiAventisSRL"/>
 <artifact id="Organization/SanofiAventisUS" key="Organization-SanofiAventisUS" name="SanofiAventisUS"/>
 <artifact id="StructureDefinition/sectionEffectiveTime" key="StructureDefinition-sectionEffectiveTime" name="SectionEffectiveTime"/>
-<artifact id="StructureDefinition/sectionHighlights" key="StructureDefinition-sectionHighlights" name="SectionHighlights"/>
+<artifact id="StructureDefinition/sectionLinkId" key="StructureDefinition-sectionLinkId" name="SectionLinkId"/>
 <artifact id="StructureDefinition/SubmittedMedicationLogicalModel" key="StructureDefinition-SubmittedMedicationLogicalModel" name="Submitted Medication Logical Model"/>
 <artifact id="StructureDefinition/SubmittedIngredientDefinition" key="StructureDefinition-SubmittedIngredientDefinition" name="SubmittedIngredientDefinition"/>
 <artifact id="StructureDefinition/SubmittedManufacturedItem" key="StructureDefinition-SubmittedManufacturedItem" name="SubmittedManufacturedItem"/>

@@ -1,8 +1,14 @@
 {
   "package-id" : "hl7.fhir.us.spl",
   "version" : "0.1.0",
-  "path" : "http://hl7.org/fhir/us/spl",
+  "path" : "http://hl7.org/fhir/us/spl/STU1-ballot",
   "status" : "draft",
   "sequence" : "STU1",
-  "desc" : "This is the first published ballot of the SPL guide."
+  "mode": "working",
+  "first": true,
+  "desc" : "This is the first published ballot of the SPL guide.",
+  "category" : "medicines",
+  "title": "SPL Mapping FHIR Implementation Guide",
+  "introduction": "A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.",
+  "ci-build" : "https://build.fhir.org/ig/HL7/fhir-spl/"
 }

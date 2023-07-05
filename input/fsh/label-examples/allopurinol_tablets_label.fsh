@@ -63,6 +63,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * code = http://loinc.org#34089-3 "DESCRIPTION SECTION"
   * title = "DESCRIPTION"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_80fb3156-ba84-4cf6-b0f7-66c4dddc3fc3"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
     <a name="LINK_80fb3156-ba84-4cf6-b0f7-66c4dddc3fc3"/>
@@ -77,6 +78,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "CLINICAL PHARMACOLOGY"
   * id = "59e4d2bd-f4b7-450e-b818-8fa84cebe058"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_59e4d2bd-f4b7-450e-b818-8fa84cebe058"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
     <a name="LINK_59e4d2bd-f4b7-450e-b818-8fa84cebe058"/>
@@ -100,6 +102,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "INDICATIONS AND USAGE"
   * id = "6acdac7d-4f8c-43fc-b343-af915819a9fc"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_6acdac7d-4f8c-43fc-b343-af915819a9fc"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_6acdac7d-4f8c-43fc-b343-af915819a9fc"/>
@@ -124,6 +127,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "CONTRAINDICATIONS"
   * id = "b35d50ec-5df6-4b2b-89bb-945cf7f820a0"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_b35d50ec-5df6-4b2b-89bb-945cf7f820a0"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_b35d50ec-5df6-4b2b-89bb-945cf7f820a0"/>
@@ -134,6 +138,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "WARNINGS"
   * id = "06d28263-017c-459e-8ee3-7ba3ce78281b"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_06d28263-017c-459e-8ee3-7ba3ce78281b"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_06d28263-017c-459e-8ee3-7ba3ce78281b"/>
@@ -153,6 +158,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "General"
     * id = "608f0f5d-3f16-4e92-a477-9910493e4a71"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_608f0f5d-3f16-4e92-a477-9910493e4a71"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_608f0f5d-3f16-4e92-a477-9910493e4a71"/>
@@ -168,6 +174,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Information for Patients"
     * id = "7835c074-c780-4280-8c90-396974a9d2ca"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_7835c074-c780-4280-8c90-396974a9d2ca"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_7835c074-c780-4280-8c90-396974a9d2ca"/>
@@ -178,6 +185,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Laboratory Tests"
     * id = "a4a68c8a-f98c-484e-b549-bb49400d689d"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_a4a68c8a-f98c-484e-b549-bb49400d689d"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_a4a68c8a-f98c-484e-b549-bb49400d689d"/>
@@ -191,6 +199,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Drug Interactions"
     * id = "e5d01bfc-239f-4e4a-9dd8-cbc7b6536cfd"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_e5d01bfc-239f-4e4a-9dd8-cbc7b6536cfd"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_e5d01bfc-239f-4e4a-9dd8-cbc7b6536cfd"/>
@@ -209,6 +218,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Drug/Laboratory Interactions"
     * id = "9dd437d2-18f7-4b7a-b923-a8bb059819bb"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_9dd437d2-18f7-4b7a-b923-a8bb059819bb"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_9dd437d2-18f7-4b7a-b923-a8bb059819bb"/>
@@ -219,6 +229,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Pregnancy"
     * id = "79c16c6d-b609-47ae-a496-d81856897d29"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_79c16c6d-b609-47ae-a496-d81856897d29"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_79c16c6d-b609-47ae-a496-d81856897d29"/>
@@ -233,6 +244,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Nursing Mothers"
     * id = "8c94cb61-06ed-4113-9f18-642df0258487"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_8c94cb61-06ed-4113-9f18-642df0258487"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_8c94cb61-06ed-4113-9f18-642df0258487"/>
@@ -243,6 +255,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Pediatric Use"
     * id = "14d06afe-0771-4f4e-be98-85a293055584"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_14d06afe-0771-4f4e-be98-85a293055584"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_14d06afe-0771-4f4e-be98-85a293055584"/>
@@ -253,6 +266,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "ADVERSE REACTIONS"
   * id = "044a080a-fae6-40fb-8bc8-c2da0de26ed5"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_044a080a-fae6-40fb-8bc8-c2da0de26ed5"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_044a080a-fae6-40fb-8bc8-c2da0de26ed5"/>
@@ -264,6 +278,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Most Common Reactions*<br/>Probably Causally Related"
     * id = "7293d495-3de6-4a5d-bf8f-22f8c8ea5530"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_7293d495-3de6-4a5d-bf8f-22f8c8ea5530"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_7293d495-3de6-4a5d-bf8f-22f8c8ea5530"/>
@@ -280,6 +295,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Incidence Less Than 1%<br/>Probably Causally Related"
     * id = "08cbbce9-2b10-46df-9cf7-3a25c2c09e43"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_08cbbce9-2b10-46df-9cf7-3a25c2c09e43"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_08cbbce9-2b10-46df-9cf7-3a25c2c09e43"/>
@@ -309,6 +325,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
     * title = "Incidence Less Than 1%<br/>Causal Relationship Unknown"
     * id = "2db4d0d4-af2d-499e-9d83-7c37e3454b2b"
     * extension[sectionTime].valueDateTime = "2015-02-01"
+    * extension[linkId].valueString = "LINK_2db4d0d4-af2d-499e-9d83-7c37e3454b2b"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_2db4d0d4-af2d-499e-9d83-7c37e3454b2b"/>
@@ -381,6 +398,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "OVERDOSAGE"
   * id = "e1fd78ab-2564-468e-a7ca-02c94076fbe6"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_e1fd78ab-2564-468e-a7ca-02c94076fbe6"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_e1fd78ab-2564-468e-a7ca-02c94076fbe6"/>
@@ -394,6 +412,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "DOSAGE AND ADMINISTRATION"
   * id = "cca9f179-7891-430a-b366-adb8d90b3686"
   * extension[sectionTime].valueDateTime = "2015-02-01"
+  * extension[linkId].valueString = "LINK_cca9f179-7891-430a-b366-adb8d90b3686"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_cca9f179-7891-430a-b366-adb8d90b3686"/>
@@ -413,6 +432,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "HOW SUPPLIED"
   * id = "a04a47d7-9c28-4464-b445-5751711779c9"
   * extension[sectionTime].valueDateTime = "2017-02-24"
+  * extension[linkId].valueString = "LINK_a04a47d7-9c28-4464-b445-5751711779c9"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
 				<a name="LINK_a04a47d7-9c28-4464-b445-5751711779c9"/>

@@ -50,14 +50,14 @@ Description: "A profile that represents a document that is required for Product 
 * author 1..1 MS
 * author only Reference(IdentifiedLabeler)
 * section 1..* MS
-  * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionHighlights named highlights 0..1 MS
+  * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionLinkId named linkId 0..1 MS
   * code 1..1 MS
   * code from SPLSectionCodes (required)
   * title MS
   * text MS
   * entry MS
   * section 0..* MS
-    * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionHighlights named highlights 0..1 MS
+    * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionLinkId named linkId 0..1 MS
     * code 1..1 MS
     * code from SPLSectionCodes (required)
     * title MS
@@ -92,9 +92,9 @@ Id: sectionEffectiveTime
 Description: "Providing an effective time for a section."
 * value[x] only dateTime or Period
  
-Extension: SectionHighlights
-Id: sectionHighlights
-Description: "Provide markdown text that is highlights of a section."
+Extension: SectionLinkId
+Id: sectionLinkId
+Description: "Provide the ID that is using for linking between sections.  NOTE: This will also be contained in the section text as a link."
 * value[x] only string
 
 ValueSet: SPLSectionCodes
