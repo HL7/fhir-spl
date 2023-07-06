@@ -121,7 +121,7 @@ Description: "A profile that associates an establishment to the set of business 
 
 Invariant: spl-13.1.5.6
 Description: "If qualifier is C132491, then type is C101510 or C84731"
-Expression: "serviceProvisionCode.coding.where(code = 'C132481').exists() implies type.coding.select(code in ('C101510' | 'C84731')).allTrue()"
+Expression: "serviceProvisionCode.coding.where(code = 'C132491').exists() implies type.coding.select(code in ('C101510' | 'C84731')).allTrue()"
 Severity: #error
 
 Instance: ExampleGDUFARegistrant
