@@ -30,8 +30,16 @@ Here is a detailed diagram that shows the profiles used for drug label submissio
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="800px" src="ProductSubmissionProfiles.png" alt="Product Submission Profiles diagram"/>
-  <figcaption>Figure 3.2 - Product Submission Profiles</figcaption>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="ProductSubmissionProfiles-Part1.png" alt="Product Submission Profiles diagram, Part 1"/>
+  <figcaption>Figure 3.2 - Product Submission Profiles - Part 1</figcaption>
+</figure>
+{::options parse_block_html="true" /}
+
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="ProductSubmissionProfiles-Part2.png" alt="Product Submission Profiles diagram, Part 2"/>
+  <figcaption>Figure 3.3 - Product Submission Profiles - Part 2</figcaption>
 </figure>
 {::options parse_block_html="true" /}
 
