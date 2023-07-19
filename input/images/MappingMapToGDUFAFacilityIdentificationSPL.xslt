@@ -337,7 +337,13 @@ http://www.altova.com/mapforce
 				<xsl:attribute name="root" namespace="" select="$documentIdentifier"/>
 			</id>
 			<code>
+				<xsl:for-each select="$var8_Bundle/ns0:entry/ns0:resource/ns0:MessageHeader/ns0:eventCoding/ns0:code/@value">
+					<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
 				<xsl:attribute name="codeSystem" namespace="" select="'2.16.840.1.113883.6.1'"/>
+				<xsl:for-each select="$var8_Bundle/ns0:entry/ns0:resource/ns0:MessageHeader/ns0:eventCoding/ns0:display/@value">
+					<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
 			</code>
 			<effectiveTime>
 				<xsl:attribute name="value" namespace="" select="format-date($splDate, '[Y][M,2][D,2]', 'en', (), ())"/>

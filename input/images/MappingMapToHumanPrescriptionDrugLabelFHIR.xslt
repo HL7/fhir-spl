@@ -9,19 +9,7 @@ Refer to the Altova MapForce Documentation for further details.
 http://www.altova.com/mapforce
 -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns0="http://hl7.org/fhir" xmlns:tbf="http://www.altova.com/MapForce/UDF/tbf" xmlns:user="http://www.altova.com/MapForce/UDF/user" xmlns:vmf="http://www.altova.com/MapForce/UDF/vmf" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:ns1="urn:hl7-org:v3" exclude-result-prefixes="ns0 tbf user vmf xs fn ns1">
-	<xsl:template name="tbf:tbf2_Simple-CD">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@code">
-			<xsl:attribute name="code" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@codeSystem">
-			<xsl:attribute name="codeSystem" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@displayName">
-			<xsl:attribute name="displayName" select="fn:string(.)"/>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf3_">
+	<xsl:template name="tbf:tbf2_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -98,7 +86,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf3_">
+							<xsl:call-template name="tbf:tbf2_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -332,6 +320,18 @@ http://www.altova.com/mapforce
 					<xsl:sequence select="."/>
 				</xsl:otherwise>
 			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf3_Simple-CD">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@code">
+			<xsl:attribute name="code" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@codeSystem">
+			<xsl:attribute name="codeSystem" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@displayName">
+			<xsl:attribute name="displayName" select="fn:string(.)"/>
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="tbf:tbf4_">
@@ -2175,7 +2175,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf3_">
+							<xsl:call-template name="tbf:tbf2_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -3275,7 +3275,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf3_">
+							<xsl:call-template name="tbf:tbf2_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -7095,7 +7095,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf3_">
+							<xsl:call-template name="tbf:tbf2_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -7609,7 +7609,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf3_">
+							<xsl:call-template name="tbf:tbf2_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8523,7 +8523,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf3_">
+							<xsl:call-template name="tbf:tbf2_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8866,7 +8866,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf3_">
+							<xsl:call-template name="tbf:tbf2_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -9102,6 +9102,748 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
+	<xsl:template name="user:createManufacturedItem">
+		<xsl:param name="ManufacturedProduct" select="()"/>
+		<ManufacturedItemDefinition xmlns="http://hl7.org/fhir">
+			<status>
+				<xsl:attribute name="value" namespace="" select="'active'"/>
+			</status>
+			<xsl:for-each select="$ManufacturedProduct/ns1:manufacturedProduct/ns1:formCode">
+				<xsl:variable name="var1_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var1_resultof_convertCode">
+					<manufacturedDoseForm>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</manufacturedDoseForm>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$ManufacturedProduct/ns1:subjectOf/ns1:characteristic">
+				<xsl:variable name="var15_value" as="node()*" select="ns1:value"/>
+				<property>
+					<xsl:for-each select="ns1:code">
+						<xsl:variable name="var2_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var2_resultof_convertCode">
+							<type>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</type>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:variable name="var4_resultof_filter" as="node()*">
+						<xsl:for-each select="$var15_value">
+							<xsl:variable name="var3_current" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var3_current) = xs:QName('ns1:CV'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var4_resultof_filter">
+						<xsl:variable name="var5_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:for-each select="@code">
+											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@codeSystem">
+											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@displayName">
+											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var5_resultof_convertCode">
+							<valueCodeableConcept>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</valueCodeableConcept>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:variable name="var7_resultof_filter" as="node()*">
+						<xsl:for-each select="$var15_value">
+							<xsl:variable name="var6_current" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var6_current) = xs:QName('ns1:ST'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var7_resultof_filter">
+						<valueCodeableConcept>
+							<text>
+								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</text>
+						</valueCodeableConcept>
+					</xsl:for-each>
+					<xsl:variable name="var9_resultof_filter" as="node()*">
+						<xsl:for-each select="$var15_value">
+							<xsl:variable name="var8_current" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var8_current) = xs:QName('ns1:CE'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var9_resultof_filter">
+						<xsl:variable name="var10_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:for-each select="@code">
+											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@codeSystem">
+											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@displayName">
+											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var10_resultof_convertCode">
+							<valueCodeableConcept>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</valueCodeableConcept>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:variable name="var12_resultof_filter" as="node()*">
+						<xsl:for-each select="$var15_value">
+							<xsl:variable name="var11_current" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var11_current) = xs:QName('ns1:PQ'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var12_resultof_filter">
+						<valueQuantity>
+							<value>
+								<xsl:for-each select="@value">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</value>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
+							</system>
+							<code>
+								<xsl:for-each select="@unit">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</code>
+						</valueQuantity>
+					</xsl:for-each>
+					<xsl:variable name="var14_resultof_filter" as="node()*">
+						<xsl:for-each select="$var15_value">
+							<xsl:variable name="var13_current" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var13_current) = xs:QName('ns1:INT'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var14_resultof_filter">
+						<valueQuantity>
+							<value>
+								<xsl:for-each select="@value">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:integer(fn:string(.)))"/>
+								</xsl:for-each>
+							</value>
+						</valueQuantity>
+					</xsl:for-each>
+				</property>
+			</xsl:for-each>
+		</ManufacturedItemDefinition>
+	</xsl:template>
+	<xsl:template name="user:insertStringExtension">
+		<xsl:param name="url" select="()"/>
+		<xsl:param name="value" select="()"/>
+		<Extension xmlns="http://hl7.org/fhir">
+			<xsl:attribute name="url" namespace="" select="xs:string(xs:anyURI($url))"/>
+			<valueString>
+				<xsl:attribute name="value" namespace="" select="$value"/>
+			</valueString>
+		</Extension>
+	</xsl:template>
+	<xsl:template name="user:insertDateTimeExtension">
+		<xsl:param name="url" select="()"/>
+		<xsl:param name="value" select="()"/>
+		<Extension xmlns="http://hl7.org/fhir">
+			<xsl:attribute name="url" namespace="" select="xs:string(xs:anyURI($url))"/>
+			<valueDateTime>
+				<xsl:attribute name="value" namespace="" select="$value"/>
+			</valueDateTime>
+		</Extension>
+	</xsl:template>
+	<xsl:template name="user:createSection">
+		<xsl:param name="Section" select="()"/>
+		<xsl:variable name="var7_ID" as="node()?" select="$Section/@ID"/>
+		<Composition.Section xmlns="http://hl7.org/fhir">
+			<xsl:for-each select="$Section/ns1:id/@root">
+				<xsl:attribute name="id" namespace="" select="fn:string(.)"/>
+			</xsl:for-each>
+			<xsl:for-each select="$Section/ns1:effectiveTime">
+				<xsl:variable name="var2_resultof_convertTS" as="xs:string?">
+					<xsl:call-template name="user:convertTS">
+						<xsl:with-param name="SimpleTS" as="node()">
+							<Simple-TS xmlns="urn:hl7-org:v3">
+								<xsl:for-each select="@value">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</Simple-TS>
+						</xsl:with-param>
+						<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var2_resultof_convertTS">
+					<xsl:variable name="var1_resultof_insertDateTimeExtension" as="node()?">
+						<xsl:call-template name="user:insertDateTimeExtension">
+							<xsl:with-param name="url" select="'http://hl7.org/fhir/us/spl/StructureDefinition/sectionEffectiveTime'" as="xs:string"/>
+							<xsl:with-param name="value" select="." as="xs:string"/>
+						</xsl:call-template>
+					</xsl:variable>
+					<xsl:for-each select="$var1_resultof_insertDateTimeExtension">
+						<extension>
+							<xsl:sequence select="(./@node(), ./node())"/>
+						</extension>
+					</xsl:for-each>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var7_ID">
+				<xsl:for-each select="$var7_ID">
+					<xsl:variable name="var3_resultof_insertStringExtension" as="node()?">
+						<xsl:call-template name="user:insertStringExtension">
+							<xsl:with-param name="url" select="'http://hl7.org/fhir/us/spl/StructureDefinition/sectionLinkId'" as="xs:string"/>
+							<xsl:with-param name="value" select="fn:string(.)" as="xs:string"/>
+						</xsl:call-template>
+					</xsl:variable>
+					<xsl:for-each select="$var3_resultof_insertStringExtension">
+						<extension>
+							<xsl:sequence select="(./@node(), ./node())"/>
+						</extension>
+					</xsl:for-each>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$Section/ns1:title">
+				<xsl:variable name="var4_resultof_convertTitleToString" as="xs:string?">
+					<xsl:call-template name="user:convertTitleToString">
+						<xsl:with-param name="Title" as="node()">
+							<StrucDoc.Title xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</StrucDoc.Title>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<title>
+					<xsl:for-each select="$var4_resultof_convertTitleToString">
+						<xsl:attribute name="value" namespace="" select="."/>
+					</xsl:for-each>
+				</title>
+			</xsl:for-each>
+			<xsl:for-each select="$Section/ns1:code">
+				<xsl:variable name="var5_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var5_resultof_convertCode">
+					<code>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</code>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$Section/xhtml:div">
+				<text>
+					<status>
+						<xsl:attribute name="value" namespace="" select="'additional'"/>
+					</status>
+					<xhtml:div>
+						<xsl:call-template name="tbf:tbf2_">
+							<xsl:with-param name="input" select="." as="node()"/>
+						</xsl:call-template>
+					</xhtml:div>
+				</text>
+			</xsl:for-each>
+			<xsl:for-each select="$Section/ns1:subject">
+				<entry>
+					<reference>
+						<xsl:for-each select="ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
+							<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', fn:string(.))"/>
+						</xsl:for-each>
+					</reference>
+				</entry>
+			</xsl:for-each>
+			<xsl:for-each select="$Section/ns1:component/ns1:section">
+				<xsl:variable name="var6_resultof_createSection" as="node()?">
+					<xsl:call-template name="user:createSection">
+						<xsl:with-param name="Section" as="node()">
+							<DrugLabelSubmission.Section xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</DrugLabelSubmission.Section>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var6_resultof_createSection">
+					<section>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</section>
+				</xsl:for-each>
+			</xsl:for-each>
+		</Composition.Section>
+	</xsl:template>
+	<xsl:template name="user:convertTitleToString">
+		<xsl:param name="Title" select="()"/>
+		<xsl:variable name="var1_current_of_filter" as="xs:string*">
+			<xsl:for-each select="($Title/node())[fn:boolean(self::text())]">
+				<xsl:sequence select="fn:string(.)"/>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:sequence select="fn:string-join($var1_current_of_filter, fn:codepoints-to-string(xs:integer('13')))"/>
+	</xsl:template>
+	<xsl:template name="user:createComposition">
+		<xsl:param name="document" select="()"/>
+		<Composition xmlns="http://hl7.org/fhir">
+			<xsl:for-each select="$document/ns1:versionNumber/@value">
+				<xsl:variable name="var1_resultof_insertStringExtension" as="node()?">
+					<xsl:call-template name="user:insertStringExtension">
+						<xsl:with-param name="url" select="'http://hl7.org/fhir/us/spl/StructureDefinition/versionNumber'" as="xs:string"/>
+						<xsl:with-param name="value" select="fn:string(.)" as="xs:string"/>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var1_resultof_insertStringExtension">
+					<extension>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</extension>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$document/ns1:setId">
+				<identifier>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('urn:ietf:rfc:3986'))"/>
+					</system>
+					<value>
+						<xsl:for-each select="@root">
+							<xsl:attribute name="value" namespace="" select="fn:concat('urn:uuid:', fn:string(.))"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<status>
+				<xsl:attribute name="value" namespace="" select="'final'"/>
+			</status>
+			<xsl:for-each select="$document/ns1:code">
+				<xsl:variable name="var2_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var2_resultof_convertCode">
+					<type>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</type>
+				</xsl:for-each>
+			</xsl:for-each>
+			<date>
+				<xsl:for-each select="$document/ns1:effectiveTime">
+					<xsl:variable name="var3_resultof_convertTS" as="xs:string?">
+						<xsl:call-template name="user:convertTS">
+							<xsl:with-param name="SimpleTS" as="node()">
+								<Simple-TS xmlns="urn:hl7-org:v3">
+									<xsl:sequence select="(./@node(), ./node())"/>
+								</Simple-TS>
+							</xsl:with-param>
+							<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+						</xsl:call-template>
+					</xsl:variable>
+					<xsl:for-each select="$var3_resultof_convertTS">
+						<xsl:attribute name="value" namespace="" select="."/>
+					</xsl:for-each>
+				</xsl:for-each>
+			</date>
+			<xsl:for-each select="$document/ns1:author">
+				<author>
+					<reference>
+						<xsl:attribute name="value" namespace="" select="'Organization/Labeler'"/>
+					</reference>
+				</author>
+			</xsl:for-each>
+			<xsl:for-each select="$document/ns1:title">
+				<xsl:variable name="var4_resultof_convertTitleToString" as="xs:string?">
+					<xsl:call-template name="user:convertTitleToString">
+						<xsl:with-param name="Title" as="node()">
+							<StrucDoc.Title xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</StrucDoc.Title>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<title>
+					<xsl:for-each select="$var4_resultof_convertTitleToString">
+						<xsl:attribute name="value" namespace="" select="."/>
+					</xsl:for-each>
+				</title>
+			</xsl:for-each>
+			<xsl:for-each select="$document/ns1:component/ns1:structuredBody/ns1:component/ns1:section">
+				<xsl:variable name="var5_resultof_createSection" as="node()?">
+					<xsl:call-template name="user:createSection">
+						<xsl:with-param name="Section" as="node()">
+							<DrugLabelSubmission.Section xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</DrugLabelSubmission.Section>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var5_resultof_createSection">
+					<section>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</section>
+				</xsl:for-each>
+			</xsl:for-each>
+		</Composition>
+	</xsl:template>
+	<xsl:template name="user:createEstablishmentOrganization">
+		<xsl:param name="EstablishmentEntity" select="()"/>
+		<xsl:variable name="var1_assignedOrganization" as="node()*" select="$EstablishmentEntity/ns1:assignedOrganization"/>
+		<Organization xmlns="http://hl7.org/fhir">
+			<xsl:for-each select="$var1_assignedOrganization/ns1:id">
+				<identifier>
+					<system>
+						<xsl:for-each select="@root">
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
+						</xsl:for-each>
+					</system>
+					<value>
+						<xsl:for-each select="@extension">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<type>
+				<coding>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+					</system>
+					<code>
+						<xsl:attribute name="value" namespace="" select="'Establishment'"/>
+					</code>
+				</coding>
+			</type>
+			<name>
+				<xsl:for-each select="($var1_assignedOrganization/ns1:name/node())[fn:boolean(self::text())]">
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
+			</name>
+		</Organization>
+	</xsl:template>
+	<xsl:template name="user:createProduct">
+		<xsl:param name="SubjectProduct" select="()"/>
+		<xsl:param name="EstablishmentEntity" select="()"/>
+		<xsl:variable name="var11_manufacturedProduct" as="node()*" select="$SubjectProduct/ns1:manufacturedProduct"/>
+		<MedicinalProductDefinition xmlns="http://hl7.org/fhir">
+			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:code">
+				<identifier>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
+					</system>
+					<value>
+						<xsl:for-each select="@code">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<xsl:for-each select="$var11_manufacturedProduct/ns1:consumedIn/ns1:substanceAdministration/ns1:routeCode">
+				<xsl:variable name="var1_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var1_resultof_convertCode">
+					<route>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</route>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var11_manufacturedProduct/ns1:subjectOf/ns1:policy/ns1:code">
+				<xsl:variable name="var2_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:call-template name="tbf:tbf3_Simple-CD">
+									<xsl:with-param name="input" select="." as="node()"/>
+								</xsl:call-template>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var2_resultof_convertCode">
+					<specialMeasures>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</specialMeasures>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var11_manufacturedProduct/ns1:subjectOf/ns1:marketingAct">
+				<xsl:variable name="var5_effectiveTime" as="node()*" select="ns1:effectiveTime"/>
+				<marketingStatus>
+					<status>
+						<xsl:for-each select="ns1:statusCode">
+							<coding>
+								<system>
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/publication-status'))"/>
+								</system>
+								<xsl:for-each select="@code">
+									<code>
+										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+									</code>
+								</xsl:for-each>
+							</coding>
+						</xsl:for-each>
+					</status>
+					<dateRange>
+						<xsl:for-each select="$var5_effectiveTime/ns1:low">
+							<xsl:variable name="var3_resultof_convertTS" as="xs:string?">
+								<xsl:call-template name="user:convertTS">
+									<xsl:with-param name="SimpleTS" as="node()">
+										<Simple-TS xmlns="urn:hl7-org:v3">
+											<xsl:for-each select="@value">
+												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+											</xsl:for-each>
+										</Simple-TS>
+									</xsl:with-param>
+									<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+								</xsl:call-template>
+							</xsl:variable>
+							<start>
+								<xsl:for-each select="$var3_resultof_convertTS">
+									<xsl:attribute name="value" namespace="" select="."/>
+								</xsl:for-each>
+							</start>
+						</xsl:for-each>
+						<xsl:for-each select="$var5_effectiveTime/ns1:high">
+							<xsl:variable name="var4_resultof_convertTS" as="xs:string?">
+								<xsl:call-template name="user:convertTS">
+									<xsl:with-param name="SimpleTS" as="node()">
+										<Simple-TS xmlns="urn:hl7-org:v3">
+											<xsl:for-each select="@value">
+												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+											</xsl:for-each>
+										</Simple-TS>
+									</xsl:with-param>
+									<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+								</xsl:call-template>
+							</xsl:variable>
+							<end>
+								<xsl:for-each select="$var4_resultof_convertTS">
+									<xsl:attribute name="value" namespace="" select="."/>
+								</xsl:for-each>
+							</end>
+						</xsl:for-each>
+					</dateRange>
+				</marketingStatus>
+			</xsl:for-each>
+			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:name">
+				<name>
+					<productName>
+						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</productName>
+					<type>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'PROPRIETARY'"/>
+							</code>
+						</coding>
+					</type>
+					<xsl:for-each select="ns1:suffix">
+						<namePart>
+							<part>
+								<xsl:for-each select="@value">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</part>
+							<type>
+								<coding>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2'))"/>
+									</system>
+									<code>
+										<xsl:attribute name="value" namespace="" select="'SFX'"/>
+									</code>
+								</coding>
+							</type>
+						</namePart>
+					</xsl:for-each>
+				</name>
+			</xsl:for-each>
+			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:asEntityWithGeneric/ns1:genericMedicine/ns1:name">
+				<name>
+					<productName>
+						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</productName>
+					<type>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'NONPROPRIETARY'"/>
+							</code>
+						</coding>
+					</type>
+				</name>
+			</xsl:for-each>
+			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:asEquivalentEntity">
+				<crossReference>
+					<product>
+						<concept>
+							<xsl:for-each select="ns1:definingMaterialKind">
+								<coding>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
+									</system>
+									<code>
+										<xsl:for-each select="ns1:code/@code">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</code>
+								</coding>
+							</xsl:for-each>
+						</concept>
+					</product>
+					<type>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'C64637'"/>
+							</code>
+						</coding>
+					</type>
+				</crossReference>
+			</xsl:for-each>
+			<xsl:for-each select="$EstablishmentEntity">
+				<xsl:variable name="var10_cur" as="node()" select="."/>
+				<xsl:variable name="var8_resultof_filter" as="node()*">
+					<xsl:for-each select="ns1:performance">
+						<xsl:variable name="var7_map_of_actDefinition" as="xs:boolean*">
+							<xsl:for-each select="ns1:actDefinition/ns1:product/ns1:manufacturedProduct/ns1:manufacturedMaterialKind/ns1:code/@code">
+								<xsl:variable name="var6_cur" as="node()" select="."/>
+								<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
+									<xsl:sequence select="(fn:string($var6_cur) = fn:string(.))"/>
+								</xsl:for-each>
+							</xsl:for-each>
+						</xsl:variable>
+						<xsl:if test="fn:exists(($var7_map_of_actDefinition)[.])">
+							<xsl:sequence select="."/>
+						</xsl:if>
+					</xsl:for-each>
+				</xsl:variable>
+				<xsl:for-each select="$var8_resultof_filter">
+					<operation>
+						<type>
+							<xsl:for-each select="ns1:actDefinition/ns1:code">
+								<xsl:variable name="var9_resultof_convertCode" as="node()?">
+									<xsl:call-template name="user:convertCode">
+										<xsl:with-param name="SimpleCD" as="node()">
+											<Simple-CD xmlns="urn:hl7-org:v3">
+												<xsl:call-template name="tbf:tbf3_Simple-CD">
+													<xsl:with-param name="input" select="." as="node()"/>
+												</xsl:call-template>
+											</Simple-CD>
+										</xsl:with-param>
+									</xsl:call-template>
+								</xsl:variable>
+								<xsl:for-each select="$var9_resultof_convertCode">
+									<concept>
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</concept>
+								</xsl:for-each>
+							</xsl:for-each>
+						</type>
+						<xsl:for-each select="$var10_cur/ns1:assignedOrganization">
+							<organization>
+								<reference>
+									<xsl:for-each select="ns1:id/@extension">
+										<xsl:attribute name="value" namespace="" select="fn:concat('Organization/Establishment-', fn:string(.))"/>
+									</xsl:for-each>
+								</reference>
+							</organization>
+						</xsl:for-each>
+					</operation>
+				</xsl:for-each>
+			</xsl:for-each>
+		</MedicinalProductDefinition>
+	</xsl:template>
+	<xsl:template name="user:createDocumentAuthor">
+		<xsl:param name="Labeler" select="()"/>
+		<xsl:variable name="var1_assignedEntity" as="node()*" select="$Labeler/ns1:assignedEntity"/>
+		<Organization xmlns="http://hl7.org/fhir">
+			<xsl:for-each select="$var1_assignedEntity/ns1:representedOrganization/ns1:id">
+				<identifier>
+					<system>
+						<xsl:for-each select="@root">
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
+						</xsl:for-each>
+					</system>
+					<value>
+						<xsl:for-each select="@extension">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<type>
+				<coding>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+					</system>
+					<code>
+						<xsl:attribute name="value" namespace="" select="'Labeler'"/>
+					</code>
+				</coding>
+			</type>
+			<name>
+				<xsl:for-each select="($var1_assignedEntity/ns1:representedOrganization/ns1:name/node())[fn:boolean(self::text())]">
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
+			</name>
+		</Organization>
+	</xsl:template>
 	<xsl:template name="user:createOuterPackaging">
 		<xsl:param name="Content1" select="()"/>
 		<xsl:variable name="var3_containerPackagedProduct" as="node()*" select="$Content1/ns1:containerPackagedProduct"/>
@@ -9171,15 +9913,15 @@ http://www.altova.com/mapforce
 		<xsl:param name="Content" select="()"/>
 		<xsl:param name="productId" select="()"/>
 		<xsl:param name="Part" select="()"/>
-		<xsl:variable name="var11_containerPackagedProduct" as="node()*" select="$Content/ns1:containerPackagedProduct"/>
-		<xsl:variable name="var12_subjectOf" as="node()*" select="$Content/ns1:subjectOf"/>
+		<xsl:variable name="var11_subjectOf" as="node()*" select="$Content/ns1:subjectOf"/>
+		<xsl:variable name="var12_containerPackagedProduct" as="node()*" select="$Content/ns1:containerPackagedProduct"/>
 		<PackagedProductDefinition xmlns="http://hl7.org/fhir">
 			<packageFor>
 				<reference>
 					<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', $productId)"/>
 				</reference>
 			</packageFor>
-			<xsl:for-each select="$var12_subjectOf/ns1:marketingAct">
+			<xsl:for-each select="$var11_subjectOf/ns1:marketingAct">
 				<marketingStatus>
 					<xsl:for-each select="ns1:statusCode">
 						<status>
@@ -9240,7 +9982,7 @@ http://www.altova.com/mapforce
 				</marketingStatus>
 			</xsl:for-each>
 			<package>
-				<xsl:for-each select="$var11_containerPackagedProduct/ns1:code">
+				<xsl:for-each select="$var12_containerPackagedProduct/ns1:code">
 					<identifier>
 						<system>
 							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
@@ -9252,7 +9994,7 @@ http://www.altova.com/mapforce
 						</value>
 					</identifier>
 				</xsl:for-each>
-				<xsl:for-each select="$var11_containerPackagedProduct/ns1:formCode">
+				<xsl:for-each select="$var12_containerPackagedProduct/ns1:formCode">
 					<xsl:variable name="var3_resultof_convertCode" as="node()?">
 						<xsl:call-template name="user:convertCode">
 							<xsl:with-param name="SimpleCD" as="node()">
@@ -9268,7 +10010,7 @@ http://www.altova.com/mapforce
 						</type>
 					</xsl:for-each>
 				</xsl:for-each>
-				<xsl:for-each select="$var12_subjectOf/ns1:characteristic">
+				<xsl:for-each select="$var11_subjectOf/ns1:characteristic">
 					<property>
 						<xsl:for-each select="ns1:code">
 							<xsl:variable name="var4_resultof_convertCode" as="node()?">
@@ -9321,7 +10063,7 @@ http://www.altova.com/mapforce
 					</property>
 				</xsl:for-each>
 				<xsl:variable name="var9_resultof_filter" as="node()*">
-					<xsl:for-each select="$var11_containerPackagedProduct">
+					<xsl:for-each select="$var12_containerPackagedProduct">
 						<xsl:variable name="var8_map_of_formCode" as="xs:boolean*">
 							<xsl:for-each select="ns1:formCode/@code">
 								<xsl:sequence select="(fn:string(.) = 'C43197')"/>
@@ -9335,16 +10077,11 @@ http://www.altova.com/mapforce
 				<xsl:for-each select="$var9_resultof_filter">
 					<containedItem>
 						<item>
-							<concept>
-								<coding>
-									<system>
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
-									</system>
-									<code>
-										<xsl:attribute name="value" namespace="" select="$productId"/>
-									</code>
-								</coding>
-							</concept>
+							<reference>
+								<reference>
+									<xsl:attribute name="value" namespace="" select="fn:concat('ManufacturedItemDefinition/', $productId)"/>
+								</reference>
+							</reference>
 						</item>
 						<xsl:for-each select="$Content/ns1:quantity/ns1:numerator">
 							<amount>
@@ -9395,7 +10132,7 @@ http://www.altova.com/mapforce
 						</xsl:for-each>
 					</containedItem>
 				</xsl:for-each>
-				<xsl:for-each select="$var11_containerPackagedProduct/ns1:asContent">
+				<xsl:for-each select="$var12_containerPackagedProduct/ns1:asContent">
 					<xsl:variable name="var10_resultof_createOuterPackaging" as="node()?">
 						<xsl:call-template name="user:createOuterPackaging">
 							<xsl:with-param name="Content1" as="node()">
@@ -9413,6 +10150,117 @@ http://www.altova.com/mapforce
 				</xsl:for-each>
 			</package>
 		</PackagedProductDefinition>
+	</xsl:template>
+	<xsl:template name="user:createInactiveIngredient">
+		<xsl:param name="Ingredient" select="()"/>
+		<xsl:param name="productId" select="()"/>
+		<Ingredient xmlns="http://hl7.org/fhir">
+			<status>
+				<xsl:attribute name="value" namespace="" select="'active'"/>
+			</status>
+			<for>
+				<reference>
+					<xsl:attribute name="value" namespace="" select="fn:concat('ManufacturedItemDefinition/', $productId)"/>
+				</reference>
+			</for>
+			<role>
+				<coding>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-RoleClass'))"/>
+					</system>
+					<code>
+						<xsl:for-each select="$Ingredient/@classCode">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</code>
+				</coding>
+			</role>
+			<substance>
+				<code>
+					<xsl:for-each select="$Ingredient/ns1:ingredientSubstance">
+						<xsl:variable name="var2_cur" as="node()" select="."/>
+						<xsl:for-each select="ns1:code">
+							<xsl:variable name="var1_resultof_convertCode" as="node()?">
+								<xsl:call-template name="user:convertCode">
+									<xsl:with-param name="SimpleCD" as="node()">
+										<Simple-CD xmlns="urn:hl7-org:v3">
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</Simple-CD>
+									</xsl:with-param>
+								</xsl:call-template>
+							</xsl:variable>
+							<xsl:for-each select="$var1_resultof_convertCode">
+								<concept>
+									<xsl:for-each select="@id">
+										<xsl:attribute name="id" namespace="" select="fn:string(.)"/>
+									</xsl:for-each>
+									<xsl:for-each select="ns0:extension">
+										<extension>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</extension>
+									</xsl:for-each>
+									<xsl:for-each select="ns0:coding">
+										<coding>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</coding>
+									</xsl:for-each>
+									<text>
+										<xsl:for-each select="($var2_cur/ns1:name/node())[fn:boolean(self::text())]">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="ns0:text/ns0:extension">
+											<extension>
+												<xsl:sequence select="(./@node(), ./node())"/>
+											</extension>
+										</xsl:for-each>
+									</text>
+								</concept>
+							</xsl:for-each>
+						</xsl:for-each>
+					</xsl:for-each>
+				</code>
+				<xsl:for-each select="$Ingredient/ns1:quantity">
+					<strength>
+						<presentationRatio>
+							<xsl:for-each select="ns1:numerator">
+								<numerator>
+									<value>
+										<xsl:for-each select="@value">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</value>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
+									</system>
+									<code>
+										<xsl:for-each select="@unit">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</code>
+								</numerator>
+							</xsl:for-each>
+							<xsl:for-each select="ns1:denominator">
+								<denominator>
+									<value>
+										<xsl:for-each select="@value">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</value>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
+									</system>
+									<code>
+										<xsl:for-each select="@unit">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</code>
+								</denominator>
+							</xsl:for-each>
+						</presentationRatio>
+					</strength>
+				</xsl:for-each>
+			</substance>
+		</Ingredient>
 	</xsl:template>
 	<xsl:template name="user:createPartProduct">
 		<xsl:param name="Part" select="()"/>
@@ -9562,116 +10410,42 @@ http://www.altova.com/mapforce
 			</xsl:for-each>
 		</MedicinalProductDefinition>
 	</xsl:template>
-	<xsl:template name="user:createInactiveIngredient">
-		<xsl:param name="Ingredient" select="()"/>
-		<xsl:param name="productId" select="()"/>
-		<Ingredient xmlns="http://hl7.org/fhir">
-			<status>
-				<xsl:attribute name="value" namespace="" select="'active'"/>
-			</status>
-			<for>
-				<reference>
-					<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', $productId)"/>
-				</reference>
-			</for>
-			<role>
-				<coding>
-					<system>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-RoleClass'))"/>
-					</system>
-					<code>
-						<xsl:for-each select="$Ingredient/@classCode">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</code>
-				</coding>
-			</role>
-			<substance>
+	<xsl:template name="user:convertCode">
+		<xsl:param name="SimpleCD" select="()"/>
+		<CodeableConcept xmlns="http://hl7.org/fhir">
+			<coding>
+				<system>
+					<xsl:for-each select="$SimpleCD/@codeSystem">
+						<xsl:variable name="var2_resultof_vmf__inputtoresult" as="xs:string">
+							<xsl:call-template name="vmf:vmf9_inputtoresult">
+								<xsl:with-param name="input" select="fn:string(.)" as="xs:string"/>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:variable name="var1_test_resultof_starts_with" as="xs:string">
+							<xsl:choose>
+								<xsl:when test="fn:starts-with($var2_resultof_vmf__inputtoresult, '2')">
+									<xsl:sequence select="fn:concat('urn:oid:', $var2_resultof_vmf__inputtoresult)"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:sequence select="$var2_resultof_vmf__inputtoresult"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:variable>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI($var1_test_resultof_starts_with))"/>
+					</xsl:for-each>
+				</system>
 				<code>
-					<xsl:for-each select="$Ingredient/ns1:ingredientSubstance">
-						<xsl:variable name="var2_cur" as="node()" select="."/>
-						<xsl:for-each select="ns1:code">
-							<xsl:variable name="var1_resultof_convertCode" as="node()?">
-								<xsl:call-template name="user:convertCode">
-									<xsl:with-param name="SimpleCD" as="node()">
-										<Simple-CD xmlns="urn:hl7-org:v3">
-											<xsl:sequence select="(./@node(), ./node())"/>
-										</Simple-CD>
-									</xsl:with-param>
-								</xsl:call-template>
-							</xsl:variable>
-							<xsl:for-each select="$var1_resultof_convertCode">
-								<concept>
-									<xsl:for-each select="@id">
-										<xsl:attribute name="id" namespace="" select="fn:string(.)"/>
-									</xsl:for-each>
-									<xsl:for-each select="ns0:extension">
-										<extension>
-											<xsl:sequence select="(./@node(), ./node())"/>
-										</extension>
-									</xsl:for-each>
-									<xsl:for-each select="ns0:coding">
-										<coding>
-											<xsl:sequence select="(./@node(), ./node())"/>
-										</coding>
-									</xsl:for-each>
-									<text>
-										<xsl:for-each select="($var2_cur/ns1:name/node())[fn:boolean(self::text())]">
-											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="ns0:text/ns0:extension">
-											<extension>
-												<xsl:sequence select="(./@node(), ./node())"/>
-											</extension>
-										</xsl:for-each>
-									</text>
-								</concept>
-							</xsl:for-each>
-						</xsl:for-each>
+					<xsl:for-each select="$SimpleCD/@code">
+						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 					</xsl:for-each>
 				</code>
-				<xsl:for-each select="$Ingredient/ns1:quantity">
-					<strength>
-						<presentationRatio>
-							<xsl:for-each select="ns1:numerator">
-								<numerator>
-									<value>
-										<xsl:for-each select="@value">
-											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</value>
-									<system>
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
-									</system>
-									<code>
-										<xsl:for-each select="@unit">
-											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</code>
-								</numerator>
-							</xsl:for-each>
-							<xsl:for-each select="ns1:denominator">
-								<denominator>
-									<value>
-										<xsl:for-each select="@value">
-											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</value>
-									<system>
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
-									</system>
-									<code>
-										<xsl:for-each select="@unit">
-											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</code>
-								</denominator>
-							</xsl:for-each>
-						</presentationRatio>
-					</strength>
+				<xsl:for-each select="$SimpleCD/@displayName">
+					<display>
+						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+					</display>
 				</xsl:for-each>
-			</substance>
-		</Ingredient>
+			</coding>
+		</CodeableConcept>
 	</xsl:template>
 	<xsl:template name="user:createMarketing">
 		<xsl:param name="Approval" select="()"/>
@@ -9725,7 +10499,7 @@ http://www.altova.com/mapforce
 					<xsl:call-template name="user:convertCode">
 						<xsl:with-param name="SimpleCD" as="node()">
 							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:call-template name="tbf:tbf2_Simple-CD">
+								<xsl:call-template name="tbf:tbf3_Simple-CD">
 									<xsl:with-param name="input" select="." as="node()"/>
 								</xsl:call-template>
 							</Simple-CD>
@@ -9739,664 +10513,6 @@ http://www.altova.com/mapforce
 				</xsl:for-each>
 			</xsl:for-each>
 		</RegulatedAuthorization>
-	</xsl:template>
-	<xsl:template name="user:createProduct">
-		<xsl:param name="SubjectProduct" select="()"/>
-		<xsl:variable name="var21_manufacturedProduct" as="node()*" select="$SubjectProduct/ns1:manufacturedProduct"/>
-		<MedicinalProductDefinition xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:manufacturedProduct/ns1:code">
-				<identifier>
-					<system>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
-					</system>
-					<value>
-						<xsl:for-each select="@code">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</value>
-				</identifier>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:manufacturedProduct/ns1:formCode">
-				<xsl:variable name="var1_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var1_resultof_convertCode">
-					<combinedPharmaceuticalDoseForm>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</combinedPharmaceuticalDoseForm>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:consumedIn/ns1:substanceAdministration/ns1:routeCode">
-				<xsl:variable name="var2_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var2_resultof_convertCode">
-					<route>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</route>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:subjectOf/ns1:policy/ns1:code">
-				<xsl:variable name="var3_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:call-template name="tbf:tbf2_Simple-CD">
-									<xsl:with-param name="input" select="." as="node()"/>
-								</xsl:call-template>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var3_resultof_convertCode">
-					<specialMeasures>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</specialMeasures>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:subjectOf/ns1:marketingAct">
-				<xsl:variable name="var6_effectiveTime" as="node()*" select="ns1:effectiveTime"/>
-				<marketingStatus>
-					<status>
-						<xsl:for-each select="ns1:statusCode">
-							<coding>
-								<system>
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/publication-status'))"/>
-								</system>
-								<xsl:for-each select="@code">
-									<code>
-										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-									</code>
-								</xsl:for-each>
-							</coding>
-						</xsl:for-each>
-					</status>
-					<dateRange>
-						<xsl:for-each select="$var6_effectiveTime/ns1:low">
-							<xsl:variable name="var4_resultof_convertTS" as="xs:string?">
-								<xsl:call-template name="user:convertTS">
-									<xsl:with-param name="SimpleTS" as="node()">
-										<Simple-TS xmlns="urn:hl7-org:v3">
-											<xsl:for-each select="@value">
-												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-											</xsl:for-each>
-										</Simple-TS>
-									</xsl:with-param>
-									<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-								</xsl:call-template>
-							</xsl:variable>
-							<start>
-								<xsl:for-each select="$var4_resultof_convertTS">
-									<xsl:attribute name="value" namespace="" select="."/>
-								</xsl:for-each>
-							</start>
-						</xsl:for-each>
-						<xsl:for-each select="$var6_effectiveTime/ns1:high">
-							<xsl:variable name="var5_resultof_convertTS" as="xs:string?">
-								<xsl:call-template name="user:convertTS">
-									<xsl:with-param name="SimpleTS" as="node()">
-										<Simple-TS xmlns="urn:hl7-org:v3">
-											<xsl:for-each select="@value">
-												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-											</xsl:for-each>
-										</Simple-TS>
-									</xsl:with-param>
-									<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-								</xsl:call-template>
-							</xsl:variable>
-							<end>
-								<xsl:for-each select="$var5_resultof_convertTS">
-									<xsl:attribute name="value" namespace="" select="."/>
-								</xsl:for-each>
-							</end>
-						</xsl:for-each>
-					</dateRange>
-				</marketingStatus>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:manufacturedProduct/ns1:name">
-				<name>
-					<productName>
-						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</productName>
-					<type>
-						<coding>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
-							</system>
-							<code>
-								<xsl:attribute name="value" namespace="" select="'PROPRIETARY'"/>
-							</code>
-						</coding>
-					</type>
-					<xsl:for-each select="ns1:suffix">
-						<namePart>
-							<part>
-								<xsl:for-each select="@value">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</part>
-							<type>
-								<coding>
-									<system>
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2'))"/>
-									</system>
-									<code>
-										<xsl:attribute name="value" namespace="" select="'SFX'"/>
-									</code>
-								</coding>
-							</type>
-						</namePart>
-					</xsl:for-each>
-				</name>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:manufacturedProduct/ns1:asEntityWithGeneric/ns1:genericMedicine/ns1:name">
-				<name>
-					<productName>
-						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</productName>
-					<type>
-						<coding>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
-							</system>
-							<code>
-								<xsl:attribute name="value" namespace="" select="'NONPROPRIETARY'"/>
-							</code>
-						</coding>
-					</type>
-				</name>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:manufacturedProduct/ns1:asEquivalentEntity">
-				<crossReference>
-					<product>
-						<concept>
-							<xsl:for-each select="ns1:definingMaterialKind">
-								<coding>
-									<system>
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
-									</system>
-									<code>
-										<xsl:for-each select="ns1:code/@code">
-											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</code>
-								</coding>
-							</xsl:for-each>
-						</concept>
-					</product>
-					<type>
-						<coding>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'))"/>
-							</system>
-							<code>
-								<xsl:attribute name="value" namespace="" select="'C64637'"/>
-							</code>
-						</coding>
-					</type>
-				</crossReference>
-			</xsl:for-each>
-			<xsl:for-each select="$var21_manufacturedProduct/ns1:subjectOf/ns1:characteristic">
-				<xsl:variable name="var20_value" as="node()*" select="ns1:value"/>
-				<characteristic>
-					<xsl:for-each select="ns1:code">
-						<xsl:variable name="var7_resultof_convertCode" as="node()?">
-							<xsl:call-template name="user:convertCode">
-								<xsl:with-param name="SimpleCD" as="node()">
-									<Simple-CD xmlns="urn:hl7-org:v3">
-										<xsl:sequence select="(./@node(), ./node())"/>
-									</Simple-CD>
-								</xsl:with-param>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:for-each select="$var7_resultof_convertCode">
-							<type>
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</type>
-						</xsl:for-each>
-					</xsl:for-each>
-					<xsl:variable name="var9_resultof_filter" as="node()*">
-						<xsl:for-each select="$var20_value">
-							<xsl:variable name="var8_cur" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var8_cur) = xs:QName('ns1:CV'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var9_resultof_filter">
-						<xsl:variable name="var10_resultof_convertCode" as="node()?">
-							<xsl:call-template name="user:convertCode">
-								<xsl:with-param name="SimpleCD" as="node()">
-									<Simple-CD xmlns="urn:hl7-org:v3">
-										<xsl:for-each select="@code">
-											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@codeSystem">
-											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@displayName">
-											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</Simple-CD>
-								</xsl:with-param>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:for-each select="$var10_resultof_convertCode">
-							<valueCodeableConcept>
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</valueCodeableConcept>
-						</xsl:for-each>
-					</xsl:for-each>
-					<xsl:variable name="var12_resultof_filter" as="node()*">
-						<xsl:for-each select="$var20_value">
-							<xsl:variable name="var11_cur" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var11_cur) = xs:QName('ns1:CE'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var12_resultof_filter">
-						<xsl:variable name="var13_resultof_convertCode" as="node()?">
-							<xsl:call-template name="user:convertCode">
-								<xsl:with-param name="SimpleCD" as="node()">
-									<Simple-CD xmlns="urn:hl7-org:v3">
-										<xsl:for-each select="@code">
-											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@codeSystem">
-											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@displayName">
-											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</Simple-CD>
-								</xsl:with-param>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:for-each select="$var13_resultof_convertCode">
-							<valueCodeableConcept>
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</valueCodeableConcept>
-						</xsl:for-each>
-					</xsl:for-each>
-					<xsl:variable name="var15_resultof_filter" as="node()*">
-						<xsl:for-each select="$var20_value">
-							<xsl:variable name="var14_cur" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var14_cur) = xs:QName('ns1:ST'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var15_resultof_filter">
-						<valueCodeableConcept>
-							<text>
-								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</text>
-						</valueCodeableConcept>
-					</xsl:for-each>
-					<xsl:variable name="var17_resultof_filter" as="node()*">
-						<xsl:for-each select="$var20_value">
-							<xsl:variable name="var16_cur" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var16_cur) = xs:QName('ns1:PQ'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var17_resultof_filter">
-						<valueQuantity>
-							<value>
-								<xsl:for-each select="@value">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</value>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
-							</system>
-							<code>
-								<xsl:for-each select="@unit">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</code>
-						</valueQuantity>
-					</xsl:for-each>
-					<xsl:variable name="var19_resultof_filter" as="node()*">
-						<xsl:for-each select="$var20_value">
-							<xsl:variable name="var18_cur" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var18_cur) = xs:QName('ns1:INT'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var19_resultof_filter">
-						<valueQuantity>
-							<value>
-								<xsl:for-each select="@value">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:integer(fn:string(.)))"/>
-								</xsl:for-each>
-							</value>
-						</valueQuantity>
-					</xsl:for-each>
-				</characteristic>
-			</xsl:for-each>
-		</MedicinalProductDefinition>
-	</xsl:template>
-	<xsl:template name="user:createSection">
-		<xsl:param name="Section" select="()"/>
-		<Composition.Section xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$Section/ns1:id/@root">
-				<xsl:attribute name="id" namespace="" select="fn:string(.)"/>
-			</xsl:for-each>
-			<xsl:for-each select="$Section/ns1:effectiveTime">
-				<xsl:variable name="var2_resultof_convertTS" as="xs:string?">
-					<xsl:call-template name="user:convertTS">
-						<xsl:with-param name="SimpleTS" as="node()">
-							<Simple-TS xmlns="urn:hl7-org:v3">
-								<xsl:for-each select="@value">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</Simple-TS>
-						</xsl:with-param>
-						<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var2_resultof_convertTS">
-					<xsl:variable name="var1_resultof_insertExtension" as="node()?">
-						<xsl:call-template name="user:insertExtension">
-							<xsl:with-param name="url" select="'http://hl7.org/fhir/us/spl/StructureDefinition/sectionEffectiveTime'" as="xs:string"/>
-							<xsl:with-param name="value" select="." as="xs:string"/>
-						</xsl:call-template>
-					</xsl:variable>
-					<xsl:for-each select="$var1_resultof_insertExtension">
-						<extension>
-							<xsl:sequence select="(./@node(), ./node())"/>
-						</extension>
-					</xsl:for-each>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$Section/ns1:title">
-				<xsl:variable name="var3_resultof_convertTitleToString" as="xs:string?">
-					<xsl:call-template name="user:convertTitleToString">
-						<xsl:with-param name="Title" as="node()">
-							<StrucDoc.Title xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</StrucDoc.Title>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<title>
-					<xsl:for-each select="$var3_resultof_convertTitleToString">
-						<xsl:attribute name="value" namespace="" select="."/>
-					</xsl:for-each>
-				</title>
-			</xsl:for-each>
-			<xsl:for-each select="$Section/ns1:code">
-				<xsl:variable name="var4_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var4_resultof_convertCode">
-					<code>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</code>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$Section/xhtml:div">
-				<text>
-					<status>
-						<xsl:attribute name="value" namespace="" select="'additional'"/>
-					</status>
-					<xhtml:div>
-						<xsl:call-template name="tbf:tbf3_">
-							<xsl:with-param name="input" select="." as="node()"/>
-						</xsl:call-template>
-					</xhtml:div>
-				</text>
-			</xsl:for-each>
-			<xsl:for-each select="$Section/ns1:subject">
-				<entry>
-					<reference>
-						<xsl:for-each select="ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
-							<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', fn:string(.))"/>
-						</xsl:for-each>
-					</reference>
-				</entry>
-			</xsl:for-each>
-			<xsl:for-each select="$Section/ns1:component/ns1:section">
-				<xsl:variable name="var5_resultof_createSection" as="node()?">
-					<xsl:call-template name="user:createSection">
-						<xsl:with-param name="Section" as="node()">
-							<DrugLabelSubmission.Section xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</DrugLabelSubmission.Section>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var5_resultof_createSection">
-					<section>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</section>
-				</xsl:for-each>
-			</xsl:for-each>
-		</Composition.Section>
-	</xsl:template>
-	<xsl:template name="user:insertExtension">
-		<xsl:param name="url" select="()"/>
-		<xsl:param name="value" select="()"/>
-		<Extension xmlns="http://hl7.org/fhir">
-			<xsl:attribute name="url" namespace="" select="xs:string(xs:anyURI($url))"/>
-			<valueString>
-				<xsl:attribute name="value" namespace="" select="$value"/>
-			</valueString>
-		</Extension>
-	</xsl:template>
-	<xsl:template name="user:convertTitleToString">
-		<xsl:param name="Title" select="()"/>
-		<xsl:variable name="var1_current_of_filter" as="xs:string*">
-			<xsl:for-each select="($Title/node())[fn:boolean(self::text())]">
-				<xsl:sequence select="fn:string(.)"/>
-			</xsl:for-each>
-		</xsl:variable>
-		<xsl:sequence select="fn:string-join($var1_current_of_filter, fn:codepoints-to-string(xs:integer('13')))"/>
-	</xsl:template>
-	<xsl:template name="user:convertCode">
-		<xsl:param name="SimpleCD" select="()"/>
-		<CodeableConcept xmlns="http://hl7.org/fhir">
-			<coding>
-				<system>
-					<xsl:for-each select="$SimpleCD/@codeSystem">
-						<xsl:variable name="var2_resultof_vmf__inputtoresult" as="xs:string">
-							<xsl:call-template name="vmf:vmf9_inputtoresult">
-								<xsl:with-param name="input" select="fn:string(.)" as="xs:string"/>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:variable name="var1_test_resultof_starts_with" as="xs:string">
-							<xsl:choose>
-								<xsl:when test="fn:starts-with($var2_resultof_vmf__inputtoresult, '2')">
-									<xsl:sequence select="fn:concat('urn:oid:', $var2_resultof_vmf__inputtoresult)"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:sequence select="$var2_resultof_vmf__inputtoresult"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:variable>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI($var1_test_resultof_starts_with))"/>
-					</xsl:for-each>
-				</system>
-				<code>
-					<xsl:for-each select="$SimpleCD/@code">
-						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-					</xsl:for-each>
-				</code>
-				<xsl:for-each select="$SimpleCD/@displayName">
-					<display>
-						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-					</display>
-				</xsl:for-each>
-			</coding>
-		</CodeableConcept>
-	</xsl:template>
-	<xsl:template name="user:createComposition">
-		<xsl:param name="document" select="()"/>
-		<Composition xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$document/ns1:versionNumber/@value">
-				<xsl:variable name="var1_resultof_insertExtension" as="node()?">
-					<xsl:call-template name="user:insertExtension">
-						<xsl:with-param name="url" select="'http://hl7.org/fhir/us/spl/StructureDefinition/versionNumber'" as="xs:string"/>
-						<xsl:with-param name="value" select="fn:string(.)" as="xs:string"/>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var1_resultof_insertExtension">
-					<extension>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</extension>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$document/ns1:setId">
-				<identifier>
-					<system>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('urn:ietf:rfc:3986'))"/>
-					</system>
-					<value>
-						<xsl:for-each select="@root">
-							<xsl:attribute name="value" namespace="" select="fn:concat('urn:uuid:', fn:string(.))"/>
-						</xsl:for-each>
-					</value>
-				</identifier>
-			</xsl:for-each>
-			<status>
-				<xsl:attribute name="value" namespace="" select="'final'"/>
-			</status>
-			<xsl:for-each select="$document/ns1:code">
-				<xsl:variable name="var2_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var2_resultof_convertCode">
-					<type>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</type>
-				</xsl:for-each>
-			</xsl:for-each>
-			<date>
-				<xsl:for-each select="$document/ns1:effectiveTime">
-					<xsl:variable name="var3_resultof_convertTS" as="xs:string?">
-						<xsl:call-template name="user:convertTS">
-							<xsl:with-param name="SimpleTS" as="node()">
-								<Simple-TS xmlns="urn:hl7-org:v3">
-									<xsl:sequence select="(./@node(), ./node())"/>
-								</Simple-TS>
-							</xsl:with-param>
-							<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-						</xsl:call-template>
-					</xsl:variable>
-					<xsl:for-each select="$var3_resultof_convertTS">
-						<xsl:attribute name="value" namespace="" select="."/>
-					</xsl:for-each>
-				</xsl:for-each>
-			</date>
-			<xsl:for-each select="$document/ns1:author">
-				<author>
-					<reference>
-						<xsl:attribute name="value" namespace="" select="'Organization/Labeler'"/>
-					</reference>
-				</author>
-			</xsl:for-each>
-			<xsl:for-each select="$document/ns1:title">
-				<xsl:variable name="var4_resultof_convertTitleToString" as="xs:string?">
-					<xsl:call-template name="user:convertTitleToString">
-						<xsl:with-param name="Title" as="node()">
-							<StrucDoc.Title xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</StrucDoc.Title>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<title>
-					<xsl:for-each select="$var4_resultof_convertTitleToString">
-						<xsl:attribute name="value" namespace="" select="."/>
-					</xsl:for-each>
-				</title>
-			</xsl:for-each>
-			<xsl:for-each select="$document/ns1:component/ns1:structuredBody/ns1:component/ns1:section">
-				<xsl:variable name="var5_resultof_createSection" as="node()?">
-					<xsl:call-template name="user:createSection">
-						<xsl:with-param name="Section" as="node()">
-							<DrugLabelSubmission.Section xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</DrugLabelSubmission.Section>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var5_resultof_createSection">
-					<section>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</section>
-				</xsl:for-each>
-			</xsl:for-each>
-		</Composition>
-	</xsl:template>
-	<xsl:template name="user:createDocumentAuthor">
-		<xsl:param name="Labeler" select="()"/>
-		<xsl:variable name="var1_assignedEntity" as="node()*" select="$Labeler/ns1:assignedEntity"/>
-		<Organization xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var1_assignedEntity/ns1:representedOrganization/ns1:id">
-				<identifier>
-					<system>
-						<xsl:for-each select="@root">
-							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
-						</xsl:for-each>
-					</system>
-					<value>
-						<xsl:for-each select="@extension">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</value>
-				</identifier>
-			</xsl:for-each>
-			<type>
-				<coding>
-					<system>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
-					</system>
-					<code>
-						<xsl:attribute name="value" namespace="" select="'Labeler'"/>
-					</code>
-				</coding>
-			</type>
-			<name>
-				<xsl:for-each select="($var1_assignedEntity/ns1:representedOrganization/ns1:name/node())[fn:boolean(self::text())]">
-					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-				</xsl:for-each>
-			</name>
-		</Organization>
 	</xsl:template>
 	<xsl:template name="user:convertTS">
 		<xsl:param name="SimpleTS" select="()"/>
@@ -10416,10 +10532,10 @@ http://www.altova.com/mapforce
 				</xsl:choose>
 			</xsl:variable>
 			<xsl:for-each select="$var1_test_test_resultof_exists">
-				<xsl:variable name="var3___as_double" as="xs:double" select="xs:double(xs:decimal('2'))"/>
-				<xsl:variable name="var4___as_double" as="xs:double" select="xs:double(xs:decimal('5'))"/>
+				<xsl:variable name="var3___as_double" as="xs:double" select="xs:double(xs:decimal('5'))"/>
+				<xsl:variable name="var4___as_double" as="xs:double" select="xs:double(xs:decimal('2'))"/>
 				<xsl:variable name="var2_cur_as_string" as="xs:string" select="fn:string($var5_cur)"/>
-				<xsl:sequence select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var2_cur_as_string, xs:double(xs:decimal('0')), $var4___as_double), '-'), fn:substring($var2_cur_as_string, $var4___as_double, $var3___as_double)), '-'), fn:substring($var2_cur_as_string, xs:double(xs:decimal('7')), $var3___as_double)), .)"/>
+				<xsl:sequence select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var2_cur_as_string, xs:double(xs:decimal('0')), $var3___as_double), '-'), fn:substring($var2_cur_as_string, $var3___as_double, $var4___as_double)), '-'), fn:substring($var2_cur_as_string, xs:double(xs:decimal('7')), $var4___as_double)), .)"/>
 			</xsl:for-each>
 		</xsl:for-each>
 	</xsl:template>
@@ -10430,7 +10546,7 @@ http://www.altova.com/mapforce
 				<xsl:copy-of select="'http://loinc.org'"/>
 			</xsl:when>
 			<xsl:when test="$input='2.16.840.1.113883.3.26.1.1'">
-				<xsl:copy-of select="'http://ncimeta.nci.nih.gov'"/>
+				<xsl:copy-of select="'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'"/>
 			</xsl:when>
 			<xsl:when test="$input='2.16.840.1.113883.4.9'">
 				<xsl:copy-of select="'http://fdasis.nlm.nih.gov'"/>
@@ -10448,9 +10564,9 @@ http://www.altova.com/mapforce
 	</xsl:template>
 	<xsl:output method="xml" encoding="UTF-8" byte-order-mark="no" indent="yes"/>
 	<xsl:template match="/">
-		<xsl:variable name="var61_document" as="node()?" select="ns1:document"/>
+		<xsl:variable name="var67_document" as="node()?" select="ns1:document"/>
 		<Bundle xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-			<xsl:for-each select="$var61_document">
+			<xsl:for-each select="$var67_document">
 				<identifier>
 					<system>
 						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('urn:ietf:rfc:3986'))"/>
@@ -10464,7 +10580,7 @@ http://www.altova.com/mapforce
 				<xsl:attribute name="value" namespace="" select="'document'"/>
 			</type>
 			<timestamp>
-				<xsl:for-each select="$var61_document">
+				<xsl:for-each select="$var67_document">
 					<xsl:variable name="var2_effectiveTime" as="node()" select="ns1:effectiveTime"/>
 					<xsl:variable name="var1_resultof_convertTS" as="xs:string?">
 						<xsl:call-template name="user:convertTS">
@@ -10481,7 +10597,7 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</xsl:for-each>
 			</timestamp>
-			<xsl:for-each select="$var61_document">
+			<xsl:for-each select="$var67_document">
 				<xsl:variable name="var3_resultof_createComposition" as="node()?">
 					<xsl:call-template name="user:createComposition">
 						<xsl:with-param name="document" as="node()">
@@ -10504,7 +10620,7 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document">
+			<xsl:for-each select="$var67_document">
 				<xsl:variable name="var5_author" as="node()" select="ns1:author"/>
 				<xsl:variable name="var4_resultof_createDocumentAuthor" as="node()?">
 					<xsl:call-template name="user:createDocumentAuthor">
@@ -10528,66 +10644,165 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject">
-				<entry>
-					<fullUrl>
-						<xsl:for-each select="ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
-							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/MedicinalProductDefinition/', fn:string(.))))"/>
-						</xsl:for-each>
-					</fullUrl>
-					<xsl:variable name="var6_resultof_createProduct" as="node()?">
-						<xsl:call-template name="user:createProduct">
-							<xsl:with-param name="SubjectProduct" as="node()">
-								<DrugLabelSubmission.SubjectProduct xmlns="urn:hl7-org:v3">
-									<xsl:sequence select="(./@node(), ./node())"/>
-								</DrugLabelSubmission.SubjectProduct>
-							</xsl:with-param>
-						</xsl:call-template>
-					</xsl:variable>
-					<resource>
-						<xsl:for-each select="$var6_resultof_createProduct">
-							<MedicinalProductDefinition>
+			<xsl:for-each select="$var67_document/ns1:author/ns1:assignedEntity/ns1:representedOrganization/ns1:assignedEntity/ns1:assignedOrganization/ns1:assignedEntity">
+				<xsl:variable name="var7_cur" as="node()" select="."/>
+				<xsl:variable name="var6_resultof_createEstablishmentOrganization" as="node()?">
+					<xsl:call-template name="user:createEstablishmentOrganization">
+						<xsl:with-param name="EstablishmentEntity" as="node()">
+							<DrugLabelSubmission.EstablishmentEntity xmlns="urn:hl7-org:v3">
 								<xsl:sequence select="(./@node(), ./node())"/>
-							</MedicinalProductDefinition>
-						</xsl:for-each>
-					</resource>
-				</entry>
+							</DrugLabelSubmission.EstablishmentEntity>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var6_resultof_createEstablishmentOrganization">
+					<entry>
+						<fullUrl>
+							<xsl:for-each select="$var7_cur/ns1:assignedOrganization/ns1:id">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/Organization/Establishment-', fn:string(@extension))))"/>
+							</xsl:for-each>
+						</fullUrl>
+						<resource>
+							<Organization>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</Organization>
+						</resource>
+					</entry>
+				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
-				<xsl:variable name="var13_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:author/ns1:assignedEntity/ns1:representedOrganization/ns1:assignedEntity/ns1:assignedOrganization">
+				<xsl:variable name="var8_cur" as="node()" select="."/>
+				<xsl:for-each select="ns1:id">
+					<entry>
+						<fullUrl>
+							<xsl:sequence select="()"/>
+						</fullUrl>
+						<resource>
+							<Organization>
+								<identifier>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(@root))))"/>
+									</system>
+									<value>
+										<xsl:attribute name="value" namespace="" select="fn:string(@extension)"/>
+									</value>
+								</identifier>
+								<type>
+									<coding>
+										<system>
+											<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+										</system>
+										<code>
+											<xsl:attribute name="value" namespace="" select="'Registrant'"/>
+										</code>
+									</coding>
+								</type>
+								<name>
+									<xsl:for-each select="($var8_cur/ns1:name/node())[fn:boolean(self::text())]">
+										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+									</xsl:for-each>
+								</name>
+							</Organization>
+						</resource>
+					</entry>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var67_document">
+				<xsl:variable name="var10_cur" as="node()" select="."/>
+				<xsl:for-each select="ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject">
+					<entry>
+						<fullUrl>
+							<xsl:for-each select="ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/MedicinalProductDefinition/', fn:string(.))))"/>
+							</xsl:for-each>
+						</fullUrl>
+						<xsl:variable name="var9_resultof_createProduct" as="node()?">
+							<xsl:call-template name="user:createProduct">
+								<xsl:with-param name="SubjectProduct" as="node()">
+									<DrugLabelSubmission.SubjectProduct xmlns="urn:hl7-org:v3">
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</DrugLabelSubmission.SubjectProduct>
+								</xsl:with-param>
+								<xsl:with-param name="EstablishmentEntity" as="node()*">
+									<xsl:for-each select="$var10_cur/ns1:author/ns1:assignedEntity/ns1:representedOrganization/ns1:assignedEntity/ns1:assignedOrganization/ns1:assignedEntity">
+										<DrugLabelSubmission.EstablishmentEntity xmlns="urn:hl7-org:v3">
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</DrugLabelSubmission.EstablishmentEntity>
+									</xsl:for-each>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<resource>
+							<xsl:for-each select="$var9_resultof_createProduct">
+								<MedicinalProductDefinition>
+									<xsl:sequence select="(./@node(), ./node())"/>
+								</MedicinalProductDefinition>
+							</xsl:for-each>
+						</resource>
+					</entry>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct">
+				<xsl:variable name="var12_cur" as="node()" select="."/>
+				<xsl:variable name="var11_resultof_createManufacturedItem" as="node()?">
+					<xsl:call-template name="user:createManufacturedItem">
+						<xsl:with-param name="ManufacturedProduct" as="node()">
+							<DrugLabelSubmission.ManufacturedProduct xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</DrugLabelSubmission.ManufacturedProduct>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var11_resultof_createManufacturedItem">
+					<entry>
+						<fullUrl>
+							<xsl:for-each select="$var12_cur/ns1:manufacturedProduct/ns1:code/@code">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/ManufacturedItemDefinition/', fn:string(.))))"/>
+							</xsl:for-each>
+						</fullUrl>
+						<resource>
+							<ManufacturedItemDefinition>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</ManufacturedItemDefinition>
+						</resource>
+					</entry>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+				<xsl:variable name="var19_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var12_cur" as="node()" select="."/>
-					<xsl:variable name="var11_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var10_classCode" as="node()?" select="@classCode"/>
-					<xsl:if test="fn:exists(($var10_classCode)[(fn:string(.) = 'IACT')])">
-						<xsl:variable name="var9_code" as="node()?" select="$var13_cur/ns1:code"/>
-						<xsl:variable name="var8_map_of_code" as="xs:string?">
-							<xsl:for-each select="$var9_code/@code">
+					<xsl:variable name="var18_cur" as="node()" select="."/>
+					<xsl:variable name="var17_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var16_classCode" as="node()?" select="@classCode"/>
+					<xsl:if test="fn:exists(($var16_classCode)[(fn:string(.) = 'IACT')])">
+						<xsl:variable name="var15_code" as="node()?" select="$var19_cur/ns1:code"/>
+						<xsl:variable name="var14_map_of_code" as="xs:string?">
+							<xsl:for-each select="$var15_code/@code">
 								<xsl:sequence select="fn:string(.)"/>
 							</xsl:for-each>
 						</xsl:variable>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var9_code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var11_idx))))"/>
+								<xsl:for-each select="$var15_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var17_idx))))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
-								<xsl:for-each select="$var8_map_of_code">
-									<xsl:for-each select="$var8_map_of_code">
-										<xsl:variable name="var7_resultof_createInactiveIngredient" as="node()?">
+								<xsl:for-each select="$var14_map_of_code">
+									<xsl:for-each select="$var14_map_of_code">
+										<xsl:variable name="var13_resultof_createInactiveIngredient" as="node()?">
 											<xsl:call-template name="user:createInactiveIngredient">
 												<xsl:with-param name="Ingredient" as="node()">
 													<DrugLabelSubmission.Ingredient xmlns="urn:hl7-org:v3">
-														<xsl:for-each select="$var10_classCode">
+														<xsl:for-each select="$var16_classCode">
 															<xsl:attribute name="classCode" namespace="" select="fn:string(.)"/>
 														</xsl:for-each>
-														<xsl:for-each select="$var12_cur/ns1:quantity">
+														<xsl:for-each select="$var18_cur/ns1:quantity">
 															<quantity>
 																<xsl:sequence select="(./@node(), ./node())"/>
 															</quantity>
 														</xsl:for-each>
-														<xsl:for-each select="$var12_cur/ns1:ingredientSubstance">
+														<xsl:for-each select="$var18_cur/ns1:ingredientSubstance">
 															<ingredientSubstance>
 																<xsl:for-each select="@classCode">
 																	<xsl:attribute name="classCode" namespace="" select="fn:string(.)"/>
@@ -10675,7 +10890,7 @@ http://www.altova.com/mapforce
 												<xsl:with-param name="productId" select="." as="xs:string"/>
 											</xsl:call-template>
 										</xsl:variable>
-										<xsl:for-each select="$var7_resultof_createInactiveIngredient">
+										<xsl:for-each select="$var13_resultof_createInactiveIngredient">
 											<Ingredient>
 												<xsl:sequence select="(./@node(), ./node())"/>
 											</Ingredient>
@@ -10687,17 +10902,17 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
-				<xsl:variable name="var17_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+				<xsl:variable name="var23_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var16_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var15_classCode" as="node()?" select="@classCode"/>
-					<xsl:if test="fn:not(fn:exists(($var15_classCode)[(fn:string(.) = 'IACT')]))">
-						<xsl:variable name="var14_code" as="node()?" select="$var17_cur/ns1:code"/>
+					<xsl:variable name="var22_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var21_classCode" as="node()?" select="@classCode"/>
+					<xsl:if test="fn:not(fn:exists(($var21_classCode)[(fn:string(.) = 'IACT')]))">
+						<xsl:variable name="var20_code" as="node()?" select="$var23_cur/ns1:code"/>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var14_code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var16_idx))))"/>
+								<xsl:for-each select="$var20_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var22_idx))))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
@@ -10707,8 +10922,8 @@ http://www.altova.com/mapforce
 									</status>
 									<for>
 										<reference>
-											<xsl:for-each select="$var14_code/@code">
-												<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', fn:string(.))"/>
+											<xsl:for-each select="$var20_code/@code">
+												<xsl:attribute name="value" namespace="" select="fn:concat('ManufacturedItemDefinition/', fn:string(.))"/>
 											</xsl:for-each>
 										</reference>
 									</for>
@@ -10718,7 +10933,7 @@ http://www.altova.com/mapforce
 												<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-RoleClass'))"/>
 											</system>
 											<code>
-												<xsl:for-each select="$var15_classCode">
+												<xsl:for-each select="$var21_classCode">
 													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 												</xsl:for-each>
 											</code>
@@ -10728,8 +10943,8 @@ http://www.altova.com/mapforce
 										<code>
 											<reference>
 												<reference>
-													<xsl:for-each select="$var14_code/@code">
-														<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('SubstanceDefinition/', fn:string(.)), '-'), xs:string($var16_idx)), '-'), 'Substance')"/>
+													<xsl:for-each select="$var20_code/@code">
+														<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('SubstanceDefinition/', fn:string(.)), '-'), xs:string($var22_idx)), '-'), 'Substance')"/>
 													</xsl:for-each>
 												</reference>
 											</reference>
@@ -10781,52 +10996,52 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
-				<xsl:variable name="var22_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+				<xsl:variable name="var28_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var21_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var27_idx" as="xs:integer" select="position()"/>
 					<xsl:if test="fn:not(fn:exists((./@classCode)[(fn:string(.) = 'IACT')]))">
-						<xsl:variable name="var19_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
-						<xsl:variable name="var20_http___fdasis_nlm_nih_gov_as_string" as="xs:string" select="xs:string(xs:anyURI('http://fdasis.nlm.nih.gov'))"/>
+						<xsl:variable name="var25_http___fdasis_nlm_nih_gov_as_string" as="xs:string" select="xs:string(xs:anyURI('http://fdasis.nlm.nih.gov'))"/>
+						<xsl:variable name="var26_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var22_cur/ns1:code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var21_idx)), '-'), 'Substance')))"/>
+								<xsl:for-each select="$var28_cur/ns1:code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var27_idx)), '-'), 'Substance')))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
 								<SubstanceDefinition>
 									<identifier>
 										<system>
-											<xsl:attribute name="value" namespace="" select="$var20_http___fdasis_nlm_nih_gov_as_string"/>
+											<xsl:attribute name="value" namespace="" select="$var25_http___fdasis_nlm_nih_gov_as_string"/>
 										</system>
 										<value>
-											<xsl:for-each select="$var19_ingredientSubstance/ns1:code/@code">
+											<xsl:for-each select="$var26_ingredientSubstance/ns1:code/@code">
 												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 											</xsl:for-each>
 										</value>
 									</identifier>
-									<xsl:for-each select="$var19_ingredientSubstance/ns1:activeMoiety">
-										<xsl:variable name="var18_activeMoiety" as="node()?" select="ns1:activeMoiety"/>
+									<xsl:for-each select="$var26_ingredientSubstance/ns1:activeMoiety">
+										<xsl:variable name="var24_activeMoiety" as="node()?" select="ns1:activeMoiety"/>
 										<moiety>
 											<identifier>
 												<system>
-													<xsl:attribute name="value" namespace="" select="$var20_http___fdasis_nlm_nih_gov_as_string"/>
+													<xsl:attribute name="value" namespace="" select="$var25_http___fdasis_nlm_nih_gov_as_string"/>
 												</system>
 												<value>
-													<xsl:for-each select="$var18_activeMoiety/ns1:code/@code">
+													<xsl:for-each select="$var24_activeMoiety/ns1:code/@code">
 														<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 													</xsl:for-each>
 												</value>
 											</identifier>
 											<name>
-												<xsl:for-each select="($var18_activeMoiety/ns1:name/node())[fn:boolean(self::text())]">
+												<xsl:for-each select="($var24_activeMoiety/ns1:name/node())[fn:boolean(self::text())]">
 													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 												</xsl:for-each>
 											</name>
 										</moiety>
 									</xsl:for-each>
-									<xsl:for-each select="$var19_ingredientSubstance/ns1:name">
+									<xsl:for-each select="$var26_ingredientSubstance/ns1:name">
 										<name>
 											<name>
 												<xsl:for-each select="(./node())[fn:boolean(self::text())]">
@@ -10841,36 +11056,36 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
-				<xsl:variable name="var28_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+				<xsl:variable name="var34_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:asContent">
-					<xsl:variable name="var27_cur" as="node()" select="."/>
-					<xsl:variable name="var26_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var25_code" as="node()?" select="$var28_cur/ns1:code"/>
-					<xsl:variable name="var24_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var25_code/@code">
+					<xsl:variable name="var33_cur" as="node()" select="."/>
+					<xsl:variable name="var32_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var31_code" as="node()?" select="$var34_cur/ns1:code"/>
+					<xsl:variable name="var30_map_of_code" as="xs:string?">
+						<xsl:for-each select="$var31_code/@code">
 							<xsl:sequence select="fn:string(.)"/>
 						</xsl:for-each>
 					</xsl:variable>
 					<entry>
 						<fullUrl>
-							<xsl:for-each select="$var25_code/@code">
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var26_idx))))"/>
+							<xsl:for-each select="$var31_code/@code">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var32_idx))))"/>
 							</xsl:for-each>
 						</fullUrl>
 						<resource>
-							<xsl:for-each select="$var24_map_of_code">
-								<xsl:for-each select="$var24_map_of_code">
-									<xsl:variable name="var23_resultof_createPackagedProduct" as="node()?">
+							<xsl:for-each select="$var30_map_of_code">
+								<xsl:for-each select="$var30_map_of_code">
+									<xsl:variable name="var29_resultof_createPackagedProduct" as="node()?">
 										<xsl:call-template name="user:createPackagedProduct">
 											<xsl:with-param name="Content" as="node()">
 												<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var27_cur/@node(), $var27_cur/node())"/>
+													<xsl:sequence select="($var33_cur/@node(), $var33_cur/node())"/>
 												</DrugLabelSubmission.Content>
 											</xsl:with-param>
 											<xsl:with-param name="productId" select="." as="xs:string"/>
 											<xsl:with-param name="Part" as="node()*">
-												<xsl:for-each select="$var28_cur/ns1:part">
+												<xsl:for-each select="$var34_cur/ns1:part">
 													<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
 														<xsl:sequence select="(./@node(), ./node())"/>
 													</DrugLabelSubmission.Part>
@@ -10878,7 +11093,7 @@ http://www.altova.com/mapforce
 											</xsl:with-param>
 										</xsl:call-template>
 									</xsl:variable>
-									<xsl:for-each select="$var23_resultof_createPackagedProduct">
+									<xsl:for-each select="$var29_resultof_createPackagedProduct">
 										<PackagedProductDefinition>
 											<xsl:sequence select="(./@node(), ./node())"/>
 										</PackagedProductDefinition>
@@ -10889,36 +11104,36 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct">
-				<xsl:variable name="var33_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct">
+				<xsl:variable name="var39_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:subjectOf/ns1:approval">
-					<xsl:variable name="var32_cur" as="node()" select="."/>
-					<xsl:variable name="var31_manufacturedProduct" as="node()?" select="$var33_cur/ns1:manufacturedProduct"/>
-					<xsl:variable name="var30_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var31_manufacturedProduct/ns1:code/@code">
+					<xsl:variable name="var38_cur" as="node()" select="."/>
+					<xsl:variable name="var37_manufacturedProduct" as="node()?" select="$var39_cur/ns1:manufacturedProduct"/>
+					<xsl:variable name="var36_map_of_code" as="xs:string?">
+						<xsl:for-each select="$var37_manufacturedProduct/ns1:code/@code">
 							<xsl:sequence select="fn:string(.)"/>
 						</xsl:for-each>
 					</xsl:variable>
 					<entry>
 						<fullUrl>
-							<xsl:for-each select="$var31_manufacturedProduct/ns1:code/@code">
+							<xsl:for-each select="$var37_manufacturedProduct/ns1:code/@code">
 								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/RegulatedAuthorization/', fn:string(.))))"/>
 							</xsl:for-each>
 						</fullUrl>
 						<resource>
-							<xsl:for-each select="$var30_map_of_code">
-								<xsl:for-each select="$var30_map_of_code">
-									<xsl:variable name="var29_resultof_createMarketing" as="node()?">
+							<xsl:for-each select="$var36_map_of_code">
+								<xsl:for-each select="$var36_map_of_code">
+									<xsl:variable name="var35_resultof_createMarketing" as="node()?">
 										<xsl:call-template name="user:createMarketing">
 											<xsl:with-param name="Approval" as="node()">
 												<DrugLabelSubmission.Approval xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var32_cur/@node(), $var32_cur/node())"/>
+													<xsl:sequence select="($var38_cur/@node(), $var38_cur/node())"/>
 												</DrugLabelSubmission.Approval>
 											</xsl:with-param>
 											<xsl:with-param name="productId" select="." as="xs:string"/>
 										</xsl:call-template>
 									</xsl:variable>
-									<xsl:for-each select="$var29_resultof_createMarketing">
+									<xsl:for-each select="$var35_resultof_createMarketing">
 										<RegulatedAuthorization>
 											<xsl:sequence select="(./@node(), ./node())"/>
 										</RegulatedAuthorization>
@@ -10929,14 +11144,14 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
 				<entry>
 					<fullUrl>
 						<xsl:for-each select="ns1:partProduct/ns1:code/@code">
 							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/MedicinalProductDefinition/', fn:string(.))))"/>
 						</xsl:for-each>
 					</fullUrl>
-					<xsl:variable name="var34_resultof_createPartProduct" as="node()?">
+					<xsl:variable name="var40_resultof_createPartProduct" as="node()?">
 						<xsl:call-template name="user:createPartProduct">
 							<xsl:with-param name="Part" as="node()">
 								<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
@@ -10946,7 +11161,7 @@ http://www.altova.com/mapforce
 						</xsl:call-template>
 					</xsl:variable>
 					<resource>
-						<xsl:for-each select="$var34_resultof_createPartProduct">
+						<xsl:for-each select="$var40_resultof_createPartProduct">
 							<MedicinalProductDefinition>
 								<xsl:sequence select="(./@node(), ./node())"/>
 							</MedicinalProductDefinition>
@@ -10954,38 +11169,38 @@ http://www.altova.com/mapforce
 					</resource>
 				</entry>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var40_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var46_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var39_cur" as="node()" select="."/>
-					<xsl:variable name="var38_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var45_cur" as="node()" select="."/>
+					<xsl:variable name="var44_idx" as="xs:integer" select="position()"/>
 					<xsl:if test="fn:exists((./@classCode)[(fn:string(.) = 'IACT')])">
-						<xsl:variable name="var37_code" as="node()?" select="$var40_cur/ns1:code"/>
-						<xsl:variable name="var36_map_of_code" as="xs:string?">
-							<xsl:for-each select="$var37_code/@code">
+						<xsl:variable name="var43_code" as="node()?" select="$var46_cur/ns1:code"/>
+						<xsl:variable name="var42_map_of_code" as="xs:string?">
+							<xsl:for-each select="$var43_code/@code">
 								<xsl:sequence select="fn:string(.)"/>
 							</xsl:for-each>
 						</xsl:variable>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var37_code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var38_idx))))"/>
+								<xsl:for-each select="$var43_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var44_idx))))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
-								<xsl:for-each select="$var36_map_of_code">
-									<xsl:for-each select="$var36_map_of_code">
-										<xsl:variable name="var35_resultof_createInactiveIngredient" as="node()?">
+								<xsl:for-each select="$var42_map_of_code">
+									<xsl:for-each select="$var42_map_of_code">
+										<xsl:variable name="var41_resultof_createInactiveIngredient" as="node()?">
 											<xsl:call-template name="user:createInactiveIngredient">
 												<xsl:with-param name="Ingredient" as="node()">
 													<DrugLabelSubmission.Ingredient xmlns="urn:hl7-org:v3">
-														<xsl:sequence select="($var39_cur/@node(), $var39_cur/node())"/>
+														<xsl:sequence select="($var45_cur/@node(), $var45_cur/node())"/>
 													</DrugLabelSubmission.Ingredient>
 												</xsl:with-param>
 												<xsl:with-param name="productId" select="." as="xs:string"/>
 											</xsl:call-template>
 										</xsl:variable>
-										<xsl:for-each select="$var35_resultof_createInactiveIngredient">
+										<xsl:for-each select="$var41_resultof_createInactiveIngredient">
 											<Ingredient>
 												<xsl:sequence select="(./@node(), ./node())"/>
 											</Ingredient>
@@ -10997,17 +11212,17 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var44_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var50_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var43_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var42_classCode" as="node()?" select="@classCode"/>
-					<xsl:if test="fn:not(fn:exists(($var42_classCode)[(fn:string(.) = 'IACT')]))">
-						<xsl:variable name="var41_code" as="node()?" select="$var44_cur/ns1:code"/>
+					<xsl:variable name="var49_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var48_classCode" as="node()?" select="@classCode"/>
+					<xsl:if test="fn:not(fn:exists(($var48_classCode)[(fn:string(.) = 'IACT')]))">
+						<xsl:variable name="var47_code" as="node()?" select="$var50_cur/ns1:code"/>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var41_code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var43_idx))))"/>
+								<xsl:for-each select="$var47_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var49_idx))))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
@@ -11017,8 +11232,8 @@ http://www.altova.com/mapforce
 									</status>
 									<for>
 										<reference>
-											<xsl:for-each select="$var41_code/@code">
-												<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', fn:string(.))"/>
+											<xsl:for-each select="$var47_code/@code">
+												<xsl:attribute name="value" namespace="" select="fn:concat('ManufacturedItemDefinition/', fn:string(.))"/>
 											</xsl:for-each>
 										</reference>
 									</for>
@@ -11028,7 +11243,7 @@ http://www.altova.com/mapforce
 												<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-RoleClass'))"/>
 											</system>
 											<code>
-												<xsl:for-each select="$var42_classCode">
+												<xsl:for-each select="$var48_classCode">
 													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 												</xsl:for-each>
 											</code>
@@ -11038,8 +11253,8 @@ http://www.altova.com/mapforce
 										<code>
 											<reference>
 												<reference>
-													<xsl:for-each select="$var41_code/@code">
-														<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('SubstanceDefinition/', fn:string(.)), '-'), xs:string($var43_idx)), '-'), 'Substance')"/>
+													<xsl:for-each select="$var47_code/@code">
+														<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('SubstanceDefinition/', fn:string(.)), '-'), xs:string($var49_idx)), '-'), 'Substance')"/>
 													</xsl:for-each>
 												</reference>
 											</reference>
@@ -11091,52 +11306,52 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var49_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var55_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var48_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var54_idx" as="xs:integer" select="position()"/>
 					<xsl:if test="fn:not(fn:exists((./@classCode)[(fn:string(.) = 'IACT')]))">
-						<xsl:variable name="var46_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
-						<xsl:variable name="var47_http___fdasis_nlm_nih_gov_as_string" as="xs:string" select="xs:string(xs:anyURI('http://fdasis.nlm.nih.gov'))"/>
+						<xsl:variable name="var52_http___fdasis_nlm_nih_gov_as_string" as="xs:string" select="xs:string(xs:anyURI('http://fdasis.nlm.nih.gov'))"/>
+						<xsl:variable name="var53_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var49_cur/ns1:code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var48_idx)), '-'), 'Substance')))"/>
+								<xsl:for-each select="$var55_cur/ns1:code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var54_idx)), '-'), 'Substance')))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
 								<SubstanceDefinition>
 									<identifier>
 										<system>
-											<xsl:attribute name="value" namespace="" select="$var47_http___fdasis_nlm_nih_gov_as_string"/>
+											<xsl:attribute name="value" namespace="" select="$var52_http___fdasis_nlm_nih_gov_as_string"/>
 										</system>
 										<value>
-											<xsl:for-each select="$var46_ingredientSubstance/ns1:code/@code">
+											<xsl:for-each select="$var53_ingredientSubstance/ns1:code/@code">
 												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 											</xsl:for-each>
 										</value>
 									</identifier>
-									<xsl:for-each select="$var46_ingredientSubstance/ns1:activeMoiety">
-										<xsl:variable name="var45_activeMoiety" as="node()?" select="ns1:activeMoiety"/>
+									<xsl:for-each select="$var53_ingredientSubstance/ns1:activeMoiety">
+										<xsl:variable name="var51_activeMoiety" as="node()?" select="ns1:activeMoiety"/>
 										<moiety>
 											<identifier>
 												<system>
-													<xsl:attribute name="value" namespace="" select="$var47_http___fdasis_nlm_nih_gov_as_string"/>
+													<xsl:attribute name="value" namespace="" select="$var52_http___fdasis_nlm_nih_gov_as_string"/>
 												</system>
 												<value>
-													<xsl:for-each select="$var45_activeMoiety/ns1:code/@code">
+													<xsl:for-each select="$var51_activeMoiety/ns1:code/@code">
 														<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 													</xsl:for-each>
 												</value>
 											</identifier>
 											<name>
-												<xsl:for-each select="($var45_activeMoiety/ns1:name/node())[fn:boolean(self::text())]">
+												<xsl:for-each select="($var51_activeMoiety/ns1:name/node())[fn:boolean(self::text())]">
 													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 												</xsl:for-each>
 											</name>
 										</moiety>
 									</xsl:for-each>
-									<xsl:for-each select="$var46_ingredientSubstance/ns1:name">
+									<xsl:for-each select="$var53_ingredientSubstance/ns1:name">
 										<name>
 											<name>
 												<xsl:for-each select="(./node())[fn:boolean(self::text())]">
@@ -11151,31 +11366,31 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var55_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var61_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:asContent">
-					<xsl:variable name="var54_cur" as="node()" select="."/>
-					<xsl:variable name="var53_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var52_code" as="node()?" select="$var55_cur/ns1:code"/>
-					<xsl:variable name="var51_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var52_code/@code">
+					<xsl:variable name="var60_cur" as="node()" select="."/>
+					<xsl:variable name="var59_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var58_code" as="node()?" select="$var61_cur/ns1:code"/>
+					<xsl:variable name="var57_map_of_code" as="xs:string?">
+						<xsl:for-each select="$var58_code/@code">
 							<xsl:sequence select="fn:string(.)"/>
 						</xsl:for-each>
 					</xsl:variable>
 					<entry>
 						<fullUrl>
-							<xsl:for-each select="$var52_code/@code">
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var53_idx))))"/>
+							<xsl:for-each select="$var58_code/@code">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var59_idx))))"/>
 							</xsl:for-each>
 						</fullUrl>
 						<resource>
-							<xsl:for-each select="$var51_map_of_code">
-								<xsl:for-each select="$var51_map_of_code">
-									<xsl:variable name="var50_resultof_createPackagedProduct" as="node()?">
+							<xsl:for-each select="$var57_map_of_code">
+								<xsl:for-each select="$var57_map_of_code">
+									<xsl:variable name="var56_resultof_createPackagedProduct" as="node()?">
 										<xsl:call-template name="user:createPackagedProduct">
 											<xsl:with-param name="Content" as="node()">
 												<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var54_cur/@node(), $var54_cur/node())"/>
+													<xsl:sequence select="($var60_cur/@node(), $var60_cur/node())"/>
 												</DrugLabelSubmission.Content>
 											</xsl:with-param>
 											<xsl:with-param name="productId" select="." as="xs:string"/>
@@ -11186,7 +11401,7 @@ http://www.altova.com/mapforce
 											</xsl:with-param>
 										</xsl:call-template>
 									</xsl:variable>
-									<xsl:for-each select="$var50_resultof_createPackagedProduct">
+									<xsl:for-each select="$var56_resultof_createPackagedProduct">
 										<PackagedProductDefinition>
 											<xsl:sequence select="(./@node(), ./node())"/>
 										</PackagedProductDefinition>
@@ -11197,36 +11412,36 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var61_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
-				<xsl:variable name="var60_cur" as="node()" select="."/>
+			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
+				<xsl:variable name="var66_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:subjectOf/ns1:approval">
-					<xsl:variable name="var59_cur" as="node()" select="."/>
-					<xsl:variable name="var58_partProduct" as="node()?" select="$var60_cur/ns1:partProduct"/>
-					<xsl:variable name="var57_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var58_partProduct/ns1:code/@code">
+					<xsl:variable name="var65_cur" as="node()" select="."/>
+					<xsl:variable name="var64_partProduct" as="node()?" select="$var66_cur/ns1:partProduct"/>
+					<xsl:variable name="var63_map_of_code" as="xs:string?">
+						<xsl:for-each select="$var64_partProduct/ns1:code/@code">
 							<xsl:sequence select="fn:string(.)"/>
 						</xsl:for-each>
 					</xsl:variable>
 					<entry>
 						<fullUrl>
-							<xsl:for-each select="$var58_partProduct/ns1:code/@code">
+							<xsl:for-each select="$var64_partProduct/ns1:code/@code">
 								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/RegulatedAuthorization/', fn:string(.))))"/>
 							</xsl:for-each>
 						</fullUrl>
 						<resource>
-							<xsl:for-each select="$var57_map_of_code">
-								<xsl:for-each select="$var57_map_of_code">
-									<xsl:variable name="var56_resultof_createMarketing" as="node()?">
+							<xsl:for-each select="$var63_map_of_code">
+								<xsl:for-each select="$var63_map_of_code">
+									<xsl:variable name="var62_resultof_createMarketing" as="node()?">
 										<xsl:call-template name="user:createMarketing">
 											<xsl:with-param name="Approval" as="node()">
 												<DrugLabelSubmission.Approval xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var59_cur/@node(), $var59_cur/node())"/>
+													<xsl:sequence select="($var65_cur/@node(), $var65_cur/node())"/>
 												</DrugLabelSubmission.Approval>
 											</xsl:with-param>
 											<xsl:with-param name="productId" select="." as="xs:string"/>
 										</xsl:call-template>
 									</xsl:variable>
-									<xsl:for-each select="$var56_resultof_createMarketing">
+									<xsl:for-each select="$var62_resultof_createMarketing">
 										<RegulatedAuthorization>
 											<xsl:sequence select="(./@node(), ./node())"/>
 										</RegulatedAuthorization>

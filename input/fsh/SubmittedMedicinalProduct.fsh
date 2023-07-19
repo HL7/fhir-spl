@@ -90,7 +90,7 @@ Description: "Details around the packaging of submitted medicinal products."
 Profile: SubmittedManufacturedItem
 Parent: ManufacturedItemDefinition
 Description: "Details around the actual item, i.e tablet, solution, etc. that is packaged as part of the medicinal product."
-* status MS
+* status = #active
 * manufacturedDoseForm 1..1 MS
 * manufacturedDoseForm from http://evs.nci.nih.gov/valueset/FDA/C54456 (required)
 * extension contains ItemMarketingStatusDates named marketingStatusDates 0..1 MS

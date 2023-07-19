@@ -18,6 +18,9 @@
     
     <xsl:template match="v3:section" priority="1">
         <v3:section>
+            <xsl:if test="@ID">
+                <xsl:attribute name="ID" select="@ID"/>
+            </xsl:if>
             <xsl:apply-templates select="v3:id"/>
             <xsl:apply-templates select="v3:code"/>
             <xsl:apply-templates select="v3:title"/>
@@ -31,6 +34,12 @@
             <xsl:apply-templates select="v3:subject"/>
            <xsl:apply-templates select="v3:component"/>
         </v3:section>
+    </xsl:template>
+    
+    <xsl:template match="v3:title//*">
+        <xsl:value-of select="concat('&lt;',name(),'&gt;')" />
+        <xsl:apply-templates />
+        <xsl:value-of select="concat('&lt;/',name(),'&gt;')" />
     </xsl:template>
     
     <xsl:template match="v3:section/v3:text" mode="narrative">
@@ -48,9 +57,9 @@
 
     <xsl:template match="v3:excerpt/v3:highlight/v3:text" mode="narrative">
         <div xmlns="http://www.w3.org/1999/xhtml" style="highlight">
-            <xsl:if test="../@ID">
+            <xsl:if test="../../../@ID">
                 <a xmlns="http://www.w3.org/1999/xhtml">
-                    <xsl:attribute name="name"><xsl:value-of select="../@ID"/></xsl:attribute>
+                    <xsl:attribute name="name"><xsl:value-of select="../../../@ID"/></xsl:attribute>
                 </a>
             </xsl:if>
             <xsl:apply-templates select="@ID|@language" mode="narrative"/>
@@ -73,52 +82,52 @@
 
     <xsl:template match="@styleCode" mode="narrative">
         <xsl:choose>
-            <xsl:when test=". = 'bold'">
+            <xsl:when test="contains(.,'bold')">
                 <xsl:attribute name="style">font-weight: bold</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'underline'">
+            <xsl:when test="contains(.,'underline')">
                 <xsl:attribute name="style">text-decoration: underline</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'italics'">
+            <xsl:when test="contains(.,'italics')">
                 <xsl:attribute name="style">font-style: italic</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'emphasis'">
+            <xsl:when test="contains(.,'emphasis')">
                 <xsl:attribute name="style">font-weight: small-caps</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Lrule'">
+            <xsl:when test="contains(.,'Lrule')">
                 <xsl:attribute name="style">border-left: 1px</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Frule'">
+            <xsl:when test="contains(.,'Frule')">
                 <xsl:attribute name="style">border-right: 1px</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Toprule'">
+            <xsl:when test="contains(.,'Toprule')">
                 <xsl:attribute name="style">border-top: 1px</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Botrule'">
+            <xsl:when test="contains(.,'Botrule')">
                 <xsl:attribute name="style">border-bottom: 1px</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Arabic'">
+            <xsl:when test="contains(.,'Arabic')">
                 <xsl:attribute name="style">list-style-type: decimal</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'LittleRoman'">
+            <xsl:when test="contains(.,'LittleRoman')">
                 <xsl:attribute name="style">list-style-type: lower-roman</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'BigRoman'">
+            <xsl:when test="contains(.,'BigRoman')">
                 <xsl:attribute name="style">list-style-type: upper-roman</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'LittleAlpha'">
+            <xsl:when test="contains(.,'LittleAlpha')">
                 <xsl:attribute name="style">list-style-type: lower-alpha</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'BigAlpha'">
+            <xsl:when test="contains(.,'BigAlpha')">
                 <xsl:attribute name="style">list-style-type: upper-alpha</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Disc'">
+            <xsl:when test="contains(.,'Disc')">
                 <xsl:attribute name="style">list-style-type: disc</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Circle'">
+            <xsl:when test="contains(.,'Circle')">
                 <xsl:attribute name="style">list-style-type: circle</xsl:attribute>
             </xsl:when>
-            <xsl:when test=". = 'Square'">
+            <xsl:when test="contains(.,'Square')">
                 <xsl:attribute name="style">list-style-type: square</xsl:attribute>
             </xsl:when>
         </xsl:choose>
@@ -139,11 +148,11 @@
     </xsl:template>
     
     <xsl:template match="v3:caption" mode="narrative">
-        <h2 xmlns="http://www.w3.org/1999/xhtml">
+        <caption xmlns="http://www.w3.org/1999/xhtml">
             <xsl:apply-templates select="@ID|@language" mode="narrative"/>
             <xsl:apply-templates select="@styleCode" mode="narrative"/>
             <xsl:apply-templates select="node()" mode="narrative"/>
-        </h2>
+        </caption>
     </xsl:template>
 
     <xsl:template match="v3:col" mode="narrative">

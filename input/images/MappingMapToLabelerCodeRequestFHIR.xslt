@@ -91,10 +91,10 @@ http://www.altova.com/mapforce
 	</xsl:template>
 	<xsl:template name="user:createLabelerOrganization">
 		<xsl:param name="LabelerOrganization" select="()"/>
-		<xsl:variable name="var6_assignedEntity" as="node()*" select="$LabelerOrganization/ns0:assignedEntity"/>
-		<xsl:variable name="var7_http___hl__org_fhir_us_spl_Cod_as_string" as="xs:string" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+		<xsl:variable name="var6_http___hl__org_fhir_us_spl_Cod_as_string" as="xs:string" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+		<xsl:variable name="var7_assignedEntity" as="node()*" select="$LabelerOrganization/ns0:assignedEntity"/>
 		<Organization xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var6_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:performance">
+			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:performance">
 				<xsl:variable name="var1_actDefinition" as="node()*" select="ns0:actDefinition"/>
 				<contained>
 					<HealthcareService>
@@ -146,7 +146,7 @@ http://www.altova.com/mapforce
 					</HealthcareService>
 				</contained>
 			</xsl:for-each>
-			<xsl:for-each select="$var6_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity">
+			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity">
 				<xsl:variable name="var3_cur" as="node()" select="."/>
 				<xsl:for-each select="ns0:assignedOrganization">
 					<contained>
@@ -172,7 +172,7 @@ http://www.altova.com/mapforce
 					</contained>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var6_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization">
+			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization">
 				<contained>
 					<Organization>
 						<id>
@@ -195,7 +195,7 @@ http://www.altova.com/mapforce
 						<type>
 							<coding>
 								<system>
-									<xsl:attribute name="value" namespace="" select="$var7_http___hl__org_fhir_us_spl_Cod_as_string"/>
+									<xsl:attribute name="value" namespace="" select="$var6_http___hl__org_fhir_us_spl_Cod_as_string"/>
 								</system>
 								<code>
 									<xsl:attribute name="value" namespace="" select="'USAgent'"/>
@@ -245,7 +245,7 @@ http://www.altova.com/mapforce
 			<type>
 				<coding>
 					<system>
-						<xsl:attribute name="value" namespace="" select="$var7_http___hl__org_fhir_us_spl_Cod_as_string"/>
+						<xsl:attribute name="value" namespace="" select="$var6_http___hl__org_fhir_us_spl_Cod_as_string"/>
 					</system>
 					<code>
 						<xsl:attribute name="value" namespace="" select="'Labeler'"/>
@@ -259,7 +259,7 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</name>
 			</xsl:for-each>
-			<xsl:for-each select="$var6_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:addr">
+			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:addr">
 				<address>
 					<xsl:for-each select="ns0:streetAddressLine">
 						<line>
