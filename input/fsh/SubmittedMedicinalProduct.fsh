@@ -44,7 +44,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * specialMeasures from http://evs.nci.nih.gov/valueset/FDA/C54459 (required)
 * operation 0..* MS
 * operation.type.concept 1..1 MS
-* operation.type.concept from http://evs.nci.nih.gov/valueset/FDA/C73600 (required)
+* operation.type from http://evs.nci.nih.gov/valueset/FDA/C73600 (required)
 * operation.organization 1..1 MS
 * operation.organization only Reference(IdentifiedEstablishment)
 
@@ -75,7 +75,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * marketingStatus 0..1 MS
 * marketingStatus.dateRange 1..1 MS
 * package 1..1 MS
-* package.identifier 1..* MS
+* package.identifier MS
 * package.type 1..1 MS
 * package.quantity 0..1 MS
 * package.property 0..* MS
@@ -83,7 +83,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * package.property.value[x] 1..1 MS
 * package.containedItem 0..* MS
 * package.containedItem.item 1..1 MS
-* package.containedItem.item only Reference(SubmittedManufacturedItem)
+* package.containedItem.item only CodeableReference(SubmittedManufacturedItem)
 * package.containedItem.amount 1..1 MS
 * package.package 0..* MS
 
@@ -115,7 +115,7 @@ Description: "Details around the ingredients of a submitted medicinal product."
 * role 1..1 MS
 * substance 1..1 MS
 * substance.code 1..1 MS
-* substance.code.reference only Reference(SubmittedIngredientDefinition)
+* substance.code only CodeableReference(SubmittedIngredientDefinition)
 * substance.strength 0..1 MS
 * substance.strength.presentation[x] 1..1 MS
 * substance.strength.presentation[x] only Ratio

@@ -3,6 +3,7 @@ Parent: Element
 Id: SubmittedMedicationLogicalModel
 Description: "Details about the Medication that is submitted to the FDA."
 Title: "Submitted Medication Logical Model"
+Characteristics: #can-be-target
 * ^type = "SubmittedMedication"
 
 * ndcCode 0..1 CodeableConcept "NDC Code" "The NDC Code that uniquely identifies this medication."

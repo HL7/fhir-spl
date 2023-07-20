@@ -9209,18 +9209,18 @@ http://www.altova.com/mapforce
 		<xsl:param name="MedicinalProductDefinition" select="()"/>
 		<xsl:param name="PackagedProductDefinition" select="()"/>
 		<xsl:param name="ManufacturedItemDefinition" select="()"/>
-		<xsl:variable name="var17_name" as="node()*" select="$MedicinalProductDefinition/ns0:name"/>
-		<xsl:variable name="var18_identifier" as="node()*" select="$MedicinalProductDefinition/ns0:identifier"/>
+		<xsl:variable name="var17_identifier" as="node()*" select="$MedicinalProductDefinition/ns0:identifier"/>
+		<xsl:variable name="var18_name" as="node()*" select="$MedicinalProductDefinition/ns0:name"/>
 		<DrugLabelSubmission.ManufacturedProduct xmlns="urn:hl7-org:v3">
 			<manufacturedProduct>
 				<code>
-					<xsl:for-each select="$var18_identifier/ns0:value/@value">
+					<xsl:for-each select="$var17_identifier/ns0:value/@value">
 						<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
 					</xsl:for-each>
 					<xsl:attribute name="codeSystem" namespace="" select="'2.16.840.1.113883.6.69'"/>
 				</code>
 				<xsl:variable name="var2_resultof_filter" as="node()*">
-					<xsl:for-each select="$var17_name">
+					<xsl:for-each select="$var18_name">
 						<xsl:variable name="var1_map_of_type" as="xs:boolean*">
 							<xsl:for-each select="ns0:type/ns0:coding/ns0:code/@value">
 								<xsl:sequence select="(fn:string(.) = 'PROPRIETARY')"/>
@@ -9239,7 +9239,7 @@ http://www.altova.com/mapforce
 					</name>
 				</xsl:for-each>
 				<xsl:variable name="var4_resultof_filter" as="node()*">
-					<xsl:for-each select="$var17_name">
+					<xsl:for-each select="$var18_name">
 						<xsl:variable name="var3_map_of_type" as="xs:boolean*">
 							<xsl:for-each select="ns0:type/ns0:coding/ns0:code/@value">
 								<xsl:sequence select="(fn:string(.) = 'PROPRIETARY')"/>
@@ -9268,7 +9268,7 @@ http://www.altova.com/mapforce
 							<xsl:variable name="var6_map_of_packageFor" as="xs:boolean*">
 								<xsl:for-each select="$var9_current/ns0:packageFor/ns0:reference/@value">
 									<xsl:variable name="var5_cur" as="node()" select="."/>
-									<xsl:for-each select="$var18_identifier/ns0:value/@value">
+									<xsl:for-each select="$var17_identifier/ns0:value/@value">
 										<xsl:sequence select="(fn:string($var5_cur) = fn:concat('MedicinalProductDefinition/', fn:string(.)))"/>
 									</xsl:for-each>
 								</xsl:for-each>

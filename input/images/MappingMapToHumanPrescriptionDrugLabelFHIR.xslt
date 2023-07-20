@@ -9982,15 +9982,13 @@ http://www.altova.com/mapforce
 				</marketingStatus>
 			</xsl:for-each>
 			<package>
-				<xsl:for-each select="$var12_containerPackagedProduct/ns1:code">
+				<xsl:for-each select="$var12_containerPackagedProduct/ns1:code/@code">
 					<identifier>
 						<system>
 							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
 						</system>
 						<value>
-							<xsl:for-each select="@code">
-								<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-							</xsl:for-each>
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 						</value>
 					</identifier>
 				</xsl:for-each>
@@ -10030,8 +10028,8 @@ http://www.altova.com/mapforce
 						</xsl:for-each>
 						<xsl:variable name="var6_resultof_filter" as="node()*">
 							<xsl:for-each select="ns1:value">
-								<xsl:variable name="var5_current" as="node()" select="."/>
-								<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var5_current) = xs:QName('ns1:CV'))])">
+								<xsl:variable name="var5_cur" as="node()" select="."/>
+								<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var5_cur) = xs:QName('ns1:CV'))])">
 									<xsl:sequence select="."/>
 								</xsl:if>
 							</xsl:for-each>
