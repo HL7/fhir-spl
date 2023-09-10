@@ -163,7 +163,6 @@
 <artifact id="RegulatedAuthorization/LantusVialMarketing" key="RegulatedAuthorization-LantusVialMarketing" name="LantusVialMarketing"/>
 <artifact id="PackagedProductDefinition/LantusVialPackage" key="PackagedProductDefinition-LantusVialPackage" name="LantusVialPackage"/>
 <artifact id="StructureDefinition/itemMarketingStatusDates" key="StructureDefinition-itemMarketingStatusDates" name="Manufactured Item Marketing Status Date Range"/>
-<artifact id="StructureDefinition/manufacturedItemReference" key="StructureDefinition-manufacturedItemReference" name="Manufactured Item Reference"/>
 <artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="Medicinal Product Name Types"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="Organization Relationship Types"/>
@@ -172,6 +171,7 @@
 <artifact id="ValueSet/valueset-organizationSubmissionMessageTypes" key="ValueSet-valueset-organizationSubmissionMessageTypes" name="Organzation Submission Message Types"/>
 <artifact id="StructureDefinition/OutOfBusinessBundle" key="StructureDefinition-OutOfBusinessBundle" name="OutOfBusinessBundle"/>
 <artifact id="StructureDefinition/OutOfBusinessMessage" key="StructureDefinition-OutOfBusinessMessage" name="OutOfBusinessMessage"/>
+<artifact id="StructureDefinition/packageInstanceOf" key="StructureDefinition-packageInstanceOf" name="Packaged Product Reference"/>
 <artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="Product Submission Document Logical Model"/>
 <artifact id="StructureDefinition/ProductSubmissionBundle" key="StructureDefinition-ProductSubmissionBundle" name="ProductSubmissionBundle"/>
 <artifact id="StructureDefinition/ProductSubmissionDocument" key="StructureDefinition-ProductSubmissionDocument" name="ProductSubmissionDocument"/>

@@ -54,18 +54,17 @@ Description: "Details around the marketing of a submitted medicinal product."
 * identifier 1..* MS
 * subject 1..1 MS
 * subject only Reference(SubmittedMedicinalProduct)
-* subject.extension contains ManufacturedItemReference named itemReference 0..1 MS
 * type 0..1 MS
 * region 0..* MS
 * status MS
 * statusDate MS
 
-Extension: ManufacturedItemReference
-Id: manufacturedItemReference
-Title: "Manufactured Item Reference"
-Description: "A reference to a manufactured item currently used in authorizations."
+Extension: PackagedProductReference
+Id: packageInstanceOf
+Title: "Packaged Product Reference"
+Description: "A reference to a packaged product that is represented in a packaging element."
 * value[x] 1..1 MS
-* value[x] only Reference(SubmittedManufacturedItem)
+* value[x] only Reference(SubmittedMedicinalPackaging)
 
 Profile: SubmittedMedicinalPackaging
 Parent: PackagedProductDefinition
@@ -75,6 +74,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * marketingStatus 0..1 MS
 * marketingStatus.dateRange 1..1 MS
 * package 1..1 MS
+* package.extension contains PackagedProductReference named packageInstanceOf 0..1 MS
 * package.identifier MS
 * package.type 1..1 MS
 * package.quantity 0..1 MS

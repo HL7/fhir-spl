@@ -157,31 +157,31 @@ Description: "Structured information for the Lantus Vial product"
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 * operation[0]
-  * type.concept = http://ncimeta.nci.nih.gov#C25391 "ANALYSIS"
+  * type.concept = $NCI-T#C25391 "ANALYSIS"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C82401 "API MANUFACTURE"
+  * type.concept = $NCI-T#C82401 "API MANUFACTURE"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C84732 "LABEL"
+  * type.concept = $NCI-T#C84732 "LABEL"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C43360 "MANUFACTURE"
+  * type.concept = $NCI-T#C43360 "MANUFACTURE"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C84731 "PACK"
+  * type.concept = $NCI-T#C84731 "PACK"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C25391 "ANALYSIS"
+  * type.concept = $NCI-T#C25391 "ANALYSIS"
   * organization = Reference(SanofiAventisSRL)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C84732 "LABEL"
+  * type.concept = $NCI-T#C84732 "LABEL"
   * organization = Reference(SanofiAventisSRL)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C43360 "MANUFACTURE"
+  * type.concept = $NCI-T#C43360 "MANUFACTURE"
   * organization = Reference(SanofiAventisSRL)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C84731 "PACK"
+  * type.concept = $NCI-T#C84731 "PACK"
   * organization = Reference(SanofiAventisSRL)
 
 Instance: LantusSyringeDefinition
@@ -194,25 +194,25 @@ Description: "Structured information for the Lantus Syringe product"
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 * operation[0]
-  * type.concept = http://ncimeta.nci.nih.gov#C25391 "ANALYSIS"
+  * type.concept = $NCI-T#C25391 "ANALYSIS"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C82401 "API MANUFACTURE"
+  * type.concept = $NCI-T#C82401 "API MANUFACTURE"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C84732 "LABEL"
+  * type.concept = $NCI-T#C84732 "LABEL"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C43360 "MANUFACTURE"
+  * type.concept = $NCI-T#C43360 "MANUFACTURE"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
-  * type.concept = http://ncimeta.nci.nih.gov#C84731 "PACK"
+  * type.concept = $NCI-T#C84731 "PACK"
   * organization = Reference(SanofiAventisDeutschland)
 
 Instance: LantusSolution
 InstanceOf: SubmittedManufacturedItem
 * status = #active
-* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42945 "INJECTION, SOLUTION"
+* manufacturedDoseForm = $NCI-T#C42945 "INJECTION, SOLUTION"
 
 Instance: LantusActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient

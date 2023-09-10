@@ -489,7 +489,7 @@ Description: "Structured information for the Allopurinol Tablet USP Label"
 Instance: AllopurinolTablet
 InstanceOf: SubmittedManufacturedItem
 * status = #active
-* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42998 "TABLET"
+* manufacturedDoseForm = $NCI-T#C42998 "TABLET"
 * property[0].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
 * property[=].valueCodeableConcept = $NCI-T#C48325 "WHITE"
 * property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMPRINT

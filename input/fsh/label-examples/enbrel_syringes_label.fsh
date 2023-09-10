@@ -12,7 +12,7 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel435Definition)
 * entry[+]
-  * insert bundleEntry(ManufacturedItemDefintion, Enbrel50mgSolution)
+  * insert bundleEntry(ManufacturedItemDefinition, Enbrel50mgSolution)
 * entry[+]
   * insert bundleEntry(Ingredient, Enbrel50mgSolutionActiveIngredient)
 * entry[+]
@@ -734,7 +734,7 @@ Description: "Structured information for the Enbrel 435 Label"
 Instance: Enbrel50mgSolution
 InstanceOf: SubmittedManufacturedItem
 * status = #active
-* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* manufacturedDoseForm = $NCI-T#C42986 "SOLUTION"
 
 Instance: Enbrel50mgSolutionActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
@@ -813,7 +813,7 @@ Description: "Structured information for the Enbrel 445 Label"
 * identifier[NDCCode].value = "58406-445"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* combinedPharmaceuticalDoseForm = $NCI-T#C42986 "SOLUTION"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
@@ -851,14 +851,14 @@ Description: "Structured information for the Enbrel 425 Label"
 * identifier[NDCCode].value = "58406-425"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* combinedPharmaceuticalDoseForm = http://ncimeta.nci.nih.gov#C47916 "KIT"
+* combinedPharmaceuticalDoseForm = $NCI-T#C47916 "KIT"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
 Instance: Enbrel425Part1Definition
 InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 425 Part 1"
-* identifier[NDCCode].value = "58406-425"
+* identifier[NDCCode].value = "58406-424"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
@@ -918,7 +918,7 @@ Description: "Marketing information for Enbrel 425 Part 2"
 Instance: EnbrelPowder
 InstanceOf: SubmittedManufacturedItem
 * status = #active
-* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42957 "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION"
+* manufacturedDoseForm = $NCI-T#C42957 "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION"
 
 Instance: EnbrelPowderActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient
@@ -957,7 +957,7 @@ Description: "Inactive Ingredient #3 for Enbrel Powder"
 Instance: EnbrelSterileSolution
 InstanceOf: SubmittedManufacturedItem
 * status = #active
-* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* manufacturedDoseForm = $NCI-T#C42986 "SOLUTION"
 
 Instance: EnbrelSterileSolutionIngredient1
 InstanceOf: SubmittedMedicinalProductIngredient
@@ -989,10 +989,18 @@ Description: "4 25mg kits of Enbrel"
 * package.package.identifier.value = "58406-425-41"
 * package.package.quantity = 4
 * package.package.type = $NCI-T#C43197 "KIT"
-* package.package.containedItem[0].amount = 1 'mL' "mL"
-* package.package.containedItem[0].item.reference = Reference(Enbrel425Part1Package)
-* package.package.containedItem[1].amount = 1 'mL' "mL"
-* package.package.containedItem[1].item.reference = Reference(Enbrel425Part2Package)
+* package.package.package[0].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part1Package)
+* package.package.package[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
+* package.package.package[0].identifier.value = "58406-424-01"
+* package.package.package[0].type = $NCI-T#C43226 "VIAL"
+* package.package.package[0].containedItem.item.reference = Reference(EnbrelPowder)
+* package.package.package[0].containedItem.amount = 1 'mL'
+* package.package.package[1].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part2Package)
+* package.package.package[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
+* package.package.package[0].identifier.value = "58406-910-01"
+* package.package.package[0].type = $NCI-T#C43202 "SYRINGE"
+* package.package.package[0].containedItem.item.reference = Reference(EnbrelSterileSolution)
+* package.package.package[0].containedItem.amount = 1 'mL'
 
 Instance: Enbrel425Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
@@ -1016,7 +1024,7 @@ Description: "Structured information for the Enbrel 455 Label"
 Instance: Enbrel25mgSolution
 InstanceOf: SubmittedManufacturedItem
 * status = #active
-* manufacturedDoseForm = http://ncimeta.nci.nih.gov#C42986 "SOLUTION"
+* manufacturedDoseForm = $NCI-T#C42986 "SOLUTION"
 
 Instance: Enbrel25mgSolutionActiveIngredient
 InstanceOf: SubmittedMedicinalProductIngredient

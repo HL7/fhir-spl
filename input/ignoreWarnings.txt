@@ -1,56 +1,65 @@
 == Suppressed Messages ==
 
 # External Terminologies that aren't known by the validator
-Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+The definition for the Code System with URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' doesnt provide any codes so the code cannot be validated
 Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
-[Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated]
 Unknown System 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' specified, so Concepts and Filters can't be checked (Details: Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated)
-
 Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-ValueSet http://evs.nci.nih.gov/valueset/FDA/C54456 not found by validator
-ValueSet http://evs.nci.nih.gov/valueset/FDA/C54455 not found by validator
-ValueSet http://evs.nci.nih.gov/valueset/FDA/C54459 not found by validator
-ValueSet http://evs.nci.nih.gov/valueset/FDA/C73600 not found by validator
+
+
+ValueSet http://evs.nci.nih.gov/valueset/FDA/C54456 not found
+ValueSet http://evs.nci.nih.gov/valueset/FDA/C54455 not found
+
+ValueSet http://hl7.org/fhir/ValueSet/manufactured-dose-form not found
+ValueSet http://hl7.org/fhir/ValueSet/product-characteristic-codes not found
 The valueSet reference http://evs.nci.nih.gov/valueset/FDA/C54456 on element ManufacturedItemDefinition.manufacturedDoseForm could not be resolved
 The valueSet reference http://evs.nci.nih.gov/valueset/FDA/C54455 on element MedicinalProductDefinition.route could not be resolved
 The valueSet reference http://evs.nci.nih.gov/valueset/FDA/C54459 on element MedicinalProductDefinition.specialMeasures could not be resolved
-The valueSet reference http://evs.nci.nih.gov/valueset/FDA/C73600 on element MedicinalProductDefinition.operation.type.concept could not be resolved
+The valueSet reference http://evs.nci.nih.gov/valueset/FDA/C73600 on element MedicinalProductDefinition.operation.type could not be resolved
+The valueSet reference http://hl7.org/fhir/ValueSet/substance-codes on element MedicinalProductDefinition.ingredient could not be resolved
+The valueSet reference http://hl7.org/fhir/ValueSet/substance-codes on element MedicinalProductDefinition.impurity could not be resolved
+The valueSet reference http://hl7.org/fhir/ValueSet/product-characteristic-codes on element MedicinalProductDefinition.characteristic.type could not be resolved
+The valueSet reference http://hl7.org/fhir/ValueSet/substance-codes on element Ingredient.substance.code could not be resolved
+The valueSet reference http://hl7.org/fhir/ValueSet/substance-codes on element Ingredient.substance.strength.referenceStrength.substance could not be resolved
+
+The valueSet reference http://hl7.org/fhir/ValueSet/substance-codes on element ManufacturedItemDefinition.ingredient could not be resolved
+The valueSet reference http://hl7.org/fhir/ValueSet/product-characteristic-codes on element SubstanceDefinition.property.type could not be resolved
+The valueSet reference http://hl7.org/fhir/ValueSet/product-characteristic-codes on element PackagedProductDefinition.package.property.type could not be resolved
 
 
 # Allow for different display names from LOINC for FDA purposes
-The display "Establishment registration" is not a valid display for the code {http://loinc.org}51725-0%
-The display "Identification of CBER-regulated generic drug facility" is not a valid display for the code {http://loinc.org}72090-4%
-The display "NDC labeler code request" is not a valid display for the code {http://loinc.org}51726-8%
-The display "NDC labeler code inactivation" is not a valid display for the code {http://loinc.org}69968-6%
-The display "Out of business notification" is not a valid display for the code {http://loinc.org}53411-5%
-The display "HUMAN PRESCRIPTION DRUG LABEL" is not a valid display for the code {http://loinc.org}34391-3%
-The display "DESCRIPTION SECTION" is not a valid display for the code {http://loinc.org}34089-3%
-The display "CLINICAL PHARMCOLOGY SECTION" is not a valid display for the code {http://loinc.org}34090-1%
-The display "INDICATIONS &amp; USAGE SECTION" is not a valid display for the code {http://loinc.org}34067-9%
-The display "CONTRAINDICATIONS SECTION" is not a valid display for the code {http://loinc.org}34070-3%
-The display "WARNINGS SECTION" is not a valid display for the code {http://loinc.org}34071-1%
-The display "PRECAUTIONS SECTION" is not a valid display for the code {http://loinc.org}42232-9%
-The display "GENERAL PRECAUTIONS SECTION" is not a valid display for the code {http://loinc.org}34072-9%
-The display "INFORMATION FOR PATIENTS SECTION" is not a valid display for the code {http://loinc.org}34076-0%
-The display "LABORATORY TESTS SECTION" is not a valid display for the code {http://loinc.org}34075-2%
-The display "DRUG INTERACTIONS SECTION" is not a valid display for the code {http://loinc.org}34073-7%
-The display "DRUG &amp; OR LABORATORY TEST INTERACTIONS SECTION" is not a valid display for the code {http://loinc.org}34074-5%
-The display "PREGNANCY SECTION" is not a valid display for the code {http://loinc.org}42228-7%
-The display "NURSING MOTHERS SECTION" is not a valid display for the code {http://loinc.org}34080-2%
-The display "PEDIATRIC USE SECTION" is not a valid display for the code {http://loinc.org}34081-0%
-The display "SPL LISTING DATA ELEMENTS SECTION" is not a valid display for the code {http://loinc.org}48780-1%
-The display "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL" is not a valid display for the code {http://loinc.org}51945-4%
-The display "ADVERSE REACTIONS SECTION" is not a valid display for the code {http://loinc.org}34084-4%
-The display "SPL UNCLASSIFIED SECTION" is not a valid display for the code {http://loinc.org}42229-5%
-The display "OVERDOSAGE SECTION" is not a valid display for the code {http://loinc.org}34088-5%
-The display "DOSAGE &amp; ADMINISTRATION SECTION" is not a valid display for the code {http://loinc.org}34068-7%
-The display "HOW SUPPLIED SECTION" is not a valid display for the code {http://loinc.org}34069-5%
-The display "BOXED WARNING SECTION" is not a valid display for the code {http://loinc.org}34066-1%
+Wrong Display Name 'Establishment registration' for http://loinc.org#51725-0%
+Wrong Display Name 'Identification of CBER-regulated generic drug facility' for http://loinc.org#72090-4%
+Wrong Display Name 'NDC labeler code request' for http://loinc.org#51726-8%
+Wrong Display Name 'NDC labeler code inactivation' for http://loinc.org#69968-6%
+Wrong Display Name 'Out of business notification' for http://loinc.org#53411-5%
+Wrong Display Name 'HUMAN PRESCRIPTION DRUG LABEL' for http://loinc.org#34391-3%
+Wrong Display Name 'DESCRIPTION SECTION' for http://loinc.org#34089-3%
+Wrong Display Name 'CLINICAL PHARMCOLOGY SECTION' for http://loinc.org#34090-1%
+Wrong Display Name 'INDICATIONS &amp; USAGE SECTION' for http://loinc.org#34067-9%
+Wrong Display Name 'CONTRAINDICATIONS SECTION' for http://loinc.org#34070-3%
+Wrong Display Name 'WARNINGS SECTION' for http://loinc.org#34071-1%
+Wrong Display Name 'PRECAUTIONS SECTION' for http://loinc.org#42232-9%
+Wrong Display Name 'GENERAL PRECAUTIONS SECTION' for http://loinc.org#34072-9%
+Wrong Display Name 'INFORMATION FOR PATIENTS SECTION' for http://loinc.org#34076-0%
+Wrong Display Name 'LABORATORY TESTS SECTION' for http://loinc.org#34075-2%
+Wrong Display Name 'DRUG INTERACTIONS SECTION' for http://loinc.org#34073-7%
+Wrong Display Name 'DRUG &amp; OR LABORATORY TEST INTERACTIONS SECTION' for http://loinc.org#34074-5%
+Wrong Display Name 'PREGNANCY SECTION' for http://loinc.org#42228-7%
+Wrong Display Name 'NURSING MOTHERS SECTION' for http://loinc.org#34080-2%
+Wrong Display Name 'PEDIATRIC USE SECTION' for http://loinc.org#34081-0%
+Wrong Display Name 'SPL LISTING DATA ELEMENTS SECTION' for http://loinc.org#48780-1%
+Wrong Display Name 'PACKAGE LABEL.PRINCIPAL DISPLAY PANEL' for http://loinc.org#51945-4%
+Wrong Display Name 'ADVERSE REACTIONS SECTION' for http://loinc.org#34084-4%
+Wrong Display Name 'SPL UNCLASSIFIED SECTION' for http://loinc.org#42229-5%
+Wrong Display Name 'OVERDOSAGE SECTION' for http://loinc.org#34088-5%
+Wrong Display Name 'DOSAGE &amp; ADMINISTRATION SECTION' for http://loinc.org#34068-7%
+Wrong Display Name 'HOW SUPPLIED SECTION' for http://loinc.org#34069-5%
+Wrong Display Name 'BOXED WARNING SECTION' for http://loinc.org#34066-1%
 
 
 # Open slice so there are slices that don't match the slice definitions
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocument|0.1.0
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionBundle|0.1.0
 
 # SPL Title strings can contain HTML tags
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
@@ -62,3 +71,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 US FHIR Usage rules require that all profiles on Provenance derive from the core US profile.%
 US FHIR Usage rules require that all profiles on Organization derive from the core US profile.%
 US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile.%
+
+# Some resources don't have narrative
+Rule dom-6: 'A resource should have narrative for robust management' Failed (Best Practice Recommendation)
+Rule eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken' Failed
