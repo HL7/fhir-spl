@@ -65,13 +65,11 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * type 1..1 MS
 * type = OrganizationTypes#Labeler
 * name 1..1 MS
-* address 1..1 MS
-* address only SPLAddress
 * contact 1..1 MS
-* contact.name 1..1 MS
-* contact.address 1..1 MS
-* contact.address only SPLAddress
-* insert ContactPhoneNumberAndEmail
+  * name 1..1 MS
+  * address 1..1 MS
+  * address only SPLAddress
+  * insert PhoneNumberAndEmail
 
 Invariant: spl-5.1.2.8
 Description: "NDC Labeler code is 4 or 5 digits"
@@ -146,11 +144,6 @@ Description: "An example of a Labeler Organization."
 * identifier[NDCCode].value = "55555"
 * type = OrganizationTypes#Labeler
 * name = "National Pharma of India Inc."
-* address.line = "Plot 102 Village Ave"
-* address.city = "RangareddyDistrict"
-* address.state = "Telangana"
-* address.postalCode = "500002"
-* address.country = "IND"
 * contact.name.text = "Mr. John Doe_1"
 * contact.telecom[Phone].value = "+9-140-1111-2222"
 * contact.telecom[Email].value = "jdoe_1@npoiinc.net"
@@ -166,8 +159,8 @@ Description: "An example of a US Agent Organization."
 * identifier[DUNSNumber].value = "888888888"
 * type = OrganizationTypes#USAgent
 * name = "National Pharma of India Inc. US Agent"
-* telecom[Phone].value = "+1-908-999-1212"
-* telecom[Email].value = "jdoe_2@npoiinc.net"
+* contact.telecom[Phone].value = "+1-908-999-1212"
+* contact.telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: SampleLabelerUSAgentAffiliation
 InstanceOf: USAgentAffiliation
@@ -186,7 +179,7 @@ Instance: SampleLabelerCodeRequestMessage
 InstanceOf: LabelerCodeRequestMessage
 Description: "An example of a message header for a Labeler Code Request"
 * eventCoding = http://loinc.org#51726-8 "NDC labeler code request"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(SampleLabelerOrganization)
 
 Instance: SampleLabelerCodeRequestBundle
@@ -202,7 +195,7 @@ Instance: SampleLabelerInactivationMessage
 InstanceOf: LabelerInactivationMessage
 Description: "An example of a message header for a Labeler Inactivation"
 * eventCoding = http://loinc.org#69968-6 "NDC labeler code inactivation"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(IdentifiedLabelerOrganization)
 
 Instance: IdentifiedLabelerOrganization

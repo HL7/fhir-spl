@@ -10,18 +10,6 @@ RuleSet: DUNSNumber
 * identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
 * identifier[DUNSNumber] obeys spl-2.1.5.2
 
-RuleSet: ContactPhoneNumberAndEmail
-* contact.telecom 2..* MS
-* contact.telecom ^slicing.discriminator.type = #value
-* contact.telecom ^slicing.discriminator.path = "system"
-* contact.telecom ^slicing.rules = #open
-* contact.telecom ^slicing.description = "Require a telephone number and an email address."
-* contact.telecom contains Phone 1..1 MS and Email 1..1 MS
-* contact.telecom[Phone] only SPLContactPoint
-* contact.telecom[Phone].system = #phone
-* contact.telecom[Email] only SPLContactPoint
-* contact.telecom[Email].system = #email
-
 RuleSet: PhoneNumberAndEmail
 * telecom 2..* MS
 * telecom ^slicing.discriminator.type = #value
@@ -68,8 +56,6 @@ Description: "An abstract profile that indicates what type of request is being m
 * event[x] only Coding
 * eventCoding from OrganizationSubmissionMessageTypes (required)
 * eventCoding.display 1..1 MS
-* source MS
-* source.endpoint MS
 * focus 1..* MS
 * focus only Reference(Organization)
 
@@ -97,10 +83,10 @@ Description: "A profile for the data elements required to identify an organizati
 * type from RegistrantOrganizationTypes (required)
 * name 1..1 MS
 * contact 1..1 MS
-* contact.name 1..1 MS
-* contact.address 1..1 MS
-* contact.address only SPLAddress
-* insert ContactPhoneNumberAndEmail
+  * name 1..1 MS
+  * address 1..1 MS
+  * address only SPLAddress
+  * insert PhoneNumberAndEmail
 
 Profile: USAgentOrganization
 Parent: Organization
@@ -109,7 +95,8 @@ Description: "A profile for the data elements required for an organization fulfi
 * type 1..1 MS
 * type = OrganizationTypes#USAgent
 * name 1..1 MS
-* insert PhoneNumberAndEmail
+* contact 1..1 MS
+  * insert PhoneNumberAndEmail
 
 Profile: USAgentAffiliation
 Parent: OrganizationAffiliation

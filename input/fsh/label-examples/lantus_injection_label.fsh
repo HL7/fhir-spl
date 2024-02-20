@@ -290,15 +290,15 @@ Description: "Lantus Vial Packaging"
 * packageFor = Reference(LantusVialDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2017-06-04"
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "0088-5021-01"
-* package.type = $NCI-T#C43233 "PACKAGE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
-* package.package.type = $NCI-T#C43209 "VIAL, GLASS"
-* package.package.quantity = 1
-* package.package.containedItem.amount = 10 'mL' "mL"
-* package.package.containedItem.item.reference = Reference(LantusSolution)
+* packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.identifier.value = "0088-5021-01"
+* packaging.type = $NCI-T#C43233 "PACKAGE"
+* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
+* packaging.packaging.type = $NCI-T#C43209 "VIAL, GLASS"
+* packaging.packaging.quantity = 1
+* packaging.packaging.containedItem.amount = 10 'mL' "mL"
+* packaging.packaging.containedItem.item.reference = Reference(LantusSolution)
 
 Instance: LantusVialMarketing
 InstanceOf: SubmittedMedicinalProductMarketing
@@ -315,17 +315,17 @@ Description: "Lantus Syringe Packaging"
 * packageFor = Reference(LantusSyringeDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2017-06-04"
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "0088-5020-05"
-* package.type = $NCI-T#C43233 "PACKAGE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
-* package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.package.identifier.value = "0088-5020-01"
-* package.package.type = $NCI-T#C43202 "SYRINGE"
-* package.package.quantity = 5
-* package.package.containedItem.amount = 3 'mL' "mL"
-* package.package.containedItem.item.reference = Reference(LantusSolution)
+* packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.identifier.value = "0088-5020-05"
+* packaging.type = $NCI-T#C43233 "PACKAGE"
+* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
+* packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.packaging.identifier.value = "0088-5020-01"
+* packaging.packaging.type = $NCI-T#C43202 "SYRINGE"
+* packaging.packaging.quantity = 5
+* packaging.packaging.containedItem.amount = 3 'mL' "mL"
+* packaging.packaging.containedItem.item.reference = Reference(LantusSolution)
 
 Instance: LantusSyringeMarketing
 InstanceOf: SubmittedMedicinalProductMarketing

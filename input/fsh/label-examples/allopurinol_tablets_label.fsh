@@ -563,13 +563,13 @@ Description: "100 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "53217-187-00"
-* package.containedItem.amount = 100 '1'
-* package.containedItem.item.reference = Reference(AllopurinolTablet)
-* package.type = $NCI-T#C43169 "BOTTLE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
+* packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.identifier.value = "53217-187-00"
+* packaging.containedItem.amount = 100 '1'
+* packaging.containedItem.item.reference = Reference(AllopurinolTablet)
+* packaging.type = $NCI-T#C43169 "BOTTLE"
+* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: Allopurinol30Tablets
 InstanceOf: SubmittedMedicinalPackaging
@@ -577,13 +577,13 @@ Description: "30 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "53217-187-30"
-* package.containedItem.amount = 30 '1'
-* package.containedItem.item.reference = Reference(AllopurinolTablet)
-* package.type = $NCI-T#C43169 "BOTTLE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
+* packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.identifier.value = "53217-187-30"
+* packaging.containedItem.amount = 30 '1'
+* packaging.containedItem.item.reference = Reference(AllopurinolTablet)
+* packaging.type = $NCI-T#C43169 "BOTTLE"
+* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: Allopurinol60Tablets
 InstanceOf: SubmittedMedicinalPackaging
@@ -591,13 +591,13 @@ Description: "60 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "53217-187-60"
-* package.containedItem.amount = 60 '1'
-* package.containedItem.item.reference = Reference(AllopurinolTablet)
-* package.type = $NCI-T#C43169 "BOTTLE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
+* packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.identifier.value = "53217-187-60"
+* packaging.containedItem.amount = 60 '1'
+* packaging.containedItem.item.reference = Reference(AllopurinolTablet)
+* packaging.type = $NCI-T#C43169 "BOTTLE"
+* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: Allopurinol90Tablets
 InstanceOf: SubmittedMedicinalPackaging
@@ -605,13 +605,13 @@ Description: "90 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2009-04-06"
-* package.identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.identifier.value = "53217-187-90"
-* package.containedItem.amount = 90 '1'
-* package.containedItem.item.reference = Reference(AllopurinolTablet)
-* package.type = $NCI-T#C43169 "BOTTLE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
+* packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.identifier.value = "53217-187-90"
+* packaging.containedItem.amount = 90 '1'
+* packaging.containedItem.item.reference = Reference(AllopurinolTablet)
+* packaging.type = $NCI-T#C43169 "BOTTLE"
+* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: AllopurinolMarketing
 InstanceOf: SubmittedMedicinalProductMarketing
