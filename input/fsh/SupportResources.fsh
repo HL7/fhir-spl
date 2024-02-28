@@ -16,6 +16,8 @@ Extension: SPLDocumentDate
 Id: splDocumentDate
 Description: "Adding a SPL creation date to the document reference."
 * value[x] only date
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
 
 Profile: DualSubmissionProvenance
 Parent: Provenance

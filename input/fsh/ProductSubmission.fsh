@@ -86,16 +86,32 @@ Extension: VersionNumber
 Id: versionNumber
 Description: "Adding a version number to documents."
 * value[x] only string
+* ^context[+].type = #element
+* ^context[=].expression = "Composition"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
 
 Extension: SectionEffectiveTime
 Id: sectionEffectiveTime
 Description: "Providing an effective time for a section."
 * value[x] only dateTime or Period
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section.section"
  
 Extension: SectionLinkId
 Id: sectionLinkId
 Description: "Provide the ID that is using for linking between sections.  NOTE: This will also be contained in the section text as a link."
 * value[x] only string
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section.section"
 
 ValueSet: SPLSectionCodes
 Id: splSectionCodes

@@ -90,12 +90,12 @@ Severity: #error
 
 Invariant: spl-5.1.4.1
 Description: "If country is USA, then US agent is not allowed"
-Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
+Expression: "address.where(country = 'USA').count() = 0 or contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() > 0).count() = 0" 
 Severity: #error
 
 Invariant: spl-5.1.5.6
 Description: "Each business operation code is mentioned only once."
-Expression: "contained.HealthcareService.type().isDistinct()"
+Expression: "contained.ofType(HealthcareService).type().isDistinct()"
 Severity: #error
 
 Profile: LabelerBusinessOperation
@@ -114,7 +114,7 @@ Description: "A profile that associates a Labeler to the set of business operati
 
 Invariant: spl-5.1.5.7
 Description: "Qualifier is mandatory unless operation is analysis (C25391) or API manufacture (C82401)"
-Expression: "type.coding.code = 'C25391' or type.coding.code = 'C82401' or serviceProvisionCode.count() > 0"
+Expression: "type.coding.where(code = 'C25391').exists() or type.coding.where(code = 'C82401').exists() or serviceProvisionCode.count() > 0"
 Severity: #error
 
 Invariant: spl-5.1.5.11
@@ -192,11 +192,11 @@ Description: "An example of a message header for a Labeler Code Request"
 Instance: SampleLabelerCodeRequestBundle
 InstanceOf: LabelerCodeRequestBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to register."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
-* entry[Message].resource = SampleLabelerCodeRequestMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerCodeRequestMessage"
-* entry[Labeler].resource = SampleLabelerOrganization
-* entry[Labeler].fullUrl = "http://example.org/Organization/SampleLabelerOrganization"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
+* entry[0]
+  * insert bundleEntry(MessageHeader, SampleLabelerCodeRequestMessage)
+* entry[+]
+  * insert bundleEntry(Organization, SampleLabelerOrganization)
 
 Instance: SampleLabelerInactivationMessage
 InstanceOf: LabelerInactivationMessage
@@ -215,8 +215,8 @@ Description: "A sample Labeler organizaiton that just has the DUNS number and na
 Instance: SampleLabelerInactivationBundle
 InstanceOf: LabelerInactivationBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to inactivate."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
-* entry[Message].resource = SampleLabelerInactivationMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleLabelerInactivationMessage"
-* entry[Labeler].resource = IdentifiedLabelerOrganization
-* entry[Labeler].fullUrl = "http://example.org/Organization/IdentifiedLabelerOrganization"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
+* entry[0]
+  * insert bundleEntry(MessageHeader, SampleLabelerInactivationMessage)
+* entry[+]
+  * insert bundleEntry(Organization, IdentifiedLabelerOrganization)

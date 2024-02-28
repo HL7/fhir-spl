@@ -111,17 +111,17 @@ Severity: #error
 
 Invariant: spl-6.1.4.3
 Description: "If country is USA, then US agent is not allowed."
-Expression: "address.country = 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
+Expression: "address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 0" 
 Severity: #error
 
 Invariant: spl-6.1.4.1
 Description: "If country is not USA, then US agent is mandatory."
-Expression: "address.country != 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 1" 
+Expression: "address.where(country = 'USA').count() = 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 1" 
 Severity: #error
 
 Invariant: spl-6.1.5.3
 Description: "If country is USA, then import business is not allowed."
-Expression: "address.country = 'USA' implies contained.Organization.where(type.coding.code = 'Importer').count() = 0" 
+Expression: "address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'Importer').count() = 0).count() = 0" 
 Severity: #error
 
 Profile: ImporterOrganization
@@ -211,11 +211,6 @@ InstanceOf: EstablishmentOrganization
 Description: "An example of an Establishment Organization."
 * contained[BusinessOperation] = ExampleEstablishmentOperation
 * contained[BusinessOperation].providedBy.reference = "#"
-* contained[ImporterAffiliation] = ExampleImporterAffiliation
-* contained[ImporterAffiliation].organization.reference = "#"
-* contained[ImporterAffiliation].participatingOrganization.reference = "#importer"
-* contained[Importer] = ExampleImporter
-* contained[Importer].id = "importer"
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE ESTABLISHMENT INC."
 * type = OrganizationTypes#Establishment
@@ -266,9 +261,9 @@ Description: "An example of an Establishment Registration message"
 Instance: ExampleEstablishmentRegistration
 InstanceOf: EstablishmentRegistrationBundle
 Description: "An example of a Bundle containing a set of Establishment Registration resources to register."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleEstablishmentRegistrationMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/EstablishmentRegistrationMessage"
+* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleEstablishmentRegistrationMessage"
 * entry[Registrant].resource = ExampleEstablishmentRegistrant
 * entry[Registrant].fullUrl = "http://example.org/Organization/ExampleEstablishmentRegistrant"
 * entry[Establishment].resource = ExampleEstablishment
@@ -299,7 +294,7 @@ Description: "A sample Establishment organizaiton that just has the DUNS number 
 Instance: SampleEstablishmentInactivationBundle
 InstanceOf: EstablishmentInactivationBundle
 Description: "An example of a Bundle containing a set of Establishment resources to inactivate."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleEstablishmentInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleEstablishmentInactivationMessage"
 * entry[Registrant].resource = SampleIdentifiedEstablishmentRegistrant

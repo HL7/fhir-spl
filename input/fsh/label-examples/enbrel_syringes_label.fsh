@@ -64,6 +64,8 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * entry[+]
   * insert bundleEntry(Ingredient, EnbrelSterileSolutionIngredient2)
 * entry[+]
+  * insert bundleEntry(ManufacturedItemDefinition, EnbrelKit)
+* entry[+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel425Package)
 * entry[+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel425Marketing)
@@ -207,7 +209,7 @@ Description: "Header information for the Enbrel Syringe Labels"
                               <span style="font-weight: bold">Active tuberculosis, including reactivation of latent   tuberculosis.  Patients with tuberculosis have frequently presented with   disseminated or extrapulmonary disease.  Patients should be tested for   latent tuberculosis before Enbrel use and during therapy.  Treatment for   latent infection should be initiated prior to Enbrel use.</span>
                            </li>
                            <li>
-                              <span style="font-weight: bold">Invasive fungal infections, including histoplasmosis,   coccidioidomycosis, candidiasis, aspergillosis, blastomycosis, and   pneumocystosis.  Patients with histoplasmosis or other invasive fungal   infections may present with disseminated, rather than localized, disease.  Antigen   and antibody testing for histoplasmosis may be negative in some patients   with active infection.  Empiric anti-fungal therapy should be considered   in patients at risk for invasive fungal infections who develop severe   systemic illness.</span>
+                              <span style="font-weight: bold">Invasive fungal infections, including histoplasmosis,   coccidioidomycosis, candidiasis, aspergillosis, NDAstomycosis, and   pneumocystosis.  Patients with histoplasmosis or other invasive fungal   infections may present with disseminated, rather than localized, disease.  Antigen   and antibody testing for histoplasmosis may be negative in some patients   with active infection.  Empiric anti-fungal therapy should be considered   in patients at risk for invasive fungal infections who develop severe   systemic illness.</span>
                            </li>
                            <li>
                               <span style="font-weight: bold">Bacterial, viral, and other infections due to   opportunistic pathogens, including Legionella and Listeria.</span>
@@ -814,9 +816,9 @@ Instance: Enbrel435Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 435"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel435Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel445Definition
@@ -851,9 +853,9 @@ Instance: Enbrel445Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 445"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel445Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel425Definition
@@ -911,18 +913,18 @@ Instance: Enbrel425Part1Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 425 Part 1"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel425Part1Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel425Part2Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 425 Part 2"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel425Part2Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: EnbrelKit
@@ -1012,19 +1014,19 @@ Description: "4 25mg kits of Enbrel"
 * package.package.package[0].containedItem.item.reference = Reference(EnbrelPowder)
 * package.package.package[0].containedItem.amount = 1 'mL'
 * package.package.package[1].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part2Package)
-* package.package.package[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.package.package[0].identifier.value = "58406-910-01"
-* package.package.package[0].type = $NCI-T#42986 "SOLUTION"
-* package.package.package[0].containedItem.item.reference = Reference(EnbrelSterileSolution)
-* package.package.package[0].containedItem.amount = 1 'mL'
+* package.package.package[1].identifier.system = "http://hl7.org/fhir/sid/ndc"
+* package.package.package[1].identifier.value = "58406-910-01"
+* package.package.package[1].type = $NCI-T#C42986 "SOLUTION"
+* package.package.package[1].containedItem.item.reference = Reference(EnbrelSterileSolution)
+* package.package.package[1].containedItem.amount = 1 'mL'
 
 Instance: Enbrel425Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 425"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel425Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel455Definition
@@ -1098,9 +1100,9 @@ Instance: Enbrel455Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 455"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel455Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel456Definition
@@ -1135,9 +1137,9 @@ Instance: Enbrel456Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 456"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel456Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel446Definition
@@ -1172,9 +1174,9 @@ Instance: Enbrel446Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 446"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel446Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel021Definition
@@ -1209,9 +1211,9 @@ Instance: Enbrel021Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 021"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel021Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel032Definition
@@ -1246,9 +1248,9 @@ Instance: Enbrel032Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 032"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel032Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel010Definition
@@ -1283,9 +1285,9 @@ Instance: Enbrel010Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 010"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel010Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel044Definition
@@ -1320,9 +1322,9 @@ Instance: Enbrel044Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 044"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel044Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA
 
 Instance: Enbrel055Definition
@@ -1357,7 +1359,7 @@ Instance: Enbrel055Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
 Description: "Marketing information for Enbrel 055"
 * identifier.system = "urn:oid:2.16.840.1.113883.3.150"
-* identifier.value = "BLA103795"
+* identifier.value = "NDA103795"
 * subject = Reference(Enbrel055Definition)
-* type = $NCI-T#C73594 "BLA"
+* type = $NCI-T#C73594 "NDA"
 * region = urn:iso:std:iso:3166#USA

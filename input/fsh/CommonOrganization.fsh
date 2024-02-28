@@ -119,7 +119,7 @@ Description: "A profile that associates an organization to its US Agent."
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(USAgentOrganization)
 * code 1..1 MS
-* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73330 "Foreign Facility's United States Agent"
+* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73330
 
 Profile: SPLAddress
 Parent: Address

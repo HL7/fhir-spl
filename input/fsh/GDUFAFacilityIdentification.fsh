@@ -38,7 +38,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 
 Invariant: spl-6.1.3.4-13.1.3.3
 Description: "DUNS number is not associated with another facility in the same file."
-Expression: "entry.Organization.identifier.where(system='urn:oid:1.3.6.1.4.1.519.1').isDistinct()"
+Expression: "entry.resource.ofType(Organization).identifier.where(system='urn:oid:1.3.6.1.4.1.519.1').isDistinct()"
 Severity: #error
 
 Profile: GDUFAFacilityInactivationMessage
@@ -95,7 +95,7 @@ Description: "A profile for the data elements required to identify an organizati
 
 Invariant: spl-13.1.4.7
 Description: "Each business operation code and qualifier is mentioned only once."
-Expression: "contained.BusinessOperation.type.isDistinct() and contained.BusinessOperation.serviceProvisionCode.isDistinct()"
+Expression: "contained.ofType(HealthcareService).type.isDistinct() and contained.ofType(HealthcareService).serviceProvisionCode.isDistinct()"
 Severity: #error
 
 Profile: GDUFAFacilityAffiliation
@@ -200,7 +200,7 @@ Description: "An example of a GDUFA Facility Identification message"
 Instance: ExampleGDUFAFacilityIdentification
 InstanceOf: GDUFAFacilityIdentificationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to identify."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityIdentificationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityIdentificationMessage"
 * entry[Registrant].resource = ExampleGDUFARegistrant
@@ -219,7 +219,7 @@ Description: "An example of a GDUFA Facility Identification message"
 Instance: ExampleGDUFAFacilityInactivation
 InstanceOf: GDUFAFacilityInactivationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to inactivate."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityInactivationMessage"
 * entry[Registrant].resource = SampleIdentifiedGDUFARegistrant

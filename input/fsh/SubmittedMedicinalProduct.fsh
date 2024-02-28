@@ -65,6 +65,8 @@ Title: "Packaged Product Reference"
 Description: "A reference to a packaged product that is represented in a packaging element."
 * value[x] 1..1 MS
 * value[x] only Reference(SubmittedMedicinalPackaging)
+* ^context[+].type = #element
+* ^context[=].expression = "PackagedProductDefinition.package"
 
 Profile: SubmittedMedicinalPackaging
 Parent: PackagedProductDefinition
@@ -109,7 +111,7 @@ Description: "Details around the actual item, i.e tablet, solution, etc. that is
 * property[Color].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
 * property[Color].value[x] only CodeableConcept
 * property[Color].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C54453 (required)
-* property[Shape].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
+* property[Shape].type = SubmittedMedicinalProductCharacteristicTypes#SPLSHAPE
 * property[Shape].value[x] only CodeableConcept
 * property[Shape].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C54454 (required)
 * property[Flavor].type = SubmittedMedicinalProductCharacteristicTypes#SPLFLAVOR
@@ -134,6 +136,8 @@ Title: "Manufactured Item Marketing Status Date Range"
 Description: "Used to indicate the date range of the marketing status of a manufactured item.  This is being added in R5."
 * value[x] 1..1 MS
 * value[x] only Period
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition"
 
 Profile: SubmittedMedicinalProductIngredient
 Parent: Ingredient
