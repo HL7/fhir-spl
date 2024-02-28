@@ -113,7 +113,7 @@ groups:
       - StructureDefinition/SPLAddress
       - StructureDefinition/SPLContactPoint
   ProductSubmission:
-    name: Product Submission Document
+    name: Product Submission Content
     description: Artifacts associated with the submission of a product document
     resources:
       - StructureDefinition/ProductSubmissionBundle
@@ -121,6 +121,14 @@ groups:
       - StructureDefinition/sectionEffectiveTime
       - StructureDefinition/versionNumber
       - StructureDefinition/sectionLinkId
+      - StructureDefinition/SubmittedMedicinalProduct
+      - StructureDefinition/SubmittedMedicinalPackaging
+      - StructureDefinition/packageInstanceOf
+      - StructureDefinition/SubmittedManufacturedItem
+      - StructureDefinition/itemMarketingStatusDates
+      - StructureDefinition/SubmittedMedicinalProductIngredient
+      - StructureDefinition/SubmittedIngredientDefinition
+      - StructureDefinition/SubmittedMedicinalProductMarketing
   DualSubmission:
     name: Dual Submission Tracking
     description: Artifacts needed for tracking dual submissions of SPL documents and FHIR Bundles

@@ -11,11 +11,11 @@
 <artifact id="PackagedProductDefinition/Allopurinol30Tablets" key="PackagedProductDefinition-Allopurinol30Tablets" name="Allopurinol30Tablets"/>
 <artifact id="PackagedProductDefinition/Allopurinol60Tablets" key="PackagedProductDefinition-Allopurinol60Tablets" name="Allopurinol60Tablets"/>
 <artifact id="PackagedProductDefinition/Allopurinol90Tablets" key="PackagedProductDefinition-Allopurinol90Tablets" name="Allopurinol90Tablets"/>
+<artifact id="Composition/AllopurinolTabletLabelComposition" key="Composition-AllopurinolTabletLabelComposition" name="Allopurinol&lt;br/&gt;Tablets USP&lt;br/&gt;Revised: February 2015&lt;br/&gt;Rx only        &lt;br/&gt;"/>
 <artifact id="SubstanceDefinition/AllopurinolIngredientDefinition" key="SubstanceDefinition-AllopurinolIngredientDefinition" name="AllopurinolIngredientDefinition"/>
 <artifact id="RegulatedAuthorization/AllopurinolMarketing" key="RegulatedAuthorization-AllopurinolMarketing" name="AllopurinolMarketing"/>
 <artifact id="ManufacturedItemDefinition/AllopurinolTablet" key="ManufacturedItemDefinition-AllopurinolTablet" name="AllopurinolTablet"/>
 <artifact id="Bundle/AllopurinolTabletLabelBundle" key="Bundle-AllopurinolTabletLabelBundle" name="AllopurinolTabletLabelBundle"/>
-<artifact id="Composition/AllopurinolTabletLabelComposition" key="Composition-AllopurinolTabletLabelComposition" name="AllopurinolTabletLabelComposition"/>
 <artifact id="Ingredient/AllopurinolUSPActiveIngredient" key="Ingredient-AllopurinolUSPActiveIngredient" name="AllopurinolUSPActiveIngredient"/>
 <artifact id="MedicinalProductDefinition/AllopurinolUSPDefinition" key="MedicinalProductDefinition-AllopurinolUSPDefinition" name="AllopurinolUSPDefinition"/>
 <artifact id="Ingredient/AllopurinolUSPIngredient1" key="Ingredient-AllopurinolUSPIngredient1" name="AllopurinolUSPIngredient1"/>
@@ -76,6 +76,7 @@
 <artifact id="Ingredient/Enbrel50mgSolutionIngredient2" key="Ingredient-Enbrel50mgSolutionIngredient2" name="Enbrel50mgSolutionIngredient2"/>
 <artifact id="Ingredient/Enbrel50mgSolutionIngredient3" key="Ingredient-Enbrel50mgSolutionIngredient3" name="Enbrel50mgSolutionIngredient3"/>
 <artifact id="SubstanceDefinition/EnbrelIngredientDefinition" key="SubstanceDefinition-EnbrelIngredientDefinition" name="EnbrelIngredientDefinition"/>
+<artifact id="ManufacturedItemDefinition/EnbrelKit" key="ManufacturedItemDefinition-EnbrelKit" name="EnbrelKit"/>
 <artifact id="ManufacturedItemDefinition/EnbrelPowder" key="ManufacturedItemDefinition-EnbrelPowder" name="EnbrelPowder"/>
 <artifact id="Ingredient/EnbrelPowderActiveIngredient" key="Ingredient-EnbrelPowderActiveIngredient" name="EnbrelPowderActiveIngredient"/>
 <artifact id="Ingredient/EnbrelPowderIngredient1" key="Ingredient-EnbrelPowderIngredient1" name="EnbrelPowderIngredient1"/>
@@ -85,7 +86,6 @@
 <artifact id="Ingredient/EnbrelSterileSolutionIngredient1" key="Ingredient-EnbrelSterileSolutionIngredient1" name="EnbrelSterileSolutionIngredient1"/>
 <artifact id="Ingredient/EnbrelSterileSolutionIngredient2" key="Ingredient-EnbrelSterileSolutionIngredient2" name="EnbrelSterileSolutionIngredient2"/>
 <artifact id="Bundle/EnbrelSyringeLabelBundle" key="Bundle-EnbrelSyringeLabelBundle" name="EnbrelSyringeLabelBundle"/>
-<artifact id="Composition/EnbrelSyringeLabelComposition" key="Composition-EnbrelSyringeLabelComposition" name="EnbrelSyringeLabelComposition"/>
 <artifact id="ValueSet/valueset-establishmentBusinessOperations" key="ValueSet-valueset-establishmentBusinessOperations" name="Establishment Business Operations"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationLogicalModel" key="StructureDefinition-EstablishmentRegistrationLogicalModel" name="Establishment Registration Logical Model"/>
 <artifact id="StructureDefinition/EstablishmentAffiliation" key="StructureDefinition-EstablishmentAffiliation" name="EstablishmentAffiliation"/>
@@ -154,7 +154,6 @@
 <artifact id="Ingredient/LantusIngredient7" key="Ingredient-LantusIngredient7" name="LantusIngredient7"/>
 <artifact id="SubstanceDefinition/LantusIngredientDefinition" key="SubstanceDefinition-LantusIngredientDefinition" name="LantusIngredientDefinition"/>
 <artifact id="Bundle/LantusInjectionLabelBundle" key="Bundle-LantusInjectionLabelBundle" name="LantusInjectionLabelBundle"/>
-<artifact id="Composition/LantusInjectionLabelComposition" key="Composition-LantusInjectionLabelComposition" name="LantusInjectionLabelComposition"/>
 <artifact id="ManufacturedItemDefinition/LantusSolution" key="ManufacturedItemDefinition-LantusSolution" name="LantusSolution"/>
 <artifact id="MedicinalProductDefinition/LantusSyringeDefinition" key="MedicinalProductDefinition-LantusSyringeDefinition" name="LantusSyringeDefinition"/>
 <artifact id="RegulatedAuthorization/LantusSyringeMarketing" key="RegulatedAuthorization-LantusSyringeMarketing" name="LantusSyringeMarketing"/>
@@ -218,6 +217,8 @@
 <artifact id="StructureDefinition/SubmittedMedicinalProduct" key="StructureDefinition-SubmittedMedicinalProduct" name="SubmittedMedicinalProduct"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProductIngredient" key="StructureDefinition-SubmittedMedicinalProductIngredient" name="SubmittedMedicinalProductIngredient"/>
 <artifact id="StructureDefinition/SubmittedMedicinalProductMarketing" key="StructureDefinition-SubmittedMedicinalProductMarketing" name="SubmittedMedicinalProductMarketing"/>
+<artifact id="Composition/EnbrelSyringeLabelComposition" key="Composition-EnbrelSyringeLabelComposition" name="These highlights do not include all the information needed to use ENBREL safely and effectively. See full prescribing information for ENBREL. &lt;br/&gt; &lt;br/&gt;ENBREL&lt;sup&gt;®&lt;/sup&gt; (etanercept) injection, for subcutaneous use &lt;br/&gt;ENBREL&lt;sup&gt;®&lt;/sup&gt; (etanercept) for injection, for subcutaneous use &lt;br/&gt;Initial U.S. Approval: 1998"/>
+<artifact id="Composition/LantusInjectionLabelComposition" key="Composition-LantusInjectionLabelComposition" name="These highlights do not include all the information needed to use LANTUS safely and effectively. See full prescribing information for LANTUS. &lt;br/&gt; &lt;br/&gt;LANTUS&lt;sup&gt;®&lt;/sup&gt; (insulin glargine injection) for subcutaneous injection &lt;br/&gt;Initial U.S. Approval: 2000"/>
 <artifact id="ValueSet/valueset-topLevelOrganizationTypes" key="ValueSet-valueset-topLevelOrganizationTypes" name="Top-Level Organization Types"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>

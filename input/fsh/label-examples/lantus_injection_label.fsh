@@ -84,6 +84,7 @@ Description: "Header information for the Lantus Injection Label"
   * code = http://loinc.org#34067-9 "INDICATIONS &amp; USAGE SECTION"
   * title = "1 INDICATIONS AND USAGE"
   * extension[sectionTime].valueDateTime = "2021-01-27"
+  * extension[linkId].valueString = "S1"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml">
   <div style="highlights">
@@ -293,10 +294,10 @@ Description: "Lantus Vial Packaging"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "0088-5021-01"
 * package.type = $NCI-T#C43233 "PACKAGE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * package.package.type = $NCI-T#C43209 "VIAL, GLASS"
 * package.package.quantity = 1
+* package.package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* package.package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * package.package.containedItem.amount = 10 'mL' "mL"
 * package.package.containedItem.item.reference = Reference(LantusSolution)
 
@@ -318,12 +319,12 @@ Description: "Lantus Syringe Packaging"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "0088-5020-05"
 * package.type = $NCI-T#C43233 "PACKAGE"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "0088-5020-01"
 * package.package.type = $NCI-T#C43202 "SYRINGE"
 * package.package.quantity = 5
+* package.package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* package.package.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * package.package.containedItem.amount = 3 'mL' "mL"
 * package.package.containedItem.item.reference = Reference(LantusSolution)
 

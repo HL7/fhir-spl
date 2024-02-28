@@ -158,6 +158,7 @@ Description: "Codes that were specified in the SPL guide for characteristic type
 * #SPLSHAPE "Shape"
 * #SPLSIZE "Size"
 * #SPLCMBPRDTP "Combination Product Type"
+* #SPLFLAVOR "Flavor"
 
 ValueSet: SubmittedMedicinalProductCharacteristicTypes
 Id: valueset-SubmittedMedicinalProductCharacteristicTypes

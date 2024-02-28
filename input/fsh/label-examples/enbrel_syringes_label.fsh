@@ -151,6 +151,7 @@ Description: "Header information for the Enbrel Syringe Labels"
   * title = "WARNING: SERIOUS INFECTIONS and MALIGNANCIES"
   * id = "1f13be11-112a-48e5-bbf8-072311d5c3dd"
   * extension[sectionTime].valueDateTime = "2021-12-13"
+  * extension[linkId].valueString = "BOX"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="highlights">
                         <p>WARNING: SERIOUS INFECTIONS and MALIGNANCIES</p>
@@ -238,6 +239,7 @@ Description: "Header information for the Enbrel Syringe Labels"
   * title = "1 INDICATIONS AND USAGE"
   * id = "c854ce8a-aea8-4403-917d-8d2c9bebf6ad"
   * extension[sectionTime].valueDateTime = "2021-12-13"
+  * extension[linkId].valueString = "S1"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="highlights">
                         <p>Enbrel is a tumor necrosis factor (TNF) blocker indicated for the treatment of:</p>
@@ -254,6 +256,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "1.1 Rheumatoid Arthritis"
     * id = "5c3f71af-246f-4d3f-b7b7-347b3264e21a"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S1.1"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms, inducing major clinical response, inhibiting the progression of structural damage, and improving physical function in patients with moderately to severely active rheumatoid arthritis (RA).  Enbrel can be initiated in combination with methotrexate (MTX) or used alone.</p>
@@ -263,6 +266,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "1.2	Polyarticular Juvenile Idiopathic Arthritis"
     * id = "d0eab55f-8f21-4828-95dc-a59686da130f"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S1.2"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms of moderately to severely active polyarticular juvenile idiopathic arthritis (JIA) in patients ages 2 and older.</p>
@@ -272,6 +276,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "1.3	Psoriatic Arthritis"
     * id = "26f6fbd0-80ba-466b-9682-6740277d81a3"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S1.3"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms, inhibiting the progression of structural damage of active arthritis, and improving physical function in patients with psoriatic arthritis (PsA).  Enbrel can be used with or without methotrexate.</p>
@@ -281,6 +286,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "1.4	Ankylosing Spondylitis"
     * id = "9bca3f1c-7745-485f-8178-97c907ca4d60"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S1.4"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for reducing signs and symptoms in patients with active ankylosing spondylitis (AS).</p>
@@ -290,6 +296,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "1.5	Plaque Psoriasis"
     * id = "3ec2451e-8e5f-4e29-9503-edf9fad19b12"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S1.5"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is indicated for the treatment of patients 4 years or older with chronic moderate to severe plaque psoriasis (PsO) who are candidates for systemic therapy or phototherapy.</p>
@@ -300,6 +307,7 @@ Description: "Header information for the Enbrel Syringe Labels"
   * title = "2 DOSAGE AND ADMINISTRATION"
   * id = "eba5422e-c30e-4fb0-baa4-dcfc08ac5c6b"
   * extension[sectionTime].valueDateTime = "2021-12-13"
+  * extension[linkId].valueString = "S2"
   * text.status = #additional
   * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="highlights">
                         <p>Enbrel is administered by subcutaneous injection.</p>
@@ -340,6 +348,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "2.1 Adult Patients"
     * id = "ded84416-f6db-4705-85d4-b3ae59e6a1a1"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S2.1"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is administered by subcutaneous injection.</p>
@@ -397,6 +406,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "2.2	Pediatric Patients"
     * id = "c0e3dab3-d501-4b1f-80e6-1b9278c298e0"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S2.2"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is administered by subcutaneous injection.</p>
@@ -430,6 +440,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "2.3	Preparation of Enbrel"
     * id = "6ed6ef73-2259-406c-ab29-8e52a365efb4"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S2.3"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
                         <p>Enbrel is intended for use under the guidance and supervision of a physician.  Patients may self-inject when deemed appropriate and if they receive medical follow-up, as necessary.  Patients should not self-administer until they receive proper training in how to prepare and administer the correct dose.  Administer injections subcutaneously in the thigh, abdomen or outer area of the upper arm.</p>
@@ -514,6 +525,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "7829c7f6-24ba-474f-8199-5a3cdc9c91f3"
     * extension[sectionTime].valueDateTime = "2021-12-13"
+    * extension[linkId].valueString = "S2.4"
     * title = "2.4 Monitoring to Assess Safety"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
@@ -789,14 +801,14 @@ Description: "4 1mL Syringes of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-435-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-435-01"
+* package.package.type = $NCI-T#C43202 "SYRINGE"
 * package.package.quantity = 4
+* package.package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* package.package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.containedItem.amount = 1 'mL' "mL"
 * package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
-* package.package.type = $NCI-T#C43202 "SYRINGE"
 
 Instance: Enbrel435Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
@@ -813,7 +825,6 @@ Description: "Structured information for the Enbrel 445 Label"
 * identifier[NDCCode].value = "58406-445"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* combinedPharmaceuticalDoseForm = $NCI-T#C42986 "SOLUTION"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
@@ -827,11 +838,11 @@ Description: "4 1mL autoinjectors of Enbrel"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-445-04"
 * package.type = $NCI-T#C43182 "CARTON"
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.identifier.value = "58406-445-01"
 * package.package.quantity = 4
+* package.package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* package.package.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * package.package.containedItem.amount = 1 'mL' "mL"
 * package.package.containedItem.item.reference = Reference(Enbrel50mgSolution)
 * package.package.type = $NCI-T#C43202 "SYRINGE"
@@ -851,7 +862,6 @@ Description: "Structured information for the Enbrel 425 Label"
 * identifier[NDCCode].value = "58406-425"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* combinedPharmaceuticalDoseForm = $NCI-T#C47916 "KIT"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
@@ -914,6 +924,11 @@ Description: "Marketing information for Enbrel 425 Part 2"
 * subject = Reference(Enbrel425Part2Definition)
 * type = $NCI-T#C73594 "BLA"
 * region = urn:iso:std:iso:3166#USA
+
+Instance: EnbrelKit
+InstanceOf: SubmittedManufacturedItem
+* status = #active
+* manufacturedDoseForm = $NCI-T#C47916 "KIT"
 
 Instance: EnbrelPowder
 InstanceOf: SubmittedManufacturedItem
@@ -989,16 +1004,17 @@ Description: "4 25mg kits of Enbrel"
 * package.package.identifier.value = "58406-425-41"
 * package.package.quantity = 4
 * package.package.type = $NCI-T#C43197 "KIT"
+* package.package.containedItem.item.reference = Reference(EnbrelKit)
+* package.package.containedItem.amount = 1 '1'
 * package.package.package[0].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part1Package)
 * package.package.package[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.package.package[0].identifier.value = "58406-424-01"
-* package.package.package[0].type = $NCI-T#C43226 "VIAL"
+* package.package.package[0].type = $NCI-T#C42957 "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION"
 * package.package.package[0].containedItem.item.reference = Reference(EnbrelPowder)
 * package.package.package[0].containedItem.amount = 1 'mL'
 * package.package.package[1].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part2Package)
 * package.package.package[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.package[0].identifier.value = "58406-910-01"
-* package.package.package[0].type = $NCI-T#C43202 "SYRINGE"
+* package.package.package[0].type = $NCI-T#42986 "SOLUTION"
 * package.package.package[0].containedItem.item.reference = Reference(EnbrelSterileSolution)
 * package.package.package[0].containedItem.amount = 1 'mL'
 
