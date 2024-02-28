@@ -80,7 +80,10 @@ Description: "Details around the packaging of submitted medicinal products."
 * package.quantity 0..1 MS
 * package.property 0..* MS
 * package.property.type 1..1 MS
+* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.value[x] 1..1 MS
+* package.property.value[x] only CodeableConcept
+* package.property.valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C102833 (required)
 * package.containedItem 0..* MS
 * package.containedItem.item 1..1 MS
 * package.containedItem.item only CodeableReference(SubmittedManufacturedItem)
@@ -98,6 +101,32 @@ Description: "Details around the actual item, i.e tablet, solution, etc. that is
 * property.type 1..1 MS
 * property.type from SubmittedMedicinalProductCharacteristicTypes (required)
 * property.value[x] 1..1 MS
+* property ^slicing.discriminator.type = #value
+* property ^slicing.discriminator.path = "type"
+* property ^slicing.rules = #open
+* property ^slicing.description = "Require specific bindings for characteristic type."
+* property contains Color 0..1 and Imprint 0..1 and Score 0..1 and Shape 0..1 and Size 0..1 and Flavor 0..1 and Image 0..1
+* property[Color].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
+* property[Color].value[x] only CodeableConcept
+* property[Color].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C54453 (required)
+* property[Shape].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
+* property[Shape].value[x] only CodeableConcept
+* property[Shape].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C54454 (required)
+* property[Flavor].type = SubmittedMedicinalProductCharacteristicTypes#SPLFLAVOR
+* property[Flavor].value[x] only CodeableConcept
+* property[Flavor].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C73339 (required)
+* property[Imprint].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMPRINT
+* property[Imprint].value[x] only CodeableConcept
+* property[Imprint].valueCodeableConcept ^short = "Text is only allowed as the imprint is a string."
+* property[Imprint].valueCodeableConcept.text 1..1
+* property[Imprint].valueCodeableConcept.coding 0..0
+* property[Score].type = SubmittedMedicinalProductCharacteristicTypes#SPLSCORE
+* property[Score].value[x] only Quantity
+* property[Size].type = SubmittedMedicinalProductCharacteristicTypes#SPLSIZE
+* property[Size].value[x] only Quantity
+* property[Image].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMAGE
+* property[Image].value[x] only Attachment
+
 
 Extension: ItemMarketingStatusDates
 Id: itemMarketingStatusDates
@@ -159,6 +188,7 @@ Description: "Codes that were specified in the SPL guide for characteristic type
 * #SPLSIZE "Size"
 * #SPLCMBPRDTP "Combination Product Type"
 * #SPLFLAVOR "Flavor"
+* #SPLIMAGE "Image"
 
 ValueSet: SubmittedMedicinalProductCharacteristicTypes
 Id: valueset-SubmittedMedicinalProductCharacteristicTypes
