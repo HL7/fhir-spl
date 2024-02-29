@@ -261,6 +261,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[linkId].valueString = "S1.1"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S1.1"/>
                         <p>Enbrel is indicated for reducing signs and symptoms, inducing major clinical response, inhibiting the progression of structural damage, and improving physical function in patients with moderately to severely active rheumatoid arthritis (RA).  Enbrel can be initiated in combination with methotrexate (MTX) or used alone.</p>
      </div></div>"""
   * section[+]
@@ -271,6 +272,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[linkId].valueString = "S1.2"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S1.2"/>
                         <p>Enbrel is indicated for reducing signs and symptoms of moderately to severely active polyarticular juvenile idiopathic arthritis (JIA) in patients ages 2 and older.</p>
     </div></div>"""
   * section[+]
@@ -281,6 +283,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[linkId].valueString = "S1.3"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S1.3"/>
                         <p>Enbrel is indicated for reducing signs and symptoms, inhibiting the progression of structural damage of active arthritis, and improving physical function in patients with psoriatic arthritis (PsA).  Enbrel can be used with or without methotrexate.</p>
     </div></div>"""
   * section[+]
@@ -291,6 +294,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[linkId].valueString = "S1.4"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S1.4"/>
                         <p>Enbrel is indicated for reducing signs and symptoms in patients with active ankylosing spondylitis (AS).</p>
     </div></div>"""
   * section[+]
@@ -301,6 +305,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[linkId].valueString = "S1.5"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S1.5"/>
                         <p>Enbrel is indicated for the treatment of patients 4 years or older with chronic moderate to severe plaque psoriasis (PsO) who are candidates for systemic therapy or phototherapy.</p>
     </div></div>"""
 	
@@ -353,6 +358,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[linkId].valueString = "S2.1"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S2.1"/>
                         <p>Enbrel is administered by subcutaneous injection.</p>
                         <table width="75%" id="table1">
                            <caption>Table 1. Dosing and Administration for Adult Patients</caption>
@@ -386,6 +392,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[sectionTime].valueDateTime = "2021-12-13"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S2.2"/>
                               <p>
                                  <span style="text-decoration: underline">Adult Rheumatoid Arthritis, Ankylosing Spondylitis, and Psoriatic Arthritis Patients</span>
                               </p>
@@ -445,6 +452,7 @@ Description: "Header information for the Enbrel Syringe Labels"
     * extension[linkId].valueString = "S2.3"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S2.3"/>
                         <p>Enbrel is intended for use under the guidance and supervision of a physician.  Patients may self-inject when deemed appropriate and if they receive medical follow-up, as necessary.  Patients should not self-administer until they receive proper training in how to prepare and administer the correct dose.  Administer injections subcutaneously in the thigh, abdomen or outer area of the upper arm.</p>
                         <p>The following components contain dry natural rubber (a derivative of latex), which may cause allergic reactions in individuals sensitive to latex: the needle cover of the prefilled syringe, the needle cover within the white cap of the SureClick autoinjector, and the needle cover within the purple cap of the Enbrel Mini cartridge <span style="font-style: italic">[see <a href="#S5.7">Warnings and Precautions (5.7)</a>]</span>.</p>
                         <p>The Enbrel (etanercept) "Instructions for Use" insert for each presentation contains more detailed instructions on injection site selection and the preparation of Enbrel.</p>
@@ -531,6 +539,12 @@ Description: "Header information for the Enbrel Syringe Labels"
     * title = "2.4 Monitoring to Assess Safety"
     * text.status = #additional
     * text.div = """<div xmlns="http://www.w3.org/1999/xhtml"><div style="narrative">
+<a name="S5.1"/>
+<a name="S5.3"/>
+<a name="S5.7"/>
+<a name="S6"/>
+<a name="S14.5"/>
+<a name="S17"/>
                         <p>Prior to initiating Enbrel and periodically during therapy, patients should be evaluated for active tuberculosis and tested for latent infection <span style="font-style: italic">[see <a href="#S5.1">Warnings and Precautions (5.1)</a>].</span>
                         </p>
       </div></div>"""

@@ -95,6 +95,7 @@ Description: "Header information for the Lantus Injection Label"
   <p>Not recommended for treating diabetic ketoacidosis. (<a href="#S1">1</a>)</p>
   </div>
   <div style="narrative">
+    <a name="S1"/>
     <p>LANTUS is indicated to improve glycemic control in adults and pediatric patients with type 1 diabetes mellitus and in adults with type 2 diabetes mellitus.</p>
   </div></div>"""
   * section[0]
