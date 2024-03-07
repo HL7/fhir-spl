@@ -27,6 +27,8 @@ pages:
     title: Organziation-Based Use Cases
   druglabel.md:
     title: Submit a Drug Label
+  howtolabel.md:
+    title: How to Create a FHIR Drug Label
   transforms.md:
     title: SPL / FHIR Transforms
   downloads.md:
@@ -40,7 +42,9 @@ menu:
   Use Cases:
     Organization-Based Submissions: organization.html
     Drug Label Submission: druglabel.html
-  Transforms: transforms.html
+  Guidance:
+    How To: howtolabel.html
+    Transforms: transforms.html
   Artifacts: artifacts.html
   Appendix:
     Downloads: downloads.html

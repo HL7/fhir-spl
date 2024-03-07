@@ -229,6 +229,7 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
+<page key="howtolabel" name="How to Create a FHIR Drug Label"/>
 <page key="organization" name="Organziation-Based Use Cases"/>
 <page key="transforms" name="SPL / FHIR Transforms"/>
 <page key="index" name="SPL Mapping Implementation Guide Home Page"/>
