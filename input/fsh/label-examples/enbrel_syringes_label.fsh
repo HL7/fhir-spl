@@ -1309,7 +1309,7 @@ InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Enbrel 044 Label"
 * identifier[NDCCode].value = "58406-044"
 * name[Proprietary].productName = "ENBREL"
-* name[Proprietary].productName = "etanercept"
+* name[NonProprietary].productName = "etanercept"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"

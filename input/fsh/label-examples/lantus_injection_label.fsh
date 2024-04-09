@@ -154,7 +154,7 @@ InstanceOf: SubmittedMedicinalProduct
 Description: "Structured information for the Lantus Vial product"
 * identifier[NDCCode].value = "0088-5021"
 * name[Proprietary].productName = "Lantus"
-* name[Proprietary].productName = "insulin glargine"
+* name[NonProprietary].productName = "insulin glargine"
 * marketingStatus.status = http://hl7.org/fhir/publication-status#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
