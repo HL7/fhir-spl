@@ -10,14 +10,14 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains NDCCode 1..1 MS
 * identifier[NDCCode].system = "http://hl7.org/fhir/sid/ndc"
-* name 1..* MS
+* name 2..* MS
 * name.productName 1..1 MS
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require specific name types"
-* name contains Proprietary 1..1 and NonProprietary 0..1
+* name contains Proprietary 1..1 and NonProprietary 1..*
 * name[Proprietary].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
 * name[Proprietary].namePart 0..* MS
 * name[Proprietary].namePart.part 1..1 MS
@@ -39,6 +39,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * route 0..* MS
 * route from http://evs.nci.nih.gov/valueset/FDA/C54455 (required)
 * marketingStatus 0..1 MS
+* marketingStatus.status 1..1 MS
 * marketingStatus.dateRange 1..1 MS
 * specialMeasures 0..* MS
 * specialMeasures from http://evs.nci.nih.gov/valueset/FDA/C54459 (required)
@@ -56,7 +57,6 @@ Description: "Details around the marketing of a submitted medicinal product."
 * subject only Reference(SubmittedMedicinalProduct)
 * type 0..1 MS
 * region 0..* MS
-* status MS
 * statusDate MS
 
 Extension: PackagedProductReference
@@ -74,6 +74,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * packageFor 1..1 MS
 * packageFor only Reference(SubmittedMedicinalProduct)
 * marketingStatus 0..1 MS
+* marketingStatus.status 1..1 MS
 * marketingStatus.dateRange 1..1 MS
 * package 1..1 MS
 * package.extension contains PackagedProductReference named packageInstanceOf 0..1 MS

@@ -70,8 +70,14 @@ The Product Section has multiple entries that point to Submitted Medicinal Produ
 
 The Label Display disallows entries and sub-sections.
 
-#### Product Submission Document Author
+#### Product Submission Document Author (Labeler)
 The author of the document is identified by an [Identified Labeler](StructureDefinition-IdentifiedLabeler.html) instance.  This profile requires a DUNS Number of the organization and a name.
+
+#### Product Submission Registrant
+A registrant can be specified by including an [Identified Establishment Registrant](StructureDefinition-IdentifiedEstablishmentRegistrant.html) instance in the bundle.  This profile requires a DUNS number of the organization and a name.
+
+#### Product Submission Establishments
+There can be one or more establishments included to specify various product business operations.  Instances of the [Identified Establishment](StructureDefinition-IdentifiedEstablishment.html) profile are included in the bundle.  This profile requires a DUNS number of the organization and a name.   It will be referenced from specific Submitted Medicinal Product instances to indicate the operations that the establishment performs on the product.
 
 #### Product Submission Product Information
 Drug Products included in a label are represented using a combination of the following resources:
@@ -82,4 +88,98 @@ Drug Products included in a label are represented using a combination of the fol
 * [Submitted Medicinal Product Marketing](StructureDefinition-SubmittedMedicinalProductMarketing.html)
 * [Submitted Medicinal Product Ingredient](StructureDefinition-SubmittedMedicinalProductIngredient.html)
 * [Submitted Ingredient Definition](StructureDefinition-SubmitedIngredientDefinition.html)
+
+##### Submitted Medicinal Product
+
+The MedicinalProductDefinition.identifier contains the Item Code which is an NDC code.  A product can contain other identifiers as well.
+
+The MedicinalProductDefinition.route specifies the route of administration.
+
+The MedicinalProductDefinition.specialMeasures contains the DEA schedule code, when applicable.
+
+The MedicinalProductDefinition.marketingStatus specifies the marketing status.  The status code is the marketing status and the dateRange contains the marketing status dates.
+
+The MedicinalProductDefinition.name has one proprietary name which has an optional suffix included and one or many non-proprietary names.
+
+The MedicinalProductDefinition.crossReference.product can be used to specify equivalences to other products.  The product.concept contains the NDC product code of the equivalent product.
+
+The MedicinalProductDefinition.operation lists the operations that establishments have performed on this product.  The operation.type has the specific operation code and the operation.organization references the establishment that is included in the bundle.
+
+##### Submitted Manufactured Item
+
+For every medicinal product, there is a manufactured item that provides product details.
+
+The ManufacturedItemDefinition.manufacturedDoseForm specifies the product form code.
+
+The ManufacturedItemDefinition.property lists the characteristics of the product.  The allowed characteristics are:
+
+* Color - code
+* Imprint - string
+* Score - quantity
+* Shape - code
+* Size - quantity
+* Flavor - code
+* Image - attachment
+
+NOTE: Although Imprint is a string, the FHIR resource does not allow a string so the CodeableConcept.text is used.
+
+##### Submitted Medicinal Product Ingredient
+
+All ingredients, active and inactive, are specified using the Submitted Medicinal Product Ingredient profile.  Each Ingredient points back to the Manufactured Item via the Ingredient.for element reference.
+
+The Ingredient.role is a code that indicates whether the ingredient is Inactive or a specific Active type.
+
+The Ingredient.substance.code specifies the ingredient substance.  Inactive ingredients will specify the substance via a code in the substance.code.concept.  Active ingredients will point to a SubstanceDefinition in the substance.code.reference.
+
+The Ingredient.substance.strength.presentationRatio specifies the strength of the ingredient.
+
+For active ingredients that have a reference ingredient, the Ingredient.substance.strength.referenceStrength specifies the reference ingredient via referenceStrength.substance.concept and the reference strength via referenceStrength.strengthRatio.
+
+##### Submitted Ingredient Definition
+
+For Active Ingredients, the ingredient information is specified using the Submitted Ingredient Definition profile.
+
+The SubstanceDefinition.identifier specifies the ingredient code.
+
+The SubstanceDefinition.name specifies the ingredient name.
+
+The SubstanceDefinition.moiety lists one or two active moieties.  Each active moiety contains an identifier which is the active moiety code and a name.
+
+##### Submitted Medicinal Product Marketing
+
+A product's Marketing Category is specified using the Submitted Medicinal Product Marketing profile.
+
+RegulatedAuthorization.identifier is the marketing application number.
+
+RegulatedAuthorization.subject is a reference to the specific product for this marketing category.
+
+RegulatedAuthorization.type is the category code.
+
+RegulatedAuthorization.region is the territorialAuthority for the marketing category.
+
+RegulatedAuthorization.statusDate has the approval date of the application number.
+
+##### Submitted Medicinal Packaging
+
+All of the product package details are specified using the Submitted Medicinal Packaging profile.
+
+PackagedProductDefinition.packageFor references the specific product for this packaging.
+
+The PackagedProductDefinition.marketingStatus specifies the marketing status of the packaged product.  The status code is the marketing status and the dateRange contains the marketing status dates.
+
+The actual package details are contained in the PackagedProductDefinition.package elements.  Unlike SPL, the FHIR packaging starts with the outermost packaging, i.e. a box, and then nested package elements specify inner packaging, i.e. a bottle.  Eventually, the inner most packaging will reference a contained item which points to the SubmittedManufacturedItem.
+
+PackagedProductDefinition.package.identifier specifies the package item code.
+
+PackagedProductDefinition.package.type specifies the package form code.
+
+PackagedProductDefinition.package.quantity specifies the number of this package within the outer package.  The outermost package will either not specify this or set it to 1.
+
+PackagedProductDefinition.package.property is used to indicate whether the package contains a combination package.
+
+PackagedProductDefinition.package.package is used to specify nested packages.
+
+PackagedProductDefinition.package.containedItem is used to specify the specific product item that is contained in the innermost packaging.  containedItem.item.reference is a reference to the SubmittedManufacturedItem instance and containedItem.amount is the quantity of that product that is contained in the packaging.
+
+NOTE: In FHIR, the entire packaged product has a marketing status.  However, in SPL, individual packages within a packaged product can specify a marketing status.  The PackagedProductDefinition.package.packageInstanceOf extension is used to refer to a separate instance of SubmittedMedicinalPackaging for the inner package marketing status details.
 
