@@ -40,6 +40,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * route from http://evs.nci.nih.gov/valueset/FDA/C54455 (required)
 * marketingStatus 0..1 MS
 * marketingStatus.status 1..1 MS
+* marketingStatus.status from SPLMarketingStatuses (required)
 * marketingStatus.dateRange 1..1 MS
 * specialMeasures 0..* MS
 * specialMeasures from http://evs.nci.nih.gov/valueset/FDA/C54459 (required)
@@ -75,6 +76,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * packageFor only Reference(SubmittedMedicinalProduct)
 * marketingStatus 0..1 MS
 * marketingStatus.status 1..1 MS
+* marketingStatus.status from SPLMarketingStatuses (required)
 * marketingStatus.dateRange 1..1 MS
 * package 1..1 MS
 * package.extension contains PackagedProductReference named packageInstanceOf 0..1 MS
@@ -108,7 +110,7 @@ Description: "Details around the actual item, i.e tablet, solution, etc. that is
 * property ^slicing.discriminator.path = "type"
 * property ^slicing.rules = #open
 * property ^slicing.description = "Require specific bindings for characteristic type."
-* property contains Color 0..1 and Imprint 0..1 and Score 0..1 and Shape 0..1 and Size 0..1 and Flavor 0..1 and Image 0..1
+* property contains Color 0..* and Imprint 0..1 and Score 0..1 and Shape 0..1 and Size 0..1 and Flavor 0..* and Image 0..*
 * property[Color].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
 * property[Color].value[x] only CodeableConcept
 * property[Color].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C54453 (required)
@@ -170,10 +172,26 @@ Description: "Used to represent an substance's active moiety."
 * moiety.identifier 1..1 MS
 * moiety.name 1..1 MS
 
+CodeSystem: SPLMarketingStatuses
+Id: codesystem-splMarketingStatuses
+Title: "SPL Marketing Statuses CodeSystem"
+Description: "Marketing Status Status Codes"
+* ^caseSensitive = true
+* ^experimental = false
+* #new "new" "Product Item code is being reserved for future use"
+* #active "active" "on the market"
+* #completed "completed" "no longer going to be available on the market"
+
+ValueSet: SPLMarketingStatuses
+Id: valueset-splMarketingStatuses
+Title: "SPL Marketing Statuses ValueSet"
+Description: "Marketing Status Status Codes"
+* ^experimental = false
+* include codes from system SPLMarketingStatuses
 
 CodeSystem: SubmittedMedicinalProductNameTypes
 Id: codesystem-submittedMedicinalProductNameTypes
-Title: "Medicinal Product Name Types"
+Title: "Medicinal Product Name Types CodeSystem"
 Description: "Codes that types of names for a medicinal product."
 * ^caseSensitive = true
 * ^experimental = false
@@ -182,7 +200,7 @@ Description: "Codes that types of names for a medicinal product."
 
 CodeSystem: SubmittedMedicinalProductCharacteristicTypes
 Id: codesystem-characteristicTypes
-Title: "SPL Product Characteristic Types"
+Title: "SPL Product Characteristic Types CodeSystem"
 Description: "Codes that were specified in the SPL guide for characteristic types."
 * ^caseSensitive = false
 * ^experimental = false
@@ -198,7 +216,7 @@ Description: "Codes that were specified in the SPL guide for characteristic type
 ValueSet: SubmittedMedicinalProductCharacteristicTypes
 Id: valueset-SubmittedMedicinalProductCharacteristicTypes
 Description: "Codes that identify the types of characteristics allowed for Submitted Medicinal Product."
-Title: "SPL Product Characteristic Types"
+Title: "SPL Product Characteristic Types ValueSet"
 * ^experimental = false
 * include codes from system SubmittedMedicinalProductCharacteristicTypes
 

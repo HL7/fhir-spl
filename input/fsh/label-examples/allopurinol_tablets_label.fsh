@@ -462,7 +462,7 @@ Description: "Structured information for the Allopurinol Tablet USP Label"
 * name[Proprietary].productName = "Allopurinol"
 * name[NonProprietary].productName = "Allopurinol"
 * crossReference.product.concept = http://hl7.org/fhir/sid/ndc#0591-5543
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * route = $NCI-T#C38288 "ORAL"
 
@@ -541,7 +541,7 @@ Instance: Allopurinol100Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "100 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-00"
@@ -555,7 +555,7 @@ Instance: Allopurinol30Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "30 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-30"
@@ -569,7 +569,7 @@ Instance: Allopurinol60Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "60 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-60"
@@ -583,7 +583,7 @@ Instance: Allopurinol90Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "90 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "53217-187-90"

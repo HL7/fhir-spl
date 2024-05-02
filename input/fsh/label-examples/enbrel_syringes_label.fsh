@@ -755,7 +755,7 @@ Description: "Structured information for the Enbrel 435 Label"
 * identifier[NDCCode].value = "58406-435"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2005-10-06"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -812,7 +812,7 @@ Instance: Enbrel435Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL Syringes of Enbrel"
 * packageFor = Reference(Enbrel435Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2005-10-05"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-435-04"
@@ -841,7 +841,7 @@ Description: "Structured information for the Enbrel 445 Label"
 * identifier[NDCCode].value = "58406-445"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -849,7 +849,7 @@ Instance: Enbrel445Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL autoinjectors of Enbrel"
 * packageFor = Reference(Enbrel445Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-445-04"
@@ -878,7 +878,7 @@ Description: "Structured information for the Enbrel 425 Label"
 * identifier[NDCCode].value = "58406-425"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
 Instance: Enbrel425Part1Definition
@@ -887,7 +887,7 @@ Description: "Structured information for the Enbrel 425 Part 1"
 * identifier[NDCCode].value = "58406-424"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
 Instance: Enbrel425Part2Definition
@@ -896,7 +896,7 @@ Description: "Structured information for the Enbrel 425 Part 2"
 * identifier[NDCCode].value = "58406-910"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
 Instance: Enbrel425Part1Package
@@ -1011,7 +1011,7 @@ Instance: Enbrel425Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 25mg kits of Enbrel"
 * packageFor = Reference(Enbrel425Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2003-10-02"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-425-34"
@@ -1049,7 +1049,7 @@ Description: "Structured information for the Enbrel 455 Label"
 * identifier[NDCCode].value = "58406-455"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1096,7 +1096,7 @@ Instance: Enbrel455Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 0.5mL syringes of Enbrel"
 * packageFor = Reference(Enbrel455Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-455-04"
@@ -1125,7 +1125,7 @@ Description: "Structured information for the Enbrel 456 Label"
 * identifier[NDCCode].value = "58406-456"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-09-29"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1133,7 +1133,7 @@ Instance: Enbrel456Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL cartridges of Enbrel"
 * packageFor = Reference(Enbrel456Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-09-29"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-456-04"
@@ -1162,7 +1162,7 @@ Description: "Structured information for the Enbrel 446 Label"
 * identifier[NDCCode].value = "58406-446"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-10-20"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1170,7 +1170,7 @@ Instance: Enbrel446Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL autoinjectors of Enbrel"
 * packageFor = Reference(Enbrel446Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-10-20"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-446-04"
@@ -1199,7 +1199,7 @@ Description: "Structured information for the Enbrel 021 Label"
 * identifier[NDCCode].value = "58406-021"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1207,7 +1207,7 @@ Instance: Enbrel021Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL Syringes of Enbrel"
 * packageFor = Reference(Enbrel021Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-021-04"
@@ -1236,7 +1236,7 @@ Description: "Structured information for the Enbrel 032 Label"
 * identifier[NDCCode].value = "58406-032"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1244,7 +1244,7 @@ Instance: Enbrel032Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL autoinjectors of Enbrel"
 * packageFor = Reference(Enbrel032Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-032-04"
@@ -1273,7 +1273,7 @@ Description: "Structured information for the Enbrel 010 Label"
 * identifier[NDCCode].value = "58406-010"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1281,7 +1281,7 @@ Instance: Enbrel010Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 0.5mL syringes of Enbrel"
 * packageFor = Reference(Enbrel010Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-010-04"
@@ -1310,7 +1310,7 @@ Description: "Structured information for the Enbrel 044 Label"
 * identifier[NDCCode].value = "58406-044"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1318,7 +1318,7 @@ Instance: Enbrel044Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL cartridges of Enbrel"
 * packageFor = Reference(Enbrel044Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-044-04"
@@ -1347,7 +1347,7 @@ Description: "Structured information for the Enbrel 055 Label"
 * identifier[NDCCode].value = "58406-055"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2020-03-05"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1355,7 +1355,7 @@ Instance: Enbrel055Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 0.5mL syringes of Enbrel"
 * packageFor = Reference(Enbrel055Definition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2020-03-05"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "58406-055-04"

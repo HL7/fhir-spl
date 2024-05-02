@@ -155,7 +155,7 @@ Description: "Structured information for the Lantus Vial product"
 * identifier[NDCCode].value = "0088-5021"
 * name[Proprietary].productName = "Lantus"
 * name[NonProprietary].productName = "insulin glargine"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 * operation[0]
@@ -192,7 +192,7 @@ Description: "Structured information for the Lantus Syringe product"
 * identifier[NDCCode].value = "0088-5020"
 * name[Proprietary].productName = "Lantus Solostar"
 * name[NonProprietary].productName = "insulin glargine"
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 * operation[0]
@@ -290,7 +290,7 @@ Instance: LantusVialPackage
 InstanceOf: SubmittedMedicinalPackaging
 Description: "Lantus Vial Packaging"
 * packageFor = Reference(LantusVialDefinition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "0088-5021-01"
@@ -315,7 +315,7 @@ Instance: LantusSyringePackage
 InstanceOf: SubmittedMedicinalPackaging
 Description: "Lantus Syringe Packaging"
 * packageFor = Reference(LantusSyringeDefinition)
-* marketingStatus.status = http://hl7.org/fhir/publication-status#active
+* marketingStatus.status = SPLMarketingStatuses#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * package.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.identifier.value = "0088-5020-05"

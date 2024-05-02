@@ -162,7 +162,7 @@
 <artifact id="RegulatedAuthorization/LantusVialMarketing" key="RegulatedAuthorization-LantusVialMarketing" name="LantusVialMarketing"/>
 <artifact id="PackagedProductDefinition/LantusVialPackage" key="PackagedProductDefinition-LantusVialPackage" name="LantusVialPackage"/>
 <artifact id="StructureDefinition/itemMarketingStatusDates" key="StructureDefinition-itemMarketingStatusDates" name="Manufactured Item Marketing Status Date Range"/>
-<artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="Medicinal Product Name Types"/>
+<artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="Medicinal Product Name Types CodeSystem"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="Organization Relationship Types"/>
 <artifact id="StructureDefinition/OrganizationBundle" key="StructureDefinition-OrganizationBundle" name="OrganizationBundle"/>
@@ -178,9 +178,11 @@
 <artifact id="ValueSet/valueset-registrantOrganizationTypes" key="ValueSet-valueset-registrantOrganizationTypes" name="Registrant Organization Types"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
 <artifact id="ValueSet/splDocumentCodes" key="ValueSet-splDocumentCodes" name="SPL Document Codes"/>
+<artifact id="CodeSystem/codesystem-splMarketingStatuses" key="CodeSystem-codesystem-splMarketingStatuses" name="SPL Marketing Statuses CodeSystem"/>
+<artifact id="ValueSet/valueset-splMarketingStatuses" key="ValueSet-valueset-splMarketingStatuses" name="SPL Marketing Statuses ValueSet"/>
 <artifact id="CodeSystem/codesystem-organizationTypes" key="CodeSystem-codesystem-organizationTypes" name="SPL Organization Types"/>
-<artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SPL Product Characteristic Types"/>
-<artifact id="CodeSystem/codesystem-characteristicTypes" key="CodeSystem-codesystem-characteristicTypes" name="SPL Product Characteristic Types"/>
+<artifact id="CodeSystem/codesystem-characteristicTypes" key="CodeSystem-codesystem-characteristicTypes" name="SPL Product Characteristic Types CodeSystem"/>
+<artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SPL Product Characteristic Types ValueSet"/>
 <artifact id="ValueSet/splSectionCodes" key="ValueSet-splSectionCodes" name="SPL Section Codes"/>
 <artifact id="StructureDefinition/SPLAddress" key="StructureDefinition-SPLAddress" name="SPLAddress"/>
 <artifact id="StructureDefinition/SPLContactPoint" key="StructureDefinition-SPLContactPoint" name="SPLContactPoint"/>

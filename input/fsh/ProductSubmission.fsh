@@ -61,7 +61,7 @@ Description: "A profile that represents a document that is required for Product 
     * code 1..1 MS
     * code from SPLSectionCodes (required)
     * title MS
-    * text 1..1 MS
+    * text MS
     * entry 0..0
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
