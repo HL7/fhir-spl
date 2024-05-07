@@ -55,7 +55,16 @@ Description: "A profile for an identified establishment registrant."
 Profile: IdentifiedEstablishment
 Parent: IdentifiedOrganization
 Description: "A profile for an identified establishment."
+* extension contains EstablishmentRegistrant named registrant 0..1
 * type = OrganizationTypes#Establishment
+
+Extension: EstablishmentRegistrant
+Id: establishmentRegistrant
+Description: "Linking an establishment to its registrant."
+* value[x] only Reference
+* valueReference only Reference(IdentifiedEstablishmentRegistrant)
+* ^context[+].type = #element
+* ^context[=].expression = "Organization"
 
 Profile: EstablishmentAffiliation
 Parent: OrganizationAffiliation
