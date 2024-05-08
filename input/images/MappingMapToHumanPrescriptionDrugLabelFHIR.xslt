@@ -9,320 +9,7 @@ Refer to the Altova MapForce Documentation for further details.
 http://www.altova.com/mapforce
 -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns0="http://hl7.org/fhir" xmlns:tbf="http://www.altova.com/MapForce/UDF/tbf" xmlns:user="http://www.altova.com/MapForce/UDF/user" xmlns:vmf="http://www.altova.com/MapForce/UDF/vmf" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:ns1="urn:hl7-org:v3" exclude-result-prefixes="ns0 tbf user vmf xs fn ns1">
-	<xsl:template name="tbf:tbf2_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:p)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf4_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h1)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf5_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h2)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf6_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h3)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf7_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h4)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf8_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h5)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf9_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h6)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf10_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:div)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf2_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ul)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf11_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ol)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf12_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dl)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf13_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:pre)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf14_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:hr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf15_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf16_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:address)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf17_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:table)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf18_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf3_Simple-CD">
+	<xsl:template name="tbf:tbf7_Simple-CD">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@code">
 			<xsl:attribute name="code" select="fn:string(.)"/>
@@ -333,807 +20,21 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/@displayName">
 			<xsl:attribute name="displayName" select="fn:string(.)"/>
 		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf4_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
+					<xsl:if test="fn:boolean(self::ns1:originalText)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf9_ED">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf5_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf6_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf7_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -1164,170 +65,282 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
+					<xsl:if test="fn:boolean(self::xhtml:p)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf10_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h1)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf11_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h2)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf12_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h3)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf13_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h4)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf14_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h5)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf15_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h6)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf16_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:div)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf8_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ul)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf17_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ol)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf18_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dl)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf19_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
+					<xsl:if test="fn:boolean(self::xhtml:pre)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf20_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
+					<xsl:if test="fn:boolean(self::xhtml:hr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf21_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf22_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
+					<xsl:if test="fn:boolean(self::xhtml:address)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf23_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
+					<xsl:if test="fn:boolean(self::xhtml:table)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf24_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
+					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
+					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
+					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
+					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -1339,196 +352,64 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf9_">
+	<xsl:template name="tbf:tbf9_ED">
 		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
+		<xsl:for-each select="$input/@representation">
+			<xsl:attribute name="representation" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
+		<xsl:for-each select="$input/@mediaType">
+			<xsl:attribute name="mediaType" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@language">
+			<xsl:attribute name="language" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@compression">
+			<xsl:attribute name="compression" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheck">
+			<xsl:attribute name="integrityCheck" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheckAlgorithm">
+			<xsl:attribute name="integrityCheckAlgorithm" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@description">
+			<xsl:attribute name="description" select="fn:string(.)"/>
 		</xsl:for-each>
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
+					<xsl:if test="fn:boolean(self::ns1:reference)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf49_TEL">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
+					<xsl:if test="fn:boolean(self::ns1:thumbnail)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf50_thumbnail">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
+					<xsl:if test="fn:boolean(self::ns1:translation)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf51_EDTranslation">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -1568,168 +449,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -1767,18 +648,177 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:li)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:if test="fn:not(fn:boolean(self::text()))">
-						<xsl:sequence select="."/>
-					</xsl:if>
+					<xsl:sequence select="."/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -1809,18 +849,177 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:li)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:if test="fn:not(fn:boolean(self::text()))">
-						<xsl:sequence select="."/>
-					</xsl:if>
+					<xsl:sequence select="."/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -1851,25 +1050,177 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:dt)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dd)">
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:if test="fn:not(fn:boolean(self::text()))">
-						<xsl:sequence select="."/>
-					</xsl:if>
+					<xsl:sequence select="."/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -1897,169 +1248,173 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/@dir">
 			<xsl:attribute name="dir" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:space">
-			<xsl:attribute name="xml:space" select="fn:string(.)"/>
-		</xsl:for-each>
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
+					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
+					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
+					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
+					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
+					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -2094,6 +1449,183 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/@dir">
 			<xsl:attribute name="dir" select="fn:string(.)"/>
 		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="tbf:tbf16_">
 		<xsl:param name="input" select="()"/>
@@ -2118,129 +1650,180 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/@dir">
 			<xsl:attribute name="dir" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@cite">
-			<xsl:attribute name="cite" select="fn:string(.)"/>
-		</xsl:for-each>
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:p)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf4_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h1)">
+					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf5_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h2)">
+					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf6_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h3)">
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf7_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h4)">
+					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf8_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h5)">
+					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf9_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h6)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf10_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:div)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf2_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ul)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf11_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ol)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf12_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dl)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf13_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:pre)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf14_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:hr)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf15_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf16_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:address)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf17_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:table)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf18_">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:if test="fn:not(fn:boolean(self::text()))">
-						<xsl:sequence select="."/>
-					</xsl:if>
+					<xsl:sequence select="."/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -2271,170 +1854,299 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:li)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf52_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf18_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:li)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf52_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf19_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:dt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf53_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf54_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf20_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:space">
+			<xsl:attribute name="xml:space" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -2446,7 +2158,382 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf18_">
+	<xsl:template name="tbf:tbf21_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf22_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@cite">
+			<xsl:attribute name="cite" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:p)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf10_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h1)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf11_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h2)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf12_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h3)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf13_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h4)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf14_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h5)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf15_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h6)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf16_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:div)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf8_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ul)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf17_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ol)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf18_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dl)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf19_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:pre)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf20_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:hr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf21_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf22_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:address)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf23_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:table)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf24_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf23_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf24_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -2495,49 +2582,49 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:caption)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf46_">
+							<xsl:call-template name="tbf:tbf55_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:col)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf47_">
+							<xsl:call-template name="tbf:tbf56_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:colgroup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf48_">
+							<xsl:call-template name="tbf:tbf57_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:thead)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf49_">
+							<xsl:call-template name="tbf:tbf58_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tfoot)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf50_">
+							<xsl:call-template name="tbf:tbf59_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tbody)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf51_">
+							<xsl:call-template name="tbf:tbf60_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf52_">
+							<xsl:call-template name="tbf:tbf61_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -2551,7 +2638,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf19_">
+	<xsl:template name="tbf:tbf25_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -2612,161 +2699,161 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -2778,7 +2865,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf20_">
+	<xsl:template name="tbf:tbf26_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -2793,208 +2880,7 @@ http://www.altova.com/mapforce
 			<xsl:attribute name="title" select="fn:string(.)"/>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf21_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf22_">
+	<xsl:template name="tbf:tbf27_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -3022,168 +2908,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -3195,7 +3081,208 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf23_">
+	<xsl:template name="tbf:tbf28_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf29_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@lang">
 			<xsl:attribute name="lang" select="fn:string(.)"/>
@@ -3226,119 +3313,119 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:p)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf4_">
+							<xsl:call-template name="tbf:tbf10_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h1)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf5_">
+							<xsl:call-template name="tbf:tbf11_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h2)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf6_">
+							<xsl:call-template name="tbf:tbf12_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h3)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf7_">
+							<xsl:call-template name="tbf:tbf13_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h4)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf8_">
+							<xsl:call-template name="tbf:tbf14_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h5)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf9_">
+							<xsl:call-template name="tbf:tbf15_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h6)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf10_">
+							<xsl:call-template name="tbf:tbf16_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf2_">
+							<xsl:call-template name="tbf:tbf8_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:ul)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf11_">
+							<xsl:call-template name="tbf:tbf17_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:ol)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf12_">
+							<xsl:call-template name="tbf:tbf18_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dl)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf13_">
+							<xsl:call-template name="tbf:tbf19_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:pre)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf14_">
+							<xsl:call-template name="tbf:tbf20_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:hr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf15_">
+							<xsl:call-template name="tbf:tbf21_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf16_">
+							<xsl:call-template name="tbf:tbf22_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:address)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf17_">
+							<xsl:call-template name="tbf:tbf23_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:table)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf18_">
+							<xsl:call-template name="tbf:tbf24_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:area)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf53_">
+							<xsl:call-template name="tbf:tbf62_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -3352,7 +3439,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf24_">
+	<xsl:template name="tbf:tbf30_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -3397,1212 +3484,6 @@ http://www.altova.com/mapforce
 			<xsl:attribute name="ismap" select="fn:string(.)"/>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf25_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf26_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf27_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf28_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf29_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
-	<xsl:template name="tbf:tbf30_">
-		<xsl:param name="input" select="()"/>
-		<xsl:for-each select="$input/@id">
-			<xsl:attribute name="id" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@class">
-			<xsl:attribute name="class" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@style">
-			<xsl:attribute name="style" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@title">
-			<xsl:attribute name="title" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@lang">
-			<xsl:attribute name="lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@xml:lang">
-			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/@dir">
-			<xsl:attribute name="dir" select="fn:string(.)"/>
-		</xsl:for-each>
-		<xsl:for-each select="$input/node()">
-			<xsl:choose>
-				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="."/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:for-each>
-	</xsl:template>
 	<xsl:template name="tbf:tbf31_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
@@ -4631,168 +3512,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -4832,168 +3713,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -5033,168 +3914,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -5229,176 +4110,173 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/@dir">
 			<xsl:attribute name="dir" select="fn:string(.)"/>
 		</xsl:for-each>
-		<xsl:for-each select="$input/@cite">
-			<xsl:attribute name="cite" select="fn:string(.)"/>
-		</xsl:for-each>
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
+					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
+					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
+					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
+					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -5438,168 +4316,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -5639,168 +4517,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -5840,168 +4718,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -6041,168 +4919,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -6242,168 +5120,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -6438,173 +5316,176 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/@dir">
 			<xsl:attribute name="dir" select="fn:string(.)"/>
 		</xsl:for-each>
+		<xsl:for-each select="$input/@cite">
+			<xsl:attribute name="cite" select="fn:string(.)"/>
+		</xsl:for-each>
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
+					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
+					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
+					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
+					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -6644,168 +5525,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -6845,168 +5726,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -7044,282 +5925,170 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:p)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf4_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h1)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf5_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h2)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf6_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h3)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf7_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h4)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf8_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h5)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf9_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h6)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf10_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:div)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf2_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ul)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf11_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ol)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf12_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dl)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf13_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:pre)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf14_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:hr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf15_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf16_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:address)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf17_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:table)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf18_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
+					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
+					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
+					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
+					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -7359,168 +6128,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -7558,282 +6327,170 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/node()">
 			<xsl:choose>
 				<xsl:when test="fn:boolean(self::*)">
-					<xsl:if test="fn:boolean(self::xhtml:p)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf4_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h1)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf5_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h2)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf6_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h3)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf7_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h4)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf8_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h5)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf9_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:h6)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf10_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:div)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf2_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ul)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf11_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:ol)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf12_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dl)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf13_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:pre)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf14_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:hr)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf15_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf16_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:address)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf17_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:table)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf18_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:a)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:br)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:span)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:bdo)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:map)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:img)">
-						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
-								<xsl:with-param name="input" select="." as="node()"/>
-							</xsl:call-template>
-						</xsl:element>
-					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:i)">
+					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:b)">
+					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:big)">
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:small)">
+					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:em)">
+					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:strong)">
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:code)">
+					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:q)">
+					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:samp)">
+					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:var)">
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:cite)">
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sub)">
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
-					<xsl:if test="fn:boolean(self::xhtml:sup)">
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
 							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -7873,168 +6530,168 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8047,6 +6704,1595 @@ http://www.altova.com/mapforce
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="tbf:tbf47_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf48_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf49_TEL">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@use">
+			<xsl:attribute name="use" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@capabilities">
+			<xsl:attribute name="capabilities" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns1:useablePeriod)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf63_SXCM_TS">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf50_thumbnail">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@representation">
+			<xsl:attribute name="representation" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@mediaType">
+			<xsl:attribute name="mediaType" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@language">
+			<xsl:attribute name="language" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@compression">
+			<xsl:attribute name="compression" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheck">
+			<xsl:attribute name="integrityCheck" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheckAlgorithm">
+			<xsl:attribute name="integrityCheckAlgorithm" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@description">
+			<xsl:attribute name="description" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns1:reference)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf49_TEL">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf51_EDTranslation">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@representation">
+			<xsl:attribute name="representation" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@mediaType">
+			<xsl:attribute name="mediaType" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@language">
+			<xsl:attribute name="language" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@compression">
+			<xsl:attribute name="compression" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheck">
+			<xsl:attribute name="integrityCheck" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheckAlgorithm">
+			<xsl:attribute name="integrityCheckAlgorithm" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@description">
+			<xsl:attribute name="description" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns1:reference)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf49_TEL">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::ns1:thumbnail)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf50_thumbnail">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf52_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:p)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf10_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h1)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf11_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h2)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf12_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h3)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf13_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h4)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf14_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h5)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf15_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h6)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf16_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:div)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf8_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ul)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf17_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ol)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf18_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dl)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf19_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:pre)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf20_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:hr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf21_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf22_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:address)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf23_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:table)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf24_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf53_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf54_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:p)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf10_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h1)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf11_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h2)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf12_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h3)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf13_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h4)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf14_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h5)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf15_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:h6)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf16_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:div)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf8_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ul)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf17_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:ol)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf18_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dl)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf19_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:pre)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf20_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:hr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf21_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf22_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:address)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf23_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:table)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf24_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf55_">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@id">
+			<xsl:attribute name="id" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@class">
+			<xsl:attribute name="class" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@style">
+			<xsl:attribute name="style" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@title">
+			<xsl:attribute name="title" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@lang">
+			<xsl:attribute name="lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@xml:lang">
+			<xsl:attribute name="xml:lang" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@dir">
+			<xsl:attribute name="dir" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::xhtml:a)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf25_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:br)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf26_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:span)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf27_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:bdo)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf28_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:map)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf29_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:img)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf30_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:tt)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf31_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:i)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf32_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:b)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf33_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:big)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf34_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:small)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf35_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:em)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf36_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:strong)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf37_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:dfn)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf38_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:code)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf39_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:q)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf40_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:samp)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf41_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:kbd)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf42_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:var)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf43_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:cite)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf44_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:abbr)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf45_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:acronym)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf46_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sub)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf47_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::xhtml:sup)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf48_">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf56_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8088,7 +8334,7 @@ http://www.altova.com/mapforce
 			<xsl:attribute name="valign" select="fn:string(.)"/>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf48_">
+	<xsl:template name="tbf:tbf57_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8134,7 +8380,7 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:col)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf47_">
+							<xsl:call-template name="tbf:tbf56_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8148,7 +8394,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf49_">
+	<xsl:template name="tbf:tbf58_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8188,7 +8434,7 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:tr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf52_">
+							<xsl:call-template name="tbf:tbf61_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8202,7 +8448,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf50_">
+	<xsl:template name="tbf:tbf59_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8242,7 +8488,7 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:tr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf52_">
+							<xsl:call-template name="tbf:tbf61_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8256,7 +8502,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf51_">
+	<xsl:template name="tbf:tbf60_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8296,7 +8542,7 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:tr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf52_">
+							<xsl:call-template name="tbf:tbf61_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8310,7 +8556,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf52_">
+	<xsl:template name="tbf:tbf61_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8350,14 +8596,14 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:th)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf54_">
+							<xsl:call-template name="tbf:tbf64_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:td)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf55_">
+							<xsl:call-template name="tbf:tbf65_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8371,7 +8617,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf53_">
+	<xsl:template name="tbf:tbf62_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8416,7 +8662,46 @@ http://www.altova.com/mapforce
 			<xsl:attribute name="alt" select="fn:string(.)"/>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf54_">
+	<xsl:template name="tbf:tbf63_SXCM_TS">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@operator">
+			<xsl:attribute name="operator" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns1:originalText)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf9_ED">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf64_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8474,280 +8759,280 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:p)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf4_">
+							<xsl:call-template name="tbf:tbf10_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h1)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf5_">
+							<xsl:call-template name="tbf:tbf11_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h2)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf6_">
+							<xsl:call-template name="tbf:tbf12_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h3)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf7_">
+							<xsl:call-template name="tbf:tbf13_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h4)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf8_">
+							<xsl:call-template name="tbf:tbf14_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h5)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf9_">
+							<xsl:call-template name="tbf:tbf15_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h6)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf10_">
+							<xsl:call-template name="tbf:tbf16_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf2_">
+							<xsl:call-template name="tbf:tbf8_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:ul)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf11_">
+							<xsl:call-template name="tbf:tbf17_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:ol)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf12_">
+							<xsl:call-template name="tbf:tbf18_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dl)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf13_">
+							<xsl:call-template name="tbf:tbf19_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:pre)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf14_">
+							<xsl:call-template name="tbf:tbf20_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:hr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf15_">
+							<xsl:call-template name="tbf:tbf21_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf16_">
+							<xsl:call-template name="tbf:tbf22_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:address)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf17_">
+							<xsl:call-template name="tbf:tbf23_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:table)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf18_">
+							<xsl:call-template name="tbf:tbf24_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -8759,7 +9044,7 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="tbf:tbf55_">
+	<xsl:template name="tbf:tbf65_">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@id">
 			<xsl:attribute name="id" select="fn:string(.)"/>
@@ -8817,280 +9102,280 @@ http://www.altova.com/mapforce
 				<xsl:when test="fn:boolean(self::*)">
 					<xsl:if test="fn:boolean(self::xhtml:p)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf4_">
+							<xsl:call-template name="tbf:tbf10_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h1)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf5_">
+							<xsl:call-template name="tbf:tbf11_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h2)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf6_">
+							<xsl:call-template name="tbf:tbf12_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h3)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf7_">
+							<xsl:call-template name="tbf:tbf13_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h4)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf8_">
+							<xsl:call-template name="tbf:tbf14_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h5)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf9_">
+							<xsl:call-template name="tbf:tbf15_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:h6)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf10_">
+							<xsl:call-template name="tbf:tbf16_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:div)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf2_">
+							<xsl:call-template name="tbf:tbf8_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:ul)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf11_">
+							<xsl:call-template name="tbf:tbf17_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:ol)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf12_">
+							<xsl:call-template name="tbf:tbf18_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dl)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf13_">
+							<xsl:call-template name="tbf:tbf19_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:pre)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf14_">
+							<xsl:call-template name="tbf:tbf20_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:hr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf15_">
+							<xsl:call-template name="tbf:tbf21_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:blockquote)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf16_">
+							<xsl:call-template name="tbf:tbf22_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:address)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf17_">
+							<xsl:call-template name="tbf:tbf23_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:table)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf18_">
+							<xsl:call-template name="tbf:tbf24_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:a)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf19_">
+							<xsl:call-template name="tbf:tbf25_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:br)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf20_">
+							<xsl:call-template name="tbf:tbf26_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:span)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf21_">
+							<xsl:call-template name="tbf:tbf27_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:bdo)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf22_">
+							<xsl:call-template name="tbf:tbf28_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:map)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf23_">
+							<xsl:call-template name="tbf:tbf29_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:img)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf24_">
+							<xsl:call-template name="tbf:tbf30_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:tt)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf25_">
+							<xsl:call-template name="tbf:tbf31_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:i)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf26_">
+							<xsl:call-template name="tbf:tbf32_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:b)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf27_">
+							<xsl:call-template name="tbf:tbf33_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:big)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf28_">
+							<xsl:call-template name="tbf:tbf34_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:small)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf29_">
+							<xsl:call-template name="tbf:tbf35_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:em)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf30_">
+							<xsl:call-template name="tbf:tbf36_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:strong)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf31_">
+							<xsl:call-template name="tbf:tbf37_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:dfn)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf32_">
+							<xsl:call-template name="tbf:tbf38_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:code)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf33_">
+							<xsl:call-template name="tbf:tbf39_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:q)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf34_">
+							<xsl:call-template name="tbf:tbf40_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:samp)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf35_">
+							<xsl:call-template name="tbf:tbf41_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:kbd)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf36_">
+							<xsl:call-template name="tbf:tbf42_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:var)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf37_">
+							<xsl:call-template name="tbf:tbf43_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:cite)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf38_">
+							<xsl:call-template name="tbf:tbf44_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:abbr)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf39_">
+							<xsl:call-template name="tbf:tbf45_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:acronym)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf40_">
+							<xsl:call-template name="tbf:tbf46_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sub)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf41_">
+							<xsl:call-template name="tbf:tbf47_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
 					</xsl:if>
 					<xsl:if test="fn:boolean(self::xhtml:sup)">
 						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
-							<xsl:call-template name="tbf:tbf42_">
+							<xsl:call-template name="tbf:tbf48_">
 								<xsl:with-param name="input" select="." as="node()"/>
 							</xsl:call-template>
 						</xsl:element>
@@ -9102,13 +9387,77 @@ http://www.altova.com/mapforce
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-	<xsl:template name="user:createManufacturedItem">
-		<xsl:param name="ManufacturedProduct" select="()"/>
-		<ManufacturedItemDefinition xmlns="http://hl7.org/fhir">
-			<status>
-				<xsl:attribute name="value" namespace="" select="'active'"/>
-			</status>
-			<xsl:for-each select="$ManufacturedProduct/ns1:manufacturedProduct/ns1:formCode">
+	<xsl:template name="user:createEstablishmentOrganization">
+		<xsl:param name="EstablishmentEntity" select="()"/>
+		<xsl:variable name="var1_assignedOrganization" as="node()*" select="$EstablishmentEntity/ns1:assignedOrganization"/>
+		<Organization xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:for-each select="$var1_assignedOrganization/ns1:id/@extension">
+					<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat('Establishment', '-'), fn:string(.))"/>
+				</xsl:for-each>
+			</id>
+			<extension>
+				<xsl:attribute name="url" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/StructureDefinition/establishmentRegistrant'))"/>
+				<valueReference>
+					<reference>
+						<xsl:attribute name="value" namespace="" select="'Organization/EstablishmentRegistrant'"/>
+					</reference>
+				</valueReference>
+			</extension>
+			<xsl:for-each select="$var1_assignedOrganization/ns1:id">
+				<identifier>
+					<system>
+						<xsl:for-each select="@root">
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
+						</xsl:for-each>
+					</system>
+					<value>
+						<xsl:for-each select="@extension">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<type>
+				<coding>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+					</system>
+					<code>
+						<xsl:attribute name="value" namespace="" select="'Establishment'"/>
+					</code>
+				</coding>
+			</type>
+			<name>
+				<xsl:for-each select="($var1_assignedOrganization/ns1:name/node())[fn:boolean(self::text())]">
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
+			</name>
+		</Organization>
+	</xsl:template>
+	<xsl:template name="user:createProduct">
+		<xsl:param name="SubjectProduct" select="()"/>
+		<xsl:param name="EstablishmentEntity" select="()"/>
+		<xsl:variable name="var13_manufacturedProduct" as="node()*" select="$SubjectProduct/ns1:manufacturedProduct"/>
+		<MedicinalProductDefinition xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:for-each select="$var13_manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
+			</id>
+			<xsl:for-each select="$var13_manufacturedProduct/ns1:manufacturedProduct/ns1:code">
+				<identifier>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
+					</system>
+					<value>
+						<xsl:for-each select="@code">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<xsl:for-each select="$var13_manufacturedProduct/ns1:consumedIn/ns1:substanceAdministration/ns1:routeCode">
 				<xsl:variable name="var1_resultof_convertCode" as="node()?">
 					<xsl:call-template name="user:convertCode">
 						<xsl:with-param name="SimpleCD" as="node()">
@@ -9119,166 +9468,363 @@ http://www.altova.com/mapforce
 					</xsl:call-template>
 				</xsl:variable>
 				<xsl:for-each select="$var1_resultof_convertCode">
-					<manufacturedDoseForm>
+					<route>
 						<xsl:sequence select="(./@node(), ./node())"/>
-					</manufacturedDoseForm>
+					</route>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$ManufacturedProduct/ns1:subjectOf/ns1:characteristic">
-				<xsl:variable name="var15_value" as="node()*" select="ns1:value"/>
-				<property>
-					<xsl:for-each select="ns1:code">
-						<xsl:variable name="var2_resultof_convertCode" as="node()?">
-							<xsl:call-template name="user:convertCode">
-								<xsl:with-param name="SimpleCD" as="node()">
-									<Simple-CD xmlns="urn:hl7-org:v3">
-										<xsl:sequence select="(./@node(), ./node())"/>
-									</Simple-CD>
-								</xsl:with-param>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:for-each select="$var2_resultof_convertCode">
-							<type>
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</type>
-						</xsl:for-each>
-					</xsl:for-each>
-					<xsl:variable name="var4_resultof_filter" as="node()*">
-						<xsl:for-each select="$var15_value">
-							<xsl:variable name="var3_current" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var3_current) = xs:QName('ns1:CV'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var4_resultof_filter">
-						<xsl:variable name="var5_resultof_convertCode" as="node()?">
-							<xsl:call-template name="user:convertCode">
-								<xsl:with-param name="SimpleCD" as="node()">
-									<Simple-CD xmlns="urn:hl7-org:v3">
-										<xsl:for-each select="@code">
-											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@codeSystem">
-											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@displayName">
-											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</Simple-CD>
-								</xsl:with-param>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:for-each select="$var5_resultof_convertCode">
-							<valueCodeableConcept>
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</valueCodeableConcept>
-						</xsl:for-each>
-					</xsl:for-each>
-					<xsl:variable name="var7_resultof_filter" as="node()*">
-						<xsl:for-each select="$var15_value">
-							<xsl:variable name="var6_current" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var6_current) = xs:QName('ns1:ST'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var7_resultof_filter">
-						<valueCodeableConcept>
-							<text>
-								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+			<xsl:for-each select="$var13_manufacturedProduct/ns1:subjectOf/ns1:policy/ns1:code">
+				<xsl:variable name="var2_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:call-template name="tbf:tbf7_Simple-CD">
+									<xsl:with-param name="input" select="." as="node()"/>
+								</xsl:call-template>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var2_resultof_convertCode">
+					<specialMeasures>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</specialMeasures>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var13_manufacturedProduct/ns1:subjectOf/ns1:marketingAct">
+				<marketingStatus>
+					<status>
+						<xsl:for-each select="ns1:statusCode">
+							<coding>
+								<system>
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-splMarketingStatuses'))"/>
+								</system>
+								<xsl:for-each select="@code">
+									<code>
+										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+									</code>
 								</xsl:for-each>
-							</text>
-						</valueCodeableConcept>
+							</coding>
+						</xsl:for-each>
+					</status>
+					<xsl:for-each select="ns1:effectiveTime">
+						<dateRange>
+							<xsl:for-each select="ns1:low">
+								<xsl:variable name="var3_resultof_convertTS" as="xs:string?">
+									<xsl:call-template name="user:convertTS">
+										<xsl:with-param name="SimpleTS" as="node()">
+											<Simple-TS xmlns="urn:hl7-org:v3">
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+											</Simple-TS>
+										</xsl:with-param>
+										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+									</xsl:call-template>
+								</xsl:variable>
+								<start>
+									<xsl:for-each select="$var3_resultof_convertTS">
+										<xsl:attribute name="value" namespace="" select="."/>
+									</xsl:for-each>
+								</start>
+							</xsl:for-each>
+							<xsl:for-each select="ns1:high">
+								<xsl:variable name="var4_resultof_convertTS" as="xs:string?">
+									<xsl:call-template name="user:convertTS">
+										<xsl:with-param name="SimpleTS" as="node()">
+											<Simple-TS xmlns="urn:hl7-org:v3">
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+											</Simple-TS>
+										</xsl:with-param>
+										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+									</xsl:call-template>
+								</xsl:variable>
+								<end>
+									<xsl:for-each select="$var4_resultof_convertTS">
+										<xsl:attribute name="value" namespace="" select="."/>
+									</xsl:for-each>
+								</end>
+							</xsl:for-each>
+						</dateRange>
 					</xsl:for-each>
-					<xsl:variable name="var9_resultof_filter" as="node()*">
-						<xsl:for-each select="$var15_value">
-							<xsl:variable name="var8_current" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var8_current) = xs:QName('ns1:CE'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
+				</marketingStatus>
+			</xsl:for-each>
+			<xsl:for-each select="$var13_manufacturedProduct/ns1:manufacturedProduct/ns1:name">
+				<name>
+					<xsl:variable name="var5_current_of_filter" as="xs:string*">
+						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+							<xsl:sequence select="fn:string(.)"/>
 						</xsl:for-each>
 					</xsl:variable>
-					<xsl:for-each select="$var9_resultof_filter">
-						<xsl:variable name="var10_resultof_convertCode" as="node()?">
-							<xsl:call-template name="user:convertCode">
-								<xsl:with-param name="SimpleCD" as="node()">
-									<Simple-CD xmlns="urn:hl7-org:v3">
-										<xsl:for-each select="@code">
-											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@codeSystem">
-											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-										<xsl:for-each select="@displayName">
-											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</Simple-CD>
-								</xsl:with-param>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:for-each select="$var10_resultof_convertCode">
-							<valueCodeableConcept>
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</valueCodeableConcept>
-						</xsl:for-each>
-					</xsl:for-each>
-					<xsl:variable name="var12_resultof_filter" as="node()*">
-						<xsl:for-each select="$var15_value">
-							<xsl:variable name="var11_current" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var11_current) = xs:QName('ns1:PQ'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var12_resultof_filter">
-						<valueQuantity>
-							<value>
-								<xsl:for-each select="@value">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</value>
+					<productName>
+						<xsl:attribute name="value" namespace="" select="fn:normalize-space(fn:string-join($var5_current_of_filter, ''))"/>
+					</productName>
+					<type>
+						<coding>
 							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
 							</system>
 							<code>
-								<xsl:for-each select="@unit">
-									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
+								<xsl:attribute name="value" namespace="" select="'PROPRIETARY'"/>
 							</code>
-						</valueQuantity>
+						</coding>
+					</type>
+					<xsl:for-each select="(./ns1:suffix/node())[fn:boolean(self::text())]">
+						<namePart>
+							<part>
+								<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+							</part>
+							<type>
+								<coding>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2'))"/>
+									</system>
+									<code>
+										<xsl:attribute name="value" namespace="" select="'SFX'"/>
+									</code>
+								</coding>
+							</type>
+						</namePart>
 					</xsl:for-each>
-					<xsl:variable name="var14_resultof_filter" as="node()*">
-						<xsl:for-each select="$var15_value">
-							<xsl:variable name="var13_current" as="node()" select="."/>
-							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var13_current) = xs:QName('ns1:INT'))])">
-								<xsl:sequence select="."/>
-							</xsl:if>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:for-each select="$var14_resultof_filter">
-						<valueQuantity>
-							<value>
-								<xsl:for-each select="@value">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:integer(fn:string(.)))"/>
-								</xsl:for-each>
-							</value>
-						</valueQuantity>
-					</xsl:for-each>
-				</property>
+				</name>
 			</xsl:for-each>
-		</ManufacturedItemDefinition>
+			<xsl:for-each select="$var13_manufacturedProduct/ns1:manufacturedProduct/ns1:asEntityWithGeneric/ns1:genericMedicine/ns1:name">
+				<name>
+					<productName>
+						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</productName>
+					<type>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'NONPROPRIETARY'"/>
+							</code>
+						</coding>
+					</type>
+				</name>
+			</xsl:for-each>
+			<xsl:for-each select="$var13_manufacturedProduct/ns1:manufacturedProduct/ns1:asEquivalentEntity">
+				<crossReference>
+					<product>
+						<concept>
+							<xsl:for-each select="ns1:definingMaterialKind">
+								<coding>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
+									</system>
+									<code>
+										<xsl:for-each select="ns1:code/@code">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</code>
+								</coding>
+							</xsl:for-each>
+						</concept>
+					</product>
+					<type>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'C64637'"/>
+							</code>
+						</coding>
+					</type>
+				</crossReference>
+			</xsl:for-each>
+			<xsl:for-each select="$EstablishmentEntity">
+				<xsl:variable name="var10_cur" as="node()" select="."/>
+				<xsl:variable name="var8_resultof_filter" as="node()*">
+					<xsl:for-each select="ns1:performance">
+						<xsl:variable name="var7_map_of_actDefinition" as="xs:boolean*">
+							<xsl:for-each select="ns1:actDefinition/ns1:product/ns1:manufacturedProduct/ns1:manufacturedMaterialKind/ns1:code/@code">
+								<xsl:variable name="var6_cur" as="node()" select="."/>
+								<xsl:for-each select="$var13_manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
+									<xsl:sequence select="(fn:string($var6_cur) = fn:string(.))"/>
+								</xsl:for-each>
+							</xsl:for-each>
+						</xsl:variable>
+						<xsl:if test="fn:exists(($var7_map_of_actDefinition)[.])">
+							<xsl:sequence select="."/>
+						</xsl:if>
+					</xsl:for-each>
+				</xsl:variable>
+				<xsl:for-each select="$var8_resultof_filter">
+					<operation>
+						<type>
+							<xsl:for-each select="ns1:actDefinition/ns1:code">
+								<xsl:variable name="var9_resultof_convertCode" as="node()?">
+									<xsl:call-template name="user:convertCode">
+										<xsl:with-param name="SimpleCD" as="node()">
+											<Simple-CD xmlns="urn:hl7-org:v3">
+												<xsl:call-template name="tbf:tbf7_Simple-CD">
+													<xsl:with-param name="input" select="." as="node()"/>
+												</xsl:call-template>
+											</Simple-CD>
+										</xsl:with-param>
+									</xsl:call-template>
+								</xsl:variable>
+								<xsl:for-each select="$var9_resultof_convertCode">
+									<concept>
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</concept>
+								</xsl:for-each>
+							</xsl:for-each>
+						</type>
+						<xsl:for-each select="$var10_cur/ns1:assignedOrganization">
+							<organization>
+								<reference>
+									<xsl:for-each select="ns1:id/@extension">
+										<xsl:attribute name="value" namespace="" select="fn:concat('Organization/Establishment-', fn:string(.))"/>
+									</xsl:for-each>
+								</reference>
+							</organization>
+						</xsl:for-each>
+					</operation>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$EstablishmentEntity">
+				<xsl:variable name="var12_cur" as="node()" select="."/>
+				<xsl:for-each select="(./ns1:performance)[fn:not(fn:exists((./ns1:actDefinition)[fn:exists(ns1:product)]))]">
+					<operation>
+						<type>
+							<xsl:for-each select="ns1:actDefinition/ns1:code">
+								<xsl:variable name="var11_resultof_convertCode" as="node()?">
+									<xsl:call-template name="user:convertCode">
+										<xsl:with-param name="SimpleCD" as="node()">
+											<Simple-CD xmlns="urn:hl7-org:v3">
+												<xsl:call-template name="tbf:tbf7_Simple-CD">
+													<xsl:with-param name="input" select="." as="node()"/>
+												</xsl:call-template>
+											</Simple-CD>
+										</xsl:with-param>
+									</xsl:call-template>
+								</xsl:variable>
+								<xsl:for-each select="$var11_resultof_convertCode">
+									<concept>
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</concept>
+								</xsl:for-each>
+							</xsl:for-each>
+						</type>
+						<xsl:for-each select="$var12_cur/ns1:assignedOrganization">
+							<organization>
+								<reference>
+									<xsl:for-each select="ns1:id/@extension">
+										<xsl:attribute name="value" namespace="" select="fn:concat('Organization/Establishment-', fn:string(.))"/>
+									</xsl:for-each>
+								</reference>
+							</organization>
+						</xsl:for-each>
+					</operation>
+				</xsl:for-each>
+			</xsl:for-each>
+		</MedicinalProductDefinition>
 	</xsl:template>
-	<xsl:template name="user:insertStringExtension">
-		<xsl:param name="url" select="()"/>
-		<xsl:param name="value" select="()"/>
-		<Extension xmlns="http://hl7.org/fhir">
-			<xsl:attribute name="url" namespace="" select="xs:string(xs:anyURI($url))"/>
-			<valueString>
-				<xsl:attribute name="value" namespace="" select="$value"/>
-			</valueString>
-		</Extension>
+	<xsl:template name="user:createPackagedProduct">
+		<xsl:param name="Content" select="()"/>
+		<xsl:param name="position" select="()"/>
+		<xsl:param name="productId" select="()"/>
+		<xsl:param name="Part" select="()"/>
+		<PackagedProductDefinition xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat($productId, '-'), $position)"/>
+			</id>
+			<packageFor>
+				<reference>
+					<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', $productId)"/>
+				</reference>
+			</packageFor>
+			<xsl:for-each select="$Content/ns1:subjectOf/ns1:marketingAct">
+				<marketingStatus>
+					<xsl:for-each select="ns1:statusCode">
+						<status>
+							<coding>
+								<system>
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-splMarketingStatuses'))"/>
+								</system>
+								<code>
+									<xsl:for-each select="@code">
+										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+									</xsl:for-each>
+								</code>
+							</coding>
+						</status>
+					</xsl:for-each>
+					<xsl:for-each select="ns1:effectiveTime">
+						<dateRange>
+							<xsl:for-each select="ns1:low">
+								<xsl:variable name="var1_resultof_convertTS" as="xs:string?">
+									<xsl:call-template name="user:convertTS">
+										<xsl:with-param name="SimpleTS" as="node()">
+											<Simple-TS xmlns="urn:hl7-org:v3">
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+											</Simple-TS>
+										</xsl:with-param>
+										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+									</xsl:call-template>
+								</xsl:variable>
+								<start>
+									<xsl:for-each select="$var1_resultof_convertTS">
+										<xsl:attribute name="value" namespace="" select="."/>
+									</xsl:for-each>
+								</start>
+							</xsl:for-each>
+							<xsl:for-each select="ns1:high">
+								<xsl:variable name="var2_resultof_convertTS" as="xs:string?">
+									<xsl:call-template name="user:convertTS">
+										<xsl:with-param name="SimpleTS" as="node()">
+											<Simple-TS xmlns="urn:hl7-org:v3">
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+											</Simple-TS>
+										</xsl:with-param>
+										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+									</xsl:call-template>
+								</xsl:variable>
+								<end>
+									<xsl:for-each select="$var2_resultof_convertTS">
+										<xsl:attribute name="value" namespace="" select="."/>
+									</xsl:for-each>
+								</end>
+							</xsl:for-each>
+						</dateRange>
+					</xsl:for-each>
+				</marketingStatus>
+			</xsl:for-each>
+			<xsl:variable name="var3_resultof_createOuterPackaging" as="node()?">
+				<xsl:call-template name="user:createOuterPackaging">
+					<xsl:with-param name="Content1" as="node()">
+						<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+							<xsl:sequence select="($Content/@node(), $Content/node())"/>
+						</DrugLabelSubmission.Content>
+					</xsl:with-param>
+					<xsl:with-param name="productId" select="$productId" as="xs:string"/>
+					<xsl:with-param name="Part" as="node()*">
+						<xsl:for-each select="$Part">
+							<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</DrugLabelSubmission.Part>
+						</xsl:for-each>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:for-each select="$var3_resultof_createOuterPackaging">
+				<package>
+					<xsl:sequence select="(./@node(), ./node())"/>
+				</package>
+			</xsl:for-each>
+		</PackagedProductDefinition>
 	</xsl:template>
 	<xsl:template name="user:insertDateTimeExtension">
 		<xsl:param name="url" select="()"/>
@@ -9290,9 +9836,21 @@ http://www.altova.com/mapforce
 			</valueDateTime>
 		</Extension>
 	</xsl:template>
+	<xsl:template name="user:convertTitleToString">
+		<xsl:param name="Title" select="()"/>
+		<xsl:variable name="var1_current_of_filter" as="xs:string*">
+			<xsl:for-each select="($Title/node())[fn:boolean(self::text())]">
+				<xsl:sequence select="fn:string(.)"/>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:sequence select="fn:normalize-space(fn:string-join($var1_current_of_filter, fn:codepoints-to-string(xs:integer('13'))))"/>
+	</xsl:template>
 	<xsl:template name="user:createSection">
 		<xsl:param name="Section" select="()"/>
-		<xsl:variable name="var7_ID" as="node()?" select="$Section/@ID"/>
+		<xsl:variable name="var9_component" as="node()*" select="$Section/ns1:component"/>
+		<xsl:variable name="var10_subject" as="node()*" select="$Section/ns1:subject"/>
+		<xsl:variable name="var11_ID" as="node()?" select="$Section/@ID"/>
+		<xsl:variable name="var12_div" as="node()*" select="$Section/xhtml:div"/>
 		<Composition.Section xmlns="http://hl7.org/fhir">
 			<xsl:for-each select="$Section/ns1:id/@root">
 				<xsl:attribute name="id" namespace="" select="fn:string(.)"/>
@@ -9324,8 +9882,8 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var7_ID">
-				<xsl:for-each select="$var7_ID">
+			<xsl:for-each select="$var11_ID">
+				<xsl:for-each select="$var11_ID">
 					<xsl:variable name="var3_resultof_insertStringExtension" as="node()?">
 						<xsl:call-template name="user:insertStringExtension">
 							<xsl:with-param name="url" select="'http://hl7.org/fhir/us/spl/StructureDefinition/sectionLinkId'" as="xs:string"/>
@@ -9340,23 +9898,27 @@ http://www.altova.com/mapforce
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="$Section/ns1:title">
-				<xsl:variable name="var4_resultof_convertTitleToString" as="xs:string?">
-					<xsl:call-template name="user:convertTitleToString">
-						<xsl:with-param name="Title" as="node()">
-							<StrucDoc.Title xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</StrucDoc.Title>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<title>
-					<xsl:for-each select="$var4_resultof_convertTitleToString">
-						<xsl:attribute name="value" namespace="" select="."/>
-					</xsl:for-each>
-				</title>
+				<xsl:variable name="var6_cur" as="node()" select="."/>
+				<xsl:variable name="var5_resultof_select_children" as="node()*" select="node()"/>
+				<xsl:for-each select="($var5_resultof_select_children)[fn:boolean(self::text())]">
+					<xsl:variable name="var4_resultof_convertTitleToString" as="xs:string?">
+						<xsl:call-template name="user:convertTitleToString">
+							<xsl:with-param name="Title" as="node()">
+								<StrucDoc.Title xmlns="urn:hl7-org:v3">
+									<xsl:sequence select="($var6_cur/@node(), $var5_resultof_select_children)"/>
+								</StrucDoc.Title>
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:variable>
+					<title>
+						<xsl:for-each select="$var4_resultof_convertTitleToString">
+							<xsl:attribute name="value" namespace="" select="."/>
+						</xsl:for-each>
+					</title>
+				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="$Section/ns1:code">
-				<xsl:variable name="var5_resultof_convertCode" as="node()?">
+				<xsl:variable name="var7_resultof_convertCode" as="node()?">
 					<xsl:call-template name="user:convertCode">
 						<xsl:with-param name="SimpleCD" as="node()">
 							<Simple-CD xmlns="urn:hl7-org:v3">
@@ -9365,25 +9927,33 @@ http://www.altova.com/mapforce
 						</xsl:with-param>
 					</xsl:call-template>
 				</xsl:variable>
-				<xsl:for-each select="$var5_resultof_convertCode">
+				<xsl:for-each select="$var7_resultof_convertCode">
 					<code>
 						<xsl:sequence select="(./@node(), ./node())"/>
 					</code>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$Section/xhtml:div">
+			<xsl:for-each select="$var12_div">
 				<text>
 					<status>
 						<xsl:attribute name="value" namespace="" select="'additional'"/>
 					</status>
 					<xhtml:div>
-						<xsl:call-template name="tbf:tbf2_">
+						<xsl:call-template name="tbf:tbf8_">
 							<xsl:with-param name="input" select="." as="node()"/>
 						</xsl:call-template>
 					</xhtml:div>
 				</text>
 			</xsl:for-each>
-			<xsl:for-each select="$Section/ns1:subject">
+			<xsl:if test="fn:not(fn:exists(((fn:exists($var12_div), fn:exists($var10_subject), fn:exists($var9_component)))[.]))">
+				<text>
+					<status>
+						<xsl:attribute name="value" namespace="" select="'additional'"/>
+					</status>
+					<xhtml:div></xhtml:div>
+				</text>
+			</xsl:if>
+			<xsl:for-each select="$var10_subject">
 				<entry>
 					<reference>
 						<xsl:for-each select="ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
@@ -9392,8 +9962,8 @@ http://www.altova.com/mapforce
 					</reference>
 				</entry>
 			</xsl:for-each>
-			<xsl:for-each select="$Section/ns1:component/ns1:section">
-				<xsl:variable name="var6_resultof_createSection" as="node()?">
+			<xsl:for-each select="$var9_component/ns1:section">
+				<xsl:variable name="var8_resultof_createSection" as="node()?">
 					<xsl:call-template name="user:createSection">
 						<xsl:with-param name="Section" as="node()">
 							<DrugLabelSubmission.Section xmlns="urn:hl7-org:v3">
@@ -9402,7 +9972,7 @@ http://www.altova.com/mapforce
 						</xsl:with-param>
 					</xsl:call-template>
 				</xsl:variable>
-				<xsl:for-each select="$var6_resultof_createSection">
+				<xsl:for-each select="$var8_resultof_createSection">
 					<section>
 						<xsl:sequence select="(./@node(), ./node())"/>
 					</section>
@@ -9410,18 +9980,24 @@ http://www.altova.com/mapforce
 			</xsl:for-each>
 		</Composition.Section>
 	</xsl:template>
-	<xsl:template name="user:convertTitleToString">
-		<xsl:param name="Title" select="()"/>
-		<xsl:variable name="var1_current_of_filter" as="xs:string*">
-			<xsl:for-each select="($Title/node())[fn:boolean(self::text())]">
-				<xsl:sequence select="fn:string(.)"/>
-			</xsl:for-each>
-		</xsl:variable>
-		<xsl:sequence select="fn:string-join($var1_current_of_filter, fn:codepoints-to-string(xs:integer('13')))"/>
+	<xsl:template name="user:insertStringExtension">
+		<xsl:param name="url" select="()"/>
+		<xsl:param name="value" select="()"/>
+		<Extension xmlns="http://hl7.org/fhir">
+			<xsl:attribute name="url" namespace="" select="xs:string(xs:anyURI($url))"/>
+			<valueString>
+				<xsl:attribute name="value" namespace="" select="$value"/>
+			</valueString>
+		</Extension>
 	</xsl:template>
 	<xsl:template name="user:createComposition">
 		<xsl:param name="document" select="()"/>
+		<xsl:variable name="var11_title" as="node()*" select="$document/ns1:title"/>
+		<xsl:variable name="var10_resultof_exists" as="xs:boolean" select="fn:exists($var11_title)"/>
 		<Composition xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:attribute name="value" namespace="" select="'ProductComposition'"/>
+			</id>
 			<xsl:for-each select="$document/ns1:versionNumber/@value">
 				<xsl:variable name="var1_resultof_insertStringExtension" as="node()?">
 					<xsl:call-template name="user:insertStringExtension">
@@ -9490,24 +10066,60 @@ http://www.altova.com/mapforce
 					</reference>
 				</author>
 			</xsl:for-each>
-			<xsl:for-each select="$document/ns1:title">
-				<xsl:variable name="var4_resultof_convertTitleToString" as="xs:string?">
-					<xsl:call-template name="user:convertTitleToString">
-						<xsl:with-param name="Title" as="node()">
-							<StrucDoc.Title xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</StrucDoc.Title>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<title>
-					<xsl:for-each select="$var4_resultof_convertTitleToString">
-						<xsl:attribute name="value" namespace="" select="."/>
-					</xsl:for-each>
-				</title>
-			</xsl:for-each>
+			<xsl:variable name="var8_test_exists" as="xs:boolean">
+				<xsl:choose>
+					<xsl:when test="$var10_resultof_exists">
+						<xsl:variable name="var5_resultof_filter" as="node()*">
+							<xsl:for-each select="$var11_title">
+								<xsl:variable name="var4_resultof_convertTitleToString" as="xs:string?">
+									<xsl:call-template name="user:convertTitleToString">
+										<xsl:with-param name="Title" as="node()">
+											<StrucDoc.Title xmlns="urn:hl7-org:v3">
+												<xsl:sequence select="(./@node(), ./node())"/>
+											</StrucDoc.Title>
+										</xsl:with-param>
+									</xsl:call-template>
+								</xsl:variable>
+								<xsl:if test="fn:exists($var4_resultof_convertTitleToString)">
+									<xsl:sequence select="."/>
+								</xsl:if>
+							</xsl:for-each>
+						</xsl:variable>
+						<xsl:sequence select="fn:exists($var5_resultof_filter)"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:sequence select="fn:true()"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<title>
+				<xsl:if test="$var8_test_exists">
+					<xsl:variable name="var7_test_exists" as="xs:string*">
+						<xsl:choose>
+							<xsl:when test="$var10_resultof_exists">
+								<xsl:for-each select="$var11_title">
+									<xsl:variable name="var6_resultof_convertTitleToString" as="xs:string?">
+										<xsl:call-template name="user:convertTitleToString">
+											<xsl:with-param name="Title" as="node()">
+												<StrucDoc.Title xmlns="urn:hl7-org:v3">
+													<xsl:sequence select="(./@node(), ./node())"/>
+												</StrucDoc.Title>
+											</xsl:with-param>
+										</xsl:call-template>
+									</xsl:variable>
+									<xsl:sequence select="$var6_resultof_convertTitleToString"/>
+								</xsl:for-each>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:sequence select="'DEFAULT DOCUMENT TITLE'"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:variable>
+					<xsl:attribute name="value" namespace="" select="xs:string(fn:string-join(for $x in $var7_test_exists return xs:string($x), ' '))"/>
+				</xsl:if>
+			</title>
 			<xsl:for-each select="$document/ns1:component/ns1:structuredBody/ns1:component/ns1:section">
-				<xsl:variable name="var5_resultof_createSection" as="node()?">
+				<xsl:variable name="var9_resultof_createSection" as="node()?">
 					<xsl:call-template name="user:createSection">
 						<xsl:with-param name="Section" as="node()">
 							<DrugLabelSubmission.Section xmlns="urn:hl7-org:v3">
@@ -9516,7 +10128,7 @@ http://www.altova.com/mapforce
 						</xsl:with-param>
 					</xsl:call-template>
 				</xsl:variable>
-				<xsl:for-each select="$var5_resultof_createSection">
+				<xsl:for-each select="$var9_resultof_createSection">
 					<section>
 						<xsl:sequence select="(./@node(), ./node())"/>
 					</section>
@@ -9524,59 +10136,24 @@ http://www.altova.com/mapforce
 			</xsl:for-each>
 		</Composition>
 	</xsl:template>
-	<xsl:template name="user:createEstablishmentOrganization">
-		<xsl:param name="EstablishmentEntity" select="()"/>
-		<xsl:variable name="var1_assignedOrganization" as="node()*" select="$EstablishmentEntity/ns1:assignedOrganization"/>
-		<Organization xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var1_assignedOrganization/ns1:id">
-				<identifier>
-					<system>
-						<xsl:for-each select="@root">
-							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
-						</xsl:for-each>
-					</system>
-					<value>
-						<xsl:for-each select="@extension">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</value>
-				</identifier>
-			</xsl:for-each>
-			<type>
-				<coding>
-					<system>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
-					</system>
-					<code>
-						<xsl:attribute name="value" namespace="" select="'Establishment'"/>
-					</code>
-				</coding>
-			</type>
-			<name>
-				<xsl:for-each select="($var1_assignedOrganization/ns1:name/node())[fn:boolean(self::text())]">
-					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-				</xsl:for-each>
-			</name>
-		</Organization>
-	</xsl:template>
-	<xsl:template name="user:createProduct">
-		<xsl:param name="SubjectProduct" select="()"/>
-		<xsl:param name="EstablishmentEntity" select="()"/>
-		<xsl:variable name="var11_manufacturedProduct" as="node()*" select="$SubjectProduct/ns1:manufacturedProduct"/>
-		<MedicinalProductDefinition xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:code">
+	<xsl:template name="user:createOuterPackaging">
+		<xsl:param name="Content1" select="()"/>
+		<xsl:param name="productId" select="()"/>
+		<xsl:param name="Part" select="()"/>
+		<xsl:variable name="var13_containerPackagedProduct" as="node()*" select="$Content1/ns1:containerPackagedProduct"/>
+		<xsl:variable name="var12_resultof_any" as="xs:boolean" select="fn:exists(($var13_containerPackagedProduct)[fn:exists(ns1:asContent)])"/>
+		<PackagedProductDefinition.Package xmlns="http://hl7.org/fhir">
+			<xsl:for-each select="$var13_containerPackagedProduct/ns1:code/@code">
 				<identifier>
 					<system>
 						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
 					</system>
 					<value>
-						<xsl:for-each select="@code">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
+						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 					</value>
 				</identifier>
 			</xsl:for-each>
-			<xsl:for-each select="$var11_manufacturedProduct/ns1:consumedIn/ns1:substanceAdministration/ns1:routeCode">
+			<xsl:for-each select="$var13_containerPackagedProduct/ns1:formCode">
 				<xsl:variable name="var1_resultof_convertCode" as="node()?">
 					<xsl:call-template name="user:convertCode">
 						<xsl:with-param name="SimpleCD" as="node()">
@@ -9587,335 +10164,259 @@ http://www.altova.com/mapforce
 					</xsl:call-template>
 				</xsl:variable>
 				<xsl:for-each select="$var1_resultof_convertCode">
-					<route>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</route>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$var11_manufacturedProduct/ns1:subjectOf/ns1:policy/ns1:code">
-				<xsl:variable name="var2_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:call-template name="tbf:tbf3_Simple-CD">
-									<xsl:with-param name="input" select="." as="node()"/>
-								</xsl:call-template>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var2_resultof_convertCode">
-					<specialMeasures>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</specialMeasures>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$var11_manufacturedProduct/ns1:subjectOf/ns1:marketingAct">
-				<xsl:variable name="var5_effectiveTime" as="node()*" select="ns1:effectiveTime"/>
-				<marketingStatus>
-					<status>
-						<xsl:for-each select="ns1:statusCode">
-							<coding>
-								<system>
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/publication-status'))"/>
-								</system>
-								<xsl:for-each select="@code">
-									<code>
-										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-									</code>
-								</xsl:for-each>
-							</coding>
-						</xsl:for-each>
-					</status>
-					<dateRange>
-						<xsl:for-each select="$var5_effectiveTime/ns1:low">
-							<xsl:variable name="var3_resultof_convertTS" as="xs:string?">
-								<xsl:call-template name="user:convertTS">
-									<xsl:with-param name="SimpleTS" as="node()">
-										<Simple-TS xmlns="urn:hl7-org:v3">
-											<xsl:for-each select="@value">
-												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-											</xsl:for-each>
-										</Simple-TS>
-									</xsl:with-param>
-									<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-								</xsl:call-template>
-							</xsl:variable>
-							<start>
-								<xsl:for-each select="$var3_resultof_convertTS">
-									<xsl:attribute name="value" namespace="" select="."/>
-								</xsl:for-each>
-							</start>
-						</xsl:for-each>
-						<xsl:for-each select="$var5_effectiveTime/ns1:high">
-							<xsl:variable name="var4_resultof_convertTS" as="xs:string?">
-								<xsl:call-template name="user:convertTS">
-									<xsl:with-param name="SimpleTS" as="node()">
-										<Simple-TS xmlns="urn:hl7-org:v3">
-											<xsl:for-each select="@value">
-												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-											</xsl:for-each>
-										</Simple-TS>
-									</xsl:with-param>
-									<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-								</xsl:call-template>
-							</xsl:variable>
-							<end>
-								<xsl:for-each select="$var4_resultof_convertTS">
-									<xsl:attribute name="value" namespace="" select="."/>
-								</xsl:for-each>
-							</end>
-						</xsl:for-each>
-					</dateRange>
-				</marketingStatus>
-			</xsl:for-each>
-			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:name">
-				<name>
-					<productName>
-						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</productName>
 					<type>
-						<coding>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
-							</system>
-							<code>
-								<xsl:attribute name="value" namespace="" select="'PROPRIETARY'"/>
-							</code>
-						</coding>
+						<xsl:sequence select="(./@node(), ./node())"/>
 					</type>
-					<xsl:for-each select="ns1:suffix">
-						<namePart>
-							<part>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$Content1/ns1:subjectOf/ns1:characteristic">
+				<property>
+					<xsl:for-each select="ns1:code">
+						<xsl:variable name="var2_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var2_resultof_convertCode">
+							<type>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</type>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:variable name="var4_resultof_filter" as="node()*">
+						<xsl:for-each select="ns1:value">
+							<xsl:variable name="var3_cur" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var3_cur) = xs:QName('ns1:CV'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var4_resultof_filter">
+						<xsl:variable name="var5_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:for-each select="@code">
+											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@codeSystem">
+											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@displayName">
+											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var5_resultof_convertCode">
+							<valueCodeableConcept>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</valueCodeableConcept>
+						</xsl:for-each>
+					</xsl:for-each>
+				</property>
+			</xsl:for-each>
+			<xsl:if test="fn:not($var12_resultof_any)">
+				<containedItem>
+					<item>
+						<reference>
+							<reference>
+								<xsl:attribute name="value" namespace="" select="fn:concat('ManufacturedItemDefinition/', $productId)"/>
+							</reference>
+						</reference>
+					</item>
+					<xsl:for-each select="$Content1/ns1:quantity/ns1:numerator">
+						<amount>
+							<value>
 								<xsl:for-each select="@value">
 									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 								</xsl:for-each>
-							</part>
-							<type>
-								<coding>
-									<system>
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2'))"/>
-									</system>
-									<code>
-										<xsl:attribute name="value" namespace="" select="'SFX'"/>
-									</code>
-								</coding>
-							</type>
-						</namePart>
-					</xsl:for-each>
-				</name>
-			</xsl:for-each>
-			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:asEntityWithGeneric/ns1:genericMedicine/ns1:name">
-				<name>
-					<productName>
-						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</productName>
-					<type>
-						<coding>
+							</value>
 							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
 							</system>
 							<code>
-								<xsl:attribute name="value" namespace="" select="'NONPROPRIETARY'"/>
+								<xsl:for-each select="@unit">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
 							</code>
-						</coding>
-					</type>
-				</name>
-			</xsl:for-each>
-			<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:asEquivalentEntity">
-				<crossReference>
-					<product>
-						<concept>
-							<xsl:for-each select="ns1:definingMaterialKind">
-								<coding>
-									<system>
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
-									</system>
-									<code>
-										<xsl:for-each select="ns1:code/@code">
-											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-										</xsl:for-each>
-									</code>
-								</coding>
-							</xsl:for-each>
-						</concept>
-					</product>
-					<type>
-						<coding>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'))"/>
-							</system>
-							<code>
-								<xsl:attribute name="value" namespace="" select="'C64637'"/>
-							</code>
-						</coding>
-					</type>
-				</crossReference>
-			</xsl:for-each>
-			<xsl:for-each select="$EstablishmentEntity">
-				<xsl:variable name="var10_cur" as="node()" select="."/>
-				<xsl:variable name="var8_resultof_filter" as="node()*">
-					<xsl:for-each select="ns1:performance">
-						<xsl:variable name="var7_map_of_actDefinition" as="xs:boolean*">
-							<xsl:for-each select="ns1:actDefinition/ns1:product/ns1:manufacturedProduct/ns1:manufacturedMaterialKind/ns1:code/@code">
-								<xsl:variable name="var6_cur" as="node()" select="."/>
-								<xsl:for-each select="$var11_manufacturedProduct/ns1:manufacturedProduct/ns1:code/@code">
-									<xsl:sequence select="(fn:string($var6_cur) = fn:string(.))"/>
-								</xsl:for-each>
-							</xsl:for-each>
-						</xsl:variable>
-						<xsl:if test="fn:exists(($var7_map_of_actDefinition)[.])">
-							<xsl:sequence select="."/>
-						</xsl:if>
+						</amount>
 					</xsl:for-each>
-				</xsl:variable>
-				<xsl:for-each select="$var8_resultof_filter">
-					<operation>
-						<type>
-							<xsl:for-each select="ns1:actDefinition/ns1:code">
-								<xsl:variable name="var9_resultof_convertCode" as="node()?">
-									<xsl:call-template name="user:convertCode">
-										<xsl:with-param name="SimpleCD" as="node()">
-											<Simple-CD xmlns="urn:hl7-org:v3">
-												<xsl:call-template name="tbf:tbf3_Simple-CD">
-													<xsl:with-param name="input" select="." as="node()"/>
-												</xsl:call-template>
-											</Simple-CD>
-										</xsl:with-param>
-									</xsl:call-template>
-								</xsl:variable>
-								<xsl:for-each select="$var9_resultof_convertCode">
-									<concept>
-										<xsl:sequence select="(./@node(), ./node())"/>
-									</concept>
-								</xsl:for-each>
-							</xsl:for-each>
-						</type>
-						<xsl:for-each select="$var10_cur/ns1:assignedOrganization">
-							<organization>
-								<reference>
-									<xsl:for-each select="ns1:id/@extension">
-										<xsl:attribute name="value" namespace="" select="fn:concat('Organization/Establishment-', fn:string(.))"/>
-									</xsl:for-each>
-								</reference>
-							</organization>
-						</xsl:for-each>
-					</operation>
-				</xsl:for-each>
-			</xsl:for-each>
-		</MedicinalProductDefinition>
-	</xsl:template>
-	<xsl:template name="user:createDocumentAuthor">
-		<xsl:param name="Labeler" select="()"/>
-		<xsl:variable name="var1_assignedEntity" as="node()*" select="$Labeler/ns1:assignedEntity"/>
-		<Organization xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var1_assignedEntity/ns1:representedOrganization/ns1:id">
-				<identifier>
-					<system>
-						<xsl:for-each select="@root">
-							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
-						</xsl:for-each>
-					</system>
-					<value>
-						<xsl:for-each select="@extension">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</value>
-				</identifier>
-			</xsl:for-each>
-			<type>
-				<coding>
-					<system>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
-					</system>
-					<code>
-						<xsl:attribute name="value" namespace="" select="'Labeler'"/>
-					</code>
-				</coding>
-			</type>
-			<name>
-				<xsl:for-each select="($var1_assignedEntity/ns1:representedOrganization/ns1:name/node())[fn:boolean(self::text())]">
-					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-				</xsl:for-each>
-			</name>
-		</Organization>
-	</xsl:template>
-	<xsl:template name="user:createOuterPackaging">
-		<xsl:param name="Content1" select="()"/>
-		<xsl:variable name="var3_containerPackagedProduct" as="node()*" select="$Content1/ns1:containerPackagedProduct"/>
-		<PackagedProductDefinition.Package xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var3_containerPackagedProduct/ns1:formCode">
-				<xsl:variable name="var1_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:for-each select="@code">
-									<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-								<xsl:for-each select="@codeSystem">
-									<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-								<xsl:for-each select="@displayName">
-									<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var1_resultof_convertCode">
-					<type>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</type>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$Content1/ns1:quantity">
-				<quantity>
-					<xsl:for-each select="ns1:numerator/@value">
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:integer(fn:string(.)))"/>
-					</xsl:for-each>
-				</quantity>
-			</xsl:for-each>
-			<xsl:for-each select="$var3_containerPackagedProduct/ns1:asContent">
-				<xsl:variable name="var2_resultof_createOuterPackaging" as="node()?">
+				</containedItem>
+			</xsl:if>
+			<xsl:for-each select="$var13_containerPackagedProduct/ns1:asContent">
+				<xsl:variable name="var6_resultof_createOuterPackaging" as="node()?">
 					<xsl:call-template name="user:createOuterPackaging">
 						<xsl:with-param name="Content1" as="node()">
-							<DrugLabelSubmission.Content1 xmlns="urn:hl7-org:v3">
-								<xsl:for-each select="@classCode">
-									<xsl:attribute name="classCode" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-								<xsl:for-each select="ns1:quantity">
-									<quantity>
-										<xsl:sequence select="(./@node(), ./node())"/>
-									</quantity>
-								</xsl:for-each>
-								<xsl:for-each select="ns1:containerPackagedProduct">
-									<containerPackagedProduct>
-										<xsl:sequence select="(./@node(), ./node())"/>
-									</containerPackagedProduct>
-								</xsl:for-each>
-							</DrugLabelSubmission.Content1>
+							<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</DrugLabelSubmission.Content>
+						</xsl:with-param>
+						<xsl:with-param name="productId" select="$productId" as="xs:string"/>
+						<xsl:with-param name="Part" as="node()*">
+							<xsl:for-each select="$Part">
+								<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
+									<xsl:sequence select="(./@node(), ./node())"/>
+								</DrugLabelSubmission.Part>
+							</xsl:for-each>
 						</xsl:with-param>
 					</xsl:call-template>
 				</xsl:variable>
-				<xsl:for-each select="$var2_resultof_createOuterPackaging">
+				<xsl:for-each select="$var6_resultof_createOuterPackaging">
 					<package>
-						<xsl:sequence select="(./@node(), ./node())"/>
+						<xsl:for-each select="@id">
+							<xsl:attribute name="id" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:extension">
+							<extension>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</extension>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:modifierExtension">
+							<modifierExtension>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</modifierExtension>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:identifier">
+							<identifier>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</identifier>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:type">
+							<type>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</type>
+						</xsl:for-each>
+						<xsl:for-each select="$Content1/ns1:quantity/ns1:numerator">
+							<quantity>
+								<xsl:for-each select="@value">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:integer(fn:string(.)))"/>
+								</xsl:for-each>
+							</quantity>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:material">
+							<material>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</material>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:alternateMaterial">
+							<alternateMaterial>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</alternateMaterial>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:shelfLifeStorage">
+							<shelfLifeStorage>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</shelfLifeStorage>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:manufacturer">
+							<manufacturer>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</manufacturer>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:property">
+							<property>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</property>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:containedItem">
+							<containedItem>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</containedItem>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:package">
+							<package>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</package>
+						</xsl:for-each>
 					</package>
 				</xsl:for-each>
 			</xsl:for-each>
+			<xsl:for-each select="($Part)[fn:not($var12_resultof_any)]">
+				<xsl:variable name="var11_cur" as="node()" select="."/>
+				<xsl:variable name="var10_partProduct" as="node()*" select="ns1:partProduct"/>
+				<package>
+					<xsl:for-each select="$var10_partProduct">
+						<xsl:variable name="var8_cur" as="node()" select="."/>
+						<xsl:for-each select="ns1:code/@code">
+							<xsl:variable name="var7_cur" as="node()" select="."/>
+							<xsl:for-each select="$var8_cur/ns1:asContent">
+								<extension>
+									<xsl:attribute name="url" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/StructureDefinition/packageInstanceOf'))"/>
+									<valueReference>
+										<reference>
+											<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat('PackagedProductDefinition/', fn:string($var7_cur)), '-'), xs:string(position()))"/>
+										</reference>
+									</valueReference>
+								</extension>
+							</xsl:for-each>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:for-each select="$var10_partProduct/ns1:formCode">
+						<xsl:variable name="var9_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var9_resultof_convertCode">
+							<type>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</type>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:for-each select="$var10_partProduct/ns1:code">
+						<containedItem>
+							<item>
+								<reference>
+									<reference>
+										<xsl:for-each select="@code">
+											<xsl:attribute name="value" namespace="" select="fn:concat('ManufacturedItemDefinition/', fn:string(.))"/>
+										</xsl:for-each>
+									</reference>
+								</reference>
+							</item>
+							<xsl:for-each select="$var11_cur/ns1:quantity/ns1:numerator">
+								<amount>
+									<value>
+										<xsl:for-each select="@value">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</value>
+									<system>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
+									</system>
+									<code>
+										<xsl:for-each select="@unit">
+											<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+									</code>
+								</amount>
+							</xsl:for-each>
+						</containedItem>
+					</xsl:for-each>
+				</package>
+			</xsl:for-each>
 		</PackagedProductDefinition.Package>
 	</xsl:template>
-	<xsl:template name="user:createPackagedProduct">
+	<xsl:template name="user:createPackagedPartProduct">
+		<xsl:param name="position" select="()"/>
 		<xsl:param name="Content" select="()"/>
 		<xsl:param name="productId" select="()"/>
-		<xsl:param name="Part" select="()"/>
 		<xsl:variable name="var11_subjectOf" as="node()*" select="$Content/ns1:subjectOf"/>
 		<xsl:variable name="var12_containerPackagedProduct" as="node()*" select="$Content/ns1:containerPackagedProduct"/>
 		<PackagedProductDefinition xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat($productId, '-'), $position)"/>
+			</id>
 			<packageFor>
 				<reference>
 					<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', $productId)"/>
@@ -10008,6 +10509,9 @@ http://www.altova.com/mapforce
 						</type>
 					</xsl:for-each>
 				</xsl:for-each>
+				<quantity>
+					<xsl:attribute name="value" namespace="" select="xs:string(xs:integer(xs:decimal('1')))"/>
+				</quantity>
 				<xsl:for-each select="$var11_subjectOf/ns1:characteristic">
 					<property>
 						<xsl:for-each select="ns1:code">
@@ -10100,43 +10604,19 @@ http://www.altova.com/mapforce
 						</xsl:for-each>
 					</containedItem>
 				</xsl:for-each>
-				<xsl:for-each select="$Part">
-					<containedItem>
-						<item>
-							<reference>
-								<reference>
-									<xsl:for-each select="ns1:partProduct/ns1:code/@code">
-										<xsl:attribute name="value" namespace="" select="fn:concat('PackagedProductDefinition/', fn:string(.))"/>
-									</xsl:for-each>
-								</reference>
-							</reference>
-						</item>
-						<xsl:for-each select="ns1:quantity/ns1:numerator">
-							<amount>
-								<value>
-									<xsl:for-each select="@value">
-										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-									</xsl:for-each>
-								</value>
-								<system>
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
-								</system>
-								<code>
-									<xsl:for-each select="@unit">
-										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-									</xsl:for-each>
-								</code>
-							</amount>
-						</xsl:for-each>
-					</containedItem>
-				</xsl:for-each>
 				<xsl:for-each select="$var12_containerPackagedProduct/ns1:asContent">
 					<xsl:variable name="var10_resultof_createOuterPackaging" as="node()?">
 						<xsl:call-template name="user:createOuterPackaging">
 							<xsl:with-param name="Content1" as="node()">
-								<DrugLabelSubmission.Content1 xmlns="urn:hl7-org:v3">
+								<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
 									<xsl:sequence select="(./@node(), ./node())"/>
-								</DrugLabelSubmission.Content1>
+								</DrugLabelSubmission.Content>
+							</xsl:with-param>
+							<xsl:with-param name="productId" select="$productId" as="xs:string"/>
+							<xsl:with-param name="Part" as="node()">
+								<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
+									<xsl:sequence select="()"/>
+								</DrugLabelSubmission.Part>
 							</xsl:with-param>
 						</xsl:call-template>
 					</xsl:variable>
@@ -10149,10 +10629,1080 @@ http://www.altova.com/mapforce
 			</package>
 		</PackagedProductDefinition>
 	</xsl:template>
+	<xsl:template name="user:buildPackageHierachy">
+		<xsl:param name="Content" select="()"/>
+		<xsl:variable name="var3_create_DrugLabelSubmission_Content_of_Content" as="node()*">
+			<xsl:for-each select="$Content">
+				<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+					<xsl:sequence select="(./@node(), ./node())"/>
+				</DrugLabelSubmission.Content>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:variable name="var2_var" as="node()*" select="$var3_create_DrugLabelSubmission_Content_of_Content"/>
+		<xsl:variable name="var4_result" as="node()*">
+			<xsl:for-each select="($Content)[(fn:position() &lt;= xs:integer('1'))]">
+				<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+					<xsl:for-each select="@classCode">
+						<xsl:attribute name="classCode" namespace="" select="fn:string(.)"/>
+					</xsl:for-each>
+					<xsl:for-each select="ns1:quantity">
+						<quantity>
+							<xsl:sequence select="(./@node(), ./node())"/>
+						</quantity>
+					</xsl:for-each>
+					<xsl:for-each select="ns1:containerPackagedProduct">
+						<containerPackagedProduct>
+							<xsl:for-each select="@classCode">
+								<xsl:attribute name="classCode" namespace="" select="fn:string(.)"/>
+							</xsl:for-each>
+							<xsl:for-each select="@determinerCode">
+								<xsl:attribute name="determinerCode" namespace="" select="fn:string(.)"/>
+							</xsl:for-each>
+							<xsl:for-each select="ns1:code">
+								<code>
+									<xsl:sequence select="(./@node(), ./node())"/>
+								</code>
+							</xsl:for-each>
+							<xsl:for-each select="ns1:formCode">
+								<formCode>
+									<xsl:sequence select="(./@node(), ./node())"/>
+								</formCode>
+							</xsl:for-each>
+							<xsl:variable name="var1_resultof_buildPackageHierachy" as="node()?">
+								<xsl:call-template name="user:buildPackageHierachy">
+									<xsl:with-param name="Content" as="node()*">
+										<xsl:for-each select="($var2_var)[(fn:position() &gt; xs:integer('1'))]">
+											<DrugLabelSubmission.Content>
+												<xsl:for-each select="@classCode">
+													<xsl:attribute name="classCode" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="ns1:quantity">
+													<quantity>
+														<xsl:sequence select="(./@node(), ./node())"/>
+													</quantity>
+												</xsl:for-each>
+												<xsl:for-each select="ns1:containerPackagedProduct">
+													<containerPackagedProduct>
+														<xsl:sequence select="(./@node(), ./node())"/>
+													</containerPackagedProduct>
+												</xsl:for-each>
+												<xsl:for-each select="ns1:subjectOf">
+													<subjectOf>
+														<xsl:sequence select="(./@node(), ./node())"/>
+													</subjectOf>
+												</xsl:for-each>
+											</DrugLabelSubmission.Content>
+										</xsl:for-each>
+									</xsl:with-param>
+								</xsl:call-template>
+							</xsl:variable>
+							<xsl:for-each select="$var1_resultof_buildPackageHierachy">
+								<asContent>
+									<xsl:for-each select="@classCode">
+										<xsl:attribute name="classCode" namespace="" select="fn:string(.)"/>
+									</xsl:for-each>
+									<xsl:for-each select="ns1:quantity">
+										<quantity>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</quantity>
+									</xsl:for-each>
+									<xsl:for-each select="ns1:containerPackagedProduct">
+										<containerPackagedProduct>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</containerPackagedProduct>
+									</xsl:for-each>
+									<xsl:for-each select="ns1:subjectOf">
+										<subjectOf>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</subjectOf>
+									</xsl:for-each>
+								</asContent>
+							</xsl:for-each>
+						</containerPackagedProduct>
+					</xsl:for-each>
+					<xsl:for-each select="ns1:subjectOf">
+						<subjectOf>
+							<xsl:sequence select="(./@node(), ./node())"/>
+						</subjectOf>
+					</xsl:for-each>
+				</DrugLabelSubmission.Content>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:sequence select="($var4_result)[(fn:position() = xs:integer('1'))]"/>
+	</xsl:template>
+	<xsl:template name="user:flattenPackaging">
+		<xsl:param name="Content" select="()"/>
+		<xsl:for-each select="$Content/ns1:containerPackagedProduct/ns1:asContent">
+			<xsl:variable name="var1_resultof_flattenPackaging" as="node()*">
+				<xsl:call-template name="user:flattenPackaging">
+					<xsl:with-param name="Content" as="node()">
+						<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+							<xsl:sequence select="(./@node(), ./node())"/>
+						</DrugLabelSubmission.Content>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:for-each select="$var1_resultof_flattenPackaging">
+				<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+					<xsl:sequence select="(./@node(), ./node())"/>
+				</DrugLabelSubmission.Content>
+			</xsl:for-each>
+		</xsl:for-each>
+		<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+			<xsl:sequence select="($Content/@node(), $Content/node())"/>
+		</DrugLabelSubmission.Content>
+	</xsl:template>
+	<xsl:template name="user:reversePackageHierarchy">
+		<xsl:param name="Content" select="()"/>
+		<xsl:variable name="var1_resultof_flattenPackaging" as="node()*">
+			<xsl:call-template name="user:flattenPackaging">
+				<xsl:with-param name="Content" as="node()">
+					<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+						<xsl:sequence select="($Content/@node(), $Content/node())"/>
+					</DrugLabelSubmission.Content>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:variable name="var2_resultof_buildPackageHierachy" as="node()?">
+			<xsl:call-template name="user:buildPackageHierachy">
+				<xsl:with-param name="Content" as="node()*">
+					<xsl:for-each select="$var1_resultof_flattenPackaging">
+						<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+							<xsl:sequence select="(./@node(), ./node())"/>
+						</DrugLabelSubmission.Content>
+					</xsl:for-each>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:for-each select="$var2_resultof_buildPackageHierachy">
+			<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+				<xsl:sequence select="(./@node(), ./node())"/>
+			</DrugLabelSubmission.Content>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="user:createManufacturedItem">
+		<xsl:param name="ManufacturedProduct" select="()"/>
+		<xsl:variable name="var32_manufacturedProduct" as="node()*" select="$ManufacturedProduct/ns1:manufacturedProduct"/>
+		<ManufacturedItemDefinition xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:for-each select="$var32_manufacturedProduct/ns1:code/@code">
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
+			</id>
+			<status>
+				<xsl:attribute name="value" namespace="" select="'active'"/>
+			</status>
+			<xsl:for-each select="$var32_manufacturedProduct/ns1:formCode">
+				<xsl:variable name="var1_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var1_resultof_convertCode">
+					<manufacturedDoseForm>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</manufacturedDoseForm>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$ManufacturedProduct/ns1:subjectOf/ns1:characteristic">
+				<xsl:variable name="var31_value" as="node()*" select="ns1:value"/>
+				<property>
+					<xsl:for-each select="ns1:code">
+						<xsl:variable name="var2_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var2_resultof_convertCode">
+							<type>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</type>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:variable name="var4_resultof_filter" as="node()*">
+						<xsl:for-each select="$var31_value">
+							<xsl:variable name="var3_cur" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var3_cur) = xs:QName('ns1:CV'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var4_resultof_filter">
+						<xsl:variable name="var12_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:for-each select="@code">
+											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@codeSystem">
+											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@displayName">
+											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="ns1:originalText">
+											<originalText>
+												<xsl:for-each select="@nullFlavor">
+													<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@collectionNullFlavor">
+													<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@flavorId">
+													<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@updateMode">
+													<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@representation">
+													<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@mediaType">
+													<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@language">
+													<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@compression">
+													<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@integrityCheck">
+													<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+												</xsl:for-each>
+												<xsl:for-each select="@integrityCheckAlgorithm">
+													<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@description">
+													<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="node()">
+													<xsl:if test="fn:boolean(self::text())">
+														<xsl:sequence select="fn:string(.)"/>
+													</xsl:if>
+													<xsl:variable name="var5_test_resultof_node_name_equal_qname" as="node()?">
+														<xsl:if test="fn:boolean(self::ns1:reference)">
+															<xsl:sequence select="."/>
+														</xsl:if>
+													</xsl:variable>
+													<xsl:for-each select="$var5_test_resultof_node_name_equal_qname">
+														<reference>
+															<xsl:sequence select="(./@node(), ./node())"/>
+														</reference>
+													</xsl:for-each>
+													<xsl:variable name="var6_test_resultof_node_name_equal_qname" as="node()?">
+														<xsl:if test="fn:boolean(self::ns1:thumbnail)">
+															<xsl:sequence select="."/>
+														</xsl:if>
+													</xsl:variable>
+													<xsl:for-each select="$var6_test_resultof_node_name_equal_qname">
+														<thumbnail>
+															<xsl:for-each select="@nullFlavor">
+																<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@collectionNullFlavor">
+																<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@flavorId">
+																<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@updateMode">
+																<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@representation">
+																<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@value">
+																<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@mediaType">
+																<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@language">
+																<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@compression">
+																<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheck">
+																<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheckAlgorithm">
+																<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@description">
+																<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="node()">
+																<xsl:if test="fn:boolean(self::text())">
+																	<xsl:sequence select="fn:string(.)"/>
+																</xsl:if>
+																<xsl:variable name="var7_test_resultof_node_name_equal_qname" as="node()?">
+																	<xsl:if test="fn:boolean(self::ns1:reference)">
+																		<xsl:sequence select="."/>
+																	</xsl:if>
+																</xsl:variable>
+																<xsl:for-each select="$var7_test_resultof_node_name_equal_qname">
+																	<reference>
+																		<xsl:sequence select="(./@node(), ./node())"/>
+																	</reference>
+																</xsl:for-each>
+															</xsl:for-each>
+														</thumbnail>
+													</xsl:for-each>
+													<xsl:variable name="var8_test_resultof_node_name_equal_qname" as="node()?">
+														<xsl:if test="fn:boolean(self::ns1:translation)">
+															<xsl:sequence select="."/>
+														</xsl:if>
+													</xsl:variable>
+													<xsl:for-each select="$var8_test_resultof_node_name_equal_qname">
+														<translation>
+															<xsl:for-each select="@nullFlavor">
+																<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@collectionNullFlavor">
+																<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@flavorId">
+																<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@updateMode">
+																<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@representation">
+																<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@value">
+																<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@mediaType">
+																<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@language">
+																<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@compression">
+																<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheck">
+																<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheckAlgorithm">
+																<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@description">
+																<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="node()">
+																<xsl:if test="fn:boolean(self::text())">
+																	<xsl:sequence select="fn:string(.)"/>
+																</xsl:if>
+																<xsl:variable name="var9_test_resultof_node_name_equal_qname" as="node()?">
+																	<xsl:if test="fn:boolean(self::ns1:reference)">
+																		<xsl:sequence select="."/>
+																	</xsl:if>
+																</xsl:variable>
+																<xsl:for-each select="$var9_test_resultof_node_name_equal_qname">
+																	<reference>
+																		<xsl:sequence select="(./@node(), ./node())"/>
+																	</reference>
+																</xsl:for-each>
+																<xsl:variable name="var10_test_resultof_node_name_equal_qname" as="node()?">
+																	<xsl:if test="fn:boolean(self::ns1:thumbnail)">
+																		<xsl:sequence select="."/>
+																	</xsl:if>
+																</xsl:variable>
+																<xsl:for-each select="$var10_test_resultof_node_name_equal_qname">
+																	<thumbnail>
+																		<xsl:for-each select="@nullFlavor">
+																			<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@collectionNullFlavor">
+																			<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@flavorId">
+																			<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@updateMode">
+																			<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@representation">
+																			<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@value">
+																			<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@mediaType">
+																			<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@language">
+																			<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@compression">
+																			<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@integrityCheck">
+																			<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@integrityCheckAlgorithm">
+																			<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@description">
+																			<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="node()">
+																			<xsl:if test="fn:boolean(self::text())">
+																				<xsl:sequence select="fn:string(.)"/>
+																			</xsl:if>
+																			<xsl:variable name="var11_test_resultof_node_name_equal_qname" as="node()?">
+																				<xsl:if test="fn:boolean(self::ns1:reference)">
+																					<xsl:sequence select="."/>
+																				</xsl:if>
+																			</xsl:variable>
+																			<xsl:for-each select="$var11_test_resultof_node_name_equal_qname">
+																				<reference>
+																					<xsl:sequence select="(./@node(), ./node())"/>
+																				</reference>
+																			</xsl:for-each>
+																		</xsl:for-each>
+																	</thumbnail>
+																</xsl:for-each>
+															</xsl:for-each>
+														</translation>
+													</xsl:for-each>
+												</xsl:for-each>
+											</originalText>
+										</xsl:for-each>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var12_resultof_convertCode">
+							<valueCodeableConcept>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</valueCodeableConcept>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:variable name="var14_resultof_filter" as="node()*">
+						<xsl:for-each select="$var31_value">
+							<xsl:variable name="var13_cur" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var13_cur) = xs:QName('ns1:ST'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var14_resultof_filter">
+						<valueCodeableConcept>
+							<text>
+								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</text>
+						</valueCodeableConcept>
+					</xsl:for-each>
+					<xsl:variable name="var16_resultof_filter" as="node()*">
+						<xsl:for-each select="$var31_value">
+							<xsl:variable name="var15_cur" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var15_cur) = xs:QName('ns1:CE'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var16_resultof_filter">
+						<xsl:variable name="var24_resultof_convertCode" as="node()?">
+							<xsl:call-template name="user:convertCode">
+								<xsl:with-param name="SimpleCD" as="node()">
+									<Simple-CD xmlns="urn:hl7-org:v3">
+										<xsl:for-each select="@code">
+											<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@codeSystem">
+											<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="@displayName">
+											<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
+										</xsl:for-each>
+										<xsl:for-each select="ns1:originalText">
+											<originalText>
+												<xsl:for-each select="@nullFlavor">
+													<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@collectionNullFlavor">
+													<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@flavorId">
+													<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@updateMode">
+													<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@representation">
+													<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@mediaType">
+													<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@language">
+													<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@compression">
+													<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@integrityCheck">
+													<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+												</xsl:for-each>
+												<xsl:for-each select="@integrityCheckAlgorithm">
+													<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="@description">
+													<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+												<xsl:for-each select="node()">
+													<xsl:if test="fn:boolean(self::text())">
+														<xsl:sequence select="fn:string(.)"/>
+													</xsl:if>
+													<xsl:variable name="var17_test_resultof_node_name_equal_qname" as="node()?">
+														<xsl:if test="fn:boolean(self::ns1:reference)">
+															<xsl:sequence select="."/>
+														</xsl:if>
+													</xsl:variable>
+													<xsl:for-each select="$var17_test_resultof_node_name_equal_qname">
+														<reference>
+															<xsl:sequence select="(./@node(), ./node())"/>
+														</reference>
+													</xsl:for-each>
+													<xsl:variable name="var18_test_resultof_node_name_equal_qname" as="node()?">
+														<xsl:if test="fn:boolean(self::ns1:thumbnail)">
+															<xsl:sequence select="."/>
+														</xsl:if>
+													</xsl:variable>
+													<xsl:for-each select="$var18_test_resultof_node_name_equal_qname">
+														<thumbnail>
+															<xsl:for-each select="@nullFlavor">
+																<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@collectionNullFlavor">
+																<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@flavorId">
+																<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@updateMode">
+																<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@representation">
+																<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@value">
+																<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@mediaType">
+																<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@language">
+																<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@compression">
+																<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheck">
+																<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheckAlgorithm">
+																<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@description">
+																<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="node()">
+																<xsl:if test="fn:boolean(self::text())">
+																	<xsl:sequence select="fn:string(.)"/>
+																</xsl:if>
+																<xsl:variable name="var19_test_resultof_node_name_equal_qname" as="node()?">
+																	<xsl:if test="fn:boolean(self::ns1:reference)">
+																		<xsl:sequence select="."/>
+																	</xsl:if>
+																</xsl:variable>
+																<xsl:for-each select="$var19_test_resultof_node_name_equal_qname">
+																	<reference>
+																		<xsl:sequence select="(./@node(), ./node())"/>
+																	</reference>
+																</xsl:for-each>
+															</xsl:for-each>
+														</thumbnail>
+													</xsl:for-each>
+													<xsl:variable name="var20_test_resultof_node_name_equal_qname" as="node()?">
+														<xsl:if test="fn:boolean(self::ns1:translation)">
+															<xsl:sequence select="."/>
+														</xsl:if>
+													</xsl:variable>
+													<xsl:for-each select="$var20_test_resultof_node_name_equal_qname">
+														<translation>
+															<xsl:for-each select="@nullFlavor">
+																<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@collectionNullFlavor">
+																<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@flavorId">
+																<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@updateMode">
+																<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@representation">
+																<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@value">
+																<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@mediaType">
+																<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@language">
+																<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@compression">
+																<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheck">
+																<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+															</xsl:for-each>
+															<xsl:for-each select="@integrityCheckAlgorithm">
+																<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="@description">
+																<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+															</xsl:for-each>
+															<xsl:for-each select="node()">
+																<xsl:if test="fn:boolean(self::text())">
+																	<xsl:sequence select="fn:string(.)"/>
+																</xsl:if>
+																<xsl:variable name="var21_test_resultof_node_name_equal_qname" as="node()?">
+																	<xsl:if test="fn:boolean(self::ns1:reference)">
+																		<xsl:sequence select="."/>
+																	</xsl:if>
+																</xsl:variable>
+																<xsl:for-each select="$var21_test_resultof_node_name_equal_qname">
+																	<reference>
+																		<xsl:sequence select="(./@node(), ./node())"/>
+																	</reference>
+																</xsl:for-each>
+																<xsl:variable name="var22_test_resultof_node_name_equal_qname" as="node()?">
+																	<xsl:if test="fn:boolean(self::ns1:thumbnail)">
+																		<xsl:sequence select="."/>
+																	</xsl:if>
+																</xsl:variable>
+																<xsl:for-each select="$var22_test_resultof_node_name_equal_qname">
+																	<thumbnail>
+																		<xsl:for-each select="@nullFlavor">
+																			<xsl:attribute name="nullFlavor" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@collectionNullFlavor">
+																			<xsl:attribute name="collectionNullFlavor" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@flavorId">
+																			<xsl:attribute name="flavorId" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@updateMode">
+																			<xsl:attribute name="updateMode" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@representation">
+																			<xsl:attribute name="representation" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@value">
+																			<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@mediaType">
+																			<xsl:attribute name="mediaType" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@language">
+																			<xsl:attribute name="language" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@compression">
+																			<xsl:attribute name="compression" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@integrityCheck">
+																			<xsl:attribute name="integrityCheck" namespace="" select="xs:string(xs:base64Binary(fn:string(.)))"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@integrityCheckAlgorithm">
+																			<xsl:attribute name="integrityCheckAlgorithm" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="@description">
+																			<xsl:attribute name="description" namespace="" select="fn:string(.)"/>
+																		</xsl:for-each>
+																		<xsl:for-each select="node()">
+																			<xsl:if test="fn:boolean(self::text())">
+																				<xsl:sequence select="fn:string(.)"/>
+																			</xsl:if>
+																			<xsl:variable name="var23_test_resultof_node_name_equal_qname" as="node()?">
+																				<xsl:if test="fn:boolean(self::ns1:reference)">
+																					<xsl:sequence select="."/>
+																				</xsl:if>
+																			</xsl:variable>
+																			<xsl:for-each select="$var23_test_resultof_node_name_equal_qname">
+																				<reference>
+																					<xsl:sequence select="(./@node(), ./node())"/>
+																				</reference>
+																			</xsl:for-each>
+																		</xsl:for-each>
+																	</thumbnail>
+																</xsl:for-each>
+															</xsl:for-each>
+														</translation>
+													</xsl:for-each>
+												</xsl:for-each>
+											</originalText>
+										</xsl:for-each>
+									</Simple-CD>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:for-each select="$var24_resultof_convertCode">
+							<valueCodeableConcept>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</valueCodeableConcept>
+						</xsl:for-each>
+					</xsl:for-each>
+					<xsl:variable name="var26_resultof_filter" as="node()*">
+						<xsl:for-each select="$var31_value">
+							<xsl:variable name="var25_cur" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var25_cur) = xs:QName('ns1:PQ'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var26_resultof_filter">
+						<valueQuantity>
+							<value>
+								<xsl:for-each select="@value">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</value>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://unitsofmeasure.org'))"/>
+							</system>
+							<code>
+								<xsl:for-each select="@unit">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</code>
+						</valueQuantity>
+					</xsl:for-each>
+					<xsl:variable name="var28_resultof_filter" as="node()*">
+						<xsl:for-each select="$var31_value">
+							<xsl:variable name="var27_cur" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var27_cur) = xs:QName('ns1:INT'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var28_resultof_filter">
+						<valueQuantity>
+							<value>
+								<xsl:for-each select="@value">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:integer(fn:string(.)))"/>
+								</xsl:for-each>
+							</value>
+						</valueQuantity>
+					</xsl:for-each>
+					<xsl:variable name="var30_resultof_filter" as="node()*">
+						<xsl:for-each select="$var31_value">
+							<xsl:variable name="var29_cur" as="node()" select="."/>
+							<xsl:if test="fn:exists((./@xsi:type)[(fn:resolve-QName(fn:string(.), $var29_cur) = xs:QName('ns1:ED'))])">
+								<xsl:sequence select="."/>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:for-each select="$var30_resultof_filter">
+						<valueAttachment>
+							<contentType>
+								<xsl:for-each select="@mediaType">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</contentType>
+							<url>
+								<xsl:for-each select="ns1:reference/@value">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:replace(xs:string(xs:anyURI(fn:string(.))), ' ', '%20')))"/>
+								</xsl:for-each>
+							</url>
+						</valueAttachment>
+					</xsl:for-each>
+				</property>
+			</xsl:for-each>
+		</ManufacturedItemDefinition>
+	</xsl:template>
+	<xsl:template name="user:createMarketing">
+		<xsl:param name="Approval" select="()"/>
+		<xsl:param name="productId" select="()"/>
+		<RegulatedAuthorization xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:attribute name="value" namespace="" select="$productId"/>
+			</id>
+			<xsl:for-each select="$Approval/ns1:id">
+				<identifier>
+					<system>
+						<xsl:for-each select="@root">
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
+						</xsl:for-each>
+					</system>
+					<value>
+						<xsl:for-each select="@extension">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<subject>
+				<reference>
+					<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', $productId)"/>
+				</reference>
+			</subject>
+			<xsl:for-each select="$Approval/ns1:code">
+				<xsl:variable name="var1_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:for-each select="@code">
+									<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+								<xsl:for-each select="@codeSystem">
+									<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+								<xsl:for-each select="@displayName">
+									<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var1_resultof_convertCode">
+					<type>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</type>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$Approval/ns1:author/ns1:territorialAuthority/ns1:territory/ns1:code">
+				<xsl:variable name="var2_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:call-template name="tbf:tbf7_Simple-CD">
+									<xsl:with-param name="input" select="." as="node()"/>
+								</xsl:call-template>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var2_resultof_convertCode">
+					<region>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</region>
+				</xsl:for-each>
+			</xsl:for-each>
+		</RegulatedAuthorization>
+	</xsl:template>
+	<xsl:template name="user:createPartProduct">
+		<xsl:param name="Part" select="()"/>
+		<xsl:variable name="var4_partProduct" as="node()*" select="$Part/ns1:partProduct"/>
+		<MedicinalProductDefinition xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:for-each select="$var4_partProduct/ns1:code/@code">
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+				</xsl:for-each>
+			</id>
+			<xsl:for-each select="$var4_partProduct/ns1:code">
+				<identifier>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
+					</system>
+					<value>
+						<xsl:for-each select="@code">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</value>
+				</identifier>
+			</xsl:for-each>
+			<xsl:for-each select="$Part/ns1:consumedIn/ns1:substanceAdministration/ns1:routeCode">
+				<xsl:variable name="var1_resultof_convertCode" as="node()?">
+					<xsl:call-template name="user:convertCode">
+						<xsl:with-param name="SimpleCD" as="node()">
+							<Simple-CD xmlns="urn:hl7-org:v3">
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</Simple-CD>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:for-each select="$var1_resultof_convertCode">
+					<route>
+						<xsl:sequence select="(./@node(), ./node())"/>
+					</route>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$Part/ns1:subjectOf/ns1:marketingAct">
+				<marketingStatus>
+					<status>
+						<xsl:for-each select="ns1:statusCode">
+							<coding>
+								<system>
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/publication-status'))"/>
+								</system>
+								<code>
+									<xsl:for-each select="@code">
+										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+									</xsl:for-each>
+								</code>
+							</coding>
+						</xsl:for-each>
+					</status>
+					<xsl:for-each select="ns1:effectiveTime">
+						<dateRange>
+							<xsl:for-each select="ns1:low">
+								<xsl:variable name="var2_resultof_convertTS" as="xs:string?">
+									<xsl:call-template name="user:convertTS">
+										<xsl:with-param name="SimpleTS" as="node()">
+											<Simple-TS xmlns="urn:hl7-org:v3">
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+											</Simple-TS>
+										</xsl:with-param>
+										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+									</xsl:call-template>
+								</xsl:variable>
+								<start>
+									<xsl:for-each select="$var2_resultof_convertTS">
+										<xsl:attribute name="value" namespace="" select="."/>
+									</xsl:for-each>
+								</start>
+							</xsl:for-each>
+							<xsl:for-each select="ns1:high">
+								<xsl:variable name="var3_resultof_convertTS" as="xs:string?">
+									<xsl:call-template name="user:convertTS">
+										<xsl:with-param name="SimpleTS" as="node()">
+											<Simple-TS xmlns="urn:hl7-org:v3">
+												<xsl:for-each select="@value">
+													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+												</xsl:for-each>
+											</Simple-TS>
+										</xsl:with-param>
+										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
+									</xsl:call-template>
+								</xsl:variable>
+								<end>
+									<xsl:for-each select="$var3_resultof_convertTS">
+										<xsl:attribute name="value" namespace="" select="."/>
+									</xsl:for-each>
+								</end>
+							</xsl:for-each>
+						</dateRange>
+					</xsl:for-each>
+				</marketingStatus>
+			</xsl:for-each>
+			<xsl:for-each select="$var4_partProduct/ns1:name">
+				<name>
+					<productName>
+						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</productName>
+					<type>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'PROPRIETARY'"/>
+							</code>
+						</coding>
+					</type>
+				</name>
+			</xsl:for-each>
+			<xsl:for-each select="$var4_partProduct/ns1:asEntityWithGeneric">
+				<name>
+					<productName>
+						<xsl:for-each select="(./ns1:genericMedicine/ns1:name/node())[fn:boolean(self::text())]">
+							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+						</xsl:for-each>
+					</productName>
+					<type>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'NONPROPRIETARY'"/>
+							</code>
+						</coding>
+					</type>
+				</name>
+			</xsl:for-each>
+		</MedicinalProductDefinition>
+	</xsl:template>
+	<xsl:template name="user:convertCode">
+		<xsl:param name="SimpleCD" select="()"/>
+		<CodeableConcept xmlns="http://hl7.org/fhir">
+			<coding>
+				<system>
+					<xsl:for-each select="$SimpleCD/@codeSystem">
+						<xsl:variable name="var2_resultof_vmf__inputtoresult" as="xs:string">
+							<xsl:call-template name="vmf:vmf9_inputtoresult">
+								<xsl:with-param name="input" select="fn:string(.)" as="xs:string"/>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:variable name="var1_test_resultof_starts_with" as="xs:string">
+							<xsl:choose>
+								<xsl:when test="fn:starts-with($var2_resultof_vmf__inputtoresult, '2')">
+									<xsl:sequence select="fn:concat('urn:oid:', $var2_resultof_vmf__inputtoresult)"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:sequence select="$var2_resultof_vmf__inputtoresult"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:variable>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI($var1_test_resultof_starts_with))"/>
+					</xsl:for-each>
+				</system>
+				<code>
+					<xsl:for-each select="$SimpleCD/@code">
+						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+					</xsl:for-each>
+				</code>
+				<xsl:for-each select="$SimpleCD/@displayName">
+					<display>
+						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+					</display>
+				</xsl:for-each>
+			</coding>
+			<xsl:for-each select="($SimpleCD/ns1:originalText/node())[fn:boolean(self::text())]">
+				<text>
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+				</text>
+			</xsl:for-each>
+		</CodeableConcept>
+	</xsl:template>
 	<xsl:template name="user:createInactiveIngredient">
 		<xsl:param name="Ingredient" select="()"/>
+		<xsl:param name="position" select="()"/>
 		<xsl:param name="productId" select="()"/>
 		<Ingredient xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat($productId, '-'), $position)"/>
+			</id>
 			<status>
 				<xsl:attribute name="value" namespace="" select="'active'"/>
 			</status>
@@ -10260,196 +11810,14 @@ http://www.altova.com/mapforce
 			</substance>
 		</Ingredient>
 	</xsl:template>
-	<xsl:template name="user:createPartProduct">
-		<xsl:param name="Part" select="()"/>
-		<xsl:variable name="var5_partProduct" as="node()*" select="$Part/ns1:partProduct"/>
-		<MedicinalProductDefinition xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var5_partProduct/ns1:code">
-				<identifier>
-					<system>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/sid/ndc'))"/>
-					</system>
-					<value>
-						<xsl:for-each select="@code">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</value>
-				</identifier>
-			</xsl:for-each>
-			<xsl:for-each select="$var5_partProduct/ns1:formCode">
-				<xsl:variable name="var1_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var1_resultof_convertCode">
-					<combinedPharmaceuticalDoseForm>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</combinedPharmaceuticalDoseForm>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$Part/ns1:consumedIn/ns1:substanceAdministration/ns1:routeCode">
-				<xsl:variable name="var2_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:sequence select="(./@node(), ./node())"/>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var2_resultof_convertCode">
-					<route>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</route>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$Part/ns1:subjectOf/ns1:marketingAct">
-				<marketingStatus>
-					<status>
-						<xsl:for-each select="ns1:statusCode">
-							<coding>
-								<system>
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/publication-status'))"/>
-								</system>
-								<code>
-									<xsl:for-each select="@code">
-										<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-									</xsl:for-each>
-								</code>
-							</coding>
-						</xsl:for-each>
-					</status>
-					<xsl:for-each select="ns1:effectiveTime">
-						<dateRange>
-							<xsl:for-each select="ns1:low">
-								<xsl:variable name="var3_resultof_convertTS" as="xs:string?">
-									<xsl:call-template name="user:convertTS">
-										<xsl:with-param name="SimpleTS" as="node()">
-											<Simple-TS xmlns="urn:hl7-org:v3">
-												<xsl:for-each select="@value">
-													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-												</xsl:for-each>
-											</Simple-TS>
-										</xsl:with-param>
-										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-									</xsl:call-template>
-								</xsl:variable>
-								<xsl:for-each select="$var3_resultof_convertTS">
-									<start>
-										<xsl:sequence select="()"/>
-									</start>
-								</xsl:for-each>
-							</xsl:for-each>
-							<xsl:for-each select="ns1:high">
-								<xsl:variable name="var4_resultof_convertTS" as="xs:string?">
-									<xsl:call-template name="user:convertTS">
-										<xsl:with-param name="SimpleTS" as="node()">
-											<Simple-TS xmlns="urn:hl7-org:v3">
-												<xsl:for-each select="@value">
-													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-												</xsl:for-each>
-											</Simple-TS>
-										</xsl:with-param>
-										<xsl:with-param name="includeTime" select="()" as="xs:boolean?"/>
-									</xsl:call-template>
-								</xsl:variable>
-								<xsl:for-each select="$var4_resultof_convertTS">
-									<end>
-										<xsl:sequence select="()"/>
-									</end>
-								</xsl:for-each>
-							</xsl:for-each>
-						</dateRange>
-					</xsl:for-each>
-				</marketingStatus>
-			</xsl:for-each>
-			<xsl:for-each select="$var5_partProduct/ns1:name">
-				<name>
-					<productName>
-						<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</productName>
-					<type>
-						<coding>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
-							</system>
-							<code>
-								<xsl:attribute name="value" namespace="" select="'PROPRIETARY'"/>
-							</code>
-						</coding>
-					</type>
-				</name>
-			</xsl:for-each>
-			<xsl:for-each select="$var5_partProduct/ns1:asEntityWithGeneric">
-				<name>
-					<productName>
-						<xsl:for-each select="(./ns1:genericMedicine/ns1:name/node())[fn:boolean(self::text())]">
-							<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-						</xsl:for-each>
-					</productName>
-					<type>
-						<coding>
-							<system>
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-submittedMedicinalProductNameTypes'))"/>
-							</system>
-							<code>
-								<xsl:attribute name="value" namespace="" select="'NONPROPRIETARY'"/>
-							</code>
-						</coding>
-					</type>
-				</name>
-			</xsl:for-each>
-		</MedicinalProductDefinition>
-	</xsl:template>
-	<xsl:template name="user:convertCode">
-		<xsl:param name="SimpleCD" select="()"/>
-		<CodeableConcept xmlns="http://hl7.org/fhir">
-			<coding>
-				<system>
-					<xsl:for-each select="$SimpleCD/@codeSystem">
-						<xsl:variable name="var2_resultof_vmf__inputtoresult" as="xs:string">
-							<xsl:call-template name="vmf:vmf9_inputtoresult">
-								<xsl:with-param name="input" select="fn:string(.)" as="xs:string"/>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:variable name="var1_test_resultof_starts_with" as="xs:string">
-							<xsl:choose>
-								<xsl:when test="fn:starts-with($var2_resultof_vmf__inputtoresult, '2')">
-									<xsl:sequence select="fn:concat('urn:oid:', $var2_resultof_vmf__inputtoresult)"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:sequence select="$var2_resultof_vmf__inputtoresult"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:variable>
-						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI($var1_test_resultof_starts_with))"/>
-					</xsl:for-each>
-				</system>
-				<code>
-					<xsl:for-each select="$SimpleCD/@code">
-						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-					</xsl:for-each>
-				</code>
-				<xsl:for-each select="$SimpleCD/@displayName">
-					<display>
-						<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-					</display>
-				</xsl:for-each>
-			</coding>
-		</CodeableConcept>
-	</xsl:template>
-	<xsl:template name="user:createMarketing">
-		<xsl:param name="Approval" select="()"/>
-		<xsl:param name="productId" select="()"/>
-		<RegulatedAuthorization xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$Approval/ns1:id">
+	<xsl:template name="user:createDocumentAuthor">
+		<xsl:param name="Labeler" select="()"/>
+		<xsl:variable name="var1_assignedEntity" as="node()*" select="$Labeler/ns1:assignedEntity"/>
+		<Organization xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:attribute name="value" namespace="" select="'Labeler'"/>
+			</id>
+			<xsl:for-each select="$var1_assignedEntity/ns1:representedOrganization/ns1:id">
 				<identifier>
 					<system>
 						<xsl:for-each select="@root">
@@ -10463,78 +11831,55 @@ http://www.altova.com/mapforce
 					</value>
 				</identifier>
 			</xsl:for-each>
-			<subject>
-				<reference>
-					<xsl:attribute name="value" namespace="" select="fn:concat('MedicinalProductDefinition/', $productId)"/>
-				</reference>
-			</subject>
-			<xsl:for-each select="$Approval/ns1:code">
-				<xsl:variable name="var1_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:for-each select="@code">
-									<xsl:attribute name="code" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-								<xsl:for-each select="@codeSystem">
-									<xsl:attribute name="codeSystem" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-								<xsl:for-each select="@displayName">
-									<xsl:attribute name="displayName" namespace="" select="fn:string(.)"/>
-								</xsl:for-each>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var1_resultof_convertCode">
-					<type>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</type>
+			<type>
+				<coding>
+					<system>
+						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+					</system>
+					<code>
+						<xsl:attribute name="value" namespace="" select="'Labeler'"/>
+					</code>
+				</coding>
+			</type>
+			<name>
+				<xsl:for-each select="($var1_assignedEntity/ns1:representedOrganization/ns1:name/node())[fn:boolean(self::text())]">
+					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$Approval/ns1:author/ns1:territorialAuthority/ns1:territory/ns1:code">
-				<xsl:variable name="var2_resultof_convertCode" as="node()?">
-					<xsl:call-template name="user:convertCode">
-						<xsl:with-param name="SimpleCD" as="node()">
-							<Simple-CD xmlns="urn:hl7-org:v3">
-								<xsl:call-template name="tbf:tbf3_Simple-CD">
-									<xsl:with-param name="input" select="." as="node()"/>
-								</xsl:call-template>
-							</Simple-CD>
-						</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:for-each select="$var2_resultof_convertCode">
-					<region>
-						<xsl:sequence select="(./@node(), ./node())"/>
-					</region>
-				</xsl:for-each>
-			</xsl:for-each>
-		</RegulatedAuthorization>
+			</name>
+		</Organization>
 	</xsl:template>
 	<xsl:template name="user:convertTS">
 		<xsl:param name="SimpleTS" select="()"/>
 		<xsl:param name="includeTime" select="()"/>
 		<xsl:for-each select="$SimpleTS/@value">
-			<xsl:variable name="var5_cur" as="node()" select="."/>
-			<xsl:variable name="var1_test_test_resultof_exists" as="xs:string?">
+			<xsl:variable name="var3___as_double" as="xs:double" select="xs:double(xs:decimal('5'))"/>
+			<xsl:variable name="var4___as_double" as="xs:double" select="xs:double(xs:decimal('2'))"/>
+			<xsl:variable name="var2_cur_as_string" as="xs:string" select="fn:string(.)"/>
+			<xsl:variable name="var1_test_resultof_exists" as="xs:string">
 				<xsl:choose>
-					<xsl:when test="(fn:exists($includeTime) and $includeTime)">
-						<xsl:if test="fn:not((xs:string(fn:string-length(fn:string(.))) &gt; '8'))">
-							<xsl:sequence select="'T00:00:00.0000Z'"/>
-						</xsl:if>
+					<xsl:when test="fn:exists($includeTime)">
+						<xsl:choose>
+							<xsl:when test="$includeTime">
+								<xsl:choose>
+									<xsl:when test="(xs:string(fn:string-length($var2_cur_as_string)) &gt; '8')">
+										<xsl:sequence select="fn:substring($var2_cur_as_string, xs:double('9'))"/>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:sequence select="'T00:00:00.0000Z'"/>
+									</xsl:otherwise>
+								</xsl:choose>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:sequence select="''"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:sequence select="''"/>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<xsl:for-each select="$var1_test_test_resultof_exists">
-				<xsl:variable name="var3___as_double" as="xs:double" select="xs:double(xs:decimal('5'))"/>
-				<xsl:variable name="var4___as_double" as="xs:double" select="xs:double(xs:decimal('2'))"/>
-				<xsl:variable name="var2_cur_as_string" as="xs:string" select="fn:string($var5_cur)"/>
-				<xsl:sequence select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var2_cur_as_string, xs:double(xs:decimal('0')), $var3___as_double), '-'), fn:substring($var2_cur_as_string, $var3___as_double, $var4___as_double)), '-'), fn:substring($var2_cur_as_string, xs:double(xs:decimal('7')), $var4___as_double)), .)"/>
-			</xsl:for-each>
+			<xsl:sequence select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var2_cur_as_string, xs:double(xs:decimal('0')), $var3___as_double), '-'), fn:substring($var2_cur_as_string, $var3___as_double, $var4___as_double)), '-'), fn:substring($var2_cur_as_string, xs:double(xs:decimal('7')), $var4___as_double)), $var1_test_resultof_exists)"/>
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="vmf:vmf9_inputtoresult">
@@ -10562,9 +11907,9 @@ http://www.altova.com/mapforce
 	</xsl:template>
 	<xsl:output method="xml" encoding="UTF-8" byte-order-mark="no" indent="yes"/>
 	<xsl:template match="/">
-		<xsl:variable name="var67_document" as="node()?" select="ns1:document"/>
+		<xsl:variable name="var72_document" as="node()?" select="ns1:document"/>
 		<Bundle xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-			<xsl:for-each select="$var67_document">
+			<xsl:for-each select="$var72_document">
 				<identifier>
 					<system>
 						<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('urn:ietf:rfc:3986'))"/>
@@ -10578,7 +11923,7 @@ http://www.altova.com/mapforce
 				<xsl:attribute name="value" namespace="" select="'document'"/>
 			</type>
 			<timestamp>
-				<xsl:for-each select="$var67_document">
+				<xsl:for-each select="$var72_document">
 					<xsl:variable name="var2_effectiveTime" as="node()" select="ns1:effectiveTime"/>
 					<xsl:variable name="var1_resultof_convertTS" as="xs:string?">
 						<xsl:call-template name="user:convertTS">
@@ -10595,7 +11940,7 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</xsl:for-each>
 			</timestamp>
-			<xsl:for-each select="$var67_document">
+			<xsl:for-each select="$var72_document">
 				<xsl:variable name="var3_resultof_createComposition" as="node()?">
 					<xsl:call-template name="user:createComposition">
 						<xsl:with-param name="document" as="node()">
@@ -10618,7 +11963,7 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document">
+			<xsl:for-each select="$var72_document">
 				<xsl:variable name="var5_author" as="node()" select="ns1:author"/>
 				<xsl:variable name="var4_resultof_createDocumentAuthor" as="node()?">
 					<xsl:call-template name="user:createDocumentAuthor">
@@ -10642,7 +11987,7 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:author/ns1:assignedEntity/ns1:representedOrganization/ns1:assignedEntity/ns1:assignedOrganization/ns1:assignedEntity">
+			<xsl:for-each select="$var72_document/ns1:author/ns1:assignedEntity/ns1:representedOrganization/ns1:assignedEntity/ns1:assignedOrganization/ns1:assignedEntity">
 				<xsl:variable name="var7_cur" as="node()" select="."/>
 				<xsl:variable name="var6_resultof_createEstablishmentOrganization" as="node()?">
 					<xsl:call-template name="user:createEstablishmentOrganization">
@@ -10668,15 +12013,18 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:author/ns1:assignedEntity/ns1:representedOrganization/ns1:assignedEntity/ns1:assignedOrganization">
+			<xsl:for-each select="$var72_document/ns1:author/ns1:assignedEntity/ns1:representedOrganization/ns1:assignedEntity/ns1:assignedOrganization">
 				<xsl:variable name="var8_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:id">
 					<entry>
 						<fullUrl>
-							<xsl:sequence select="()"/>
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://example.org/Organization/EstablishmentRegistrant'))"/>
 						</fullUrl>
 						<resource>
 							<Organization>
+								<id>
+									<xsl:attribute name="value" namespace="" select="'EstablishmentRegistrant'"/>
+								</id>
 								<identifier>
 									<system>
 										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(@root))))"/>
@@ -10691,7 +12039,7 @@ http://www.altova.com/mapforce
 											<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
 										</system>
 										<code>
-											<xsl:attribute name="value" namespace="" select="'Registrant'"/>
+											<xsl:attribute name="value" namespace="" select="'EstablishmentRegistrant'"/>
 										</code>
 									</coding>
 								</type>
@@ -10705,7 +12053,7 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document">
+			<xsl:for-each select="$var72_document">
 				<xsl:variable name="var10_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject">
 					<entry>
@@ -10740,7 +12088,7 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct">
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct">
 				<xsl:variable name="var12_cur" as="node()" select="."/>
 				<xsl:variable name="var11_resultof_createManufacturedItem" as="node()?">
 					<xsl:call-template name="user:createManufacturedItem">
@@ -10766,7 +12114,7 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
 				<xsl:variable name="var19_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
 					<xsl:variable name="var18_cur" as="node()" select="."/>
@@ -10885,6 +12233,7 @@ http://www.altova.com/mapforce
 														</xsl:for-each>
 													</DrugLabelSubmission.Ingredient>
 												</xsl:with-param>
+												<xsl:with-param name="position" select="xs:string($var17_idx)" as="xs:string"/>
 												<xsl:with-param name="productId" select="." as="xs:string"/>
 											</xsl:call-template>
 										</xsl:variable>
@@ -10900,7 +12249,7 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
 				<xsl:variable name="var23_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
 					<xsl:variable name="var22_idx" as="xs:integer" select="position()"/>
@@ -10915,6 +12264,11 @@ http://www.altova.com/mapforce
 							</fullUrl>
 							<resource>
 								<Ingredient>
+									<id>
+										<xsl:for-each select="$var20_code/@code">
+											<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:string(.), '-'), xs:string($var22_idx))"/>
+										</xsl:for-each>
+									</id>
 									<status>
 										<xsl:attribute name="value" namespace="" select="'active'"/>
 									</status>
@@ -10942,7 +12296,7 @@ http://www.altova.com/mapforce
 											<reference>
 												<reference>
 													<xsl:for-each select="$var20_code/@code">
-														<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('SubstanceDefinition/', fn:string(.)), '-'), xs:string($var22_idx)), '-'), 'Substance')"/>
+														<xsl:attribute name="value" namespace="" select="fn:concat('SubstanceDefinition/', fn:concat(fn:concat(fn:concat(fn:concat(fn:string(.), '-'), xs:string($var22_idx)), '-'), 'Substance'))"/>
 													</xsl:for-each>
 												</reference>
 											</reference>
@@ -10994,32 +12348,38 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
-				<xsl:variable name="var28_cur" as="node()" select="."/>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+				<xsl:variable name="var29_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var27_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var28_idx" as="xs:integer" select="position()"/>
 					<xsl:if test="fn:not(fn:exists((./@classCode)[(fn:string(.) = 'IACT')]))">
 						<xsl:variable name="var25_http___fdasis_nlm_nih_gov_as_string" as="xs:string" select="xs:string(xs:anyURI('http://fdasis.nlm.nih.gov'))"/>
-						<xsl:variable name="var26_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
+						<xsl:variable name="var26_code" as="node()?" select="$var29_cur/ns1:code"/>
+						<xsl:variable name="var27_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var28_cur/ns1:code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var27_idx)), '-'), 'Substance')))"/>
+								<xsl:for-each select="$var26_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var28_idx)), '-'), 'Substance')))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
 								<SubstanceDefinition>
+									<id>
+										<xsl:for-each select="$var26_code/@code">
+											<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:string(.), '-'), xs:string($var28_idx)), '-'), 'Substance')"/>
+										</xsl:for-each>
+									</id>
 									<identifier>
 										<system>
 											<xsl:attribute name="value" namespace="" select="$var25_http___fdasis_nlm_nih_gov_as_string"/>
 										</system>
 										<value>
-											<xsl:for-each select="$var26_ingredientSubstance/ns1:code/@code">
+											<xsl:for-each select="$var27_ingredientSubstance/ns1:code/@code">
 												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 											</xsl:for-each>
 										</value>
 									</identifier>
-									<xsl:for-each select="$var26_ingredientSubstance/ns1:activeMoiety">
+									<xsl:for-each select="$var27_ingredientSubstance/ns1:activeMoiety">
 										<xsl:variable name="var24_activeMoiety" as="node()?" select="ns1:activeMoiety"/>
 										<moiety>
 											<identifier>
@@ -11039,7 +12399,7 @@ http://www.altova.com/mapforce
 											</name>
 										</moiety>
 									</xsl:for-each>
-									<xsl:for-each select="$var26_ingredientSubstance/ns1:name">
+									<xsl:for-each select="$var27_ingredientSubstance/ns1:name">
 										<name>
 											<name>
 												<xsl:for-each select="(./node())[fn:boolean(self::text())]">
@@ -11054,47 +12414,59 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
-				<xsl:variable name="var34_cur" as="node()" select="."/>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct">
+				<xsl:variable name="var36_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:asContent">
-					<xsl:variable name="var33_cur" as="node()" select="."/>
-					<xsl:variable name="var32_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var31_code" as="node()?" select="$var34_cur/ns1:code"/>
-					<xsl:variable name="var30_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var31_code/@code">
-							<xsl:sequence select="fn:string(.)"/>
-						</xsl:for-each>
-					</xsl:variable>
+					<xsl:variable name="var35_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var34_code" as="node()?" select="$var36_cur/ns1:code"/>
 					<entry>
 						<fullUrl>
-							<xsl:for-each select="$var31_code/@code">
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var32_idx))))"/>
+							<xsl:for-each select="$var34_code/@code">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var35_idx))))"/>
 							</xsl:for-each>
 						</fullUrl>
+						<xsl:variable name="var33_resultof_reversePackageHierarchy" as="node()?">
+							<xsl:call-template name="user:reversePackageHierarchy">
+								<xsl:with-param name="Content" as="node()">
+									<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</DrugLabelSubmission.Content>
+								</xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
 						<resource>
-							<xsl:for-each select="$var30_map_of_code">
-								<xsl:for-each select="$var30_map_of_code">
-									<xsl:variable name="var29_resultof_createPackagedProduct" as="node()?">
-										<xsl:call-template name="user:createPackagedProduct">
-											<xsl:with-param name="Content" as="node()">
-												<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var33_cur/@node(), $var33_cur/node())"/>
-												</DrugLabelSubmission.Content>
-											</xsl:with-param>
-											<xsl:with-param name="productId" select="." as="xs:string"/>
-											<xsl:with-param name="Part" as="node()*">
-												<xsl:for-each select="$var34_cur/ns1:part">
-													<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
-														<xsl:sequence select="(./@node(), ./node())"/>
-													</DrugLabelSubmission.Part>
-												</xsl:for-each>
-											</xsl:with-param>
-										</xsl:call-template>
-									</xsl:variable>
-									<xsl:for-each select="$var29_resultof_createPackagedProduct">
-										<PackagedProductDefinition>
-											<xsl:sequence select="(./@node(), ./node())"/>
-										</PackagedProductDefinition>
+							<xsl:for-each select="$var33_resultof_reversePackageHierarchy">
+								<xsl:variable name="var32_cur" as="node()" select="."/>
+								<xsl:variable name="var31_map_of_code" as="xs:string?">
+									<xsl:for-each select="$var34_code/@code">
+										<xsl:sequence select="fn:string(.)"/>
+									</xsl:for-each>
+								</xsl:variable>
+								<xsl:for-each select="$var31_map_of_code">
+									<xsl:for-each select="$var31_map_of_code">
+										<xsl:variable name="var30_resultof_createPackagedProduct" as="node()?">
+											<xsl:call-template name="user:createPackagedProduct">
+												<xsl:with-param name="Content" as="node()">
+													<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
+														<xsl:sequence select="($var32_cur/@node(), $var32_cur/node())"/>
+													</DrugLabelSubmission.Content>
+												</xsl:with-param>
+												<xsl:with-param name="position" select="xs:string($var35_idx)" as="xs:string"/>
+												<xsl:with-param name="productId" select="." as="xs:string"/>
+												<xsl:with-param name="Part" as="node()*">
+													<xsl:for-each select="$var36_cur/ns1:part">
+														<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
+															<xsl:sequence select="(./@node(), ./node())"/>
+														</DrugLabelSubmission.Part>
+													</xsl:for-each>
+												</xsl:with-param>
+											</xsl:call-template>
+										</xsl:variable>
+										<xsl:for-each select="$var30_resultof_createPackagedProduct">
+											<PackagedProductDefinition>
+												<xsl:sequence select="(./@node(), ./node())"/>
+											</PackagedProductDefinition>
+										</xsl:for-each>
 									</xsl:for-each>
 								</xsl:for-each>
 							</xsl:for-each>
@@ -11102,36 +12474,36 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct">
-				<xsl:variable name="var39_cur" as="node()" select="."/>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct">
+				<xsl:variable name="var41_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:subjectOf/ns1:approval">
-					<xsl:variable name="var38_cur" as="node()" select="."/>
-					<xsl:variable name="var37_manufacturedProduct" as="node()?" select="$var39_cur/ns1:manufacturedProduct"/>
-					<xsl:variable name="var36_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var37_manufacturedProduct/ns1:code/@code">
+					<xsl:variable name="var40_cur" as="node()" select="."/>
+					<xsl:variable name="var39_manufacturedProduct" as="node()?" select="$var41_cur/ns1:manufacturedProduct"/>
+					<xsl:variable name="var38_map_of_manufacturedProduct" as="xs:string?">
+						<xsl:for-each select="$var39_manufacturedProduct/ns1:code/@code">
 							<xsl:sequence select="fn:string(.)"/>
 						</xsl:for-each>
 					</xsl:variable>
 					<entry>
 						<fullUrl>
-							<xsl:for-each select="$var37_manufacturedProduct/ns1:code/@code">
+							<xsl:for-each select="$var39_manufacturedProduct/ns1:code/@code">
 								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/RegulatedAuthorization/', fn:string(.))))"/>
 							</xsl:for-each>
 						</fullUrl>
 						<resource>
-							<xsl:for-each select="$var36_map_of_code">
-								<xsl:for-each select="$var36_map_of_code">
-									<xsl:variable name="var35_resultof_createMarketing" as="node()?">
+							<xsl:for-each select="$var38_map_of_manufacturedProduct">
+								<xsl:for-each select="$var38_map_of_manufacturedProduct">
+									<xsl:variable name="var37_resultof_createMarketing" as="node()?">
 										<xsl:call-template name="user:createMarketing">
 											<xsl:with-param name="Approval" as="node()">
 												<DrugLabelSubmission.Approval xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var38_cur/@node(), $var38_cur/node())"/>
+													<xsl:sequence select="($var40_cur/@node(), $var40_cur/node())"/>
 												</DrugLabelSubmission.Approval>
 											</xsl:with-param>
 											<xsl:with-param name="productId" select="." as="xs:string"/>
 										</xsl:call-template>
 									</xsl:variable>
-									<xsl:for-each select="$var35_resultof_createMarketing">
+									<xsl:for-each select="$var37_resultof_createMarketing">
 										<RegulatedAuthorization>
 											<xsl:sequence select="(./@node(), ./node())"/>
 										</RegulatedAuthorization>
@@ -11142,14 +12514,14 @@ http://www.altova.com/mapforce
 					</entry>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
 				<entry>
 					<fullUrl>
 						<xsl:for-each select="ns1:partProduct/ns1:code/@code">
 							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/MedicinalProductDefinition/', fn:string(.))))"/>
 						</xsl:for-each>
 					</fullUrl>
-					<xsl:variable name="var40_resultof_createPartProduct" as="node()?">
+					<xsl:variable name="var42_resultof_createPartProduct" as="node()?">
 						<xsl:call-template name="user:createPartProduct">
 							<xsl:with-param name="Part" as="node()">
 								<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
@@ -11159,7 +12531,7 @@ http://www.altova.com/mapforce
 						</xsl:call-template>
 					</xsl:variable>
 					<resource>
-						<xsl:for-each select="$var40_resultof_createPartProduct">
+						<xsl:for-each select="$var42_resultof_createPartProduct">
 							<MedicinalProductDefinition>
 								<xsl:sequence select="(./@node(), ./node())"/>
 							</MedicinalProductDefinition>
@@ -11167,38 +12539,119 @@ http://www.altova.com/mapforce
 					</resource>
 				</entry>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var46_cur" as="node()" select="."/>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
+				<xsl:variable name="var44_partProduct" as="node()?" select="ns1:partProduct"/>
+				<entry>
+					<fullUrl>
+						<xsl:for-each select="$var44_partProduct/ns1:code/@code">
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/ManufacturedItemDefinition/', fn:string(.))))"/>
+						</xsl:for-each>
+					</fullUrl>
+					<xsl:variable name="var43_resultof_createManufacturedItem" as="node()?">
+						<xsl:call-template name="user:createManufacturedItem">
+							<xsl:with-param name="ManufacturedProduct" as="node()">
+								<DrugLabelSubmission.ManufacturedProduct xmlns="urn:hl7-org:v3">
+									<xsl:for-each select="$var44_partProduct">
+										<manufacturedProduct>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</manufacturedProduct>
+									</xsl:for-each>
+									<xsl:for-each select="ns1:subjectOf">
+										<subjectOf>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</subjectOf>
+									</xsl:for-each>
+									<xsl:for-each select="ns1:consumedIn">
+										<consumedIn>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</consumedIn>
+									</xsl:for-each>
+								</DrugLabelSubmission.ManufacturedProduct>
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:variable>
+					<resource>
+						<xsl:for-each select="$var43_resultof_createManufacturedItem">
+							<ManufacturedItemDefinition>
+								<xsl:sequence select="(./@node(), ./node())"/>
+							</ManufacturedItemDefinition>
+						</xsl:for-each>
+					</resource>
+				</entry>
+			</xsl:for-each>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
+				<xsl:variable name="var49_cur" as="node()" select="."/>
+				<xsl:for-each select="ns1:subjectOf/ns1:approval">
+					<xsl:variable name="var48_cur" as="node()" select="."/>
+					<xsl:variable name="var47_partProduct" as="node()?" select="$var49_cur/ns1:partProduct"/>
+					<xsl:variable name="var46_map_of_manufacturedProduct" as="xs:string?">
+						<xsl:for-each select="$var47_partProduct/ns1:code/@code">
+							<xsl:sequence select="fn:string(.)"/>
+						</xsl:for-each>
+					</xsl:variable>
+					<entry>
+						<fullUrl>
+							<xsl:for-each select="$var47_partProduct/ns1:code/@code">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/RegulatedAuthorization/', fn:string(.))))"/>
+							</xsl:for-each>
+						</fullUrl>
+						<resource>
+							<xsl:for-each select="$var46_map_of_manufacturedProduct">
+								<xsl:for-each select="$var46_map_of_manufacturedProduct">
+									<xsl:variable name="var45_resultof_createMarketing" as="node()?">
+										<xsl:call-template name="user:createMarketing">
+											<xsl:with-param name="Approval" as="node()">
+												<DrugLabelSubmission.Approval xmlns="urn:hl7-org:v3">
+													<xsl:sequence select="($var48_cur/@node(), $var48_cur/node())"/>
+												</DrugLabelSubmission.Approval>
+											</xsl:with-param>
+											<xsl:with-param name="productId" select="." as="xs:string"/>
+										</xsl:call-template>
+									</xsl:variable>
+									<xsl:for-each select="$var45_resultof_createMarketing">
+										<RegulatedAuthorization>
+											<xsl:sequence select="(./@node(), ./node())"/>
+										</RegulatedAuthorization>
+									</xsl:for-each>
+								</xsl:for-each>
+							</xsl:for-each>
+						</resource>
+					</entry>
+				</xsl:for-each>
+			</xsl:for-each>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var55_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var45_cur" as="node()" select="."/>
-					<xsl:variable name="var44_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var54_cur" as="node()" select="."/>
+					<xsl:variable name="var53_idx" as="xs:integer" select="position()"/>
 					<xsl:if test="fn:exists((./@classCode)[(fn:string(.) = 'IACT')])">
-						<xsl:variable name="var43_code" as="node()?" select="$var46_cur/ns1:code"/>
-						<xsl:variable name="var42_map_of_code" as="xs:string?">
-							<xsl:for-each select="$var43_code/@code">
+						<xsl:variable name="var52_code" as="node()?" select="$var55_cur/ns1:code"/>
+						<xsl:variable name="var51_map_of_code" as="xs:string?">
+							<xsl:for-each select="$var52_code/@code">
 								<xsl:sequence select="fn:string(.)"/>
 							</xsl:for-each>
 						</xsl:variable>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var43_code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var44_idx))))"/>
+								<xsl:for-each select="$var52_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var53_idx))))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
-								<xsl:for-each select="$var42_map_of_code">
-									<xsl:for-each select="$var42_map_of_code">
-										<xsl:variable name="var41_resultof_createInactiveIngredient" as="node()?">
+								<xsl:for-each select="$var51_map_of_code">
+									<xsl:for-each select="$var51_map_of_code">
+										<xsl:variable name="var50_resultof_createInactiveIngredient" as="node()?">
 											<xsl:call-template name="user:createInactiveIngredient">
 												<xsl:with-param name="Ingredient" as="node()">
 													<DrugLabelSubmission.Ingredient xmlns="urn:hl7-org:v3">
-														<xsl:sequence select="($var45_cur/@node(), $var45_cur/node())"/>
+														<xsl:sequence select="($var54_cur/@node(), $var54_cur/node())"/>
 													</DrugLabelSubmission.Ingredient>
 												</xsl:with-param>
+												<xsl:with-param name="position" select="xs:string($var53_idx)" as="xs:string"/>
 												<xsl:with-param name="productId" select="." as="xs:string"/>
 											</xsl:call-template>
 										</xsl:variable>
-										<xsl:for-each select="$var41_resultof_createInactiveIngredient">
+										<xsl:for-each select="$var50_resultof_createInactiveIngredient">
 											<Ingredient>
 												<xsl:sequence select="(./@node(), ./node())"/>
 											</Ingredient>
@@ -11210,27 +12663,32 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var50_cur" as="node()" select="."/>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var59_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var49_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var48_classCode" as="node()?" select="@classCode"/>
-					<xsl:if test="fn:not(fn:exists(($var48_classCode)[(fn:string(.) = 'IACT')]))">
-						<xsl:variable name="var47_code" as="node()?" select="$var50_cur/ns1:code"/>
+					<xsl:variable name="var58_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var57_classCode" as="node()?" select="@classCode"/>
+					<xsl:if test="fn:not(fn:exists(($var57_classCode)[(fn:string(.) = 'IACT')]))">
+						<xsl:variable name="var56_code" as="node()?" select="$var59_cur/ns1:code"/>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var47_code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var49_idx))))"/>
+								<xsl:for-each select="$var56_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/Ingredient/', fn:string(.)), '-'), xs:string($var58_idx))))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
 								<Ingredient>
+									<id>
+										<xsl:for-each select="$var56_code/@code">
+											<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:string(.), '-'), xs:string($var58_idx))"/>
+										</xsl:for-each>
+									</id>
 									<status>
 										<xsl:attribute name="value" namespace="" select="'active'"/>
 									</status>
 									<for>
 										<reference>
-											<xsl:for-each select="$var47_code/@code">
+											<xsl:for-each select="$var56_code/@code">
 												<xsl:attribute name="value" namespace="" select="fn:concat('ManufacturedItemDefinition/', fn:string(.))"/>
 											</xsl:for-each>
 										</reference>
@@ -11241,7 +12699,7 @@ http://www.altova.com/mapforce
 												<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/v3-RoleClass'))"/>
 											</system>
 											<code>
-												<xsl:for-each select="$var48_classCode">
+												<xsl:for-each select="$var57_classCode">
 													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 												</xsl:for-each>
 											</code>
@@ -11251,8 +12709,8 @@ http://www.altova.com/mapforce
 										<code>
 											<reference>
 												<reference>
-													<xsl:for-each select="$var47_code/@code">
-														<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('SubstanceDefinition/', fn:string(.)), '-'), xs:string($var49_idx)), '-'), 'Substance')"/>
+													<xsl:for-each select="$var56_code/@code">
+														<xsl:attribute name="value" namespace="" select="fn:concat('SubstanceDefinition/', fn:concat(fn:concat(fn:concat(fn:concat(fn:string(.), '-'), xs:string($var58_idx)), '-'), 'Substance'))"/>
 													</xsl:for-each>
 												</reference>
 											</reference>
@@ -11304,52 +12762,58 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var55_cur" as="node()" select="."/>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var65_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:ingredient">
-					<xsl:variable name="var54_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var64_idx" as="xs:integer" select="position()"/>
 					<xsl:if test="fn:not(fn:exists((./@classCode)[(fn:string(.) = 'IACT')]))">
-						<xsl:variable name="var52_http___fdasis_nlm_nih_gov_as_string" as="xs:string" select="xs:string(xs:anyURI('http://fdasis.nlm.nih.gov'))"/>
-						<xsl:variable name="var53_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
+						<xsl:variable name="var61_http___fdasis_nlm_nih_gov_as_string" as="xs:string" select="xs:string(xs:anyURI('http://fdasis.nlm.nih.gov'))"/>
+						<xsl:variable name="var62_code" as="node()?" select="$var65_cur/ns1:code"/>
+						<xsl:variable name="var63_ingredientSubstance" as="node()?" select="ns1:ingredientSubstance"/>
 						<entry>
 							<fullUrl>
-								<xsl:for-each select="$var55_cur/ns1:code/@code">
-									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var54_idx)), '-'), 'Substance')))"/>
+								<xsl:for-each select="$var62_code/@code">
+									<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat(fn:concat(fn:concat('http://example.org/SubstanceDefinition/', fn:string(.)), '-'), xs:string($var64_idx)), '-'), 'Substance')))"/>
 								</xsl:for-each>
 							</fullUrl>
 							<resource>
 								<SubstanceDefinition>
+									<id>
+										<xsl:for-each select="$var62_code/@code">
+											<xsl:attribute name="value" namespace="" select="fn:concat(fn:concat(fn:concat(fn:concat(fn:string(.), '-'), xs:string($var64_idx)), '-'), 'Substance')"/>
+										</xsl:for-each>
+									</id>
 									<identifier>
 										<system>
-											<xsl:attribute name="value" namespace="" select="$var52_http___fdasis_nlm_nih_gov_as_string"/>
+											<xsl:attribute name="value" namespace="" select="$var61_http___fdasis_nlm_nih_gov_as_string"/>
 										</system>
 										<value>
-											<xsl:for-each select="$var53_ingredientSubstance/ns1:code/@code">
+											<xsl:for-each select="$var63_ingredientSubstance/ns1:code/@code">
 												<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 											</xsl:for-each>
 										</value>
 									</identifier>
-									<xsl:for-each select="$var53_ingredientSubstance/ns1:activeMoiety">
-										<xsl:variable name="var51_activeMoiety" as="node()?" select="ns1:activeMoiety"/>
+									<xsl:for-each select="$var63_ingredientSubstance/ns1:activeMoiety">
+										<xsl:variable name="var60_activeMoiety" as="node()?" select="ns1:activeMoiety"/>
 										<moiety>
 											<identifier>
 												<system>
-													<xsl:attribute name="value" namespace="" select="$var52_http___fdasis_nlm_nih_gov_as_string"/>
+													<xsl:attribute name="value" namespace="" select="$var61_http___fdasis_nlm_nih_gov_as_string"/>
 												</system>
 												<value>
-													<xsl:for-each select="$var51_activeMoiety/ns1:code/@code">
+													<xsl:for-each select="$var60_activeMoiety/ns1:code/@code">
 														<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 													</xsl:for-each>
 												</value>
 											</identifier>
 											<name>
-												<xsl:for-each select="($var51_activeMoiety/ns1:name/node())[fn:boolean(self::text())]">
+												<xsl:for-each select="($var60_activeMoiety/ns1:name/node())[fn:boolean(self::text())]">
 													<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 												</xsl:for-each>
 											</name>
 										</moiety>
 									</xsl:for-each>
-									<xsl:for-each select="$var53_ingredientSubstance/ns1:name">
+									<xsl:for-each select="$var63_ingredientSubstance/ns1:name">
 										<name>
 											<name>
 												<xsl:for-each select="(./node())[fn:boolean(self::text())]">
@@ -11364,85 +12828,41 @@ http://www.altova.com/mapforce
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
-				<xsl:variable name="var61_cur" as="node()" select="."/>
+			<xsl:for-each select="$var72_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part/ns1:partProduct">
+				<xsl:variable name="var71_cur" as="node()" select="."/>
 				<xsl:for-each select="ns1:asContent">
-					<xsl:variable name="var60_cur" as="node()" select="."/>
-					<xsl:variable name="var59_idx" as="xs:integer" select="position()"/>
-					<xsl:variable name="var58_code" as="node()?" select="$var61_cur/ns1:code"/>
-					<xsl:variable name="var57_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var58_code/@code">
+					<xsl:variable name="var70_cur" as="node()" select="."/>
+					<xsl:variable name="var69_idx" as="xs:integer" select="position()"/>
+					<xsl:variable name="var68_code" as="node()?" select="$var71_cur/ns1:code"/>
+					<xsl:variable name="var67_map_of_manufacturedProduct" as="xs:string?">
+						<xsl:for-each select="$var68_code/@code">
 							<xsl:sequence select="fn:string(.)"/>
 						</xsl:for-each>
 					</xsl:variable>
 					<entry>
 						<fullUrl>
-							<xsl:for-each select="$var58_code/@code">
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var59_idx))))"/>
+							<xsl:for-each select="$var68_code/@code">
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat(fn:concat(fn:concat('http://example.org/PackagedProductDefinition/', fn:string(.)), '-'), xs:string($var69_idx))))"/>
 							</xsl:for-each>
 						</fullUrl>
 						<resource>
-							<xsl:for-each select="$var57_map_of_code">
-								<xsl:for-each select="$var57_map_of_code">
-									<xsl:variable name="var56_resultof_createPackagedProduct" as="node()?">
-										<xsl:call-template name="user:createPackagedProduct">
+							<xsl:for-each select="$var67_map_of_manufacturedProduct">
+								<xsl:for-each select="$var67_map_of_manufacturedProduct">
+									<xsl:variable name="var66_resultof_createPackagedPartProduct" as="node()?">
+										<xsl:call-template name="user:createPackagedPartProduct">
+											<xsl:with-param name="position" select="xs:string($var69_idx)" as="xs:string"/>
 											<xsl:with-param name="Content" as="node()">
 												<DrugLabelSubmission.Content xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var60_cur/@node(), $var60_cur/node())"/>
+													<xsl:sequence select="($var70_cur/@node(), $var70_cur/node())"/>
 												</DrugLabelSubmission.Content>
 											</xsl:with-param>
 											<xsl:with-param name="productId" select="." as="xs:string"/>
-											<xsl:with-param name="Part" as="node()">
-												<DrugLabelSubmission.Part xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="()"/>
-												</DrugLabelSubmission.Part>
-											</xsl:with-param>
 										</xsl:call-template>
 									</xsl:variable>
-									<xsl:for-each select="$var56_resultof_createPackagedProduct">
+									<xsl:for-each select="$var66_resultof_createPackagedPartProduct">
 										<PackagedProductDefinition>
 											<xsl:sequence select="(./@node(), ./node())"/>
 										</PackagedProductDefinition>
-									</xsl:for-each>
-								</xsl:for-each>
-							</xsl:for-each>
-						</resource>
-					</entry>
-				</xsl:for-each>
-			</xsl:for-each>
-			<xsl:for-each select="$var67_document/ns1:component/ns1:structuredBody/ns1:component/ns1:section/ns1:subject/ns1:manufacturedProduct/ns1:manufacturedProduct/ns1:part">
-				<xsl:variable name="var66_cur" as="node()" select="."/>
-				<xsl:for-each select="ns1:subjectOf/ns1:approval">
-					<xsl:variable name="var65_cur" as="node()" select="."/>
-					<xsl:variable name="var64_partProduct" as="node()?" select="$var66_cur/ns1:partProduct"/>
-					<xsl:variable name="var63_map_of_code" as="xs:string?">
-						<xsl:for-each select="$var64_partProduct/ns1:code/@code">
-							<xsl:sequence select="fn:string(.)"/>
-						</xsl:for-each>
-					</xsl:variable>
-					<entry>
-						<fullUrl>
-							<xsl:for-each select="$var64_partProduct/ns1:code/@code">
-								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('http://example.org/RegulatedAuthorization/', fn:string(.))))"/>
-							</xsl:for-each>
-						</fullUrl>
-						<resource>
-							<xsl:for-each select="$var63_map_of_code">
-								<xsl:for-each select="$var63_map_of_code">
-									<xsl:variable name="var62_resultof_createMarketing" as="node()?">
-										<xsl:call-template name="user:createMarketing">
-											<xsl:with-param name="Approval" as="node()">
-												<DrugLabelSubmission.Approval xmlns="urn:hl7-org:v3">
-													<xsl:sequence select="($var65_cur/@node(), $var65_cur/node())"/>
-												</DrugLabelSubmission.Approval>
-											</xsl:with-param>
-											<xsl:with-param name="productId" select="." as="xs:string"/>
-										</xsl:call-template>
-									</xsl:variable>
-									<xsl:for-each select="$var62_resultof_createMarketing">
-										<RegulatedAuthorization>
-											<xsl:sequence select="(./@node(), ./node())"/>
-										</RegulatedAuthorization>
 									</xsl:for-each>
 								</xsl:for-each>
 							</xsl:for-each>

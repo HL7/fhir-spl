@@ -9,7 +9,7 @@ Refer to the Altova MapForce Documentation for further details.
 http://www.altova.com/mapforce
 -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns0="http://hl7.org/fhir" xmlns:tbf="http://www.altova.com/MapForce/UDF/tbf" xmlns:user="http://www.altova.com/MapForce/UDF/user" xmlns:vmf="http://www.altova.com/MapForce/UDF/vmf" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:ns1="urn:hl7-org:v3" exclude-result-prefixes="ns0 tbf user vmf xs fn ns1">
-	<xsl:template name="tbf:tbf110_Identifier-II">
+	<xsl:template name="tbf:tbf125_Identifier-II">
 		<xsl:param name="input" select="()"/>
 		<xsl:for-each select="$input/@root">
 			<xsl:attribute name="root" select="fn:string(.)"/>
@@ -57,10 +57,10 @@ http://www.altova.com/mapforce
 	</xsl:template>
 	<xsl:template name="user:convertOrganization">
 		<xsl:param name="Organization" select="()"/>
-		<xsl:variable name="var14_identifier" as="node()*" select="$Organization/ns0:identifier"/>
-		<xsl:variable name="var15_contact" as="node()*" select="$Organization/ns0:contact"/>
-		<xsl:variable name="var16_contained" as="node()*" select="$Organization/ns0:contained"/>
-		<xsl:variable name="var17_address" as="node()*" select="$Organization/ns0:address"/>
+		<xsl:variable name="var14_address" as="node()*" select="$Organization/ns0:address"/>
+		<xsl:variable name="var15_contained" as="node()*" select="$Organization/ns0:contained"/>
+		<xsl:variable name="var16_identifier" as="node()*" select="$Organization/ns0:identifier"/>
+		<xsl:variable name="var17_contact" as="node()*" select="$Organization/ns0:contact"/>
 		<xsl:variable name="var13_create_name_of_name" as="node()*">
 			<xsl:for-each select="$Organization/ns0:name">
 				<name xmlns="urn:hl7-org:v3">
@@ -71,7 +71,7 @@ http://www.altova.com/mapforce
 			</xsl:for-each>
 		</xsl:variable>
 		<LabelerRequest.LabelerOrganization xmlns="urn:hl7-org:v3">
-			<xsl:for-each select="$var14_identifier">
+			<xsl:for-each select="$var16_identifier">
 				<id>
 					<xsl:for-each select="ns0:system/@value">
 						<xsl:variable name="var1_resultof_stripUrn" as="xs:string?">
@@ -91,35 +91,35 @@ http://www.altova.com/mapforce
 			<xsl:sequence select="$var13_create_name_of_name"/>
 			<contactParty>
 				<addr>
-					<xsl:for-each select="$var15_contact/ns0:address/ns0:country">
+					<xsl:for-each select="$var17_contact/ns0:address/ns0:country">
 						<country>
 							<xsl:for-each select="@value">
 								<xsl:sequence select="fn:string(.)"/>
 							</xsl:for-each>
 						</country>
 					</xsl:for-each>
-					<xsl:for-each select="$var15_contact/ns0:address/ns0:state">
+					<xsl:for-each select="$var17_contact/ns0:address/ns0:state">
 						<state>
 							<xsl:for-each select="@value">
 								<xsl:sequence select="fn:string(.)"/>
 							</xsl:for-each>
 						</state>
 					</xsl:for-each>
-					<xsl:for-each select="$var15_contact/ns0:address/ns0:city">
+					<xsl:for-each select="$var17_contact/ns0:address/ns0:city">
 						<city>
 							<xsl:for-each select="@value">
 								<xsl:sequence select="fn:string(.)"/>
 							</xsl:for-each>
 						</city>
 					</xsl:for-each>
-					<xsl:for-each select="$var15_contact/ns0:address/ns0:postalCode">
+					<xsl:for-each select="$var17_contact/ns0:address/ns0:postalCode">
 						<postalCode>
 							<xsl:for-each select="@value">
 								<xsl:sequence select="fn:string(.)"/>
 							</xsl:for-each>
 						</postalCode>
 					</xsl:for-each>
-					<xsl:for-each select="$var15_contact/ns0:address/ns0:line">
+					<xsl:for-each select="$var17_contact/ns0:address/ns0:line">
 						<streetAddressLine>
 							<xsl:for-each select="@value">
 								<xsl:sequence select="fn:string(.)"/>
@@ -127,7 +127,7 @@ http://www.altova.com/mapforce
 						</streetAddressLine>
 					</xsl:for-each>
 				</addr>
-				<xsl:for-each select="$var15_contact/ns0:telecom">
+				<xsl:for-each select="$var17_contact/ns0:telecom">
 					<xsl:variable name="var4_cur" as="node()" select="."/>
 					<telecom>
 						<xsl:for-each select="ns0:system/@value">
@@ -146,7 +146,7 @@ http://www.altova.com/mapforce
 					</telecom>
 				</xsl:for-each>
 				<contactPerson>
-					<xsl:for-each select="$var15_contact/ns0:name">
+					<xsl:for-each select="$var17_contact/ns0:name">
 						<name>
 							<xsl:for-each select="ns0:text/@value">
 								<xsl:sequence select="fn:string(.)"/>
@@ -159,7 +159,7 @@ http://www.altova.com/mapforce
 				<assignedOrganization>
 					<assignedEntity>
 						<assignedOrganization>
-							<xsl:for-each select="$var14_identifier">
+							<xsl:for-each select="$var16_identifier">
 								<xsl:variable name="var5_resultof_filterDUNSNumber" as="node()?">
 									<xsl:call-template name="user:filterDUNSNumber">
 										<xsl:with-param name="fhirsingle" as="node()">
@@ -171,7 +171,7 @@ http://www.altova.com/mapforce
 								</xsl:variable>
 								<xsl:for-each select="$var5_resultof_filterDUNSNumber">
 									<id>
-										<xsl:call-template name="tbf:tbf110_Identifier-II">
+										<xsl:call-template name="tbf:tbf125_Identifier-II">
 											<xsl:with-param name="input" select="." as="node()"/>
 										</xsl:call-template>
 									</id>
@@ -179,35 +179,35 @@ http://www.altova.com/mapforce
 							</xsl:for-each>
 							<xsl:sequence select="$var13_create_name_of_name"/>
 							<addr>
-								<xsl:for-each select="$var17_address/ns0:country">
+								<xsl:for-each select="$var14_address/ns0:country">
 									<country>
 										<xsl:for-each select="@value">
 											<xsl:sequence select="fn:string(.)"/>
 										</xsl:for-each>
 									</country>
 								</xsl:for-each>
-								<xsl:for-each select="$var17_address/ns0:state">
+								<xsl:for-each select="$var14_address/ns0:state">
 									<state>
 										<xsl:for-each select="@value">
 											<xsl:sequence select="fn:string(.)"/>
 										</xsl:for-each>
 									</state>
 								</xsl:for-each>
-								<xsl:for-each select="$var17_address/ns0:city">
+								<xsl:for-each select="$var14_address/ns0:city">
 									<city>
 										<xsl:for-each select="@value">
 											<xsl:sequence select="fn:string(.)"/>
 										</xsl:for-each>
 									</city>
 								</xsl:for-each>
-								<xsl:for-each select="$var17_address/ns0:postalCode">
+								<xsl:for-each select="$var14_address/ns0:postalCode">
 									<postalCode>
 										<xsl:for-each select="@value">
 											<xsl:sequence select="fn:string(.)"/>
 										</xsl:for-each>
 									</postalCode>
 								</xsl:for-each>
-								<xsl:for-each select="$var17_address/ns0:line">
+								<xsl:for-each select="$var14_address/ns0:line">
 									<streetAddressLine>
 										<xsl:for-each select="@value">
 											<xsl:sequence select="fn:string(.)"/>
@@ -215,7 +215,7 @@ http://www.altova.com/mapforce
 									</streetAddressLine>
 								</xsl:for-each>
 							</addr>
-							<xsl:for-each select="$var16_contained/ns0:Organization">
+							<xsl:for-each select="$var15_contained/ns0:Organization">
 								<xsl:variable name="var10_identifier" as="node()*" select="ns0:identifier"/>
 								<assignedEntity>
 									<assignedOrganization>
@@ -272,7 +272,7 @@ http://www.altova.com/mapforce
 								</assignedEntity>
 							</xsl:for-each>
 						</assignedOrganization>
-						<xsl:for-each select="$var16_contained/ns0:HealthcareService">
+						<xsl:for-each select="$var15_contained/ns0:HealthcareService">
 							<performance>
 								<actDefinition>
 									<xsl:for-each select="ns0:type">

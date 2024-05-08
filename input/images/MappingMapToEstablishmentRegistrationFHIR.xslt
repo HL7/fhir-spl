@@ -20,6 +20,291 @@ http://www.altova.com/mapforce
 		<xsl:for-each select="$input/@displayName">
 			<xsl:attribute name="displayName" select="fn:string(.)"/>
 		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns0:originalText)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf2_ED">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf2_ED">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@representation">
+			<xsl:attribute name="representation" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@mediaType">
+			<xsl:attribute name="mediaType" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@language">
+			<xsl:attribute name="language" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@compression">
+			<xsl:attribute name="compression" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheck">
+			<xsl:attribute name="integrityCheck" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheckAlgorithm">
+			<xsl:attribute name="integrityCheckAlgorithm" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@description">
+			<xsl:attribute name="description" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns0:reference)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf3_TEL">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::ns0:thumbnail)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf4_thumbnail">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::ns0:translation)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf5_EDTranslation">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf3_TEL">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@use">
+			<xsl:attribute name="use" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@capabilities">
+			<xsl:attribute name="capabilities" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns0:useablePeriod)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf6_SXCM_TS">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf4_thumbnail">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@representation">
+			<xsl:attribute name="representation" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@mediaType">
+			<xsl:attribute name="mediaType" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@language">
+			<xsl:attribute name="language" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@compression">
+			<xsl:attribute name="compression" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheck">
+			<xsl:attribute name="integrityCheck" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheckAlgorithm">
+			<xsl:attribute name="integrityCheckAlgorithm" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@description">
+			<xsl:attribute name="description" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns0:reference)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf3_TEL">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf5_EDTranslation">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@representation">
+			<xsl:attribute name="representation" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@mediaType">
+			<xsl:attribute name="mediaType" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@language">
+			<xsl:attribute name="language" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@compression">
+			<xsl:attribute name="compression" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheck">
+			<xsl:attribute name="integrityCheck" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@integrityCheckAlgorithm">
+			<xsl:attribute name="integrityCheckAlgorithm" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@description">
+			<xsl:attribute name="description" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns0:reference)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf3_TEL">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="fn:boolean(self::ns0:thumbnail)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf4_thumbnail">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="tbf:tbf6_SXCM_TS">
+		<xsl:param name="input" select="()"/>
+		<xsl:for-each select="$input/@nullFlavor">
+			<xsl:attribute name="nullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@collectionNullFlavor">
+			<xsl:attribute name="collectionNullFlavor" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@flavorId">
+			<xsl:attribute name="flavorId" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@updateMode">
+			<xsl:attribute name="updateMode" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@value">
+			<xsl:attribute name="value" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/@operator">
+			<xsl:attribute name="operator" select="fn:string(.)"/>
+		</xsl:for-each>
+		<xsl:for-each select="$input/node()">
+			<xsl:choose>
+				<xsl:when test="fn:boolean(self::*)">
+					<xsl:if test="fn:boolean(self::ns0:originalText)">
+						<xsl:element name="{fn:string(fn:node-name(.))}" namespace="{fn:namespace-uri-from-QName(fn:node-name(.))}">
+							<xsl:call-template name="tbf:tbf2_ED">
+								<xsl:with-param name="input" select="." as="node()"/>
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="fn:not(fn:boolean(self::text()))">
+						<xsl:sequence select="."/>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="user:createOrganizationAffiliation">
 		<xsl:param name="participatingId" select="()"/>
@@ -106,8 +391,8 @@ http://www.altova.com/mapforce
 	</xsl:template>
 	<xsl:template name="user:createEstablishmentOrganization">
 		<xsl:param name="EstablishmentOrganization" select="()"/>
-		<xsl:variable name="var14_assignedOrganization" as="node()*" select="$EstablishmentOrganization/ns0:assignedOrganization"/>
-		<xsl:variable name="var15_http___hl__org_fhir_us_spl_Cod_as_string" as="xs:string" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+		<xsl:variable name="var14_http___hl__org_fhir_us_spl_Cod_as_string" as="xs:string" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
+		<xsl:variable name="var15_assignedOrganization" as="node()*" select="$EstablishmentOrganization/ns0:assignedOrganization"/>
 		<Organization xmlns="http://hl7.org/fhir">
 			<xsl:for-each select="$EstablishmentOrganization/ns0:performance">
 				<contained>
@@ -129,7 +414,7 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</contained>
 			</xsl:for-each>
-			<xsl:for-each select="$var14_assignedOrganization/ns0:assignedEntity">
+			<xsl:for-each select="$var15_assignedOrganization/ns0:assignedEntity">
 				<xsl:variable name="var6_cur" as="node()" select="."/>
 				<xsl:for-each select="ns0:assignedOrganization">
 					<xsl:variable name="var5_idx" as="xs:integer" select="position()"/>
@@ -166,7 +451,7 @@ http://www.altova.com/mapforce
 					</contained>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var14_assignedOrganization/ns0:assignedEntity">
+			<xsl:for-each select="$var15_assignedOrganization/ns0:assignedEntity">
 				<xsl:variable name="var12_cur" as="node()" select="."/>
 				<xsl:for-each select="ns0:assignedOrganization">
 					<xsl:variable name="var11_idx" as="xs:integer" select="position()"/>
@@ -202,7 +487,7 @@ http://www.altova.com/mapforce
 							<type>
 								<coding>
 									<system>
-										<xsl:attribute name="value" namespace="" select="$var15_http___hl__org_fhir_us_spl_Cod_as_string"/>
+										<xsl:attribute name="value" namespace="" select="$var14_http___hl__org_fhir_us_spl_Cod_as_string"/>
 									</system>
 									<code>
 										<xsl:for-each select="$var10_performance/ns0:actDefinition/ns0:code/@code">
@@ -245,7 +530,7 @@ http://www.altova.com/mapforce
 					</contained>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var14_assignedOrganization/ns0:id">
+			<xsl:for-each select="$var15_assignedOrganization/ns0:id">
 				<identifier>
 					<system>
 						<xsl:for-each select="@root">
@@ -262,7 +547,7 @@ http://www.altova.com/mapforce
 			<type>
 				<coding>
 					<system>
-						<xsl:attribute name="value" namespace="" select="$var15_http___hl__org_fhir_us_spl_Cod_as_string"/>
+						<xsl:attribute name="value" namespace="" select="$var14_http___hl__org_fhir_us_spl_Cod_as_string"/>
 					</system>
 					<code>
 						<xsl:attribute name="value" namespace="" select="'Establishment'"/>
@@ -270,11 +555,11 @@ http://www.altova.com/mapforce
 				</coding>
 			</type>
 			<name>
-				<xsl:for-each select="($var14_assignedOrganization/ns0:name/node())[fn:boolean(self::text())]">
+				<xsl:for-each select="($var15_assignedOrganization/ns0:name/node())[fn:boolean(self::text())]">
 					<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
 				</xsl:for-each>
 			</name>
-			<xsl:for-each select="$var14_assignedOrganization/ns0:addr">
+			<xsl:for-each select="$var15_assignedOrganization/ns0:addr">
 				<address>
 					<xsl:for-each select="ns0:streetAddressLine">
 						<line>
@@ -313,7 +598,7 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</address>
 			</xsl:for-each>
-			<xsl:for-each select="$var14_assignedOrganization/ns0:contactParty">
+			<xsl:for-each select="$var15_assignedOrganization/ns0:contactParty">
 				<contact>
 					<name>
 						<text>
