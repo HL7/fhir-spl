@@ -87,7 +87,7 @@ Drug Products included in a label are represented using a combination of the fol
 * [Submitted Manufactured Item](StructureDefinition-SubmittedManufacturedItem.html)
 * [Submitted Medicinal Product Marketing](StructureDefinition-SubmittedMedicinalProductMarketing.html)
 * [Submitted Medicinal Product Ingredient](StructureDefinition-SubmittedMedicinalProductIngredient.html)
-* [Submitted Ingredient Definition](StructureDefinition-SubmitedIngredientDefinition.html)
+* [Submitted Ingredient Definition](StructureDefinition-SubmittedIngredientDefinition.html)
 
 ##### Submitted Medicinal Product
 
