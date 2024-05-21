@@ -1,21 +1,8 @@
 == Suppressed Messages ==
 
-# ALL NDC Codes is a large list
-The value set expansion is too large, and only a subset has been displayed
-
-# External Terminologies that aren't known by the validator
-ValueSet 'http://evs.nci.nih.gov/valueset/FDA/C102833' not found
-ValueSet 'http://evs.nci.nih.gov/valueset/FDA/C54455' not found
-ValueSet 'http://evs.nci.nih.gov/valueset/FDA/C54456' not found
-ValueSet 'http://evs.nci.nih.gov/valueset/FDA/C54453' not found
-ValueSet 'http://evs.nci.nih.gov/valueset/FDA/C54454' not found
-
 # Base spec terminologies that can not be found
 ValueSet 'http://hl7.org/fhir/ValueSet/product-characteristic-codes' not found
 ValueSet 'http://hl7.org/fhir/ValueSet/manufactured-dose-form' not found
-
-# Draft code system used in base specification
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type|0.1.0
 
 # Allow for different display names from LOINC for FDA purposes
 Wrong Display Name 'Establishment registration' for http://loinc.org#51725-0%
