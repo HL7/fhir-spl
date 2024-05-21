@@ -37,16 +37,16 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * crossReference.product.concept 1..1 MS
 * crossReference.product.reference 0..0
 * route 0..* MS
-* route from http://evs.nci.nih.gov/valueset/FDA/C54455 (required)
+* route from SPLRouteOfAdministration (required)
 * marketingStatus 0..1 MS
 * marketingStatus.status 1..1 MS
 * marketingStatus.status from SPLMarketingStatuses (required)
 * marketingStatus.dateRange 1..1 MS
 * specialMeasures 0..* MS
-* specialMeasures from http://evs.nci.nih.gov/valueset/FDA/C54459 (required)
+* specialMeasures from SPLSpecialMeasures (required)
 * operation 0..* MS
 * operation.type.concept 1..1 MS
-* operation.type from http://evs.nci.nih.gov/valueset/FDA/C73600 (required)
+* operation.type from SPLOperationType (required)
 * operation.organization 1..1 MS
 * operation.organization only Reference(IdentifiedEstablishment)
 
@@ -88,7 +88,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
 * package.property.value[x] 1..1 MS
 * package.property.value[x] only CodeableConcept
-* package.property.valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C102833 (required)
+* package.property.valueCodeableConcept from SPLComboProductType (required)
 * package.containedItem 0..* MS
 * package.containedItem.item 1..1 MS
 * package.containedItem.item only CodeableReference(SubmittedManufacturedItem)
@@ -100,7 +100,7 @@ Parent: ManufacturedItemDefinition
 Description: "Details around the actual item, i.e tablet, solution, etc. that is packaged as part of the medicinal product."
 * status = #active
 * manufacturedDoseForm 1..1 MS
-* manufacturedDoseForm from http://evs.nci.nih.gov/valueset/FDA/C54456 (required)
+* manufacturedDoseForm from SPLDoseForm (required)
 * extension contains ItemMarketingStatusDates named marketingStatusDates 0..1 MS
 * property 0..* MS
 * property.type 1..1 MS
@@ -113,13 +113,13 @@ Description: "Details around the actual item, i.e tablet, solution, etc. that is
 * property contains Color 0..* and Imprint 0..1 and Score 0..1 and Shape 0..1 and Size 0..1 and Flavor 0..* and Image 0..*
 * property[Color].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
 * property[Color].value[x] only CodeableConcept
-* property[Color].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C54453 (required)
+* property[Color].valueCodeableConcept from SPLColor (required)
 * property[Shape].type = SubmittedMedicinalProductCharacteristicTypes#SPLSHAPE
 * property[Shape].value[x] only CodeableConcept
-* property[Shape].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C54454 (required)
+* property[Shape].valueCodeableConcept from SPLShape (required)
 * property[Flavor].type = SubmittedMedicinalProductCharacteristicTypes#SPLFLAVOR
 * property[Flavor].value[x] only CodeableConcept
-* property[Flavor].valueCodeableConcept from http://evs.nci.nih.gov/valueset/FDA/C73339 (required)
+* property[Flavor].valueCodeableConcept from SPLFlavor (required)
 * property[Imprint].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMPRINT
 * property[Imprint].value[x] only CodeableConcept
 * property[Imprint].valueCodeableConcept ^short = "Text is only allowed as the imprint is a string."
