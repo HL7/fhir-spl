@@ -7,7 +7,7 @@
   },
   {
       "name" : "incomplete-ok",
-      "valueBoolean" : true
+      "valueBoolean" : "true"
     },
   ]
 }

@@ -1024,13 +1024,13 @@ Description: "4 25mg kits of Enbrel"
 * package.package.containedItem.amount = 1 '1'
 * package.package.package[0].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part1Package)
 * package.package.package[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
-* package.package.package[0].type = $NCI-T#C42957 "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION"
+* package.package.package[0].type = $NCI-T#C43226 "VIAL"
 * package.package.package[0].containedItem.item.reference = Reference(EnbrelPowder)
 * package.package.package[0].containedItem.amount = 1 'mL'
 * package.package.package[1].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part2Package)
 * package.package.package[1].identifier.system = "http://hl7.org/fhir/sid/ndc"
 * package.package.package[1].identifier.value = "58406-910-01"
-* package.package.package[1].type = $NCI-T#C42986 "SOLUTION"
+* package.package.package[1].type = $NCI-T#C43202 "SYRINGE"
 * package.package.package[1].containedItem.item.reference = Reference(EnbrelSterileSolution)
 * package.package.package[1].containedItem.amount = 1 'mL'
 
