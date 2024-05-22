@@ -47,8 +47,15 @@ Description: "A profile that represents a document that is required for Product 
 * type from SPLDocumentCodes (required)
 * title MS
 * identifier 1..1 MS
-* author 1..1 MS
-* author only Reference(IdentifiedLabeler)
+* author 1..* MS
+* author ^slicing.discriminator.type = #profile
+* author ^slicing.discriminator.path = "$this.resolve()"
+* author ^slicing.rules = #open
+* author ^slicing.description = "Slice based on the different authors of the document."
+* author contains Labeler 1..1 and Registrant 0..1 and Establishment 0..*
+* author[Labeler] only Reference(IdentifiedLabeler)
+* author[Registrant] only Reference(IdentifiedEstablishmentRegistrant)
+* author[Establishment] only Reference(IdentifiedEstablishment)
 * section 1..* MS
   * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionLinkId named linkId 0..1 MS
   * code 1..1 MS

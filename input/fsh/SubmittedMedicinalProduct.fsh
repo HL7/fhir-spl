@@ -49,6 +49,12 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * operation.type from SPLOperationType (required)
 * operation.organization 1..1 MS
 * operation.organization only Reference(IdentifiedEstablishment)
+* contact MS
+* contact.type MS
+* contact.type from TopLevelOrganizationTypes
+* contact.contact MS
+* contact.contact only Reference(IdentifiedEstablishment or IdentifiedEstablishmentRegistrant)
+
 
 Profile: SubmittedMedicinalProductMarketing
 Parent: RegulatedAuthorization
@@ -82,6 +88,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * package.extension contains PackagedProductReference named packageInstanceOf 0..1 MS
 * package.identifier MS
 * package.type 1..1 MS
+* package.type from SPLPackageTypes (required)
 * package.quantity 0..1 MS
 * package.property 0..* MS
 * package.property.type 1..1 MS

@@ -119,7 +119,6 @@ Description: "Section Codes for SPL Product Submission documents"
 * $LOINC#88830-5 "Immunogenicity"
 * $LOINC#90374-0 "Clinical trials experience section"
 * $LOINC#90375-7 "Postmarketing experience section"
-* $LOINC#51945-4 "Principal display panel of package"
 
 ValueSet: SPLDocumentCodes
 Id: splDocumentCodes
