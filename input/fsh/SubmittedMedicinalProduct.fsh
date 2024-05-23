@@ -156,6 +156,7 @@ Description: "Details around the ingredients of a submitted medicinal product."
 * for 1..1 MS
 * for only Reference(SubmittedManufacturedItem)
 * role 1..1 MS
+* role from http://terminology.hl7.org/ValueSet/v3-RoleClassIngredientEntity (required)
 * substance 1..1 MS
 * substance.code 1..1 MS
 * substance.code only CodeableReference(SubmittedIngredientDefinition)
