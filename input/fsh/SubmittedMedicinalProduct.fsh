@@ -62,8 +62,10 @@ Description: "Details around the marketing of a submitted medicinal product."
 * identifier 1..* MS
 * subject 1..1 MS
 * subject only Reference(SubmittedMedicinalProduct)
-* type 0..1 MS
-* region 0..* MS
+* type 1..1 MS
+* type from SPLMarketingCategories (required)
+* region 1..1 MS
+* region = urn:iso:std:iso:3166#USA
 * statusDate MS
 
 Extension: PackagedProductReference
