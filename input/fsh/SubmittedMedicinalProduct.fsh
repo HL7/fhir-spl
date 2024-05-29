@@ -59,7 +59,7 @@ Description: "A profile that allows for the submission of Medicinal Product info
 Profile: SubmittedMedicinalProductMarketing
 Parent: RegulatedAuthorization
 Description: "Details around the marketing of a submitted medicinal product."
-* identifier 1..* MS
+* identifier 0..1 MS
 * subject 1..1 MS
 * subject only Reference(SubmittedMedicinalProduct)
 * type 1..1 MS
