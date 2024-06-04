@@ -74,10 +74,10 @@ The Label Display disallows entries and sub-sections.
 The author of the document is identified by an [Identified Labeler](StructureDefinition-IdentifiedLabeler.html) instance.  This profile requires a DUNS Number of the organization and a name.
 
 #### Product Submission Registrant
-A registrant can be specified by including an [Identified Establishment Registrant](StructureDefinition-IdentifiedEstablishmentRegistrant.html) instance in the bundle.  This profile requires a DUNS number of the organization and a name.
+A registrant can be specified by including an [Identified Establishment Registrant](StructureDefinition-IdentifiedEstablishmentRegistrant.html) instance in the bundle.  This profile requires a DUNS number of the organization and a name.  It will be referenced in the [Submitted Medicinal Product](StructureDefinition-SubmittedMedicinalProduct.html) as a contact.
 
 #### Product Submission Establishments
-There can be one or more establishments included to specify various product business operations.  Instances of the [Identified Establishment](StructureDefinition-IdentifiedEstablishment.html) profile are included in the bundle.  This profile requires a DUNS number of the organization and a name.   It will be referenced from specific Submitted Medicinal Product instances to indicate the operations that the establishment performs on the product.
+There can be one or more establishments included to specify various product business operations.  Instances of the [Identified Establishment](StructureDefinition-IdentifiedEstablishment.html) profile are included in the bundle.  This profile requires a DUNS number of the organization and a name.   It will be referenced from specific Submitted Medicinal Product instances to indicate the operations that the establishment performs on the product.  It will also be referenced in the [Submitted Medicinal Product](StructureDefinition-SubmittedMedicinalProduct.html) as a contact.
 
 #### Product Submission Product Information
 Drug Products included in a label are represented using a combination of the following resources:
