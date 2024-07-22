@@ -96,13 +96,11 @@ Description: "A profile for the data elements required to identify an organizati
 * type 1..1 MS
 * type = OrganizationTypes#Establishment
 * name 1..1 MS
-* address 1..1 MS
-* address only SPLAddress
 * contact 1..1 MS
-* contact.name 1..1 MS
-* contact.address 1..1 MS
-* contact.address only SPLAddress
-* insert ContactPhoneNumberAndEmail
+  * name 1..1 MS
+  * address 1..1 MS
+  * address only SPLAddress
+  * insert PhoneNumberAndEmail
 
 Invariant: spl-6.1.3.7
 Description: "FEI number is 7 or 10 digits"
@@ -111,17 +109,17 @@ Severity: #error
 
 Invariant: spl-6.1.4.3
 Description: "If country is USA, then US agent is not allowed."
-Expression: "address.country = 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
+Expression: "address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 0" 
 Severity: #error
 
 Invariant: spl-6.1.4.1
 Description: "If country is not USA, then US agent is mandatory."
-Expression: "address.country != 'USA' implies contained.Organization.where(type.coding.code = 'USAgent').count() = 1" 
+Expression: "address.where(country = 'USA').count() = 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 1" 
 Severity: #error
 
 Invariant: spl-6.1.5.3
 Description: "If country is USA, then import business is not allowed."
-Expression: "address.country = 'USA' implies contained.Organization.where(type.coding.code = 'Importer').count() = 0" 
+Expression: "address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'Importer').count() = 0).count() = 0" 
 Severity: #error
 
 Profile: ImporterOrganization
@@ -131,7 +129,8 @@ Description: "A profile for the data elements required for an organization fulfi
 * type 1..1 MS
 * type = OrganizationTypes#Importer
 * name 1..1 MS
-* insert PhoneNumberAndEmail
+* contact 1..1 MS
+  * insert PhoneNumberAndEmail
 
 Profile: ImporterAffiliation
 Parent: OrganizationAffiliation
@@ -211,19 +210,9 @@ InstanceOf: EstablishmentOrganization
 Description: "An example of an Establishment Organization."
 * contained[BusinessOperation] = ExampleEstablishmentOperation
 * contained[BusinessOperation].providedBy.reference = "#"
-* contained[ImporterAffiliation] = ExampleImporterAffiliation
-* contained[ImporterAffiliation].organization.reference = "#"
-* contained[ImporterAffiliation].participatingOrganization.reference = "#importer"
-* contained[Importer] = ExampleImporter
-* contained[Importer].id = "importer"
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE ESTABLISHMENT INC."
 * type = OrganizationTypes#Establishment
-* address.line = "111 SOUTH PARK STREET"
-* address.city = "YAKIMA"
-* address.state = "WA"
-* address.postalCode = "23456"
-* address.country = "USA"
 * contact.name.text = "Charles Smith"
 * contact.telecom[Phone].value = "+011-703-362-1280"
 * contact.telecom[Email].value = "charles@anywhere.com"
@@ -246,8 +235,8 @@ Description: "An example of an Importer Organization."
 * identifier[DUNSNumber].value = "888888888"
 * type = OrganizationTypes#Importer
 * name = "Example Importer"
-* telecom[Phone].value = "+1-908-999-1212;ext=444"
-* telecom[Email].value = "jdoe_2@npoiinc.net"
+* contact.telecom[Phone].value = "+1-908-999-1212;ext=444"
+* contact.telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: ExampleImporterAffiliation
 InstanceOf: ImporterAffiliation
@@ -259,16 +248,16 @@ Instance: SampleEstablishmentRegistrationMessage
 InstanceOf: EstablishmentRegistrationMessage
 Description: "An example of an Establishment Registration message"
 * eventCoding = http://loinc.org#51725-0  "Establishment registration"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(ExampleEstablishmentRegistrant)
 * focus[1] = Reference(ExampleEstablishment)
 
 Instance: ExampleEstablishmentRegistration
 InstanceOf: EstablishmentRegistrationBundle
 Description: "An example of a Bundle containing a set of Establishment Registration resources to register."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleEstablishmentRegistrationMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/EstablishmentRegistrationMessage"
+* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleEstablishmentRegistrationMessage"
 * entry[Registrant].resource = ExampleEstablishmentRegistrant
 * entry[Registrant].fullUrl = "http://example.org/Organization/ExampleEstablishmentRegistrant"
 * entry[Establishment].resource = ExampleEstablishment
@@ -278,7 +267,7 @@ Instance: SampleEstablishmentInactivationMessage
 InstanceOf: EstablishmentInactivationMessage
 Description: "An example of a message header for a Establishment Inactivation"
 * eventCoding = FHIRSpecificSPLMessageTypes#01 "Establishment inactivation"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedEstablishmentRegistrant)
 * focus[1] = Reference(SampleIdentifiedEstablishment)
 
@@ -299,7 +288,7 @@ Description: "A sample Establishment organizaiton that just has the DUNS number 
 Instance: SampleEstablishmentInactivationBundle
 InstanceOf: EstablishmentInactivationBundle
 Description: "An example of a Bundle containing a set of Establishment resources to inactivate."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleEstablishmentInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleEstablishmentInactivationMessage"
 * entry[Registrant].resource = SampleIdentifiedEstablishmentRegistrant

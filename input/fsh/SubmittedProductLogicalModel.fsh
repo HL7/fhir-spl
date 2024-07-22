@@ -5,7 +5,6 @@ Description: "Details about the Medication that is submitted to the FDA."
 Title: "Submitted Medication Logical Model"
 Characteristics: #can-be-target
 * ^type = "SubmittedMedication"
-
 * ndcCode 0..1 CodeableConcept "NDC Code" "The NDC Code that uniquely identifies this medication."
 * proprietaryName 1..1 string "Proprietary Name" "The name of the Medication as used in medication labeling or in a catalog."
 * proprietaryNameSuffix 0..1 string "Proprietary Name Suffix" "An optional suffix that is part of the proprietary name."
@@ -45,7 +44,6 @@ Characteristics: #can-be-target
 * part.Medication 1..1 Reference(SubmittedMedicationLogicalModel) "Part Medication" "Medication information for this part."
 * part.marketing 0..1 BackboneElement "Part Marketing" "Marketing Information about this part."
 * part.marketing ^contentReference = "http://hl7.org/fhir/us/spl/StructureDefinition/SubmittedMedicationLogicalModel#SubmittedMedication.marketing"
-
 * marketing 0..1 BackboneElement "Marketing Application Information" "Information about the marketing category and an associated application."
 * marketing.number 0..1 Identifier "Markting Application Number" "The application number for this medication."
 * marketing.category 0..1 CodeableConcept "Marketing Category" "The marketing category for this medication."

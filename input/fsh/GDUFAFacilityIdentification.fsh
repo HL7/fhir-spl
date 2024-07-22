@@ -38,14 +38,14 @@ Description: "A profile that represents the Bundle that contains all of the reso
 
 Invariant: spl-6.1.3.4-13.1.3.3
 Description: "DUNS number is not associated with another facility in the same file."
-Expression: "entry.Organization.identifier.where(system='urn:oid:1.3.6.1.4.1.519.1').isDistinct()"
+Expression: "entry.resource.ofType(Organization).identifier.where(system='urn:oid:1.3.6.1.4.1.519.1').isDistinct()"
 Severity: #error
 
 Profile: GDUFAFacilityInactivationMessage
 Parent: OrganizationMessage
 Description: "A profile of an GDUFA Facility Inactivation message"
 * eventCoding = FHIRSpecificSPLMessageTypes#02
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
 * focus ^slicing.rules = #open
@@ -85,17 +85,15 @@ Description: "A profile for the data elements required to identify an organizati
 * type 1..1 MS
 * type = OrganizationTypes#GenericDrugUseFacility
 * name 1..1 MS
-* address 1..1 MS
-* address only SPLAddress
 * contact 1..1 MS
-* contact.name 1..1 MS
-* contact.address 1..1 MS
-* contact.address only SPLAddress
-* insert ContactPhoneNumberAndEmail
+  * name 1..1 MS
+  * address 1..1 MS
+  * address only SPLAddress
+  * insert PhoneNumberAndEmail
 
 Invariant: spl-13.1.4.7
 Description: "Each business operation code and qualifier is mentioned only once."
-Expression: "contained.BusinessOperation.type.isDistinct() and contained.BusinessOperation.serviceProvisionCode.isDistinct()"
+Expression: "contained.ofType(HealthcareService).type.isDistinct() and contained.ofType(HealthcareService).serviceProvisionCode.isDistinct()"
 Severity: #error
 
 Profile: GDUFAFacilityAffiliation
@@ -168,11 +166,6 @@ Description: "An example of an GDUFA Facility Organization."
 * identifier[FEINumber].value = "1234567"
 * name = "EXAMPLE GDUFA FACILITY INC."
 * type = OrganizationTypes#GenericDrugUseFacility
-* address.line = "111 SOUTH PARK STREET"
-* address.city = "YAKIMA"
-* address.state = "WA"
-* address.postalCode = "23456"
-* address.country = "USA"
 * contact.name.text = "Charles Smith"
 * contact.telecom[Phone].value = "+1-703-362-1280"
 * contact.telecom[Email].value = "charles@anywhere.com"
@@ -193,14 +186,14 @@ Instance: SampleGDUFAFacilityIdentificationMessage
 InstanceOf: GDUFAFacilityIdentificationMessage
 Description: "An example of a GDUFA Facility Identification message"
 * eventCoding = http://loinc.org#72090-4 "Identification of CBER-regulated generic drug facility"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(ExampleGDUFARegistrant)
 * focus[1] = Reference(ExampleGDUFAFacility)
 
 Instance: ExampleGDUFAFacilityIdentification
 InstanceOf: GDUFAFacilityIdentificationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to identify."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityIdentificationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityIdentificationMessage"
 * entry[Registrant].resource = ExampleGDUFARegistrant
@@ -212,14 +205,14 @@ Instance: SampleGDUFAFacilityInactivationMessage
 InstanceOf: GDUFAFacilityInactivationMessage
 Description: "An example of a GDUFA Facility Identification message"
 * eventCoding = FHIRSpecificSPLMessageTypes#02 "GDUFA Facility inactivation"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedGDUFARegistrant)
 * focus[1] = Reference(SampleIdentifiedGDUFAFacility)
 
 Instance: ExampleGDUFAFacilityInactivation
 InstanceOf: GDUFAFacilityInactivationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to inactivate."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityInactivationMessage"
 * entry[Registrant].resource = SampleIdentifiedGDUFARegistrant

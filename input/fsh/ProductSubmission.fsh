@@ -61,7 +61,7 @@ Description: "A profile that represents a document that is required for Product 
     * code 1..1 MS
     * code from SPLSectionCodes (required)
     * title MS
-    * text 1..1 MS
+    * text MS
     * entry 0..0
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
@@ -86,31 +86,29 @@ Extension: VersionNumber
 Id: versionNumber
 Description: "Adding a version number to documents."
 * value[x] only string
+* ^context[+].type = #element
+* ^context[=].expression = "Composition"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
 
 Extension: SectionEffectiveTime
 Id: sectionEffectiveTime
 Description: "Providing an effective time for a section."
 * value[x] only dateTime or Period
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section.section"
  
 Extension: SectionLinkId
 Id: sectionLinkId
 Description: "Provide the ID that is using for linking between sections.  NOTE: This will also be contained in the section text as a link."
 * value[x] only string
-
-ValueSet: SPLSectionCodes
-Id: splSectionCodes
-Title: "SPL Section Codes"
-Description: "Section Codes for SPL Product Submission documents"
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* ^experimental = false
-* include codes from system http://loinc.org where SYSTEM = "^FDA package insert"
-* include codes from system http://loinc.org where SYSTEM = "^FDA product label" and COMPONENT regex "^Package label.*$"
-* $LOINC#51945-4
-
-ValueSet: SPLDocumentCodes
-Id: splDocumentCodes
-Title: "SPL Document Codes"
-Description: "Document Codes for SPL Product Submission documents"
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* ^experimental = false
-* include codes from system http://loinc.org where SYSTEM = "^FDA product label"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition.section.section.section"

@@ -65,13 +65,11 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * type 1..1 MS
 * type = OrganizationTypes#Labeler
 * name 1..1 MS
-* address 1..1 MS
-* address only SPLAddress
 * contact 1..1 MS
-* contact.name 1..1 MS
-* contact.address 1..1 MS
-* contact.address only SPLAddress
-* insert ContactPhoneNumberAndEmail
+  * name 1..1 MS
+  * address 1..1 MS
+  * address only SPLAddress
+  * insert PhoneNumberAndEmail
 
 Invariant: spl-5.1.2.8
 Description: "NDC Labeler code is 4 or 5 digits"
@@ -90,12 +88,12 @@ Severity: #error
 
 Invariant: spl-5.1.4.1
 Description: "If country is USA, then US agent is not allowed"
-Expression: "address.country != 'USA' or contained.Organization.where(type.coding.code = 'USAgent').count() = 0" 
+Expression: "address.where(country = 'USA').count() = 0 or contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() > 0).count() = 0" 
 Severity: #error
 
 Invariant: spl-5.1.5.6
 Description: "Each business operation code is mentioned only once."
-Expression: "contained.HealthcareService.type().isDistinct()"
+Expression: "contained.ofType(HealthcareService).type().isDistinct()"
 Severity: #error
 
 Profile: LabelerBusinessOperation
@@ -114,7 +112,7 @@ Description: "A profile that associates a Labeler to the set of business operati
 
 Invariant: spl-5.1.5.7
 Description: "Qualifier is mandatory unless operation is analysis (C25391) or API manufacture (C82401)"
-Expression: "type.coding.code = 'C25391' or type.coding.code = 'C82401' or serviceProvisionCode.count() > 0"
+Expression: "type.coding.where(code = 'C25391').exists() or type.coding.where(code = 'C82401').exists() or serviceProvisionCode.count() > 0"
 Severity: #error
 
 Invariant: spl-5.1.5.11
@@ -146,11 +144,6 @@ Description: "An example of a Labeler Organization."
 * identifier[NDCCode].value = "55555"
 * type = OrganizationTypes#Labeler
 * name = "National Pharma of India Inc."
-* address.line = "Plot 102 Village Ave"
-* address.city = "RangareddyDistrict"
-* address.state = "Telangana"
-* address.postalCode = "500002"
-* address.country = "IND"
 * contact.name.text = "Mr. John Doe_1"
 * contact.telecom[Phone].value = "+9-140-1111-2222"
 * contact.telecom[Email].value = "jdoe_1@npoiinc.net"
@@ -166,8 +159,8 @@ Description: "An example of a US Agent Organization."
 * identifier[DUNSNumber].value = "888888888"
 * type = OrganizationTypes#USAgent
 * name = "National Pharma of India Inc. US Agent"
-* telecom[Phone].value = "+1-908-999-1212"
-* telecom[Email].value = "jdoe_2@npoiinc.net"
+* contact.telecom[Phone].value = "+1-908-999-1212"
+* contact.telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: SampleLabelerUSAgentAffiliation
 InstanceOf: USAgentAffiliation
@@ -186,23 +179,23 @@ Instance: SampleLabelerCodeRequestMessage
 InstanceOf: LabelerCodeRequestMessage
 Description: "An example of a message header for a Labeler Code Request"
 * eventCoding = http://loinc.org#51726-8 "NDC labeler code request"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(SampleLabelerOrganization)
 
 Instance: SampleLabelerCodeRequestBundle
 InstanceOf: LabelerCodeRequestBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to register."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
-* entry[Message].resource = SampleLabelerCodeRequestMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/LabelerCodeRequestMessage"
-* entry[Labeler].resource = SampleLabelerOrganization
-* entry[Labeler].fullUrl = "http://example.org/Organization/SampleLabelerOrganization"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
+* entry[0]
+  * insert bundleEntry(MessageHeader, SampleLabelerCodeRequestMessage)
+* entry[+]
+  * insert bundleEntry(Organization, SampleLabelerOrganization)
 
 Instance: SampleLabelerInactivationMessage
 InstanceOf: LabelerInactivationMessage
 Description: "An example of a message header for a Labeler Inactivation"
 * eventCoding = http://loinc.org#69968-6 "NDC labeler code inactivation"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(IdentifiedLabelerOrganization)
 
 Instance: IdentifiedLabelerOrganization
@@ -215,8 +208,8 @@ Description: "A sample Labeler organizaiton that just has the DUNS number and na
 Instance: SampleLabelerInactivationBundle
 InstanceOf: LabelerInactivationBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to inactivate."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
-* entry[Message].resource = SampleLabelerInactivationMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleLabelerInactivationMessage"
-* entry[Labeler].resource = IdentifiedLabelerOrganization
-* entry[Labeler].fullUrl = "http://example.org/Organization/IdentifiedLabelerOrganization"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
+* entry[0]
+  * insert bundleEntry(MessageHeader, SampleLabelerInactivationMessage)
+* entry[+]
+  * insert bundleEntry(Organization, IdentifiedLabelerOrganization)

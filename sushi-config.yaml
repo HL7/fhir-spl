@@ -1,17 +1,24 @@
 id: hl7.fhir.us.spl
 canonical: http://hl7.org/fhir/us/spl
 name: FHIR_SPL
-title: SPL Mapping FHIR Implementation Guide
+title: SPL Mapping FHIR R5 Implementation Guide
 description: A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.
-status: draft
-version: 0.1.0
-fhirVersion: 4.3.0
+status: active
+version: 0.2.0
+fhirVersion: 5.0.0
 copyrightYear: 2020+
 releaseLabel: Build CI
 publisher:
-  name: Biomedical Research and Regulatory WG
-  url: http://www.hl7.org/Special/committees/rcrim/index.cfm
+  name: HL7 International / Biomedical Research and Regulation
+  url: http://www.hl7.org/Special/committees/rcrim
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 1
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: brr 
 
 pages:
   index.md:
@@ -20,6 +27,8 @@ pages:
     title: Organziation-Based Use Cases
   druglabel.md:
     title: Submit a Drug Label
+  howtolabel.md:
+    title: How to Create a FHIR Drug Label
   transforms.md:
     title: SPL / FHIR Transforms
   downloads.md:
@@ -33,7 +42,9 @@ menu:
   Use Cases:
     Organization-Based Submissions: organization.html
     Drug Label Submission: druglabel.html
-  Transforms: transforms.html
+  Guidance:
+    How To: howtolabel.html
+    Transforms: transforms.html
   Artifacts: artifacts.html
   Appendix:
     Downloads: downloads.html
@@ -113,7 +124,7 @@ groups:
       - StructureDefinition/SPLAddress
       - StructureDefinition/SPLContactPoint
   ProductSubmission:
-    name: Product Submission Document
+    name: Product Submission Content
     description: Artifacts associated with the submission of a product document
     resources:
       - StructureDefinition/ProductSubmissionBundle
@@ -121,6 +132,14 @@ groups:
       - StructureDefinition/sectionEffectiveTime
       - StructureDefinition/versionNumber
       - StructureDefinition/sectionLinkId
+      - StructureDefinition/SubmittedMedicinalProduct
+      - StructureDefinition/SubmittedMedicinalPackaging
+      - StructureDefinition/packageInstanceOf
+      - StructureDefinition/SubmittedManufacturedItem
+      - StructureDefinition/itemMarketingStatusDates
+      - StructureDefinition/SubmittedMedicinalProductIngredient
+      - StructureDefinition/SubmittedIngredientDefinition
+      - StructureDefinition/SubmittedMedicinalProductMarketing
   DualSubmission:
     name: Dual Submission Tracking
     description: Artifacts needed for tracking dual submissions of SPL documents and FHIR Bundles

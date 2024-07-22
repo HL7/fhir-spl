@@ -26,13 +26,13 @@ Instance: SamplOutOfBusinessMessage
 InstanceOf: OutOfBusinessMessage
 Description: "An example of a message header for an Out of Business notification"
 * eventCoding = $LOINC#53411-5 "Out of business notification"
-* source.endpoint = "http://example.org/"
+* source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedEstablishmentRegistrant)
 
 Instance: SampleOutOfBusinessNotificationBundle
 InstanceOf: OutOfBusinessBundle
 Description: "An example of a Bundle containing a set of Establishment resources to inactivate."
-* timestamp = "2021-08-11T01:01:01.111+06:00"
+* timestamp = "2024-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SamplOutOfBusinessMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SamplOutOfBusinessMessage"
 * entry[Registrant].resource = SampleIdentifiedEstablishmentRegistrant
