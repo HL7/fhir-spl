@@ -19,15 +19,15 @@ Description: "A profile that allows for the submission of Medicinal Product info
 * name ^slicing.description = "Require specific name types"
 * name contains Proprietary 1..1 and NonProprietary 1..*
 * name[Proprietary].type = SubmittedMedicinalProductNameTypes#PROPRIETARY
-* name[Proprietary].namePart 0..* MS
-* name[Proprietary].namePart.part 1..1 MS
-* name[Proprietary].namePart.type 1..1 MS
-* name[Proprietary].namePart ^slicing.discriminator.type = #value
-* name[Proprietary].namePart ^slicing.discriminator.path = "type"
-* name[Proprietary].namePart ^slicing.rules = #open
-* name[Proprietary].namePart ^slicing.description = "Specifically call out the Suffix name part"
-* name[Proprietary].namePart contains Suffix 0..1
-* name[Proprietary].namePart[Suffix].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SFX
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Specifically call out the Suffix name part"
+* name[Proprietary].part contains Suffix 0..1
+* name[Proprietary].part[Suffix].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SFX
 * name[NonProprietary].type = SubmittedMedicinalProductNameTypes#NONPROPRIETARY
 * crossReference 0..1 MS
 * crossReference.type 1..1 MS
@@ -86,23 +86,24 @@ Description: "Details around the packaging of submitted medicinal products."
 * marketingStatus.status 1..1 MS
 * marketingStatus.status from SPLMarketingStatuses (required)
 * marketingStatus.dateRange 1..1 MS
-* package 1..1 MS
-* package.extension contains PackagedProductReference named packageInstanceOf 0..1 MS
-* package.identifier MS
-* package.type 1..1 MS
-* package.type from SPLPackageTypes (required)
-* package.quantity 0..1 MS
-* package.property 0..* MS
-* package.property.type 1..1 MS
-* package.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
-* package.property.value[x] 1..1 MS
-* package.property.value[x] only CodeableConcept
-* package.property.valueCodeableConcept from SPLComboProductType (required)
-* package.containedItem 0..* MS
-* package.containedItem.item 1..1 MS
-* package.containedItem.item only CodeableReference(SubmittedManufacturedItem)
-* package.containedItem.amount 1..1 MS
-* package.package 0..* MS
+
+* packaging 1..1 MS
+* packaging.extension contains PackagedProductReference named packageInstanceOf 0..1 MS
+* packaging.identifier MS
+* packaging.type 1..1 MS
+* packaging.type from SPLPackageTypes (required)
+* packaging.quantity 0..1 MS
+* packaging.property 0..* MS
+* packaging.property.type 1..1 MS
+* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.value[x] 1..1 MS
+* packaging.property.value[x] only CodeableConcept
+* packaging.property.valueCodeableConcept from SPLComboProductType (required)
+* packaging.containedItem 0..* MS
+* packaging.containedItem.item 1..1 MS
+* packaging.containedItem.item only CodeableReference(SubmittedManufacturedItem)
+* packaging.containedItem.amount 1..1 MS
+* packaging.packaging 0..* MS
 
 Profile: SubmittedManufacturedItem
 Parent: ManufacturedItemDefinition
