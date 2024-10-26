@@ -109,17 +109,17 @@ Severity: #error
 
 Invariant: spl-6.1.4.3
 Description: "If country is USA, then US agent is not allowed."
-Expression: "address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 0" 
+Expression: "contact.address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 0" 
 Severity: #error
 
 Invariant: spl-6.1.4.1
 Description: "If country is not USA, then US agent is mandatory."
-Expression: "address.where(country = 'USA').count() = 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 1" 
+Expression: "contact.address.where(country = 'USA').count() = 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 1" 
 Severity: #error
 
 Invariant: spl-6.1.5.3
 Description: "If country is USA, then import business is not allowed."
-Expression: "address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'Importer').count() = 0).count() = 0" 
+Expression: "contact.address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'Importer').count() = 0).count() = 0" 
 Severity: #error
 
 Profile: ImporterOrganization

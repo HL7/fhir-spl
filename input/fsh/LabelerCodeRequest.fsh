@@ -88,7 +88,7 @@ Severity: #error
 
 Invariant: spl-5.1.4.1
 Description: "If country is USA, then US agent is not allowed"
-Expression: "address.where(country = 'USA').count() = 0 or contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() > 0).count() = 0" 
+Expression: "contact.address.where(country = 'USA').count() = 0 or contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() > 0).count() = 0" 
 Severity: #error
 
 Invariant: spl-5.1.5.6

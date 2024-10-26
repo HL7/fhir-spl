@@ -75,7 +75,7 @@ Description: "A reference to a packaged product that is represented in a packagi
 * value[x] 1..1 MS
 * value[x] only Reference(SubmittedMedicinalPackaging)
 * ^context[+].type = #element
-* ^context[=].expression = "PackagedProductDefinition.package"
+* ^context[=].expression = "PackagedProductDefinition.packaging"
 
 Profile: SubmittedMedicinalPackaging
 Parent: PackagedProductDefinition

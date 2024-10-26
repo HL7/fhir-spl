@@ -2,6 +2,7 @@
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="https://build.fhir.org/ig/HL7/fhir-spl/" defaultVersion="current" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/fhir-spl" url="http://hl7.org/fhir/us/spl">
 <version code="current" url="https://build.fhir.org/ig/HL7/fhir-spl/"/>
 <version code="0.1.0" url="http://hl7.org/fhir/us/spl/STU1-ballot"/>
+<version code="0.1" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -177,13 +178,23 @@
 <artifact id="SearchParameter/ProvenanceActivitySearchParameter" key="SearchParameter-ProvenanceActivitySearchParameter" name="ProvenanceActivitySearchParameter"/>
 <artifact id="ValueSet/valueset-registrantOrganizationTypes" key="ValueSet-valueset-registrantOrganizationTypes" name="Registrant Organization Types"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
+<artifact id="ValueSet/valueset-splColor" key="ValueSet-valueset-splColor" name="SPL Color"/>
+<artifact id="ValueSet/valueset-splComboProductType" key="ValueSet-valueset-splComboProductType" name="SPL Combo Product Type"/>
 <artifact id="ValueSet/splDocumentCodes" key="ValueSet-splDocumentCodes" name="SPL Document Codes"/>
+<artifact id="ValueSet/valueset-splDoseForm" key="ValueSet-valueset-splDoseForm" name="SPL Dose Form"/>
+<artifact id="ValueSet/valueset-splFlavor" key="ValueSet-valueset-splFlavor" name="SPL Flavor"/>
+<artifact id="ValueSet/valueset-splMarketingCategories" key="ValueSet-valueset-splMarketingCategories" name="SPL Marketing Categories"/>
 <artifact id="CodeSystem/codesystem-splMarketingStatuses" key="CodeSystem-codesystem-splMarketingStatuses" name="SPL Marketing Statuses CodeSystem"/>
 <artifact id="ValueSet/valueset-splMarketingStatuses" key="ValueSet-valueset-splMarketingStatuses" name="SPL Marketing Statuses ValueSet"/>
+<artifact id="ValueSet/valueset-splOperationType" key="ValueSet-valueset-splOperationType" name="SPL Operation Type"/>
 <artifact id="CodeSystem/codesystem-organizationTypes" key="CodeSystem-codesystem-organizationTypes" name="SPL Organization Types"/>
+<artifact id="ValueSet/valueset-splPackageTypes" key="ValueSet-valueset-splPackageTypes" name="SPL Package Types"/>
 <artifact id="CodeSystem/codesystem-characteristicTypes" key="CodeSystem-codesystem-characteristicTypes" name="SPL Product Characteristic Types CodeSystem"/>
 <artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SPL Product Characteristic Types ValueSet"/>
+<artifact id="ValueSet/valueset-splRouteOfAdministration" key="ValueSet-valueset-splRouteOfAdministration" name="SPL Route of Administration"/>
 <artifact id="ValueSet/splSectionCodes" key="ValueSet-splSectionCodes" name="SPL Section Codes"/>
+<artifact id="ValueSet/valueset-splShape" key="ValueSet-valueset-splShape" name="SPL Shape"/>
+<artifact id="ValueSet/valueset-splSpecialMeasures" key="ValueSet-valueset-splSpecialMeasures" name="SPL Special Measures"/>
 <artifact id="StructureDefinition/SPLAddress" key="StructureDefinition-SPLAddress" name="SPLAddress"/>
 <artifact id="StructureDefinition/SPLContactPoint" key="StructureDefinition-SPLContactPoint" name="SPLContactPoint"/>
 <artifact id="StructureDefinition/splDocumentDate" key="StructureDefinition-splDocumentDate" name="SPLDocumentDate"/>
