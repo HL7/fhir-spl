@@ -177,10 +177,17 @@ Profile: SubmittedIngredientDefinition
 Parent: SubstanceDefinition
 Description: "Used to represent an substance's active moiety."
 * identifier 1..* MS
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Require specific types of identifiers."
+* identifier contains FDAGSRS 1..1 MS
+* identifier[FDAGSRS].system = "http://fdasis.nlm.nih.gov"
 * name 1..1 MS
 * name.name 1..1 MS
 * moiety 1..2 MS
 * moiety.identifier 1..1 MS
+  * system = "http://fdasis.nlm.nih.gov"
 * moiety.name 1..1 MS
 
 CodeSystem: SPLMarketingStatuses
