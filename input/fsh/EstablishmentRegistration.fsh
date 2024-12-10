@@ -151,7 +151,7 @@ Description: "A profile that associates an organization to its import organizati
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(ImporterOrganization)
 * code 1..1 MS
-* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73599 "Import"
+* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73599
 
 Profile: EstablishmentBusinessOperation
 Parent: HealthcareService
