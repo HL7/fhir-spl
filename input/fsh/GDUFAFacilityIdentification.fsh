@@ -85,12 +85,23 @@ Description: "A profile for the data elements required to identify an organizati
 * type 1..1 MS
 * type = OrganizationTypes#GenericDrugUseFacility
 * name 1..1 MS
-* contact 1..1 MS
+* contact 2..2 MS
+* contact ^slicing.discriminator.type = #exists
+* contact ^slicing.discriminator.path = "purpose"
+* contact ^slicing.rules = #closed
+* contact ^slicing.description = "The different contact information that are included for a Establishment organization."
+* contact contains OrgAddress 1..1 MS and OrgContact 1..1 MS
+* contact[OrgContact]
+  * purpose 1..1 MS
+  * purpose = http://terminology.hl7.org/CodeSystem/contactentity-type#ADMIN
   * name 1..1 MS
   * address 1..1 MS
   * address only SPLAddress
   * insert PhoneNumberAndEmail
-
+* contact[OrgAddress]
+  * purpose 0..0
+  * address 1..1 MS
+ 
 Invariant: spl-13.1.4.7
 Description: "Each business operation code and qualifier is mentioned only once."
 Expression: "contained.ofType(HealthcareService).type.isDistinct() and contained.ofType(HealthcareService).serviceProvisionCode.isDistinct()"
@@ -166,14 +177,19 @@ Description: "An example of an GDUFA Facility Organization."
 * identifier[FEINumber].value = "1234567"
 * name = "EXAMPLE GDUFA FACILITY INC."
 * type = OrganizationTypes#GenericDrugUseFacility
-* contact.name.text = "Charles Smith"
-* contact.telecom[Phone].value = "+1-703-362-1280"
-* contact.telecom[Email].value = "charles@anywhere.com"
-* contact.address.line = "123 IVY LANE ROAD"
-* contact.address.city = "SMITH FALLS"
-* contact.address.state = "MD"
-* contact.address.postalCode = "12345"
-* contact.address.country = "USA"
+* contact[OrgContact].name.text = "Charles Smith"
+* contact[OrgContact].telecom[Phone].value = "+011-703-362-1280"
+* contact[OrgContact].telecom[Email].value = "charles@anywhere.com"
+* contact[OrgContact].address.line = "123 IVY LANE ROAD"
+* contact[OrgContact].address.city = "SMITH FALLS"
+* contact[OrgContact].address.state = "MD"
+* contact[OrgContact].address.postalCode = "12345"
+* contact[OrgContact].address.country = "USA"
+* contact[OrgAddress].address.line = "123 IVY LANE ROAD"
+* contact[OrgAddress].address.city = "SMITH FALLS"
+* contact[OrgAddress].address.state = "MD"
+* contact[OrgAddress].address.postalCode = "12345"
+* contact[OrgAddress].address.country = "USA"
 
 Instance: ExampleGDUFAFacilityOperation
 InstanceOf: GDUFAFacilityBusinessOperation

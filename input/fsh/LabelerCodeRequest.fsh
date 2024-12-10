@@ -65,11 +65,22 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * type 1..1 MS
 * type = OrganizationTypes#Labeler
 * name 1..1 MS
-* contact 1..1 MS
+* contact 2..2 MS
+* contact ^slicing.discriminator.type = #exists
+* contact ^slicing.discriminator.path = "purpose"
+* contact ^slicing.rules = #closed
+* contact ^slicing.description = "The different contact information that are included for a Establishment organization."
+* contact contains OrgAddress 1..1 MS and OrgContact 1..1 MS
+* contact[OrgContact]
+  * purpose 1..1 MS
+  * purpose = http://terminology.hl7.org/CodeSystem/contactentity-type#ADMIN
   * name 1..1 MS
   * address 1..1 MS
   * address only SPLAddress
   * insert PhoneNumberAndEmail
+* contact[OrgAddress]
+  * purpose 0..0
+  * address 1..1 MS
 
 Invariant: spl-5.1.2.8
 Description: "NDC Labeler code is 4 or 5 digits"
@@ -144,14 +155,19 @@ Description: "An example of a Labeler Organization."
 * identifier[NDCCode].value = "55555"
 * type = OrganizationTypes#Labeler
 * name = "National Pharma of India Inc."
-* contact.name.text = "Mr. John Doe_1"
-* contact.telecom[Phone].value = "+9-140-1111-2222"
-* contact.telecom[Email].value = "jdoe_1@npoiinc.net"
-* contact.address.line = "Plot 101 First Street"
-* contact.address.city = "RangareddyDistrict"
-* contact.address.state = "Telangana"
-* contact.address.postalCode = "500001"
-* contact.address.country = "IND"
+* contact[OrgContact].name.text = "Charles Smith"
+* contact[OrgContact].telecom[Phone].value = "+011-703-362-1280"
+* contact[OrgContact].telecom[Email].value = "charles@anywhere.com"
+* contact[OrgContact].address.line = "123 IVY LANE ROAD"
+* contact[OrgContact].address.city = "SMITH FALLS"
+* contact[OrgContact].address.state = "MD"
+* contact[OrgContact].address.postalCode = "12345"
+* contact[OrgContact].address.country = "USA"
+* contact[OrgAddress].address.line = "123 IVY LANE ROAD"
+* contact[OrgAddress].address.city = "SMITH FALLS"
+* contact[OrgAddress].address.state = "MD"
+* contact[OrgAddress].address.postalCode = "12345"
+* contact[OrgAddress].address.country = "USA"
 
 Instance: SampleLabelerUSAgent
 InstanceOf: USAgentOrganization

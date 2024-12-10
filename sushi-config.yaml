@@ -24,7 +24,7 @@ pages:
   index.md:
     title: SPL Mapping Implementation Guide Home Page
   organization.md:
-    title: Organziation-Based Use Cases
+    title: Organization-Based Use Cases
   druglabel.md:
     title: Submit a Drug Label
   howtolabel.md:

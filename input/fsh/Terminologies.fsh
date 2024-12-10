@@ -12,7 +12,7 @@ Description: "Codes that are unique to the FHIR organization submissions, i.e. t
 
 ValueSet: OrganizationSubmissionMessageTypes
 Id: valueset-organizationSubmissionMessageTypes
-Title: "Organzation Submission Message Types"
+Title: "Organization Submission Message Types"
 Description: "The set of message types that are allowed as a FHIR organization submission."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * ^experimental = false
