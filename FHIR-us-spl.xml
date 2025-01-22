@@ -166,9 +166,9 @@
 <artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="Medicinal Product Name Types CodeSystem"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="Organization Relationship Types"/>
+<artifact id="ValueSet/valueset-organizationSubmissionMessageTypes" key="ValueSet-valueset-organizationSubmissionMessageTypes" name="Organization Submission Message Types"/>
 <artifact id="StructureDefinition/OrganizationBundle" key="StructureDefinition-OrganizationBundle" name="OrganizationBundle"/>
 <artifact id="StructureDefinition/OrganizationMessage" key="StructureDefinition-OrganizationMessage" name="OrganizationMessage"/>
-<artifact id="ValueSet/valueset-organizationSubmissionMessageTypes" key="ValueSet-valueset-organizationSubmissionMessageTypes" name="Organzation Submission Message Types"/>
 <artifact id="StructureDefinition/OutOfBusinessBundle" key="StructureDefinition-OutOfBusinessBundle" name="OutOfBusinessBundle"/>
 <artifact id="StructureDefinition/OutOfBusinessMessage" key="StructureDefinition-OutOfBusinessMessage" name="OutOfBusinessMessage"/>
 <artifact id="StructureDefinition/packageInstanceOf" key="StructureDefinition-packageInstanceOf" name="Packaged Product Reference"/>
@@ -243,7 +243,7 @@
 <page key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="howtolabel" name="How to Create a FHIR Drug Label"/>
-<page key="organization" name="Organziation-Based Use Cases"/>
+<page key="organization" name="Organization-Based Use Cases"/>
 <page key="transforms" name="SPL / FHIR Transforms"/>
 <page key="index" name="SPL Mapping Implementation Guide Home Page"/>
 <page key="druglabel" name="Submit a Drug Label"/>
