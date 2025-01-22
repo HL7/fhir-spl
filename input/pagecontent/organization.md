@@ -10,11 +10,11 @@ This page details the following use cases that all use profiles based on the Org
 	* 70097-1 Establishment De-Registration
 	* 53410-7 No Change Notification
 	* 53411-5 Out of Business Notification
-  * 01 Establishment Inactivation (a FHIR-specific message type)
+	* 01 Establishment Inactivation (a FHIR-specific message type)
 3. UC03 - Submit GDUFA Facility Self-Identification
 	* 71743-9 Generic Drug Facility Identification Submission
 	* 72090-4 Identification of CBER-regulated generic drug facility
-  * 02 GDUFA Facility Inactivatino (a FHIR-specific message type)
+	* 02 GDUFA Facility Inactivation (a FHIR-specific message type)
 
 Here is a high level diagram that shows the generic use of the profiles for these use cases:
 
