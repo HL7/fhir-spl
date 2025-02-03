@@ -7,8 +7,13 @@ RuleSet: DUNSNumber
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 1..1 MS
-* identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier[DUNSNumber].system = "http://terminology.hl7.org/NamingSystem/DUNSNumber"
 * identifier[DUNSNumber] obeys spl-2.1.5.2
+
+RuleSet: FEINumberSlice
+* identifier[FEINumber].system = "http://terminology.hl7.org/NamingSystem/FEI"
+* identifier[FEINumber] obeys spl-6.1.3.7
+
 
 RuleSet: PhoneNumberAndEmail
 * telecom 2..* MS

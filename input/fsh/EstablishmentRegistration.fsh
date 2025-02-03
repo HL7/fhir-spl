@@ -91,8 +91,7 @@ Description: "A profile for the data elements required to identify an organizati
 * contained[Importer] only ImporterOrganization
 * insert DUNSNumber
 * identifier contains FEINumber 0..1 MS
-* identifier[FEINumber].system = "urn:oid:2.16.840.1.113883.4.82"
-* identifier[FEINumber] obeys spl-6.1.3.7
+* insert FEINumberSlice
 * type 1..1 MS
 * type = OrganizationTypes#Establishment
 * name 1..1 MS
