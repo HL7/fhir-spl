@@ -4,7 +4,7 @@ name: FHIR_SPL
 title: SPL Mapping FHIR R5 Implementation Guide
 description: A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.
 status: active
-version: 0.2.1
+version: 0.2.2
 fhirVersion: 5.0.0
 copyrightYear: 2020+
 releaseLabel: Build CI
