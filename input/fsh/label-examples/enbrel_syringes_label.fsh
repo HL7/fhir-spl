@@ -1022,18 +1022,18 @@ Description: "4 25mg kits of Enbrel"
 * packaging.packaging.type = $NCI-T#C43197 "KIT"
 * packaging.packaging.containedItem.item.reference = Reference(EnbrelKit)
 * packaging.packaging.containedItem.amount = 1 '1'
-* packaging.packaging.packaging[0].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part1Package)
-* packaging.packaging.packaging[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
-* packaging.packaging.packaging[0].identifier.value = "58406-424-01"
-* packaging.packaging.packaging[0].type = $NCI-T#C43226 "VIAL"
-* packaging.packaging.packaging[0].containedItem.item.reference = Reference(EnbrelPowder)
-* packaging.packaging.packaging[0].containedItem.amount = 1 'mL'
-* packaging.packaging.packaging[1].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part2Package)
-* packaging.packaging.packaging[0].identifier.system = "http://hl7.org/fhir/sid/ndc"
-* packaging.packaging.packaging[0].identifier.value = "58406-910-01"
-* packaging.packaging.packaging[0].type = $NCI-T#C43202 "SYRINGE"
-* packaging.packaging.packaging[0].containedItem.item.reference = Reference(EnbrelSterileSolution)
-* packaging.packaging.packaging[0].containedItem.amount = 1 'mL'
+* packaging.packaging.packaging[+].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part1Package)
+* packaging.packaging.packaging[=].identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.packaging.packaging[=].identifier.value = "58406-424-01"
+* packaging.packaging.packaging[=].type = $NCI-T#C43226 "VIAL"
+* packaging.packaging.packaging[=].containedItem.item.reference = Reference(EnbrelPowder)
+* packaging.packaging.packaging[=].containedItem.amount = 1 'mL'
+* packaging.packaging.packaging[+].extension[packageInstanceOf].valueReference = Reference(Enbrel425Part2Package)
+* packaging.packaging.packaging[=].identifier.system = "http://hl7.org/fhir/sid/ndc"
+* packaging.packaging.packaging[=].identifier.value = "58406-910-01"
+* packaging.packaging.packaging[=].type = $NCI-T#C43202 "SYRINGE"
+* packaging.packaging.packaging[=].containedItem.item.reference = Reference(EnbrelSterileSolution)
+* packaging.packaging.packaging[=].containedItem.amount = 1 'mL'
 
 Instance: Enbrel425Marketing
 InstanceOf: SubmittedMedicinalProductMarketing
