@@ -75,7 +75,7 @@ Description: "A profile on Organization that specifies a name and an identifier 
 
 Invariant: spl-2.1.5.2
 Description: "DUNS number is 9 digits"
-Expression: "system = 'urn:oid:1.3.6.1.4.1.519.1' implies value.length() = 9"
+Expression: "system = 'http://terminology.hl7.org/NamingSystem/DUNSNumber' implies value.length() = 9"
 Severity: #error
 
 
