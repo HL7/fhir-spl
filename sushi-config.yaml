@@ -130,7 +130,6 @@ groups:
       - StructureDefinition/ProductSubmissionBundle
       - StructureDefinition/ProductSubmissionDocument
       - StructureDefinition/sectionEffectiveTime
-      - StructureDefinition/versionNumber
       - StructureDefinition/sectionLinkId
       - StructureDefinition/SubmittedMedicinalProduct
       - StructureDefinition/SubmittedMedicinalPackaging

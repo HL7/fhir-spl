@@ -32,7 +32,7 @@ Description: "An example of a message header for an Out of Business notification
 Instance: SampleOutOfBusinessNotificationBundle
 InstanceOf: OutOfBusinessBundle
 Description: "An example of a Bundle containing a set of Establishment resources to inactivate."
-* timestamp = "2024-08-11T01:01:01.111+06:00"
+* timestamp = "2025-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SamplOutOfBusinessMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SamplOutOfBusinessMessage"
 * entry[Registrant].resource = SampleIdentifiedEstablishmentRegistrant

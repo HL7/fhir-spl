@@ -5,127 +5,127 @@ Description: "A bundle containing all of the information for the Enbrel Label"
 * identifier.value = "urn:uuid:77d35ee6-9485-494d-9c7a-95935cb438be"
 * type = #document
 * timestamp = "2021-12-13T00:00:00.0000Z"
-* entry[0]
+* entry[Composition]
   * insert bundleEntry(Composition, EnbrelSyringeLabelComposition)
-* entry[+]
+* entry[Labeler]
   * insert bundleEntry(Organization, ImmunexCorporation)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel435Definition)
-* entry[+]
+* entry[Item]
   * insert bundleEntry(ManufacturedItemDefinition, Enbrel50mgSolution)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel50mgSolutionActiveIngredient)
-* entry[+]
+* entry[Substance]
   * insert bundleEntry(SubstanceDefinition, EnbrelIngredientDefinition)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel50mgSolutionIngredient1)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel50mgSolutionIngredient2)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel50mgSolutionIngredient3)
-* entry[+]
+* entry[Packaging]
   * insert bundleEntry(PackagedProductDefinition, Enbrel435Package)
-* entry[+]
+* entry[Marketing]
   * insert bundleEntry(RegulatedAuthorization, Enbrel435Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel445Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel445Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel445Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel425Definition)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel425Part1Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel425Part1Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel425Part1Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel425Part2Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel425Part2Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel425Part2Marketing)
-* entry[+]
+* entry[Item][+]
   * insert bundleEntry(ManufacturedItemDefinition, EnbrelPowder)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, EnbrelPowderActiveIngredient)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, EnbrelPowderIngredient1)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, EnbrelPowderIngredient2)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, EnbrelPowderIngredient3)
-* entry[+]
+* entry[Item][+]
   * insert bundleEntry(ManufacturedItemDefinition, EnbrelSterileSolution)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, EnbrelSterileSolutionIngredient1)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, EnbrelSterileSolutionIngredient2)
-* entry[+]
+* entry[Item][+]
   * insert bundleEntry(ManufacturedItemDefinition, EnbrelKit)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel425Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel425Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel455Definition)
-* entry[+]
+* entry[Item][+]
   * insert bundleEntry(ManufacturedItemDefinition, Enbrel25mgSolution)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel25mgSolutionActiveIngredient)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel25mgSolutionIngredient1)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel25mgSolutionIngredient2)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, Enbrel25mgSolutionIngredient3)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel455Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel455Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel456Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel456Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel456Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel446Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel446Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel446Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel021Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel021Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel021Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel032Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel032Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel032Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel010Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel010Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel010Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel044Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel044Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel044Marketing)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, Enbrel055Definition)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Enbrel055Package)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, Enbrel055Marketing)
 
 Instance: ImmunexCorporation
@@ -138,9 +138,9 @@ Description: "Immunex Corporation - labeller for Enbrel"
 Instance: EnbrelSyringeLabelComposition
 InstanceOf: ProductSubmissionDocument
 Description: "Header information for the Enbrel Syringe Labels"
-* extension[versionNumber].valueString = "197"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:a002b40c-097d-47a5-957f-7a7b1807af7f"
+* version = "197"
 * status = #final
 * type = http://loinc.org#34391-3 "HUMAN PRESCRIPTION DRUG LABEL"
 * date = "2021-12-13"
@@ -148,7 +148,7 @@ Description: "Header information for the Enbrel Syringe Labels"
 * title = """These highlights do not include all the information needed to use ENBREL safely and effectively.  See full prescribing information for ENBREL.  <br/>
       <br/>ENBREL<sup>®</sup> (etanercept) injection, for subcutaneous use <br/>ENBREL<sup>®</sup> (etanercept) for injection, for subcutaneous use <br/>Initial U.S. Approval: 1998"""
   
-* section[0]
+* section[+]
   * code = http://loinc.org#34066-1 "BOXED WARNING SECTION"
   * title = "WARNING: SERIOUS INFECTIONS and MALIGNANCIES"
   * id = "1f13be11-112a-48e5-bbf8-072311d5c3dd"
@@ -186,7 +186,7 @@ Description: "Header information for the Enbrel Syringe Labels"
                            </li>
                         </ul>
   </div></div>"""
-  * section[0]
+  * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * id = "0fbda1ce-5bd2-482b-afd8-b780f227be23"
     * extension[sectionTime].valueDateTime = "2021-12-13"
@@ -253,7 +253,7 @@ Description: "Header information for the Enbrel Syringe Labels"
                            <li> Plaque Psoriasis (PsO) in patients 4 years or older (<a href="#S1.5">1.5</a>)</li>
                         </ul>
   </div></div>"""
-  * section[0]
+  * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "1.1 Rheumatoid Arthritis"
     * id = "5c3f71af-246f-4d3f-b7b7-347b3264e21a"
@@ -350,7 +350,7 @@ Description: "Header information for the Enbrel Syringe Labels"
   </div><div style="narrative">
                   <p>Administration of one 50 mg Enbrel single<span style="font-weight: bold">-</span>dose prefilled syringe, one single<span style="font-weight: bold">-</span>dose prefilled Enbrel SureClick autoinjector, or one Enbrel Mini single<span style="font-weight: bold">-</span>dose prefilled cartridge (for use with the AutoTouch reusable autoinjector only), provides a dose equivalent to two 25 mg Enbrel single-dose prefilled syringes, two 25 mg single<span style="font-weight: bold">-</span>dose vials, or two multiple-dose vials of lyophilized Enbrel, when multiple<span style="font-weight: bold">-</span>dose vials are reconstituted and administered as recommended.</p>
   </div></div>"""
-  * section[0]
+  * section[+]
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * title = "2.1 Adult Patients"
     * id = "ded84416-f6db-4705-85d4-b3ae59e6a1a1"
@@ -550,7 +550,7 @@ Description: "Header information for the Enbrel Syringe Labels"
       </div></div>"""
 
 * section[ProductSection]
-  * entry[0] = Reference(Enbrel435Definition)
+  * entry[+] = Reference(Enbrel435Definition)
   * entry[+] = Reference(Enbrel445Definition)
   * entry[+] = Reference(Enbrel425Definition)
   * entry[+] = Reference(Enbrel455Definition)
@@ -564,7 +564,7 @@ Description: "Header information for the Enbrel Syringe Labels"
   * code = http://loinc.org#48780-1 "SPL LISTING DATA ELEMENTS SECTION"
   * id = "eb6f7193-2806-4f58-826d-a0bdb2641e63"
   * extension[sectionTime].valueDateTime = "2021-12-13"
-* section[LabelDisplay][0]
+* section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * id = "5aad37da-10b5-4d22-ac4c-dfe752757194"
   * extension[sectionTime].valueDateTime = "2021-12-13"
@@ -755,7 +755,7 @@ Description: "Structured information for the Enbrel 435 Label"
 * identifier[NDCCode].value = "58406-435"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2005-10-06"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -776,8 +776,8 @@ Description: "Active Ingredient Strength for Enbrel"
 Instance: EnbrelIngredientDefinition
 InstanceOf: SubmittedIngredientDefinition
 Description: "Active Ingredient Information for Enbrel"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "OP401G7OJC"
+* identifier[FDAGSRS].system = "http://fdasis.nlm.nih.gov"
+* identifier[FDAGSRS].value = "OP401G7OJC"
 * moiety.identifier.system = "http://fdasis.nlm.nih.gov"
 * moiety.identifier.value = "OP401G7OJC"
 * moiety.name = "ETANERCEPT"
@@ -812,7 +812,7 @@ Instance: Enbrel435Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL Syringes of Enbrel"
 * packageFor = Reference(Enbrel435Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2005-10-05"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-435-04"
@@ -820,7 +820,7 @@ Description: "4 1mL Syringes of Enbrel"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-435-01"
 * packaging.packaging.quantity = 4
-* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * packaging.packaging.containedItem.amount = 1 'mL' "mL"
 * packaging.packaging.containedItem.item.reference = Reference(Enbrel50mgSolution)
@@ -841,7 +841,7 @@ Description: "Structured information for the Enbrel 445 Label"
 * identifier[NDCCode].value = "58406-445"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -849,7 +849,7 @@ Instance: Enbrel445Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL autoinjectors of Enbrel"
 * packageFor = Reference(Enbrel445Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-445-04"
@@ -857,7 +857,7 @@ Description: "4 1mL autoinjectors of Enbrel"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-445-01"
 * packaging.packaging.quantity = 4
-* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * packaging.packaging.containedItem.amount = 1 'mL' "mL"
 * packaging.packaging.containedItem.item.reference = Reference(Enbrel50mgSolution)
@@ -878,7 +878,7 @@ Description: "Structured information for the Enbrel 425 Label"
 * identifier[NDCCode].value = "58406-425"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
 Instance: Enbrel425Part1Definition
@@ -887,7 +887,7 @@ Description: "Structured information for the Enbrel 425 Part 1"
 * identifier[NDCCode].value = "58406-424"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
 Instance: Enbrel425Part2Definition
@@ -896,7 +896,7 @@ Description: "Structured information for the Enbrel 425 Part 2"
 * identifier[NDCCode].value = "58406-910"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2003-01-02"
 
 Instance: Enbrel425Part1Package
@@ -908,7 +908,7 @@ Description: "1 vial of Enbrel powder"
 * packaging.containedItem.amount = 1 'mL' "mL"
 * packaging.containedItem.item.reference = Reference(EnbrelPowder)
 * packaging.type = $NCI-T#C43226 "VIAL"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 
 Instance: Enbrel425Part2Package
@@ -920,7 +920,7 @@ Description: "1 syringe of sterile bacteriostatic water"
 * packaging.containedItem.amount = 1 'mL' "mL"
 * packaging.containedItem.item.reference = Reference(EnbrelSterileSolution)
 * packaging.type = $NCI-T#C43202 "SYRINGE"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 
 Instance: Enbrel425Part1Marketing
@@ -1011,7 +1011,7 @@ Instance: Enbrel425Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 25mg kits of Enbrel"
 * packageFor = Reference(Enbrel425Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2003-10-02"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-425-34"
@@ -1050,7 +1050,7 @@ Description: "Structured information for the Enbrel 455 Label"
 * identifier[NDCCode].value = "58406-455"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1097,12 +1097,12 @@ Instance: Enbrel455Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 0.5mL syringes of Enbrel"
 * packageFor = Reference(Enbrel455Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2005-11-10"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-455-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-455-01"
@@ -1126,7 +1126,7 @@ Description: "Structured information for the Enbrel 456 Label"
 * identifier[NDCCode].value = "58406-456"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-09-29"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1134,12 +1134,12 @@ Instance: Enbrel456Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL cartridges of Enbrel"
 * packageFor = Reference(Enbrel456Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-09-29"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-456-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-456-01"
@@ -1163,7 +1163,7 @@ Description: "Structured information for the Enbrel 446 Label"
 * identifier[NDCCode].value = "58406-446"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-10-20"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1171,12 +1171,12 @@ Instance: Enbrel446Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL autoinjectors of Enbrel"
 * packageFor = Reference(Enbrel446Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-10-20"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-446-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-446-01"
@@ -1200,7 +1200,7 @@ Description: "Structured information for the Enbrel 021 Label"
 * identifier[NDCCode].value = "58406-021"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1208,12 +1208,12 @@ Instance: Enbrel021Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL Syringes of Enbrel"
 * packageFor = Reference(Enbrel021Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-021-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-021-01"
@@ -1237,7 +1237,7 @@ Description: "Structured information for the Enbrel 032 Label"
 * identifier[NDCCode].value = "58406-032"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1245,12 +1245,12 @@ Instance: Enbrel032Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL autoinjectors of Enbrel"
 * packageFor = Reference(Enbrel032Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-032-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-032-01"
@@ -1274,7 +1274,7 @@ Description: "Structured information for the Enbrel 010 Label"
 * identifier[NDCCode].value = "58406-010"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1282,12 +1282,12 @@ Instance: Enbrel010Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 0.5mL syringes of Enbrel"
 * packageFor = Reference(Enbrel010Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-010-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-010-01"
@@ -1311,7 +1311,7 @@ Description: "Structured information for the Enbrel 044 Label"
 * identifier[NDCCode].value = "58406-044"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1319,12 +1319,12 @@ Instance: Enbrel044Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 1mL cartridges of Enbrel"
 * packageFor = Reference(Enbrel044Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2019-06-07"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-044-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-044-01"
@@ -1348,7 +1348,7 @@ Description: "Structured information for the Enbrel 055 Label"
 * identifier[NDCCode].value = "58406-055"
 * name[Proprietary].productName = "ENBREL"
 * name[NonProprietary].productName = "etanercept"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2020-03-05"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
 
@@ -1356,12 +1356,12 @@ Instance: Enbrel055Package
 InstanceOf: SubmittedMedicinalPackaging
 Description: "4 0.5mL syringes of Enbrel"
 * packageFor = Reference(Enbrel055Definition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2020-03-05"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "58406-055-04"
 * packaging.type = $NCI-T#C43182 "CARTON"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C102835 "Type 2: Prefilled Drug Delivery Device/System (syringe, patch, etc.)"
 * packaging.packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.packaging.identifier.value = "58406-055-01"

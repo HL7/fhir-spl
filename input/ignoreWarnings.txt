@@ -32,7 +32,6 @@ Wrong Display Name 'BOXED WARNING SECTION' for http://loinc.org#34066-1%
 
 
 # Open slice so there are slices that don't match the slice definitions
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocument%
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionBundle%
 
 
@@ -45,7 +44,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # The SPL project was allowed to not use US Core profiles since it is not a patient-focused guide.
 US FHIR Usage rules require that all profiles on Provenance derive from the core US profile.%
 US FHIR Usage rules require that all profiles on Organization derive from the core US profile.%
-US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile.%
+US FHIR Usage rules require that all profiles on DocumentReference derive from one of the base US profiles.%
 
 # Example endpoint
 Can't find 'http://example.org/' in the bundle (Bundle.entry[0].resource.source.endpoint[x])
@@ -53,8 +52,9 @@ Can't find 'http://example.org/' in the bundle (Bundle.entry[0].resource.source.
 # Sample code systems for now
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# Deprecated value set in base spec
+# Deprecated or draft value set in base spec
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/contactentity-type|1.0.0
 
 # Experimental value sets in the core spec
 %which is experimental, but this structure is not labeled as experimental

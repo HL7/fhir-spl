@@ -165,6 +165,7 @@
 <artifact id="StructureDefinition/itemMarketingStatusDates" key="StructureDefinition-itemMarketingStatusDates" name="Manufactured Item Marketing Status Date Range"/>
 <artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="Medicinal Product Name Types CodeSystem"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
+<artifact id="CodeSystem/codesystem-organizationContactType" key="CodeSystem-codesystem-organizationContactType" name="Organization Contact Type"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="Organization Relationship Types"/>
 <artifact id="ValueSet/valueset-organizationSubmissionMessageTypes" key="ValueSet-valueset-organizationSubmissionMessageTypes" name="Organization Submission Message Types"/>
 <artifact id="StructureDefinition/OrganizationBundle" key="StructureDefinition-OrganizationBundle" name="OrganizationBundle"/>
@@ -175,7 +176,6 @@
 <artifact id="StructureDefinition/ProductSubmissionDocumentLogicalModel" key="StructureDefinition-ProductSubmissionDocumentLogicalModel" name="Product Submission Document Logical Model"/>
 <artifact id="StructureDefinition/ProductSubmissionBundle" key="StructureDefinition-ProductSubmissionBundle" name="ProductSubmissionBundle"/>
 <artifact id="StructureDefinition/ProductSubmissionDocument" key="StructureDefinition-ProductSubmissionDocument" name="ProductSubmissionDocument"/>
-<artifact id="SearchParameter/ProvenanceActivitySearchParameter" key="SearchParameter-ProvenanceActivitySearchParameter" name="ProvenanceActivitySearchParameter"/>
 <artifact id="ValueSet/valueset-registrantOrganizationTypes" key="ValueSet-valueset-registrantOrganizationTypes" name="Registrant Organization Types"/>
 <artifact id="StructureDefinition/RegistrantOrganization" key="StructureDefinition-RegistrantOrganization" name="RegistrantOrganization"/>
 <artifact id="ValueSet/valueset-splColor" key="ValueSet-valueset-splColor" name="SPL Color"/>
@@ -190,7 +190,7 @@
 <artifact id="CodeSystem/codesystem-organizationTypes" key="CodeSystem-codesystem-organizationTypes" name="SPL Organization Types"/>
 <artifact id="ValueSet/valueset-splPackageTypes" key="ValueSet-valueset-splPackageTypes" name="SPL Package Types"/>
 <artifact id="CodeSystem/codesystem-characteristicTypes" key="CodeSystem-codesystem-characteristicTypes" name="SPL Product Characteristic Types CodeSystem"/>
-<artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicTypes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicTypes" name="SPL Product Characteristic Types ValueSet"/>
+<artifact id="ValueSet/valueset-SubmittedMedicinalProductCharacteristicCodes" key="ValueSet-valueset-SubmittedMedicinalProductCharacteristicCodes" name="SPL Product Characteristic Types ValueSet"/>
 <artifact id="ValueSet/valueset-splRouteOfAdministration" key="ValueSet-valueset-splRouteOfAdministration" name="SPL Route of Administration"/>
 <artifact id="ValueSet/splSectionCodes" key="ValueSet-splSectionCodes" name="SPL Section Codes"/>
 <artifact id="ValueSet/valueset-splShape" key="ValueSet-valueset-splShape" name="SPL Shape"/>
@@ -235,7 +235,6 @@
 <artifact id="ValueSet/valueset-topLevelOrganizationTypes" key="ValueSet-valueset-topLevelOrganizationTypes" name="Top-Level Organization Types"/>
 <artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>
-<artifact id="StructureDefinition/versionNumber" key="StructureDefinition-versionNumber" name="VersionNumber"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>

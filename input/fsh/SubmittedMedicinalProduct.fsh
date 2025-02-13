@@ -95,7 +95,7 @@ Description: "Details around the packaging of submitted medicinal products."
 * packaging.quantity 0..1 MS
 * packaging.property 0..* MS
 * packaging.property.type 1..1 MS
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.value[x] 1..1 MS
 * packaging.property.value[x] only CodeableConcept
 * packaging.property.valueCodeableConcept from SPLComboProductType (required)
@@ -121,25 +121,25 @@ Description: "Details around the actual item, i.e tablet, solution, etc. that is
 * property ^slicing.rules = #open
 * property ^slicing.description = "Require specific bindings for characteristic type."
 * property contains Color 0..* and Imprint 0..1 and Score 0..1 and Shape 0..1 and Size 0..1 and Flavor 0..* and Image 0..*
-* property[Color].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
+* property[Color].type = SubmittedMedicinalProductCharacteristicCodes#SPLCOLOR
 * property[Color].value[x] only CodeableConcept
 * property[Color].valueCodeableConcept from SPLColor (required)
-* property[Shape].type = SubmittedMedicinalProductCharacteristicTypes#SPLSHAPE
+* property[Shape].type = SubmittedMedicinalProductCharacteristicCodes#SPLSHAPE
 * property[Shape].value[x] only CodeableConcept
 * property[Shape].valueCodeableConcept from SPLShape (required)
-* property[Flavor].type = SubmittedMedicinalProductCharacteristicTypes#SPLFLAVOR
+* property[Flavor].type = SubmittedMedicinalProductCharacteristicCodes#SPLFLAVOR
 * property[Flavor].value[x] only CodeableConcept
 * property[Flavor].valueCodeableConcept from SPLFlavor (required)
-* property[Imprint].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMPRINT
+* property[Imprint].type = SubmittedMedicinalProductCharacteristicCodes#SPLIMPRINT
 * property[Imprint].value[x] only CodeableConcept
 * property[Imprint].valueCodeableConcept ^short = "Text is only allowed as the imprint is a string."
 * property[Imprint].valueCodeableConcept.text 1..1
 * property[Imprint].valueCodeableConcept.coding 0..0
-* property[Score].type = SubmittedMedicinalProductCharacteristicTypes#SPLSCORE
+* property[Score].type = SubmittedMedicinalProductCharacteristicCodes#SPLSCORE
 * property[Score].value[x] only Quantity
-* property[Size].type = SubmittedMedicinalProductCharacteristicTypes#SPLSIZE
+* property[Size].type = SubmittedMedicinalProductCharacteristicCodes#SPLSIZE
 * property[Size].value[x] only Quantity
-* property[Image].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMAGE
+* property[Image].type = SubmittedMedicinalProductCharacteristicCodes#SPLIMAGE
 * property[Image].value[x] only Attachment
 
 
@@ -190,7 +190,7 @@ Description: "Used to represent an substance's active moiety."
   * system = "http://fdasis.nlm.nih.gov"
 * moiety.name 1..1 MS
 
-CodeSystem: SPLMarketingStatuses
+CodeSystem: SPLMarketingStatusCodes
 Id: codesystem-splMarketingStatuses
 Title: "SPL Marketing Statuses CodeSystem"
 Description: "Marketing Status Status Codes"
@@ -205,7 +205,7 @@ Id: valueset-splMarketingStatuses
 Title: "SPL Marketing Statuses ValueSet"
 Description: "Marketing Status Status Codes"
 * ^experimental = false
-* include codes from system SPLMarketingStatuses
+* include codes from system SPLMarketingStatusCodes
 
 CodeSystem: SubmittedMedicinalProductNameTypes
 Id: codesystem-submittedMedicinalProductNameTypes
@@ -216,7 +216,7 @@ Description: "Codes that types of names for a medicinal product."
 * #PROPRIETARY "Proprietary Name"
 * #NONPROPRIETARY "Generic Name (Non-Proprietary)"
 
-CodeSystem: SubmittedMedicinalProductCharacteristicTypes
+CodeSystem: SubmittedMedicinalProductCharacteristicCodes
 Id: codesystem-characteristicTypes
 Title: "SPL Product Characteristic Types CodeSystem"
 Description: "Codes that were specified in the SPL guide for characteristic types."
@@ -232,11 +232,11 @@ Description: "Codes that were specified in the SPL guide for characteristic type
 * #SPLIMAGE "Image"
 
 ValueSet: SubmittedMedicinalProductCharacteristicTypes
-Id: valueset-SubmittedMedicinalProductCharacteristicTypes
+Id: valueset-SubmittedMedicinalProductCharacteristicCodes
 Description: "Codes that identify the types of characteristics allowed for Submitted Medicinal Product."
 Title: "SPL Product Characteristic Types ValueSet"
 * ^experimental = false
-* include codes from system SubmittedMedicinalProductCharacteristicTypes
+* include codes from system SubmittedMedicinalProductCharacteristicCodes
 
 ValueSet: AllNDCProducts
 Id: valueset-AllNDCProducts

@@ -5,39 +5,39 @@ Description: "A bundle containing all of the information for the Allopurinol Tab
 * identifier.value = "urn:uuid:2ca799ba-56af-4fa6-ac9c-44f736ef1a02"
 * type = #document
 * timestamp = "2017-02-24T00:00:00.0000Z"
-* entry[0]
+* entry[Composition]
   * insert bundleEntry(Composition, AllopurinolTabletLabelComposition)
-* entry[+]
+* entry[Labeler][+]
   * insert bundleEntry(Organization, AidarexPharmaceuticals)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, AllopurinolUSPDefinition)
-* entry[+]
+* entry[Item][+]
   * insert bundleEntry(ManufacturedItemDefinition, AllopurinolTablet)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, AllopurinolUSPActiveIngredient)
-* entry[+]
+* entry[Substance][+]
   * insert bundleEntry(SubstanceDefinition, AllopurinolIngredientDefinition)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, AllopurinolUSPIngredient1)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, AllopurinolUSPIngredient2)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, AllopurinolUSPIngredient3)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, AllopurinolUSPIngredient4)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, AllopurinolUSPIngredient5)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, AllopurinolUSPIngredient6)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Allopurinol100Tablets)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Allopurinol30Tablets)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Allopurinol60Tablets)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, Allopurinol90Tablets)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, AllopurinolMarketing)
 
 Instance: AidarexPharmaceuticals
@@ -50,15 +50,15 @@ Description: "Aidarex Pharmaceuticals - labeller for Allopurinol Tablets USP"
 Instance: AllopurinolTabletLabelComposition
 InstanceOf: ProductSubmissionDocument
 Description: "Header information for the Allopurinol Tablet USP Label"
-* extension[versionNumber].valueString = "1"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:c9a01871-bbf8-4b31-9b9b-9fa8c0997b29"
+* version = "1"
 * status = #final
 * type = http://loinc.org#34391-3 "HUMAN PRESCRIPTION DRUG LABEL"
 * date = "2017-02-04"
 * author = Reference(AidarexPharmaceuticals)
 * title = "Allopurinol<br/>Tablets USP<br/>Revised: February 2015<br/>Rx only        <br/>"
-* section[0]
+* section[+]
   * id = "80fb3156-ba84-4cf6-b0f7-66c4dddc3fc3"
   * code = http://loinc.org#34089-3 "DESCRIPTION SECTION"
   * title = "DESCRIPTION"
@@ -148,7 +148,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
   * title = "PRECAUTIONS"
   * id = "6cbcf459-599d-4cc1-b5a2-087718fe5ab3"
   * extension[sectionTime].valueDateTime = "2015-02-01"
-  * section[0]
+  * section[+]
     * code = http://loinc.org#34072-9 "GENERAL PRECAUTIONS SECTION"
     * title = "General"
     * id = "608f0f5d-3f16-4e92-a477-9910493e4a71"
@@ -443,7 +443,7 @@ Description: "Header information for the Allopurinol Tablet USP Label"
                   <p>Repackaged by <br/>Aidarex Pharmaceuticals, LLC<br/>Corona, CA 92880</p>
   </div></div>"""
 * section[ProductSection]
-  * entry[0] = Reference(AllopurinolUSPDefinition)
+  * entry[+] = Reference(AllopurinolUSPDefinition)
   * code = http://loinc.org#48780-1 "SPL LISTING DATA ELEMENTS SECTION"
   * id = "24f6db00-e00b-4a3d-aa17-5ee56ac2708"
   * extension[sectionTime].valueDateTime = "2017-02-24"
@@ -462,7 +462,7 @@ Description: "Structured information for the Allopurinol Tablet USP Label"
 * name[Proprietary].productName = "Allopurinol"
 * name[NonProprietary].productName = "Allopurinol"
 * crossReference.product.concept = http://hl7.org/fhir/sid/ndc#0591-5543
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * route = $NCI-T#C38288 "ORAL"
 
@@ -470,15 +470,15 @@ Instance: AllopurinolTablet
 InstanceOf: SubmittedManufacturedItem
 * status = #active
 * manufacturedDoseForm = $NCI-T#C42998 "TABLET"
-* property[0].type = SubmittedMedicinalProductCharacteristicTypes#SPLCOLOR
+* property[+].type = SubmittedMedicinalProductCharacteristicCodes#SPLCOLOR
 * property[=].valueCodeableConcept = $NCI-T#C48325 "WHITE"
-* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLIMPRINT
+* property[+].type = SubmittedMedicinalProductCharacteristicCodes#SPLIMPRINT
 * property[=].valueCodeableConcept.text = "DAN;DAN;5543"
-* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSCORE
+* property[+].type = SubmittedMedicinalProductCharacteristicCodes#SPLSCORE
 * property[=].valueQuantity.value = 2
-* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSHAPE
+* property[+].type = SubmittedMedicinalProductCharacteristicCodes#SPLSHAPE
 * property[=].valueCodeableConcept = $NCI-T#C48348 "ROUND"
-* property[+].type = SubmittedMedicinalProductCharacteristicTypes#SPLSIZE
+* property[+].type = SubmittedMedicinalProductCharacteristicCodes#SPLSIZE
 * property[=].valueQuantity = 10 'mm' "mm"
 
 Instance: AllopurinolUSPActiveIngredient
@@ -493,8 +493,8 @@ Description: "Active Ingredient Strength for Allupurinol USP"
 Instance: AllopurinolIngredientDefinition
 InstanceOf: SubmittedIngredientDefinition
 Description: "Active Ingredient Information for Allupurinol USP"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "63CZ7GJN5I"
+* identifier[FDAGSRS].system = "http://fdasis.nlm.nih.gov"
+* identifier[FDAGSRS].value = "63CZ7GJN5I"
 * moiety.identifier.system = "http://fdasis.nlm.nih.gov"
 * moiety.identifier.value = "63CZ7GJN5I"
 * moiety.name = "ALLOPURINOL"
@@ -541,56 +541,56 @@ Instance: Allopurinol100Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "100 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "53217-187-00"
 * packaging.containedItem.amount = 100 '1'
 * packaging.containedItem.item.reference = Reference(AllopurinolTablet)
 * packaging.type = $NCI-T#C43169 "BOTTLE"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: Allopurinol30Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "30 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "53217-187-30"
 * packaging.containedItem.amount = 30 '1'
 * packaging.containedItem.item.reference = Reference(AllopurinolTablet)
 * packaging.type = $NCI-T#C43169 "BOTTLE"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: Allopurinol60Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "60 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "53217-187-60"
 * packaging.containedItem.amount = 60 '1'
 * packaging.containedItem.item.reference = Reference(AllopurinolTablet)
 * packaging.type = $NCI-T#C43169 "BOTTLE"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: Allopurinol90Tablets
 InstanceOf: SubmittedMedicinalPackaging
 Description: "90 Tablets Bottle of Allopurinol USP"
 * packageFor = Reference(AllopurinolUSPDefinition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2009-04-06"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "53217-187-90"
 * packaging.containedItem.amount = 90 '1'
 * packaging.containedItem.item.reference = Reference(AllopurinolTablet)
 * packaging.type = $NCI-T#C43169 "BOTTLE"
-* packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 
 Instance: AllopurinolMarketing

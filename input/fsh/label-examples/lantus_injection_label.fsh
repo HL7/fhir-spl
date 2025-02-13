@@ -5,45 +5,45 @@ Description: "A bundle containing all of the information for the Lantus Injectio
 * identifier.value = "urn:uuid:4e455ace-94f4-4fa3-85eb-0152e5a06239"
 * type = #document
 * timestamp = "2021-01-27T00:00:00.0000Z"
-* entry[0]
+* entry[Composition]
   * insert bundleEntry(Composition, LantusInjectionLabelComposition)
-* entry[+]
+* entry[Labeler]
   * insert bundleEntry(Organization, SanofiAventisUS)
-* entry[+]
+* entry[Establishment][+]
   * insert bundleEntry(Organization, SanofiAventisDeutschland)
-* entry[+]
+* entry[Establishment][+]
   * insert bundleEntry(Organization, SanofiAventisSRL)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, LantusSyringeDefinition)
-* entry[+]
+* entry[Product][+]
   * insert bundleEntry(MedicinalProductDefinition, LantusVialDefinition)
-* entry[+]
+* entry[Item]
   * insert bundleEntry(ManufacturedItemDefinition, LantusSolution)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusActiveIngredient)
-* entry[+]
+* entry[Substance]
   * insert bundleEntry(SubstanceDefinition, LantusIngredientDefinition)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusIngredient1)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusIngredient2)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusIngredient3)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusIngredient4)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusIngredient5)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusIngredient6)
-* entry[+]
+* entry[Ingredient][+]
   * insert bundleEntry(Ingredient, LantusIngredient7)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, LantusVialPackage)
-* entry[+]
+* entry[Packaging][+]
   * insert bundleEntry(PackagedProductDefinition, LantusSyringePackage)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, LantusVialMarketing)
-* entry[+]
+* entry[Marketing][+]
   * insert bundleEntry(RegulatedAuthorization, LantusSyringeMarketing)
 
 Instance: SanofiAventisUS
@@ -70,16 +70,16 @@ Description: "Sanifo-Aventis SRL - establishment for Lantus Injection"
 Instance: LantusInjectionLabelComposition
 InstanceOf: ProductSubmissionDocument
 Description: "Header information for the Lantus Injection Label"
-* extension[versionNumber].valueString = "11"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:6328c99d-d75f-43ef-b19e-7e71f91e57f6"
+* version = "11"
 * status = #final
 * type = http://loinc.org#34391-3 "HUMAN PRESCRIPTION DRUG LABEL"
 * date = "2021-01-27"
 * author = Reference(SanofiAventisUS)
 * title = "These highlights do not include all the information needed to use LANTUS safely and effectively. See full prescribing information for LANTUS. <br/>
       <br/>LANTUS<sup>®</sup> (insulin glargine injection) for subcutaneous injection <br/>Initial U.S. Approval: 2000"
-* section[0]
+* section[+]
   * id = "68224803-d32c-4438-9439-9c210668e295"
   * code = http://loinc.org#34067-9 "INDICATIONS &amp; USAGE SECTION"
   * title = "1 INDICATIONS AND USAGE"
@@ -98,7 +98,7 @@ Description: "Header information for the Lantus Injection Label"
     <a name="S1"/>
     <p>LANTUS is indicated to improve glycemic control in adults and pediatric patients with type 1 diabetes mellitus and in adults with type 2 diabetes mellitus.</p>
   </div></div>"""
-  * section[0]
+  * section[+]
     * id = "0230cfa8-ff67-4666-ba57-bbad268ac6fe"
     * code = http://loinc.org#42229-5 "SPL UNCLASSIFIED SECTION"
     * text.status = #additional
@@ -109,12 +109,12 @@ Description: "Header information for the Lantus Injection Label"
                         <p>LANTUS is not recommended for the treatment of diabetic ketoacidosis.</p>
      </div></div>"""
 * section[ProductSection]
-  * entry[0] = Reference(LantusSyringeDefinition)
-  * entry[1] = Reference(LantusVialDefinition)
+  * entry[+] = Reference(LantusSyringeDefinition)
+  * entry[+] = Reference(LantusVialDefinition)
   * code = http://loinc.org#48780-1 "SPL LISTING DATA ELEMENTS SECTION"
   * id = "f65bb254-5018-4af5-b02a-38d5d51ed901"
   * extension[sectionTime].valueDateTime = "2021-01-27"
-* section[LabelDisplay][0]
+* section[LabelDisplay][+]
   * code = http://loinc.org#51945-4 "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"
   * title = "PRINCIPAL DISPLAY PANEL - 10 mL Vial Package"
   * id = "ff673a31-f676-444c-a009-8d4a2645fd19"
@@ -155,10 +155,10 @@ Description: "Structured information for the Lantus Vial product"
 * identifier[NDCCode].value = "0088-5021"
 * name[Proprietary].productName = "Lantus"
 * name[NonProprietary].productName = "insulin glargine"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-* operation[0]
+* operation[+]
   * type.concept = $NCI-T#C25391 "ANALYSIS"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
@@ -192,10 +192,10 @@ Description: "Structured information for the Lantus Syringe product"
 * identifier[NDCCode].value = "0088-5020"
 * name[Proprietary].productName = "Lantus Solostar"
 * name[NonProprietary].productName = "insulin glargine"
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * route = $NCI-T#C38299 "SUBCUTANEOUS"
-* operation[0]
+* operation[+]
   * type.concept = $NCI-T#C25391 "ANALYSIS"
   * organization = Reference(SanofiAventisDeutschland)
 * operation[+]
@@ -228,8 +228,8 @@ Description: "Active Ingredient Strength for Lantus"
 Instance: LantusIngredientDefinition
 InstanceOf: SubmittedIngredientDefinition
 Description: "Active Ingredient Information for Lantus"
-* identifier.system = "http://fdasis.nlm.nih.gov"
-* identifier.value = "2ZM8CX04RZ"
+* identifier[FDAGSRS].system = "http://fdasis.nlm.nih.gov"
+* identifier[FDAGSRS].value = "2ZM8CX04RZ"
 * moiety.identifier.system = "http://fdasis.nlm.nih.gov"
 * moiety.identifier.value = "2ZM8CX04RZ"
 * moiety.name = "INSULIN GLARGINE"
@@ -290,14 +290,14 @@ Instance: LantusVialPackage
 InstanceOf: SubmittedMedicinalPackaging
 Description: "Lantus Vial Packaging"
 * packageFor = Reference(LantusVialDefinition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "0088-5021-01"
 * packaging.type = $NCI-T#C43233 "PACKAGE"
 * packaging.packaging.type = $NCI-T#C43209 "VIAL, GLASS"
 * packaging.packaging.quantity = 1
-* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * packaging.packaging.containedItem.amount = 10 'mL' "mL"
 * packaging.packaging.containedItem.item.reference = Reference(LantusSolution)
@@ -315,7 +315,7 @@ Instance: LantusSyringePackage
 InstanceOf: SubmittedMedicinalPackaging
 Description: "Lantus Syringe Packaging"
 * packageFor = Reference(LantusSyringeDefinition)
-* marketingStatus.status = SPLMarketingStatuses#active
+* marketingStatus.status = SPLMarketingStatusCodes#active
 * marketingStatus.dateRange.start = "2017-06-04"
 * packaging.identifier.system = "http://hl7.org/fhir/sid/ndc"
 * packaging.identifier.value = "0088-5020-05"
@@ -324,7 +324,7 @@ Description: "Lantus Syringe Packaging"
 * packaging.packaging.identifier.value = "0088-5020-01"
 * packaging.packaging.type = $NCI-T#C43202 "SYRINGE"
 * packaging.packaging.quantity = 5
-* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicTypes#SPLCMBPRDTP
+* packaging.packaging.property.type = SubmittedMedicinalProductCharacteristicCodes#SPLCMBPRDTP
 * packaging.packaging.property.valueCodeableConcept = $NCI-T#C112160 "Type 0: Not a Combination Product"
 * packaging.packaging.containedItem.amount = 3 'mL' "mL"
 * packaging.packaging.containedItem.item.reference = Reference(LantusSolution)

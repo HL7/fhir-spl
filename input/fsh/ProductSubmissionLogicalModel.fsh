@@ -3,8 +3,6 @@ Parent: Element
 Id: ProductSubmissionDocumentLogicalModel
 Title: "Product Submission Document Logical Model"
 Description: "A document that contains information about a product being submitted for approval to the FDA."
-* ^type = "ProductSubmissionDocument"
-
 * identifier 1..1 string "Document Identifier" "A unique identifier of this specific Product Submission document."
 * splVersion 1..1 date "Document SPL Version" "A date reference to the SPL version being used for this document."
 * submissionIdentifier 1..1 string "Submission Identifier" "A unique identifier of the submission that remains constant across all versions/revisions of this document."
@@ -39,4 +37,4 @@ Description: "A document that contains information about a product being submitt
 * section.image.reference 1..1 url "Image Reference" "Reference, either local or remote, to the image data."
 * section.product 0..* http://hl7.org/fhir/us/spl/StructureDefinition/SubmittedMedicationLogicalModel "Section Product Information" "The complete definition of a medication being submitted in this document."
 * section.subsection 0..* BackboneElement "subsection"
-* section.subsection ^contentReference = "http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocumentLogicalModel#ProductSubmissionDocument.section"
+* section.subsection ^contentReference = "http://hl7.org/fhir/us/spl/StructureDefinition/ProductSubmissionDocumentLogicalModel#ProductSubmissionDocumentLogicalModel.section"

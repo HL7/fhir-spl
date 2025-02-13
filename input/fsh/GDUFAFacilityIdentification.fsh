@@ -85,10 +85,10 @@ Description: "A profile for the data elements required to identify an organizati
 * type = OrganizationTypes#GenericDrugUseFacility
 * name 1..1 MS
 * contact 2..2 MS
-* contact ^slicing.discriminator.type = #exists
+* contact ^slicing.discriminator.type = #value
 * contact ^slicing.discriminator.path = "purpose"
 * contact ^slicing.rules = #closed
-* contact ^slicing.description = "The different contact information that are included for a Establishment organization."
+* contact ^slicing.description = "The different contact information that are included for a Labeler organization."
 * contact contains OrgAddress 1..1 MS and OrgContact 1..1 MS
 * contact[OrgContact]
   * purpose 1..1 MS
@@ -98,8 +98,10 @@ Description: "A profile for the data elements required to identify an organizati
   * address only SPLAddress
   * insert PhoneNumberAndEmail
 * contact[OrgAddress]
-  * purpose 0..0
+  * purpose 1..1 MS
+  * purpose = OrganizationContactType#ADDRESS
   * address 1..1 MS
+  * name 0..0
  
 Invariant: spl-13.1.4.7
 Description: "Each business operation code and qualifier is mentioned only once."
@@ -208,7 +210,7 @@ Description: "An example of a GDUFA Facility Identification message"
 Instance: ExampleGDUFAFacilityIdentification
 InstanceOf: GDUFAFacilityIdentificationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to identify."
-* timestamp = "2024-08-11T01:01:01.111+06:00"
+* timestamp = "2025-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityIdentificationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityIdentificationMessage"
 * entry[Registrant].resource = ExampleGDUFARegistrant
@@ -227,7 +229,7 @@ Description: "An example of a GDUFA Facility Identification message"
 Instance: ExampleGDUFAFacilityInactivation
 InstanceOf: GDUFAFacilityInactivationBundle
 Description: "An example of a Bundle containing a set of GDUFA Facility resources to inactivate."
-* timestamp = "2024-08-11T01:01:01.111+06:00"
+* timestamp = "2025-08-11T01:01:01.111+06:00"
 * entry[Message].resource = SampleGDUFAFacilityInactivationMessage
 * entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAFacilityInactivationMessage"
 * entry[Registrant].resource = SampleIdentifiedGDUFARegistrant

@@ -3,12 +3,12 @@
 Instance: ExampleSPLDocumentReference
 InstanceOf: SPLDocumentReference
 Description: "An example of an SPL document that will be attached to a FHIR Provenance."
-* extension[versionNumber].valueString = "7"
 * extension[splDocumentDate].valueDate = "2020-04-21"
 * identifier[0].system = "urn:ietf:rfc:3986"
 * identifier[0].value = "urn:uuid:af87107d-11d1-46ae-9ffb-f2ba572d7ff9"
 * identifier[1].system = "urn:ietf:rfc:3986"
 * identifier[1].value = "urn:uuid:7ad19579-7b2f-4c0a-931c-4ba25f73b296"
+* version = "7"
 * status = #current
 * type = $LOINC#51725-0
 * date = "2021-04-21T14:28:00.00+06:00"

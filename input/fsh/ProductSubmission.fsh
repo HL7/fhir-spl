@@ -8,7 +8,7 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * entry 2..*
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
+* entry ^slicing.rules = #closed
 * entry ^slicing.description = "The specific bundle entries that are needed for a Product Submission document."
 * entry.fullUrl 1..1 MS
 * entry.resource 1..1 MS
@@ -37,16 +37,15 @@ Description: "A profile that represents the Bundle that contains the Product Sub
 * entry[Item].resource 1..1 MS
 * entry[Item].resource only SubmittedManufacturedItem
 
-
 Profile: ProductSubmissionDocument
 Parent: Composition
 Description: "A profile that represents a document that is required for Product Submission to the FDA."
 
-* extension contains VersionNumber named versionNumber 1..1 MS
 * type MS
 * type from SPLDocumentCodes (required)
 * title MS
 * identifier 1..1 MS
+* version 1..1 MS
 * author 1..1 MS
 * author only Reference(IdentifiedLabeler)
 * section 1..* MS
@@ -81,15 +80,6 @@ Description: "A profile that represents a document that is required for Product 
 * section[LabelDisplay].text 1..1 MS
 * section[LabelDisplay].entry 0..0
 * section[LabelDisplay].section 0..0
-
-Extension: VersionNumber
-Id: versionNumber
-Description: "Adding a version number to documents."
-* value[x] only string
-* ^context[+].type = #element
-* ^context[=].expression = "Composition"
-* ^context[+].type = #element
-* ^context[=].expression = "DocumentReference"
 
 Extension: SectionEffectiveTime
 Id: sectionEffectiveTime

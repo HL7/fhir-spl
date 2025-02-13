@@ -66,10 +66,10 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * type = OrganizationTypes#Labeler
 * name 1..1 MS
 * contact 2..2 MS
-* contact ^slicing.discriminator.type = #exists
+* contact ^slicing.discriminator.type = #value
 * contact ^slicing.discriminator.path = "purpose"
 * contact ^slicing.rules = #closed
-* contact ^slicing.description = "The different contact information that are included for a Establishment organization."
+* contact ^slicing.description = "The different contact information that are included for a Labeler organization."
 * contact contains OrgAddress 1..1 MS and OrgContact 1..1 MS
 * contact[OrgContact]
   * purpose 1..1 MS
@@ -79,8 +79,18 @@ Description: "A profile for the data elements required to identify a NDC Labeler
   * address only SPLAddress
   * insert PhoneNumberAndEmail
 * contact[OrgAddress]
-  * purpose 0..0
+  * purpose 1..1 MS
+  * purpose = OrganizationContactType#ADDRESS
   * address 1..1 MS
+  * name 0..0
+
+CodeSystem: OrganizationContactType
+Id: codesystem-organizationContactType
+Title: "Organization Contact Type"
+Description: "A code that will distinguish the organizations's address from the contact party information."
+* ^caseSensitive = false
+* ^experimental = false
+* #ADDRESS "Organization Address"
 
 Invariant: spl-5.1.2.8
 Description: "NDC Labeler code is 4 or 5 digits"
@@ -99,7 +109,7 @@ Severity: #error
 
 Invariant: spl-5.1.4.1
 Description: "If country is USA, then US agent is not allowed"
-Expression: "contact.address.where(country = 'USA').count() = 0 or contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() > 0).count() = 0" 
+Expression: "contact.where(purpose.coding.code = 'ADDRESS').address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 0" 
 Severity: #error
 
 Invariant: spl-5.1.5.6
@@ -163,11 +173,11 @@ Description: "An example of a Labeler Organization."
 * contact[OrgContact].address.state = "MD"
 * contact[OrgContact].address.postalCode = "12345"
 * contact[OrgContact].address.country = "USA"
-* contact[OrgAddress].address.line = "123 IVY LANE ROAD"
-* contact[OrgAddress].address.city = "SMITH FALLS"
-* contact[OrgAddress].address.state = "MD"
-* contact[OrgAddress].address.postalCode = "12345"
-* contact[OrgAddress].address.country = "USA"
+* contact[OrgAddress].address.line = "123 JOHN STREET"
+* contact[OrgAddress].address.city = "EDMONTON"
+* contact[OrgAddress].address.state = "AB"
+* contact[OrgAddress].address.postalCode = "T5E3B6"
+* contact[OrgAddress].address.country = "CAN"
 
 Instance: SampleLabelerUSAgent
 InstanceOf: USAgentOrganization
@@ -201,7 +211,7 @@ Description: "An example of a message header for a Labeler Code Request"
 Instance: SampleLabelerCodeRequestBundle
 InstanceOf: LabelerCodeRequestBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to register."
-* timestamp = "2024-08-11T01:01:01.111+06:00"
+* timestamp = "2025-08-11T01:01:01.111+06:00"
 * entry[0]
   * insert bundleEntry(MessageHeader, SampleLabelerCodeRequestMessage)
 * entry[+]
@@ -224,7 +234,7 @@ Description: "A sample Labeler organizaiton that just has the DUNS number and na
 Instance: SampleLabelerInactivationBundle
 InstanceOf: LabelerInactivationBundle
 Description: "An example of a Bundle containing a Labeler Code Request resource to inactivate."
-* timestamp = "2024-08-11T01:01:01.111+06:00"
+* timestamp = "2025-08-11T01:01:01.111+06:00"
 * entry[0]
   * insert bundleEntry(MessageHeader, SampleLabelerInactivationMessage)
 * entry[+]
