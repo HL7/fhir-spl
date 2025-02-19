@@ -88,6 +88,8 @@ Description: "A profile for the data elements required to identify an organizati
 * type from RegistrantOrganizationTypes (required)
 * name 1..1 MS
 * contact 1..1 MS
+  * purpose 1..1 MS
+  * purpose = http://terminology.hl7.org/CodeSystem/contactentity-type#ADMIN
   * name 1..1 MS
   * address 1..1 MS
   * address only SPLAddress
