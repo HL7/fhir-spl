@@ -114,7 +114,7 @@ Severity: #error
 
 Invariant: spl-5.1.5.6
 Description: "Each business operation code is mentioned only once."
-Expression: "contained.ofType(HealthcareService).type().isDistinct()"
+Expression: "contained.ofType(HealthcareService).type.coding.code.isDistinct()"
 Severity: #error
 
 Profile: LabelerBusinessOperation
