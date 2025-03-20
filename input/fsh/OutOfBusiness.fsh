@@ -22,7 +22,7 @@ Description: "A profile of an Establishment Registration message"
 * focus contains Registrant 1..1 MS
 * focus[Registrant] only Reference(IdentifiedOrganization)
 
-Instance: SamplOutOfBusinessMessage
+Instance: SampleOutOfBusinessMessage
 InstanceOf: OutOfBusinessMessage
 Description: "An example of a message header for an Out of Business notification"
 * eventCoding = $LOINC#53411-5 "Out of business notification"
@@ -33,7 +33,23 @@ Instance: SampleOutOfBusinessNotificationBundle
 InstanceOf: OutOfBusinessBundle
 Description: "An example of a Bundle containing a set of Establishment resources to inactivate."
 * timestamp = "2025-08-11T01:01:01.111+06:00"
-* entry[Message].resource = SamplOutOfBusinessMessage
-* entry[Message].fullUrl = "http://example.org/MessageHeader/SamplOutOfBusinessMessage"
+* entry[Message].resource = SampleOutOfBusinessMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleOutOfBusinessMessage"
 * entry[Registrant].resource = SampleIdentifiedEstablishmentRegistrant
 * entry[Registrant].fullUrl = "http://example.org/Organization/SampleIdentifiedEstablishmentRegistrant"
+
+Instance: SampleGDUFAOutOfBusinessMessage
+InstanceOf: OutOfBusinessMessage
+Description: "An example of a message header for an Out of Business notification"
+* eventCoding = $LOINC#53411-5 "Out of business notification"
+* source.endpointUrl = "http://example.org/"
+* focus[0] = Reference(SampleIdentifiedGDUFARegistrant)
+
+Instance: SampleGDUFAOutOfBusinessNotificationBundle
+InstanceOf: OutOfBusinessBundle
+Description: "An example of a Bundle containing a set of Establishment resources to inactivate."
+* timestamp = "2025-08-11T01:01:01.111+06:00"
+* entry[Message].resource = SampleGDUFAOutOfBusinessMessage
+* entry[Message].fullUrl = "http://example.org/MessageHeader/SampleGDUFAOutOfBusinessMessage"
+* entry[Registrant].resource = SampleIdentifiedGDUFARegistrant
+* entry[Registrant].fullUrl = "http://example.org/Organization/SampleIdentifiedGDUFARegistrant"
