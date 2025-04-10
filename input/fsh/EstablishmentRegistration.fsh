@@ -85,7 +85,7 @@ Description: "A profile for the data elements required to identify an organizati
 * contained ^slicing.description = "The specific resources that are needed for a Establishment organization."
 * contained contains BusinessOperation 1..* MS and USAgentAffiliation 0..1 MS and USAgent 0..1 MS and ImporterAffiliation 0..* MS and Importer 0..* MS
 * contained[BusinessOperation] only EstablishmentBusinessOperation
-* contained[USAgentAffiliation] only USAgentAffiliation
+* contained[USAgentAffiliation] only EstablishmentUSAgentAffiliation
 * contained[USAgent] only USAgentOrganization
 * contained[ImporterAffiliation] only ImporterAffiliation
 * contained[Importer] only ImporterOrganization
@@ -121,17 +121,17 @@ Severity: #error
 
 Invariant: spl-6.1.4.3
 Description: "If country is USA, then US agent is not allowed."
-Expression: "contact.where(purpose.coding.code = 'ADDRESS').address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 0" 
+Expression: "contact.where(purpose.coding.where(code = 'ADDRESS').count()=1).address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 1).count() = 0" 
 Severity: #error
 
 Invariant: spl-6.1.4.1
 Description: "If country is not USA, then US agent is mandatory."
-Expression: "contact.where(purpose.coding.code = 'ADDRESS').address.where(country = 'USA').count() = 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 1" 
+Expression: "contact.where(purpose.coding.where(code = 'ADDRESS').count()=1).address.where(country = 'USA').count() = 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 1).count() = 1" 
 Severity: #error
 
 Invariant: spl-6.1.5.3
 Description: "If country is USA, then import business is not allowed."
-Expression: "contact.where(purpose.coding.code = 'ADDRESS').address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'Importer').count() = 0).count() = 0" 
+Expression: "contact.where(purpose.coding.where(code = 'ADDRESS').count()=1).address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'Importer').count() = 1).count() = 0" 
 Severity: #error
 
 Profile: ImporterOrganization
@@ -222,6 +222,14 @@ InstanceOf: EstablishmentOrganization
 Description: "An example of an Establishment Organization."
 * contained[BusinessOperation] = ExampleEstablishmentOperation
 * contained[BusinessOperation].providedBy.reference = "#"
+* contained[ImporterAffiliation] = ExampleImporterAffiliation
+* contained[ImporterAffiliation].organization.reference = "#"
+* contained[ImporterAffiliation].participatingOrganization.reference = "#ExampleImporter"
+* contained[Importer] = ExampleImporter
+* contained[USAgentAffiliation] = ExampleEstablishmentUSAgentAffiliation
+* contained[USAgentAffiliation].organization.reference = "#"
+* contained[USAgentAffiliation].participatingOrganization.reference = "#SampleUSAgent"
+* contained[USAgent] = SampleUSAgent
 * identifier[DUNSNumber].value = "222222222"
 * name = "EXAMPLE ESTABLISHMENT INC."
 * type = OrganizationTypes#Establishment
@@ -235,9 +243,9 @@ Description: "An example of an Establishment Organization."
 * contact[OrgContact].address.country = "USA"
 * contact[OrgAddress].address.line = "123 IVY LANE ROAD"
 * contact[OrgAddress].address.city = "SMITH FALLS"
-* contact[OrgAddress].address.state = "MD"
+* contact[OrgAddress].address.state = "ONT"
 * contact[OrgAddress].address.postalCode = "12345"
-* contact[OrgAddress].address.country = "USA"
+* contact[OrgAddress].address.country = "CAN"
 
 Instance: ExampleEstablishmentOperation
 InstanceOf: EstablishmentBusinessOperation
@@ -261,11 +269,17 @@ Description: "An example of the linkage between an Establishment and an Importer
 * organization = Reference(ExampleEstablishment)
 * participatingOrganization = Reference(ExampleImporter)
 
+Instance: ExampleEstablishmentUSAgentAffiliation
+InstanceOf: EstablishmentUSAgentAffiliation
+Description: "An example of the linkage between an Establishment and a US Agent"
+* organization = Reference(ExampleEstablishment)
+* participatingOrganization = Reference(SampleUSAgent)
+
 Instance: SampleEstablishmentRegistrationMessage
 InstanceOf: EstablishmentRegistrationMessage
 Description: "An example of an Establishment Registration message"
 * eventCoding = http://loinc.org#51725-0  "Establishment registration"
-* source.endpointUrl = "http://example.org/"
+* source.endpointUrl = "http://source.com/endpoint/"
 * focus[0] = Reference(ExampleEstablishmentRegistrant)
 * focus[1] = Reference(ExampleEstablishment)
 
@@ -312,3 +326,5 @@ Description: "An example of a Bundle containing a set of Establishment resources
 * entry[Registrant].fullUrl = "http://example.org/Organization/SampleIdentifiedEstablishmentRegistrant"
 * entry[Establishment].resource = SampleIdentifiedEstablishment
 * entry[Establishment].fullUrl = "http://example.org/Organization/SampleIdentifiedEstablishment"
+
+

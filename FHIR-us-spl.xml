@@ -97,6 +97,7 @@
 <artifact id="StructureDefinition/EstablishmentRegistrantOrganization" key="StructureDefinition-EstablishmentRegistrantOrganization" name="EstablishmentRegistrantOrganization"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationBundle" key="StructureDefinition-EstablishmentRegistrationBundle" name="EstablishmentRegistrationBundle"/>
 <artifact id="StructureDefinition/EstablishmentRegistrationMessage" key="StructureDefinition-EstablishmentRegistrationMessage" name="EstablishmentRegistrationMessage"/>
+<artifact id="StructureDefinition/EstablishmentUSAgentAffiliation" key="StructureDefinition-EstablishmentUSAgentAffiliation" name="EstablishmentUSAgentAffiliation"/>
 <artifact id="Organization/ExampleEstablishment" key="Organization-ExampleEstablishment" name="ExampleEstablishment"/>
 <artifact id="OrganizationAffiliation/ExampleEstablishmentAffiliation" key="OrganizationAffiliation-ExampleEstablishmentAffiliation" name="ExampleEstablishmentAffiliation"/>
 <artifact id="Provenance/ExampleEstablishmentFHIRtoSPLProvenance" key="Provenance-ExampleEstablishmentFHIRtoSPLProvenance" name="ExampleEstablishmentFHIRtoSPLProvenance"/>
@@ -104,6 +105,7 @@
 <artifact id="Organization/ExampleEstablishmentRegistrant" key="Organization-ExampleEstablishmentRegistrant" name="ExampleEstablishmentRegistrant"/>
 <artifact id="Bundle/ExampleEstablishmentRegistration" key="Bundle-ExampleEstablishmentRegistration" name="ExampleEstablishmentRegistration"/>
 <artifact id="Provenance/ExampleEstablishmentSPLtoFHIRProvenance" key="Provenance-ExampleEstablishmentSPLtoFHIRProvenance" name="ExampleEstablishmentSPLtoFHIRProvenance"/>
+<artifact id="OrganizationAffiliation/ExampleEstablishmentUSAgentAffiliation" key="OrganizationAffiliation-ExampleEstablishmentUSAgentAffiliation" name="ExampleEstablishmentUSAgentAffiliation"/>
 <artifact id="Organization/ExampleGDUFAFacility" key="Organization-ExampleGDUFAFacility" name="ExampleGDUFAFacility"/>
 <artifact id="OrganizationAffiliation/ExampleGDUFAFacilityAffiliation" key="OrganizationAffiliation-ExampleGDUFAFacilityAffiliation" name="ExampleGDUFAFacilityAffiliation"/>
 <artifact id="Bundle/ExampleGDUFAFacilityIdentification" key="Bundle-ExampleGDUFAFacilityIdentification" name="ExampleGDUFAFacilityIdentification"/>
@@ -145,6 +147,7 @@
 <artifact id="StructureDefinition/LabelerInactivationBundle" key="StructureDefinition-LabelerInactivationBundle" name="LabelerInactivationBundle"/>
 <artifact id="StructureDefinition/LabelerInactivationMessage" key="StructureDefinition-LabelerInactivationMessage" name="LabelerInactivationMessage"/>
 <artifact id="StructureDefinition/LabelerOrganization" key="StructureDefinition-LabelerOrganization" name="LabelerOrganization"/>
+<artifact id="StructureDefinition/LabelerUSAgentAffiliation" key="StructureDefinition-LabelerUSAgentAffiliation" name="LabelerUSAgentAffiliation"/>
 <artifact id="Ingredient/LantusActiveIngredient" key="Ingredient-LantusActiveIngredient" name="LantusActiveIngredient"/>
 <artifact id="Ingredient/LantusIngredient1" key="Ingredient-LantusIngredient1" name="LantusIngredient1"/>
 <artifact id="Ingredient/LantusIngredient2" key="Ingredient-LantusIngredient2" name="LantusIngredient2"/>
@@ -216,10 +219,10 @@
 <artifact id="Bundle/SampleLabelerInactivationBundle" key="Bundle-SampleLabelerInactivationBundle" name="SampleLabelerInactivationBundle"/>
 <artifact id="MessageHeader/SampleLabelerInactivationMessage" key="MessageHeader-SampleLabelerInactivationMessage" name="SampleLabelerInactivationMessage"/>
 <artifact id="Organization/SampleLabelerOrganization" key="Organization-SampleLabelerOrganization" name="SampleLabelerOrganization"/>
-<artifact id="Organization/SampleLabelerUSAgent" key="Organization-SampleLabelerUSAgent" name="SampleLabelerUSAgent"/>
 <artifact id="OrganizationAffiliation/SampleLabelerUSAgentAffiliation" key="OrganizationAffiliation-SampleLabelerUSAgentAffiliation" name="SampleLabelerUSAgentAffiliation"/>
 <artifact id="MessageHeader/SampleOutOfBusinessMessage" key="MessageHeader-SampleOutOfBusinessMessage" name="SampleOutOfBusinessMessage"/>
 <artifact id="Bundle/SampleOutOfBusinessNotificationBundle" key="Bundle-SampleOutOfBusinessNotificationBundle" name="SampleOutOfBusinessNotificationBundle"/>
+<artifact id="Organization/SampleUSAgent" key="Organization-SampleUSAgent" name="SampleUSAgent"/>
 <artifact id="Organization/SanofiAventisDeutschland" key="Organization-SanofiAventisDeutschland" name="SanofiAventisDeutschland"/>
 <artifact id="Organization/SanofiAventisSRL" key="Organization-SanofiAventisSRL" name="SanofiAventisSRL"/>
 <artifact id="Organization/SanofiAventisUS" key="Organization-SanofiAventisUS" name="SanofiAventisUS"/>
@@ -235,7 +238,6 @@
 <artifact id="Composition/EnbrelSyringeLabelComposition" key="Composition-EnbrelSyringeLabelComposition" name="These highlights do not include all the information needed to use ENBREL safely and effectively. See full prescribing information for ENBREL. &lt;br/&gt; &lt;br/&gt;ENBREL&lt;sup&gt;®&lt;/sup&gt; (etanercept) injection, for subcutaneous use &lt;br/&gt;ENBREL&lt;sup&gt;®&lt;/sup&gt; (etanercept) for injection, for subcutaneous use &lt;br/&gt;Initial U.S. Approval: 1998"/>
 <artifact id="Composition/LantusInjectionLabelComposition" key="Composition-LantusInjectionLabelComposition" name="These highlights do not include all the information needed to use LANTUS safely and effectively. See full prescribing information for LANTUS. &lt;br/&gt; &lt;br/&gt;LANTUS&lt;sup&gt;®&lt;/sup&gt; (insulin glargine injection) for subcutaneous injection &lt;br/&gt;Initial U.S. Approval: 2000"/>
 <artifact id="ValueSet/valueset-topLevelOrganizationTypes" key="ValueSet-valueset-topLevelOrganizationTypes" name="Top-Level Organization Types"/>
-<artifact id="StructureDefinition/USAgentAffiliation" key="StructureDefinition-USAgentAffiliation" name="USAgentAffiliation"/>
 <artifact id="StructureDefinition/USAgentOrganization" key="StructureDefinition-USAgentOrganization" name="USAgentOrganization"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

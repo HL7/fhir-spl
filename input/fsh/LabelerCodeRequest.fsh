@@ -54,7 +54,7 @@ Description: "A profile for the data elements required to identify a NDC Labeler
 * contained ^slicing.description = "The specific resources that are needed for a Labeler organization."
 * contained contains BusinessOperation 1..* MS and USAgentAffiliation 0..1 MS and USAgent 0..1 MS
 * contained[BusinessOperation] only LabelerBusinessOperation
-* contained[USAgentAffiliation] only USAgentAffiliation
+* contained[USAgentAffiliation] only LabelerUSAgentAffiliation
 * contained[USAgent] only USAgentOrganization
 * insert DUNSNumber
 * identifier contains NDCCode 0..1 MS
@@ -109,7 +109,7 @@ Severity: #error
 
 Invariant: spl-5.1.4.1
 Description: "If country is USA, then US agent is not allowed"
-Expression: "contact.where(purpose.coding.code = 'ADDRESS').address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 0).count() = 0" 
+Expression: "contact.where(purpose.coding.where(code = 'ADDRESS').count()=1).address.where(country = 'USA').count() > 0 implies contained.ofType(Organization).where(type.coding.where(code = 'USAgent').count() = 1).count() = 0" 
 Severity: #error
 
 Invariant: spl-5.1.5.6
@@ -157,7 +157,7 @@ Description: "An example of a Labeler Organization."
 * contained[USAgentAffiliation] = SampleLabelerUSAgentAffiliation
 * contained[USAgentAffiliation].organization.reference = "#"
 * contained[USAgentAffiliation].participatingOrganization.reference = "#usagent"
-* contained[USAgent] = SampleLabelerUSAgent
+* contained[USAgent] = SampleUSAgent
 * contained[USAgent].id = "usagent"
 * contained[BusinessOperation] = SampleLabelerBusinessOperation
 * contained[BusinessOperation].providedBy.reference = "#"
@@ -179,7 +179,7 @@ Description: "An example of a Labeler Organization."
 * contact[OrgAddress].address.postalCode = "T5E3B6"
 * contact[OrgAddress].address.country = "CAN"
 
-Instance: SampleLabelerUSAgent
+Instance: SampleUSAgent
 InstanceOf: USAgentOrganization
 Description: "An example of a US Agent Organization."
 * identifier[DUNSNumber].value = "888888888"
@@ -189,10 +189,10 @@ Description: "An example of a US Agent Organization."
 * contact.telecom[Email].value = "jdoe_2@npoiinc.net"
 
 Instance: SampleLabelerUSAgentAffiliation
-InstanceOf: USAgentAffiliation
+InstanceOf: LabelerUSAgentAffiliation
 Description: "An example of the linkage between a Labeler and a US Agent"
 * organization = Reference(SampleLabelerOrganization)
-* participatingOrganization = Reference(SampleLabelerUSAgent)
+* participatingOrganization = Reference(SampleUSAgent)
 
 Instance: SampleLabelerBusinessOperation
 InstanceOf: LabelerBusinessOperation

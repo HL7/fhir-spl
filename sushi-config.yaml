@@ -4,7 +4,7 @@ name: FHIR_SPL
 title: SPL Mapping FHIR R5 Implementation Guide
 description: A guide that provides mapping from the FDA SPL Documents to FHIR Resources and operations.
 status: active
-version: 0.2.5
+version: 0.2.6
 fhirVersion: 5.0.0
 copyrightYear: 2020+
 releaseLabel: Build CI
@@ -118,7 +118,8 @@ groups:
       - StructureDefinition/RegistrantOrganization
       - StructureDefinition/IdentifiedOrganization
       - StructureDefinition/USAgentOrganization
-      - StructureDefinition/USAgentAffiliation
+      - StructureDefinition/LabelerUSAgentAffiliation
+      - StructureDefinition/EstablishmentUSAgentAffiliation
       - StructureDefinition/ImporterOrganization
       - StructureDefinition/ImporterAffiliation
       - StructureDefinition/SPLAddress

@@ -105,11 +105,21 @@ Description: "A profile for the data elements required for an organization fulfi
 * contact 1..1 MS
   * insert PhoneNumberAndEmail
 
-Profile: USAgentAffiliation
+Profile: LabelerUSAgentAffiliation
 Parent: OrganizationAffiliation
-Description: "A profile that associates an organization to its US Agent."
+Description: "A profile that associates a labeler to its US Agent."
 * organization 1..1 MS
-* organization only Reference(LabelerOrganization or EstablishmentOrganization)
+* organization only Reference(LabelerOrganization)
+* participatingOrganization 1..1 MS
+* participatingOrganization only Reference(USAgentOrganization)
+* code 1..1 MS
+* code = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73330
+
+Profile: EstablishmentUSAgentAffiliation
+Parent: OrganizationAffiliation
+Description: "A profile that associates an establishment to its US Agent."
+* organization 1..1 MS
+* organization only Reference(EstablishmentOrganization)
 * participatingOrganization 1..1 MS
 * participatingOrganization only Reference(USAgentOrganization)
 * code 1..1 MS
