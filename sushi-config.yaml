@@ -72,6 +72,7 @@ groups:
       - StructureDefinition/GDUFAFacilityIdentificationBundle
       - StructureDefinition/GDUFAFacilityInactivationBundle
       - StructureDefinition/OutOfBusinessBundle
+      - StructureDefinition/NoChangeNotificationBundle
   OperationMessages:
     name: Operation Message
     description: MessageHeader profiles that are used in the various use case operations
@@ -84,6 +85,7 @@ groups:
       - StructureDefinition/GDUFAFacilityIdentificationMessage
       - StructureDefinition/GDUFAFacilityInactivationMessage
       - StructureDefinition/OutOfBusinessMessage
+      - StructureDefinition/NoChangeNotificationMessage
   LabelerRequest:
     name: FDA Labeler Organizations
     description: Artifacts associated with the Labeler Organization use cases
@@ -140,13 +142,6 @@ groups:
       - StructureDefinition/SubmittedMedicinalProductIngredient
       - StructureDefinition/SubmittedIngredientDefinition
       - StructureDefinition/SubmittedMedicinalProductMarketing
-  DualSubmission:
-    name: Dual Submission Tracking
-    description: Artifacts needed for tracking dual submissions of SPL documents and FHIR Bundles
-    resources:
-      - StructureDefinition/SPLDocumentReference
-      - StructureDefinition/DualSubmissionProvenance
-      - StructureDefinition/splDocumentDate
   AllopurinolLabel:
     name: Allopurinol Label
     description: Example Instances associated with the label for Allopurinol USP

@@ -168,6 +168,8 @@
 <artifact id="StructureDefinition/itemMarketingStatusDates" key="StructureDefinition-itemMarketingStatusDates" name="Manufactured Item Marketing Status Date Range"/>
 <artifact id="CodeSystem/codesystem-submittedMedicinalProductNameTypes" key="CodeSystem-codesystem-submittedMedicinalProductNameTypes" name="Medicinal Product Name Types CodeSystem"/>
 <artifact id="StructureDefinition/LabelerCodeRequestLogicalModel" key="StructureDefinition-LabelerCodeRequestLogicalModel" name="NDC Labeler Code Request Logical Model"/>
+<artifact id="StructureDefinition/NoChangeNotificationBundle" key="StructureDefinition-NoChangeNotificationBundle" name="NoChangeNotificationBundle"/>
+<artifact id="StructureDefinition/NoChangeNotificationMessage" key="StructureDefinition-NoChangeNotificationMessage" name="NoChangeNotificationMessage"/>
 <artifact id="CodeSystem/codesystem-organizationContactType" key="CodeSystem-codesystem-organizationContactType" name="Organization Contact Type"/>
 <artifact id="CodeSystem/codesystem-organizationAffiliationCodes" key="CodeSystem-codesystem-organizationAffiliationCodes" name="Organization Relationship Types"/>
 <artifact id="ValueSet/valueset-organizationSubmissionMessageTypes" key="ValueSet-valueset-organizationSubmissionMessageTypes" name="Organization Submission Message Types"/>
@@ -220,6 +222,8 @@
 <artifact id="MessageHeader/SampleLabelerInactivationMessage" key="MessageHeader-SampleLabelerInactivationMessage" name="SampleLabelerInactivationMessage"/>
 <artifact id="Organization/SampleLabelerOrganization" key="Organization-SampleLabelerOrganization" name="SampleLabelerOrganization"/>
 <artifact id="OrganizationAffiliation/SampleLabelerUSAgentAffiliation" key="OrganizationAffiliation-SampleLabelerUSAgentAffiliation" name="SampleLabelerUSAgentAffiliation"/>
+<artifact id="Bundle/SampleNoChangeNotificationBundle" key="Bundle-SampleNoChangeNotificationBundle" name="SampleNoChangeNotificationBundle"/>
+<artifact id="MessageHeader/SampleNoChangeNotificationMessage" key="MessageHeader-SampleNoChangeNotificationMessage" name="SampleNoChangeNotificationMessage"/>
 <artifact id="MessageHeader/SampleOutOfBusinessMessage" key="MessageHeader-SampleOutOfBusinessMessage" name="SampleOutOfBusinessMessage"/>
 <artifact id="Bundle/SampleOutOfBusinessNotificationBundle" key="Bundle-SampleOutOfBusinessNotificationBundle" name="SampleOutOfBusinessNotificationBundle"/>
 <artifact id="Organization/SampleUSAgent" key="Organization-SampleUSAgent" name="SampleUSAgent"/>

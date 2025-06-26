@@ -14,7 +14,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 
 Profile: OutOfBusinessMessage
 Parent: OrganizationMessage
-Description: "A profile of an Establishment Registration message"
+Description: "A profile of an Out of Business message"
 * eventCoding = $LOINC#53411-5
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
