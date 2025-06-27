@@ -15,7 +15,7 @@ Description: "A profile that represents the Bundle that contains all of the reso
 Profile: NoChangeNotificationMessage
 Parent: OrganizationMessage
 Description: "A profile of an No Change Notification message"
-* eventCoding = $LOINC#53410-7
+* eventCoding = $LOINC#53410-7 "NO CHANGE NOTIFICATION"
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "$this.resolve()"
 * focus ^slicing.rules = #open
@@ -24,8 +24,6 @@ Description: "A profile of an No Change Notification message"
 
 Instance: SampleNoChangeNotificationMessage
 InstanceOf: NoChangeNotificationMessage
-Description: "An example of a message header for a No Change Notification"
-* eventCoding = $LOINC#53410-7 "No change notification"
 * source.endpointUrl = "http://example.org/"
 * focus[0] = Reference(SampleIdentifiedEstablishmentRegistrant)
 

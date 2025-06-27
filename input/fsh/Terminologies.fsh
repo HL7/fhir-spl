@@ -24,6 +24,7 @@ Description: "The set of message types that are allowed as a FHIR organization s
 * $LOINC#71743-9 "GENERIC DRUG FACILITY IDENTIFICATION SUBMISSION"
 * $LOINC#72090-4 "IDENTIFICATION OF CBER-REGULATED GENERIC DRUG FACILITY"
 * FHIRSpecificSPLMessageTypes#02 "GDUFA Facility Inactivation"
+* $LOINC#53410-7 "NO CHANGE NOTIFICATION"
 
 ValueSet: GenericFacilityMessageTypes
 Id: valueset-genericFacilityMessageTypes
