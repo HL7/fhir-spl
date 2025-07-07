@@ -50,6 +50,7 @@ Description: "A profile that represents a document that is required for Product 
 * author only Reference(IdentifiedLabeler)
 * section 1..* MS
   * extension contains SectionEffectiveTime named sectionTime 0..1 MS and SectionLinkId named linkId 0..1 MS
+  * id MS
   * code 1..1 MS
   * code from SPLSectionCodes (required)
   * title MS
