@@ -71,6 +71,10 @@
         <xsl:attribute name="lang" select="."/>
     </xsl:template>
     
+    <xsl:template match="@styleCode" mode="narrative">
+        <xsl:attribute name="class" select="."/>
+    </xsl:template>
+
     <xsl:template match="@*" mode="narrative">
         <xsl:attribute name="{local-name()}" select="."/>
     </xsl:template>
@@ -88,6 +92,14 @@
             <xsl:apply-templates select="@styleCode" mode="narrative"/>
             <xsl:apply-templates select="node()" mode="narrative"/>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="v3:renderMultiMedia/v3:caption" mode="narrative">
+        <p xmlns="http://www.w3.org/1999/xhtml" class="multimediaCaption">
+            <xsl:apply-templates select="@ID|@language" mode="narrative"/>
+            <xsl:apply-templates select="@styleCode" mode="narrative"/>
+            <xsl:apply-templates select="node()" mode="narrative"/>
+        </p>
     </xsl:template>
     
     <xsl:template match="v3:caption" mode="narrative">
@@ -148,25 +160,55 @@
         </a>
     </xsl:template>
     
-    <xsl:template match="v3:list" mode="narrative">
-        <xsl:choose>
-            <xsl:when test="@listType = 'ordered'">
-                <ol xmlns="http://www.w3.org/1999/xhtml">
-                    <xsl:apply-templates select="@ID|@language" mode="narrative"/>
-                    <xsl:apply-templates select="@styleCode" mode="narrative"/>
-                    <xsl:apply-templates select="node()" mode="narrative"/>
-                </ol>
-            </xsl:when>
-            <xsl:otherwise>
-                <ul xmlns="http://www.w3.org/1999/xhtml">
-                    <xsl:apply-templates select="@ID|@language" mode="narrative"/>
-                    <xsl:apply-templates select="@styleCode" mode="narrative"/>
-                    <xsl:apply-templates select="node()" mode="narrative"/>
-                </ul>
-            </xsl:otherwise>
-        </xsl:choose>
+    <!-- LIST MODEL -->
+    <!-- listType='unordered' is default, if any item has a caption,
+			 all should have a caption -->
+    <xsl:template match="v3:list[not(v3:item/v3:caption)]" mode="narrative">
+        <xsl:apply-templates select="v3:caption" mode="narrative"/>
+        <ul xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="@*|node()[not(self::v3:caption)]" mode="narrative"/>
+        </ul>
     </xsl:template>
-    
+    <xsl:template match="v3:list[@listType='ordered' and not(v3:item/v3:caption)]" priority="1" mode="narrative">
+        <xsl:apply-templates select="v3:caption" mode="narrative"/>
+        <ol xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="@*|node()[not(self::v3:caption)]" mode="narrative"/>
+        </ol>
+    </xsl:template>
+    <xsl:template match="v3:list/v3:item[not(parent::v3:list/v3:item/v3:caption)]" mode="narrative">
+        <li xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="@*" mode="narrative"/>
+            <xsl:apply-templates select="node()" mode="narrative"/>
+        </li> 
+    </xsl:template>
+    <!-- lists with custom captions -->
+    <xsl:template match="v3:list[v3:item/v3:caption]" mode="narrative">
+        <xsl:apply-templates select="v3:caption" mode="narrative"/>
+        <dl xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="@*|node()[not(self::v3:caption)]" mode="narrative"/>
+        </dl>
+    </xsl:template>
+    <xsl:template match="v3:list/v3:item[parent::v3:list/v3:item/v3:caption]" mode="narrative">
+        <xsl:apply-templates select="v3:caption" mode="narrative"/>
+        <dd xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="@*" mode="narrative"/>
+            <xsl:apply-templates select="node()[not(self::v3:caption)]" mode="narrative"/>
+        </dd>
+    </xsl:template>
+    <xsl:template match="v3:list/v3:item/v3:caption" mode="narrative">
+        <dt xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="@*" mode="narrative"/>
+            <xsl:apply-templates mode="narrative" select="node()"/>
+        </dt>
+    </xsl:template>
+    <xsl:template match="v3:list/v3:caption" mode="narrative">
+        <p xmlns="http://www.w3.org/1999/xhtml">
+            <xsl:apply-templates select="@styleCode" mode="narrative"/>
+            <xsl:apply-templates select="@*[not(local-name(.)='styleCode')]" mode="narrative"/>
+            <xsl:apply-templates mode="narrative" select="node()"/>
+        </p>
+    </xsl:template>
+   
     <xsl:template match="v3:paragraph" mode="narrative">
         <p xmlns="http://www.w3.org/1999/xhtml">
             <xsl:apply-templates select="@ID|@language" mode="narrative"/>
@@ -281,7 +323,7 @@
             </a>
         </dt>
         <dd xmlns="http://www.w3.org/1999/xhtml">
-            <xsl:apply-templates select="node()"/>
+            <xsl:apply-templates select="node()" mode="narrative"/>
         </dd>
     </xsl:template>
     <xsl:template match="v3:footnoteRef" mode="narrative">

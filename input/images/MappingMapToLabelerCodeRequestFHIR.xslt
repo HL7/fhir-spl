@@ -310,6 +310,14 @@ http://www.altova.com/mapforce
 		<xsl:param name="participatingId" select="()"/>
 		<xsl:param name="SimpleCD" select="()"/>
 		<OrganizationAffiliation xmlns="http://hl7.org/fhir">
+			<id>
+				<xsl:attribute name="value" namespace="" select="'usagentaffiliation'"/>
+			</id>
+			<meta>
+				<profile>
+					<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/StructureDefinition/LabelerUSAgentAffiliation'))"/>
+				</profile>
+			</meta>
 			<organization>
 				<reference>
 					<xsl:attribute name="value" namespace="" select="'#'"/>
@@ -346,7 +354,7 @@ http://www.altova.com/mapforce
 			<system>
 				<xsl:for-each select="$var3_value">
 					<xsl:attribute name="value" namespace="">
-						<xsl:call-template name="vmf:vmf11_inputtoresult">
+						<xsl:call-template name="vmf:vmf21_inputtoresult">
 							<xsl:with-param name="input" select="fn:substring-before(xs:string(xs:anyURI(fn:string(.))), ':')" as="xs:string"/>
 						</xsl:call-template>
 					</xsl:attribute>
@@ -356,7 +364,7 @@ http://www.altova.com/mapforce
 				<xsl:for-each select="$var3_value">
 					<xsl:variable name="var2_cur_as_string" as="xs:string" select="xs:string(xs:anyURI(fn:string(.)))"/>
 					<xsl:variable name="var1_resultof_vmf___inputtoresult" as="xs:string">
-						<xsl:call-template name="vmf:vmf11_inputtoresult">
+						<xsl:call-template name="vmf:vmf21_inputtoresult">
 							<xsl:with-param name="input" select="fn:substring-before($var2_cur_as_string, ':')" as="xs:string"/>
 						</xsl:call-template>
 					</xsl:variable>
@@ -376,13 +384,31 @@ http://www.altova.com/mapforce
 	</xsl:template>
 	<xsl:template name="user:createLabelerOrganization">
 		<xsl:param name="LabelerOrganization" select="()"/>
-		<xsl:variable name="var6_http___hl__org_fhir_us_spl_Cod_as_string" as="xs:string" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
-		<xsl:variable name="var7_assignedEntity" as="node()*" select="$LabelerOrganization/ns0:assignedEntity"/>
+		<xsl:variable name="var10_assignedEntity" as="node()*" select="$LabelerOrganization/ns0:assignedEntity"/>
+		<xsl:variable name="var11_http___hl__org_fhir_us_spl_Cod_as_string" as="xs:string" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationTypes'))"/>
 		<Organization xmlns="http://hl7.org/fhir">
-			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:performance">
+			<id>
+				<xsl:attribute name="value" namespace="" select="'Labeler'"/>
+			</id>
+			<meta>
+				<profile>
+					<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/StructureDefinition/LabelerOrganization'))"/>
+				</profile>
+			</meta>
+			<xsl:for-each select="$var10_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:performance">
 				<xsl:variable name="var1_actDefinition" as="node()*" select="ns0:actDefinition"/>
 				<contained>
 					<HealthcareService>
+						<id>
+							<xsl:for-each select="$var1_actDefinition/ns0:code/@code">
+								<xsl:attribute name="value" namespace="" select="fn:concat('healthcareservice-', fn:string(.))"/>
+							</xsl:for-each>
+						</id>
+						<meta>
+							<profile>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/StructureDefinition/LabelerBusinessOperation'))"/>
+							</profile>
+						</meta>
 						<providedBy>
 							<reference>
 								<xsl:attribute name="value" namespace="" select="'#'"/>
@@ -431,7 +457,7 @@ http://www.altova.com/mapforce
 					</HealthcareService>
 				</contained>
 			</xsl:for-each>
-			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity">
+			<xsl:for-each select="$var10_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity">
 				<xsl:variable name="var3_cur" as="node()" select="."/>
 				<xsl:for-each select="ns0:assignedOrganization">
 					<contained>
@@ -457,17 +483,37 @@ http://www.altova.com/mapforce
 					</contained>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization">
+			<xsl:for-each select="$var10_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization">
 				<contained>
 					<Organization>
 						<id>
 							<xsl:attribute name="value" namespace="" select="'usagent'"/>
 						</id>
+						<meta>
+							<profile>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/StructureDefinition/USAgentOrganization'))"/>
+							</profile>
+						</meta>
 						<xsl:for-each select="ns0:id">
 							<identifier>
 								<system>
 									<xsl:for-each select="@root">
-										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
+										<xsl:variable name="var5_resultof_vmf___inputtoresult" as="xs:string">
+											<xsl:call-template name="vmf:vmf22_inputtoresult">
+												<xsl:with-param name="input" select="fn:string(.)" as="xs:string"/>
+											</xsl:call-template>
+										</xsl:variable>
+										<xsl:variable name="var4_test_resultof_starts_with" as="xs:string">
+											<xsl:choose>
+												<xsl:when test="fn:starts-with($var5_resultof_vmf___inputtoresult, 'http')">
+													<xsl:sequence select="$var5_resultof_vmf___inputtoresult"/>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:sequence select="fn:concat('urn:oid:', $var5_resultof_vmf___inputtoresult)"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI($var4_test_resultof_starts_with))"/>
 									</xsl:for-each>
 								</system>
 								<value>
@@ -480,7 +526,7 @@ http://www.altova.com/mapforce
 						<type>
 							<coding>
 								<system>
-									<xsl:attribute name="value" namespace="" select="$var6_http___hl__org_fhir_us_spl_Cod_as_string"/>
+									<xsl:attribute name="value" namespace="" select="$var11_http___hl__org_fhir_us_spl_Cod_as_string"/>
 								</system>
 								<code>
 									<xsl:attribute name="value" namespace="" select="'USAgent'"/>
@@ -494,22 +540,24 @@ http://www.altova.com/mapforce
 								</xsl:for-each>
 							</name>
 						</xsl:for-each>
-						<xsl:for-each select="ns0:telecom">
-							<xsl:variable name="var4_resultof_parseTelecom" as="node()?">
-								<xsl:call-template name="user:parseTelecom">
-									<xsl:with-param name="SimpleTEL" as="node()">
-										<Simple-TEL xmlns="urn:hl7-org:v3">
-											<xsl:sequence select="(./@node(), ./node())"/>
-										</Simple-TEL>
-									</xsl:with-param>
-								</xsl:call-template>
-							</xsl:variable>
-							<xsl:for-each select="$var4_resultof_parseTelecom">
-								<telecom>
-									<xsl:sequence select="(./@node(), ./node())"/>
-								</telecom>
+						<contact>
+							<xsl:for-each select="ns0:telecom">
+								<xsl:variable name="var6_resultof_parseTelecom" as="node()?">
+									<xsl:call-template name="user:parseTelecom">
+										<xsl:with-param name="SimpleTEL" as="node()">
+											<Simple-TEL xmlns="urn:hl7-org:v3">
+												<xsl:sequence select="(./@node(), ./node())"/>
+											</Simple-TEL>
+										</xsl:with-param>
+									</xsl:call-template>
+								</xsl:variable>
+								<xsl:for-each select="$var6_resultof_parseTelecom">
+									<telecom>
+										<xsl:sequence select="(./@node(), ./node())"/>
+									</telecom>
+								</xsl:for-each>
 							</xsl:for-each>
-						</xsl:for-each>
+						</contact>
 					</Organization>
 				</contained>
 			</xsl:for-each>
@@ -517,7 +565,22 @@ http://www.altova.com/mapforce
 				<identifier>
 					<system>
 						<xsl:for-each select="@root">
-							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI(fn:concat('urn:oid:', fn:string(.))))"/>
+							<xsl:variable name="var8_resultof_vmf___inputtoresult" as="xs:string">
+								<xsl:call-template name="vmf:vmf22_inputtoresult">
+									<xsl:with-param name="input" select="fn:string(.)" as="xs:string"/>
+								</xsl:call-template>
+							</xsl:variable>
+							<xsl:variable name="var7_test_resultof_starts_with" as="xs:string">
+								<xsl:choose>
+									<xsl:when test="fn:starts-with($var8_resultof_vmf___inputtoresult, 'http')">
+										<xsl:sequence select="$var8_resultof_vmf___inputtoresult"/>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:sequence select="fn:concat('urn:oid:', $var8_resultof_vmf___inputtoresult)"/>
+									</xsl:otherwise>
+								</xsl:choose>
+							</xsl:variable>
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI($var7_test_resultof_starts_with))"/>
 						</xsl:for-each>
 					</system>
 					<value>
@@ -530,7 +593,7 @@ http://www.altova.com/mapforce
 			<type>
 				<coding>
 					<system>
-						<xsl:attribute name="value" namespace="" select="$var6_http___hl__org_fhir_us_spl_Cod_as_string"/>
+						<xsl:attribute name="value" namespace="" select="$var11_http___hl__org_fhir_us_spl_Cod_as_string"/>
 					</system>
 					<code>
 						<xsl:attribute name="value" namespace="" select="'Labeler'"/>
@@ -544,47 +607,18 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</name>
 			</xsl:for-each>
-			<xsl:for-each select="$var7_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:addr">
-				<address>
-					<xsl:for-each select="ns0:streetAddressLine">
-						<line>
-							<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-								<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-							</xsl:for-each>
-						</line>
-					</xsl:for-each>
-					<xsl:for-each select="ns0:city">
-						<city>
-							<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-								<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-							</xsl:for-each>
-						</city>
-					</xsl:for-each>
-					<xsl:for-each select="ns0:state">
-						<state>
-							<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-								<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-							</xsl:for-each>
-						</state>
-					</xsl:for-each>
-					<xsl:for-each select="ns0:postalCode">
-						<postalCode>
-							<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-								<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-							</xsl:for-each>
-						</postalCode>
-					</xsl:for-each>
-					<xsl:for-each select="ns0:country">
-						<country>
-							<xsl:for-each select="(./node())[fn:boolean(self::text())]">
-								<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
-							</xsl:for-each>
-						</country>
-					</xsl:for-each>
-				</address>
-			</xsl:for-each>
 			<xsl:for-each select="$LabelerOrganization/ns0:contactParty">
 				<contact>
+					<purpose>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://terminology.hl7.org/CodeSystem/contactentity-type'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'ADMIN'"/>
+							</code>
+						</coding>
+					</purpose>
 					<xsl:for-each select="ns0:contactPerson/ns0:name">
 						<name>
 							<text>
@@ -595,7 +629,7 @@ http://www.altova.com/mapforce
 						</name>
 					</xsl:for-each>
 					<xsl:for-each select="ns0:telecom">
-						<xsl:variable name="var5_resultof_parseTelecom" as="node()?">
+						<xsl:variable name="var9_resultof_parseTelecom" as="node()?">
 							<xsl:call-template name="user:parseTelecom">
 								<xsl:with-param name="SimpleTEL" as="node()">
 									<Simple-TEL xmlns="urn:hl7-org:v3">
@@ -604,7 +638,7 @@ http://www.altova.com/mapforce
 								</xsl:with-param>
 							</xsl:call-template>
 						</xsl:variable>
-						<xsl:for-each select="$var5_resultof_parseTelecom">
+						<xsl:for-each select="$var9_resultof_parseTelecom">
 							<telecom>
 								<xsl:sequence select="(./@node(), ./node())"/>
 							</telecom>
@@ -651,9 +685,60 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 				</contact>
 			</xsl:for-each>
+			<xsl:for-each select="$var10_assignedEntity/ns0:assignedOrganization/ns0:assignedEntity/ns0:assignedOrganization/ns0:addr">
+				<contact>
+					<purpose>
+						<coding>
+							<system>
+								<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://hl7.org/fhir/us/spl/CodeSystem/codesystem-organizationContactType'))"/>
+							</system>
+							<code>
+								<xsl:attribute name="value" namespace="" select="'ADDRESS'"/>
+							</code>
+						</coding>
+					</purpose>
+					<address>
+						<xsl:for-each select="ns0:streetAddressLine">
+							<line>
+								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</line>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:city">
+							<city>
+								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</city>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:state">
+							<state>
+								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</state>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:postalCode">
+							<postalCode>
+								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</postalCode>
+						</xsl:for-each>
+						<xsl:for-each select="ns0:country">
+							<country>
+								<xsl:for-each select="(./node())[fn:boolean(self::text())]">
+									<xsl:attribute name="value" namespace="" select="fn:string(.)"/>
+								</xsl:for-each>
+							</country>
+						</xsl:for-each>
+					</address>
+				</contact>
+			</xsl:for-each>
 		</Organization>
 	</xsl:template>
-	<xsl:template name="vmf:vmf11_inputtoresult">
+	<xsl:template name="vmf:vmf21_inputtoresult">
 		<xsl:param name="input" select="()"/>
 		<xsl:choose>
 			<xsl:when test="$input='tel'">
@@ -667,6 +752,20 @@ http://www.altova.com/mapforce
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:copy-of select="'url'"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:template name="vmf:vmf22_inputtoresult">
+		<xsl:param name="input" select="()"/>
+		<xsl:choose>
+			<xsl:when test="$input='1.3.6.1.4.1.519.1'">
+				<xsl:copy-of select="'http://terminology.hl7.org/NamingSystem/DUNSNumber'"/>
+			</xsl:when>
+			<xsl:when test="$input='2.16.840.1.113883.4.82'">
+				<xsl:copy-of select="'http://terminology.hl7.org/NamingSystem/FEI'"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy-of select="xs:string($input)"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -688,6 +787,9 @@ http://www.altova.com/mapforce
 				</xsl:variable>
 				<xsl:for-each select="$var1_resultof_createLabelerOrganization">
 					<entry>
+						<fullUrl>
+							<xsl:attribute name="value" namespace="" select="xs:string(xs:anyURI('http://example.org/Organization/Labeler'))"/>
+						</fullUrl>
 						<resource>
 							<Organization>
 								<xsl:sequence select="(./@node(), ./node())"/>

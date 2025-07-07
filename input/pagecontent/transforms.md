@@ -5,6 +5,7 @@ The following transforms were generated from mappings developed using Altova's M
   * [Labeler Code Request SPL to FHIR](MappingMapToLabelerCodeRequestFHIR.xslt)
   * [Labeler Code Request FHIR to SPL](MappingMapToLabelerCodeRequestSPL.xslt)
   * [Labeler Code Inactivation FHIR to SPL](MappingMapToLabelerCodeInactivationSPL.xslt)
+  * [Labeler Code Inactivation SPL to FHIR](MappingMapToLabelerCodeInactivationToFHIR.xslt)
 * Establishment Registration
   * [Establishment Registration SPL to FHIR](MappingMapToEstablishmentRegistrationFHIR.xslt)
   * [Establishment Registration FHIR to SPL](MappingMapToEstablishmentRegistrationSPL.xslt)

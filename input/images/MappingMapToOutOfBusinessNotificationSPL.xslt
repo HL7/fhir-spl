@@ -15,7 +15,7 @@ http://www.altova.com/mapforce
 	<xsl:param name="setIdentifier" as="xs:string" required="yes"/>
 	<xsl:param name="version" as="xs:string" required="yes"/>
 	<xsl:template match="/">
-		<xsl:processing-instruction name="{'xml-stylesheet'}" select="'href=&quot;https://www.accessdata.fda.gov/spl/stylesheet/spl.xsl&quot; type=&quot;text/xml&quot;'"/>
+		<xsl:processing-instruction name="{'xml-stylesheet'}" select="'href=&quot;https://www.accessdata.fda.gov/spl/stylesheet/spl.xsl&quot; type=&quot;text/xsl&quot;'"/>
 		<document xmlns="urn:hl7-org:v3">
 			<xsl:attribute name="xsi:schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance" select="'urn:hl7-org:v3 https://www.accessdata.fda.gov/spl/schema/spl.xsd'"/>
 			<id>
