@@ -9,7 +9,7 @@ The Bundle.timestamp is the effective time of the document.
 #### Product Submission Composition
 The Composition.identifier is a version-independent identifier of the document and is equivalent to SPL's Set Id.
 
-The Composition.versionNumber extension is used to identify the version of this document.
+The Composition.version is used to identify the version of this document.
 
 The Composition.type is a LOINC code that identifies the specific type of Drug Label document.
 
@@ -143,7 +143,7 @@ The SubstanceDefinition.identifier specifies the ingredient code.
 
 The SubstanceDefinition.name specifies the ingredient name.
 
-The SubstanceDefinition.moiety lists one or two active moieties.  Each active moiety contains an identifier which is the active moiety code and a name.
+The SubstanceDefinition.moiety lists one or two active moieties.  Each active moiety contains a name and an identifier, which is the active moiety code.
 
 ##### Submitted Medicinal Product Marketing
 
@@ -151,7 +151,7 @@ A product's Marketing Category is specified using the Submitted Medicinal Produc
 
 RegulatedAuthorization.identifier is the marketing application number.
 
-RegulatedAuthorization.subject is a reference to the specific product for this marketing category.
+RegulatedAuthorization.subject is a reference to the specific product being authorized.
 
 RegulatedAuthorization.type is the category code.
 
@@ -167,19 +167,19 @@ PackagedProductDefinition.packageFor references the specific product for this pa
 
 The PackagedProductDefinition.marketingStatus specifies the marketing status of the packaged product.  The status code is the marketing status and the dateRange contains the marketing status dates.
 
-The actual package details are contained in the PackagedProductDefinition.package elements.  Unlike SPL, the FHIR packaging starts with the outermost packaging, i.e. a box, and then nested package elements specify inner packaging, i.e. a bottle.  Eventually, the inner most packaging will reference a contained item which points to the SubmittedManufacturedItem.
+The actual package details are contained in the PackagedProductDefinition.packaging elements.  Unlike SPL, the FHIR packaging starts with the outermost packaging, i.e. a box, and then nested package elements specify inner packaging, i.e. a bottle.  Eventually, the inner most packaging will reference a contained item which points to the SubmittedManufacturedItem.  See the details on PackagedProductDefinition.packaging.packaging below.
 
-PackagedProductDefinition.package.identifier specifies the package item code.
+PackagedProductDefinition.packaging.identifier specifies the package item code.
 
-PackagedProductDefinition.package.type specifies the package form code.
+PackagedProductDefinition.packaging.type specifies the package form code.
 
-PackagedProductDefinition.package.quantity specifies the number of this package within the outer package.  The outermost package will either not specify this or set it to 1.
+PackagedProductDefinition.packaging.quantity specifies the number of this package within the outer package.  The outermost package will either not specify this or set it to 1.
 
-PackagedProductDefinition.package.property is used to indicate whether the package contains a combination package.
+PackagedProductDefinition.packaging.property is used to indicate whether the package contains a combination package.
 
-PackagedProductDefinition.package.package is used to specify nested packages.
+PackagedProductDefinition.packaging.packaging is used to specify nested packages.
 
-PackagedProductDefinition.package.containedItem is used to specify the specific product item that is contained in the innermost packaging.  containedItem.item.reference is a reference to the SubmittedManufacturedItem instance and containedItem.amount is the quantity of that product that is contained in the packaging.
+PackagedProductDefinition.packaging.containedItem is used to specify the specific product item that is contained in the innermost packaging.  containedItem.item.reference is a reference to the SubmittedManufacturedItem instance and containedItem.amount is the quantity of that product that is contained in the packaging.
 
-NOTE: In FHIR, the entire packaged product has a marketing status.  However, in SPL, individual packages within a packaged product can specify a marketing status.  The PackagedProductDefinition.package.packageInstanceOf extension is used to refer to a separate instance of SubmittedMedicinalPackaging for the inner package marketing status details.
+NOTE: In FHIR, the entire packaged product has a marketing status.  However, in SPL, individual packages within a packaged product can specify a marketing status.  The PackagedProductDefinition.packaging.packageInstanceOf extension is used to refer to a separate instance of SubmittedMedicinalPackaging for the inner package marketing status details.
 
