@@ -21,7 +21,7 @@ Here is a high level diagram that shows the generic use of the profiles for thes
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="800px" src="ProductSubmissionHighLevelProfiles.png" alt="Product Submission High Level Profiles diagram"/>
+  <img style="padding-top:0;padding-bottom:30px" width="800px" src="ProductSubmissionHighLevelProfiles.svg" alt="Product Submission High Level Profiles diagram"/>
   <figcaption>Figure 3.1 - Product Submission High Level Profiles</figcaption>
 </figure>
 {::options parse_block_html="true" /}
